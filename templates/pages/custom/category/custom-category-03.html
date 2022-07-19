@@ -1,0 +1,163 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "hero"}}
+<link rel="stylesheet" href="/content/css/custom-category-03.us.min.css">
+    <div class="cat-menu light">
+        <ul>
+            {{#each category.subcategories}}
+                <li><a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a></li>
+            {{/each}}            
+        </ul>
+    </div>
+    
+    <section class="cat-hero">
+        <picture>
+        </picture>
+    </section>
+    <section class=cat-hero-mobile-wrapper><div class=section-title>Extensions</div><div class=cat-hero-mobile><a class=item href=https://www.superhairpieces.com/tape-in-hair-extensions/ ><picture><source srcset=/content/images/extension/tape_in-150w-max.webp type=image/webp><source srcset=/content/images/extension/tape_in-150w-70.jpg type=image/jpeg><img alt="tape in"loading=lazy src=/content/images/extension/tape_in-150w-70.jpg></picture><div class=content><div class=title>tape in</div><div>Applied with tape, easy to install, good for thin hair</div></div></a><a class=item href=https://www.superhairpieces.com/nail-tip-hair-extensions/ ><picture><source srcset=/content/images/extension/nail_tip-150w-max.webp type=image/webp><source srcset=/content/images/extension/nail_tip-150w-60.jpg type=image/jpeg><img alt="nail tip"loading=lazy src=/content/images/extension/nail_tip-150w-60.jpg></picture><div class=content><div class=title>nail tip</div><div>Known as u-tip, attached using hot tool, most natural looking</div></div></a><a class=item href=https://www.superhairpieces.com/stick-tip-hair-extensions/ ><picture><source srcset=/content/images/extension/I_tip-150w-max.webp type=image/webp><source srcset=/content/images/extension/I_tip-150w-80.jpg type=image/jpeg><img alt="stick tip"loading=lazy src=/content/images/extension/I_tip-150w-80.jpg></picture><div class=content><div class=title>stick tip</div><div>Known as i-tip, applied with beads, no heat or adhesives required</div></div></a><a class=item href=https://www.superhairpieces.com/machine-weft-hair-extensions/ ><picture><source srcset=/content/images/extension/Machin_weft-150w-max.webp type=image/webp><source srcset=/content/images/extension/Machin_weft-150w-70.jpg type=image/jpeg><img alt="machine weft"loading=lazy src=/content/images/extension/Machin_weft-150w-70.jpg></picture><div class=content><div class=title>machine weft</div><div>Multiple installation methods, good for coarse hair</div></div></a><a class=item href=https://www.superhairpieces.com/clip-in-hair-extensions/ ><picture><source srcset=/content/images/extension/Clip_in-150w-93.webp type=image/webp><source srcset=/content/images/extension/Clip_in-150w-60.jpg type=image/jpeg><img alt="clip in"loading=lazy src=/content/images/extension/Clip_in-150w-60.jpg></picture><div class=content><div class=title>clip in</div><div>Attached using clips, easy to install, temporary wear</div></div></a><a class=item href=https://www.superhairpieces.com/hand-tied-weft-hair-extensions/ ><picture><source srcset=/content/images/extension/handtied-150w-95.webp type=image/webp><source srcset=/content/images/extension/handtied-150w-60.jpg type=image/jpeg><img alt=handtied loading=lazy src=/content/images/extension/handtied-150w-60.jpg></picture><div class=content><div class=title>hand tied weft</div><div>Can be attached with many methods, good for thin hair, natural volume</div></div></a></div></section>
+<script src="/content/js/custom-category-03.us.min.js"></script>
+
+{{/partial}}
+
+{{#partial "page"}}
+
+<div class="custom-cat extension">
+    <section class=cta-row><div class=cta-section style=order:2><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen frameborder=0 height=350 src="https://www.youtube.com/embed/aRVJ_W1_9zg" title="YouTube video player"width=100%></iframe></div><div class=cta-section style=order:1><div class=cta-content><div class=cta-inner><h1 style="margin-top:0">Human Hair Extensions</h1><p>At Superhairpieces, you will find only the best human hair extensions that will transform your hair by making it longer, thicker and fuller. We offer a wide variety of hair extensions with all of them using 100% premium quality Remy human hair. Each hair extension type comes with different hair quality grades, hair lengths, hair colors and methods of installation as well as being suitable for certain hair types.</div></div></div></section>
+    <section class="cta-row">
+        <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/newextension-cta-01.jpg" alt="Best Human Hair Extensions">
+        </div>
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    
+                    <h2>Tape in</h2>
+                    <p>Tape in Extension seamlessly add length, volume or highlights to your natural hair. Our remy tape-in extensions are made with pure 100% Remy human hair and come with strong, durable tape that won't damage your hair. We stock 5 lengths, 20 colors in 4 quality level from basic 3A to the highest 6A quality. Best recognized brand name in Canada for it's supreme quality reputation. Price always the lowest compare with the same quality level. Invisible and flexible in style, low Maintenance, Least Damaging, easy installation in one hour and reusable after 8 weeks. Perfection solution for either adding hair volume form thin to thick or affordable no damage highlights  </p>
+                    <a href="/tape-in/" class="button">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-row">
+        <div class="cta-section" style=order:2>
+            <img class="cta-img" src="/product_images/uploaded_images/newextension-cta-02.jpg" alt="Remy hair extensions">
+        </div>
+
+        <div class="cta-section" style=order:1>
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h2>Hot Fusion</h2>
+                    <p>This strand-by-strand system applies with the use of melting the keratin bond with a fusion gun on to the client’s hair. Shape of Nail tip or U-tips Keratin Bonding forming bonds between your hair and the 100% Remy human hair bundle provided by Superhairpieces Extensions. The heated Keratin adhesive bond will be hot fused in small bundles with your hair at the base which causes a completely seamless transition from strand to strand. Compare us with brand name hair extension provider like Cinderella , Hotheads, Great Lengths, Donna Bella, Klix , Babe, Halo Hair extension. Our hair quality is outstanding and selling mouth to mouth in Canada like a trade secret. Online price shows retail and only certified hair extension technicians or hairstylist can log in check wholesale price.  </p>
+                    <a href="/nail-tip/" class="button">View Nail Tip Extensions </a>
+                </div>
+            </div>
+        </div>
+      <!--  <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/newextension-cta-02.jpg" alt="Remy hair extensions">
+        </div> -->
+    </section>
+
+    <section class="cta-row">
+        <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/newextension-cta-03.jpg" alt="Human Hair Extensions">
+        </div>
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h2>Machine Weft</h2>
+                    <p>In Hair Extensions market, people generally thinking machine weaves hair are for African American people and Extensions are for caucasians.  Superhairpieces luxury machine weft extensions bring hair type with most European hair texture to make this method possible for Caucasian people add hair volume and length to the hair. Hair is naturally treated with minimum cuticle damage keep this high-quality hair healthy and strong to last. Weft can be sewn on or micro ring beaded to link attach on your hair. Sew in weaves can also be used on repair wigs as well. </p>
+                    <a href="/machine-weft/" class="button">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- <section class="cta-row">
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h3>The Best Human Hair Extensions</h3>
+                    <p>With Superhairpieces, ordering high quality human hair extensions online has never been easier! Hair extensions are the fastest way to transform your hair by making it thicker and longer. We provide the best human hair extensions for sale in North America with all our products regularly getting stellar reviews from our business and salon clients. We only use the highest quality Remy human hair while offering plenty of customization options as far as hair colors and hair lengths are concerned. Among our 100% human hair extension offerings include: clip-in hair extensions, tape-in hair extensions, u-tip hair extensions, i-tip hair extensions, machine weft hair extensions, hand-tied weft hair extensions and much more! Additionally, business clients can <a href="https://www.superhairpieces.com/open-a-dealer-account" target="_blank">make a wholesale account</a> to get a special discount. Order now and add the volume, density and length you desire for a glamorous and gorgeous look!</p>
+                    <a href="https://www.superhairpieces.com/superhairpieces-extensions" class="button">View Extensions </a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <img class="cta-img" src="/content/images/extension/extension-cta-05.jpg" alt="Human Hair Extensions">
+        </div> 
+    </section>
+    -->
+</div>
+
+{{/partial}}
+
+
+<!--{{#partial "signup"}}
+    <section class="cat-join extension" style="background-image: url(/product_images/uploaded_images/extension-signup.jpg);">
+        <div class="cat-join-inner">
+            <h3>Looking for High End Level ?</h3>
+            <p>Hand Tied Weft <br>for very fine hair truly undetectable integration.</p>
+            {{!--<span onclick="iconPop();" class="button">Check Now</span>
+            --}}
+            <a href="/hand-tied-weft/" class="button">Check Now</a>
+        </div>
+    </section>
+{{/partial}} -->
+
+
+
+{{!--
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if category.image}}
+    <img src="{{getImage category.image 'zoom_size'}}">
+{{/if}}
+<h1 class="page-heading">{{category.name}}</h1>
+{{{category.description}}}
+{{{snippet 'categories'}}}
+<div class="page">
+    {{#or category.subcategories category.faceted_search_enabled}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else}}
+        {{#if theme_settings.shop_by_price_visible}}
+            <aside class="page-sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/if}}
+    {{/or}}
+    <main class="page-content" id="product-listing-container">
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    </main>
+</div>
+
+{{/partial}}
+
+--}}
+
+
+
+{{> layout/base}}
+

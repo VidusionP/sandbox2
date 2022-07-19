@@ -1,0 +1,41 @@
+---
+brands:
+---
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/content/images/common/check1.svg">
+<link rel="stylesheet" href="/content/css/brands.min.css">
+
+<main class="page">
+    <!-- <h1 class="page-heading">{{lang 'brand.label'}}</h1>
+    <ul class="brandGrid">
+        {{#each brands}}
+            <li class="brand">
+                <article class="card {{#if alternate}}card--alternate{{/if}}">
+                    <figure class="card-figure">
+                        <a href="{{url}}">
+                            <img class="card-image" src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                        </a>
+                    </figure>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{url}}">{{name}}</a>
+                        </h4>
+                    </div>
+                </article>
+            </li>
+        {{/each}}
+    </ul>
+    {{> components/common/paginator pagination.brands}} -->
+    
+<div class="bd-header-wrap"> <div class="title-wrap"> <div class="title">shop by brands</div><div class="desp"> Superhairpieces is your one-stop shop for hair system supplies and hair care products. We carry adhesives, solvents, scalp protectors, conditioners, shampoos, sprays and more from industry-leading brands. And with our North America locations and quick shipping, you won't have to wait long to receive your order! </div></div><picture> <source media="(min-width: 900px)" srcset="/content/images/brands/banner-pc.webp" type="image/webp"> <source media="(min-width: 900px)" srcset="/content/images/brands/banner-pc.jpg" type="image/jpeg"> <source media="(min-width: 700px)" srcset="/content/images/brands/banner-tablet.webp" type="image/webp"> <source media="(min-width: 700px)" srcset="/content/images/brands/banner-tablet.jpg" type="image/jpeg"> <source srcset="/content/images/brands/banner-mobile.jpg" type="image/jpeg"> <img src="/content/images/brands/banner-mobile.jpg" alt="Brands"> </picture> </div><div class="bd-loading-wrap"> <div class="info__box"> <div class="left_box"> <p class="shinny info__text info__text_one"></p><p class="shinny info__text info__text_two"></p><p class="shinny info__text info__text_three"></p></div><div class="right_box"> <div class="shinny image"></div></div></div><div class="info__box"> <div class="left_box"> <p class="shinny info__text info__text_one"></p><p class="shinny info__text info__text_two"></p><p class="shinny info__text info__text_three"></p></div><div class="right_box"> <div class="shinny image"></div></div></div></div><div class="bd-container"> <section class="bd-breadcrumbs"> <a href="/">home</a> <a href="/brands" sub>brands</a> </section> <section class="bd-top-wrapper"> <div class="title">Brands you'll love</div><div class="list"> </div></section> <div class="container-wrap"> <section class="bd-filter-wrap"> </section> <section class="bd-content-wrap"> <div class="filter-wrap" mobile> <div class="sort-filter-wrap"> <div action="sort"> <img src="/content/images/common/sort.svg" class="icon"> <select name="" id="bd-sort"> <option value="az" selected>A &#8640; Z</option> <option value="za">Z &#8640; A</option> <option value="top">Top Brands</option> <option value="new">New</option> </select> </div><div action="filter"> <img src="/content/images/common/filter.svg" class="icon"> <span>Filter By</span> </div></div><div action="search"> <input type="text" placeholder="Search Brand" maxlength="100"> <button> <img src="/content/images/common/search.svg"> </button> </div></div><div class="filter-wrap" pc> <div class="result" number="0">Result(s)</div><div class="sort-search-wrap"> <div action="search"> <input type="text" maxlength="100" placeholder="Search Brand"> </div><div action="sort"> <select> <option value="az" selected>A &#8640; Z</option> <option value="za">Z &#8640; A</option> <option value="top">Top Brands</option> <option value="new">New</option> </select> </div></div></div><div class="list-wrap"> </div></section> </div></div><div class="bd-sidebar" number="0"> <div class="close-wrap"> <button class="close">&#215;</button> </div><div class="content-wrap"> </div><div class="button-wrap"> <button action="show" number="0">view results</button> <button action="clear">clear</button> </div></div>
+<script src="/content/js/brands.min.js" defer></script>
+
+</main>
+{{/partial}}
+{{> layout/base}}

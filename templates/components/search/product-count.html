@@ -1,0 +1,5 @@
+{{#contains forms.search.query "virtual"}}
+    {{lang 'search.results.product_count' count=(subtract pagination.product_results.total 4)}}
+{{else}}
+{{lang 'search.results.product_count' count=pagination.product_results.total}}
+{{/contains}}

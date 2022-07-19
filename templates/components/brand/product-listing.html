@@ -1,0 +1,26 @@
+{{> components/products/filter sort=pagination.brand.sort}}
+
+<form action="{{urls.compare}}" method='POST' data-product-compare>
+    {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+        {{> components/products/grid products=brand.products show_compare=brand.show_compare theme_settings=theme_settings}}
+    {{else}}
+        {{> components/products/list products=brand.products show_compare=brand.show_compare theme_settings=theme_settings}}
+    {{/if}}
+</form>
+
+<!-- {{#if theme_settings.halo-product-show-more}}
+	<div class="halo-product-show-more" id="listing-showmoreBtn">
+        {{#if pagination.brand.next}}
+    	    <a class="button button--transparent" data-href="#">
+    	        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-refresh"></use></svg>
+    	        <span class="text">{{lang 'search.faceted.show-more'}}</span>
+    	    </a>
+        {{else}}
+            <a class="button button--transparent disable" data-href="#">
+                <span class="text">{{lang 'common.no_more_products'}}</span>
+            </a>
+        {{/if}}
+	</div> 
+{{/if}} -->
+
+{{> components/common/paginator pagination.brand}}

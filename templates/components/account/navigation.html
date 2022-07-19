@@ -1,0 +1,54 @@
+<nav class="navBar navBar--sub navBar--account">
+    <ul class="navBar-section">
+        {{#if account_page '===' 'orders'}}
+            <li class="navBar-item is-active">{{lang 'account.nav.orders'}}</li>
+        {{else}}
+            <li class="navBar-item">
+                <a class="navBar-action" href="{{urls.account.orders.all}}">{{lang 'account.nav.orders'}}</a>
+            </li>
+        {{/if}}
+        {{#if settings.returns_enabled}}
+            {{#if account_page '===' 'returns'}}
+                <li class="navBar-item is-active">{{lang 'account.nav.returns'}}</li>
+            {{else}}
+                <li class="navBar-item">
+                    <a class="navBar-action" href="{{urls.account.returns}}">{{lang 'account.nav.returns'}}</a>
+                </li>
+            {{/if}}
+        {{/if}}
+      
+        {{#if account_page '===' 'addresses'}}
+            <li class="navBar-item is-active">{{lang 'account.nav.addresses'}}</li>
+        {{else}}
+            <li class="navBar-item">
+                <a class="navBar-action" href="{{urls.account.addresses}}">{{lang 'account.nav.addresses'}}</a>
+            </li>
+        {{/if}}
+        {{#if settings.show_wishlist}}
+            {{#if account_page '===' 'wishlists'}}
+                <li class="navBar-item is-active">{{lang 'account.nav.wishlists' num_wishlists=customer.num_wishlists}}</li>
+            {{else}}
+                <li class="navBar-item">
+                    <a class="navBar-action" href="{{urls.account.wishlists.all}}">{{lang 'account.nav.wishlists' num_wishlists=customer.num_wishlists}}</a>
+                </li>
+            {{/if}}
+        {{/if}}
+        {{#if account_page '===' 'recent_items'}}
+            <li class="navBar-item is-active">{{lang 'account.nav.recently_viewed'}}</li>
+        {{else}}
+            <li class="navBar-item">
+                <a class="navBar-action" href="{{urls.account.recent_items}}">{{lang 'account.nav.recently_viewed'}}</a>
+            </li>
+        {{/if}}
+        {{#if account_page '===' 'settings'}}
+            <li class="navBar-item is-active">{{lang 'account.nav.settings'}}</li>
+        {{else}}
+            <li class="navBar-item">
+                <a class="navBar-action" href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a>
+            </li>
+        {{/if}}
+        <li class="navBar-item">
+            <a class="navBar-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+        </li>
+    </ul>
+</nav>

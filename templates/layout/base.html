@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="facebook-domain-verification" content="gnrc2daqa37cvwx383xfr7mtwgw3bt" />
+        <meta name="p:domain_verify" content="2ef322294d8a5c4c03eeffe08ead0b04"/>
+        {{{stylesheet '/assets/css/theme.css' rel='preload' as='style'}}}
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="preload" as="style">
+        <script src="{{cdn 'assets/modernizr-custom.js'}}"></script>
+
+        {{{head.scripts}}} 
+        {{{head.rsslinks}}}
+
+        {{inject 'themeSettings' theme_settings}}
+        {{inject 'genericError' (lang 'common.generic_error')}}
+        {{inject 'maintenanceMode' settings.maintenance}}
+        {{inject 'urls' urls}}
+        {{{snippet 'htmlhead'}}}
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {{{stylesheet '/assets/css/theme.css' rel='stylesheet'}}}
+        <link rel="stylesheet" href="/content/css/base.us.min.css">
+        <script type="text/javascript"> adroll_adv_id = "XACB5MA24BF2BLM55Z5PYO"; adroll_pix_id = "HWLAG5TTMVHYXAQACMVXHQ"; adroll_version = "2.0";  (function(w, d, e, o, a) { w.__adroll_loaded = true; w.adroll = w.adroll || []; w.adroll.f = [ 'setProperties', 'identify', 'track' ]; var roundtripUrl = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; for (a = 0; a < w.adroll.f.length; a++) { w.adroll[w.adroll.f[a]] = w.adroll[w.adroll.f[a]] || (function(n) { return function() { w.adroll.push([ n, arguments ]) } })(w.adroll.f[a]) }  e = d.createElement('script'); o = d.getElementsByTagName('script')[0]; e.async = 1; e.src = roundtripUrl; o.parentNode.insertBefore(e, o); })(window, document); adroll.track("pageView"); </script> 
+     </head>
+    <body>
+        {{{snippet 'header'}}}
+        <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
+
+        {{#if settings.privacy_cookie}}
+            {{> components/common/cookie}}
+        {{/if}}
+
+        {{> components/common/header }}
+        {{> components/common/body }}
+        {{> components/common/footer }}
+        <div class="popup-country"><div class="popup-country-overlay"></div><div class="popup-country-content"><div class="popup-country-title">hi there</div><div>It looks like you are visiting us from Canada.<br/>You can visit our Canadian website for CAD prices and local shipping options.</div> <a href="//superhairpieces.ca">take me there</a><div class="popup-country-continue"><div>No, I am not from Canada</div><div class="popup-country-continue-link">Continue browsing!</div></div></div></div>
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+
+        <script>
+            // Exported in app.js
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+        </script>
+        {{{footer.scripts}}}
+        {{{snippet 'footer'}}}
+		
+		<script>
+            function heightsEqualizer(selector) {
+                var elements = document.querySelectorAll(selector),
+                    max_height = 0,
+                    len = 0,
+                    i;
+             
+                if ( (elements) && (elements.length > 0) ) {
+                    len = elements.length;
+             
+                    for (i = 0; i < len; i++) { // get max height
+            			elements[i].style.height = ''; // reset height attr
+                        if (elements[i].clientHeight > max_height) {
+                            max_height = elements[i].clientHeight;
+                        }
+                    }
+             
+                    for (i = 0; i < len; i++) { // set max height to all elements
+                        elements[i].style.height = max_height + 'px';
+                    }
+                }
+            }
+             
+            if (document.addEventListener) {
+                document.addEventListener('DOMContentLoaded', function() {
+                    heightsEqualizer('.eq-h');
+                });
+            	window.addEventListener('resize', function(){
+            		heightsEqualizer('.eq-h');
+            	});
+            }
+            
+            setTimeout(function () { // set 1 second timeout for having all fonts loaded
+            	heightsEqualizer('.eq-h');
+            }, 1000);
+        </script>
+        <!-- 
+        <script type='text/javascript'>var fc_CSS=document.createElement('link');fc_CSS.setAttribute('rel','stylesheet');var fc_isSecured = (window.location && window.location.protocol == 'https:');var fc_lang = document.getElementsByTagName('html')[0].getAttribute('lang'); var fc_rtlLanguages = ['ar','he']; var fc_rtlSuffix = (fc_rtlLanguages.indexOf(fc_lang) >= 0) ? '-rtl' : '';fc_CSS.setAttribute('type','text/css');fc_CSS.setAttribute('href',((fc_isSecured)? 'https://d36mpcpuzc4ztk.cloudfront.net':'http://assets1.chat.freshdesk.com')+'/css/visitor'+fc_rtlSuffix+'.css');document.getElementsByTagName('head')[0].appendChild(fc_CSS);var fc_JS=document.createElement('script'); fc_JS.type='text/javascript'; fc_JS.defer=true;fc_JS.src=((fc_isSecured)?'https://d36mpcpuzc4ztk.cloudfront.net':'http://assets.chat.freshdesk.com')+'/js/visitor.js';(document.body?document.body:document.getElementsByTagName('head')[0]).appendChild(fc_JS);window.livechat_setting= 'eyJ3aWRnZXRfc2l0ZV91cmwiOiJzdXBlcmhhaXJwaWVjZXNjb20uZnJlc2hkZXNrLmNvbSIsInByb2R1Y3RfaWQiOm51bGwsIm5hbWUiOiJTdXBlcmhhaXJwaWVjZXMuY29tIiwid2lkZ2V0X2V4dGVybmFsX2lkIjpudWxsLCJ3aWRnZXRfaWQiOiIzMDFiMmI0MS05MTcxLTQ1YjItOGYzNi1jYWYzMjFmMTBkY2MiLCJzaG93X29uX3BvcnRhbCI6dHJ1ZSwicG9ydGFsX2xvZ2luX3JlcXVpcmVkIjpmYWxzZSwibGFuZ3VhZ2UiOm51bGwsInRpbWV6b25lIjpudWxsLCJpZCI6NDAwMDAwNjUxMSwibWFpbl93aWRnZXQiOjEsImZjX2lkIjoiMDMzZmNmNGI1ODBjNDA5M2RkOGZlZTBiMzUyYzgzZmIiLCJzaG93IjoxLCJyZXF1aXJlZCI6MiwiaGVscGRlc2tuYW1lIjoiU3VwZXJoYWlycGllY2VzLmNvbSIsIm5hbWVfbGFiZWwiOiJOYW1lIiwibWVzc2FnZV9sYWJlbCI6Ik1lc3NhZ2UiLCJwaG9uZV9sYWJlbCI6IlBob25lIiwidGV4dGZpZWxkX2xhYmVsIjoiVGV4dGZpZWxkIiwiZHJvcGRvd25fbGFiZWwiOiJEcm9wZG93biIsIndlYnVybCI6InN1cGVyaGFpcnBpZWNlc2NvbS5mcmVzaGRlc2suY29tIiwibm9kZXVybCI6ImNoYXQuZnJlc2hkZXNrLmNvbSIsImRlYnVnIjoxLCJtZSI6Ik1lIiwiZXhwaXJ5IjowLCJlbnZpcm9ubWVudCI6InByb2R1Y3Rpb24iLCJlbmRfY2hhdF90aGFua19tc2ciOiJUaGFuayB5b3UhISEiLCJlbmRfY2hhdF9lbmRfdGl0bGUiOiJFbmQiLCJlbmRfY2hhdF9jYW5jZWxfdGl0bGUiOiJDYW5jZWwiLCJzaXRlX2lkIjoiMDMzZmNmNGI1ODBjNDA5M2RkOGZlZTBiMzUyYzgzZmIiLCJhY3RpdmUiOjEsInJvdXRpbmciOm51bGwsInByZWNoYXRfZm9ybSI6MSwiYnVzaW5lc3NfY2FsZW5kYXIiOm51bGwsInByb2FjdGl2ZV9jaGF0IjoxLCJwcm9hY3RpdmVfdGltZSI6MTgwLCJzaXRlX3VybCI6InN1cGVyaGFpcnBpZWNlc2NvbS5mcmVzaGRlc2suY29tIiwiZXh0ZXJuYWxfaWQiOm51bGwsImRlbGV0ZWQiOjAsIm1vYmlsZSI6MSwiYWNjb3VudF9pZCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMTQtMDktMTFUMDc6MTA6MTkuMDAwWiIsInVwZGF0ZWRfYXQiOiIyMDE4LTAxLTAzVDE2OjI1OjUxLjAwMFoiLCJjYkRlZmF1bHRNZXNzYWdlcyI6eyJjb2Jyb3dzaW5nX3N0YXJ0X21zZyI6IllvdXIgc2NyZWVuc2hhcmUgc2Vzc2lvbiBoYXMgc3RhcnRlZCIsImNvYnJvd3Npbmdfc3RvcF9tc2ciOiJZb3VyIHNjcmVlbnNoYXJpbmcgc2Vzc2lvbiBoYXMgZW5kZWQiLCJjb2Jyb3dzaW5nX2RlbnlfbXNnIjoiWW91ciByZXF1ZXN0IHdhcyBkZWNsaW5lZCIsImNvYnJvd3NpbmdfYWdlbnRfYnVzeSI6IkFnZW50IGlzIGluIHNjcmVlbiBzaGFyZSBzZXNzaW9uIHdpdGggY3VzdG9tZXIiLCJjb2Jyb3dzaW5nX3ZpZXdpbmdfc2NyZWVuIjoiWW91IGFyZSB2aWV3aW5nIHRoZSB2aXNpdG9y4oCZcyBzY3JlZW4gIiwiY29icm93c2luZ19jb250cm9sbGluZ19zY3JlZW4iOiJZb3UgaGF2ZSBhY2Nlc3MgdG8gdmlzaXRvcuKAmXMgc2NyZWVuICIsImNvYnJvd3NpbmdfcmVxdWVzdF9jb250cm9sIjoiUmVxdWVzdCB2aXNpdG9yIGZvciBzY3JlZW4gYWNjZXNzICIsImNvYnJvd3NpbmdfZ2l2ZV92aXNpdG9yX2NvbnRyb2wiOiJHaXZlIGFjY2VzcyBiYWNrIHRvIHZpc2l0b3IgIiwiY29icm93c2luZ19zdG9wX3JlcXVlc3QiOiJFbmQgeW91ciBzY3JlZW5zaGFyaW5nIHNlc3Npb24iLCJjb2Jyb3dzaW5nX3JlcXVlc3RfY29udHJvbF9yZWplY3RlZCI6IllvdXIgcmVxdWVzdCB3YXMgZGVjbGluZWQiLCJjb2Jyb3dzaW5nX2NhbmNlbF92aXNpdG9yX21zZyI6IlNjcmVlbnNoYXJpbmcgaXMgY3VycmVudGx5IHVuYXZhaWxhYmxlIiwiY29icm93c2luZ19hZ2VudF9yZXF1ZXN0X2NvbnRyb2wiOiJBZ2VudCBpcyByZXF1ZXN0aW5nIGFjY2VzcyB0byB5b3VyIHNjcmVlbiIsImNiX3ZpZXdpbmdfc2NyZWVuX3ZpIjoiQWdlbnQgY2FuIHZpZXcgeW91ciBzY3JlZW4gIiwiY2JfY29udHJvbGxpbmdfc2NyZWVuX3ZpIjoiQWdlbnQgaGFzIGFjY2VzcyB0byB5b3VyIHNjcmVlbiAiLCJjYl92aWV3X21vZGVfc3VidGV4dCI6IllvdXIgYWNjZXNzIHRvIHRoZSBzY3JlZW4gaGFzIGJlZW4gd2l0aGRyYXduICIsImNiX2dpdmVfY29udHJvbF92aSI6IkFsbG93IGFnZW50IHRvIGFjY2VzcyB5b3VyIHNjcmVlbiAiLCJjYl92aXNpdG9yX3Nlc3Npb25fcmVxdWVzdCI6IkFnZW50IHNlZWtzIGFjY2VzcyB0byB5b3VyIHNjcmVlbiAifX0=';</script>
+        -->
+        
+        <!-- BEGIN: Google Certified Shops -->
+        <script type="text/javascript">
+          var gts = gts || [];
+        
+          gts.push(["id", "726442"]);
+          gts.push(["badge_position", "BOTTOM_LEFT"]);
+          gts.push(["locale", "PAGE_LANGUAGE"]);
+          gts.push(["google_base_offer_id", "ITEM_GOOGLE_SHOPPING_ID"]);
+          gts.push(["google_base_subaccount_id", "ITEM_GOOGLE_SHOPPING_ACCOUNT_ID"]);
+        
+          (function() {
+            var gts = document.createElement("script");
+            gts.type = "text/javascript";
+            gts.async = true;
+            gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(gts, s);
+          })();
+        </script>
+        <!-- END: Google Certified Shops -->
+        
+        <!-- Magnific Popup for Youtube --> 
+        <script src="https://superhairpieces.com/content/js/magnific-popup.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://superhairpieces.com/content/css/magnific-popup.css">
+        <script>
+            $(".youtube[href*='www.youtube.com']").addClass("video-popup");
+            $(document).ready(function() { $('.video-popup').magnificPopup({type:'iframe' }); });
+        </script>
+         <!-- END: Magnific Popup for Youtube -->
+        
+        
+        <script>
+          window.addEventListener("DOMContentLoaded",function(){function e(){$(window).width()>1149?($(".header-logo").append($(".wg-default")),$(".navPages-list--user").remove($(".wg-default"))):($(".navPages-list--user").append($(".wg-default")),$(".header-logo").remove($(".wg-default"))),$(".wg-default").hide(),$(".wg-default").eq(0).show()}Weglot.on("switchersReady",()=>{e()}),window.onresize=e,localStorage.getItem("shp-country")||fetch("https://www.cloudflare.com/cdn-cgi/trace").then(e=>e.text()).then(e=>{(e=e.trim().split("\n").reduce(function(e,o){return e[(o=o.split("="))[0]]=o[1],e},{})).loc&&(localStorage.setItem("shp-country",e.loc),"CA"==e.loc&&setTimeout(function(){$(".popup-country").css({display:"flex"}),$(".popup-country-continue-link").on("click",function(){$(".popup-country").hide()}),$(".popup-country-overlay").on("click",function(){$(".popup-country").hide()})},3500))}).catch(e=>console.log(e))});
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+// =============================================================================
+// LOADING (CSS)
+// =============================================================================
+//
+// 1. If set to false, there is no outputted CSS for this component.
+//
+// -----------------------------------------------------------------------------
+
+
+.loadingOverlay {
+    background-color: rgba(stencilColor("loadingOverlay-backgroundColor"), 0.9);
+    display: none;
+    z-index: zIndex("low");
+
+    &:before{
+		content: '';
+	    background: url(../img/loading.svg) no-repeat;
+	    background-size: contain;
+	    position: absolute;
+	    width: 150px;
+	    height: 150px;
+	    top: 50%;
+	    left: 0;
+	    right: 0;
+	    border: 0;
+	    border-radius: 0;
+	    display: block;
+	    margin: 0 auto;
+	    transform: translateY(-50%) rotate(0);
+	    transform-style: preserve-3d;
+	    animation: unset;
+	}
+
+	@media (min-width: 551px){
+		&:before{
+			width: 200px;
+	    	height: 200px;
+		}
+	}
+}

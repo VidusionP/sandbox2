@@ -1,0 +1,20 @@
+{{#if product_results.products}}
+    <a class="modal-close" aria-label="{{lang 'common.close'}}" data-drop-down-close role="button">
+        <span aria-hidden="true">&#215;</span>
+    </a>
+    <ul class="productGrid">
+
+        {{#each product_results.products}}
+        {{#contains name "Virtual"}}
+            {{else}}
+        <li class="product">
+            {{> components/products/card alternate=true show_compare=../show_compare theme_settings=../theme_settings}}
+        </li>
+        {{/contains}}
+        {{/each}}
+    </ul>
+{{else}}
+    <p class="quickSearchMessage">
+        {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+    </p>
+{{/if}}

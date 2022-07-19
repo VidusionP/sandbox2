@@ -1,0 +1,11 @@
+{{#if category.subcategories}}
+<div class="sct-mobile-wrap {{#if (length category.subcategories) '>' 9}}overflow{{/if}}">
+    <span class="top">{{category.name}}</span>
+    <div class="sct-mobile-content-wrap">
+        {{#each category.subcategories}}                
+            <a href="{{url}}">{{name}}</a>                    
+        {{/each}}
+    </div>
+    <span action="close"><img src="/content/images/common/close.svg" alt=""></span>
+</div>
+{{/if}}

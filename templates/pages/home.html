@@ -1,0 +1,513 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: 12
+---
+{{#partial "hero"}}
+    {{#if carousel}}
+   <link rel="preload" as="image" href="/content/images/marketing/superevent/superevent12.jpg">
+    <link rel="preload" as="image" href="/content/images/marketing/superevent/superevent12b.jpg">
+    <link rel="preload" as="image" href="/content/images/marketing/superevent/superevent5.jpg">
+    <link rel="preload" as="image" href="/content/images/marketing/superevent/superevent5b.jpg">
+    <link rel="stylesheet" href="/content/css/homepage.banner.min.css">
+    <link rel="stylesheet" href="/content/css/splide-core.min.css" />
+    <link rel="stylesheet" href="/content/css/homepage.min.css" />
+      {{> components/carousel}}
+    <script src="/content/js/homepage.banner.min.js" defer></script>
+     {{/if}}
+    {{{snippet 'home_content'}}}
+{{/partial}}
+
+{{#partial "full-page"}}
+<img src="/content/images/common/hp-thumbnail.jpg" alt="" style="opacity: 0; width:1px; height: 1px;"/> 
+{{#each shipping_messages}}
+    {{> components/common/alert-info message}}
+{{/each}}   
+         
+
+<div class="main full">
+    <div class="bottom-banner"> 
+        <div class="banner-holder">
+            <div class="banner-message">
+                <span class="icon icon--custom icon--location">
+                    <img src="/content/images/homepage/location.svg" loading="lazy" alt="location" class="hp-icon">
+                </span>
+                <p>US Warehouse<br>13790 NW 4th ST Unit 102<br>Sunrise FL 33325</p>
+            </div>
+            <div class="banner-message">
+                <span class="icon icon--custom icon--phone">
+                    <img src="/content/images/homepage/phone.svg" alt="phone" loading="lazy" class="hp-icon">
+                </span>
+                <p>Call/Text <a href="tel:1-866-814-7879">1-866-814-7879 English</a><br><a href="tel:1-800-801-0708">1-800-801-0708 Spanish</a><br>Whatsapp <a href="https://wa.me/18668693477" target="_blank">1-866-869-3477</a><!-- <span>Order cut off time: 4:00 pm EST Mon-Fri</span>--> </p>
+            </div>
+            <div class="banner-message">
+                <span class="icon icon--custom icon--location">
+                    <img src="/content/images/homepage/location.svg" loading="lazy" alt="location" class="hp-icon">
+                </span>
+                <p>Canada Warehouse<br>7295 Rapistan Ct<br>Mississauga ON L5N5Z4</p>
+            </div>
+        </div>
+    </div>
+    {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{/if}} 
+    <br><br>
+ 
+    <section class="section-video">
+       <div class="cta-row">
+           <div class="cta-section full">
+               <div class="cta-content half">
+                  <div class="cta-inner">
+                        <h1 class="page-heading">Why Choose Superhairpieces?</h1>
+                        <p class="bold">North America's Most Reputable Hairpiece, and Hair Extension Supplier!<br>Online Shop Established since 2007!</p>
+                        <p>Superhairpieces strives to provide quality hairpieces and extensions to both our salons and retail clients. We provide customers with great quality products at affordable prices. Our goal is to consistently perfect our products with high quality materials and craftsmanship. We offer the latest hairpiece techniques including invisible hairlines and durable knotting. We also offer a wide range of hair extensions such as Nail tips, I Tips, Tape ins, Machine wefts, Hand tied wefts and Clip-Ins offered in different hair qualities. Our exquisite and fine-textured hair are boundless and come in a range of available colors that is suitable for all.</p>
+                    </div>   
+               </div>
+            
+               <a href="https://www.youtube.com/watch?v=o4Yg2lsd24Y" class="youtube cta-content half" style="background-image: url(/content/images/maxresdefault.jpg);background-position: bottom;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">                   
+                     <div class="cta-inner"> 
+                         <span class="video-action button button--primary button-large" style="background-color: transparent; border: 0;"><svg width="80px" aria-hidden="true" focusable="false" viewBox="0 0 576 512"><path fill="#FF0000" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span>
+                     </div>                     
+                </a>
+
+           </div>
+       </div> 
+    </section>
+   
+      <h2 class="page-heading">What We Bring</h2>
+            <section class="section-about">
+                <div class="cta-row">
+                    <div class="cta-section full hp-social-video-section-full">
+                        <div class="cta-content half hp-social-video-section-wrapper">
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" loading="lazy" alt="loading" hp-social-video-loading width="100px" style="width: 25%" />
+                            <div class="splide">
+                                <div class="splide__track">
+                                    <ul class="splide__list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-content half">
+                            <div class="cta-text">
+                                <h3 class="heading-tertiary">FALL IN LOVE WITH YOUR NEW HAIR PIECE</h3>
+                                <p class="paragraph">
+                                    You will love your new look with one of our incredible men’s hair pieces or women’s hair extension sets. Reclaim your youth with full, seamless hair pieces. Find your perfect hair piece in the endless variety of colors and styles available at Superhairpieces, or contact us for a completely custom hair piece, built just for you. 
+                                </p>
+        
+                                <h3 class="heading-tertiary">BEAUTIFUL HAIR AT AMAZING PRICES</h3>
+                                <p class="paragraph">
+                                    Gorgeous hair is finally affordable! Each of our hairpieces are made with premium human hair, can be customized to fit your unique needs, and come at the best prices. Our men’s hair pieces can be applied seamlessly, making your hairline undetectable and providing a natural look. Likewise, our women’s hair pieces are custom made to fit your style and also come with premium human hair. Extensions from Superhairpieces are available in several varieties and come with very low maintenance. Get the look you’ve been dreaming of with a hairpiece from Superhairpieces!
+                                </p>
+                                <a href="/about-us/" class="button">Learn More &rarr;</a>
+                            </div>    
+                        </div>
+                    </div>  
+                </div>    
+           </section> 
+    
+    
+ <!-- PRICE CARDS -->    
+    <h2 class="page-heading">Our Prices</h2>
+            <section class="cta-row">
+               <div class="cta-section full">
+                   
+                    <div class="cta-content third">
+                        <div class="card-special">
+                          <div class="card__side card__side--front">
+                              <div class="card__picture card__picture--1">  
+                                <div class="gradient-overlay"></div>
+                              </div>
+                              <h4 class="card__heading">
+                                  <span class="card__heading-span">Men's Hairpieces</span>
+                              </h4>
+                              <div class="card__details ">
+                                  <ul>
+                                      <li>Undetectable Hairline</li>
+                                      <li>Hand Craftsmanship</li>
+                                      <li>Timeless Design</li>
+                                      <li>Affordable</li>
+                                      <li>Easy to Use</li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!--CARD 1-->
+                          <div class="card__side card__side--back">
+                              <div class="card__cta">
+                                  <div class="card__price-box">
+                                        <p class="card__price-only">
+                                            From Only
+                                        </p>
+                                        <p class="card__price-value"><!--PRICE VALUE START -->$129<!--PRICE VALUE END --></p>
+                                        <a href="/men-hair-pieces-toupees/" class="btn btn--white">Shop Now</a>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                        <div class="cta-content third">
+                            <div class="card-special">
+                              <div class="card__side card__side--front">
+                                    <div class="card__picture card__picture--2">
+                                        <div class="gradient-overlay"></div>
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span class="card__heading-span">Women's Hairpieces</span>
+                                    </h4>
+                                    <div class="card__details ">
+                                        <ul>
+                                            <li>Trends of color and hairstyle</li>
+                                            <li>Cap Designed for Different Purpose</li>
+                                            <li>Hair Loss Solutions for All Stages</li>
+                                            <li>Featured Silicone Medical Wig</li>
+                                            <li>Toppers, Frontal, Crown Patch</li>
+                                        </ul>
+                                    </div>
+                              </div>
+                              <!--CARD 2-->
+                              <div class="card__side card__side--back">
+                                    <div class="card__cta">
+                                        <div class="card__price-box">
+                                                <p class="card__price-only">
+                                                    From Only
+                                                </p>
+                                                <p class="card__price-value"><!--PRICE VALUE START -->$170<!--PRICE VALUE END --></p>
+                                                <a href="/womens-hair-pieces-toppers-wigs/" class="btn btn--white">Shop Now</a>
+                                        </div>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+    
+                      <div class="cta-content third">
+                            <div class="card-special">
+                                <div class="card__side card__side--front">
+                                    <div class="card__picture card__picture--3">
+                                        <div class="gradient-overlay"></div>
+                                    </div>
+                                    <h4 class="card__heading">
+                                        <span class="card__heading-span">Extensions</span>
+                                    </h4>
+                                    <div class="card__details ">
+                                        <ul>
+                                            <li>Tape In, Hot Fusion and More</li>
+                                            <li>Seamlessly Added Length</li>
+                                            <li>14" -24" Six Level Hair Length</li>
+                                            <li>Four Levels of Quality to Choose</li>
+                                            <li>Solid, Ombre, Funky, Over 30 colors</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--CARD 3-->
+                                <div class="card__side card__side--back">
+                                    <div class="card__cta">
+                                        <div class="card__price-box">
+                                            <p class="card__price-only">
+                                                From Only
+                                            </p>
+                                            <p class="card__price-value"><!--PRICE VALUE START -->$90<!--PRICE VALUE END --></p>
+                                            <a href="/hair-extensions/" class="btn btn--white">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                    </div>
+           </section>
+           
+    
+    <section class="cta-row" id="cta-images">
+        <div class="cta-section full custom-content-2">
+            <div class="cta-content half">
+            </div>       
+            <div class="cta-content half">
+                <div class="cta-text">
+                    <h3 class="page-heading">BEAUTIFUL EXTENSIONS</h3>
+                    <p> Find your perfect extensions from Superhairpieces! Our beautiful extensions are available in a variety of styles and applications; whether you’re looking for tape-in or tie-in, nail tip or stick tip, hand tied or machine weft, we have the hairpiece you’re looking for at an incredible value. Each of our beautiful extensions are made with precision craftsmanship and 100% genuine human hair. We guarantee you’ll love it! 
+                    </p>
+                    <a href="/extensions/" class="button">View Extensions</a>
+                </div>
+            </div>   
+        </div>    
+    </section>
+  
+    <section class="cta-row" id="cta-images"> 
+        <div class="cta-section full custom-content">
+            <div class="cta-content half">
+                <div class="cta-text text-special">
+                    <h3 class="page-heading">INCREDIBLE MEN'S HAIR PIECES AND FULL CAP HUMAN HAIR WIGS</h3>
+                    <p> Each of our men’s hairpieces is a work of art. To elevate each of our hairpieces to this status, we balance of the durability of a mono-filament lace and the natural look of a French lace. The French lace provides an incredibly natural front hairline. The clear skin perimeter makes each hairpiece last longer and keeps day to day maintenance and styling a simple task. This is the very best of toupee design.  
+                    </p>
+                    <a href="/men-hair-pieces-toupees/" class="button">View Men's Hairpieces</a>
+                </div>    
+            </div>  
+            <div class="cta-content half">
+            </div>    
+        </div>    
+    </section>
+   
+    <section class="cta-row" id="cta-images">
+        <div class="cta-section full custom-content-3">
+            <div class="cta-content half">
+            </div>  
+            <div class="cta-content half">
+                <div class="cta-text">
+                    <h3 class="page-heading">WOMEN'S HAIRPIECES</h3>
+                    <p> Careful handcraftsmanship goes into each of our beautiful and easy to use women’s hairpieces and wigs. Each product is created with 100% human hair. Our precision manufacturing system ensures that each product we send out is of the highest quality. With our selection of hairpieces in the newest styles at the lowest prices, and our custom ordering options, we can make your dream hair a reality.  
+                    </p>
+                    <a href="/women-hair-pieces-toppers-wigs-all-in-stock/" class="button">View Women's Hairpieces</a>
+                </div>
+            </div>
+        </div>    
+    </section>
+    <p></p>
+     <!-- Rick D. Start-->
+    <div class="shogun-root" data-shogun-id="61325f61f8f3e300b86424dc" data-shogun-site-id="fb8c6090-a908-45e2-8617-89b82d7a20e6" data-shogun-page-id="61325f61f8f3e300b86424dc" data-shogun-page-version-id="613262f5f5c97f00aa8c9fd4" data-shogun-platform-type="big_commerce" data-shogun-variant-id="613262f5f5c97f00aa8ca070" data-region="main">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:" />
+
+<link rel="stylesheet" type="text/css" href="https://cdn.getshogun.com/css-3/613262f5f5c97f00aa8ca070.css" />
+<style>@media only screen and (max-width:767px){#s-d8e1b3b6-b8a0-431d-8ad1-d6d190d4fd93{padding:0 1rem}}</style>
+
+
+  <div class="shg-c  " id="s-d8e1b3b6-b8a0-431d-8ad1-d6d190d4fd93" ><h3 class="page-heading">
+            We Make People Genuinely Happy
+            </h3>
+    <div class="shg-row" data-col-grid-mode-on="">
+      <div class="shg-c-lg-1 shg-c-md-1 shg-c-sm-1 shg-c-xs-12"></div>
+      <div class="shg-c-lg-10 shg-c-md-10 shg-c-sm-10 shg-c-xs-12"><div class="shg-box-vertical-align-wrapper">
+    <div
+      class="shg-box shg-c    "
+      
+      id="s-a17193e3-8326-4c45-bb06-d6d5fc82b50f"
+    >
+      <div class="shg-box-overlay"></div><div class="shg-box-content">
+        
+  <div class="shg-c  " id="s-d7799741-234d-41de-bb56-a943d00cbf29" >
+    <div class="shg-row" data-col-grid-mode-on="true">
+      <div class="shg-c-lg-6 shg-c-md-6 shg-c-sm-6 shg-c-xs-12"><div class="shg-box-vertical-align-wrapper">
+    <div
+      class="shg-box shg-c    "
+      
+      id="s-062511fe-a030-43d0-bb62-830babc14a65"
+    >
+      <div class="shg-box-overlay"></div><div class="shg-box-content">
+        <div id="s-e5c4d606-57d2-40e0-b391-ecb07498f544"  class="shg-c  ">
+  
+  <div class="shogun-video shogun-video-16x9">
+    
+    
+
+    
+
+    
+      <iframe
+        class="shogun-video-embed "
+        src="https://www.youtube.com/embed/iyadjdZ4oGo?start=0&end=0&autoplay=1&loop=0&mute=1&rel=0"
+        allowfullscreen
+        title="Embedded Youtube Video"
+      >
+      </iframe>
+    
+
+  </div>
+
+
+</div>
+
+      </div>
+    </div>
+  </div></div>
+      <div class="shg-c-lg-6 shg-c-md-6 shg-c-sm-6 shg-c-xs-12"><div class="shg-box-vertical-align-wrapper">
+    <div
+      class="shg-box shg-c    "
+      
+      id="s-9170aa2c-71ed-479a-8691-c36e2286637b"
+    >
+      <div class="shg-box-overlay"></div><div class="shg-box-content">
+        <div id="s-1f383ead-e107-4bde-a107-6e8fca4bb54d"  class="shg-c  ">
+  <div class="shg-rich-text shg-theme-text-content"><div><span style="color: #c98718; font-family: Poppins; font-size: 32px;">Rick D. <span style="font-size: 22px; font-weight: bold;">Verified Buyer</span></span></div></div>
+
+</div>
+<div id="s-e530a7ca-d01f-4ae5-852b-dbcd1de8c6d4"  class="shg-c  ">
+  <div class="shg-rich-text shg-theme-text-content"><p>At first it was really just for a fluke, I wasn't convinced that it was gonna work, I didn't think it would be worth trying. I approached it more as a joke. But when it finished I thought, “It looks pretty good. As a matter of fact, that looks really good!”</p></div>
+
+</div>
+
+  <div class="shg-c  " id="s-ea0b602f-1fca-4fdb-8afa-6fb80b586ccd" >
+    <div class="shg-row" data-col-grid-mode-on="">
+      <div class="shg-c-lg-7 shg-c-md-7 shg-c-sm-7 shg-c-xs-12"><div class="shg-box-vertical-align-wrapper">
+    <div
+      class="shg-box shg-c    "
+      
+      id="s-8b4c2ca7-d2f9-4182-904f-2763bb29e770"
+    >
+      <div class="shg-box-overlay"></div><div class="shg-box-content">
+        <div id="s-7a95b699-d388-4821-899c-5acca0507e96"  class="shg-c  ">
+  <div class="shg-rich-text shg-theme-text-content"><div style="text-align: center;"><a href="/rick-s-experience-with-hair-systems-superhairpieces-testimonial" target="_blank" rel="noopener"><span style="font-size: 20px; color: #ffffff;">Watch Rick's Journey here</span></a></div></div>
+
+</div>
+
+      </div>
+    </div>
+  </div></div>
+      <div class="shg-c-lg-5 shg-c-md-5 shg-c-sm-5 shg-c-xs-12"></div>
+      
+      
+     
+      
+    </div>
+  </div>
+
+      </div>
+    </div>
+  </div></div>
+   
+      
+      
+    </div>
+  </div>
+
+
+      </div>
+    </div>
+  </div></div>
+      
+        <div class="shg-c-lg-1 shg-c-md-1 shg-c-sm-1 shg-c-xs-12"></div>
+      
+    </div>
+  </div>
+
+
+<script type="text/javascript" src="https://cdn.getshogun.com/5/613262f5f5c97f00aa8ca070.js" async></script>
+</div>
+
+
+    <!-- Rick D. End-->
+    
+ <!-- from client -->
+  <link rel="stylesheet" href="/content/css/stamped-frontpage/style.css">
+<div class="customer-review-wrap">
+    <div customer-review-title>Customer Show</div>
+    <div customer-review-section>    
+    </div>
+    <div customer-review-button>
+        <a href="https://www.superhairpieces.com/reviews-and-testimonials/" target="_blank">View more</a>
+    </div>    
+</div>
+<script src="/content/js/stamped-frontpage/script.js"></script>
+
+ <!-- end from client -->
+
+    
+
+    <!--TESTEMONIAL SECTION -->
+    <!-- <section class="section-stories testemonial-slider" data-slick='{
+        "dots": true,
+        "arrows": true,
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "lazyLoad": "ondemand"
+         }'> 
+    
+    <div class="cta-row">
+            <div class="story">
+                <div class="story__text">
+                    <h3>Aug 13rd, 2020  - Very Happy</h3>
+                    <p>Been buying products for about 6 years now & never had an issue always top quality </p>
+                    <p class="author-mobile">-  tangohair</p>
+                </div>
+            </div>
+        </div>
+        
+    </section> -->
+    
+{{!--    
+
+
+    {{#if products.top_sellers}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    {{/if}}
+
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+    
+--}}
+<style>
+        .blog-container{padding:0 5rem 2rem;visibility: hidden;}a.blog-wrapper{text-align:center;text-decoration:none;margin:0 2rem 1rem}.blog-wrapper:hover{box-shadow:0 0 32px 0 #efefef;transform:translateY(-5px)}.blog-wrapper img{width:100%}.blog-wrapper .blog-card-content{padding:1.3rem}.blog-card-content .blog-date{color:#757575;font-weight:200;margin-bottom:1rem}.blog-card-content .blog-title{font-size:1.1rem;margin-bottom:1rem;font-weight:600}.blog-card-content .blog-summary{text-align:justify;padding:0 .5rem;position:relative;overflow:hidden}.blog-card-content .blog-summary::after{content:"";background-image:linear-gradient(rgba(255,255,255,0.6),white,rgba(255,255,255,0.7));z-index:99;position:absolute;bottom:-2rem;left:0;width:100%;height:5rem}@media only screen and (max-width:1024px){.blog-container{padding:0 3rem 2rem}.blog-wrapper .blog-card-content{padding:1rem}}@media only screen and (max-width:800px){.blog-container{padding:0 2rem 2rem}.blog-wrapper .blog-card-content{padding:.8rem}}@media only screen and (max-width:375px){.blog-container{padding:0 1rem 2rem}.blog-wrapper .blog-card-content{padding:.5rem}}
+    </style>
+    <div class="blog-container">        
+        <h3 class="page-heading">Our blogs</h3>
+        <div        
+            data-slick='{
+                "dots": true,                
+                "slidesToShow": 6,
+                "slidesToScroll": 1,
+                "lazyLoad": "anticipated",                
+                "responsive": [
+                    {
+                        "breakpoint": 1600,
+                        "settings": {                    
+                            "slidesToShow": 5
+                        }
+                    },
+                    {
+                        "breakpoint": 1375,
+                        "settings": {                    
+                            "slidesToShow": 4
+                        }
+                    },
+                    {
+                        "breakpoint": 1024,
+                        "settings": {
+                            "slidesToShow": 3
+                        }
+                    },
+                    {
+                        "breakpoint": 768,
+                        "settings": {
+                            "slidesToShow": 2
+                        }
+                    },
+                    {
+                        "breakpoint": 575,
+                        "settings": {                   
+                            "slidesToShow": 1,
+                            "adaptiveHeight": true,
+                            "dots": false                            
+                        }
+                    }
+                ]
+            }'
+        >
+            {{#each blog.recent_posts}}
+            <a class="blog-wrapper" href="{{url}}" target="_blank">
+                <div>
+                    <div>
+                        <img src="{{getImage thumbnail}}" alt="{{thumbnail.alt}}" title="{{thumbnail.alt}}">
+                    </div>
+                    <div class="blog-card-content">                        
+                        <div class="blog-title">{{title}}</div>                        
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+
+    
+</div>
+<script src="/content/js/homepage.min.js" defer></script>
+{{/partial}}
+{{> layout/base}}
+

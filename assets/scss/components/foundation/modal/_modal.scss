@@ -1,0 +1,65 @@
+// =============================================================================
+// MODAL (CSS)
+// =============================================================================
+
+
+.modal {
+    // scss-lint:disable ImportantRule
+    left: 50%;
+    margin: 0 auto;
+    max-height: 90%;
+    max-width: 95%;
+    min-height: 240px;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    right: 0;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.modal--large {
+    @include breakpoint("large") {
+        width: $modal-width--large;
+    }
+}
+
+.modal-header {
+    padding-left: $reveal-modal-paddingHorizontal;
+    padding-right: remCalc($reveal-close-height) + $reveal-close-side;
+}
+
+.modal-header-title {
+    font-size: fontSize("large");
+    text-align: center;
+
+    @include breakpoint("medium") {
+        font-size: fontSize("larger");
+    }
+}
+
+.modal-close {
+    @include square($reveal-close-height);
+    color: stencilColor("icon-color");
+    font-size: 26px;
+    line-height: remCalc($reveal-close-height);
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    z-index: zIndex("high");
+
+    @include breakpoint("medium") {
+        font-size: 32px;
+    }
+
+    &:hover {
+        color: stencilColor("icon-color-hover");
+    }
+}
+
+.modal-body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: $reveal-modal-padding;
+}

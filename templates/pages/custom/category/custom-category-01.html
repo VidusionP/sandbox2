@@ -1,0 +1,152 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "hero"}}
+
+
+<style>
+   .cat-hero{min-height:51vw}.cat-hero picture{animation:fadeIn ease 2s;-webkit-animation:fadeIn ease 2s;-moz-animation:fadeIn ease 2s;-o-animation:fadeIn ease 2s;-ms-animation:fadeIn ease 2s}@keyframes fadeIn{0%{opacity:0;display:none}70%{display:block}100%{opacity:1}}@-moz-keyframes fadeIn{0%{opacity:0;display:none}70%{display:block}100%{opacity:1}}@-webkit-keyframes fadeIn{0%{opacity:0;display:none}70%{display:block}100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0;display:none}70%{display:block}100%{opacity:1}}@-ms-keyframes fadeIn{0%{opacity:0;display:none}70%{display:block}100%{opacity:1}}@media only screen and (max-width: 800px){.cat-menu ul li a{color:#fff!important}}
+</style>
+
+    <div class="cat-menu">
+        <ul>
+            {{#each category.subcategories}}
+                <li><a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+       <section class="cat-hero">
+           <picture>
+        </picture>
+
+    </section>
+
+    <!-- <section class="cat-hero">
+        <img src="/product_images/uploaded_images/men-hero.jpg">
+        
+    </section> -->
+   <script>
+    function languageSet(e){let i=document.querySelectorAll(".cat-menu ul li a");"fr"==e?(i.forEach(function(e){e.style.color="#fff"}),document.querySelector(".cat-hero").innerHTML='<picture> <source media="(min-width:1020px)" srcset="/product_images/uploaded_images/men-fr-1920.jpg"> <source media="(min-width:900px)" srcset="/product_images/uploaded_images/men-fr-1020.jpg"> <source media="(min-width:700px)" srcset="/product_images/uploaded_images/men-fr-900.jpg"><img loading="lazy" src="/product_images/uploaded_images/men-fr-700.jpg" alt="Super postiches"> </picture>'):"de"==e?(i.forEach(function(e){e.style.color="#fff"}),document.querySelector(".cat-hero").innerHTML='<picture> <source media="(min-width:1020px)" srcset="/product_images/uploaded_images/men-de-1920.jpg"> <source media="(min-width:900px)" srcset="/product_images/uploaded_images/men-de-1020.jpg"> <source media="(min-width:700px)" srcset="/product_images/uploaded_images/men-de-900.jpg"><img loading="lazy" src="/product_images/uploaded_images/men-de-700.jpg" alt="Super Haarteile"> </picture>'):"es"==e?(i.forEach(function(e){e.style.color="#333"}),document.querySelector(".cat-hero").innerHTML='<picture> <source media="(min-width:1020px)" srcset="/product_images/uploaded_images/men-es-1920.jpg"> <source media="(min-width:900px)" srcset="/product_images/uploaded_images/men-es-1020.jpg"> <source media="(min-width:700px)" srcset="/product_images/uploaded_images/men-es-900.jpg"><img loading="lazy" src="/product_images/uploaded_images/men-es-700.jpg" alt="Súper piezas de cabello"> </picture>'):(i.forEach(function(e){e.style.color="#fff"}),document.querySelector(".cat-hero").innerHTML='<picture> <source media="(min-width:1020px)" srcset="/product_images/uploaded_images/men-en-1920.jpg"> <source media="(min-width:900px)" srcset="/product_images/uploaded_images/men-en-1020.jpg"> <source media="(min-width:700px)" srcset="/product_images/uploaded_images/men-en-900.jpg"><img loading="lazy" src="/product_images/uploaded_images/men-en-700.jpg" alt="Super Hair Pieces"> </picture>')}Weglot.on("switchersReady",()=>{languageSet(Weglot.getCurrentLang())}),window.location.href.includes("www.superhairpieces.com")&&Weglot.on("languageChanged",()=>{languageSet(Weglot.getCurrentLang())});
+    </script>
+
+
+
+{{/partial}}
+
+{{#partial "page"}}
+
+<div class="custom-cat men">
+    
+    
+    <section class="cta-row">
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h1>Men’s Hair Systems</h1>
+                    <h2>In Stock</h2>
+                    <p>Superhairpieces has a large inventory of men's toupee and wig hairpieces. These human hair replacement systems for men cover areas affected by hair loss, balding or thinning hair and provide more hair coverage on your head. We offer thin skin (bio skin) bases, monofilament with poly base durable hairpieces and lace front toupees that combine natural looking and durability. We also have a super natural looking full Swiss lace French lace hairpiece as part of our stock men’s toupee wig. Hairpieces come in high and low density while they are also hand made with European texture Indian Human Hair. Freestyle for parting line and hairstyle is also included in our toupees. We are your best resource for male hair loss solutions and hair systems! Warehouses located in Florida, USA and Toronto, Canada. Next day, fast delivery with easy returns and exchanges!</p>
+                    <a href="/in-stock-1/" class="button">View Stock Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/men-cta-01.jpg" alt="Men's Toupee">
+        </div>    
+    </section>
+    
+    <section class="cta-row">
+        <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/men-cta-02.jpg" alt="hair system for men">
+        </div> 
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h2>Online Service</h2>
+                    <p>We have many male clients struggling to find the right hairstylist to style their brand new hair system, or local hair replacement centers are not willing to style a hairpiece for them. Now, you can purchase the online styling while you buy the men's toupee from us. You can select the hairstyle number as well as the hair length on the side and the back. This hairpiece ready-to-wear service can also be done with your used toupee, hairpiece under repair or even simply a photo you've picked up from your old album. Our onsite hair stylists have been working with hairpieces everyday and they are all hairpiece professionals. Your hairpiece can be styled with layers, and we can thin down the density as needed. If you like the hair to be more curly or wavy, you can also select the online perm service.</p>
+                    <a href="/online-styling-1/" class="button">Order Online Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    <section class="cta-row">
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-inner">
+                    <h2>Supplies</h2>
+                    <p>Inventory of Hairpiece supplies for Installation and attachment, Manufactured in USA by Walker, True, Keeper and Wet N Wavy, Keune, Amika. 3M daily tape, Red tape for 2 days, No shine, Blue tape and Super Tape, Brown Cloth Tape, Solvent like C22, Ghoster Buster, Rapid Release, KP solvent, scalp protector,Knot Sealer, Shampoo, Conditioner and leave in conditioner for Hairpiece  </p>
+                    <a href="/accessories/" class="button">Order Supplies</a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <img class="cta-img" src="/product_images/uploaded_images/men-cta-03.jpg" alt="hair replacement for men">
+        </div>    
+    </section>
+</div>
+
+{{/partial}}
+
+
+{{#partial "signup"}}
+    <section class="cat-join mens" style="background-image: url(/product_images/uploaded_images/men-signup.jpg);">
+        <div class="cat-join-inner">
+            <h3>Stock Hairpiece Won't meet your requirement?</h3>
+            <p>Order custom made hairpiece to fit for your specific needs,<br>Order Today and receive it in 9 weeks!</p>
+            <a href="/mens-hairpiece-custom-made-2/" class="button">Order Now</a>
+        </div>
+    </section>
+{{/partial}}
+
+
+
+{{!--
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if category.image}}
+    <img src="{{getImage category.image 'zoom_size'}}">
+{{/if}}
+<h1 class="page-heading">{{category.name}}</h1>
+{{{category.description}}}
+{{{snippet 'categories'}}}
+<div class="page">
+    {{#or category.subcategories category.faceted_search_enabled}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else}}
+        {{#if theme_settings.shop_by_price_visible}}
+            <aside class="page-sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/if}}
+    {{/or}}
+    <main class="page-content" id="product-listing-container">
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    </main>
+</div>
+
+{{/partial}}
+
+--}}
+{{> layout/base}}

@@ -1,0 +1,873 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: 24
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+<link rel="stylesheet" href="/content/css/category.min.css">
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if category.image}}
+    <img src="{{getImage category.image 'zoom_size'}}">
+{{/if}}
+<h1 class="page-heading category-heading">
+    <span class="category-name" {{#if category.subcategories}}has-sub{{/if}}>{{category.name}}</span>
+</h1>
+{{>components/category/subcategories}}
+<div class="category-description-wrap-top">
+{{{category.description}}}
+</div>
+{{{snippet 'categories'}}}
+<div class="page">
+    {{#or category.subcategories category.faceted_search_enabled}}
+
+            {{> components/category/sidebar}}
+
+    {{else}}
+        {{#if theme_settings.shop_by_price_visible}}
+
+                {{> components/category/sidebar}}
+
+        {{/if}}
+    {{/or}}
+    <main class="page-content" id="product-listing-container">
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    </main>
+</div>
+{{#if breadcrumbs.[3].name "==" "Customized Stock"}}
+<link rel="stylesheet" href="/content/css/category.modal.min.css">
+<div id="faq-section">
+    <div class="faq-wrap">
+        <h2>
+            <span class="mobile">FAQs</span>
+            <span class="pc">Frequently Asked Questions</span>
+        </h2>
+        <div class="faq-accordion">
+            <div class="faq-accordion-item">
+                <button aria-expanded="true">
+                    <h3 class="faq-accordion-title" step="1.">Pre-Order fulfillment rate during the pandemic, how long do you have to wait?</h3>
+                    <span class="faq-icon" aria-hidden="false"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>
+                        The average waiting time for pre-orders is <strong>2 month for Basic version, 3 months for lace-based</strong> hairpieces and <strong>2-3 months for skin-based</strong> hairpieces. However, your order may arrive much sooner if the factory was already working on that particular unit before you placed the order.
+                    </p>
+                    <p>Here's how it looks now:</p>
+                    <center>
+                        <img src="/content/images/pre-orders-chart1.jpg" alt="pre-orders 2021" loading="lazy" onclick="onZoomImg(event)" />
+                    </center>
+                    <p>And here's the progress we have made since last month:</p>
+                    <center>
+                        <img src="/content/images/pre-orders-chart.jpg" alt="pre-order" loading="lazy" onclick="onZoomImg(event)" />
+                    </center>
+                </div>
+
+            </div>
+            <div class="faq-accordion-item">
+                <button aria-expanded="false">
+                    <h3 class="faq-accordion-title" step="2.">How do I know when I will receive my pre-order?</h3>
+                    <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    {{#if breadcrumbs.[1].name "==" "Men"}}
+                    <p>
+                        Pre-order might take up to 3 months, or 4 months for Lace and Men's stock hairpieces . Once we receive your pre-order in our warehouse in Florida, US, and the hair system is ready to ship out, you will receive a notification email from us.
+                    </p>
+                    {{else}}
+                    <p>
+                        Pre-order might take up to 3 months, or 4 months for Lace and Women's stock hairpieces . Once we receive your pre-order in our warehouse in Florida, US, and the hair system is ready to ship out, you will receive a notification email from us.
+                    </p>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <button aria-expanded="false">
+                    <h3 class="faq-accordion-title" step="3.">Why should I need to place a pre-order?</h3><span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>
+                        That is the best option at the moment considering the issue with inventory availability caused by COVID-19 pandemic, and the very high demand for hair systems.
+                    </p>
+                    <p>By placing a pre-order, you can sleep soundly ensuring that a few months from now, the hair system and the color that you prefer will be available when you need it most, rather than looking around for a similar hair system with a color that you have never tried before!</p>
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <button aria-expanded="false">
+                    <h3 class="faq-accordion-title" step="4.">Why did my pre-order come before the given 3-4 months?</h3><span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>
+                        If your order came earlier, that means the stock unit you ordered was one of the ones the factory was already working on before you placed your order. At the time we do not know the progress of each unit the factory is currently working on. By placing a pre-order, you are placed on a priority list which is a first come first serve list.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-accordion-item">
+                <button aria-expanded="false">
+                    <h3 class="faq-accordion-title" step="5.">Can I cancel a pre-order?</h3><span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>
+                        Yes, you can cancel a pre-order as long as the pre-order has the standard stock specifications. Meaning, when you ordered it, you did not change the density and size of the stock unit. If the density or size were changed, then the pre-order is the final sale and cannot be cancelled.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModal1" class="modal1"> <span class="close1">&times;</span><img class="modal-content1" id="img01" /></div>
+<script src="/content/js/category.modal.min.js"></script>
+{{else if breadcrumbs.[2].name "==" "Custom Made"}}
+<link rel="stylesheet" href="/content/css/category.modal.min.css">
+<div id="faq-section">
+    <div class="faq-wrap">
+        <h2>
+            <span class="mobile">FAQs</span>
+            <span class="pc">Frequently Asked Questions</span>
+        </h2>
+        <div class="faq-accordion">
+            <div class="faq-accordion-item">
+                <button aria-expanded="true">
+                    <h3 class="faq-accordion-title" step="1.">Custom Order fulfillment rate during the pandemic, how long do you have to wait?</h3>
+                    <span class="faq-icon" aria-hidden="false"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>There's a good chance this month you will get your custom order placed in 2-3 months ago (2-3 months waiting time).</p>
+                    <p>However, with all the disruptions and uncertainties during the pandemic —and depending on the type of hairpiece you order— the average waiting time for custom orders is <strong> 4 months</strong>.</p>
+                    <p>Here's how it looks now</p>
+                    <center>
+                        <img src="/content/images/custom-order-chart1.jpg" alt="custom order 2021" loading="lazy" onclick="onZoomImg(event)" />
+                    </center>
+                    <p>And here's our custom order <span style="text-decoration: underline;">fulfillment progress since last month</span>:</p>
+                    <center>
+                        <img src="/content/images/custom-order-chart.jpg" alt="custom order" loading="lazy" onclick="onZoomImg(event)" />
+                    </center>
+                </div>
+            </div>  
+            {{#if breadcrumbs.[3].name "==" "Full Cap Wig for Women"}}
+            <div class="faq-accordion-item">
+                <button aria-expanded="true">
+                    <h3 class="faq-accordion-title" step="2.">Why should you select a custom made human hair wig?
+                    </h3>
+                    <span class="faq-icon" aria-hidden="false"></span>
+                </button>
+                <div class="faq-accordion-content">
+                    <p>Custom made human hair wigs are a great option for those who prefer a customized and unique wig tailored to their needs from start to finish! With a custom order, you can customize the following to get the highest quality and natural looking wig that you desire:</p>
+                    <ul>
+                        <li>Hair color - Select the hair color of your choice for your wig.</li>
+                        <li>Hair density - If you prefer more volume or hair coverage on your head, you can select a higher hair density as per your needs.</li>
+                        <li>Hair length - Whether you prefer shorter or longer hair, you can select your desired length with a custom order.</li>
+                        <li>Hair type - Do you prefer Indian human or Chinese human hair? Or Yaki human hair? Now you can pick the hair type best suited for you.</li>
+                        <li>Hair style - If you require the hair to be styled in a certain way, you have the option of doing that as well.</li>
+                        <li>Wig size - Have a smaller-sized head? Or a particularly large one? You can select the size that fits you best while you can also mail in a template or specifically list the length.</li>
+                        <li>Base skin tone - Your base will need to match your skin tone so that your wig looks even more natural on you.</li>
+                    </ul>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+<div id="myModal1" class="modal1"> <span class="close1">&times;</span><img class="modal-content1" id="img01" /></div>
+<script src="/content/js/category.modal.min.js"></script>
+{{else if breadcrumbs.[1].name "==" "Extensions"}}
+    {{#if breadcrumbs.[2].name "==" "Tape In"}}
+    <div id="faq-section">
+        <div class="faq-wrap">
+            <h2>
+                <span class="mobile">FAQs</span>
+                <span class="pc">Frequently Asked Questions</span>
+            </h2>
+            <div class="faq-accordion">
+                <div class="faq-accordion-item">
+                    <button aria-expanded="true">
+                        <h3 class="faq-accordion-title" step="1.">How long do tape in hair extensions last?</h3><span class="faq-icon" aria-hidden="false"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Each installation lasts 6-8 weeks depending on the speed of the client's hair growth. You need to book your clients to do a re-taping and reinstallation service to move the tape in extension up to the root for the hair again. Depending on the quality of the hair, and the clients wearing and maintenance habits, the tape in extension can be reinstalled 3-6 times. We recommend 3 reinstallations for our 3A/4A hair extensions and 6 reinstallations for our 5A/6A hair extensions. Overall, 3A/4A tape in extensions will last 3-5 months and 5A/6A tape in extensions will last 6-10 months.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="2.">How much does tape in hair extensions cost?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            The cost of tape extensions depends on 3 factors; the length, quality, and colour. Depending on what length, quality, and colour you select, the price will change.
+                        </p>                        
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="3.">How to put in tape in hair extensions?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            First, wash and dry your hair so your extensions last longer. Then part your hair at the back and apply the extension right near the scalp where your hair is parted. Take a thin portion of your hair and place it below the extension before applying another extension to sandwich it. Make sure to press the tape in extensions firmly for 10-20 seconds and then you're all set. Repeat the process for others.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="4.">How to wash tape in hair extensions?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Hair extensions tend to tangle so it's important to brush your hair regularly. When you take a shower, apply shampoo right at the roots of your hair extensions and work your way down. Apply conditioner, wash, and dry your hair with a towel carefully. Use a hair dryer to ensure none of your hair extensions are wet.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="5.">How to remove tape in hair extensions at home?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Tie your hair up so your extensions are in full view. Apply a non-chemical tape glue remover to the extension tape and let it seep for a bit before removing the extension. You can also apply the remover for any leftover residue on your hair. <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-remove-clean-prep-tape-extensions/">Read More</a>
+                        </p>
+                    </div>
+                </div>
+                 <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="6.">How to choose the correct length of hair extensions?</h3>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            In general, we would recommend a hair extension length at a maximum of 3" to 4" inches more than your natural hair length, but it also depends on your personal preferences. We also recommend having your natural hair length be at least 4’’ to 5’’ inches long to help you conceal and blend the extensions into your hair. Guide: <a href="//www.superhairpieces.com/toupee-wig-hair-system-blog/guide-how-to-choose-the-correct-length-of-hair-extensions/" target="_blank">Hair Extension Length</a>
+                        </p>
+                    </div>
+                </div>
+                 <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="7.">Colour discrepancy between our 3A/4A extensions and the colour ring</h3>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Please note that there is a colour discrepancy between our 3A/4A extensions and the colour ring. The colour ring matches more to our 5A/6A extensions as they are made with premium Chinese hair. The 3A/4A extensions are made with a mix of Indian/Chinese hair so the colours are a little off, notably in the blondes due to the quality of the hair. We are currently working on swatches that better match the 3A/4A quality hair colours. Keep posted on latest product updates by subscribing to Superhairpieces.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{else if breadcrumbs.[3].name '==' 'Eyelash extension'}}
+    <div id="faq-section">
+        <div class="faq-wrap">
+            <h2>
+                <span class="mobile">FAQs</span>
+                <span class="pc">Frequently Asked Questions</span>
+            </h2>
+            <div class="faq-accordion">
+                <div class="faq-accordion-item">
+                    <button aria-expanded="true">
+                        <h3 class="faq-accordion-title" step="1.">How to apply eyelash extensions? Is it safe?</h3><span class="faq-icon" aria-hidden="false"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            <strong>Note:</strong> It may be best to have a professional install them for you. Make sure to clean your eye area with a cleanser first. Apply an eye patch to the lashes you aren’t applying yet (lower or upper) so they don't make contact as you apply the extensions on the other set of lashes. Brush the lashes you are applying extensions to so that none are tangled. Apply the lash extensions one by one using proper eyelash glue. Once they are bonded, allow the glue to dry for a couple of minutes. Repeat this process for the other set of lashes.
+                        </p>
+                        <p>Eyelash extensions are very safe as long as they are installed correctly with the right adhesive and are maintained properly.</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="2.">How long do eyelash extensions last?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Lash extensions usually last anywhere from two to four weeks. However, they can also last longer depending on how well they are maintained and cleaned.
+                        </p>                        
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="3.">What's the difference between D curl and DD curl?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Both D and DD curls are types of lash extensions that are designed to produce a more curled look when applied on your natural lashes. The difference between them is simply that the DD has a tighter and more pronounced and dramatic curl compared to the D curl.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="4.">How to remove eyelash extensions at home?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            <strong>Note: </strong>It is best to have a professional remove them for your safety. Make sure to use an oil-free remover. There are two types of remover you can use -- the cream remover or the gel remover. The cream remover is more ideal for those with sensitive skin as it causes less irritation. Apply an eye patch to the lashes you aren’t removing yet (upper or lower). Using a cotton swab, apply the remover from the base of your natural lashes up to the extensions. Make sure the eyes are closed during this process. Try not to make contact with the skin or lash line. Let it sit for a few minutes to allow the bonds to weaken. Gently slide them off with a cotton swab and they should come off easily. You can also use a tweezer but be careful as it can damage your natural lashes. Using fresh cotton swabs, remove any leftover remover on the natural lashes. Gently remove the eye patch and apply foam cleanser thoroughly to your lashes before rinsing. Repeat the process for the other set of lashes.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="5.">Do eyelash extensions damage your natural lashes?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            No, lash extensions do not damage your natural eyelashes as long as they are applied and maintained properly.
+                        </p>
+                    </div>
+                </div>                
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="6.">Can I sleep or shower with eyelash extensions?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Yes, but avoid getting your lashes wet within the first 48 hours after application. You can sleep and shower with eyelash extensions but some precautions need to be taken. For more information on <a href="https://superhairpieces.ca/blog/can-you-sleep-with-eyelash-extensions/" target="_blank">sleeping with lash extensions</a>. For more information on <a href="https://superhairpieces.ca/blog/can-you-shower-with-eyelash-extensions/" target="_blank">showering with lash extensions</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title" step="7.">Why are my eyelash extensions falling out?</h3><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            The first major reason your eyelash extensions are falling out could be natural shedding; as your natural lashes shed, so will the extensions that are attached to them. However, there could be many other reasons as to why your extensions are falling. <a href="https://superhairpieces.ca/blog/6-reasons-why-your-eyelash-extensions-are-falling-out/" target="_blank">Click here</a> to learn more and how to take care of your lash extensions.
+                        </p>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+    {{/if}}
+{{else if breadcrumbs.[1].name '==' 'Men'}}
+    {{#lengthEqual breadcrumbs 3}} 
+        {{#if breadcrumbs.[2].name '==' 'In Stock'}}
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <h2>
+                    <span class="mobile">FAQs</span>
+                    <span class="pc">Frequently Asked Questions</span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h3 class="faq-accordion-title" step="1.">What are hair replacement systems?</h3>
+                            <span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                A hair replacement system — also known as a non-surgical hair replacement system — is any sort of hairpiece that replaces your thinning or balding hair. Examples of hair replacement systems include human hair wigs and men's toupees which not only conceal hair loss, but provide additional hair coverage to your scalp.
+                            </p>   
+                        </div>                 
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">What is a toupee?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>Toupees — also known as partial wigs or half-wigs — are a type of hair replacement system designed to cover certain areas of the scalp but not the full head. These hairpieces are typically worn by men as they cover the main areas affected by male pattern baldness. Superhairpieces offers a wide range of natural looking, comfortable and durable men's toupees.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">What is the difference between a toupee and a wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>A wig covers the entire scalp of the hair system wearer while a toupee only covers the areas affected by male pattern baldness. This is because the majority of balding men will still have hair on the sides and back of their heads (donor hair) so toupees only cover the balding or thinning areas of hair.</p>
+                            <p>Read more: <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/what-is-the-difference-between-a-wig-and-a-toupee/" target="_blank">Differences between wigs and toupees</a></p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="4.">How do I buy the perfect hair system for myself?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                There are many factors to consider when buying a hair system that is ideal for yourself. To help make things easier, we have provided the following resources to help you pick out the perfect hair system.
+                            </p>
+                            <p><a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/beginners-guide-how-to-buy-toupee-or-wig-hairpieces/" target="_blank">Beginners guide: How to buy a toupee or wig</a></p>
+                            <p><a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-choose-the-right-hair-density-for-your-wig-or-toupee/" target="_blank">How to choose the right hair density for your wig or toupee</a></p>
+                            <p><a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-choose-a-color-for-your-wig/" target="_blank">How to select a hair color for your hair system</a></p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="5.">How do you wear a toupee hair system?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                You just need a few items to install or apply your toupee hair system on your scalp and it only takes a couple of steps. You can read about it below or watch our hairstylist install a toupee on one of our clients.
+                            </p>
+                            <p><a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-attach-and-remove-a-hair-replacement-system/" target="_blank">How to attach and remove a hair replacement system</a></p>
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/pooa01EyCxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{else lengthEqual breadcrumbs 4}}
+        {{#if breadcrumbs.[3].name '==' 'Search Toupee Wigs for men'}}
+        <style>
+            .yt-wrap {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 1rem;
+            }
+            .yt-wrap iframe {
+                width: 100%;
+            }
+            .faq-accordion-title {
+                font-size: 22px;
+            }                
+            @media (max-width:900px) {
+                .yt-wrap {
+                    display: block;
+                }
+                .yt-wrap iframe {
+                    width: 560px;
+                    max-width: 100%;
+                    margin: 0 auto 1rem;
+                    display: block;
+                }
+            }
+        </style>
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h2 class="faq-accordion-title" step="1.">Why do you need toupees wigs for men?</h2>
+                            <span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                For many men who deal with male pattern baldness, they simply accept their balding or thinning hair or go ahead and do a complete shave. While for many, the look can suit them, for others, they don't quite have the head shape for a completely bald look or they simply don't look as good in general, looking many years older than they are. This is where toupee wigs for men are extremely useful. For any balding man who misses their hair, men's hair pieces can instantly give them a full head of hair again. If installed and styled correctly, it will look extremely natural looking and realistic while providing them with a huge confidence boost. Hair systems can truly bring your life back and with Superhairpieces offering a wide range of men's toupees in various styles, sizes and colors, there is one out there for you!
+                            </p>
+                            <h3>Why are wigs better than a hair transplant?</h3>
+                            <p>Hair transplants are one of the popular options for men dealing with hair loss. However, men's wigs, also known as toupees, hairpieces and hair systems, are a type of hair replacement system that provides a number of benefits compared to hair transplants. For one, you get instant results and don't have to wait a year to see any progress like with a hair transplant. It's also irreversible so if you don't like the hair system, you can simply take it off which is not the case with a botched hair transplant. It is also much cheaper, especially upfront, while there is no risk of infections either as it is a non-surgical hair replacement.</p>
+
+                        <h3>Shop human hair pieces for men</h3>
+                            <p>Superhairpieces provides a number of different men's hair systems and wigs for men. These range from thin skin poly hair systems, v-looped hair systems, <a href="/full-lace-base-mens-toupee-1/">French lace hair systems</a>, Swiss lace hair systems, <a href="/silk-top-mens-toupee-1/">monofilament hair systems</a>, lace front hair systems, full cap wigs for men and plenty more depending on your preferences!</p>
+                            <p>If you require further customization, you can also get a <a href="/mens-hairpiece-custom-made-2/">custom made hair system</a> so that it fits your exact needs as well as head measurements. Customization options include but are not limited to hair length, hair type, bleached knots, base color, hair density and plenty more!</p>
+                        </div>                 
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">For first-time toupee hair system buyers</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                If you are a first-time toupee hair system buyer, you will definitely need some help and resources. Superhairpieces is here to provide you with all the help you need to <a href="https://www.superhairpieces.com/starting-a-hair-system-journey/" target="_blank">prepare for your first men's hairpiece</a>. You can call or text us at 1-866-814-7879 or check out our various guides and <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/" target="_blank">blogs</a>.
+                            </p>
+                            <p class="yt-wrap">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/x4wiDYnV3xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/xAo4UqIjY-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </p>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    {{else lengthEqual breadcrumbs 5}}
+        {{#if breadcrumbs.[4].name '==' 'Poly Skin Mens Toupee'}}
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <h2>
+                    <span class="mobile">FAQs</span>
+                    <span class="pc">Frequently Asked Questions</span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h3 class="faq-accordion-title" step="1.">What is a poly/skin base hair system?</h3>
+                            <span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                A poly base toupee hair system — also known as a skin base hair system or thin skin hairpiece — is made of pure polyurethane material. The hair used is directly knotted onto the poly toupee and sealed off by layers of more clear poly skin. These hair systems are generally some of the thinnest and lightest bases with many offering a very natural and realistic look for the wearer.
+                            </p>   
+                            <p>Here is how Superhairpieces client Rick looks with a skin base system:</p>
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/6SZnnDAqVOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                        </div>                 
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">Why should I use a poly skin toupee?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>Poly skin toupees are generally very easy to install, maintain and remove in addition to being a very comfortable and lightweight invisible hair replacement option. They are ideal for those who don't have the time to deal with maintenance as well as those who prefer a hair system that offers a very natural look more than anything else, especially if they opt for the very thin skin hair systems such as the M111 or HD111 hairpieces Superhairpieces offer.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">How long does a poly hair system last?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>This depends on the particular poly base toupee but in general, most skin bases — especially thin skin — only last four to six weeks as they are more of a disposable hairpiece. This is because the thinner the skin base, the less durable it is. The M101, on the other hand, has a thickness of 8 mils and is the most durable skin base Superhairpieces offers with a medium to long durability.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="4.">Are poly hair systems breathable?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Because of how thin skin bases are, they are generally not breathable compared to lace or mono units. And so, it is not advised to wear skin bases in warm climates or if you are a very active person. However, not all hair systems that have poly are unbreathable. Many systems such as our M158 include a fusion of lace and poly with four lace windows on the top for breathability and poly on the perimeter for easy installation and maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="5.">Do I use tape or glue to attach a poly/skin base hair system?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>You can use <a href="https://www.superhairpieces.com/liquid-adhesive/" target="_blank">wig glue</a> or <a href="https://www.superhairpieces.com/hairpiece-toupee-tape/" target="_blank">wig tape</a> to attach your poly skin base toupee to your scalp. However, with the M111 and HD111, it is best to use glue given the thinness of their base material and the fact that tape could be seen through the base. Glue, meanwhile, is largely invisible and won’t seep into the poly base either which results in less cleaning required.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="6.">How do you clean a poly base toupee?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>In general, skin bases are meant to be disposed of when removed. However, if you wish to reuse it or require to clean it, you can follow the same method as any other hair system:</p>
+                            <p>
+                                <ol>
+                                    <li>First, brush the hair of your poly base to make sure it is tangle-free and smooth. Start from the roots and brush your way down.</li>
+                                    <li>Rinse and then submerge the base in a large bowl or sink with cold or lukewarm water mixed with <a href="https://www.superhairpieces.com/hair-shampoo/" target="_blank">wig shampoo</a>. Leave it to soak for at least five minutes. Turn the base inside out and soak for another five minutes.</li>
+                                    <li>Drain the water and rinse the base again before applying <a href="https://www.superhairpieces.com/conditioner/" target="_blank">wig conditioner</a> from the ends of the hair and work your way up. Make sure not to touch the base as it can be damaged. Leave the conditioner on the hair for five minutes.</li>
+                                    <li>Rinse the base with cold water and dry off with a towel. Leave to dry on a wig stand afterwards or any place with little to no sunlight.</li>
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="7.">Why is the poly base hair system more suitable for beginners?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>Many poly base hair systems — particularly thin skin models such as the M111 and HD111 — are disposable hairpieces which only last four to six weeks (though they can last longer if maintained well). Because of this, they are more affordable than other systems and ideal for beginners who just want to experiment with hair replacement systems initially and see if it is something right for them.</p>
+                            <p>
+                                Because of the poly material, skin base systems are also generally easy to install, maintain and remove compared to other bases which makes them perfect for first-time hair system wearers who are just starting their journey and/or don’t have time to worry about maintenance. Additionally, the poly material allows more room for error when applying adhesives such as wig tape or wig glue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    {{/lengthEqual}}
+{{else if breadcrumbs.[1].name '==' 'Women'}}
+    {{#lengthEqual breadcrumbs 4}}
+        {{#if breadcrumbs.[3].name '==' 'Hair Toppers In Stock'}}
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <h2>
+                    <span class="mobile">FAQs</span>
+                    <span class="pc">Frequently Asked Questions</span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h3 class="faq-accordion-title" step="1.">Why wear hair toppers for thinning hair?</h3>
+                            <span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Hair toppers are a great option for women with thinning hair as it instantly conceals and covers specific areas on the top of the scalp that are thinning or partially balding. Additionally, they provide plenty of volume and density to your natural hair provided it is blended properly.
+                            </p>   
+                            <ul>
+                                <li><strong>Do hair toppers cause hair loss?</strong> Hair toppers should not have any effect on your hair loss by increasing or decreasing it.</li>
+                                <li><strong>Do hair toppers damage your hair?</strong> Provided they are installed, maintained and removed gently and with care, hair toppers will not damage your existing, natural hair.</li>
+                                <li><strong>Are hair toppers secure?</strong> If your hair topper is installed correctly with the right adhesive/attachment, you should not have any concerns about it not being secure and falling off.</li>
+                            </ul>
+                        </div>                 
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">How do I choose a hair topper color?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>With hair toppers in particular, it is best to choose a color that is closest to your natural hair color given that they only cover part of your hair. That said, there are bigger hair toppers that cover more of the scalp and in the end, it’s always down to one’s personal preference and how they would like their hair to look.</p>
+                            <p><a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-choose-a-color-for-your-wig/" target="_blank">How to choose a hair color</a></p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">How do I attach a hair topper?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>Similar to a wig or toupee or hairpiece, you can use glue or tape to attach your hair topper on your hair loss area whether it is a thinning crown or the top of your head. Using either will allow the hair system to stay flat on your scalp compared to toppers that are attached with clips.</p>
+                            <ul>
+                                <li><strong>Do I use tape or glue to attach hair toppers?</strong> You can use either tape or glue to attach your hair topper depending on which type of adhesive is most comfortable on your scalp.</li>
+                                <li><strong>How do I attach a hair topper with clips?</strong> Simply open the clips, apply the hair topper on the area where you are thinning or balding and clip them on to your natural hair. Make sure the clips have silicon strips so they protect your hair and prevent potential slippage.</li>
+                                <li><strong>How do you secure a hair topper without clips?</strong> You can use glue or tape to attach your hair topper if you prefer not to use clips as they can be bulky if not attached or blended properly. If your hair topper comes with clips, you should be able to remove the clips without affecting the overall hairpiece.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="4.">How do I wash and care for my hair toppers?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Just like any other hair system, you should <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/why-you-should-not-use-regular-shampoo-conditioner-on-your-wig/" target="_blank">use a wig shampoo or wig conditioner</a> or any other that is designed for hairpieces when washing your hair topper.
+                            </p>
+                            <ol>
+                                <li>First, brush the hair of your hair topper to make sure it is tangle-free and smooth.</li>
+                                <li>Rinse and then submerge the hair topper in a large bowl or sink with cold or lukewarm water mixed with <a href="https://www.superhairpieces.com/hair-shampoo/" target="_blank">wig shampoo</a>. Leave it to soak for at least five minutes. Turn the base inside out and soak for another five minutes. You can also wash the hair topper without submerging it by simply rinsing and applying shampoo on it for five minutes.</li>
+                                <li>Drain the water and/or rinse the hair topper again before applying <a href="https://www.superhairpieces.com/conditioner/" target="_blank">wig conditioner</a> from the ends of the hair and work your way up. Make sure not to touch the base as it can be damaged. Leave the conditioner on the hair for five minutes.</li>
+                                <li>Rinse the hair topper with cold water and dry off with a towel. Leave to dry on a wig stand afterwards.</li>
+                            </ol>
+                            <p>As far as caring and maintaining the hair topper is concerned, make sure to clean it at least every other week if not once a week. If you’re not using your hair topper, take it off and store it on a stand or mannequin, but make sure to avoid exposure to sunlight. Following these steps will help prolong your hair topper’s lifespan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="5.">Which one is better: a hair topper or a wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>This depends on your needs and lifestyle. A hair topper is more suitable for you if you have thinning or balding hair only in certain areas such as the crown of the head or if you want to add more density and volume to your hair in general. They are more lightweight and affordable than wigs which are meant to cover the entire head as opposed to certain areas.</p>
+                            <p><center><img src="https://www.superhairpieces.com/product_images/uploaded_images/hair-topper-vs-wig.jpg" width="100%" alt=""></center></p>
+                            <ul>
+                                <li><strong>Are hair toppers more comfortable than wigs?</strong> Hair toppers are more comfortable than wigs simply because they only cover certain areas of the scalp compared to a wig which covers the full scalp. As a result, hair toppers are more lightweight and hence, more comfortable than wigs.</li>
+                            </ul>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+        {{else if breadcrumbs.[3].name '==' 'All Wigs In Stock'}}
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <h2>
+                    <span class="mobile">FAQs</span>
+                    <span class="pc">Frequently Asked Questions</span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h3 class="faq-accordion-title" step="1.">What is a wig?</h3>
+                            <span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Wigs are a type of hair replacement system designed to cover the full head and provide the wearer with full hair coverage. These hairpieces are typically worn by women given the length, however, men can also wear wigs as well.
+                            </p>   
+                            <p>Superhairpieces offers a wide range of natural looking, comfortable and durable human hair wigs for women. This includes full lace and lace front women’s wigs in a variety of colors, textures and styles so you have one that exactly suits your needs.</p>
+                        </div>                 
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">What is better — a full lace wig or a lace front wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>Given that most of our wigs for sale are either full lace wigs or lace front wigs, you may be wondering — which one is better?</p>
+                            <p>Both are similar in that they provide a natural looking front hairline, are easy to install and can last a long time if maintained properly. The differences, however, are that a lace front only provides a natural look in the front hairline while a full lace is natural throughout the hairpiece. However, because of this, full lace wigs for women tend to be more expensive than lace front wigs.</p>
+                            <p>Additionally, full lace wigs may lack the durability of a lace front wig which can utilize a monofilament top for example. So in the end, it all depends on your needs and budget.</p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">How do I select a human hair wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <div><strong>Choose the right base material/cap for your wig</strong></div>
+                                            <div>There are three main base materials in our wigs for sale at Superhairpieces with each having their own unique benefits — lace, skin and monofilament. Although nearly all our women’s wigs use lace in some form (full lace wigs or lace front wigs) which helps provide a natural look for the wearer and is a preferred choice for those with afro-textured hair, there are variations as we offer 100% hand-tied mono top wigs for example. Check out the <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/lace-vs-skin-vs-mono-the-different-hairpiece-bases-explained/" target="_blank">different types of base materials.</a></div>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <div><strong>Choose the right wig hair color</strong></div>
+                                            <div>There are many factors to consider when picking a hair color for your wig. This includes whether the color:</div>
+                                            <ul>
+                                                <li>Matches with your natural hair color</li>
+                                                <li>Matches with your skin tone</li>
+                                                <li>Matches with your eye color</li>
+                                                <li>Is suitable for your age and much more</li>
+                                            </ul>
+                                            <div>You can learn more in our in-depth guide: <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-choose-a-color-for-your-wig/" target="_blank">How to choose a color for your wig.</a></div>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <div><strong>Choose the right size wig for your head</strong></div>
+                                            <div>If you want to know whether your head size will fit with an in-stock wig or you simply want a custom-sized wig, you will need to make the following measurements:</div>
+                                            <ul>
+                                                <li>Circumference of your head</li>
+                                                <li>Front to nape</li>
+                                                <li>Ear to ear across forehead</li>
+                                                <li>Ear to ear over the top</li>
+                                                <li>Temple to temple around the back</li>
+                                                <li>Neck width</li>
+                                            </ul>
+                                            <div>The following is a guide on to perform those measurements so you know the exact dimensions of your head for purchasing a wig online: <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-measure-your-head-size-for-your-wig/" target="_blank">How to measure your head size for your wig.</a></div>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <div><strong>Determine the right hair density for your women's wig</strong></div>
+                                            <div>Hair density is essentially how many strands of hair you have per square centimeter of your scalp or how thick your hair is. The more strands of hair you have, the higher your hair density.</div>
+                                            <div>Choosing the appropriate hair density for your wig depends on a number of factors such as your:</div>
+                                            <ul>
+                                                <li>Hair color</li>
+                                                <li>Hair type (Afro-textured, Asian, Caucasian, Hispanic)</li>
+                                                <li>Age</li>
+                                            </ul>
+                                            <div>Women generally tend to have at least medium hair density (110%) even in their sixties and beyond, but everyone is different and unique. For an in-depth guide on all things hair density and how to pick one that is suitable for your women’s wig, you can refer to the below article: <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-choose-the-right-hair-density-for-your-wig-or-toupee/" target="_blank">How to choose the right hair density for your wig.</a></div>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="4.">What wig care products and/or supplies will I need in addition to the wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>While most wigs for women can be attached simply with the silicon strips that come with the hairpiece, others prefer to use adhesives for added security and hold. Additionally, other wig products will need to be purchased in order to maintain and wash your hairpiece. These include:</p>
+                            <ul>
+                                <li><a href="https://www.superhairpieces.com/cleaner-solvent-1/" target="_blank">Solvent</a></li>
+                                <li><a href="https://www.superhairpieces.com/hairpiece-toupee-tape/" target="_blank">Wig Tape</a></li>
+                                <li><a href="https://www.superhairpieces.com/liquid-adhesive/" target="_blank">Wig Glue</a></li>
+                                <li><a href="https://www.superhairpieces.com/hair-shampoo/" target="_blank">Wig Shampoo</a></li>
+                                <li><a href="https://www.superhairpieces.com/conditioner/" target="_blank">Wig Conditioner</a></li>
+                                <li><a href="https://www.superhairpieces.com/wig-clips/" target="_blank">Wig Clips</a></li>
+                                <li>Wig brushes and combs</li>
+                            </ul>
+                            <p>For an in-depth guide on <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/beginners-guide-how-to-buy-toupee-or-wig-hairpieces/" target="_blank">how to buy women’s wigs online for beginners</a></p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="5.">Is a wig covered by insurance?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>In some cases, the cost of your wig can be covered by your insurance provider as it can count as a medical expense for those undergoing chemotherapy or alopecia. This mainly depends on the insurance provider or where you are located. It is best to consult with your insurance provider and check if they cover <a href="https://www.superhairpieces.com/medical-wig-solutions" target="_blank">medical wigs.</a></p>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    {{/lengthEqual}}
+{{else if breadcrumbs.[1].name '==' 'Supplies'}}
+    {{#lengthEqual breadcrumbs 4}}
+        {{#if breadcrumbs.[3].name '==' 'Shampoo'}}        
+         <div id="faq-section">
+             <div class="faq-wrap">
+                 <div class="faq-accordion">
+                     <div class="faq-accordion-item">
+                         <button aria-expanded="true">
+                             <h2 class="faq-accordion-title" step="1.">Why should you use wig shampoo on hair systems?</h2>
+                             <span class="faq-icon" aria-hidden="false"></span>
+                         </button>
+                         <div class="faq-accordion-content">
+                             <p>
+                                It's important to use wig shampoo or shampoos that are specifically designed or compatible with hair systems. This is because regular shampoos strip the oils that are present in our hair. However, our scalp produces oils such as sebum that replenishes our hair and keeps it moisturized and hydrated. This is not present in a hair system as the hair is connected to a base material. The end result is your hair system getting dry and straw-like.
+                             </p>
+                             <p>In addition, the chemicals in certain shampoos are not compatible with some hair systems. For example, silicone-based hair products have an oily film which can loosen the knots to the base, especially with lace hair systems, resulting in hair shedding. And so, it’s always recommended to use a hair system or wig shampoos.</p>
+                             <h3>Can you use regular shampoo to wash a wig?</h3>
+                             <p>You can certainly use a regular shampoo on your wigs and toupees. You just need to make sure the shampoo doesn't have chemicals like parabens, sulfates and phthalates which can damage your hair. Additionally, avoid silicone-based products if you’re wearing a lace hair system.</p>
+                         </div>                 
+                     </div>
+                     <div class="faq-accordion-item">
+                         <button aria-expanded="false">
+                             <h3 class="faq-accordion-title" step="2.">How often should you wash a wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                         </button>
+                         <div class="faq-accordion-content">
+                            <p>This depends on the wearer and the base material of the wig or hair system. In general, it's recommended to maintain and wash your hairpiece at least once a week or once every other week to keep it odor-free and in good condition.</p>
+                            <h3>How do you wash a human hair wig without wig shampoo?</h3>
+                            <p>When it comes to washing a wig without wig shampoo, the process is the same as washing your regular hair. If you’re wearing your hairpiece, apply shampoo on your hair once it’s rinsed and create a lather. Rinse it off after a few minutes and apply conditioner if desired.</p>
+                         </div>
+                     </div>      
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">What are the best wig shampoos?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                           <p>If you would prefer to be provided with wig shampoo recommendations, Superhairpieces suggests <a href="/pura-dor-biotin-shampoo-16oz-473ml-original/">Pura d'or shampoo</a>, Brandywine non-static shampoo, <a href="/hydrating-shampoo-for-human-hair-prime-blends-8oz-pure-care-by-beautimark/">Beautimark hydrating shampoo</a> and Progen Nutrifuse nourishing shampoo. These are just a few of the shampoos we offer that are designed for hairpieces. For a full list, you can view our <a href="/hair-care/">hair care products.</a></p>
+                        </div>
+                    </div>                        
+                 </div>
+             </div>
+         </div>
+        {{/if}}
+    {{else lengthEqual breadcrumbs 5}}    
+        {{#if breadcrumbs.[4].name "==" "Back2Natural Conditioner"}}
+        <div id="faq-section">
+            <div class="faq-wrap">
+                <h2>
+                    <span class="mobile">FAQs</span>
+                    <span class="pc">Frequently Asked Questions</span>
+                </h2>
+                <div class="faq-accordion">
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="true">
+                            <h3 class="faq-accordion-title" step="1.">What are the benefits of Back2Natural?</h3><span class="faq-icon" aria-hidden="false"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                The benefits of using conditioners from <a href="/back2natural-shampoo-and-conditioners/">Back2Natural</a> is that there are overwhelming amounts of options that are designated to each individual's hair color from a natural ash brown to dark ash blonde. There are different selections of conditioners depending on the texture and color of your hair. Back2Natural is beneficial for those that are looking to restore their human hair to its original form. The conditioner reverses fading and eliminates unwanted red, orange, and gold tones.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="2.">How often do you apply Back2Natural?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Applying Back2Natural in dry areas of the hair is most effective. Depending on how quickly your hair gets dry is when you will  reapply the product. Applying the product twice a week consistently will result in a more effective restoration of the hair.
+                            </p>                        
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="3.">Can I use Back2Natural on my wig?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                Yes! Back2Natural conditioners can be used on natural hair, hair systems, wigs, hair toppers, extensions, weaves, and other hair units. It’s a versatile conditioner that assists in the process of eliminating undesirable discoloration.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button aria-expanded="false">
+                            <h3 class="faq-accordion-title" step="4.">What damages hair or causes fading?</h3><span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-accordion-content">
+                            <p>
+                                One of the major catalysts to damaging hair is the sun. During warmer and sunnier seasons, hair colors tend to fade and the texture of the hair becomes dry. A solution for this issue is Back2Natural conditioners as the product restores the hair color and texture after consistent use. It is easy to apply and will restore the hair no matter how bad you might think the state of your hair is in.
+                            </p>
+                        </div>
+                    </div>            
+
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    {{/lengthEqual}}
+{{/if}}
+<script src="/content/js/category.min.js"></script>
+
+{{/partial}}
+{{> layout/base}}

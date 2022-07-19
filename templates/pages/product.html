@@ -1,0 +1,39 @@
+---
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_related_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_similar_by_views_count}}
+---
+{{#partial "page"}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+    {{#each product.shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+
+    <!--div itemscope itemtype="http://schema.org/Product"--><div>
+        {{> components/products/product-view schema=false}}
+
+        {{#if product.videos.list.length}}
+            {{> components/products/videos product.videos}}
+        {{/if}}
+
+        {{#if settings.show_product_reviews}}
+            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+        {{/if}}
+
+        {{> components/products/tabs}}
+
+    </div>
+    <script>
+        const items=document.querySelectorAll(".faq-accordion button");function toggleAccordion(){"false"==this.getAttribute("aria-expanded")?this.setAttribute("aria-expanded","true"):this.setAttribute("aria-expanded","false")}items.forEach(t=>t.addEventListener("click",toggleAccordion));
+    </script>
+
+
+{{/partial}}
+{{> layout/base}}

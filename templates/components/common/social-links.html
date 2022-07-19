@@ -1,0 +1,43 @@
+{{#if social_media}}
+        {{#each social_media}}
+            <li class="socialLinks-item">
+                {{#if display_name '===' 'google+'}}
+                    <a href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-google" /></svg>
+                        {{display_name}}
+                    </a>
+                {{else}}
+                    <a href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-{{display_name}}" /></svg>
+                        {{display_name}}
+                    </a>
+                {{/if}}
+            </li>
+        {{/each}}
+                     <li class="socialLinks-item">
+                <a href="https://www.tiktok.com/@superhairpieces" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 2500"><defs><style>.cls-1{fill:#444;}</style></defs><path class="cls-1" d="M2202.38,0H297.62C133.51,0,0,133.51,0,297.62V2202.38C0,2366.49,133.51,2500,297.62,2500H2202.38c164.11,0,297.62-133.51,297.62-297.62V297.62C2500,133.51,2366.49,0,2202.38,0M1964.64,1090.65q-20.48,2-41.07,2.09a445.94,445.94,0,0,1-373.15-201.67V1577.8c0,280.32-227.25,507.56-507.56,507.56S535.3,1858.12,535.3,1577.8s227.24-507.56,507.56-507.56h0c10.59,0,21,1,31.37,1.61V1322c-10.42-1.25-20.66-3.15-31.37-3.15-143.07,0-259,116-259,259s116,259,259,259,269.46-112.73,269.46-255.83l2.5-1166.31h239.29c22.56,214.58,195.58,382.19,410.77,397.92v278"/></svg>
+                        tiktok
+                    </a>
+            </li>
+{{/if}}
+
+{{!--
+{{#if social_media}}
+    <ul class="socialLinks socialLinks--alt">
+        {{#each social_media}}
+            <li class="socialLinks-item">
+                {{#if display_name '===' 'google+'}}
+                    <a href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-google" /></svg>
+                    </a>
+                {{else}}
+                    <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
+                        <svg><use xlink:href="#icon-{{display_name}}" /></svg>
+                    </a>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}
+--}}

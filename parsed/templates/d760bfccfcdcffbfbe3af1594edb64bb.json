@@ -1,0 +1,1 @@
+{"components/common/cookie":"<div class=\"cookieMessage\">\r\n    <div class=\"cookieMessage-container\">\r\n        <div class=\"cookieMessage-text\">\r\n            <p>{{settings.privacy_cookie}}</p>\r\n        </div>\r\n        <button class=\"button button--primary button--small\" data-privacy-accept>{{lang 'cookies.accept'}}</button>\r\n    </div>\r\n</div>\r\n"}

@@ -1,0 +1,302 @@
+<style>
+    .faq-container{margin:0 auto}.faq-accordion .faq-accordion-item{border-bottom:1px solid #e5e5e5}.faq-accordion .faq-accordion-item button[aria-expanded=true]{border-bottom:1px solid #333}.faq-accordion button{position:relative;display:block;text-align:left;width:100%;padding-top:1em;color:#7288a2;font-size:1.15rem;font-weight:400;border:none;background:0 0;outline:0}.faq-accordion button:focus,.faq-accordion button:hover{cursor:pointer;color:#333}.faq-accordion button:focus::after,.faq-accordion button:hover::after{cursor:pointer;color:#333;border:1px solid #333}.faq-accordion button .faq-accordion-title{padding-top:1rem;margin-top:-1rem;padding-right:20px}.faq-accordion button .faq-icon{display:inline-block;position:absolute;top:18px;right:0;width:22px;height:22px;border:1px solid;border-radius:22px}.faq-accordion button .faq-icon::before{display:block;position:absolute;content:"";top:9px;left:5px;width:10px;height:2px;background:currentColor}.faq-accordion button .faq-icon::after{display:block;position:absolute;content:"";top:5px;left:9px;width:2px;height:10px;background:currentColor}.faq-accordion button[aria-expanded=true]{color:#333}.faq-accordion button[aria-expanded=true] .faq-icon::after{width:0}.faq-accordion button[aria-expanded=true]+.faq-accordion-content{opacity:1;max-height:fit-content;max-height:-moz-fit-content;padding:0 .3rem;-webkit-transition:all .2s linear;transition:all .2s linear;will-change:opacity,max-height}.faq-accordion .faq-accordion-content{opacity:0;max-height:0;overflow:hidden;-webkit-transition:opacity .2s linear,max-height .2s linear;transition:opacity .2s linear,max-height .2s linear;will-change:opacity,max-height}.faq-accordion .faq-accordion-content p{font-size:1rem;margin:2em 0}.faq-accordion .faq-accordion-content img{max-width:800px;width:100%;cursor:pointer} .guide-wrap{margin-bottom:0;}.guide-link {margin-bottom: 8px;text-decoration: none;}.guide-link:hover{text-decoration: underline;}
+</style>
+<ul class="tabs" data-tab>
+    <li class="tab is-active">
+        <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
+    </li>
+    <li class="tab">
+        <a href="#tab-shipping-return" class="tab-title">
+            {{lang 'products.shipping_return'}}
+        </a>
+    </li>
+    {{#if product.warranty}}
+        <li class="tab">
+            <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
+        </li>
+    {{/if}}
+    {{#if breadcrumbs.[3].name "==" "Pre-Order"}}
+    <li class="tab">
+        <a href="#tab-faq" class="tab-title">{{lang 'faq.title'}}</a>
+    </li>
+    {{/if}}
+    {{#if product.title "==" "Tape in Hair Extensions 20 Pieces 50 grams Hair"}}
+    <li class="tab">
+        <a href="#tab-faq" class="tab-title">{{lang 'faq.title'}}</a>
+    </li>
+    {{/if}}
+    {{#if breadcrumbs.[2].name "==" "Custom Made"}}
+    <li class="tab">
+        <a href="#tab-faq" class="tab-title">{{lang 'faq.title'}}</a>
+    </li>
+    {{/if}}
+</ul>
+<div class="tabs-contents">
+    <div class="tab-content is-active" id="tab-description">
+        {{{product.description}}}
+        {{{snippet 'product_description'}}}
+    </div>
+    <div class="tab-content" id="tab-shipping-return">
+        <h4>Shipping Policy</h4>
+        <ul>
+            <li>Shipping charges are automatically calculated based on the shipping method, weight of the products, the destination and the number of items in your shopping cart.</li>
+            <li>Please allow 24-72 hours if you select an online styling (base cut and/or haircut).  After completion, your order will be shipped depending on the shipping method you have selected.</li>
+            <li>ALL orders placed online with Overnight Ship must be submitted and received before 4:30pm Eastern Time. Any order placed on the weekend, or on a holiday, will be processed the next business day on the calendar. Please expect delays during holiday season.</li>
+            <li>Please refer to our <a href="/shipping/" target="_blank">shipping page</a> for more detailed information.</li>
+        </ul>
+        <h4><span style="font-weight: 400;">Shipping Policy: Evolve Global Academy</span></h4>
+        <ul>
+        <li>If you are taking the live online class, we will ship out the startup full business kit. Standard shipping is free across North America. Extra charges apply for express shipping options.</li>
+        <li>Shipping charges are automatically calculated based on the shipping method, weight of the products, the destination and the number of items in your shopping cart.</li>
+        <li>ALL orders placed online with Overnight Ship must be submitted and received before 4:30pm Eastern Time. Any order placed on the weekend, or on a holiday, will be processed the next business day on the calendar. Please expect delays during holiday season.</li>
+        </ul>
+        <h4><span style="font-weight: 400;">Return Policy: Evolve Global Academy</span></h4>
+        <ul>
+        <li>Once you have purchased a course, you can only cancel up to two weeks before the day of the live class for a refund. You will be unable to cancel the course after that.</li>
+        <li>If you have received the startup full business kit, you must return it in its original condition.</li>
+        <li>A restocking charge of $50.00 will be applied.</li>
+       </ul>
+        <h4>
+            Return Policy: Stock Hairpieces
+        </h4>
+        <ul>
+            <li>You have 15 days from the date of purchase to return your untouched hairpiece for a full refund, minus the shipment paid.</li>
+            <li>A restocking charge of $15.00 or more per item will be automatic applied if the returned item is not in its original condition and packaging.</li>
+            <li>If you have selected a final sale option, such as base cut, hair styling, bleached knots, perm, or any service that alters the hairpiece permanently, the hairpiece can no longer be returned or exchanged.</li>
+            <li>Any special requirements need to be addressed at the time of the order being placed.</li>
+        </ul>
+        <h4>Return Policy: Hair Extensions</h4>
+        <ul>
+            <li>Returns accepted within 2 weeks of ordering, they must be in their original condition and packaging.</li>
+            <li>After 2 weeks an 80% credit of the value will be added to your account towards future orders.</li>
+            <li>Large returns are subject to a handling fee.</li>
+            <li>No returns after 3 months of ordering.</li>
+        </ul>
+        <h4>Return Policy: Supplies</h4>
+        <ul>
+            <li>All supplies are final sale and cannot be returned or exchanged under any circumstances. This policy is strictly enforced.</li>
+        </ul>
+        <h4>Overstock and Final Sales Items:</h4>
+        <ul>
+            <li>All items located in the overstock and clearance category are final sale, no return, no exchange, no refund.</li>
+            <li>All online services items including base cuts, haircuts, perms, bleached knots, and coloring are all final sale. There is no return, no refund and no warranty once the hairpiece has been permanently altered.</li>
+        </ul>
+</ul>
+        <div><a href="/shipping/" target="_blank">Click to check for details</a></div>
+    </div>
+   {{#if product.warranty}}
+       <div class="tab-content" id="tab-warranty">
+           {{{product.warranty}}}
+       </div>
+   {{/if}}
+   {{#if breadcrumbs.[3].name "==" "Pre-Order"}}
+   <style>
+.modal1{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.9)}.modal-content1{margin:auto;display:block;width:80%;max-width:900px}@keyframes zoom{from{transform:scale(0)}to{transform:scale(1)}}.close1{position:absolute;top:55px;right:35px;color:#f1f1f1;font-size:40px;font-weight:700;transition:.3s}.close1:hover,.close1:focus{color:#bbb;text-decoration:none;cursor:pointer}@media only screen and (max-width: 900px){.modal-content1{width:100%}.close1{right:10px}}
+    </style>
+    <div class="tab-content" id="tab-faq">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-accordion-item">
+                    <button aria-expanded="true">
+                        <h3 class="faq-accordion-title">Pre-Order fulfillment rate during the pandemic, how long do you I to wait?</h3>
+                        <span class="faq-icon" aria-hidden="false"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                       <p>
+                            The average waiting time for pre-orders is still <strong>3-4 months for lace-based</strong> hairpieces and <strong>2-3 months for skin-based</strong> hairpieces. However, your order may arrive much sooner if the factory was already working on that particular unit before you placed the order.
+                        </p>
+                        <p>Here’s how it looks now in May 2021:</p>
+                        <center>
+                            <img src="/product_images/uploaded_images/pre-orders-chart1.jpg" alt="pre-orders May 2021" loading="lazy" onclick="onZoomImg(event)" />
+                        </center>
+                        <p>And here's the progress we have made since March:</p>
+                        <center>
+                            <img src="/product_images/uploaded_images/pre-orders-chart.jpg" alt="pre-order" loading="lazy" onclick="onZoomImg(event)" />
+                        </center>c="/product_images/uploaded_images/pre-orders-chart.png" alt="pre-order" loading="lazy" onclick="onZoomImg(event)" />
+                        </center>
+
+
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >How do I know when I will receive my pre-order?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        {{#if breadcrumbs.[1].name "==" "Men"}}
+                        <p>
+                            Pre-order might take up to 3 months, or 4 months for Lace and Men's stock hairpieces . Once we receive your pre-order in our warehouse in Florida, US, and the hair system is ready to ship out, you will receive a notification email from us.
+                        </p>
+                        {{else}}
+                        <p>
+                            Pre-order might take up to 3 months, or 4 months for Lace and Women's stock hairpieces . Once we receive your pre-order in our warehouse in Florida, US, and the hair system is ready to ship out, you will receive a notification email from us.
+                        </p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >Why should I need to place a pre-order?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            That is the best option at the moment considering the issue with inventory availability caused by COVID-19 pandemic, and the very high demand for hair systems.
+                        </p>
+                        <p>By placing a pre-order, you can sleep soundly ensuring that a few months from now, the hair system and the color that you prefer will be available when you need it most, rather than looking around for a similar hair system with a color that you have never tried before!</p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >Why did my pre-order come before the given 3-4 months?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            If your order came earlier, that means the stock unit you ordered was one of the ones the factory was already working on before you placed your order. At the time we do not know the progress of each unit the factory is currently working on. By placing a pre-order, you are placed on a priority list which is a first come first serve list.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >Can I cancel a pre-order?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Yes, you can cancel a pre-order as long as the pre-order has the standard stock specifications. Meaning, when you ordered it, you did not change the density and size of the stock unit. If the density or size were changed, then the pre-order is the final sale and cannot be cancelled.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal1" class="modal1"> <span class="close1">&times;</span><img class="modal-content1" id="img01" /></div>
+    <script>
+        let modal1=document.getElementById("myModal1"),modalImg=document.getElementById("img01");function onZoomImg(o){console.log(o.target.src),modal1.style.display="block",modalImg.src=o.target.src}var span=document.getElementsByClassName("close1")[0];span.onclick=function(){modal1.style.display="none"},modal1.onclick=function(){modal1.style.display="none"},modal1.querySelector(".modal-content1").onclick=function(){event.stopPropagation()};
+    </script>
+    {{/if}}
+    {{#if product.title "==" "Tape in Hair Extensions 20 Pieces 50 grams Hair"}}
+    <div class="tab-content" id="tab-faq">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-accordion-item">
+                    <button aria-expanded="true">
+                        <h3 class="faq-accordion-title"
+                            >How long do tape in hair extensions last?</h3
+                        ><span class="faq-icon" aria-hidden="false"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Each installation lasts 6-8 weeks depending on the speed of the client's hair growth. You need to book your clients to do a re-taping and reinstallation service to move the tape in extension up to the root for the hair again. Depending on the quality of the hair, and the clients wearing and maintenance habits, the tape in extension can be reinstalled 3-6 times. We recommend 3 reinstallations for our 3A/4A hair extensions and 6 reinstallations for our 5A/6A hair extensions. Overall, 3A/4A tape in extensions will last 3-5 months and 5A/6A tape in extensions will last 6-10 months.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >How much does tape in hair extensions cost?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            The cost of tape extensions depends on 3 factors; the length, quality, and colour. Depending on what length, quality, and colour you select, the price will change.
+                        </p>                        
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >How to put in tape in hair extensions?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            First, wash and dry your hair so your extensions last longer. Then part your hair at the back and apply the extension right near the scalp where your hair is parted. Take a thin portion of your hair and place it below the extension before applying another extension to sandwich it. Make sure to press the tape in extensions firmly for 10-20 seconds and then you're all set. Repeat the process for others.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >How to wash tape in hair extensions?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Hair extensions tend to tangle so it's important to brush your hair regularly. When you take a shower, apply shampoo right at the roots of your hair extensions and work your way down. Apply conditioner, wash, and dry your hair with a towel carefully. Use a hair dryer to ensure none of your hair extensions are wet.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-accordion-item">
+                    <button aria-expanded="false">
+                        <h3 class="faq-accordion-title"
+                            >How to remove tape in hair extensions at home?</h3
+                        ><span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>
+                            Tie your hair up so your extensions are in full view. Apply a non-chemical tape glue remover to the extension tape and let it seep for a bit before removing the extension. You can also apply the remover for any leftover residue on your hair. <a href="https://www.superhairpieces.com/toupee-wig-hair-system-blog/how-to-remove-clean-prep-tape-extensions/">Read More</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#if breadcrumbs.[2].name "==" "Custom Made"}}
+    <style>
+    .modal1{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,0.9)}.modal-content1{margin:auto;display:block;width:80%;max-width:900px}@keyframes zoom{from{transform:scale(0)}to{transform:scale(1)}}.close1{position:absolute;top:55px;right:35px;color:#f1f1f1;font-size:40px;font-weight:700;transition:.3s}.close1:hover,.close1:focus{color:#bbb;text-decoration:none;cursor:pointer}@media only screen and (max-width: 900px){.modal-content1{width:100%}.close1{right:10px}}
+    </style>
+    <div class="tab-content" id="tab-faq">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-accordion-item">
+                    <button aria-expanded="true">
+                        <h3 class="faq-accordion-title">Custom Order fulfillment rate during the pandemic, how long do you I to wait?</h3>
+                        <span class="faq-icon" aria-hidden="false"></span>
+                    </button>
+                    <div class="faq-accordion-content">
+                        <p>There's a good chance you will get your custom order placed in January or February in May (2-3 months waiting time).</p>
+                        <p>However, with all the disruptions and uncertainties during the pandemic —and depending on the type of hairpiece you order— the average waiting time for custom orders is <strong> 5-6 months</strong>.</p>
+                        <p>Here’s how it looks now <strong>in May 2021</strong></p>
+                        <center>
+                            <img src="/product_images/uploaded_images/custom-order-chart1.jpg" alt="custom order May 2021" loading="lazy" onclick="onZoomImg(event)" />
+                        </center>
+                        <p>And here's our custom order fulfillment progress in 3 months (since March):</p>
+                        <center>
+                            <img src="/product_images/uploaded_images/custom-order-chart.jpg" alt="custom order" loading="lazy" onclick="onZoomImg(event)" />
+                        </center>
+
+
+                    </div>
+                </div>                       
+            </div>
+        </div>
+    </div>
+    <div id="myModal1" class="modal1"> <span class="close1">&times;</span><img class="modal-content1" id="img01" /></div>
+    <script>
+        let modal1=document.getElementById("myModal1"),modalImg=document.getElementById("img01");function onZoomImg(o){console.log(o.target.src),modal1.style.display="block",modalImg.src=o.target.src}var span=document.getElementsByClassName("close1")[0];span.onclick=function(){modal1.style.display="none"},modal1.onclick=function(){modal1.style.display="none"},modal1.querySelector(".modal-content1").onclick=function(){event.stopPropagation()};
+    </script>
+    {{/if}}
+    </div>
+    <script>
+    var requestOptions={method:"GET"};fetch("https://shp-webserver.glitch.me/ip-china",requestOptions).then(e=>e.json()).then(e=>{if(e.result){let e=setInterval(()=>{let t=document.querySelector(".productView-description");if(t){clearInterval(e);let r=t.querySelector(".tabs-contents").querySelectorAll(".shogun-tab-title");for(i=0;i<r.length;i++)if(r[i].innerHTML.includes("Inventory List")){t.querySelector(".tabs-contents").querySelectorAll(".shogun-tab")[i].remove(),t.querySelector(".tabs-contents").querySelector(".shogun-tabs-body").querySelectorAll(".shogun-tab-content")[i].remove();break}}},300)}}).catch(e=>console.log("error",e));
+</script>
+{{inject "breadcrumbs" breadcrumbs}}
+<script>
+    var jsContext = JSON.parse({{jsContext}})
+     let sku="{{product.sku}}";    
+    if (sku!="academymono" && sku!="academylace" && sku!="academyskin") {
+        window.addEventListener("DOMContentLoaded",()=>{fetch("/content/data/guides.json").then(e=>e.json()).then(e=>{if(e.name&&jsContext.breadcrumbs.length>=2&&e[jsContext.breadcrumbs[1].name.toLowerCase()]){$("ul[data-tab]").eq(0).append(`<li class="tab"><a href="#tab-guide" class="tab-title">${e.name}</a></li>`);let a='<ul class="guide-wrap">';for(let t of e[jsContext.breadcrumbs[1].name.toLowerCase()])a+=`<li><a href="${t.url}" target="_blank" class="guide-link">${t.name}</a></li>`;a+="</ul>",$(".tabs-contents").eq(0).append(`<div class="tab-content" id="tab-guide">${a}</div>`)}}).catch(e=>console.log(e))});
+    }
+</script>
+

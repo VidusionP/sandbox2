@@ -1,0 +1,128 @@
+<!--
+    Modified by:  Nana
+    Modified date: 2021-01-20
+    Modification history:
+    2021-01-08: Make the layout width wider, change the style to card
+    2021-01-11: Use the 3 cards in a row
+    2021-01-12: Default picture when there is no picture
+    2021-01-20: Back button
+-->
+{{#if grid}}
+<div class="blog-card-wrap" onclick="location='{{url}}'">
+    <div>
+        {{#if post.thumbnail}}
+        <img src="{{getImage post.thumbnail}}" alt="{{post.thumbnail.alt}}" title="{{post.thumbnail.alt}}">
+        {{else}}
+            <div class="blog-card-default-img-wrap">
+                <img src="/product_images/uploaded_images/logo.png">
+            </div>
+        {{/if}}
+
+    </div>
+    <div class="blog-card-content">
+        <div class="blog-date">{{post.date_published}}</div>
+        <div class="blog-title"><strong>{{post.title}}</strong></div>
+       <!-- <div>
+            {{#if show_tags}}
+                {{#if post.tags}}
+                    <ul class="tags">
+                        {{#each post.tags}}
+                        <li class="tag">
+                            <a href="{{url}}">#{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            {{/if}}
+        </div>
+        <div class="blog-seperation"></div> -->
+        <div class="blog-summary">
+            {{#if post.body}}
+                {{{post.body}}}
+            {{else}}
+                {{post.summary}}
+                {{#if post.show_read_more}}
+                    <div class="blog-continue-btn-bg">
+                        <!-- <div class="blog-continue-btn">
+                            <a href="{{url}}" class="blog-continue-url">
+                                continue reading
+                            </a>
+                            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg>
+                        </div> -->
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{else}}
+<style>
+.blog-post-body{width:100%!important}.blog-post{text-align:justify!important}.post-back-wrap{display:none;position:absolute;top:0;left:2.5rem;transform:translateY(-2.9rem);cursor:pointer;border-radius:2rem;background-color:rgba(255,255,255,0.7);padding:.2rem;height:30px;overflow:hidden}.post-back-wrap svg{width:1.1rem;margin-right:.5rem;transform:translateY(-0.1rem);transition:transform .5s ease;width:20px;height:24px}.blog-title a{font-weight:700}@media only screen and (max-width: 900px){img{width:80%}}@media only screen and (max-width: 800px){.blog-post-body{padding:0 1rem!important}}@media only screen and (max-width: 550px){.post-back-wrap{display:flex}article{margin-top:3.5rem}}@media only screen and (max-width: 375px){img{width:100%}}
+</style>
+
+<article class="blog">
+    <div class="post-back-wrap" onclick="if (document.referrer.includes('/toupee-wig-hair-system-blog')) {window.history.back();} else {location.href='/toupee-wig-hair-system-blog'}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"/></svg>
+        <div>Back to Blog</div>
+    </div>
+
+    <div class="blog-post-figure">
+        {{#if post.thumbnail}}
+            <!-- <figure class="blog-thumbnail"> -->
+            <figure>
+                <a href="{{post.url}}">
+                    <!-- <img src="{{getImage post.thumbnail 'blog_size'}}" alt="{{post.thumbnail.alt}}" title="{{post.thumbnail.alt}}"> -->
+                    <img src="{{getImage post.thumbnail}}" alt="{{post.thumbnail.alt}}" title="{{post.thumbnail.alt}}">
+                </a>
+            </figure>
+        {{/if}}
+    </div>
+
+    <div class="blog-post-body">
+        <header class="blog-header">
+            <h1 class="blog-title">
+                <a href="{{post.url}}">{{post.title}}</a>
+            </h1>
+            <p class="blog-date">{{#if post.author}}{{lang 'blog.posted_by' name=post.author}} on {{/if}}{{post.date_published}}</p>
+        </header>
+
+        <div class="blog-post">
+            {{#if post.body}}
+                {{{post.body}}}
+            {{else}}
+                {{post.summary}}
+                {{#if post.show_read_more}}
+                    &hellip; <a href="{{url}}">read more</a>
+                {{/if}}
+            {{/if}}
+        </div>
+
+
+        {{#if show_tags}}
+            {{#if post.tags}}
+                <ul class="tags">
+                    {{#each post.tags}}
+                    <li class="tag">
+                        <a href="{{url}}">#{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{/if}}
+
+        {{>components/common/share}}
+
+    </div>
+</article>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $(".post-back-wrap").hover(function() {
+            $(".post-back-wrap svg").css({transform: "translateX(-0.5rem) translateY(-0.1rem)"})
+        }, function() {
+            $(".post-back-wrap svg").css({transform: "translateX(0) translateY(-0.1rem)"})
+        })
+    })
+</script>
+
+{{/if}}

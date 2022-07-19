@@ -1,0 +1,8 @@
+<h1 class="page-heading">
+    {{!-- #contains forms.search.query "virtual"}}
+        {{lang 'search.results.count' count=(subtract result_count 4) search_query=forms.search.query}}
+    {{else}}
+    {{lang 'search.results.count' count=result_count search_query=forms.search.query}}
+    {{/contains --}}
+    {{lang 'search.results.text' search_query=forms.search.query}}
+</h1>

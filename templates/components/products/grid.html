@@ -1,0 +1,32 @@
+{{#if show_hover}}
+<ul class="productGrid">
+    {{#each products}}        
+          <li class="product ">
+        {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer show_hover=true}}
+    </li>
+        {{/each}}
+    </ul>
+{{else}}
+<ul class="productGrid">
+{{#each products}}        
+        {{#contains name "Virtual"}}
+        {{else if ../../page_type 'category'}}        
+            {{#or (if name '==' 'Hair Extensions Catalog - 2019') (if name '==' "Men's Hairpiece Catalog - 2020") (if name '==' "Women's Catalog - 2018") (if name '==' "Price List Superhairpieces")}}                                
+                {{#or (if ../../../../customer_group_name "==" "Tier 1") (if ../../../../customer_group_name "==" "Extensions Wholesale") (if ../../../../customer_group_name '==' 'Tier 1 No Signature')}}        
+                <li class="product ">
+                    {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
+                </li>                
+                {{/or}}
+            {{else}}
+                <li class="product ">
+                    {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
+                </li>
+            {{/or}}
+        {{else}}
+        <li class="product ">
+            {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
+        </li>
+       {{/contains}} 
+    {{/each}}
+</ul>
+{{/if}}

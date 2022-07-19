@@ -1,0 +1,60 @@
+{{#partial "head"}}
+{{{ checkout.checkout_head }}}
+{{{ stylesheet '/assets/css/optimized-checkout.css' }}}
+{{ getFontsCollection }}
+
+<script type="text/javascript">
+    window.language = {{{langJson 'optimized_checkout'}}};
+</script>
+
+{{/partial}}
+
+{{#partial "page"}}
+<header class="checkoutHeader optimizedCheckout-header">
+    <div class="checkoutHeader-content">
+        <h1 class="is-srOnly">{{lang 'checkout.title'}}</h1>
+        <h2 class="checkoutHeader-heading">
+            <a class="checkoutHeader-link" href="{{urls.home}}">
+                {{#if checkout.header_image}}
+                    <img alt="{{settings.store_logo.title}}" class="checkoutHeader-logo" id="logoImage" src="{{ checkout.header_image }}"/>
+                {{ else }}
+                    <span class="header-logo-text">{{settings.store_logo.title}}</span>
+                {{/if}}
+            </a>
+        </h2>
+    </div>
+</header>
+
+{{{ checkout.order_confirmation_content }}}
+<div firework="">
+</div>
+<button id="stopConfetti" style="display: none;"></button>
+
+{{{ footer.scripts }}}
+<script>
+    window.innerWidth>=800&&window.addEventListener("DOMContentLoaded",function(){function t(t,e){let n=document.createElement("script");n.setAttribute("src",t),document.body.appendChild(n),n.addEventListener("load",e)}function e(){$("[firework]").fireworks({sound:!1,opacity:.9,width:"100%",height:"100%"}),setTimeout(function(){$("#stopConfetti").trigger("click")},2e3),setTimeout(function(){$("[firework]").remove()},3e3)}window.jQuery?t("/content/js/libraries/jquery.confetti.js",function(){t("/content/js/libraries/jquery.fireworks.js",function(){e()})}):t("https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",function(){t("/content/js/libraries/jquery.confetti.js",function(){t("/content/js/libraries/jquery.fireworks.js",function(){e()})})})});
+</script>
+
+<script data-adroll="bigcommerce-adroll-pixel"
+type="text/javascript">
+
+adroll_adv_id = "XACB5MA24BF2BLM55Z5PYO";
+adroll_pix_id = "HWLAG5TTMVHYXAQACMVXHQ";
+adroll_order_id = "{{ checkout.order.id }}";
+adroll_version = "2.0";
+
+(function(w,d,e,o,a){
+w.__adroll_loaded=true;
+w.adroll=w.adroll||[];
+w.adroll.f=['setProperties','identify','track'];
+var roundtripUrl="https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js";
+for(a=0;a<w.adroll.f.length;a++){
+w.adroll[w.adroll.f[a]]=w.adroll[w.adroll.f[a]]||(function(n){return function(){w.adroll.push([n,arguments])}})(w.adroll.f[a])};e=d.createElement('script');o=d.getElementsByTagName('script')[0];e.async=1;e.src=roundtripUrl;o.parentNode.insertBefore(e, o);})(window,document);
+
+console.log('AdRoll track event: pageView');
+adroll.track('pageView');
+</script>
+
+{{/partial}}
+
+{{> layout/empty}}

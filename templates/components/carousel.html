@@ -1,0 +1,55 @@
+
+<section class="home-categories">
+    {{#each (limit carousel.slides 3)}}
+        <div class="home-category {{{heading}}}">
+            <a href="{{url}}">
+                <div class="home-category-image" style="background-image: url({{image}})"></div>
+                <div class="home-category-content">
+                    <h2 class="home-category-title {{{heading}}}">{{{heading}}}<span>View Solutions</span></h2>            
+                </div>
+            </a>
+        </div>
+    {{/each}}
+</section>
+
+
+
+
+
+
+
+
+
+
+{{!--
+<section class="heroCarousel"
+    data-slick='{
+        "dots": true,
+        "mobileFirst": true,
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "autoplay": true,
+        "autoplaySpeed": {{carousel.swap_frequency}},
+        "lazyLoad": "anticipated"
+    }'>
+    {{#each carousel.slides}}
+    <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}heroCarousel-slide--stretch{{/if}}"
+        style="background-image: url({{image}})">
+        <a href="{{url}}">
+            <img class="heroCarousel-image" data-lazy="{{image}}" alt="{{alt_text}}" title="{{alt_text}}"/>
+            {{#if heading}}
+                {{> components/carousel-content show_background=true}}
+            {{else}}
+                {{#if text}}
+                    {{> components/carousel-content show_background=true}}
+                {{else}}
+                    {{#if button_text}}
+                        {{> components/carousel-content show_background=false}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        </a>
+    </div>
+    {{/each}}
+</section>
+--}}
