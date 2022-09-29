@@ -1,0 +1,849 @@
+<link href=' http://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
+
+<style>
+  .breadcrumb-wrapper {
+    padding: unset !important;
+  }
+  .container {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .page-full-width .page-container .container {
+    padding: unset;
+  }
+.breadcrumbs {
+    display: none;
+  }
+  .breadcrumb-wrapper {
+    padding: unset !important;
+  }
+  .halo-page-content a:not(.button) {
+    background-image: unset !important;
+  }
+  .page-heading {
+    display: none;
+  }
+.page-header {
+    margin-bottom: unset !important;
+    margin: unset !important;
+}
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: mensden;
+
+  }
+  a {
+    text-decoration: none;
+  }
+  .halo-page-content p {
+    margin-bottom: unset !important;
+  }
+  @media(min-width: 801px) and (max-width: 1149px){
+    .body{
+      padding: 3.5rem 0 !important;
+        padding-bottom: 0 !important;
+    }
+  }
+  body::-webkit-scrollbar {
+    display: none;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .body.page .container {
+    max-width: 100% !important;
+    padding: 0px !important;
+  }
+  .body {
+    padding: unset ;
+
+  }
+  .page {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    max-width: 100% !important;
+  }
+  .page-content.page-content--centered {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .icon-top {
+    width: 30px;
+    height: 30px;
+  }
+  .halo-page-content h1, .halo-page-content h2, .halo-page-content h3, .halo-page-content h4, .halo-page-content h5, .halo-page-content h6 {
+    font-weight: unset !important;
+    font-size: unset !important;
+    line-height: unset !important;
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+    color: unset !important;
+  }
+</style>
+<style>
+  
+  .socialTop-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+    margin: auto;
+  }
+  .socialTop-icons {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .socialTop-follow {
+    /* margin-top: 15px; */
+    font-size: 16px;
+    margin: 15px 0;
+    font-family: Poppins, sans-serif;
+  }
+  .socialTop-title {
+    margin: unset;
+    font-size: 40px !important;
+    line-height: 40px !important;
+    text-align: center;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #F7AD17;
+    font-family: Poppins, sans-serif;
+    color: white !important;
+  }
+  .socialTop-subTitle {
+    background-color: rgba(116, 195, 227, 1);
+    color: black;
+    font-size: 14px;
+    font-family: 'Poppins';
+
+    line-height: 24px;
+    font-weight: 700;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 5px 0;
+  }
+  .socialTop-para {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 300px;
+    font-family: 'Poppins';
+
+    margin-top: 10px;
+  }
+  .socialTop-form1{
+    display: flex;
+    flex-wrap: unset !important;
+    gap: 5px;
+    font-family: 'Poppins';
+
+  }
+  .socialTop-input{
+    width: 65% !important;
+    margin: 0  !important;
+    border-radius: 5px;
+    font-family: 'Poppins';
+
+  }
+  .socialTop-input::placeholder {
+    font-size: 12px;
+    font-family: 'Poppins';
+
+  }
+  .socialTop-button{
+    width: 40% !important;
+    margin: 0  !important;
+    font-family: 'Poppins';
+    
+    border-radius: 5px;
+    padding: 5px 1px;
+    text-transform: uppercase;
+    background-color: rgba(116, 195, 227, 1);
+    border: unset;
+    color: black;
+    font-weight: 500;
+  }
+  .form2 {
+    margin: unset !important;
+  }
+  .socialLui-banner {
+    position: relative;
+  }
+  .socialLui-image {
+    min-height: 248px;
+    object-fit: cover;
+    object-position: 70%;
+    max-height: 600px;
+  }
+  .socialLui-title {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-family: 'Poppins';
+
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 800;
+    margin: 0;
+    color: white;
+    width: 170px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .socialLui-list {
+    display: flex;
+    width: 90%;
+  }
+  .socialLui-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .socialLui-name {
+    font-weight: 600;
+
+  }
+  .socialLui-button {
+    background-color: rgba(116, 195, 227, 1);
+    color: white;
+    padding: 9px 40px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'Poppins';
+
+    border: unset;
+    border-radius: 5px;
+    /* margin-bottom: 20px; */
+    margin: 20px 0;
+  }
+  .socialLui-products {
+    display: flex;flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .socialElle-banner {
+    position: relative;
+  }
+  .socialElle-image {
+    min-height: 248px;
+    object-fit: cover;
+    object-position: 30%;
+    max-height: 600px;
+  }
+  
+  .socialElle-title {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    font-size: 40px;
+    font-family: 'Poppins';
+
+    line-height: 40px;
+    font-weight: 800;
+    margin: 0;
+    color: white;
+    width: 170px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .socialElle-products {
+    padding-top: 20px;
+    text-align: center;
+  }
+  .socialElle-list {
+    display: flex;
+    gap: 10px;
+
+  }
+  .socialElle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .socialElle-para {
+    font-weight: 400;
+
+  }
+  .socialElle-name {
+    width: 125px;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+
+  }
+  .socialElle-button {
+    background-color:#EC94B4;
+    color: white;
+    padding: 9px 40px;
+    font-family: 'Poppins';
+
+    font-weight: 500;
+    line-height: 24px;
+    border: unset;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  .socialProducts-banner {
+    background-color: rgba(255, 137, 29, 1);
+    text-align: center;
+    padding: 20px;
+  }
+  .socialProducts-title{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 4px 4px #F7AD17;
+    color: white;
+    font-weight: 800;
+    line-height: 39px;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+
+  }
+  .socialProducts-section {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .socialProducts-product {
+    width: 100px;
+    margin: auto;
+    font-weight: 600;
+    color: black;
+  }
+  .socialProducts-button {
+    background-color:#FFC907;
+    color: white;
+    padding: 9px 40px;
+
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'Poppins';
+
+    border: unset;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-transform: uppercase;
+
+  }
+  .socialProducts-card {
+    /* width: 30%; */
+  }
+  .socialProducts-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .socialBot {
+    background-color: rgba(116, 195, 227, 1);
+    text-align: center;
+  }
+  .socialBot-title {
+    /* width: 80%; */
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 4px 4px #ABC4A0;
+    color: white;
+    font-weight: 800;
+    line-height: 51px;
+    padding: 20px;
+    font-family: 'Poppins';
+
+  }
+  .socialBot-sub {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Poppins';
+    margin-bottom: 1rem;
+
+    color: white;
+  }
+  .socialBot-button {
+    background-color:#FF891D;
+    color: white;
+    padding: 9px 40px;
+    font-family: 'Poppins';
+
+
+    font-weight: 500;
+    line-height: 24px;
+    border: unset;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    
+    text-transform: uppercase;
+  }
+  .bounce {
+    animation: bounce 1s infinite;
+  }
+  .socialPics-title {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 36px;
+    color: black;
+    width: 90%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Poppins';
+
+    margin: auto;
+    margin-top: 20px;
+  }
+  .socialPics-pic {
+    padding: 0 10px;
+  }
+  @media(min-width: 801px){
+    .socialTop-title {
+      font-size: 60px;
+      line-height: 50px;
+      margin: 10px 0;
+    }
+    .socialLui-products {
+        margin-top: 60px;
+    }
+    .socialProducts-product {
+      font-size: 20px;
+      width: 150px;
+    }
+    .socialTop-input {
+      width: 100% !important;
+    }
+    .socialTop-sec {
+      max-width: 500px;
+    }
+    .socialTop-form {
+      width: 100%;
+    }
+    .socialLui-title {
+      width: unset;
+      /* transform: translate(-100%, 200%); */
+      margin: 0;
+      font-size: 60px;
+      line-height: 60px;
+    }
+    .socialLui-image {
+      min-height: 300px;
+    }
+    .socialElle-image {
+      min-height: 300px;
+    }
+    .socialLui-list {
+      width: 80%;
+      max-width: 900px;
+    }
+    .socialElle-title {
+      width: unset;
+      transform: translate(-15%, -50%);
+      left: 60%;
+      margin: 0;
+      font-size: 60px;
+      line-height: 60px;
+    }
+    .socialElle-list {
+      width: 70%;
+      margin: auto;
+    }
+    .socialElle-name {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .socialProducts-title {
+      font-size: 50px;
+      line-height: 55px;
+      width: unset;
+    }
+    .socialProducts-list {
+      width: 80%;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .socialBot {
+      text-align: end;
+      
+    }
+    .socialBot-title {
+      text-align: start;
+      padding: 20px 0;
+    }
+    .socialBot-sub {
+      text-align: start;
+    }
+    .socialBot-sec {
+      width: 80%;
+      margin: auto;
+      max-width: 900px;
+    }
+    .socialPics-title {
+      font-size: 35px;
+      margin: 30px auto 20px;
+    }
+    .socialPics-section {
+      width: 70%;
+      margin: auto;
+    }
+  }
+  @media(min-width: 1300px) {
+    .socialPics-section {
+      width: 50%;
+      margin: auto;
+    }
+    .socialLui-image {
+      max-height: 600px;
+    }
+    .socialElle-title {
+      font-size: 80px;
+    }
+    .socialTop-title {
+      font-size: 100px;
+      line-height: 80px;
+    }
+    .socialTop-sec {
+      max-width: 700px;
+    }
+    .socialTop-follow {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .socialTop-subtitle {
+      font-size: 24px;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .socialTop-button {
+      font-size: 16px;
+    }
+    .socialTop-para {
+      font-size: 24px;
+      width: 500px;
+    }
+    .form-input::placeholder {
+      font-size: 16px;
+    }
+    .socialLui-title {
+      font-size: 80px;
+    }
+
+    .socialLui-button {
+      font-size: 24px;
+      margin: 40px 0;
+      padding: 15px 40px;
+    }
+    .socialElle-button {
+      font-size: 24px;
+      margin: 40px 0;
+      padding: 15px 40px;
+      margin-top: 20px;
+
+
+    }
+    .socialProducts-button {
+      font-size: 24px;
+      margin: 40px 0;
+      padding: 15px 40px;
+
+      margin-bottom: 80px;
+    }
+    .socialElle-list {
+      max-width: 800px;
+      gap: 100px;
+    }
+    .socialProducts-title {
+      font-size: 60px;
+      line-height: 60px;
+      width: 900px;
+    }
+    .socialProducts-banner {
+      padding: 50px 0;
+    }
+    .socialBot-title {
+      font-size: 65px;
+      line-height: 60px;
+    }
+    .socialBot-button {
+      font-size: 20px;
+    }
+    .socialPics-title {
+      margin-top: 40px;
+    }
+  }
+</style>
+<svg style="height: 0; display: none">
+  <symbol viewBox="0 0 30 29" fill="none" id="icon-tiktok1">
+    <path d="M24.4877 8.08383C23.2416 7.81896 22.1144 7.17932 21.2678 6.2567C20.4211 5.33409 19.8986 4.17593 19.7752 2.94841V2.41675H15.4627V18.9347C15.4636 19.6676 15.2259 20.3822 14.7832 20.9773C14.3406 21.5724 13.7155 22.0177 12.9965 22.2503C12.2775 22.4829 11.501 22.4909 10.777 22.2731C10.0531 22.0554 9.4183 21.623 8.96268 21.0372C8.55449 20.5186 8.30454 19.9 8.24109 19.2512C8.17765 18.6025 8.30323 17.9496 8.60365 17.3662C8.90408 16.7829 9.36734 16.2925 9.94107 15.9504C10.5148 15.6083 11.1761 15.4282 11.8502 15.4305C12.223 15.4284 12.5939 15.4814 12.9502 15.5876V11.3584C12.5356 11.3088 12.1178 11.2886 11.7002 11.298C10.1618 11.3377 8.66883 11.8103 7.40404 12.6577C6.13924 13.5051 5.15754 14.6907 4.57915 16.0693C4.00076 17.4478 3.85078 18.9595 4.14758 20.4192C4.44438 21.8789 5.17507 23.2232 6.25018 24.2876C7.35204 25.3705 8.76205 26.1123 10.301 26.4188C11.84 26.7253 13.4386 26.5827 14.8935 26.009C16.3484 25.4352 17.5941 24.4564 18.4722 23.1968C19.3503 21.9371 19.8213 20.4536 19.8252 18.9347V10.4763C21.5645 11.6774 23.6502 12.3198 25.7877 12.313V8.20466C25.3678 8.20634 24.9489 8.16584 24.5377 8.08383H24.4877Z" fill="white"/>
+  </symbol>
+  <symbol viewBox="0 0 30 29" id="icon-instagram1" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.33125 1.288C10.7975 1.22275 11.265 1.20825 15 1.20825C18.735 1.20825 19.2025 1.22396 20.6675 1.288C22.1325 1.35204 23.1325 1.578 24.0075 1.90546C24.9237 2.24017 25.755 2.76338 26.4425 3.44004C27.1425 4.10342 27.6825 4.90575 28.0275 5.79267C28.3675 6.6385 28.6 7.60517 28.6675 9.01892C28.735 10.4387 28.75 10.8906 28.75 14.4999C28.75 18.1104 28.7337 18.5623 28.6675 19.9797C28.6012 21.3935 28.3675 22.3601 28.0275 23.206C27.6825 24.093 27.1416 24.8967 26.4425 25.561C25.755 26.2377 24.9237 26.7597 24.0075 27.0932C23.1325 27.4218 22.1325 27.6466 20.67 27.7118C19.2025 27.7771 18.735 27.7916 15 27.7916C11.265 27.7916 10.7975 27.7759 9.33125 27.7118C7.86875 27.6478 6.86875 27.4218 5.99375 27.0932C5.07615 26.7596 4.24478 26.2368 3.5575 25.561C2.85797 24.8972 2.31664 24.0939 1.97125 23.2072C1.6325 22.3613 1.4 21.3947 1.3325 19.9809C1.265 18.5611 1.25 18.1092 1.25 14.4999C1.25 10.8894 1.26625 10.4375 1.3325 9.02134C1.39875 7.60517 1.6325 6.6385 1.97125 5.79267C2.31715 4.90585 2.8589 4.10259 3.55875 3.43884C4.24505 2.76277 5.07559 2.2395 5.9925 1.90546C6.8675 1.578 7.8675 1.35325 9.33 1.288H9.33125ZM20.5562 3.6805C19.1062 3.61646 18.6712 3.60317 15 3.60317C11.3287 3.60317 10.8938 3.61646 9.44375 3.6805C8.1025 3.73971 7.375 3.956 6.89 4.13846C6.24875 4.38013 5.79 4.6665 5.30875 5.13171C4.85256 5.56073 4.50148 6.08301 4.28125 6.66025C4.0925 7.12909 3.86875 7.83234 3.8075 9.12888C3.74125 10.5305 3.7275 10.951 3.7275 14.4999C3.7275 18.0488 3.74125 18.4693 3.8075 19.871C3.86875 21.1675 4.0925 21.8708 4.28125 22.3396C4.50125 22.916 4.8525 23.4392 5.30875 23.8681C5.7525 24.3092 6.29375 24.6487 6.89 24.8614C7.375 25.0438 8.1025 25.2601 9.44375 25.3193C10.8938 25.3834 11.3275 25.3967 15 25.3967C18.6725 25.3967 19.1062 25.3834 20.5562 25.3193C21.8975 25.2601 22.625 25.0438 23.11 24.8614C23.7513 24.6197 24.21 24.3333 24.6912 23.8681C25.1475 23.4392 25.4988 22.916 25.7188 22.3396C25.9075 21.8708 26.1313 21.1675 26.1925 19.871C26.2588 18.4693 26.2725 18.0488 26.2725 14.4999C26.2725 10.951 26.2588 10.5305 26.1925 9.12888C26.1313 7.83234 25.9075 7.12909 25.7188 6.66025C25.4688 6.04038 25.1725 5.59692 24.6912 5.13171C24.2474 4.69075 23.7071 4.35138 23.11 4.13846C22.625 3.956 21.8975 3.73971 20.5562 3.6805ZM13.2438 18.5974C14.2246 18.9921 15.3167 19.0453 16.3337 18.7481C17.3506 18.4508 18.2292 17.8215 18.8195 16.9676C19.4098 16.1137 19.6751 15.0882 19.5701 14.0663C19.465 13.0443 18.9963 12.0893 18.2437 11.3643C17.764 10.9009 17.184 10.546 16.5454 10.3253C15.9068 10.1046 15.2255 10.0235 14.5506 10.0878C13.8757 10.1522 13.2239 10.3604 12.6423 10.6975C12.0606 11.0345 11.5634 11.4921 11.1866 12.0372C10.8098 12.5822 10.5627 13.2013 10.4631 13.8498C10.3636 14.4983 10.4139 15.16 10.6107 15.7874C10.8074 16.4148 11.1456 16.9922 11.6009 17.4781C12.0562 17.964 12.6173 18.3463 13.2438 18.5974ZM10.0025 9.669C10.6588 9.0346 11.4379 8.53136 12.2954 8.18802C13.1528 7.84468 14.0719 7.66797 15 7.66797C15.9281 7.66797 16.8472 7.84468 17.7046 8.18802C18.5621 8.53136 19.3412 9.0346 19.9975 9.669C20.6538 10.3034 21.1744 11.0566 21.5295 11.8854C21.8847 12.7143 22.0675 13.6027 22.0675 14.4999C22.0675 15.3971 21.8847 16.2855 21.5295 17.1144C21.1744 17.9433 20.6538 18.6964 19.9975 19.3308C18.6721 20.6121 16.8744 21.3319 15 21.3319C13.1256 21.3319 11.3279 20.6121 10.0025 19.3308C8.67708 18.0496 7.93247 16.3119 7.93247 14.4999C7.93247 12.688 8.67708 10.9502 10.0025 9.669ZM23.635 8.68542C23.7976 8.53712 23.9278 8.35878 24.0179 8.16097C24.1079 7.96316 24.156 7.74989 24.1593 7.53379C24.1625 7.3177 24.1209 7.10316 24.0369 6.9029C23.9528 6.70263 23.828 6.5207 23.67 6.36788C23.5119 6.21506 23.3237 6.09446 23.1165 6.01321C22.9093 5.93196 22.6874 5.89172 22.4638 5.89487C22.2403 5.89802 22.0197 5.9445 21.815 6.03155C21.6104 6.1186 21.4259 6.24446 21.2725 6.40167C20.9741 6.70741 20.8108 7.11352 20.8171 7.53379C20.8235 7.95406 20.999 8.3554 21.3064 8.6526C21.6139 8.94981 22.0291 9.11949 22.4638 9.12561C22.8986 9.13174 23.3187 8.97384 23.635 8.68542Z" fill="white"/>
+  </symbol>
+  <symbol viewBox="0 0 35 35" id="icon-facebook1" fill="none">
+    <path d="M29.1667 4.375H5.83333C5.44656 4.375 5.07563 4.52865 4.80214 4.80214C4.52865 5.07563 4.375 5.44656 4.375 5.83333V29.1667C4.375 29.5534 4.52865 29.9244 4.80214 30.1979C5.07563 30.4714 5.44656 30.625 5.83333 30.625H18.3969V20.475H14.9873V16.501H18.3969V13.5844C18.3969 10.1937 20.4677 8.34604 23.501 8.34604C24.5204 8.34313 25.5412 8.39563 26.5562 8.50208V12.0312H24.4635C22.8185 12.0312 22.4977 12.8158 22.4977 13.9635V16.4938H26.4308L25.9204 20.4677H22.4963V30.625H29.1667C29.5534 30.625 29.9244 30.4714 30.1979 30.1979C30.4714 29.9244 30.625 29.5534 30.625 29.1667V5.83333C30.625 5.44656 30.4714 5.07563 30.1979 4.80214C29.9244 4.52865 29.5534 4.375 29.1667 4.375Z" fill="white"/>
+  </symbol>
+  <symbol viewBox="0 0 20 30"id="icon-arrow1"  fill="none" >
+    <path d="M10.4526 13.9388L17.0901 6.6242C17.2009 6.50216 17.2627 6.34001 17.2627 6.17139C17.2627 6.00277 17.2009 5.84063 17.0901 5.71858L17.0826 5.7107C17.0289 5.65133 16.9642 5.60406 16.8925 5.57175C16.8209 5.53945 16.7437 5.52279 16.6657 5.52279C16.5877 5.52279 16.5105 5.53945 16.4389 5.57175C16.3672 5.60406 16.3025 5.65133 16.2488 5.7107L9.99883 12.5987L3.75133 5.7107C3.69761 5.65133 3.63295 5.60406 3.56128 5.57175C3.48962 5.53944 3.41244 5.52278 3.33445 5.52278C3.25646 5.52278 3.17928 5.53944 3.10762 5.57175C3.03595 5.60406 2.97129 5.65133 2.91758 5.7107L2.91007 5.71858C2.79927 5.84063 2.73746 6.00277 2.73746 6.17139C2.73746 6.34001 2.79927 6.50216 2.91007 6.6242L9.54758 13.9388C9.60595 14.0031 9.67615 14.0543 9.75393 14.0893C9.83172 14.1243 9.91545 14.1423 10.0001 14.1423C10.0847 14.1423 10.1684 14.1243 10.2462 14.0893C10.324 14.0543 10.3942 14.0031 10.4526 13.9388Z" fill="#EB832E"/>
+    <path d="M10.4526 22.9388L17.0901 15.6242C17.2009 15.5022 17.2627 15.34 17.2627 15.1714C17.2627 15.0028 17.2009 14.8406 17.0901 14.7186L17.0826 14.7107C17.0289 14.6513 16.9642 14.6041 16.8925 14.5718C16.8209 14.5394 16.7437 14.5228 16.6657 14.5228C16.5877 14.5228 16.5105 14.5394 16.4389 14.5718C16.3672 14.6041 16.3025 14.6513 16.2488 14.7107L9.99883 21.5987L3.75133 14.7107C3.69761 14.6513 3.63295 14.6041 3.56128 14.5718C3.48962 14.5394 3.41244 14.5228 3.33445 14.5228C3.25646 14.5228 3.17928 14.5394 3.10762 14.5718C3.03595 14.6041 2.97129 14.6513 2.91758 14.7107L2.91007 14.7186C2.79927 14.8406 2.73746 15.0028 2.73746 15.1714C2.73746 15.34 2.79927 15.5022 2.91007 15.6242L9.54758 22.9388C9.60595 23.0031 9.67615 23.0543 9.75393 23.0893C9.83172 23.1243 9.91545 23.1423 10.0001 23.1423C10.0847 23.1423 10.1684 23.1243 10.2462 23.0893C10.324 23.0543 10.3942 23.0031 10.4526 22.9388Z" fill="#EB832E"/>
+    </symbol>
+    
+</svg>
+  
+
+<section class="socialMedia">
+  <div class="socialTop-top" style="background-color: rgba(255, 137, 29, 1) ;">
+    <img src="/content/images/marketing/socialmedialanding/thumbnail-fr.jpg" style="opacity: 0; width:1px; height: 1px; position: absolute;"/>
+
+    <div class="socialTop-sec" style="color: white;">
+      <p class="socialTop-follow">
+        Suivez-nous</p>
+      <div class="socialTop-icons">
+        <a href="https://www.facebook.com/groups/superhairpieces.fr">
+          <svg class="icon-top">
+            <use xlink:href="#icon-facebook1"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/superhairpieces_france">
+          <svg class="icon-top">
+            <use xlink:href="#icon-instagram1"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@superhairpieces_france">
+          <svg class="icon-top">
+            <use xlink:href="#icon-tiktok1"/>
+          </svg>
+        </a>
+
+      </div>
+      <h1 class="socialTop-title">10 € de
+        réduction</h1>
+      <div class="socialTop-subTitle">SUR VOTRE PROCHAIN ​​ACHAT</div>
+      <p class="socialTop-para">inscrivez-vous à notre newsletter
+        pour recevoir des offres exclusives</p>
+        <div class="socialTop-form">
+          <form class="form form2" action="{{urls.subscribe.action}}" method="post">
+            <fieldset class="form-fieldset">
+                <input type="hidden" name="action" value="subscribe">
+                <input type="hidden" name="nl_first_name" value="bc">
+                <input type="hidden" name="check" value="1">
+                <div class="form-field">
+                    <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
+                    <div class="socialTop-form1 form-prefixPostfix  wrap">
+                        <input class="socialTop-input form-input " id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="Saisissez votre courriel">
+                        <input class=" socialTop-button button  button--primary form-prefixPostfix-button--postfix" type="submit" value="Inscrivez-moi!">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        </div>
+    </div>
+  </div>
+  <div class="socialLui">
+    <div class="socialLui-banner">
+      
+      <img srcset="/content/images/marketing/socialmedialanding/landpage-1-1000.webp 1000w,
+      /content/images/marketing/socialmedialanding/landpage-1.jpg 2000w"
+      sizes="(max-width: 800px) 1000px,
+            2000px"
+      src="/content/images/marketing/socialmedialanding/landpage-1.jpg"
+      class="socialLui-image">
+      <h2 class="socialLui-title">POUR LUI</h2>
+    </div>
+    <div class="socialLui-products">
+      <div class="socialLui-list">
+        <div class="socialLui-card">
+          <h3 class="socialLui-name">Poly</h3>
+          <svg class="icon-top">
+            <use xlink:href="#icon-arrow1"/>
+          </svg>
+          <a href="https://superhairpieces.fr/toupee-m101-postiche-peau-mince-pour-hommes/">
+            <img  srcset="/content/images/marketing/socialmedialanding/lui1-250.webp 250w,
+            /content/images/marketing/socialmedialanding/lui1.jpg 500w"
+            sizes="(max-width: 600px) 500px,
+                  700px"
+            class="socialLui-img" src="/content/images/marketing/socialmedialanding/lui1.jpg"/>
+          </a>
+        </div>
+        <div class="socialLui-card">
+          <h3 class="socialLui-name">Tulle</h3>
+          <svg class="icon-top">
+            <use xlink:href="#icon-arrow1"/>
+          </svg>
+          <a href="https://superhairpieces.fr/mens-toupee-m104-7x9-mono-top-with-lace-front-in-stock/">
+            <img  srcset="/content/images/marketing/socialmedialanding/lui2-250.webp 250w,
+            /content/images/marketing/socialmedialanding/lui2.jpg 500w"
+            sizes="(max-width: 600px) 500px,
+                  700px"
+            class="socialLui-img" src="/content/images/marketing/socialmedialanding/lui2.jpg"/>
+          </a>
+          <img src="/content/images/marketing/socialmedialanding/review1.png"/>
+          
+        </div>
+        <div class="socialLui-card">
+          <h3 class="socialLui-name">Mono</h3>
+          <svg class="icon-top">
+            <use xlink:href="#icon-arrow1"/>
+          </svg>
+          <a href="https://superhairpieces.fr/toupee-m100-mono-top-homme/">
+            <img  srcset="/content/images/marketing/socialmedialanding/lui3-250.webp 250w,
+            /content/images/marketing/socialmedialanding/lui3.jpg 500w"
+            sizes="(max-width: 600px) 500px,
+                  700px"
+            class="socialLui-img" src="/content/images/marketing/socialmedialanding/lui3.jpg"/>
+          </a>
+          <img src="/content/images/marketing/socialmedialanding/review2.png"/>
+
+        </div>
+      </div>
+      <a href="https://superhairpieces.fr/homme/" target="_blank">
+        <button class="socialLui-button">VOIR PLUS</button>
+      </a>
+    </div>
+  </div>
+  <div class="socialElle">
+    <div class="socialElle-banner">
+      <img  srcset="/content/images/marketing/socialmedialanding/landpage-2-1000.webp 1000w,
+      /content/images/marketing/socialmedialanding/landpage-2.jpg 2000w"
+      sizes="(max-width: 800px) 1000px,
+            2000px"
+      src="/content/images/marketing/socialmedialanding/landpage-2.jpg"
+      class="socialElle-image">
+      <h2 class="socialElle-title">POUR ELLE</h2>
+    </div>
+    <div class="socialElle-products">
+      <div class="socialElle-list" style="display: flex;">
+        <a href="https://superhairpieces.fr/femme/perruques-femmes/" target="_blank">
+          <div class="socialElle-card">
+            <img 
+            srcset="/content/images/marketing/socialmedialanding/elle-1-500.jpg 500w,
+            /content/images/marketing/socialmedialanding/elle-1.jpg 1000w"
+            sizes="(max-width: 600px) 500px,
+                  1000px"
+            class="socialElle-img" src="'../..//content/images/marketing/socialmedialanding/elle-1.jpg"/>
+            <p class="socialElle-name">Perruques</p>
+          </div>
+        </a>
+        <a href="https://superhairpieces.fr/femme/volumateur-capillaire/" target="_blank">
+          <div class="socialElle-card">
+            <img 
+            srcset="/content/images/marketing/socialmedialanding/elle-2-500.jpg 500w,
+            /content/images/marketing/socialmedialanding/elle-2.jpg 1000w"
+            sizes="(max-width: 600px) 500px,
+                  1000px"
+            class="socialElle-img" src="'../..//content/images/marketing/socialmedialanding/elle-2.jpg"/>
+            <p class="socialElle-name">Volumateur Capillaires</p>
+          </div>
+        </a>
+      </div>
+      <a href="https://superhairpieces.fr/femme/">
+        <button class="socialElle-button">VOIR PLUS</button>
+      </a>
+    </div>
+  </div>
+  <div class="socialProducts">
+    <div class="socialProducts-banner" style="background-color:rgba(255, 201, 7, 1) ;">
+      <h2 class="socialProducts-title">Produits pour
+        les compléments
+        capillaires</h2>
+    </div>
+    <div class="socialProducts-section">
+      <div class="socialProducts-list" style="display: flex;">
+        <a href="https://superhairpieces.fr/pose-et-entretien/solvants-capillaires/" target="_blank">
+          <div class="socialProducts-card">
+            <img
+            srcset="/content/images/marketing/socialmedialanding/Product1-250.jpg 250w,
+            /content/images/marketing/socialmedialanding/Product1.jpg 500w"
+            sizes="(max-width: 400px) 250px,
+                  500px"
+            class="socialProducts-img" src="/content/images/marketing/socialmedialanding/Product1.jpg"/><p class="socialProducts-product">Solvants
+            Capillaires </p></div>
+        </a>
+        <a href="https://superhairpieces.fr/accessoires/pose-et-entretien/colle-adhesifs/" target="_blank">
+          <div class="socialProducts-card">
+            <img 
+            srcset="/content/images/marketing/socialmedialanding/Product2-250.jpg 250w,
+            /content/images/marketing/socialmedialanding/Product2.jpg 500w"
+            sizes="(max-width: 400px) 250px,
+                  500px"
+            class="socialProducts-img" src="/content/images/marketing/socialmedialanding/Product2.jpg"/><p class="socialProducts-product"> Liquide
+            Adhésifs</p></div>
+        </a>
+        <a href="https://superhairpieces.fr/pose-et-entretien/preparation-et-protection-du-cuir-chevelu/" target="_blank">
+          <div class="socialProducts-card">
+            <img 
+            srcset="/content/images/marketing/socialmedialanding/Product3-250.jpg 250w,
+            /content/images/marketing/socialmedialanding/Product3.jpg 500w"
+            sizes="(max-width: 400px) 250px,
+                  500px"
+            class="socialProducts-img" src="/content/images/marketing/socialmedialanding/Product3.jpg"/><p class="socialProducts-product">Protection du
+            Cuir Chevelu</p></div>
+        </a>
+      </div>
+      <a href="https://superhairpieces.fr/accessoires/" target="_blank">
+        <button class="socialProducts-button">Acheter Maintenant</button>
+      </a>
+    </div>
+  </div>
+  <div class="socialBot" style="background-color: rgba(116, 195, 227, 1);  ">
+    <div class="socialBot-sec">
+      <h2 class="socialBot-title">OBTENIR DES CODES DE RABAIS</h2>
+      <p class="socialBot-sub"> sur notre groupe FB</p>
+      <a href="https://www.facebook.com/groups/superhairpieces.fr" target="_blank">
+        <button class="socialBot-button">Inscrivez-moi!</button>
+
+      </a>
+    </div>
+    
+  </div>
+  <div class="socialPics">
+    <h2 class="socialPics-title">Nos transformations réelles</h2>
+    <div class="socialPics-section">
+      <!-- <img  class="socialPics-pic" src="/content/images/marketing/socialmedialanding/Customers1-400.jpg"/> -->
+      <img  
+      srcset="/content/images/marketing/socialmedialanding/Customers1-500.jpg 500w,
+            /content/images/marketing/socialmedialanding/Customers1.jpg 1300w"
+            sizes="(max-width: 700px) 500px,
+                  1300px"
+      class="socialPics-pic" src="/content/images/marketing/socialmedialanding/Customers1.jpg"/>
+    </div>
+  </div>
+</section>
+
+<script>
+  // var icon = [
+  //   {
+  //       img: "#icon-form1",
+  //       text: "Fill out the form and we'll review your application"
+  //     },
+  //     {
+  //       img: "#icon-tag1",
+  //       text: "You'll receive $100 OFF each of the 5 systems you'll be testing"
+
+  //     },
+  //     {
+  //       img: "#icon-survey1",
+  //       text: "Receive your hair system and answer periodic short surveys"
+
+  //     },
+  //     {
+  //       img: "#icon-box1",
+  //       text: "Dispose of or send the used system back to be analyzed by our team"
+
+  //     }
+  //   ]
+  // const map1 = icon.map((item,i) => {
+
+  //   $(".programWorks-works").append(`<div class=programWorks-card><svg class=icon-top><use xlink:href=${item.img} /></svg><p class=programWorks-cart--text>${item.text}</p></div>`)
+  //   $(".programWorks-works1").append(`<div class=programWorks-card><svg class=icon-top><use xlink:href=${item.img} /></svg><p class=programWorks-cart--text>${item.text}</p></div>`)
+  // })
+
+  //   window.addEventListener("DOMContentLoaded", (e) => {
+  //     map1
+  //   })
+</script>

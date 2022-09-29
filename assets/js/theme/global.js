@@ -17,6 +17,8 @@ import 'lazysizes';
 import loadingProgressBar from './global/loading-progress-bar';
 import FastClick from 'fastclick';
 import sweetAlert from './global/sweet-alert';
+import base from '../base';
+// import cartFunction from './cart-function';
 
 function fastClick(element) {
     return new FastClick(element);
@@ -44,5 +46,7 @@ export default class Global extends PageManager {
         loadingProgressBar();
         sweetAlert();
         next();
+        // cartFunction()
+        base();
     }
 }

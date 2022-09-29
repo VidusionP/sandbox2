@@ -1,20 +1,20 @@
 webpackJsonp([5],{
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bigcommerce_stencil_utils__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__catalog__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__catalog__ = __webpack_require__(410);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_faceted_search__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_faceted_search__ = __webpack_require__(411);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_url_utils__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_url__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_url___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_url__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_collapsible__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jstree__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jstree__ = __webpack_require__(438);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jstree___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jstree__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_nod__ = __webpack_require__(68);
 function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Search=function(_CatalogPage){_inherits(Search,_CatalogPage);function Search(){_classCallCheck(this,Search);return _possibleConstructorReturn(this,_CatalogPage.apply(this,arguments))}Search.prototype.formatCategoryTreeForJSTree=function formatCategoryTreeForJSTree(node){var _this2=this;var nodeData={text:node.data,id:node.metadata.id,state:{selected:node.selected}};if(node.state){nodeData.state.opened=node.state==='open';nodeData.children=true}if(node.children){nodeData.children=[];node.children.forEach(function(childNode){nodeData.children.push(_this2.formatCategoryTreeForJSTree(childNode))})}return nodeData};Search.prototype.showProducts=function showProducts(){var url=__WEBPACK_IMPORTED_MODULE_4__common_url_utils__["a" /* default */].replaceParams(window.location.href,{section:'product'});this.$productListingContainer.removeClass('u-hiddenVisually');this.$facetedSearchContainer.removeClass('u-hiddenVisually');this.$contentResultsContainer.addClass('u-hiddenVisually');__WEBPACK_IMPORTED_MODULE_4__common_url_utils__["a" /* default */].goToUrl(url)};Search.prototype.showContent=function showContent(){var url=__WEBPACK_IMPORTED_MODULE_4__common_url_utils__["a" /* default */].replaceParams(window.location.href,{section:'content'});this.$contentResultsContainer.removeClass('u-hiddenVisually');this.$productListingContainer.addClass('u-hiddenVisually');this.$facetedSearchContainer.addClass('u-hiddenVisually');__WEBPACK_IMPORTED_MODULE_4__common_url_utils__["a" /* default */].goToUrl(url)};Search.prototype.loaded=function loaded(){var _this3=this;var $searchForm=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-advanced-search-form]');var $categoryTreeContainer=$searchForm.find('[data-search-category-tree]');var url=__WEBPACK_IMPORTED_MODULE_5_url___default.a.parse(window.location.href,true);var treeData=[];this.$productListingContainer=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#product-listing-container');this.$facetedSearchContainer=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#faceted-search-container');this.$contentResultsContainer=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#search-results-content');// Init faceted search
@@ -25,7 +25,7 @@ _this5.loadTreeNodes(node,cb)}},themes:{icons:true}},checkbox:{three_state:false
 
 /***/ }),
 
-/***/ 437:
+/***/ 438:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jsTree - v3.3.12 - 2022-04-07 - (MIT) */

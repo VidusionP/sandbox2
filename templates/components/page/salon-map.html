@@ -1,0 +1,678 @@
+<link rel="stylesheet" href="/content/css/leaflet.css" type="text/css" />
+<style>
+    :root {
+        --element-margin: 1rem;
+        --section-margin: 2rem;
+        --color1: #fbfbfb;
+        --color2: #50525a;
+        --color3: #ededed;
+    }
+    .body.page {
+        padding: 0;
+    }
+    .body.page .container {
+        padding: 0;
+    }
+    .body.page .page {
+        margin: 0;
+    }
+    .body.page .page-heading {
+        display: none;
+    }
+    .body.page .page-content {
+        padding: 0;
+    }
+    .sl-navigation {
+        font-size: 20px;      
+        margin-bottom: var(--section-margin);  
+        padding: 0 var(--element-margin);
+    }
+    .sl-navigation a {
+        text-decoration: none;        
+    }
+    .sl-navigation a:focus, .sl-navigation a:active {
+        outline: none !important;
+    }    
+    .filter-wrap {
+        padding: 0 var(--element-margin);
+    }
+    .filter-wrap input {
+        background-color: var(--color3);
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 2px 2px 9px rgba(0,0,0,.25);
+        padding: 8px 10px;
+        position: relative;
+        border-radius: 4px;
+        width: 100%;
+    }
+    .filter-wrap .map-input[pc] {
+        display: none;
+    }
+    .filter-selection-wrap {
+        display: flex;
+        padding: var(--element-margin) 0;
+    }
+    .filter-selection-wrap label {
+        margin-left: var(--element-margin);
+        position: relative;
+        padding-right: 27px;
+    }
+    .filter-selection-wrap input {
+        display: none;
+    }
+    .filter-selection-wrap input + label::before {
+        right: 0;
+        top: 0;
+        position: absolute;
+        content: "";
+        width: 19px;
+        height: 19px;
+        border: 1px solid var(--color2);
+        border-radius: 50%;
+    }
+    .filter-selection-wrap input:checked + label::after {
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        right: 4px;
+        top: 4px;
+        background-color: var(--color2);
+        border: 1px solid var(--color2);
+        border-radius: 50%;
+        content: "";
+    }
+    /* .filter-wrap input[type=text] {
+        padding-left: 28px;
+    } */
+    .filter-wrap input[type=button] {
+        background-color: var(--color2);
+        color: var(--color1);
+    }
+    /* .filter-wrap input[type=text]::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url("/content/images/common/search1.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        z-index: 9;
+    } */
+    .sl-list-wrap {        
+        position: absolute;
+        bottom: 0;                
+        width: 100%; 
+        z-index: 9990;
+    }
+    .sl-list-wrap.open {
+        background-color: var(--color1);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding-top: 30px;
+    }
+    .sl-list-wrap .arrow-wrap {
+        display: flex;
+        padding: var(--element-margin);
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color1);        
+    }
+    .sl-list-wrap .content-wrap {
+        /* display: flex; */
+        display: none;        
+        overflow: auto;        
+        max-height: 250px;
+        position: relative;        
+    }
+    .sl-list-wrap .close {
+        display: none;        
+        top: 10px;
+        right: var(--element-margin);
+        position: absolute;
+        z-index: 1;
+        width: 20px;
+        height: auto;
+    }
+    .sl-list-wrap .item {
+        display: grid;
+        grid-column-gap: var(--element-margin);
+        grid-row-gap: 5px;
+        align-items: center;
+        grid-template-columns: 80px auto;                
+        padding: var(--element-margin);                
+        min-width: 250px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .sl-list-wrap .item.selected {
+        border-left: 8px solid var(--color2);
+    }
+    .sl-list-wrap .name {
+        font-size: 16px;
+        font-weight: bold;
+        align-self: flex-end;
+    }
+    .sl-list-wrap .addr {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        font-size: 12px;
+        align-self: flex-start;
+        white-space: nowrap;
+        max-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis ;
+    }
+    .sl-list-wrap .item img {
+        width: 100%;
+        height: auto;
+        grid-row: 1 / span 2;
+    }
+    #map {
+        width: 100%;
+        height: calc(100% - 185px);
+        min-height: 400px;
+        position: relative;
+    }
+    .sl-popup-wrap {
+        display: flex;        
+    }
+    .sl-popup-wrap img {
+        width: 100px;
+        height: 100%;
+        object-fit: cover;
+        align-self: center;
+        margin-right: 5px;
+    }
+    .sl-popup-wrap .email, .sl-popup-wrap .phone {
+        color: #000;
+        text-decoration: none;        
+    }
+    .sl-popup-wrap .email:active, .sl-popup-wrap .phone:active, .sl-popup-wrap .email:focus, .sl-popup-wrap .phone:focus {
+        outline: none;
+    }
+    .sl-popup-wrap .email::before, .sl-popup-wrap .phone::before {
+        content: "";
+        display: inline-block;
+        margin-right: 4px;
+        width: 15px;
+        height: 15px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: translateY(3px);
+    }
+    .sl-popup-wrap .email::before {
+        background-image: url(/content/images/common/email.svg);
+    }
+    .sl-popup-wrap .phone::before {
+        background-image: url(/content/images/common/phone.svg);
+    }
+    .sl-popup-wrap .contact-wrap {
+        display: grid;
+        grid-gap: 5px;
+        font-size: 12px;
+    }
+    .sl-popup-wrap .contact-wrap .name {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .sl-popup-wrap .contact-wrap .link {
+        background-color: #111;
+        color: var(--color1);
+        border-radius: 4px;
+        padding: 8px 0;
+        text-align: center;
+        display: block;
+        width: 120px;
+        text-decoration: none;
+    }
+    .sl-popup-wrap .contact-wrap .link:active, .sl-popup-wrap .contact-wrap .link:focus {
+        outline: none;
+    }
+    .leaflet-popup-content-wrapper {
+        border-radius: 4px;
+    }
+    #reamazejs-container, #stamped-rewards-init, #omnisend-dynamic-container, #___ratingbadge_0 {
+        display: none !important;
+    }
+    @media (min-width: 551px) {
+        .breadcrumbs {
+            display: none;
+        }
+    }
+    @media (min-width: 700px) {
+        .body.page .page-content p:first-child {
+            display: none;
+        }
+        .body.page .container {
+            max-width: 100% !important;
+        }
+        .sl-navigation {
+            margin-top: 10px;
+        }
+        .sl-wrap.grid {
+            display: grid;
+            grid-template-rows: 50px auto;
+            grid-template-columns: 350px auto;
+            min-height: calc(100vh - 50px);
+        }
+        .filter-wrap {
+            grid-column: 1 / span 1;
+            grid-row: 2 / span 1;
+            grid-template-columns: auto 150px;
+        }
+        #map {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+            height: calc(100vh - 50px);
+            min-height: calc(100vh - 50px);
+        }
+        .sl-list-wrap {
+            grid-column: 1 / span 1;
+            grid-row: 3 / span 1;
+            width: 100%;            
+            position: relative;
+        }
+        .sl-list-wrap .content-wrap {
+            display: block !important;
+            /* position: sticky; */
+            max-height: calc(100vh - 200px);
+            /* overflow-y: auto; */
+            overflow-x: hidden;
+        }
+        .sl-list-wrap .item {
+            margin: 5px 5px 5px 0;
+        }
+        .filter-wrap .map-input[pc] {
+            display: block;
+        }
+        .filter-wrap .map-input[mobile] {
+            display: none;
+        }
+        .sl-list-wrap .arrow-wrap {
+            display: none !important;
+        }        
+        .sl-list-wrap .content-wrap::-webkit-scrollbar {
+            width: 8px;
+        }        
+        .sl-list-wrap .content-wrap::-webkit-scrollbar-track{
+            background: #fafafa; 
+        }
+        .sl-list-wrap .content-wrap::-webkit-scrollbar-thumb{
+            background: #c4c4c4; 
+            border-radius: 20px;
+        }     
+    }
+</style>
+<div class="sl-wrap">
+    <section class="sl-navigation">
+        <a href="">Home</a> > Our Salons
+    </section>
+    <section class="filter-wrap">
+        <input class="map-input" mobile type="text" placeholder="Enter zipcode"/>
+        <input class="map-input" pc type="text" placeholder="Enter address or zip code"/>
+        <!-- <input type="button" id="map-search" value="Search"/> -->
+        <div class="filter-selection-wrap">
+            <img src="/content/images/common/filter1.svg" alt="">            
+            <input type="radio" value="usa" id="filter-radio-us" name="filter-country" checked>
+            <label for="filter-radio-us">US</label>            
+            <input type="radio" value="canada" id="filter-radio-canada" name="filter-country">
+            <label for="filter-radio-canada">Canada</label>
+        </div>
+    </section>
+    <div id="map"></div>
+    <section class="sl-list-wrap">
+        <img src="/content/images/common/close.svg" alt="Close" class="close">
+        <div class="content-wrap">
+            <!-- <div class="item">
+                <img src="https://www.superhairpieces.com/content/images/marketing/featuredsalons/Xtremehairextensions.jpg" alt="">
+                <div>
+                    <div class="name">Xtremehairextensions ON. CA</div>
+                    <a href="/featured-digital-media-partner-juliana" class="link"></a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://www.superhairpieces.com/content/images/marketing/featuredsalons/Xtremehairextensions.jpg" alt="">
+                <div>
+                    <div class="name">Xtremehairextensions ON. CA</div>
+                    <a href="/featured-digital-media-partner-juliana" class="link"></a>
+                </div>
+            </div> -->
+        </div>
+        <div class="arrow-wrap">
+            <img src="/content/images/common/arrow-up3.svg" alt="List">
+        </div>
+    </section>
+</div>
+<script type="text/javascript" src="/content/js/leaflet/leaflet.js"></script>
+<script type="text/javascript" src="/content/js/leaflet/Permalink.js"></script>
+<script src="/content/js/jquery-ui.min.js" defer></script>
+<script type="text/javascript">
+    // $(document).ready(function () {
+    //     if (navigator.geolocation) {
+    //         var geolocationOptions = {
+    //             enableHighAccuracy: true,
+    //             maximumAge: 10 * 60 * 1000, // ten minutes
+    //             timeout: 10 * 1000, // ten seconds
+    //         };
+    //         var geolocationSuccess = function (position) {
+    //             // console.log(position);
+    //             var userLatitude = position.coords.latitude;
+    //             var userLongitude = position.coords.longitude;
+    //             $.ajax({
+    //                 url:
+    //                     "https://geocoder.ca" +
+    //                     "?xxl=" +
+    //                     userLatitude +
+    //                     "&y=" +
+    //                     userLongitude,
+    //             });
+    //         };
+    //         var geolocationError = function (error) {
+    //             //console.log('Error occurred. Error code: ' + error.code);
+    //         };
+    //         navigator.geolocation.getCurrentPosition(
+    //             geolocationSuccess,
+    //             geolocationError,
+    //             geolocationOptions
+    //         );
+    //     }
+    // });
+
+    var map;
+    var container=null;
+    var init = false;
+    var salons=[];
+    let running = false;
+    let popLatLng=[];
+
+    /**
+     * @summary Pop popup at a position in map
+     * 
+     * @param {float} lat Latitude value
+     * @param {float} long Longitude value
+     * @param {int} idx The index of salons array
+     * @param {int} i The index of geo of salon[idx]
+    */
+    function pop(lat, long, idx, i) {
+        // console.log("pop");
+        // console.log(L.marker([lat, long]));
+        let scl = getPopupSizeClass();
+        L.marker([lat, long])
+        .addTo(map)
+        .bindPopup(fillPopup(salons[idx],scl.class, i), {
+            minWidth: scl.width,
+            maxWidth: scl.width
+        }).openPopup();        
+    }
+
+    /**
+     * @summary Show the list based on boundary of map
+    */
+    function setSalonList() {
+        // console.log("setsalonlist");
+        if (running) {
+            setTimeout(setSalonList,500);
+        } else {
+            running=true;
+            let bounds =map.getBounds();            
+            // console.log(bounds);
+            let xfrom = L.latLng(bounds._southWest.lat,bounds._southWest.lng);
+            let xto = L.latLng(bounds._southWest.lat,bounds._northEast.lng);
+            console.log(xfrom.distanceTo(xto));
+            let yfrom = L.latLng(bounds._southWest.lat,bounds._southWest.lng);
+            let yto = L.latLng(bounds._northEast.lat,bounds._southWest.lng);
+            console.log(yfrom.distanceTo(yto));            
+            let ct = "";
+            for (let [idx,s] of salons.entries()) {
+                for (let [i,g] of s.geo.entries()) {
+                    if (bounds._northEast.lat>=g.lat && g.lat>=bounds._southWest.lat && 
+                    bounds._northEast.lng>=g.long && g.long>=bounds._southWest.lng) {                        
+                        // console.log(s);
+                        ct+=`
+                        <div class="item ${popLatLng.length>0?popLatLng[0]==g.lat&&popLatLng[1]==g.long?"selected":"":""}" lat="${g.lat}" long="${g.long}" onClick="onSalonSelect(this, ${g.lat},${g.long},${idx},${i})">
+                            <img src="https://www.superhairpieces.com${s.imgUrl}" alt="">
+                            <div class="name">${s.location}</div>
+                            <div class="addr">${g.address}</div>
+                        </div>
+                        `;
+                    }
+                }
+            }
+            if (ct.length>0) {
+                $(".sl-wrap").addClass("grid");
+                $(".sl-list-wrap").show();
+            } else {
+                $(".sl-wrap").removeClass("grid");
+                $(".sl-list-wrap").hide();
+            }
+            $(".sl-list-wrap .content-wrap").html(ct);            
+            running=false;
+        }                
+    }
+
+    /**
+     * @summary Save selected lat, long and pop popup
+     *      
+     * @param {DOM Element} el The selected DOM element
+     * @param {float} lat Latitude value
+     * @param {float} long Longitude value
+     * @param {int} idx The index of salons array
+     * @param {int} i The index of geo of salon[idx]
+    */
+    function onSalonSelect(el, lat, long, idx, i) {
+        popLatLng=[lat, long];
+        let $el = $(el);
+        $(".sl-list-wrap .item").removeClass("selected");
+        $el.addClass("selected");        
+        pop(lat, long, idx, i);
+    }
+
+    /**
+     * @summary get Size and Class value based on current window size
+     * 
+     * @return {json} Size (and Class) value
+    */
+    function getPopupSizeClass() {
+        if (window.innerWidth<330) {
+            return {
+                width: 200,
+                class:"sl-popup-wrap"
+            }
+        } else {
+            return {
+                width: 320,
+                class: "sl-popup-wrap"
+            }
+        }        
+    }
+
+    /**
+     * @summary Fill salon to map
+    */
+    function fillSalonToMap() {        
+        fetch(`/content/data/media-partners.json`)
+        .then(r=>r.json())
+        .then(r=>{
+            // console.log(r);
+            salons = r;
+            for (let rr of r) {
+                for (let [i, g] of rr.geo.entries()) {
+                    let scl = getPopupSizeClass();
+                    L.marker([g.lat, g.long])
+                    .addTo(map)
+                    .bindPopup(fillPopup(rr, scl.class, i), {
+                        minWidth: scl.width,
+                        maxWidth: scl.width
+                    });                    
+                }                
+            }
+            setSalonList();
+        })
+        .catch(e=>console.log(e));
+    }
+
+    /**
+     * @summary Fill popup content
+     * 
+     * @param {json} item Data to fill
+     * @param {string} cl Class name used for popup
+     * @param {int} i The index of item["geo"]
+    */
+    function fillPopup(item, cl, i) {
+        console.log(window.innerWidth);
+        return `<div class="${cl}">
+                <img src="https://www.superhairpieces.com${item.imgUrl}"/>
+                <div class="contact-wrap">
+                    <div class="name">${item.location}</div>
+                    <div>${item.geo[i].address}</div>
+                    <a href="mailto:${item.email}" class="email">${item.email}</a>
+                    <a href="tel:${item.geo[i].phone.tel}" class="phone">${item.geo[i].phone.display}</a>
+                    <a class="link" target="_blank" href="${item.pageUrl}">Know More</a>
+                </div>
+            </div>`;
+    }
+    /**
+     * @summary set the map based on lattitude and longitude
+     * 
+     * @param {float} lat Lattitude value
+     * @param {float} long Longitude value     
+    */
+    function setMap(lat, long) {
+        if (container != null) {
+            container._leaflet_id = null;
+        } else {
+            map = L.map("map");
+            container = L.DomUtil.get("map");
+            // map.on("zoomend", function() {
+            //     console.log(map.getBounds());
+            // })
+            // setSalonList();
+            map.on("moveend", function() {
+                console.log(map.getBounds());
+                setSalonList();
+            })
+            map.on('popupopen', function(e) {
+                var marker = e.popup._source;
+                // console.log(marker);
+                $(".sl-list-wrap .item").removeClass("selected");
+                popLatLng=[marker._latlng.lat,marker._latlng.lng];
+                let $el = $(`.sl-list-wrap .item[lat="${marker._latlng.lat}"][long="${marker._latlng.lng}"]`);
+                $el.addClass("selected");
+                // console.log($el);
+                // console.log($el.offset().top);
+                // $(".sl-list-wrap .content-wrap").animate({
+                //     scrollTop: $el.position().top
+                // }, 500)
+            });
+        }
+        map.attributionControl.setPrefix("");
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 22,
+        }).addTo(map);
+        // if (item.pageUrl.length>0) {
+        //     L.marker([lat, long])
+        //     .addTo(map)
+        //     .bindPopup(`<div>
+        //             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHlyhq97mwM8KNnjMqu94woax4yPTdg7LU8A&usqp=CAU"/>
+        //             <a target="_blank" href="${item.pageUrl}">${item.location}</a>
+        //         </div>`);
+        // }        
+        if (!init) {            
+            if ($(window).width()>700) {
+                map.setView([lat, long], 5);
+            } else {
+                map.setView([lat, long], 6);
+            }
+            fillSalonToMap();
+            init=true;
+        } else {
+            map.setView([lat, long], 7);
+        }
+    }
+    /**
+     * @summary Search and map based on address input value
+    */
+    function onSearch(val) {
+        // `https://open.mapquestapi.com/geocoding/v1/address?key=A7pHXNsTBdwC0EMfYrwyGhjAKkE559eb&location=${$(".map-input").val()}`
+        fetch(`https://geocoder.ca/?locate=${val}&country=${$("input[name=filter-country]:checked").val()}&geoit=xml&standard=1&topmatches=1&strictmode=1`)
+        .then(res => res.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+            console.log(data);
+            // if (r.results) {
+            //     if (r.results.length>0) {
+            //         if (r.results[0].locations.length>0) {
+            //             setMap(r.results[0].locations[0].latLng.lat, r.results[0].locations[0].latLng.lng)
+            //         }
+            //     }       
+            // }
+            if (data.getElementsByTagName("error").length>0) {
+                alert("Could not find this location, please try again");
+            } else {                
+                let lat =
+                    data.getElementsByTagName("latt")[0].childNodes[0]
+                        .nodeValue;
+                let long =
+                    data.getElementsByTagName("longt")[0].childNodes[0]
+                        .nodeValue;
+                setMap(lat, long);
+            }
+        })
+        .catch((e) => console.log(e));
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+        console.log(navigator.geolocation);
+        if (navigator.geolocation) {
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            function success(pos) {
+                var crd = pos.coords;
+                setMap(crd.latitude, crd.longitude)
+                // console.log('Your current position is:');
+                // console.log(`Latitude : ${crd.latitude}`);
+                // console.log(`Longitude: ${crd.longitude}`);
+                // console.log(`More or less ${crd.accuracy} meters.`);
+            }
+
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        }
+        $(".map-input").on("keyup", function(event) {
+            if (event.which === 13) {
+                onSearch($(this).val());
+            }
+        })
+        // $("#map-search").on("click", function () {
+        //     onSearch();
+        // });
+        $.fn.riseUp = function()   { $(this).show("slide", { direction: "down" }, 500); }
+        $.fn.riseDown = function() { $(this).hide("slide", { direction: "down" }, 500); }
+        $(".sl-list-wrap .arrow-wrap").on("click", function() {
+            $(this).hide();
+            $(".sl-list-wrap").addClass("open");
+            $(".sl-list-wrap .content-wrap").riseUp();
+            $(".sl-list-wrap .close").show();
+        });
+        $(".sl-list-wrap .close").on("click", function() {
+            $(".sl-list-wrap").removeClass("open");
+            $(".sl-list-wrap .arrow-wrap").show();
+            $(".sl-list-wrap .content-wrap").hide();
+            $(".sl-list-wrap .close").hide();
+        });
+    });
+</script>
