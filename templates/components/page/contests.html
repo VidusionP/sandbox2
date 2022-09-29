@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="/content/css/plyr.css">
+<link rel="stylesheet" href="/content/css/submenu.css">
+<style>
+    @font-face {font-family: "Eras Bold ITC";
+        src: url("/content/fonts/eras-bold-itc.eot"); /* IE9*/
+        src: url("/content/fonts/eras-bold-itc.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+        url("/content/fonts/eras-bold-itc.woff2") format("woff2"), /* chrome firefox */
+        url("/content/fonts/eras-bold-itc.woff") format("woff"), /* chrome firefox */
+        url("/content/fonts/eras-bold-itc.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+        url("/content/fonts/eras-bold-itc.svg#Eras Bold ITC") format("svg"); /* iOS 4.1- */
+    }
+    :root {
+        --color1: #f8f9fa;
+        --color2: #fcd832;
+        --color3: #202124;
+        --font-size1: 20px;
+        --font-size2: 30px;   
+        --font-size3: 16px;   
+        --font-size4: 13px;  
+        --element-margin: 1.3rem;
+        --section-margin: 2rem;
+    }
+    section {
+        margin-bottom: calc(var(--section-margin) * 2.5);
+    }
+    section::before {
+        display: block;
+        content: attr(title);
+        font-size: var(--font-size2);
+        text-align: center;
+        margin-bottom: var(--section-margin);
+    }    
+    #player .plyr__control--overlaid {
+        background: var(--color1);
+    }
+    #player .plyr__control--overlaid svg {
+        color: rgba(8, 8, 8, 0.62)
+    }
+    .plyr--full-ui input[type=range] {
+        color: var(--color2);
+    }
+    section[section=video-contest] .content-wrap {
+        padding: var(--section-margin);
+        background-color: var(--color2);
+        text-align: center;
+    }
+    section[section=video-contest] .content-wrap .title {
+        font-size: var(--font-size1);
+        font-weight: bold;
+        margin-bottom: var(--element-margin);
+    }
+    section[section=video-contest] .content-wrap .title[pc] {
+        display: none;
+    }
+    section[section=video-contest] .content-wrap .desp {
+        font-size: var(--font-size4);
+        display: none;
+    }
+    section[section=video-contest] .content-wrap .link {
+        margin: var(--element-margin) auto;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 8px 0;
+        width: 150px;
+        background-color: var(--color3);
+        color: var(--color1);
+        font-size: var(--font-size3);
+    }
+    section[section=video-contest] .content-wrap .link:active, section[section=video-contest] .content-wrap .link:focus {
+        outline: none !important;
+    }    
+    section .item {
+        margin-bottom: var(--section-margin);
+    }
+    section .item img {
+        width: 100%;
+    }
+    section .item iframe {
+        width: 100%;
+        height: 50vw;
+    }
+    .ongoing-ended {
+        text-align: center;
+        margin: auto;
+    }
+    @media (min-width: 600px) {
+        section[section=video-contest] .content-wrap .desp {
+            display: block;
+        }
+        section[section=video-contest] .content-wrap .title[pc] {
+            display: block;
+        }
+        section[section=video-contest] .content-wrap .title[mobile] {
+            display: none;
+        }
+    }
+    @media (min-width:900px) {
+        :root {
+            --element-margin: 1.5rem;
+            --section-margin: 2.3rem
+        }
+        .ongoing-ended {
+            font-size: 18px;
+            width: 800px;
+        }
+
+    }
+    @media (min-width: 1024px) {
+        section .item iframe {
+            height: 600px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .ongoing-ended {
+            width: 1000px;
+        }
+    }
+</style>
+<div style="position: relative">
+    <div class="menu-wrap">
+        <div class="menu-items"></div>
+    </div>
+</div> 
+<div class="c-container">
+    <section title="Ongoing" section="video-contest">
+        <div class="ongoing-ended">
+            The 2022 Hair Transformation contest has now ended. <br/><br/>Congratulations to our winners, 
+            and to everyone who participated! If you missed out on this year's Hair Transformation contest, 
+            don't worry, we will have more opportunities for you to win coming soon! <br/><br/>Stay tuned to this page or 
+            subscribe to our newsletter to be notified first when the next contest launches.
+        </div>
+    </section>
+    <section title="Ended">
+        <div class="item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Av698ZcnShw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="item">
+            <picture>
+                <source media="(min-width: 600px)" srcset="/content/images/marketing/contests/wintercontest-pc.webp" type="image/webp">
+                <source media="(min-width: 600px)" srcset="/content/images/marketing/contests/wintercontest-pc.jpg" type="image/jpeg">
+                <source srcset="/content/images/marketing/contests/wintercontest-mobile.webp" type="image/webp">
+                <source srcset="/content/images/marketing/contests/wintercontest-mobile.jpg" type="image/jpeg">
+                <img src="/content/images/marketing/contests/wintercontest-mobile.jpg" alt="Winter Contest 2022">
+            </picture>
+        </div>
+        <div class="item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YgaUJBl5Mhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+</div>
+<script src="/content/js/submenu.js" defer></script>
+<script src="/content/js/plyr.js" defer></script>
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        const player = new Plyr('#player');
+    })
+</script>

@@ -62,6 +62,7 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
 
     return {
         load() {
+            
             $(async () => {
                 let globalClass;
                 let pageClass;

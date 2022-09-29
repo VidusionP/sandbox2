@@ -16,7 +16,6 @@ export default function () {
         event.preventDefault();
     });
     */
-
     utils.hooks.on('cookie-privacy-notification', (event) => {
         event.preventDefault();
 

@@ -1,0 +1,50 @@
+<style>
+    .container {
+        max-width: 110rem !important;        
+    }
+    .page-content--centered {
+        width: 100% !important;
+    }
+</style>
+{{#partial "page"}}
+
+
+
+<main class="page">
+
+
+    {{#if page.sub_pages}}ca
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    <div class="page-content page-content--centered">
+        <input type="hidden" name="store-token" value="{{settings.storefront_api.token}}">
+
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{> components/page/gender}}
+        {{/replace}}
+    </div>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

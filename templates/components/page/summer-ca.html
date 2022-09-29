@@ -1,0 +1,1060 @@
+<title>Summer Sale 2022</title>
+<style>    
+    .breadcrumbs {
+        display: none;
+    }
+    .page-heading {
+        display: none;
+    }
+    .body.page{
+        padding: 0 !important;
+    }
+    p{
+        margin: 0 !important;
+        display: none !important;
+    }
+    body {
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+        overflow-y: scroll; 
+        overflow-x:mensden;
+    }
+    body::-webkit-scrollbar {
+        display: none; 
+        max-width: 100% !important;
+        padding: 0!important;
+    }
+    .body.page .container {
+        max-width: 100%!important;
+        padding: 0px !important;
+    }
+    .page{
+        margin: 0 !important;
+        margin-bottom: 0!important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+    }
+    .page-content.page-content--centered{
+        padding: 0!important;
+        width: 100% !important;
+    }
+    .ss-padder-2{height: 2vh;}
+    .ss-padder-4{height: 4vh;}
+    .ss-padder-8{height: 8vh;}
+    .ss-padder-16{height: 16vh;}
+    .ss-main-banner{
+        margin: auto;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .ss-main-banner-text{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+    }
+    .ss-date{
+        padding-top: 1vh;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+        display: none;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .ss-desc{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        max-width: 950px;
+        margin: auto;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .ss-title{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+        margin: auto;
+    }
+    .ss-subtitle{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+        margin: auto;
+    }
+    .ss-rules-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+        max-width: 1400px;
+    }
+    .ss-rules-img-2{
+        width: 100%;
+        margin: auto;
+        padding-left: 6vw;
+        padding-right: 6vw;
+        padding-bottom: 2vh;
+        display: none;
+        text-align: center;
+    }
+    @media(max-width: 500px){
+        .ss-mobile-banner{
+            display: block !important;
+        }
+        .ss-main-banner{
+            display: none !important;
+        }
+        .ss-padder-16{
+            height: 8vh !important;
+        }
+        .ss-padder-8{
+            height: 6vh !important;
+        }
+    }
+    @media(max-width: 1120px){
+        .ss-rules-img-2{
+            display: block !important;
+        }
+        .ss-rules-cont{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .ss-rules-img{
+            display: none;
+        }
+        .ss-rules-text{
+            padding-right: 6vw !important;
+        }
+    }
+    .ss-rules-text{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+        padding-left: 6vw;
+        padding-right: 1vw;
+    }
+    .ss-rules-img{
+        padding-left: 1vw;
+        padding-right: 6vw;
+    }
+    .ss-reg-banner{
+        margin: auto;
+        position: relative;
+        width: 100%;
+        text-align: center;
+       
+    }
+    .ss-reg-title{
+        position: absolute; 
+        top: 30%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+    }
+    .ss-reg-subtitle{
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .ss-reg-form{
+        position: absolute; 
+        top: 70%;
+        left: 50%;
+        margin: auto;
+        transform: translate(-50%, -50%);
+        max-width: 850px;
+        width: 100%;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    @media(max-width: 400px){
+        .ss-reg-form{
+            top: 80%;
+        }
+    }
+    .ss-40-cont{
+        width: 100%;
+        margin: auto;
+     
+       
+    }
+    .ss-scroller{
+        max-width: 800px;
+        margin: auto;
+    }
+    .ss-scroller-2{
+        max-width: 1600px;
+        margin: auto;
+    }
+    .ss-20-cont{
+        width: 100%;
+
+        margin: auto;
+    
+    }
+
+    .card{
+        margin-bottom: 0 !important;
+    }
+    .card-body{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .ss-choose-container{
+        margin: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        display: grid;
+        max-width: 1120px;
+    }
+    .ss-banner{
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .ss-choose-title{
+        padding-top: 1vh;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+        color: #000000;
+        padding-bottom: 2vh;
+    }
+    .ss-choose-description{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        max-width: 243px;
+        margin: auto;
+    }
+    @media(max-width: 750px){
+        .ss-choose-container{
+            grid-template-columns: repeat(1, 1fr) !important;
+            padding-top: 4vh !important;
+            padding-bottom: 4vh !important;
+        }
+        .ss-choose-title{
+            padding-top: 0vh !important;
+            padding-bottom: 1vh !important;
+        }
+    }
+    .slick-dots li button:before
+    {
+        height: 10px;
+        width: 10px;
+    }
+    .slick-dots li button
+    {
+        height: 10px;
+        width: 10px;
+    }
+    .ss-sale{
+        position: absolute;
+        top: 10%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+    }
+    .ss-item{
+        max-width: 400px;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ss-discount{
+        max-width: 200px;
+    }
+    .ss-cust-title{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+        color: #000000;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .ss-cust-desc{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        padding-left: 6vw;
+        padding-right: 6vw;
+        margin: auto;
+        width: 100%;
+        padding-bottom: 2vh;
+    }
+    @media(max-width: 430px){
+        .ss-title{
+            font-size: 36px;
+        }
+        .ss-subtitle{
+            font-size: 24px;
+        }
+    }
+    @media(max-width: 1250px){
+        .ss-main-banner-text{
+            display: none;
+        }
+        .ss-hurry{
+            display: none;
+        }
+        .ss-date{
+            display: block !important;
+        }
+    }
+    @media(max-width: 1260px){
+        .ss-20-cont{
+            max-width: 1200px
+        }
+        .ss-40-cont{
+            max-width: 600px
+        }
+        .ss-item{
+            max-width: 300px;
+        }
+        .ss-discount{
+            max-width: 150px;
+        }
+
+    }
+    @media(max-width: 800px){
+        .ss-item{
+            max-width: 200px;
+        }
+        .ss-20-cont{
+            max-width: 800px
+        }
+        .ss-40-cont{
+            max-width: 400px
+        }
+        .ss-discount{
+            max-width: 100px;
+        }
+
+    }
+    
+</style>
+<img src="/content/images/marketing/summer/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0;"/>
+
+<div class="ss-main-banner">
+    <picture>
+        <source srcset="/content/images/marketing/summer/banner1.webp" type="image/webp">
+        <source srcset="/content/images/marketing/summer/banner1.jpg" type="image/jpg"> 
+        <img style="width: 100%;"src="/content/images/marketing/summer/banner1.jpg">
+    </picture>    
+    <div class="ss-main-banner-text">VALID UNTIL AUGUST 8TH 5:00 P.M. EST</div>
+</div>
+<div class="ss-mobile-banner" style="display: none">
+    <picture>
+        <source srcset="/content/images/marketing/summer/banner2.webp" type="image/webp">
+        <source srcset="/content/images/marketing/summer/banner2.jpg" type="image/jpg"> 
+        <img style="width: 100%;"src="/content/images/marketing/summer/banner2.jpg">
+    </picture>
+</div>
+
+<div class="ss-padder-4"></div>
+<div class="ss-desc">We're bringing the <img style="height: 24px;" src="/content/images/marketing/summer/fire.svg"> and sass this summer with our BIGGEST sale yet. Now you can soak up that <img style="height: 24px;" src="/content/images/marketing/summer/sun.svg"> and look fresh by saving up to $40 OFF select hair systems. <span class="ss-hurry">&nbsp;Hurry while this offer lasts!</span></div>
+<div class="ss-date">VALID UNTIL AUGUST 8TH 5:00 P.M. EST</div>
+
+<div class="ss-padder-8"></div>
+<div class="ss-title">GET $40 OFF</div>
+<div class="ss-subtitle"><span style="color: #F1538F;">CODE:</span>&nbsp;<span style="background: #FFED00;">SUMMER40OFF</span></div>
+<div class="ss-padder-4"></div>
+
+<div class="ss-40-cont">
+    <div class="ss-scroller">
+        <div class="ss-item">
+
+            <article class="card ">
+                <figure class="card-figure">
+                        <a href="https://superhairpieces.ca/mens-toupee-m178-8x10-inject-skin-top-layer-in-stock/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/3146/10194/M178_Thumb__40696.1640115314__56101.1640188095.jpg?c=2" alt="Mens Toupee | M178 8&quot;x10&quot; Inject skin top layer" title="Mens Toupee | M178 8&quot;x10&quot; Inject skin top layer">
+                        </a>
+                    <a href="https://superhairpieces.ca/mens-toupee-m178-8x10-inject-skin-top-layer-in-stock/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                   <span class=" stamped-product-reviews-badge" data-id="3146" data-product-sku="M178" style="display:block;"></span>
+                    <h4 class="card-title">
+                            <a href="https://superhairpieces.ca/mens-toupee-m178-8x10-inject-skin-top-layer-in-stock/">Mens Toupee | M178 8&quot;x10&quot; Inject skin top layer</a>
+                    </h4>
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                        </div>
+                                </div>        
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                </div>
+                    <a href="https://superhairpieces.ca/mens-toupee-m178-8x10-inject-skin-top-layer-in-stock/"></a>
+            </div>
+            </article>
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer40.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer40.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer40.png">
+                </picture>            
+            </div>
+    </div>
+        <div class="ss-item">
+            <article class="card ">
+                <figure class="card-figure">
+                        <a href="https://superhairpieces.ca/toupee-m179-8x10-injected-poly-skin-lace-front-hair-system/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/3147/10193/M179_Thumb__12648.1639676868__83703.1640187983.jpg?c=2" alt="Toupee M179 8&quot;x10&quot; Injected Poly Skin Lace Front w/ Mono Silk Inner Layer" title="Toupee M179 8&quot;x10&quot; Injected Poly Skin Lace Front w/ Mono Silk Inner Layer">
+                        </a>
+                    <a href="https://superhairpieces.ca/toupee-m179-8x10-injected-poly-skin-lace-front-hair-system/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                   <span class=" stamped-product-reviews-badge" data-id="3147" data-product-sku="M179" style="display:block;"></span>
+                    <h4 class="card-title">
+                            <a href="https://superhairpieces.ca/toupee-m179-8x10-injected-poly-skin-lace-front-hair-system/">Toupee M179 8&quot;x10&quot; Injected Poly Skin Lace Front w/ Mono Silk Inner Layer</a>
+                    </h4>
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$320.00</span>
+                    </div>
+                        </div>
+                                </div>        
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$320.00</span>
+                    </div>
+                </div>
+                    <a href="https://superhairpieces.ca/toupee-m179-8x10-injected-poly-skin-lace-front-hair-system/"></a>
+            </div>
+                    </article>
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer40.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer40.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer40.png">
+                </picture>            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ss-padder-8"></div>
+<div class="ss-title">GET $20 OFF</div>
+<div class="ss-subtitle"><span style="color: #F1538F;">CODE:</span>&nbsp;<span style="background: #FFED00;">SUMMER20OFF</span></div>
+<div class="ss-padder-4"></div>
+
+<div class="ss-20-cont">
+    <div class="ss-scroller-2">
+        <div class="ss-item">
+            <article class="card ">
+                <figure class="card-figure">
+                        <a href="https://superhairpieces.ca/toupee-m204-french-lace-front-and-top-hairpieces-for-men-hair-system/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/2148/10208/M204_Thumb__31975.1640099603__87822.1645116725.jpg?c=2" alt="Toupee M204 French Lace Front and Top Hairpieces for Men Hair System" title="Toupee M204 French Lace Front and Top Hairpieces for Men Hair System">
+                        </a>
+                    <a href="https://superhairpieces.ca/toupee-m204-french-lace-front-and-top-hairpieces-for-men-hair-system/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                   <span class=" stamped-product-reviews-badge" data-id="2148" data-product-sku="M204" style="display:block;"></span>
+                    <h4 class="card-title">
+                            <a href="https://superhairpieces.ca/toupee-m204-french-lace-front-and-top-hairpieces-for-men-hair-system/">Toupee M204 French Lace Front and Top Hairpieces for Men Hair System</a>
+                    </h4>
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$350.00</span>
+                    </div>
+                        </div>
+                                </div>        
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$350.00</span>
+                    </div>
+                </div>
+                    <a href="https://superhairpieces.ca/toupee-m204-french-lace-front-and-top-hairpieces-for-men-hair-system/"></a>
+            </div>
+                    </article>
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer20.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer20.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer20.png">
+                </picture>              
+            </div>
+        </div>
+        <div class="ss-item">
+            <article class="card ">
+                <figure class="card-figure">
+                        <a href="https://superhairpieces.ca/mens-toupee-m108-basic-7x9-human-hair-mono-top-in-stock-basic-version-m108basic/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/3097/10198/M108B_Thumb__54435.1631728914__41283.1640188198.jpg?c=2" alt="Mens Toupee | M108 Basic 7.5&quot;x9&quot; Human Hair Mono Top Hairpiece - Basic Version" title="Mens Toupee | M108 Basic 7.5&quot;x9&quot; Human Hair Mono Top Hairpiece - Basic Version">
+                        </a>
+                    <a href="https://superhairpieces.ca/mens-toupee-m108-basic-7x9-human-hair-mono-top-in-stock-basic-version-m108basic/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                   <span class=" stamped-product-reviews-badge" data-id="3097" data-product-sku="M108MBSC" style="display:block;"></span>
+                    <h4 class="card-title">
+                            <a href="https://superhairpieces.ca/mens-toupee-m108-basic-7x9-human-hair-mono-top-in-stock-basic-version-m108basic/">Mens Toupee | M108 Basic 7.5&quot;x9&quot; Human Hair Mono Top Hairpiece - Basic Version</a>
+                    </h4>
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                        </div>
+                                </div>        
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                </div>
+                    <a href="https://superhairpieces.ca/mens-toupee-m108-basic-7x9-human-hair-mono-top-in-stock-basic-version-m108basic/"></a>
+            </div>
+            </article>
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer20.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer20.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer20.png">
+                </picture>              
+            </div>
+        </div>
+        <div class="ss-item">
+            <article class="card ">
+                <figure class="card-figure">
+                        <a href="https://superhairpieces.ca/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/2278/11380/11380__88654.1657563831.jpg?c=2" alt="Hair pieces for men" title="Hair pieces for men">
+                        </a>
+                    <a href="https://superhairpieces.ca/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                   <span class=" stamped-product-reviews-badge" data-id="2278" data-product-sku="M102LBSC" style="display:block;"></span>
+                                    <div class="card-highlight">Mono Top - Basic</div>
+                    <h4 class="card-title">
+                            <a href="https://superhairpieces.ca/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/">Toupee M102 Basic 8&quot;x10&quot; Mono Silk Top Lace -Basic Version</a>
+                    </h4>
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                        </div>
+                                </div>        
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">$280.00</span>
+                    </div>
+                </div>
+                    <a href="https://superhairpieces.ca/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/"></a>
+            </div>
+            </article>
+            
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer20.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer20.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer20.png">
+                </picture>              
+            </div>
+        </div>
+        <div class="ss-item">
+            <article class="card ">
+                <figure class="card-figure ">
+                        <a href="https://www.superhairpieces.com/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/">
+                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-cavofu/stencil/3ff77e80-ee5d-013a-77ac-06e729959beb/e/c48bd180-ee8f-013a-edb8-0e025ca2ca2f/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-cavofu/images/stencil/500x659/products/3033/15333/M102B_Thumb__81862.1645027834.jpg?c=2" alt="Hair pieces for men" title="Hair pieces for men">
+                        </a>
+                    <a href="https://www.superhairpieces.com/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/" class="card-figure-overlay-wrap">
+                        <div class="card-figure-overlay"></div>
+                        <div class="card-link--alternate">See Buying Options</div>
+                    </a>
+                    
+                    
+                </figure>
+                <div class="card-body">
+                    <span class=" stamped-product-reviews-badge" data-id="3033" data-product-sku="M102LBSC" style="display:block;"></span>    
+                                    <div class="card-highlight">Mono Top - Basic</div>
+                    <h4 class="card-title">
+                            <a href="https://www.superhairpieces.com/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/">Toupee M102 Basic 8&quot;x10&quot; Mono Silk Top Lace -Basic Version</a>
+                    </h4>     
+                    <div class="card-hp-text">
+                        <div class="card-text" data-test-info-type="price">
+                                        <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">USD$209.00</span>
+                    </div>
+                        </div>
+                                </div>   
+                </div>
+            <div class="card-price ">
+                <div class="card-text" data-test-info-type="price">
+                                <div class="price-section price-section--withoutTax "  >
+                        <span data-product-price-without-tax class="price price--withoutTax">USD$209.00</span>
+                    </div>
+                </div>
+                    <a href="https://www.superhairpieces.com/toupee-m102-basic-8x10-mono-silk-top-lace-basic-version/">s</a>
+            </div>
+            </article>
+            <div class="ss-sale">
+                <picture>
+                    <source srcset="/content/images/marketing/summer/summer20.webp" type="image/webp">
+                    <source srcset="/content/images/marketing/summer/summer20.jpg" type="image/png"> 
+                    <img class="ss-discount" src="/content/images/marketing/summer/summer20.png">
+                </picture>              
+            </div>
+    </div>
+    </div>
+</div>
+<div class="ss-padder-8"></div>
+<div class="ss-title">Rules</div>
+<div class="ss-padder-4"></div>
+<div class="ss-rules-img-2">
+    <picture>
+        <source srcset="/content/images/marketing/summer/banner3.webp" type="image/webp">
+        <source srcset="/content/images/marketing/summer/banner3.jpg" type="image/jpg"> 
+        <img src="/content/images/marketing/summer/banner3.jpg">
+    </picture>
+</div>
+<div class="ss-rules-cont">
+    <div class="ss-rules-text">
+        <li>Save $40 off each M179 & M178 stock hair system using the code SUMMER40OFF</li>
+        <li>Save $20 off each M204, M102LBSC, M108MBSC & M161V stock hair system using the code SUMMER20OFF</li>
+        <li>Codes can be used a maximum of 3 times and cannot be combined with other promotions.</li>
+        <li>Valid from July 26th to August 8th 5:00 P.M EST</li>
+    </div>
+    <div class="ss-rules-img">
+        <picture>
+            <source srcset="/content/images/marketing/summer/banner3.webp" type="image/webp">
+            <source srcset="/content/images/marketing/summer/banner3.jpg" type="image/jpg"> 
+            <img src="/content/images/marketing/summer/banner3.jpg">
+        </picture>
+    </div>
+</div>
+
+
+<div class="ss-padder-8"></div>
+<div class="ss-reg-banner">
+    <picture>
+        <source srcset="/content/images/marketing/summer/banner4.webp" type="image/webp">
+        <source srcset="/content/images/marketing/summer/banner4.jpg" type="image/jpg"> 
+        <img style=" object-fit: cover !important;min-height: 400px;width:100%;"src="/content/images/marketing/summer/banner4.jpg">
+    </picture>    
+    <div class="ss-reg-title">JOIN US</div>
+    <div class="ss-reg-subtitle">Always stay updated with the latest products, promotions, videos, tips and much more!</div>
+    <div class="ss-reg-form" id="omnisend-embedded-v2-62a0af2b3a4030de870d6989"></div>
+
+
+</div>
+
+<div class="ss-padder-8"></div>
+<div class="ss-cust-title">Hair Supplies</div>
+<div class="ss-padder-2"></div>
+<div class="ss-cust-desc" style="max-width: 1050px">We carry a number of different hairpiece supplies from adhesives, solvents, scalp protectors, leave-in conditioners, sprays and much more from some of the leading brands in the market!</div>
+
+<script type="text/javascript">
+
+    // SOUNDEST-V6-SM
+
+    window.SOUNDEST = window.SOUNDEST || {};
+
+    SOUNDEST.shopID = "gmosz3ja";
+
+
+    SOUNDEST.shopType = "bigcommerce";
+
+    SOUNDEST.baseURL = "https://omnisnippet1.com/";
+
+    SOUNDEST.eventsURL = "https://events.soundestlink.com/";
+
+    SOUNDEST.version = new Date().toISOString().slice(0, 13);
+
+    SOUNDEST.pageType = "page";
+
+    SOUNDEST.productTitle = "";
+
+    SOUNDEST.productID = "";
+
+    SOUNDEST.categoryTitle = "";
+
+    SOUNDEST.categoryID = "";
+
+    SOUNDEST.orderID = "";
+
+    !function(e,n){for(var t=document.getElementsByTagName("script"),o=!1,s=0;s<t.length;s++)"string"==typeof t[s].src&&0<t[s].src.indexOf("bigcommerce-launcher.js")&&(o=!0);if(!o){var i=document.createElement("script");i.type="text/javascript",i.async=!0,i.src=e+"inshop/bigcommerce-launcher.js?v="+n;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(i,r)}}(SOUNDEST.baseURL,SOUNDEST.version),function(d,m,u,p,g){var e,D=function(e){var n,t,o,s=document.cookie.split(";"),i=e+"=";for(/mybigcommerce.com/.test(location.hostname)&&(i=e+"-"+m+"="),t=0;t<s.length;t+=1)0===(o=s[t].trim()).indexOf(i)&&(n=o.substring(i.length,o.length));return n};e=function(){if("orderconfirmation"===p){for(var e=document.getElementsByTagName("img"),n=!1,t=0;t<e.length;t++)"string"==typeof e[t].src&&0<e[t].src.indexOf("saveNewsletterOrder")&&0<e[t].src.indexOf("anonymousID")&&0<e[t].src.indexOf("sessionID")&&(n=!0);if(!n){var o=document.createElement("img"),s=["timestamp="+(new Date).getTime(),"shopBaseURL="+window.location.protocol+"//"+window.location.hostname+"/","shopID="+m,"shopType="+u,"orderID="+g,"source=sm"],i=D("omnisendAnonymousID"),r=D("omnisendSessionID"),a=D("omnisendContactID"),c=D("omnisendAttributionID");void 0!==i&&s.push("anonymousID="+i),void 0!==r&&s.push("sessionID="+r),void 0!==a&&s.push("contactID="+a),void 0!==c&&s.push("attributionID="+c),o.src=d+"events/saveNewsletterOrder/?"+s.join("&"),document.body.appendChild(o)}}},"loading"!==document.readyState?e():document.addEventListener?document.addEventListener("DOMContentLoaded",e):document.attachEvent("onreadystatechange",function(){"loading"!==document.readyState&&e()})}(SOUNDEST.eventsURL,SOUNDEST.shopID,SOUNDEST.shopType,SOUNDEST.pageType,SOUNDEST.orderID);
+
+</script>
+
+<style>
+    .ss-supplies-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: auto;
+        max-width: 1000px;
+        padding-left: 3vh;
+        padding-right: 3vh;
+    }
+    .ss-supplies-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        color: #000000;
+        text-shadow: 0px 1px 9px #FFFFFF
+    }
+    .ss-supplies-image{
+        position: relative;
+        margin: auto;
+    }
+    .ss-supplies-item{
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+
+    }
+    .card{
+        margin-bottom: 0;
+    }
+    .card-body{
+        padding: 0 !important;
+    }
+    .card-price{
+        position:relative !important;
+        bottom: 0 !important;
+    }
+    .stamped-badge-caption{
+        white-space: nowrap !important;
+    }
+    @media(max-width: 650px){
+        .ss-supplies-grid{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media(max-width: 400px){
+        .ss-supplies-text{
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+</style>
+
+<div class="ss-supplies-grid">
+    <div class="ss-supplies-item">
+        <article class="card ">
+            <figure class="card-figure">
+                    <a href="https://superhairpieces.ca/six_teeth_hairpiece_comb_clips/">
+                        <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/1772/8082/SixTeethBlack_copy__16464.1584978737.jpg?c=2" alt="Six_Teeth_Hairpiece_Comb_Clips" title="Six_Teeth_Hairpiece_Comb_Clips">
+                    </a>
+                <a href="https://superhairpieces.ca/six_teeth_hairpiece_comb_clips/" class="card-figure-overlay-wrap">
+                    <div class="card-figure-overlay"></div>
+                    <div class="card-link--alternate">See Buying Options</div>
+                </a>
+                
+                
+            </figure>
+            <div class="card-body">
+               <span class=" stamped-product-reviews-badge" data-id="1772" data-product-sku="Clips_Six_Teeth_Hairpiece_Comb" style="display:block;"></span>
+                <h4 class="card-title">
+                        <a href="https://superhairpieces.ca/six_teeth_hairpiece_comb_clips/">Six Teeth Hairpiece Comb Clips</a>
+                </h4>
+                <div class="card-hp-text">
+                    <div class="card-text" data-test-info-type="price">
+                                    <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$2.10</span>
+                </div>
+                    </div>
+                            </div>        
+            </div>
+        
+        <div class="card-price ">
+            <div class="card-text" data-test-info-type="price">
+                            <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$2.10</span>
+                </div>
+            </div>
+                <a href="https://superhairpieces.ca/six_teeth_hairpiece_comb_clips/"></a>
+        </div>
+        </article>
+    </div>
+    <div class="ss-supplies-item">
+        <article class="card ">
+            <figure class="card-figure">
+                    <a href="https://superhairpieces.ca/hair-extension-tape-tabs/">
+                        <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/1604/6026/6026__41940.1657563823.png?c=2" alt="Hair Extension Tape Tabs" title="Hair Extension Tape Tabs">
+                    </a>
+                <a href="https://superhairpieces.ca/hair-extension-tape-tabs/" class="card-figure-overlay-wrap">
+                    <div class="card-figure-overlay"></div>
+                    <div class="card-link--alternate">See Buying Options</div>
+                </a>
+                
+                
+            </figure>
+            <div class="card-body">
+               <span class=" stamped-product-reviews-badge" data-id="1604" data-product-sku="tp blue ext tape tab" style="display:block;"></span>
+                <h4 class="card-title">
+                        <a href="https://superhairpieces.ca/hair-extension-tape-tabs/">Hair Extension Tape Tabs</a>
+                </h4>
+                <div class="card-hp-text">
+                    <div class="card-text" data-test-info-type="price">
+                                    <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$17.00</span>
+                </div>
+                    </div>
+                            </div>        
+            </div>
+        
+        <div class="card-price ">
+            <div class="card-text" data-test-info-type="price">
+                            <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$17.00</span>
+                </div>
+            </div>
+                <a href="https://superhairpieces.ca/hair-extension-tape-tabs/"></a>
+        </div>
+        </article>
+    </div>
+    <div class="ss-supplies-item">
+        <article class="card ">
+            <figure class="card-figure">
+                    <a href="https://superhairpieces.ca/ultra-hold-glue-0-5oz/">
+                        <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/1650/11114/Ultrahold-6__05744.1651253534.jpg?c=2" alt="Ultra Hold Glue 0.5oz" title="Ultra Hold Glue 0.5oz">
+                    </a>
+                <a href="https://superhairpieces.ca/ultra-hold-glue-0-5oz/" class="card-figure-overlay-wrap">
+                    <div class="card-figure-overlay"></div>
+                    <div class="card-link--alternate">See Buying Options</div>
+                </a>
+                
+                
+            </figure>
+            <div class="card-body">
+               <span class=" stamped-product-reviews-badge" data-id="1650" data-product-sku="GL UHG 0.5OZ" style="display:block;"></span>
+                <h4 class="card-title">
+                        <a href="https://superhairpieces.ca/ultra-hold-glue-0-5oz/">Ultra Hold Glue 0.5oz</a>
+                </h4>
+                <div class="card-hp-text">
+                    <div class="card-text" data-test-info-type="price">
+                                    <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$11.00</span>
+                </div>
+                    </div>
+                            </div>        
+            </div>
+        
+        <div class="card-price ">
+            <div class="card-text" data-test-info-type="price">
+                            <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$11.00</span>
+                </div>
+            </div>
+                <a href="https://superhairpieces.ca/ultra-hold-glue-0-5oz/"></a>
+        </div>
+        </article>
+    </div>
+    <div class="ss-supplies-item">
+        <article class="card ">
+            <figure class="card-figure">
+                    <a href="https://superhairpieces.ca/ultra-hold-tape-a-shape-3-4-x-3-36-pcs-per-pack/">
+                        <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="https://cdn11.bigcommerce.com/s-gmosz3ja/images/stencil/500x659/products/1718/10914/Ultra-hold-tape-A__54162.1650047733.jpg?c=2" alt="Ultra Hold Tape &quot;A&quot; Shape 3/4&quot; x 3&quot; (36 pcs per pack)" title="Ultra Hold Tape &quot;A&quot; Shape 3/4&quot; x 3&quot; (36 pcs per pack)">
+                    </a>
+                <a href="https://superhairpieces.ca/ultra-hold-tape-a-shape-3-4-x-3-36-pcs-per-pack/" class="card-figure-overlay-wrap">
+                    <div class="card-figure-overlay"></div>
+                    <div class="card-link--alternate">See Buying Options</div>
+                </a>
+                
+                
+            </figure>
+            <div class="card-body">
+               <span class=" stamped-product-reviews-badge" data-id="1718" data-product-sku="TP UH BAG &quot;A&quot;" style="display:block;"></span>
+                <h4 class="card-title">
+                        <a href="https://superhairpieces.ca/ultra-hold-tape-a-shape-3-4-x-3-36-pcs-per-pack/">Ultra Hold Tape &quot;A&quot; Shape 3/4&quot; x 3&quot; (36 pcs per pack)</a>
+                </h4>
+                <div class="card-hp-text">
+                    <div class="card-text" data-test-info-type="price">
+                                    <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$10.00</span>
+                </div>
+                    </div>
+                            </div>        
+            </div>
+        
+        <div class="card-price ">
+            <div class="card-text" data-test-info-type="price">
+                            <div class="price-section price-section--withoutTax "  >
+                    <span data-product-price-without-tax class="price price--withoutTax">$10.00</span>
+                </div>
+            </div>
+                <a href="https://superhairpieces.ca/ultra-hold-tape-a-shape-3-4-x-3-36-pcs-per-pack/"></a>
+        </div>
+        </article>
+    </div>
+ 
+</div>
+<div class="ss-padder-2"></div>
+
+<div class="ss-supplies-grid">
+    <a href="https://superhairpieces.ca/supplies/attachment-removal/" class="ss-supplies-image"><img src="/content/images/marketing/summer/i1.jpg"><div class="ss-supplies-text">Attachment & Removal</div></a>
+    <a href="https://superhairpieces.ca/supplies/hair-extension-accessories/" class="ss-supplies-image"><img src="/content/images/marketing/summer/i2.jpg"><div class="ss-supplies-text">Hair Extension Accessories</div></a>
+    <a href="https://superhairpieces.ca/supplies/hair-care/" class="ss-supplies-image"><img src="/content/images/marketing/summer/i3.jpg"><div class="ss-supplies-text">Hair Care</div></a>
+    <a href="https://superhairpieces.ca/supplies/hair-loss/" class="ss-supplies-image"><img src="/content/images/marketing/summer/i4.jpg"><div class="ss-supplies-text">Hair Loss</div></a>
+</div>
+
+<div class="ss-padder-8"></div>
+<div class="ss-cust-title">Why Choose Us</div>
+<div class="ss-padder-2"></div>
+<div class="ss-choose-container">
+    <div>
+        <div style="width:119px;height:119px;margin:auto;">
+            <img class="ss-banner" src="/content/images/marketing/summer/p1.jpg">
+        </div>
+        <div class="ss-choose-title" style="line-height: 72px !important;">Free Shipping</div>
+        
+        <div class="ss-choose-description">We offer free standard shipping across North America!</div>
+    </div>
+    <div>
+        <div style="width:119px;height:119px;margin:auto;">
+            <img class="ss-banner" src="/content/images/marketing/summer/p2.jpg">
+        </div>
+        <div class="ss-choose-title">Quality at an<br/>Affordable Price</div>
+        <div class="ss-choose-description">We offer the best prices on the market compared to our competitors — even without discount codes being applied!</div>
+    </div>
+    <div>
+        <div style="width:119px;height:119px;margin:auto;">
+            <img class="ss-banner" src="/content/images/marketing/summer/p3.jpg">
+        </div>
+        <div class="ss-choose-title">Excellent<br/>Customer Support</div>
+        <div class="ss-choose-description">We pride ourselves on our experienced and professional customer support teams located in Ontario Canada and Florida US.</div>
+    </div>
+</div>
+<div class="ss-padder-8"></div>
+
+<div class="ss-cust-title">What Our Customers Say</div>
+<div class="ss-padder-2"></div>
+<div class="ss-cust-desc">Click on the photos below to read reviews from some of our satisified customers!</div>
+<div style="padding-left: 6vw;padding-right:6vw;" id="stamped-reviews-widget" data-widget-type="visual-gallery" data-review-ids="73257629,66959143,65668319,65510962,65510605,62944481,46918077,45005617,44860856,44223416,37040137,33606933"data-with-photos="true"></div>
+</div>
+<script async id='stamped-script-widget' data-store-hash='cavofu' src='https://cdn1.stamped.io/files/bigcommerce.min.js'></script>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/content/js/slick.min.js"></script>
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function(){
+        $('.ss-scroller').slick({
+            dots: false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            // "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+        });
+        $('.ss-scroller-2').slick({
+            speed: 300,
+            slidesToShow: 1,
+            variableWidth: true,
+            infinite: false,
+            swipeToSlide: true,
+            dots: true,
+
+        });
+    })
+</script>

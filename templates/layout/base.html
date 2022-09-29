@@ -38,7 +38,18 @@
         {{> components/common/header }}
         {{> components/common/body }}
         {{> components/common/footer }}
-        <div class="popup-country"><div class="popup-country-overlay"></div><div class="popup-country-content"><div class="popup-country-title">hi there</div><div>It looks like you are visiting us from Canada.<br/>You can visit our Canadian website for CAD prices and local shipping options.</div> <a href="//superhairpieces.ca">take me there</a><div class="popup-country-continue"><div>No, I am not from Canada</div><div class="popup-country-continue-link">Continue browsing!</div></div></div></div>
+        <div class="popup-country">
+            <div class="popup-country-overlay"></div>
+            <div class="popup-country-content">
+                <div class="popup-country-title"></div>
+                <div class="popup-country-main">
+                </div> 
+                    <a class="popup-country-link"></a>
+                <div class="popup-country-continue">
+                </div>
+            </div>
+        </div>
+
         <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
         <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
 
@@ -121,8 +132,9 @@
         
         
         <script>
-          window.addEventListener("DOMContentLoaded",function(){function e(){$(window).width()>1149?($(".header-logo").append($(".wg-default")),$(".navPages-list--user").remove($(".wg-default"))):($(".navPages-list--user").append($(".wg-default")),$(".header-logo").remove($(".wg-default"))),$(".wg-default").hide(),$(".wg-default").eq(0).show()}Weglot.on("switchersReady",()=>{e()}),window.onresize=e,localStorage.getItem("shp-country")||fetch("https://www.cloudflare.com/cdn-cgi/trace").then(e=>e.text()).then(e=>{(e=e.trim().split("\n").reduce(function(e,o){return e[(o=o.split("="))[0]]=o[1],e},{})).loc&&(localStorage.setItem("shp-country",e.loc),"CA"==e.loc&&setTimeout(function(){$(".popup-country").css({display:"flex"}),$(".popup-country-continue-link").on("click",function(){$(".popup-country").hide()}),$(".popup-country-overlay").on("click",function(){$(".popup-country").hide()})},3500))}).catch(e=>console.log(e))});
+          window.addEventListener("DOMContentLoaded",function(){function e(){$(window).width()>1149?($(".header-logo").append($(".wg-default")),$(".navPages-list--user").remove($(".wg-default"))):($(".navPages-list--user").append($(".wg-default")),$(".header-logo").remove($(".wg-default"))),$(".wg-default").hide(),$(".wg-default").eq(0).show()}Weglot.on("switchersReady",()=>{e()}),window.onresize=e,localStorage.getItem("shp-country")||fetch("https://www.cloudflare.com/cdn-cgi/trace").then(e=>e.text()).then(e=>{(e=e.trim().split("\n").reduce(function(e,o){return e[(o=o.split("="))[0]]=o[1],e},{})).loc&&(localStorage.setItem("shp-country",e.loc),"BD"==e.loc&&setTimeout(function(){$(".popup-country").css({display:"flex"}),$(".popup-country-continue-link").on("click",function(){$(".popup-country").hide()}),$(".popup-country-overlay").on("click",function(){$(".popup-country").hide()})},3500))}).catch(e=>console.log(e))});
+          
+  
         </script>
-
     </body>
 </html>

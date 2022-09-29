@@ -2794,9 +2794,9 @@ this.after.bind(this)],function(err){if(err){throw new Error(err)}})};return Pag
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_nod_validate__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_nod_validate__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_nod_validate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_nod_validate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nod_functions_min_max_validate__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nod_functions_min_max_validate__ = __webpack_require__(369);
 // Hook our SCSS framework form field status classes into the nod validation system before use
 __WEBPACK_IMPORTED_MODULE_0_nod_validate___default.a.classes.errorClass='form-field--error';__WEBPACK_IMPORTED_MODULE_0_nod_validate___default.a.classes.successClass='form-field--success';__WEBPACK_IMPORTED_MODULE_0_nod_validate___default.a.classes.errorMessageClass='form-inlineMessage';// Register validate functions
 __WEBPACK_IMPORTED_MODULE_0_nod_validate___default.a.checkFunctions['min-max']=__WEBPACK_IMPORTED_MODULE_1__nod_functions_min_max_validate__["a" /* default */];/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_nod_validate___default.a);
@@ -2939,8 +2939,8 @@ function _classCallCheck(instance,Constructor){if(!(instance instanceof Construc
 
 
 
-var punycode = __webpack_require__(392);
-var util = __webpack_require__(393);
+var punycode = __webpack_require__(393);
+var util = __webpack_require__(394);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -3015,7 +3015,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(394);
+    querystring = __webpack_require__(395);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -5616,7 +5616,7 @@ module.exports = strictIndexOf;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return insertStateHiddenField; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_capitalize__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_capitalize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_capitalize__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_camelCase__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_camelCase__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_camelCase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_camelCase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_includes__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_includes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_includes__);
@@ -7225,7 +7225,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! pace 1.0.2 *
 /***/ (function(module, exports, __webpack_require__) {
 
 var toString = __webpack_require__(103),
-    upperFirst = __webpack_require__(376);
+    upperFirst = __webpack_require__(377);
 
 /**
  * Converts the first character of `string` to upper case and the remaining
@@ -8042,8 +8042,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_97_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_97_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_98__theme_global__ = __webpack_require__(281);
 // eslint-disable-line
-function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value}catch(error){reject(error);return}if(info.done){resolve(value)}else{return Promise.resolve(value).then(function(value){step('next',value)},function(err){step('throw',err)})}}return step('next')})}}__webpack_require__.p=window.__webpack_public_path__;var getAccount=function getAccount(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(17).then((function(require){resolve(__webpack_require__(414))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})};var getLogin=function getLogin(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(16).then((function(require){resolve(__webpack_require__(415))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})};var pageClasses={account_orderstatus:getAccount,account_order:getAccount,account_addressbook:getAccount,shippingaddressform:getAccount,account_new_return:getAccount,'add-wishlist':function addWishlist(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},account_recentitems:getAccount,account_downloaditem:getAccount,editaccount:getAccount,account_inbox:getAccount,account_saved_return:getAccount,account_returns:getAccount,login:getLogin,createaccount_thanks:getLogin,createaccount:getLogin,getnewpassword:getLogin,forgotpassword:getLogin,blog:function blog(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(3/* duplicate */).then((function(require){resolve(__webpack_require__(167))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},blog_post:function blog_post(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(3/* duplicate */).then((function(require){resolve(__webpack_require__(167))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},brand:function brand(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(2/* duplicate */).then((function(require){resolve(__webpack_require__(168))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},brands:function brands(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(2/* duplicate */).then((function(require){resolve(__webpack_require__(168))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},cart:function cart(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(4).then((function(require){resolve(__webpack_require__(416))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},category:function category(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(15).then((function(require){resolve(__webpack_require__(417))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},paginator:function paginator(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(9).then((function(require){resolve(__webpack_require__(418))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},//
-compare:function compare(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(14).then((function(require){resolve(__webpack_require__(419))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},page_contact_form:function page_contact_form(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(13).then((function(require){resolve(__webpack_require__(420))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},error:function error(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(12).then((function(require){resolve(__webpack_require__(421))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},404:function _(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(18).then((function(require){resolve(__webpack_require__(422))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates:function giftcertificates(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates_balance:function giftcertificates_balance(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates_redeem:function giftcertificates_redeem(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},default:function _default(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(11).then((function(require){resolve(__webpack_require__(423))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},page:function page(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(10).then((function(require){resolve(__webpack_require__(424))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},product:function product(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(1/* duplicate */).then((function(require){resolve(__webpack_require__(169))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},amp_product_options:function amp_product_options(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(1/* duplicate */).then((function(require){resolve(__webpack_require__(169))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},search:function search(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(5).then((function(require){resolve(__webpack_require__(425))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},rss:function rss(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(8).then((function(require){resolve(__webpack_require__(426))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},sitemap:function sitemap(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(7).then((function(require){resolve(__webpack_require__(427))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},newsletter_subscribe:function newsletter_subscribe(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(6).then((function(require){resolve(__webpack_require__(428))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},wishlist:function wishlist(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},wishlists:function wishlists(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})}};/**
+function _asyncToGenerator(fn){return function(){var gen=fn.apply(this,arguments);return new Promise(function(resolve,reject){function step(key,arg){try{var info=gen[key](arg);var value=info.value}catch(error){reject(error);return}if(info.done){resolve(value)}else{return Promise.resolve(value).then(function(value){step('next',value)},function(err){step('throw',err)})}}return step('next')})}}__webpack_require__.p=window.__webpack_public_path__;var getAccount=function getAccount(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(17).then((function(require){resolve(__webpack_require__(415))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})};var getLogin=function getLogin(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(16).then((function(require){resolve(__webpack_require__(416))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})};var pageClasses={account_orderstatus:getAccount,account_order:getAccount,account_addressbook:getAccount,shippingaddressform:getAccount,account_new_return:getAccount,'add-wishlist':function addWishlist(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},account_recentitems:getAccount,account_downloaditem:getAccount,editaccount:getAccount,account_inbox:getAccount,account_saved_return:getAccount,account_returns:getAccount,login:getLogin,createaccount_thanks:getLogin,createaccount:getLogin,getnewpassword:getLogin,forgotpassword:getLogin,blog:function blog(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(3/* duplicate */).then((function(require){resolve(__webpack_require__(167))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},blog_post:function blog_post(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(3/* duplicate */).then((function(require){resolve(__webpack_require__(167))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},brand:function brand(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(2/* duplicate */).then((function(require){resolve(__webpack_require__(168))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},brands:function brands(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(2/* duplicate */).then((function(require){resolve(__webpack_require__(168))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},cart:function cart(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(4).then((function(require){resolve(__webpack_require__(417))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},category:function category(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(15).then((function(require){resolve(__webpack_require__(418))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},paginator:function paginator(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(9).then((function(require){resolve(__webpack_require__(419))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},//
+compare:function compare(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(14).then((function(require){resolve(__webpack_require__(420))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},page_contact_form:function page_contact_form(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(13).then((function(require){resolve(__webpack_require__(421))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},error:function error(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(12).then((function(require){resolve(__webpack_require__(422))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},404:function _(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(18).then((function(require){resolve(__webpack_require__(423))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates:function giftcertificates(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates_balance:function giftcertificates_balance(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},giftcertificates_redeem:function giftcertificates_redeem(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(0/* duplicate */).then((function(require){resolve(__webpack_require__(108))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},default:function _default(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(11).then((function(require){resolve(__webpack_require__(424))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},page:function page(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(10).then((function(require){resolve(__webpack_require__(425))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},product:function product(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(1/* duplicate */).then((function(require){resolve(__webpack_require__(169))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},amp_product_options:function amp_product_options(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(1/* duplicate */).then((function(require){resolve(__webpack_require__(169))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},search:function search(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(5).then((function(require){resolve(__webpack_require__(426))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},rss:function rss(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(8).then((function(require){resolve(__webpack_require__(427))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},sitemap:function sitemap(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(7).then((function(require){resolve(__webpack_require__(428))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},newsletter_subscribe:function newsletter_subscribe(){return new Promise(function(resolve){__webpack_require__.e/* require.ensure */(6).then((function(require){resolve(__webpack_require__(429))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},wishlist:function wishlist(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})},wishlists:function wishlists(){return new Promise(function(resolve){new Promise(function(resolve) { resolve(); }).then((function(require){resolve(__webpack_require__(72))}).bind(null, __webpack_require__)).catch(__webpack_require__.oe)})}};/**
  * This function gets added to the global window and then called
  * on page load with the current template loaded and JS Context passed in
  * @param pageType String
@@ -11698,11 +11698,14 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_fastclick__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_fastclick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_fastclick__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__global_sweet_alert__ = __webpack_require__(366);
-function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}function fastClick(element){return new __WEBPACK_IMPORTED_MODULE_17_fastclick___default.a(element)}var Global=function(_PageManager){_inherits(Global,_PageManager);function Global(){_classCallCheck(this,Global);return _possibleConstructorReturn(this,_PageManager.apply(this,arguments))}/**
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__base__ = __webpack_require__(367);
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}// import cartFunction from './cart-function';
+function fastClick(element){return new __WEBPACK_IMPORTED_MODULE_17_fastclick___default.a(element)}var Global=function(_PageManager){_inherits(Global,_PageManager);function Global(){_classCallCheck(this,Global);return _possibleConstructorReturn(this,_PageManager.apply(this,arguments))}/**
      * You can wrap the execution in this method with an asynchronous function map using the async library
      * if your global modules need async callback handling.
      * @param next
-     */Global.prototype.loaded=function loaded(next){fastClick(document.body);Object(__WEBPACK_IMPORTED_MODULE_4__global_quick_search__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_5__global_currency_selector__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_8__global_foundation__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document));Object(__WEBPACK_IMPORTED_MODULE_9__global_quick_view__["a" /* default */])(this.context);Object(__WEBPACK_IMPORTED_MODULE_10__global_cart_preview__["b" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_11__global_compare_products__["a" /* default */])(this.context.urls);Object(__WEBPACK_IMPORTED_MODULE_14__common_carousel__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_7__global_menu__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_6__global_mobile_menu_toggle__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_12__global_cookieNotification__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_13__global_maintenanceMode__["a" /* default */])(this.context.maintenanceMode);Object(__WEBPACK_IMPORTED_MODULE_16__global_loading_progress_bar__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_18__global_sweet_alert__["a" /* default */])();next()};return Global}(__WEBPACK_IMPORTED_MODULE_3__page_manager__["a" /* default */]);/* harmony default export */ __webpack_exports__["a"] = (Global);
+     */Global.prototype.loaded=function loaded(next){fastClick(document.body);Object(__WEBPACK_IMPORTED_MODULE_4__global_quick_search__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_5__global_currency_selector__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_8__global_foundation__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document));Object(__WEBPACK_IMPORTED_MODULE_9__global_quick_view__["a" /* default */])(this.context);Object(__WEBPACK_IMPORTED_MODULE_10__global_cart_preview__["b" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_11__global_compare_products__["a" /* default */])(this.context.urls);Object(__WEBPACK_IMPORTED_MODULE_14__common_carousel__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_7__global_menu__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_6__global_mobile_menu_toggle__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_12__global_cookieNotification__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_13__global_maintenanceMode__["a" /* default */])(this.context.maintenanceMode);Object(__WEBPACK_IMPORTED_MODULE_16__global_loading_progress_bar__["a" /* default */])();Object(__WEBPACK_IMPORTED_MODULE_18__global_sweet_alert__["a" /* default */])();next();// cartFunction()
+Object(__WEBPACK_IMPORTED_MODULE_19__base__["a" /* default */])()};return Global}(__WEBPACK_IMPORTED_MODULE_3__page_manager__["a" /* default */]);/* harmony default export */ __webpack_exports__["a"] = (Global);
 
 /***/ }),
 /* 282 */
@@ -16693,6 +16696,64 @@ __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default.a.setDefaults({buttonsStyling:
 
 /***/ }),
 /* 367 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony default export */ __webpack_exports__["a"] = (function(){if(localStorage.getItem('shp-country')){}else{fetch('https://www.cloudflare.com/cdn-cgi/trace').then(function(r){return r.text()}).then(function(data){// console.log(data);
+data=data.trim().split('\n').reduce(function(obj,pair){pair=pair.split('=');return obj[pair[0]]=pair[1],obj},{});if(data.loc){localStorage.setItem('shp-country',data.loc);// if (data.loc=="CA" || data.loc=="FR") {
+//     setTimeout(function() {
+//         $(".popup-country").css({display:"flex"});
+//         $(".popup-country-title").append(data.loc=="FR" ?
+//             "bonjour" :
+//             "hi there")
+//         $(".popup-country-main").append(data.loc=="FR"?
+//             "Il semble que vous nous rendiez visite depuis la France.<br/>Vous pouvez consulter notre site web en France pour les prix en Euros et les options d'expédition locales." : 
+//             "It looks like you are visiting us from Canada.<br/>You can visit our Canadian website for CAD prices and local shipping options.")
+//         $(".popup-country-link").append(data.loc=="FR" ?
+//             "emmenez-moi là" :
+//             "take me there")
+//         $(".popup-country-continue").append(data.loc=="FR" ?
+//             "<div>Non, je ne viens pas de France</div><div class=popup-country-continue-link>Continuer de naviguer!</div>" :
+//             "<div>No, I am not from Canada</div><div class=popup-country-continue-link>Continue browsing!</div>")
+//         $('.popup-country-link').attr('href',data.loc=="CA"?"//superhairpieces.ca":"//superhairpieces.fr")
+//         $(".popup-country-continue-link").on("click", function() {
+//             $(".popup-country").hide();
+//         });
+//         $(".popup-country-overlay").on("click", function() {
+//             $(".popup-country").hide();
+//         })
+//     },3500);
+// }
+if(data.loc=='US'){setTimeout(function(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country').css({display:'flex'});__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-title').append('hi there');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-main').append('It looks like you are visiting us from US.<br/>You can visit our main website for USD prices and local shipping options.');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-link').append('take me there');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-continue').append('<div>No, I am not from Canada</div><div class=popup-country-continue-link>Continue browsing!</div>');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-link').attr('href','//superhairpieces.com');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-continue-link').on('click',function(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country').hide()});__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country-overlay').on('click',function(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.popup-country').hide()})},3500)}// if (data.loc!="CA") {
+//     setTimeout(function() {
+//         $(".popup-country").css({display:"flex"});
+//         $(".popup-country-title").append(data.loc=="FR" ?
+//             "bonjour" :
+//             "hi there")
+//         $(".popup-country-main").append(data.loc=="FR"?
+//             "Il semble que vous nous rendiez visite depuis la France.<br/>Vous pouvez consulter notre site web en France pour les prix en Euros et les options d'expédition locales." : 
+//             "Are you visiting Superhairpieces.ca from outside Canada?<br/>Visit our official global site for more relevant pricing, promotions and events.")
+//         $(".popup-country-link").append(data.loc=="FR" ?
+//             "emmenez-moi là" :
+//             "take me there")
+//         $(".popup-country-continue").append(data.loc=="FR" ?
+//             "<div>Non, je ne viens pas de France</div><div class=popup-country-continue-link>Continuer de naviguer!</div>" :
+//             "<div>No, I am from Canada</div><div class=popup-country-continue-link>Continue browsing!</div>")
+//         $('.popup-country-link').attr('href',data.loc=="FR"?"//superhairpieces.fr":"//superhairpieces.com")
+//         $(".popup-country-continue-link").on("click", function() {
+//             $(".popup-country").hide();
+//         });
+//         $(".popup-country-overlay").on("click", function() {
+//             $(".popup-country").hide();
+//         })
+//     },3500);
+// } 
+}}).catch(function(e){return console.log(e)})}});
+
+/***/ }),
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
@@ -17935,18 +17996,18 @@ if (typeof module !== 'undefined' && module.exports) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_isNaN__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_isNaN__ = __webpack_require__(370);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_isNaN___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_isNaN__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 function minMaxValidate(minInputSelector,maxInputSelector){function validate(cb){var minValue=parseFloat(__WEBPACK_IMPORTED_MODULE_1_jquery___default()(minInputSelector).val());var maxValue=parseFloat(__WEBPACK_IMPORTED_MODULE_1_jquery___default()(maxInputSelector).val());if(maxValue>minValue||__WEBPACK_IMPORTED_MODULE_0_lodash_isNaN___default()(maxValue)||__WEBPACK_IMPORTED_MODULE_0_lodash_isNaN___default()(minValue)){return cb(true)}return cb(false)}return validate}/* harmony default export */ __webpack_exports__["a"] = (minMaxValidate);
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isNumber = __webpack_require__(144);
@@ -17990,7 +18051,7 @@ module.exports = isNaN;
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports) {
 
 /**
@@ -18018,13 +18079,13 @@ module.exports = arrayEach;
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayEach = __webpack_require__(152),
     baseCreate = __webpack_require__(106),
-    baseForOwn = __webpack_require__(372),
-    baseIteratee = __webpack_require__(375),
+    baseForOwn = __webpack_require__(373),
+    baseIteratee = __webpack_require__(376),
     getPrototype = __webpack_require__(100),
     isArray = __webpack_require__(51),
     isBuffer = __webpack_require__(101),
@@ -18089,10 +18150,10 @@ module.exports = transform;
 
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(373),
+var baseFor = __webpack_require__(374),
     keys = __webpack_require__(102);
 
 /**
@@ -18111,10 +18172,10 @@ module.exports = baseForOwn;
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(374);
+var createBaseFor = __webpack_require__(375);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -18133,7 +18194,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports) {
 
 /**
@@ -18164,7 +18225,7 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports) {
 
 /**
@@ -18191,10 +18252,10 @@ module.exports = identity;
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createCaseFirst = __webpack_require__(377);
+var createCaseFirst = __webpack_require__(378);
 
 /**
  * Converts the first character of `string` to upper case.
@@ -18219,12 +18280,12 @@ module.exports = upperFirst;
 
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castSlice = __webpack_require__(378),
+var castSlice = __webpack_require__(379),
     hasUnicode = __webpack_require__(156),
-    stringToArray = __webpack_require__(380),
+    stringToArray = __webpack_require__(381),
     toString = __webpack_require__(103);
 
 /**
@@ -18258,10 +18319,10 @@ module.exports = createCaseFirst;
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSlice = __webpack_require__(379);
+var baseSlice = __webpack_require__(380);
 
 /**
  * Casts `array` to a slice if it's needed.
@@ -18282,7 +18343,7 @@ module.exports = castSlice;
 
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports) {
 
 /**
@@ -18319,12 +18380,12 @@ module.exports = baseSlice;
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var asciiToArray = __webpack_require__(381),
+var asciiToArray = __webpack_require__(382),
     hasUnicode = __webpack_require__(156),
-    unicodeToArray = __webpack_require__(382);
+    unicodeToArray = __webpack_require__(383);
 
 /**
  * Converts `string` to an array.
@@ -18343,7 +18404,7 @@ module.exports = stringToArray;
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports) {
 
 /**
@@ -18361,7 +18422,7 @@ module.exports = asciiToArray;
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -18407,11 +18468,11 @@ module.exports = unicodeToArray;
 
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var capitalize = __webpack_require__(155),
-    createCompounder = __webpack_require__(384);
+    createCompounder = __webpack_require__(385);
 
 /**
  * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
@@ -18442,12 +18503,12 @@ module.exports = camelCase;
 
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayReduce = __webpack_require__(385),
-    deburr = __webpack_require__(386),
-    words = __webpack_require__(388);
+var arrayReduce = __webpack_require__(386),
+    deburr = __webpack_require__(387),
+    words = __webpack_require__(389);
 
 /** Used to compose unicode capture groups. */
 var rsApos = "['\u2019]";
@@ -18472,7 +18533,7 @@ module.exports = createCompounder;
 
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports) {
 
 /**
@@ -18504,10 +18565,10 @@ module.exports = arrayReduce;
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseToString = __webpack_require__(387);
+var baseToString = __webpack_require__(388);
 
 /**
  * Converts `value` to a string. An empty string is returned for `null`
@@ -18538,7 +18599,7 @@ module.exports = toString;
 
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports) {
 
 /**
@@ -18565,13 +18626,13 @@ module.exports = identity;
 
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var asciiWords = __webpack_require__(389),
-    hasUnicodeWord = __webpack_require__(390),
+var asciiWords = __webpack_require__(390),
+    hasUnicodeWord = __webpack_require__(391),
     toString = __webpack_require__(103),
-    unicodeWords = __webpack_require__(391);
+    unicodeWords = __webpack_require__(392);
 
 /**
  * Splits `string` into an array of its words.
@@ -18606,7 +18667,7 @@ module.exports = words;
 
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports) {
 
 /** Used to match words composed of alphanumeric characters. */
@@ -18627,7 +18688,7 @@ module.exports = asciiWords;
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports) {
 
 /** Used to detect strings that need a more robust regexp to match words. */
@@ -18648,7 +18709,7 @@ module.exports = hasUnicodeWord;
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -18723,7 +18784,7 @@ module.exports = unicodeWords;
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -19262,7 +19323,7 @@ module.exports = unicodeWords;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(93)(module), __webpack_require__(47)))
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19285,18 +19346,18 @@ module.exports = {
 
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(395);
-exports.encode = exports.stringify = __webpack_require__(396);
+exports.decode = exports.parse = __webpack_require__(396);
+exports.encode = exports.stringify = __webpack_require__(397);
 
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19387,7 +19448,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19479,12 +19540,12 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFlatten = __webpack_require__(398),
+var baseFlatten = __webpack_require__(399),
     baseRest = __webpack_require__(71),
-    baseUniq = __webpack_require__(402),
+    baseUniq = __webpack_require__(403),
     isArrayLikeObject = __webpack_require__(162);
 
 /**
@@ -19511,11 +19572,11 @@ module.exports = union;
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(399),
-    isFlattenable = __webpack_require__(400);
+var arrayPush = __webpack_require__(400),
+    isFlattenable = __webpack_require__(401);
 
 /**
  * The base implementation of `_.flatten` with support for restricting flattening.
@@ -19555,7 +19616,7 @@ module.exports = baseFlatten;
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports) {
 
 /**
@@ -19581,10 +19642,10 @@ module.exports = arrayPush;
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(401),
+var Symbol = __webpack_require__(402),
     isArguments = __webpack_require__(147),
     isArray = __webpack_require__(51);
 
@@ -19607,7 +19668,7 @@ module.exports = isFlattenable;
 
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(70);
@@ -19619,15 +19680,15 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SetCache = __webpack_require__(158),
     arrayIncludes = __webpack_require__(159),
     arrayIncludesWith = __webpack_require__(160),
     cacheHas = __webpack_require__(161),
-    createSet = __webpack_require__(403),
-    setToArray = __webpack_require__(404);
+    createSet = __webpack_require__(404),
+    setToArray = __webpack_require__(405);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -19697,7 +19758,7 @@ module.exports = baseUniq;
 
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports) {
 
 /**
@@ -19720,7 +19781,7 @@ module.exports = noop;
 
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports) {
 
 /**
@@ -19749,10 +19810,10 @@ module.exports = stubArray;
 
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseDifference = __webpack_require__(406),
+var baseDifference = __webpack_require__(407),
     baseRest = __webpack_require__(71),
     isArrayLikeObject = __webpack_require__(162);
 
@@ -19786,14 +19847,14 @@ module.exports = without;
 
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SetCache = __webpack_require__(158),
     arrayIncludes = __webpack_require__(159),
     arrayIncludesWith = __webpack_require__(160),
-    arrayMap = __webpack_require__(407),
-    baseUnary = __webpack_require__(408),
+    arrayMap = __webpack_require__(408),
+    baseUnary = __webpack_require__(409),
     cacheHas = __webpack_require__(161);
 
 /** Used as the size to enable large array optimizations. */
@@ -19859,7 +19920,7 @@ module.exports = baseDifference;
 
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports) {
 
 /**
@@ -19886,7 +19947,7 @@ module.exports = arrayMap;
 
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports) {
 
 /**
@@ -19906,7 +19967,7 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19919,15 +19980,15 @@ module.exports = baseUnary;
 function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var CatalogPage=function(_PageManager){_inherits(CatalogPage,_PageManager);function CatalogPage(){_classCallCheck(this,CatalogPage);return _possibleConstructorReturn(this,_PageManager.apply(this,arguments))}CatalogPage.prototype.onSortBySubmit=function onSortBySubmit(event){var url=__WEBPACK_IMPORTED_MODULE_3_url___default.a.parse(window.location.href,true);var queryParams=__WEBPACK_IMPORTED_MODULE_1_jquery___default()(event.currentTarget).serialize().split('=');url.query[queryParams[0]]=queryParams[1];delete url.query.page;event.preventDefault();window.location=__WEBPACK_IMPORTED_MODULE_3_url___default.a.format({pathname:url.pathname,search:__WEBPACK_IMPORTED_MODULE_2__common_url_utils__["a" /* default */].buildQueryString(url.query)})};return CatalogPage}(__WEBPACK_IMPORTED_MODULE_0__page_manager__["a" /* default */]);/* harmony default export */ __webpack_exports__["a"] = (CatalogPage);
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_includes__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_includes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_includes__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_union__ = __webpack_require__(397);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_union__ = __webpack_require__(398);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_union___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_union__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_without__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_without__ = __webpack_require__(406);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_without___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_without__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_extend__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_extend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash_extend__);
@@ -19992,15 +20053,15 @@ this.toggleFacetItems($navList)};FacetedSearch.prototype.onFacetClick=function o
 __WEBPACK_IMPORTED_MODULE_7__url_utils__["a" /* default */].goToUrl(url);if(this.options.modalOpen){this.options.modal.close()}};FacetedSearch.prototype.onSortBySubmit=function onSortBySubmit(event){var url=__WEBPACK_IMPORTED_MODULE_6_url___default.a.parse(window.location.href,true);var queryParams=__WEBPACK_IMPORTED_MODULE_5_jquery___default()(event.currentTarget).serialize().split('=');url.query[queryParams[0]]=queryParams[1];delete url.query.page;event.preventDefault();__WEBPACK_IMPORTED_MODULE_7__url_utils__["a" /* default */].goToUrl(__WEBPACK_IMPORTED_MODULE_6_url___default.a.format({pathname:url.pathname,search:__WEBPACK_IMPORTED_MODULE_7__url_utils__["a" /* default */].buildQueryString(url.query)}))};FacetedSearch.prototype.onRangeSubmit=function onRangeSubmit(event){event.preventDefault();if(!this.priceRangeValidator.areAll(__WEBPACK_IMPORTED_MODULE_11__nod__["a" /* default */].constants.VALID)){return}var url=__WEBPACK_IMPORTED_MODULE_6_url___default.a.parse(window.location.href);var queryParams=decodeURI(__WEBPACK_IMPORTED_MODULE_5_jquery___default()(event.currentTarget).serialize());__WEBPACK_IMPORTED_MODULE_7__url_utils__["a" /* default */].goToUrl(__WEBPACK_IMPORTED_MODULE_6_url___default.a.format({pathname:url.pathname,search:'?'+queryParams}))};FacetedSearch.prototype.onStateChange=function onStateChange(){this.updateView()};FacetedSearch.prototype.onAccordionToggle=function onAccordionToggle(event){var $accordionToggle=__WEBPACK_IMPORTED_MODULE_5_jquery___default()(event.currentTarget);var collapsible=$accordionToggle.data('collapsible-instance');var id=collapsible.targetId;if(collapsible.isCollapsed){this.collapsedFacets=__WEBPACK_IMPORTED_MODULE_1_lodash_union___default()(this.collapsedFacets,[id])}else{this.collapsedFacets=__WEBPACK_IMPORTED_MODULE_2_lodash_without___default()(this.collapsedFacets,id)}};return FacetedSearch}();/* harmony default export */ __webpack_exports__["a"] = (FacetedSearch);
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_each__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_each__ = __webpack_require__(371);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_each___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_each__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_isEmpty__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_isEmpty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_isEmpty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_transform__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_transform__ = __webpack_require__(372);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_transform___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_transform__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
@@ -20036,7 +20097,7 @@ $newElement.prev().append('<small>'+context.required+'</small>')}else{$newElemen
 var $selectElement=makeStateRequired($currentInput,context);addOptions(response.data,$selectElement,options);callback(null,$selectElement)}else{var newElement=makeStateOptional($currentInput,context);callback(null,newElement)}})})});
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20060,7 +20121,7 @@ if(validation.min_date&&validation.max_date){var invalidMessage='Your chosen dat
  *//* harmony default export */ __webpack_exports__["a"] = (function($form){var validationsToPerform=[];$form.find('[data-validation]').each(function(index,input){validationsToPerform=validationsToPerform.concat(buildValidation(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(input)))});return validationsToPerform});
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

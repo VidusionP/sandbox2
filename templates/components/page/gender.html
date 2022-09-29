@@ -1,0 +1,925 @@
+<link rel="stylesheet" href="/content/css/slick.css">
+<div style="position: relative">
+    <div class="menu-wrap">
+        <div class="menu-items"></div>
+    </div>
+</div>
+<style>
+        .breadcrumbs {
+        display: none;
+    }
+    .body.page h1 {
+        display: none;
+    }
+    .css-1hcx8jb {
+        display: none !important;
+        font-size: 12px;
+    }
+    .page-heading {
+        padding-top: 4vh;
+    }
+    @media (min-width: 801px) and (max-width:1149px) {
+        .body.page {
+            margin-top: 2.5rem !important;
+        }
+    }
+    .body.page {
+      padding: 0 !important;
+    }
+    p {
+      margin: 0 !important;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow-y: scroll;
+      overflow-x: mensden;
+    }
+    /* body::-webkit-scrollbar {
+      display: none;
+      max-width: 100% !important;
+      padding: 0 !important;
+    } */
+    .body.page .container {
+      max-width: 100% !important;
+      padding: 0px !important;
+    }
+    .page {
+      margin: 0 !important;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+      max-width: 100% !important;
+    }
+    .page-content.page-content--centered {
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    .gender-heading {
+        width: 85%;
+        margin: auto !important;
+        padding: 20px 0;
+        text-align: center;
+    }
+    .gendergoku {
+        background: url("/content/images/marketing/lgbtq/banner3.jpg");
+        background-repeat: no-repeat;
+        height: 500px;
+    }
+    .gendergoku1 {
+        background: url("/content/images/marketing/lgbtq/banner4.jpg");
+        background-repeat: no-repeat;
+        height: 325px;
+    }
+    .genderSlick {
+        background-color: #F0F0F0;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+    .genderSlick h2 {
+        margin: unset;
+        text-align: center;
+        font-weight: 600;
+        width: 80%;
+        margin: 30px auto;
+        color: black;
+    }
+    .genderSlick-hair .genderBack {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform: translate(25%, 0);
+        max-width: 115px;
+    }
+    .genderSlick-hair {
+        text-align: center;
+        position: relative;
+    }
+    .genderSlick-hair h3 {
+        margin: 10px 0;
+        font-weight: 700;
+        font-size: 16px;
+        color: black;
+
+    }
+    .genderSlick-hair p {
+        color: black;
+        /* font-size: 16px; */
+    }
+    .genderSlick-hair2 p {
+        color: black;
+        /* font-size: 16px; */
+        width: 70%;
+        margin: auto !important;
+    }
+    .genderSlick-hair .gendeImg {
+        width: 80%;
+        margin: auto;
+        box-shadow: 0px 4px 3px 1px #d7d7d7;
+        max-width: 300px;
+    }
+    .genderSlick-hair2 .gendeImg {
+        width: 80%;
+        margin: auto;
+        box-shadow: 0px 4px 3px 1px #d7d7d7;
+        max-width: 300px;
+
+    }
+    .accCard .gendeImg {
+        width: 80%;
+        margin: auto;
+        box-shadow: 0px 4px 3px 1px #d7d7d7;
+        max-width: 300px;
+        height: 190px;
+        object-fit: contain;
+    }
+    .genderSlick2 {
+        /* background-color: #F0F0F0; */
+        background-image: url('/content/images/marketing/lgbtq/bkg.png');
+        background-color: #F0F0F0;
+
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        background-position: center;
+        background-size: cover;
+    }
+    .genderSlick button {
+        margin: 40px auto;
+        width: 120px;
+        /* height: 45px; */
+        background-color: #FFE600;
+        border-radius: 22px;
+        font-size: 18px;
+        padding: 5px;
+        font-weight: 500;
+    }
+    .genderSlick2 button {
+        margin: 40px auto;
+        width: 120px;
+        /* height: 45px; */
+        background-color: #FFE600;
+        border-radius: 22px;
+        font-size: 18px;
+        padding: 5px;
+        margin-bottom: 60px;
+        font-weight: 500;
+
+    }
+    .genderSlick2 h2 {
+        margin: unset;
+        text-align: center;
+        font-weight: 600;
+        width: 80%;
+        margin: 30px auto;
+        color: black;
+    }
+
+    .genderSlick2 .genderSlick-hair2 {
+        text-align: center;
+        position: relative;
+    }
+    .genderSlick-hair2 .genderBack {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30%;
+        transform: translate(25%, 0);
+        max-width: 115px;
+
+    }
+    .genderSlick-hair2 h3 {
+        margin: 10px 0;
+        font-weight: 700;
+        font-size: 16px;
+        color: black;
+    }
+    .gendergoku h2 {
+        margin: unset;
+    }
+    .gendergoku12 h3 {
+        margin: unset;
+    }
+    .genderWigs h2 {
+        margin: auto;
+        text-align: center;
+        padding: 30px 0;
+        font-weight: 600;
+        width: 80%;
+        color: black;
+    }
+    .gendergoku {
+        position: relative;
+        background-size: cover;
+    }
+    .gendergoku div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -50%);
+
+    }
+    .gendergoku .sub-text h3{
+        font-weight: 500;
+        color: black;
+        margin: unset;
+    }
+    .gendergoku .sub-text p{
+        font-weight: 400;
+        color: black;
+    }
+    .gendergoku1 .sub-text h3{
+        font-weight: 500;
+        color: black;
+        margin: unset;
+    }
+    .gendergoku1 .sub-text p{
+        font-weight: 400;
+        color: black;
+    }
+    .gendergoku1 {
+        position: relative;
+        background-size: cover;
+
+
+    }
+    .gendergoku1 .sub-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-90%, -60%) 
+    }
+    .genderAcc h2 {
+        margin: auto;
+        text-align: center;
+        padding: 30px 0;
+        font-weight: 600;
+        width: 80%;
+        color: black;
+    }
+    .accCard img {
+        width: 80%;
+        margin: auto;
+        box-shadow: 0px 4px 3px 1px #d7d7d7;
+    }
+    .accCard h3 {
+        margin: 20px auto;
+        font-weight: 400;
+        font-size: 16px;
+        color: black;
+        width: 50%;
+        text-align: center;
+    }
+    .accCard div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .accCard button {
+        /* margin: 40px auto; */
+        /* width: 120px; */
+        color: white;
+        margin-bottom: 40px;
+        /* height: 45px; */
+        background-color: #4A3A8E;
+        border-radius: 22px;
+        /* font-size: 16px; */
+        padding: 5px 10px;
+    }
+    .accCard a {
+        text-decoration: none;
+        color: white;
+    }
+    .card-link--alternate {
+        cursor: pointer;
+    }
+    .gendergoku .sub-text1 {
+        display: none;
+        text-align: end;
+    }
+    .gendergoku1 .sub-text1 {
+        display: none;
+        text-align: start;
+    }
+    .bottomCard {
+        display: none;
+    }
+    .genderAcc1 {
+        display: none;
+    }
+    .genderSlick a {
+        text-decoration: none;
+    }
+    .genderSlick2 a {
+        text-decoration: none;
+    }
+    .genderTab a {
+        text-decoration: none;
+    }
+    @media(min-width:800px) {
+        .gender .below-hero {
+            display: flex;
+            width: 80%;
+            margin: 20px auto;
+
+        }
+        .below-hero .programWorks-works {
+            width: 400px;
+        }
+        .gender-heading {
+            font-size: 20px;
+            text-align: start;
+
+        }
+        .gendergoku {
+            background: none;
+            height: unset;
+            /* width: auto%; */
+        }
+        .gendergoku .sub-text {
+            position: unset;
+            top: unset;
+            left: unset;
+            transform: none;
+            display: none;
+            width: 80%;
+        }
+        .gendergoku1 .sub-text {
+            position: unset;
+            top: unset;
+            left: unset;
+            transform: none;
+            display: none;
+        }
+        .gendergoku .sub-text1 {
+        display: block;
+        margin-top: 30px;
+    }
+    .gendergoku1 .sub-text1 {
+        display: block;
+        width: 90%;
+    }
+        .gendergoku1 {
+            background: none;
+            /* width: 100%; */
+            /* margin-top: 40px; */
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+        .genderWigs {
+            display: flex;
+            background: url('/content/images/marketing/lgbtq/banner3-desktop.jpg');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100%;
+            max-height: 600px;
+            height: 50vh;
+            /* height: 100%; */
+            /* max-height: 600px; */
+        }
+        .genderTab {
+            display: flex;
+            margin: auto;
+            width:100%;
+            max-width: 900px;
+            justify-content: space-between;
+        }
+    }
+    @media(min-width:1000px) {
+        .genderTab {
+            display: flex;
+            margin: auto;
+            width:100%;
+            max-width: 1000px;
+            justify-content: space-between;
+        }
+        .gendergoku .sub-text1 {
+        display: block;
+        margin-top: 30px;
+        width: unset;
+    }
+    .gendergoku1 .sub-text1 {
+        display: block;
+        width: unset;
+
+    }
+    }
+    @media (min-width: 1300px) {
+        .genderSlick-hair2 .genderBack {
+        width: 85px;
+        height: 85px;
+    }
+        .genderTab {
+
+            max-width: 1300px;
+        }
+        .genderWigs {
+
+             /* height: 100%;  */
+             max-height: 800px;
+        }
+        .gendergoku .sub-text h3 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .gendergoku1 .sub-text h3 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .genderSlick .programWorks-works {
+            display: flex;
+            margin: auto;
+        }
+        .genderSlick2 .programWorks-works {
+            display: flex;
+            margin: auto;
+            gap: 40px;
+        }
+        .genderAcc .programWorks-works {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            width: 80%;
+            flex-direction: row-reverse;
+            display: none;
+        }
+        .bottomCard {
+            display: block;
+
+        }
+        .genderAcc1 {
+            width: 80%;
+            display: block;
+            margin: auto;
+            max-width: 1400px;
+        }
+        .genderSlick-hair2 .gendeImg {
+            width: 250px;
+        }
+        .genderAcc1 .accBot {
+            display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+        }
+        .genderAcc1 .accBot1 {
+            display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+        }
+        .accCard h3 {
+
+        width: 100%;
+
+    }
+
+    }
+    @media (min-width: 1501px) {
+        .below-hero .programWorks-works {
+        width: 940px;
+        display: flex;
+        gap: 20px;
+            
+        }
+    }
+</style>
+<img src="/content/images/marketing/lgbtq/thumbnail.jpg" alt="thumbnail" style="display: none; width:0px;height:0px;opacity:0"/>
+<!-- <img src="../../../assets/img/gender/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/> -->
+
+<div class="gender">
+    <div>
+        <picture>
+            <source media="(min-width:800px)" srcset="/content/images/marketing/lgbtq/banner-1-main.jpg" type="image/jpg">
+            <source style="width: 100%;" srcset="/content/images/marketing/lgbtq/banner-mobile.jpg" type="image/jpeg">
+            <img style="width: 100%; min-height: 200px; object-fit: cover;" src="/content/images/marketing/lgbtq/banner-1-main.jpg">
+        </picture>
+        <!-- <img src="/content/images/marketing/lgbtq/banner-mobile.jpg"> -->
+    </div>
+    <div class="below-hero">
+        <p class="gender-heading">Expression is unique and finding hair that best captures it can make all the difference. That’s why as allies of the LGBTQIA+ community, we offer a variety of hairpieces that can help you embody your individuality.</p>
+        <div>
+            <div class="featured-categories programWorks-works"  data-slick='{
+                "dots": false,
+                "infinite": true,
+                "arrows": false,
+                "mobileFirst": true,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "autoplay" : true,
+                "draggable" : true,
+                "pauseOnFocus" : false,
+                "responsive": [
+                    {
+                        "breakpoint": 1500,
+                        "settings":"unslick"
+                        
+                    }
+                ]
+            }'>
+            <div>
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces/video/7137372363208854790" data-video-id="7137372363208854790" style="max-width: 325px; margin: auto;" > <section> <a target="_blank" title="@superhairpieces" href="https://www.tiktok.com/@superhairpieces?refer=embed">@superhairpieces</a> Watching one episode of The Office takes the same amount of time as it would to install a hair system just sayin’. <a title="hairsystem" target="_blank" href="https://www.tiktok.com/tag/hairsystem?refer=embed">#hairsystem</a> <a title="hairsystemformen" target="_blank" href="https://www.tiktok.com/tag/hairsystemformen?refer=embed">#hairsystemformen</a> <a title="toupee" target="_blank" href="https://www.tiktok.com/tag/toupee?refer=embed">#toupee</a> <a title="hairloss" target="_blank" href="https://www.tiktok.com/tag/hairloss?refer=embed">#hairloss</a> <a title="balding" target="_blank" href="https://www.tiktok.com/tag/balding?refer=embed">#balding</a> <a title="hairsystemtutorial" target="_blank" href="https://www.tiktok.com/tag/hairsystemtutorial?refer=embed">#hairsystemtutorial</a> <a title="hairsysteminstallation" target="_blank" href="https://www.tiktok.com/tag/hairsysteminstallation?refer=embed">#hairsysteminstallation</a> <a target="_blank" title="♬ Shooting Stars - Bag Raiders" href="https://www.tiktok.com/music/Shooting-Stars-6827492890906724354?refer=embed">♬ Shooting Stars - Bag Raiders</a> </section>  </blockquote><script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            
+            <div>
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces/video/7132167218011426054" data-video-id="7132167218011426054" style="max-width: 325px;  margin: auto;" > <section> <a target="_blank" title="@superhairpieces" href="https://www.tiktok.com/@superhairpieces?refer=embed">@superhairpieces</a> Hair systems can give you the versatility you always wanted<a title="hairsystem" target="_blank" href="https://www.tiktok.com/tag/hairsystem?refer=embed">#hairsystem</a> <a title="toupee" target="_blank" href="https://www.tiktok.com/tag/toupee?refer=embed">#toupee</a> <a title="hairsytemformen" target="_blank" href="https://www.tiktok.com/tag/hairsytemformen?refer=embed">#hairsytemformen</a> <a title="hairloss" target="_blank" href="https://www.tiktok.com/tag/hairloss?refer=embed">#hairloss</a> <a title="balding" target="_blank" href="https://www.tiktok.com/tag/balding?refer=embed">#balding</a> <a title="instanthair" target="_blank" href="https://www.tiktok.com/tag/instanthair?refer=embed">#instanthair</a> <a title="hairreplacement" target="_blank" href="https://www.tiktok.com/tag/hairreplacement?refer=embed">#hairreplacement</a> <a title="beforetheywerefamous" target="_blank" href="https://www.tiktok.com/tag/beforetheywerefamous?refer=embed">#beforetheywerefamous</a> <a target="_blank" title="♬ original sound - Jane ♡" href="https://www.tiktok.com/music/original-sound-7110578685585328902?refer=embed">♬ original sound - Jane ♡</a> </section> </blockquote><script async src="https://www.tiktok.com/embed.js"></script> 
+            </div>
+            <div>
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces/video/7112852957363834117" data-video-id="7112852957363834117" style="max-width: 325px;  margin: auto;" > <section> <a target="_blank" title="@superhairpieces" href="https://www.tiktok.com/@superhairpieces?refer=embed">@superhairpieces</a> There’s nothing like living free with no worries! Just like @andrew walton , you can too with our products Get 10% off our hairpiece supplies using PRIDE10OFF <a title="hairsystem" target="_blank" href="https://www.tiktok.com/tag/hairsystem?refer=embed">#hairsystem</a> <a title="hairtok" target="_blank" href="https://www.tiktok.com/tag/hairtok?refer=embed">#hairtok</a> <a title="hairrreplacement" target="_blank" href="https://www.tiktok.com/tag/hairrreplacement?refer=embed">#hairrreplacement</a> <a title="hairpiecesupplies" target="_blank" href="https://www.tiktok.com/tag/hairpiecesupplies?refer=embed">#hairpiecesupplies</a> <a title="hairtape" target="_blank" href="https://www.tiktok.com/tag/hairtape?refer=embed">#hairtape</a> <a title="hairpiece" target="_blank" href="https://www.tiktok.com/tag/hairpiece?refer=embed">#hairpiece</a> <a title="toupee" target="_blank" href="https://www.tiktok.com/tag/toupee?refer=embed">#toupee</a> <a target="_blank" title="♬ Come Check This - FETISH" href="https://www.tiktok.com/music/Come-Check-This-6812596419724052482?refer=embed">♬ Come Check This - FETISH</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="genderSlick">
+        <h2>LGBTQIA+ <br/>Hair Systems</h2>
+        <div class="featured-categories programWorks-works" style="height: fit-content;" data-slick='{
+            "dots": false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    "breakpoint": 799,
+                    "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 950,
+                    "settings": {
+                        "slidesToShow": 3,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 1299,
+                    "settings":"unslick"
+                    
+                }
+            ]
+        }'>
+        <a href="https://www.superhairpieces.com/mens-toupee-hd111-8x10-thinnest-skin-base-hairpiece-disposable/">
+            <div class="genderSlick-hair">
+                <img class="gendeImg" src="/content/images/marketing/lgbtq/hair1.jpg">
+                <img class="genderBack" src="/content/images/marketing/lgbtq/hair1-1.png">
+                <div>
+                    <h3>HD111</h3>
+                    <p>Ultra Thin Skin Base</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.superhairpieces.com/mens-toupee-m105-8x-10-french-lace-in-stock/">
+            <div class="genderSlick-hair">
+                <img class="gendeImg" src="/content/images/marketing/lgbtq/hair2.jpg">
+                <img class="genderBack" src="/content/images/marketing/lgbtq/hair2-1.png">
+    
+                <div>
+                    <h3>M105</h3>
+                    <p>French Lace Base</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.superhairpieces.com/mens-toupee-m104-7x9-mono-top-with-lace-front-in-stock/">
+            <div class="genderSlick-hair">
+                <img class="gendeImg" src="/content/images/marketing/lgbtq/hair3.jpg">
+                <img class="genderBack" src="/content/images/marketing/lgbtq/hair3-1.png">
+    
+                <div>
+                    <h3>M104</h3>
+                    <p>Mono Base With Lace Front</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.superhairpieces.com/m158-mens-toupee-8x-10-human-hair-skin-base-lace-top-in-stock/">
+            <div class="genderSlick-hair">
+                <img class="gendeImg" src="/content/images/marketing/lgbtq/hair4.jpg">
+                <img class="genderBack" src="/content/images/marketing/lgbtq/hair4-1.png">
+    
+                <div>
+                    <h3>M158</h3>
+                    <p>Skin Base French Lace Top</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.superhairpieces.com/mens-toupee-m108-8x10-human-hair-mono-top-in-stock/">
+            <div class="genderSlick-hair">
+                <img class="gendeImg" src="/content/images/marketing/lgbtq/hair5.jpg">
+                <img class="genderBack" src="/content/images/marketing/lgbtq/hair5-1.png">
+    
+                <div>
+                    <h3>M108</h3>
+                    <p>Mono Top Afro Hairpiece</p>
+                </div>
+            </div>
+        </a>
+            
+        </div>
+        <button><a href="https://www.superhairpieces.com/men-hair-pieces-toupees-by-model/">See More</a></button>
+    </div>
+    <div class="genderSlick2">
+        <h2>LGBTQIA+ Long-Length Hair Toppers</h2>
+        <div class="featured-categories programWorks-works" style="height: fit-content;" data-slick='{
+            "dots": false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    "breakpoint": 799,
+                    "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 950,
+                    "settings": {
+                        "slidesToShow": 3,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 1299,
+                    "settings":"unslick"
+                    
+                }
+            ]
+        }'>
+            <a href="https://www.superhairpieces.com/p41lbsc-skin-base-remy-human-hair-topper-for-women/">
+                <div class='genderSlick-hair2'>
+                    <img class="gendeImg" src="/content/images/marketing/lgbtq/hair6.jpg">
+                    <img class="genderBack" src="/content/images/marketing/lgbtq/hair6-1.png">
+        
+                    <div>
+                        <h3>P41BSC16</h3>
+                        <p>Skin Base Remy Human Hair 16" Length</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.superhairpieces.com/pw2016-ladys-partial-wig-3-4-wig-in-16-inch-human-hair/">
+                <div class='genderSlick-hair2'>
+                    <img class="gendeImg" src="/content/images/marketing/lgbtq/hair7.jpg">
+                    <img class="genderBack" src="/content/images/marketing/lgbtq/hair7-1.png">
+        
+                    <div>
+                        <h3>PW2016</h3>
+                        <p>Partial Wig 3/4 16" Lenght</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.superhairpieces.com/queen-18-french-lace-top-remy-human-hair-topper-for-thinning-hair/">
+                <div class='genderSlick-hair2'>
+                    <img class="gendeImg" src="/content/images/marketing/lgbtq/hair8.jpg">
+                    <img class="genderBack" src="/content/images/marketing/lgbtq/hair8-1.png">
+        
+                    <div>
+                        <h3>QUEEN 18</h3>
+                        <p>French Lace Top 18" Length</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.superhairpieces.com/p6818-ladys-top-hairpiece/">
+                <div class='genderSlick-hair2'>
+                    <img  class="gendeImg" src="/content/images/marketing/lgbtq/hair9.jpg">
+                    <img class="genderBack" src="/content/images/marketing/lgbtq/hair9-1.png">
+        
+                    <div>
+                        <h3>P6818</h3>
+                        <p>Top Hairpiece 18" Length</p>
+                    </div>
+                </div>
+            </a>
+            
+
+        </div>
+        <button><a href="https://www.superhairpieces.com/human-hair-toppers-pieces-for-women/">See More</a></button>
+    </div>
+    <div class="genderWigs">
+        <div class="genderTab">
+            <div class="gendergoku">
+                <h2>LGBTQIA+ Wigs</h2>
+                <a href="https://www.superhairpieces.com/hollywood-wig-18/">
+                    <div class="sub-text">
+                        <h3>Hollywood</h3>
+                        <p>-Full Cap French Lace Wig</p>
+                        <p>-100% Human Premium Remy Hair</p>
+                        <p>-18" Hair Length</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.superhairpieces.com/angelina-premium-human-hair-silicon-full-cap-women-wig/">
+                    <div class="sub-text sub-text1">
+                        <h3>Angelina</h3>
+                        <p>-Premium Human Hair Medical Wig</p>
+                        <p>-100% Human Premium Remy Hair</p>
+                        <p>- 5" - 13" Layered Hair Length</p>
+                    </div>
+                </a>
+                
+            </div>
+            <div class="gendergoku1">
+                <a href="https://www.superhairpieces.com/angelina-premium-human-hair-silicon-full-cap-women-wig/">
+                    <div class="sub-text sub-text">
+                        <h3>Angelina</h3>
+                        <p>-Premium Human Hair Medical Wig</p>
+                        <p>-100% Human Premium Remy Hair</p>
+                        <p>- 5" - 13" Layered Hair Length</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.superhairpieces.com/hollywood-wig-18/">
+                    <div class="sub-text sub-text1">
+                        <h3>Hollywood</h3>
+                        <p>-Full Cap French Lace Wig</p>
+                        <p>-100% Human Premium Remy Hair</p>
+                        <p>-18" Hair Length</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="genderAcc" function="list-product" data-ids="656,874,1896,1751">
+        <h2>Eyelashes + Accessories</h2>
+        <div class="featured-categories programWorks-works" style="height: fit-content;" data-slick='{
+            "dots": false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    "breakpoint": 799,
+                    "settings": {
+                        "slidesToShow": 2,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 950,
+                    "settings": {
+                        "slidesToShow": 3,
+                        "slidesToScroll":1
+                    }
+                },
+                {
+                    "breakpoint": 1299,
+                    "settings":"unslick"
+                    
+                }
+            ]
+        }'>
+            <div class="accCard">
+                <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc1.png">
+                <div>
+                    <h3>Eva - 3D Real Mink Medium Flat Lash Set</h3>
+                    <button><a href="/cart.php?action=add&sku=3DMINKMV-M">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc2.png">
+                <div>
+                    <h3>Cynthia - 3D Real Mink Medium Volume Lash Set</h3>
+                    <button><a href="/cart.php?action=add&sku=3DMinkDV-S">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc3.png">
+                <div>
+                    <h3>Eyelash Extension DD-Curl 0.15mm x 10mm</h3>
+                    <button><a href="/cart.php?action=add&product_id=3858">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc4.png">
+                <div>
+                    <h3>Wet-N-Wavy Activator Gel 10.5 oz</h3>
+                    <button><a href="/cart.php?action=add&sku=Activator Gel">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc5.png">
+                <div>
+                    <h3>Purifi Spray for All Hair Types 8oz</h3>
+                    <button><a href="/cart.php?action=add&sku=BMEPS">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc6.png">
+                <div>
+                    <h3>Blue Liner Lace Front Tape 1" x 3 Yards</h3>
+                    <button><a href="/cart.php?action=add&sku=TP BLUE 1&quot;X3Y">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc7.png">
+                <div>
+                    <h3>Super Red Liner tape 1" x 12 Yards</h3>
+                    <button><a href="/cart.php?action=add&sku=TP SUPER RED 1&quot;X12Y">Add to cart</a></button>
+                </div>
+            </div>
+            <div class="accCard">
+                <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc8.png">
+                <div>
+                    <h3>Ultra Hold Glue 3.4oz</h3>
+                    <button><a href="/cart.php?action=add&sku=GL UHG 3.4OZ">Add to cart</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="genderAcc1">
+            <div class="accBot">
+                <div>
+                    <img src="/content/images/marketing/lgbtq/bottom.jpg">
+                </div>
+                <div class="accCard">
+                <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc1.png">
+                <div>
+                    <h3>Eva - 3D Real Mink Medium Flat Lash Set</h3>
+                    <button><a href="/cart.php?action=add&sku=3DMINKMV-M">Add to cart</a></button>
+                </div>
+                </div>
+                <div class="accCard">
+                    <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc2.png">
+                    <div>
+                        <h3>Cynthia - 3D Real Mink Medium Volume Lash Set</h3>
+                        <button><a href="/cart.php?action=add&sku=3DMinkDV-S">Add to cart</a></button>
+                    </div>
+                </div>
+                <div class="accCard">
+                    <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc3.png">
+                    <div>
+                        <h3>Eyelash Extension DD-Curl 0.15mm x 10mm</h3>
+                        <button><a href="/cart.php?action=add&product_id=3858">Add to cart</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="accBot1">
+                <div class="accCard">
+                    <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc4.png">
+                    <div>
+                        <h3>Wet-N-Wavy Activator Gel 10.5 oz</h3>
+                        <button><a href="/cart.php?action=add&sku=Activator Gel">Add to cart</a></button>
+                    </div>
+                </div>
+                <div class="accCard">
+                    <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc5.png">
+                    <div>
+                        <h3>Purifi Spray for All Hair Types 8oz</h3>
+                        <button><a href="/cart.php?action=add&sku=BMEPS">Add to cart</a></button>
+                    </div>
+                </div>
+                <div class="accCard">
+                    <img  class="gendeImg" src="/content/images/marketing/lgbtq/acc6.png">
+                    <div>
+                        <h3>Blue Liner Lace Front Tape 1" x 3 Yards</h3>
+                        <button><a href="/cart.php?action=add&sku=TP BLUE 1&quot;X3Y">Add to cart</a></button>
+                    </div>
+                </div>
+                <div class="accCard">
+                    <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc7.png">
+                    <div>
+                        <h3>Super Red Liner tape 1" x 12 Yards</h3>
+                        <button><a href="/cart.php?action=add&sku=TP SUPER RED 1&quot;X12Y">Add to cart</a></button>
+                    </div>
+                </div>
+                <div class="accCard">
+                    <img class="gendeImg"  src="/content/images/marketing/lgbtq/acc8.png">
+                    <div>
+                        <h3>Ultra Hold Glue 3.4oz</h3>
+                        <button><a href="/cart.php?action=add&sku=GL UHG 3.4OZ">Add to cart</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/content/js/slick.min.js" defer></script>
+
+<script>
+
+$(window).on('resize orientationchange', function() {
+  $('.programWorks-works').slick('resize');
+});
+</script>
+
