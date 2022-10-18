@@ -7,7 +7,6 @@
     },
     "product": {}
   },
-  "apiHost": "https://api.bigcommerce.com",
   "normalStoreUrl": "https://store-mjczo26kh4.mybigcommerce.com/",
   "port": "3000"
 }
