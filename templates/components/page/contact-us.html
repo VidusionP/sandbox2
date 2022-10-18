@@ -1,0 +1,270 @@
+
+<style>
+    .breadcrumbs {
+    display: none;
+}
+.body.page h1 {
+    display: none;
+}
+.css-1hcx8jb {
+    display: none !important;
+    font-size: 12px;
+}
+.page-heading {
+    padding-top: 4vh;
+}
+@media (min-width: 801px) and (max-width:1149px) {
+    .body.page {
+        margin-top: 2.5rem !important;
+    }
+}
+.body.page {
+  padding: 0 !important;
+}
+p {
+  margin: 0 !important;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  overflow-x: mensden;
+}
+.body.page .container {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+.page {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  max-width: 100% !important;
+}
+.page-content.page-content--centered {
+  padding: 0 !important;
+  width: 100% !important;
+}
+</style>
+<style>
+    .contact-block {
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+        position: relative;
+        background-color: #FFF;
+        top: -60px;
+    }
+    .contact-block h2 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 38px;
+        color: black;
+        margin: unset;
+        padding: 20px;
+    }
+    .contact-block2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .contact-item {
+        /* border: 1px solid rgb(163, 163, 163); */
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+    }
+    .contact-item:hover {
+        outline: 2px solid #680099;
+    }
+    .contact-item1 {
+        grid-column: span 2;
+        background-color: #FBFBFB;
+        overflow: hidden;
+        transition: max-height .5s ease-in-out;
+        /* padding: 10px; */
+    }
+    .contact-visit {
+        padding: 20px;
+    }
+    .brand-add {
+        transition: max-height .5s ease-in-out;
+    }
+    .page-tab-highlight {
+        outline: 2px solid #680099;
+
+    }
+    .contact-office {
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+    }
+    .contact-office img {
+        width: 30px;
+        border-radius: 6px;
+    }
+    .contact-blockSub {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: black;
+    }
+    .contact-block1 {
+        margin: auto;
+        width: 90%;
+    }
+    .contact-block1 h2 {
+        font-size: 30px;
+        line-height: 48px;
+        font-weight: 600;
+        color: black;
+    }
+
+
+
+    .contact-bottom {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        color: black;
+    }
+</style>
+<!-- <img src="/content/images/marketing/lgbtq/thumbnail.jpg" alt="thumbnail" style="display: none; width:0px;height:0px;opacity:0"/> -->
+
+<div class="contact">
+    <div class="contact-hero">
+        <img class="contact-img" src="../../../assets/img/contactus/bkg-mobile.png">
+    </div>
+    <div class="contact-main">
+        <div class="contact-block">
+            <h2>Need to reach us? We're here to help</h2>
+            <div class="contact-block2">
+                <div class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Chat.png"></div>
+                    <p class="contact-blockSub">Chat Live</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div onclick="openContact(this)" id="visit" class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Loc.png"></div>
+                    <p class="contact-blockSub">Visit</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div style="max-height: 0px;" class="contact-item1">
+                    <div class="contact-visit">
+                        <div class="contact-office">
+                            <img src="https://cdn.stamped.io/cdn/flags/us.svg">
+                            USA Head Office
+                        </div>
+                        <div style="margin-left: 40px">
+                            <p>13790 NEW 4th St. Unit 102</p>
+                            <p>Sunrise FL 33325</p>
+                            <div style="border-left: 1px solid black; padding-left: 10px; font-size: 12px;">
+                                <p>Operation Hours:</p>
+                                <p>Mon-Fri / 10:00AM-6:00PM</p>
+                                <p>Sat-Sun & Federal Holidays / Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="openContact(this)" class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Call.png"></div>
+                    <p class="contact-blockSub">Call</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div style="max-height: 0px; grid-row: 4 / auto;" class="contact-item1">
+                    <div class="contact-visit">
+                        <div class="contact-office">
+                            Toll Free Call or Text:
+                        </div>
+                        <div>
+                            <ul style="color: rgba(0, 106, 195, 1);">
+                                <li><a style="color: rgba(0, 106, 195, 1);">1-866-814-7879</a></li>
+                                <li><a style="color: rgba(0, 106, 195, 1);">1-954-835-2288 (Global)</a></li>
+                                <li><a style="color: rgba(0, 106, 195, 1);">1-416-800-5056 (Canada)</a></li>
+                                <li><a style="color: rgba(0, 106, 195, 1);">1-905-917-1805 (GTA Appointments)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                        
+                </div>
+                <div onclick="openContact(this)" class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Email.png"></div>
+                    <p class="contact-blockSub">Mail</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div style="max-height: 0px;" class="contact-item1">
+                    <div class="contact-visit">
+                        <div class="contact-office">
+                            Email us:
+                        </div>
+                        <div>
+                            <a style="color: rgba(0, 106, 195, 1);" href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="openContact(this)" class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Ticket.png"></div>
+                    <p class="contact-blockSub">Ticket</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div style="max-height: 0px;  grid-row: 7 / auto;" class="contact-item1">
+                    <div class="contact-visit">
+                        <div class="contact-office">
+                            Email us:
+                        </div>
+                        <div>
+                            <h3>How would you like us to reach you regarding the ticket?</h3>
+                            <form>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="openContact(this)" class="contact-item">
+                    <div><img src="../../../assets/img/contactus/Whatsapp.png"></div>
+                    <p class="contact-blockSub">WhatsApp</p>
+                    <p>Ut quam amet aliquam.</p>
+                </div>
+                <div style="max-height: 0px;" class="contact-item1">
+                    <div class="contact-visit">
+                        <div class="contact-office">
+                            WhatsApp Us:
+                        </div>
+                        <div>
+                            <a style="color: rgba(0, 106, 195, 1);">1-866-869-3477 ( WhatsApp SMS Only)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-block1">
+            <h2>Most popular topics</h2>
+            <div>
+                <div>What is your best men's system</div>
+            </div>
+            <p class="contact-bottom">For more answers to common questions, browse our <a target="_blank" href="/faq/">FAQ</a> pages.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+        function openContact(x) {
+            let setheight = x.nextElementSibling.children[0].offsetHeight
+            let checkClass = x.nextElementSibling.classList
+            console.log(x)
+            if (checkClass.contains('brand-add')) {
+                        checkClass.remove('brand-add')
+                        x.classList.remove('page-tab-highlight')
+                        x.nextElementSibling.style.maxHeight = '0'
+                    } else {
+                        checkClass.add('brand-add')
+                        x.classList.add('page-tab-highlight')
+                        x.nextElementSibling.style.maxHeight = setheight + 'px'
+                    }
+        }
+
+</script>
