@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./assets/js/theme/blog.js"],"names":["Blog","PageManager"],"mappings":";;;;;;;;8yBAEqBA,K,wLAAaC,8D,EAAbD,mE","file":"theme-bundle.chunk.3.js","sourcesContent":["import PageManager from './page-manager';\r\n\r\nexport default class Blog extends PageManager {}\r\n\r\n\n\n\n// WEBPACK FOOTER //\n// ./assets/js/theme/blog.js"],"sourceRoot":""}

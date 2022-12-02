@@ -1,0 +1,477 @@
+<p><link rel="stylesheet" href="/content/css/slick.css" />
+  <style>
+      .homebanner .top-title,.v-explore-title{position:relative}.homebanner .top-title::after,.v-explore-title::after{background-size:contain;content:'';background-repeat:no-repeat}.body.page h1,.breadcrumbs,.searchFilter input,.top-timeline,.v-publish,.v-search-category-label{display:none}.css-1hcx8jb{display:none!important;font-size:12px}.page-heading{padding-top:4vh}@media (min-width:801px) and (max-width:1149px){.body.page{margin-top:2.5rem!important}}.body.page{padding:0!important}.body.page p:first-child{margin:0;height:0}body{-ms-overflow-style:none;scrollbar-width:none;overflow-y:scroll;overflow-x:mensden}.body.page .container{max-width:100%!important;padding:0!important}.page{margin:0!important;max-width:100%!important}.page-content.page-content--centered{padding:0!important;width:100%!important}.slick-dots{background-color:#520865}.slick-dots li{width:1rem}.slick-dots li.slick-active button::before{background-color:#f3f4f5}.slick-dots li button{border:0}.slick-dots li button::before{background-color:#9b9b9b}.slick-dots li button,.slick-dots li button::before{height:8px;width:8px}.homebanner{height:fit-content;background-color:#520865}.homebanner .top-title::after{position:absolute;width:48px;height:33px;background-image:url('data:image/svg+xml;base64,PHN2ZyBmb2N1c2FibGU9ImZhbHNlIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOC41NyAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxnIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCA5MCAyMCI+CiAgPHBhdGggZD0ibTI3Ljk3MyAzLjEyMzJjLTAuMzI5Mi0xLjIzLTEuMjk1OS0yLjE5NjYtMi41MjU5LTIuNTI1OS0yLjIyNzEtMC41OTczNy0xMS4xNjItMC41OTczNy0xMS4xNjItMC41OTczN3MtOC45MzQ2IDIuMjQyOWUtNyAtMTEuMTYyIDAuNTk3MzdjLTEuMjMgMC4zMjkyNi0yLjE5NjYgMS4yOTU5LTIuNTI1OSAyLjUyNTktMC41OTczNyAyLjIyNzItMC41OTczNyA2Ljg3NjgtMC41OTczNyA2Ljg3NjhzMi4yNDI5ZS03IDQuNjQ5NiAwLjU5NzM3IDYuODc2OGMwLjMyOTI2IDEuMjMgMS4yOTU5IDIuMTk2NiAyLjUyNTkgMi41MjU4IDIuMjI3MiAwLjU5NzQgMTEuMTYyIDAuNTk3NCAxMS4xNjIgMC41OTc0czguOTM0NyAwIDExLjE2Mi0wLjU5NzRjMS4yMy0wLjMyOTIgMi4xOTY3LTEuMjk1OCAyLjUyNTktMi41MjU4IDAuNTk3NC0yLjIyNzIgMC41OTc0LTYuODc2OCAwLjU5NzQtNi44NzY4cy0wLjAwMjQtNC42NDk2LTAuNTk3NC02Ljg3Njh6IiBmaWxsPSIjZjAwIi8+CiAgPHBhdGggZD0ibTExLjQyNSAxNC4yODUgNy40MjI0LTQuMjg1LTcuNDIyNC00LjI4NTF6IiBmaWxsPSIjZmZmIi8+CiA8L2c+CiA8cGF0aCBkPSJtMzYuOTY3IDE5LjQ1M2MtMjQuNjQ1LTEyLjk2OS0xMi4zMjItNi40ODQzIDAgMHoiIGZpbGw9IiNmMDAiLz4KPC9zdmc+Cg==');top:1rem;left:1rem}.homebanner .top-title img,.videoList img{width:100%;height:auto;cursor:pointer}.homebanner .top-title p{padding:.5rem 1rem 1rem;margin-bottom:0;color:#f3f4f5}.vidugoku{font-size:13px}.v-content.hidden{opacity:0;height:0;overflow:hidden}.v-explore-menu{display:none;padding:3rem 1rem 0}.v-explore-menu.open{display:flex;flex-direction:column;overflow-y:hidden;position:fixed;height:calc(100vh - 50px);top:50px;width:100%;z-index:10;right:0;bottom:0;background-color:#fff}.searchFilter{flex-basis:100%;box-sizing:border-box;overflow-y:auto}.v-explore-control{display:flex;justify-content:space-between;width:100%;margin:20px 0}.v-explore-control button{text-transform:uppercase}.v-explore-title{font-size:16px;text-align:center;padding-bottom:12px;border-bottom:1px solid #626262;width:100%;line-height:35px;vertical-align:middle;margin-bottom:1rem;cursor:pointer}.v-explore-title::after{display:block;position:absolute;right:0;top:0;width:35px;height:35px;background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAzNSAzNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjUgMy4yODEyNUM5LjY1OTg2IDMuMjgxMjUgMy4yODEyNSA5LjY1OTg2IDMuMjgxMjUgMTcuNUMzLjI4MTI1IDI1LjM0MDEgOS42NTk4NiAzMS43MTg4IDE3LjUgMzEuNzE4OEMyNS4zNDAxIDMxLjcxODggMzEuNzE4OCAyNS4zNDAxIDMxLjcxODggMTcuNUMzMS43MTg4IDkuNjU5ODYgMjUuMzQwMSAzLjI4MTI1IDE3LjUgMy4yODEyNVpNMjMuNDIyIDIxLjg3NUwyMS44NzUgMjMuNDIyTDE3LjUgMTkuMDQ3TDEzLjEyNSAyMy40MjJMMTEuNTc4IDIxLjg3NUwxNS45NTMgMTcuNUwxMS41NzggMTMuMTI1TDEzLjEyNSAxMS41NzhMMTcuNSAxNS45NTNMMjEuODc1IDExLjU3OEwyMy40MjIgMTMuMTI1TDE5LjA0NyAxNy41TDIzLjQyMiAyMS44NzVaIiBmaWxsPSIjREJEREUxIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYuNDk0MyAxNy40OTk4TDExLjMwOTYgMjIuNjg0NkwxMi4zMTUxIDIzLjY5MDFMMTcuNDk5OCAxOC41MDU0TDIyLjY4NDYgMjMuNjkwMUwyMy42OTAxIDIyLjY4NDZMMTguNTA1NCAxNy40OTk4TDIzLjY5MDEgMTIuMzE1MUwyMi42ODQ2IDExLjMwOTZMMTcuNDk5OCAxNi40OTQzTDEyLjMxNTEgMTEuMzA5NkwxMS4zMDk2IDEyLjMxNTFMMTYuNDk0MyAxNy40OTk4WiIgZmlsbD0iIzExMTExMSIvPgo8L3N2Zz4K')}.v-explore-item{margin:5px 0;cursor:pointer}.v-explore-apply{max-width:100%;padding:8px 10px;background-color:#520865;color:#f0f1f3;font-size:16px;display:block}.v-explore-clear.disabled{color:#d2d2d2}.videoList .videoContent{background-color:#f7f7f7}.videoList .item{display:grid;margin:0 1.5rem;grid-gap:1rem;align-items:center;position:relative}.videoList .item:first-child{border-top:0}.v-playlist{padding:5px 10px;background-color:#e5e6e7;border-radius:50px;font-size:12px;margin-bottom:8px!important;width:max-content}.loadMore{margin:1rem auto;width:160px;max-width:100%;padding:8px 0;border:1px solid #d9d9d9;border-radius:50px;display:block}.search-section{display:flex;align-items:center;padding:20px 1rem 8px;justify-content:space-between}.search-section input:active,.search-section input:focus{outline:0!important}.searchFilter input+label{color:#626262;cursor:pointer}.searchFilter input+label::before{content:'';width:15px;height:15px;border:1px solid #939393;border-radius:50%;display:inline-block;margin:0 8px 0 20px;translate:0 3px}.searchFilter input:checked+label{color:#520865}.searchFilter input:checked+label::before{background-image:url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA5LjQ3NiA4LjEyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxwYXRoIGQ9Ik0gMy43NzQsOC4xMjEgMCw0LjM0NyAxLjQxNCwyLjkzMyAzLjY0LDUuMTU5IDcuOTM5LDAgOS40NzYsMS4yOCBaIiBmaWxsPSIjZjJmNWY2Ii8+Cjwvc3ZnPgo=');background-color:#520865;background-repeat:no-repeat;background-size:7px 6px;background-position:center;border-color:#520865}.search-section input{border:0;padding:10px 0}.search-section img{margin:0 3px}.v-loading-wrap{max-width:100%;margin:0 auto}.v-loading-wrap .info__box{background:#fff;padding:10px 20px;margin:30px 5px;border-radius:var(--border-radius);display:flex}.v-loading-wrap .info__text{height:20px;border-radius:var(--border-radius)}.v-loading-wrap .info__text_one{width:100%}.v-loading-wrap .info__text_two{width:70%}.v-loading-wrap .info__text_three{width:85%}.v-loading-wrap .left_box{flex:0 0 70%;margin-right:auto}.v-loading-wrap .image{height:80px;width:80px;border-radius:25px}.v-loading-wrap .shinny{background:#d3d3d3;margin:10px 0;position:relative;overflow:hidden}.v-loading-wrap .shinny::before{content:'';position:absolute;top:0;left:0;width:100%;background:rgba(255,255,255,.2);height:100%;transform:skew(5deg);animation:1.5s ease-in-out infinite shine}@keyframes shine{from{transform:skew(45deg) translateX(0)}to{transform:skew(45deg) translateX(200%)}}.v-no-result{padding:1rem;background-color:#fff}.v-video-modal{position:fixed;top:0;left:0;width:100vw;height:100vh;display:none;z-index:99}.v-video-modal.show{display:flex;justify-content:center;align-items:center}.v-video-modal-overlay{width:100%;height:100%;top:0;left:0;position:absolute;background-color:rgba(0,0,0,.75)}.v-video-modal-close{position:absolute;right:0;top:-60px;width:50px;height:50px;cursor:pointer;z-index:9;background-image:url("/content/images/common/close.svg");background-repeat:no-repeat;background-position:center right;background-size:20px 20px}.v-video-modal-close img{object-position:center right}.v-video-container{max-width:90%;z-index:99;position:relative}.v-video-container iframe{max-width:100%;max-height:80%}.v-search-menu{cursor:pointer}@media (min-width:700px){.videoList .videoContent{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1rem;background-color:#fff;margin:1.5rem}.videoList .v-video-desp{padding:1rem 1rem 2rem;position:relative}.videoList .item{margin:0;background-color:#f7f7f7;align-content:start}.v-publish{position:absolute;right:1rem;bottom:1rem;display:block}.loadMore{margin:1rem 1.5rem}}@media (min-width:900px){.v-loading-wrap{max-width:800px}}@media (min-width:1024px){.videoList .videoContent{grid-template-columns:repeat(3,1fr)}.homebanner{display:grid;grid-template-columns:60% 40%;background-color:#f7f7f7}.homebanner .top-title:first-child{grid-column:1/span 1;grid-row:1/span 4;position:relative}.homebanner .top-title:first-child p{font-size:25px;padding:2rem}.homebanner .top-title:first-child .top-timeline{display:block;margin-top:1rem;padding-left:2rem;margin-bottom:1rem}.homebanner .top-title:nth-child(n+2){border-top:1px solid #e2e3e7;border-left:1px solid #e2e3e7;display:grid;grid-template-columns:190px auto;padding:1rem;align-items:center}.homebanner .top-title:nth-child(2){padding-top:0}.homebanner .top-title:nth-child(2)::before{content:"UPLOADS";display:block;grid-column:1/span 2;margin-left:calc(-1rem - 1px);margin-top:-2px;padding-left:1rem;padding-bottom:1rem;letter-spacing:2px;font-size:16px;border-bottom:1px solid #e2e3e7;margin-bottom:1rem;width:calc(100% + 2rem + 1px);background-color:#15001c;color:#f3f4f5;padding-top:1rem}.homebanner .top-title:nth-child(n+2)::after{background:0 0}.homebanner .top-title p{color:#433a2d}}@media (min-width:1130px){.v-list-w-filter{display:grid;grid-template-columns:329px auto;grid-gap:1rem}.v-search-menu{display:none}.search-section{display:block;padding:1.5rem}.v-search-input-container{background-color:#f7f7f7;border-radius:50px;width:100%;margin-bottom:1rem;padding-left:1rem}.search-section::before{content:"REFINE";display:block;margin-bottom:1.5rem;color:#939393}.v-search-input-container input{background-color:transparent}.searchFilter input+label::before{margin-left:0}.v-search-category-label{display:block;margin-top:3rem}.v-search-category-label .main{margin-bottom:1rem;color:#939393}.v-search-category-label .sub{margin-bottom:.8rem}}@media (min-width:1261px){.v-loading-wrap{max-width:80rem}}@media (min-width:1320px){.v-content{max-width:1304px;margin:3rem auto 0}.search-section{padding-left:0}.videoList .videoContent{margin-right:0}.homebanner{margin-bottom:1.5rem}}
+  </style>
+  <img src="/content/images/marketing/video-library/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
+  <div class="v-loading-wrap">
+      <div class="info__box">
+          <div class="left_box">
+              <p class="shinny info__text info__text_one"></p>
+              <p class="shinny info__text info__text_two"></p>
+              <p class="shinny info__text info__text_three"></p>
+          </div>
+          <div class="right_box">
+              <div class="shinny image"></div>
+          </div>
+      </div>
+  
+      <div class="info__box">
+          <div class="left_box">
+              <p class="shinny info__text info__text_one"></p>
+              <p class="shinny info__text info__text_two"></p>
+              <p class="shinny info__text info__text_three"></p>
+          </div>
+          <div class="right_box">
+              <div class="shinny image"></div>
+          </div>
+      </div>
+  </div>
+  <div class="v-explore-menu">
+      <div class="v-explore-title">Explore</div>    
+      <div class="v-explore-control">
+          <button class="v-explore-apply">view results</button>
+          <button class="v-explore-clear disabled">clear</button>
+      </div>    
+  </div>
+  <div class="v-content hidden">
+      <div class="homebanner"></div>
+      <div class="v-list-w-filter">
+          <div class="search-section">
+              <div class="v-search-input-container">
+                  <img src="/content/images/common/search2.svg" alt="Search" width="20" />
+                  <input placeholder="Search" id="v-search-query" />
+              </div>
+              <div class="v-search-menu" onclick="showExplore()">
+                  <span>Explore</span>
+                  <img src="/content/images/common/filter2-grey.svg" width="20" alt="Filter" />
+              </div>
+              <div class="v-search-category-label">
+                  <div class="main">FILTER</div>
+                  <div class="sub">Category</div>
+              </div>
+              <div class="searchFilter">        
+              </div>
+          </div>
+          <div class="videoList"></div>
+      </div>
+  </div>
+  <div class="v-video-modal">    
+          <!-- <img src="/content/images/common/close.svg" alt="Close" width="30"> -->    
+      <div class="v-video-modal-overlay"></div>
+      <div class="v-video-container">
+          <div class="v-video-modal-close"></div>
+      </div>
+  </div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="/content/js/slick.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api" defer></script>
+<script>
+  let playlistIDs=[],videoList=[],currentIndex=0; numVideos = 24, loadVideo = 8
+  /**
+   * @summary setup youtube api with new id
+  */
+  function onYouTubeIframeAPIReady() {    
+      player = new YT.Player('video-main', {
+          host: `${window.location.protocol}//www.youtube.com`,
+          playerVars: { 
+              'autoplay': 1,
+              'controls': 0,            
+              'origin': window.location.protocol+"//"+window.location.host
+          },
+          events: {
+              'onReady': onPlayerReady          
+          }
+      });
+  }
+  /**
+   * @summary event trigger when youtube player is ready
+   * 
+   * @param {youtube event} event The event action from youtube api
+   * 
+  */
+  function onPlayerReady(event) {  
+      event.target.playVideo();
+  }
+  /**
+   * @summary Set main video for video section
+   * 
+   * @param {DOM object} input Object which are clicked
+  */
+  function setPlayVideo(id) {
+      $(".video-main").remove();
+      let width = $(window).width() > 900 ? Math.floor($(window).width() / 3 * 2) : $(window).width() - 50;        
+      let height = Math.floor(width / 1.78)
+      $(".v-video-container").prepend(`<iframe id="video-main" class="video-main" width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}?enablejsapi=1&origin=${window.location.protocol}//${window.location.host}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)                
+      onYouTubeIframeAPIReady();
+      $(".v-video-modal").addClass("show");
+  }
+  /**
+   * Filter the video list based on the parameters of search query and playlist filter
+  */
+  function onFilter() {        
+      let query = $("#v-search-query").val() ? $("#v-search-query").val() : "";        
+      if (query.length == 0 && $(".v-explore-item input:checked").length==0) {            
+          currentIndex = 5;
+          embedVideo();            
+      } else {
+          let filterVideoList= query.length>0 && $(".v-explore-item input:checked").length>0 ? videoList.filter(v=>(v.playlist.toLowerCase().includes(query.toLowerCase()) || v.title.toLowerCase().includes(query.toLowerCase())) && $(`.v-explore-item input[data-name="${encodeURIComponent(v.playlist)}"]`).is(":checked")) : $(".v-explore-item input:checked").length>0 ? videoList.filter(v=>$(`.v-explore-item input[data-name="${encodeURIComponent(v.playlist)}"]`).is(":checked")) : videoList.filter(v=>v.playlist.toLowerCase().includes(query.toLowerCase()) || v.title.toLowerCase().includes(query.toLowerCase()))
+          let maxIdx = filterVideoList.length>numVideos?numVideos:filterVideoList.length;
+          let content = loadVideoContent(filterVideoList, 0, maxIdx);
+          let currentFilterIndex = maxIdx;
+          if (content.length==0) {
+              content = "<div class='v-no-result'>No result for this search</div>";
+          }
+          $(".videoList .videoContent").html(content);
+          if (maxIdx==filterVideoList.length) {
+              $(".videoList .loadMore").hide();
+              $(".videoList .loadMore").off("click");
+          } else {
+              $(".videoList .loadMore").show();
+              $(".videoList .loadMore").off("click").on("click", function() {
+                  maxIdx = filterVideoList.length>currentFilterIndex+loadVideo?currentFilterIndex+loadVideo:filterVideoList.length;                
+                  content = loadVideoContent(filterVideoList, currentFilterIndex, maxIdx);
+                  currentFilterIndex = maxIdx;
+                  $(".videoList .videoContent").append(content)
+                  if (maxIdx==filterVideoList.length) {
+                      $(".videoList .loadMore").hide();
+                      $(".videoList .loadMore").off("click");
+                  }
+              })
+          }
+      }
+  }
+  /**
+   * Show playlist list for filter
+  */
+  function showExplore() {        
+      if ($(window).width()<=1129) {            
+          $(".v-explore-menu").addClass("open");        
+      }
+      // $(".v-content").addClass("hidden");
+  }
+
+  /**
+   * Hide playlist list of filter
+  */
+  function hideExplore() {
+      $(".v-explore-menu").removeClass("open");
+  }
+
+  function loadMoreVideo() {        
+      let maxIdx = videoList.length>currentIndex+loadVideo?currentIndex+loadVideo:videoList.length;                
+      let content = loadVideoContent(videoList, currentIndex, maxIdx);
+      currentIndex = maxIdx;
+      $(".videoList .videoContent").append(content)
+      if (maxIdx==videoList.length) {
+          $(".videoList .loadMore").hide();
+          $(".videoList .loadMore").off("click");
+      }
+  }
+
+  /**
+   * Load all videos from a playlist
+   *
+   * @param {int} idx Index of playlist of the Array playlistIDs
+  */
+  function loadYTVideos(idx=0) {
+      if (idx < playlistIDs.length) {
+          fetch(
+              `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistIDs[idx].id}&part=snippet,status&maxResults=50&key=AIzaSyCDIwU1LciGZnn-cZBcpsEJZivX4lw4xHw`,
+              {
+                  method: "GET",
+                  headers: {
+                      accept: "application/json",
+                      "content-type": "application/json",
+                  },
+              }
+          )
+          .then((r) => r.json())
+          .then((r) => {
+              var name = playlistIDs[idx].title;                                
+              r.items.forEach((item) => {
+                  if (item.status.privacyStatus == "public") {                                         
+                      videoList.push({
+                          playlist: name,
+                          date: item.snippet.publishedAt,
+                          videoId: item.snippet.resourceId.videoId,
+                          title: item.snippet.title
+                      });
+                  }                    
+              });
+              loadYTVideos(idx+1);
+          })
+          .catch(e=>{
+              console.log(e);
+              loadYTVideos(idx+1);
+          });
+      } else {
+          videoList.sort(function (a, b) {
+              return new Date(b.date) - new Date(a.date);
+          });
+          videoList = videoList.filter(
+              (value, index, self) =>
+                  index ===
+                  self.findIndex(
+                      (t) => t.videoId === value.videoId
+                  )
+          );
+          // <iframe width="100%" height="200px" src="https://www.youtube.com/embed/${uniqueList[i].videoId}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
+          for (let i = 0; i < 5; i++) {
+              let diffDays = dayDiff(new Date(videoList[i].date), new Date());
+              let timeline = "";
+              if (diffDays>365) {
+                  if (Math.floor(diffDays / 365) > 1) {
+                      timeline = Math.floor(diffDays / 365) + " years ago";
+                  } else {
+                      timeline = "1 year ago";
+                  }
+              } else if (diffDays>30) {
+                  if (Math.floor(diffDays / 30) > 1) {
+                      timeline = Math.floor(diffDays / 30) + " months ago";
+                  } else {
+                      timeline = "1 month ago";
+                  }
+              } else if (diffDays>1) {
+                  timeline = diffDays + " days ago";
+              } else if (diffDays>0) {
+                  timeline = "1 day ago";
+              } else {
+                  timeline = "today";
+              }
+              $(".homebanner").append(`
+                  <div class="top-title">
+                      <img src="https://img.youtube.com/vi/${videoList[i].videoId}/maxresdefault.jpg" width="560" onclick="setPlayVideo('${videoList[i].videoId}')"/>
+                      <p>${videoList[i].title}</p>
+                      <div class="top-timeline">${timeline}</div>
+                  </div>`);
+          }
+          currentIndex=5;
+          slickBanner();
+          embedSearchFilter();
+          embedVideo();
+          $(".v-content").removeClass("hidden");
+          $(".v-loading-wrap").remove();
+          const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+          });
+          if (params.videoid) {
+              setPlayVideo(params.videoid);
+          }
+      }
+  }
+  /**
+   * Load youtube playlist
+  */
+  function loadYTPlaylist() {
+      fetch(
+          `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCREsk4LxlBDV8v29Be1PUlA&maxResults=50&key=AIzaSyCDIwU1LciGZnn-cZBcpsEJZivX4lw4xHw`,
+          {
+              method: "GET",
+              headers: {
+                  accept: "application/json",
+                  "content-type": "application/json",
+              },
+          }
+      )
+      .then((r) => r.json())
+      .then((r) => {
+          r.items.forEach((item) => {
+              playlistIDs.push({
+                  id: item.id,
+                  title: item.snippet.title,
+              });
+          });
+          if (playlistIDs.length>0) {
+              loadYTVideos();
+          }
+      })
+      .catch(e=>console.log(e));
+  }
+  function embedSearchFilter() {        
+      playlistIDs.forEach((item, idx) => {
+          $(".searchFilter").append(`
+              <div class="v-explore-item"><input type="checkbox" id="v-c-${idx}" data-name="${encodeURIComponent(item.title)}" value="${encodeURIComponent(item.title)}"> <label for="v-c-${idx}">${item.title}</label></div>
+          `);
+      });
+      $(".v-explore-item input").on("change", function() {            
+          onFilter();
+          if ($(".v-explore-menu input:checked").length==0) {
+              $(".v-explore-clear").addClass("disabled");
+              $("img[alt=Filter]").attr("src","/content/images/common/filter2-grey.svg")
+          } else {
+              $(".v-explore-clear").removeClass("disabled");
+              $("img[alt=Filter]").attr("src","/content/images/common/filter2.svg")
+          }
+      })
+  }
+  /**
+   * Find the number of days difference
+   * 
+   * @param {Datetime} from The 1st date
+   * @param {Datetime} to The 2nd date
+   * 
+   * @return minus if 1st after 2nd
+  */
+  function dayDiff(from, to) {
+      const diffTime = Math.abs(to - from); // milliseconds
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); //days        
+      return diffDays;
+  }
+  /**
+   * Return the content of video list, based on start and end index of Video array
+   *   
+   * @param {Array} list Array list of video. Can be orignal video list or filtered list  
+   * @param {int} start Start index
+   * @param {int} end End index
+   * @param {string} imgName Image name from youbute, mqdefault or maxresdefault
+   * 
+   * @return the html content of video list
+  */
+  function loadVideoContent(list, start, end, imgName="maxresdefault") {
+      let content = "";        
+      for (let i = start; i < end; i++) {
+          /*<iframe width="100%" height="100px" src="https://www.youtube.com/embed/${list[i].videoId}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*/            
+          let diffDays = dayDiff(new Date(list[i].date), new Date());
+          let timeline = "";
+          if (diffDays>365) {
+              if (Math.floor(diffDays / 365) > 1) {
+                  timeline = Math.floor(diffDays / 365) + " years ago";
+              } else {
+                  timeline = "1 year ago";
+              }
+          } else if (diffDays>30) {
+              if (Math.floor(diffDays / 30) > 1) {
+                  timeline = Math.floor(diffDays / 30) + " months ago";
+              } else {
+                  timeline = "1 month ago";
+              }
+          } else if (diffDays>1) {
+              timeline = diffDays + " days ago";
+          } else if (diffDays>0) {
+              timeline = "1 day ago";
+          } else {
+              timeline = "today";
+          }
+          content+=`<div class="item" day-diff=${diffDays}>
+                      <div>
+                          <img src="https://img.youtube.com/vi/${list[i].videoId}/${imgName}.jpg" width="560" onclick="setPlayVideo('${list[i].videoId}')"/>
+                      </div>
+                      <div class="v-video-desp">
+                          <div class="v-playlist">${list[i].playlist}</div>
+                          <p class=vidugoku style="-webkit-box-orient: vertical">${list[i].title}</p>                            
+                      </div>
+                      <div class="v-publish">${timeline}</div>
+                  </div>`;
+      }
+      return content;
+  }
+
+  /**
+   * Embed videos to DOM
+  */
+  function embedVideo() {        
+      let maxLength = videoList.length>numVideos+currentIndex?numVideos+currentIndex:videoList.length;        
+      let content = loadVideoContent(videoList, currentIndex, maxLength);        
+      currentIndex = maxLength;        
+      if ($(".videoList .videoContent").length==0) {            
+          $(".videoList").append(`<div class="videoContent">${content}</div>`)        
+          if (maxLength<videoList.length) {
+              $(".videoList").append(`<button class="loadMore">Load more</button>`)
+              $(".videoList .loadMore").on("click", loadMoreVideo);
+          }
+      } else {            
+          $(".videoList .videoContent").html(content);          
+          $(".videoList .loadMore").show();  
+          if (maxLength<videoList.length) {                
+              $(".videoList .loadMore").off("click").on("click", loadMoreVideo);
+          } else {
+              $(".videoList .loadMore").off("click")
+          }
+      }                        
+  }
+  function slickBanner() {
+      // $(".homebanner").slick({
+      //     dots: true,
+      //     speed: 1000,
+      //     infinite: true,
+      //     arrows: false,
+      //     mobileFirst: true,
+      //     slidesToShow: 1,
+      //     slidesToScroll: 1,
+      //     autoplay: true,
+      //     draggable: true,
+      //     pauseOnFocus: false,
+      //     responsive: [
+      //         {
+      //             breakpoint: 699,
+      //             settings: "unslick",
+      //         },
+      //     ],
+      // });
+      $(".homebanner").slick({
+          dots: true,
+          speed: 1000,
+          infinite: true,
+          arrows: false,
+          mobileFirst: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          draggable: true,
+          pauseOnFocus: false,
+          responsive: [
+              {
+                  breakpoint: 1023,
+                  settings: "unslick"
+              }
+          ]
+      });
+  }
+  function onInitSearchList() {
+      if ($(window).width()<=1129) {
+          if ($(".v-explore-menu .searchFilter").length==0) {
+              $(".v-explore-menu .v-explore-control").before($(".searchFilter"))                
+          } 
+      } else {
+          if ($(".v-list-w-filter .searchFilter").length==0) {
+              $(".v-list-w-filter .search-section").append($(".searchFilter"));
+          }             
+      }
+  }
+  window.addEventListener("DOMContentLoaded", function () {
+      loadYTPlaylist();
+
+      $(".v-explore-title, .v-explore-apply").on("click", function() {
+          hideExplore();
+      })
+      $("#v-search-query").on("change", onFilter)        
+      $(".v-explore-clear").on("click", function() {
+          if ($(this).hasClass("disabled")) {
+              return;
+          } else {
+              for (let input of $(".v-explore-menu input:checked")) {
+                  $(input).prop("checked", false);
+              }
+              onFilter();
+              $(this).addClass("disabled");
+              $("img[alt=Filter]").attr("src","/content/images/common/filter2-grey.svg")
+          }
+      })
+      $(".v-video-modal-overlay, .v-video-modal-close").on("click", function() {
+          $(".v-video-modal").removeClass("show");
+          $(".video-main").remove();
+      })
+      // .on("keyup", function(event) {
+      //     console.log(event);
+      //     if (event.which==13) {
+      //         onFilter();
+      //     }
+      // })
+  });
+  onInitSearchList();
+  $(window).on("resize orientationchange", function() {
+      $(".homebanner").slick("resize");
+      onInitSearchList();
+  })
+</script>
+

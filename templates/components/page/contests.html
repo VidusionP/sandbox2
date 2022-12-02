@@ -1,6 +1,55 @@
 <link rel="stylesheet" href="/content/css/plyr.css">
 <link rel="stylesheet" href="/content/css/submenu.css">
 <style>
+    .breadcrumbs {
+    display: none;
+}
+.body.page h1 {
+    display: none;
+}
+.css-1hcx8jb {
+    display: none !important;
+    font-size: 12px;
+}
+.page-heading {
+    padding-top: 4vh;
+}
+@media (min-width: 801px) and (max-width:1149px) {
+    .body.page {
+        margin-top: 2.5rem !important;
+    }
+}
+.body.page {
+  padding: 0 !important;
+}
+p {
+  margin: 0 !important;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  overflow-x: mensden;
+}
+.body.page .container {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+.page {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  max-width: 100% !important;
+}
+.page-content.page-content--centered {
+  padding: 0 !important;
+  width: 100% !important;
+}
+/* .body.page .page-content p:first-child {
+  display: none;
+} */
+</style>
+<style>
     @font-face {font-family: "Eras Bold ITC";
         src: url("/content/fonts/eras-bold-itc.eot"); /* IE9*/
         src: url("/content/fonts/eras-bold-itc.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
@@ -79,7 +128,7 @@
     }
     section .item iframe {
         width: 100%;
-        height: 50vw;
+        height: 57vw;
     }
     .ongoing-ended {
         text-align: center;
@@ -95,6 +144,7 @@
         section[section=video-contest] .content-wrap .title[mobile] {
             display: none;
         }
+        
     }
     @media (min-width:900px) {
         :root {
@@ -118,6 +168,343 @@
         }
     }
 </style>
+<style>
+    .item {
+        background-color: #F7F7F7;
+    }
+    .top-title {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+    }
+    .top-title .para {
+        height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    }
+    .contest2022-side {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .contest2021-side {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+        margin-bottom: 30px;
+
+    }
+    .contest2022 .loadmore {
+        width: fit-content;
+        margin: 40px auto;
+    }
+    .contest2021 .loadmore {
+        width: fit-content;
+        margin: 40px auto;
+    }        
+    .mainFrame {
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+    }
+    .mainFrame .videoName {
+        margin-bottom: 20px !important; 
+        font-weight: 500;
+    }
+    .mainFrame .videoBot {
+        display: flex;
+        font-size: 12px;
+        justify-content: space-between;
+    }
+    .v-loading-wrap {
+        width: 100%;
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
+                    .v-loading-wrap .info__box {
+                        background: #fff;
+                        padding: 10px 20px;
+                        margin: 0 5px;
+                        border-radius: var(--border-radius);
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                    }
+                    .v-loading-wrap .info__text {
+                        height: 20px;
+                        border-radius: var(--border-radius);
+                    }
+                    .v-loading-wrap .info__text_one {
+                        width: 100%;
+                    }
+                    .v-loading-wrap .info__text_two {
+                        width: 70%;
+                    }
+                    .v-loading-wrap .info__text_three {
+                        width: 85%;
+                    }
+                    .v-loading-wrap .left_box {
+                        flex: 0 0 70%;
+                        margin-right: auto;
+                    }
+                    .v-loading-wrap .image {
+                        height: 80px;
+                        width: 80px;
+                        border-radius: 25px;
+                    }
+                    .v-loading-wrap .shinny {
+                        background: #d3d3d3;
+                        margin: 10px 0;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .v-loading-wrap .shinny::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(255, 255, 255, 0.2);
+                        height: 100%;
+                        transform: skew(5deg);
+                        animation: 1.5s ease-in-out infinite shine;
+                    }
+                    @keyframes shine {
+                        from {
+                            transform: skew(45deg) translateX(0);
+                        }
+                        to {
+                            transform: skew(45deg) translateX(200%);
+                        }
+
+                    }
+    .contest2022-s {
+        display: none;
+    }
+    .contest2021-s {
+        display: none;
+    }
+    .contestended h2 {
+        margin: unset;
+        width: fit-content;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .v-video-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        display: none;
+                        z-index: 99;
+                    }
+                    .v-video-modal.show {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .v-video-modal-overlay {
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, 0.75);
+                    }
+                    .v-video-modal-close {
+                        position: absolute;
+                        right: 0;
+                        top: -60px;
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                        z-index: 9;
+                        background-image: url("/content/images/common/close.svg");
+                        background-repeat: no-repeat;
+                        background-position: center right;
+                        background-size: 20px 20px;
+                    }
+                    .v-video-modal-close img {
+                        object-position: center right;
+                    }
+                    .v-video-container {
+                        max-width: 90%;
+                        z-index: 99;
+                        position: relative;
+                    }
+                    .v-video-container iframe {
+                        max-width: 100%;
+                        max-height: 80%;
+                    }
+
+    @media (min-width: 600px) {
+        .contest2022 .loadmore {
+            margin: 50px auto;
+        }
+        .contest2021 .loadmore {
+            margin: 50px auto;
+        }
+        .mainFrame .videoName {
+            font-size: 20px;
+        }
+        .top-title .para {
+            font-size: 16px;
+        }
+    }
+    @media (min-width: 800px) {
+        .contestended h2 {
+        width: 800px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+        .wintercontest {
+            max-width: 800px;
+            margin: auto;
+        }
+        .v-loading-wrap .info__box {
+            background-color: #F7F7F7;
+
+                        padding: 10px 20px;
+                        margin: 0 5px;
+                        border-radius: var(--border-radius);
+                        display: flex;
+                    }
+        .mainFrame .videoBot {
+            justify-content: start;
+            gap: 20px;
+            font-size: 14px;
+        }
+        .mainFrame .videoName {
+            font-size: 20px;
+        }
+        section .item iframe {
+            height: 200px;
+        }
+        section .item {
+            margin-bottom: 0;
+        }
+        .mainFrame {
+            padding: 40px 0;
+        }
+        .contest2022 {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #F7F7F7;
+            margin-bottom: 60px;
+        }
+        .contest2022 .loadmore {
+            display: none;
+        }
+        .contest2022-side {
+            display: none;
+        }
+        .contest2022-s {
+            display: block;
+            background-color: #F7F7F7;
+        }
+        .contest2022-side1 {
+            max-height: 360px;
+            overflow: auto;
+            border-left: 1px solid rgb(223, 223, 223);
+
+        }
+        .contest2022 .title {
+            letter-spacing: 5px;
+            color: #86738E;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(223, 223, 223);
+        }
+        
+        .top-title {
+            padding:20px;
+
+            border-bottom: 1px solid rgb(223, 223, 223);
+
+        }
+        .contest2021 {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #F7F7F7;
+            margin-bottom: 60px;
+        }
+        .contest2021 .loadmore {
+            display: none;
+        }
+        .contest2021-side {
+            display: none;
+        }
+        .contest2021-s {
+            display: block;
+            background-color: #F7F7F7;
+        }
+        .contest2021-side1 {
+            max-height: 360px;
+            overflow: auto;
+            border-left: 1px solid rgb(223, 223, 223);
+
+        }
+        .contest2021 .title {
+            letter-spacing: 5px;
+            color: #86738E;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(223, 223, 223);
+        }
+    }
+    @media (min-width: 1440px) {
+        .contestended h2 {
+        width: 1300px;
+        font-size: 20px;
+    }
+        section .item iframe {
+            height: 375px;
+        }
+        .contest2022 {
+            max-width: 1300px;
+        }
+        .contest2022 .title {
+            font-size: 18px;
+        }
+        .contest2022-side1 {
+            max-height: 525px;
+        }
+        .contest2021 {
+            max-width: 1300px;
+        }
+        .contest2021-side1 {
+            max-height: 525px;
+        }
+        .contest2021 .title {
+            font-size: 18px;
+        }
+        .top-title {
+            display: flex;
+        }
+        .top-title img {
+            width: 200px;
+        }
+        .wintercontest {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+    }
+</style>
+
 <div style="position: relative">
     <div class="menu-wrap">
         <div class="menu-items"></div>
@@ -132,11 +519,129 @@
             subscribe to our newsletter to be notified first when the next contest launches.
         </div>
     </section>
-    <section title="Ended">
-        <div class="item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Av698ZcnShw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section class="contestended" title="Ended">
+        <h2>Hair Transformation Contest 2022</h2>
+        <div class="contest2022">
+
+                <div class="item">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Av698ZcnShw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="mainFrame">
+                        <p class="videoName">The Hair Transformation Contest is Back for 2022 | Win $1,000 and More!</p>
+                        <div class="videoBot">
+                            <p class="videoNum">14 Videos</p>
+                            <p class="videoDate">Last updated on Apr 4, 2022</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="v-loading-wrap">
+                    <div class="info__box">
+                        <div class="right_box">
+                            <div class="shinny image"></div>
+                        </div>
+                        <div class="left_box">
+                            <p class="shinny info__text info__text_one"></p>
+                            <p class="shinny info__text info__text_two"></p>
+                            <p class="shinny info__text info__text_three"></p>
+                        </div>
+
+                    </div>
+                
+                    <div class="info__box">
+                        <div class="right_box">
+                            <div class="shinny image"></div>
+                        </div>
+                        <div class="left_box">
+                            <p class="shinny info__text info__text_one"></p>
+                            <p class="shinny info__text info__text_two"></p>
+                            <p class="shinny info__text info__text_three"></p>
+                        </div>
+
+                    </div>
+                    <div class="info__box">
+                        <div class="right_box">
+                            <div class="shinny image"></div>
+                        </div>
+                        <div class="left_box">
+                            <p class="shinny info__text info__text_one"></p>
+                            <p class="shinny info__text info__text_two"></p>
+                            <p class="shinny info__text info__text_three"></p>
+                        </div>
+ 
+                    </div>
+                </div>
+                <div class="contest2022-side"></div>
+                <div class="contest2022-s">
+                    <div class="title" style="display: none;">UPLOADS</div>
+
+                    <div class="contest2022-side1"></div>
+                </div>
+                <div id="videoList" class="loadmore"><img src="/content/images/marketing/contests/arrow.png"></div>
+            
         </div>
-        <div class="item">
+        <h2>Super Transformation Contest 2021</h2>
+
+        <div class="contest2021">
+            <div class="item">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YgaUJBl5Mhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <div class="mainFrame">
+                    <p class="videoName">Super Transformation Contest 2021 - Our Winners React!</p>
+                    <div class="videoBot">
+                        <p class="videoNum">8 Videos</p>
+                        <p class="videoDate">Last updated on Nov 19, 2021</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="v-loading-wrap">
+                <div class="info__box">
+                    <div class="right_box">
+                        <div class="shinny image"></div>
+                    </div>
+                    <div class="left_box">
+                        <p class="shinny info__text info__text_one"></p>
+                        <p class="shinny info__text info__text_two"></p>
+                        <p class="shinny info__text info__text_three"></p>
+                    </div>
+
+                </div>
+            
+                <div class="info__box">
+                    <div class="right_box">
+                        <div class="shinny image"></div>
+                    </div>
+                    <div class="left_box">
+                        <p class="shinny info__text info__text_one"></p>
+                        <p class="shinny info__text info__text_two"></p>
+                        <p class="shinny info__text info__text_three"></p>
+                    </div>
+
+                </div>
+                <div class="info__box">
+                    <div class="right_box">
+                        <div class="shinny image"></div>
+                    </div>
+                    <div class="left_box">
+                        <p class="shinny info__text info__text_one"></p>
+                        <p class="shinny info__text info__text_two"></p>
+                        <p class="shinny info__text info__text_three"></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="contest2021-side"></div>
+            <div class="contest2021-s">
+                <div class="title" style="display: none;">UPLOADS</div>
+
+                <div class="contest2021-side1"></div>
+            </div>
+            <div id="videoList1" class="loadmore"><img src="/content/images/marketing/contests/arrow.png"></div>
+
+        </div>
+
+        <div class="item wintercontest">
             <picture>
                 <source media="(min-width: 600px)" srcset="/content/images/marketing/contests/wintercontest-pc.webp" type="image/webp">
                 <source media="(min-width: 600px)" srcset="/content/images/marketing/contests/wintercontest-pc.jpg" type="image/jpeg">
@@ -145,10 +650,14 @@
                 <img src="/content/images/marketing/contests/wintercontest-mobile.jpg" alt="Winter Contest 2022">
             </picture>
         </div>
-        <div class="item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YgaUJBl5Mhg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
     </section>
+</div>
+<div class="v-video-modal">    
+    <!-- <img src="/content/images/common/close.svg" alt="Close" width="30"> -->    
+<div class="v-video-modal-overlay"></div>
+<div class="v-video-container">
+    <div class="v-video-modal-close"></div>
+</div>
 </div>
 <script src="/content/js/submenu.js" defer></script>
 <script src="/content/js/plyr.js" defer></script>
@@ -156,4 +665,364 @@
     window.addEventListener("DOMContentLoaded", function() {
         const player = new Plyr('#player');
     })
+</script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/content/js/slick.min.js"></script>
+<script src="https://www.youtube.com/iframe_api" defer></script>
+<script>
+let playlistIDs=[],videoList=[],videoList1=[],index1=0,index2=1
+function onYouTubeIframeAPIReady() {    
+        player = new YT.Player('video-main', {
+            host: `${window.location.protocol}//www.youtube.com`,
+            playerVars: { 
+                'autoplay': 1,
+                'controls': 0,            
+                'origin': window.location.protocol+"//"+window.location.host
+            },
+            events: {
+                'onReady': onPlayerReady          
+            }
+        });
+    }
+    function onPlayerReady(event) {  
+        event.target.playVideo();
+    }
+function setPlayVideo(id) {
+        $(".video-main").remove();
+        let width = $(window).width() > 900 ? Math.floor($(window).width() / 3 * 2) : $(window).width() - 50;        
+        let height = Math.floor(width / 1.78)
+        $(".v-video-container").prepend(`<iframe id="video-main" class="video-main" width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}?enablejsapi=1&origin=${window.location.protocol}//${window.location.host}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)                
+        onYouTubeIframeAPIReady();
+        $(".v-video-modal").addClass("show");
+    }
+
+function loadVideoContent(list, start, end, imgName="maxresdefault") { 
+    let content = "";     
+        for (let i = start; i < end; i++) {
+
+            content+=`<div class="top-title" onclick="setPlayVideo('${list[i].videoId}')">
+                    <img src="https://img.youtube.com/vi/${list[i].videoId}/maxresdefault.jpg" width="560" )"/>
+                    <div class='para' style="-webkit-box-orient: vertical">
+                        ${list[i].title}
+                        </div>
+
+    </div>`;
+        }
+        return content;
+
+    }
+
+function loadMoreVideo(arr, ind, length, id) {  
+
+       if (id == 'videoList') {
+        let maxIdx = videoList.length>3+index1?3+index1:videoList.length; 
+    let content = loadVideoContent(videoList, index1, maxIdx);
+    index1 = maxIdx    
+    $(".contest2022-side").append(content)
+        if (maxIdx==videoList.length) {
+            $(".contest2022 .loadmore").hide();
+            $(".contest2022 .loadmore").off("click");
+        }
+       } else if (id == 'videoList1') {
+                let maxIdx = videoList1.length>3+index2?3+index2:videoList1.length; 
+                let content = loadVideoContent(videoList1, index2, maxIdx);
+                index2 = maxIdx    
+                $(".contest2021-side").append(content)
+                    if (maxIdx==videoList1.length) {
+                        $(".contest2021 .loadmore").hide();
+                        $(".contest2021 .loadmore").off("click");
+        }
+       }
+        
+
+    }
+    
+
+function loadYTVideos(idx=0) {
+if (idx < playlistIDs.length) {
+fetch(
+    `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${playlistIDs[idx].id}&part=snippet,status&maxResults=50&key=AIzaSyCDIwU1LciGZnn-cZBcpsEJZivX4lw4xHw`,
+    {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json",
+        },
+    }
+)
+.then((r) => r.json())
+.then((r) => {
+    var name = playlistIDs[idx].title; 
+    if (name === 'Hair Transformation Contest 2022' ) {
+        r.items.forEach((item) => {
+if (item.status.privacyStatus == "public" && item.snippet.title !== "Super Transformation Contest 2021 - Our Winners React!") {                                         
+    videoList.push({
+        playlist: name,
+        date: item.snippet.publishedAt,
+        videoId: item.snippet.resourceId.videoId,
+        title: item.snippet.title
+    });
+}                    
+
+});
+
+    } else if (name === 'Super Transformation Contest 2021' ) {
+        r.items.forEach((item) => {
+if (item.status.privacyStatus == "public" && item.snippet.title !== "Super Transformation Contest 2021 - Our Winners React!") {                                         
+    videoList1.push({
+        playlist: name,
+        date: item.snippet.publishedAt,
+        videoId: item.snippet.resourceId.videoId,
+        title: item.snippet.title
+    });
+}                    
+
+});
+    }
+    loadYTVideos(idx+1);
+
+})
+.catch(e=>{
+    console.log(e);
+    loadYTVideos(idx+1);
+});
+} else {
+videoList.sort(function (a, b) {
+    return new Date(b.date) - new Date(a.date);
+});
+videoList1.sort(function (a, b) {
+    return new Date(b.date) - new Date(a.date);
+});
+
+for (let i = 0; i < 3 ; i++) {
+    index1+=1
+    $('.contest2022-side').append(`
+    <div class="top-title" onclick="setPlayVideo('${videoList[i].videoId}')" >
+        <img src="https://img.youtube.com/vi/${videoList[i].videoId}/maxresdefault.jpg" width="560" )"/>
+        <div class='para' style="-webkit-box-orient: vertical">
+            ${videoList[i].title}
+            </div>
+
+    </div>`)
+}
+videoList.forEach((item) => {
+    $('.contest2022-side1').append(`
+    <div class="top-title" onclick="setPlayVideo('${item.videoId}')" >
+        <img src="https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg" width="560" />
+        <div class='para' style="-webkit-box-orient: vertical">
+            ${item.title}
+            </div>
+    </div>
+    `)
+})
+for (let i = 0; i < 3 ; i++) {
+    index2+=1
+    $('.contest2021-side').append(`
+    <div class="top-title" onclick="setPlayVideo('${videoList[i].videoId}')">
+        <img src="https://img.youtube.com/vi/${videoList1[i].videoId}/maxresdefault.jpg" width="560" )"/>
+        <div class='para' style="-webkit-box-orient: vertical">
+            ${videoList1[i].title}
+            </div>
+
+    </div>`)
+}
+videoList1.forEach((item) => {
+    $('.contest2021-side1').append(`
+    <div class="top-title" onclick="setPlayVideo('${item.videoId}')" >
+        <img src="https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg" width="560" )"/>
+        <div class='para' style="-webkit-box-orient: vertical">
+            ${item.title}
+            </div>
+    </div>
+    `)
+})
+
+videoList = videoList.filter(
+    (value, index, self) =>
+        index ===
+        self.findIndex(
+            (t) => t.videoId === value.videoId
+        )
+);
+$('.loadmore').on('click', function() {
+    let id = this.id
+    if (id == 'videoList'){
+        let maxLength = videoList.length>3+index1?3+index1:videoList.length; 
+        let content = loadMoreVideo(videoList, index1, maxLength, id)   
+        index1 = maxLength
+    } else if (id == 'videoList1') {
+        let maxLength = videoList1.length>3+index1?3+index1:videoList1.length; 
+        let content = loadMoreVideo(videoList1, index2, maxLength, id)   
+        index2 = maxLength
+    }
+
+    
+
+    // if ($(".contest2022-side").length == 0) {
+    //     $(".contest2022-side").append(`<div class="videoContent">${content}</div>`)        
+
+    // }else {            
+    //         $(".contest2022-side").html(content);          
+    //         $(".contest2022-side .loadMore").show();  
+
+    //     }  
+})
+// <iframe width="100%" height="200px" src="https://www.youtube.com/embed/${uniqueList[i].videoId}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
+
+currentIndex=5;
+slickBanner();
+embedSearchFilter();
+$(".v-content").removeClass("hidden");
+$('.contest2022-s .title').css('display','block')
+$('.contest2021-s .title').css('display','block')
+$(".v-loading-wrap").remove()
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+if (params.videoid) {
+    setPlayVideo(params.videoid);
+}
+}
+}
+/**
+* Load youtube playlist
+*/
+function loadYTPlaylist() {
+fetch(
+`https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCREsk4LxlBDV8v29Be1PUlA&maxResults=50&key=AIzaSyCDIwU1LciGZnn-cZBcpsEJZivX4lw4xHw`,
+{
+    method: "GET",
+    headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+    },
+}
+)
+.then((r) => r.json())
+.then((r) => {
+r.items.forEach((item) => {
+
+    playlistIDs.push({
+        id: item.id,
+        title: item.snippet.title,
+    });
+});
+if (playlistIDs.length>0) {
+    loadYTVideos();
+}
+})
+.catch(e=>console.log(e));
+}
+function embedSearchFilter() {        
+playlistIDs.forEach((item, idx) => {
+$(".searchFilter").append(`
+    <div class="v-explore-item"><input type="checkbox" id="v-c-${idx}" data-name="${encodeURIComponent(item.title)}" value="${encodeURIComponent(item.title)}"> <label for="v-c-${idx}">${item.title}</label></div>
+`);
+});
+$(".v-explore-item input").on("change", function() {            
+
+if ($(".v-explore-menu input:checked").length==0) {
+    $(".v-explore-clear").addClass("disabled");
+    $("img[alt=Filter]").attr("src","/content/images/common/filter2-grey.svg")
+} else {
+    $(".v-explore-clear").removeClass("disabled");
+    $("img[alt=Filter]").attr("src","/content/images/common/filter2.svg")
+}
+})
+}
+/**
+* Find the number of days difference
+* 
+* @param {Datetime} from The 1st date
+* @param {Datetime} to The 2nd date
+* 
+* @return minus if 1st after 2nd
+*/
+function dayDiff(from, to) {
+const diffTime = Math.abs(to - from); // milliseconds
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); //days        
+return diffDays;
+}
+/**
+* Return the content of video list, based on start and end index of Video array
+*   
+* @param {Array} list Array list of video. Can be orignal video list or filtered list  
+* @param {int} start Start index
+* @param {int} end End index
+* @param {string} imgName Image name from youbute, mqdefault or maxresdefault
+* 
+* @return the html content of video list
+*/
+
+/**
+* Embed videos to DOM
+*/
+
+function slickBanner() {
+$(".homebanner").slick({
+dots: true,
+speed: 1000,
+infinite: true,
+arrows: false,
+mobileFirst: true,
+slidesToShow: 1,
+slidesToScroll: 1,
+autoplay: true,
+draggable: true,
+pauseOnFocus: false,
+responsive: [
+    {
+        breakpoint: 1023,
+        settings: "unslick"
+    }
+]
+});
+}
+function onInitSearchList() {
+if ($(window).width()<=1129) {
+if ($(".v-explore-menu .searchFilter").length==0) {
+    $(".v-explore-menu .v-explore-control").before($(".searchFilter"))                
+} 
+} else {
+if ($(".v-list-w-filter .searchFilter").length==0) {
+    $(".v-list-w-filter .search-section").append($(".searchFilter"));
+}             
+}
+}
+window.addEventListener("DOMContentLoaded", function () {
+loadYTPlaylist();
+
+$(".v-explore-title, .v-explore-apply").on("click", function() {
+hideExplore();
+})
+       
+$(".v-explore-clear").on("click", function() {
+if ($(this).hasClass("disabled")) {
+    return;
+} else {
+    for (let input of $(".v-explore-menu input:checked")) {
+        $(input).prop("checked", false);
+    }
+
+    $(this).addClass("disabled");
+    $("img[alt=Filter]").attr("src","/content/images/common/filter2-grey.svg")
+}
+})
+$(".v-video-modal-overlay, .v-video-modal-close").on("click", function() {
+$(".v-video-modal").removeClass("show");
+$(".video-main").remove();
+})
+// .on("keyup", function(event) {
+//     console.log(event);
+//     if (event.which==13) {
+//         onFilter();
+//     }
+// })
+});
+onInitSearchList();
+$(window).on("resize orientationchange", function() {
+$(".homebanner").slick("resize");
+onInitSearchList();
+})
 </script>

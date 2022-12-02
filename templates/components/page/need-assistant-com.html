@@ -1,0 +1,968 @@
+<style>
+    .breadcrumbs {
+        display: none;
+    }
+    .body.page h1 {
+        display: none;
+    }
+    .css-1hcx8jb {
+        display: none !important;
+        font-size: 12px;
+    }
+    .page-heading {
+        padding-top: 4vh;
+    }
+    @media (min-width: 801px) and (max-width: 1149px) {
+        .body.page {
+            margin-top: 2.5rem !important;
+        }
+    }
+    .body.page {
+        padding: 0 !important;
+    }
+    p {
+        margin: 0 !important;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        overflow-x: mensden;
+    }
+    .body.page .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    .page {
+        margin: 0 !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+    }
+    .page-content.page-content--centered {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+</style>
+<style>
+    .contact {
+        transition: max-height 0.5s ease-in-out;
+    }
+    .contact-main {
+        position: relative;
+        top: -60px;
+        margin-bottom: -50px;
+    }
+    .contact-block {
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+        background-color: #fff;
+        max-width: 500px;
+    }
+    .contact-block h1 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 38px;
+        color: #000;
+        margin: unset;
+        padding: 20px;
+        display: block !important;
+    }
+    .contact-bl1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .contact-bl2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .contact-item {
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 5px;
+    }
+    .contact-click {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .contact-block2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .contact-block2 .contact-item6{
+        grid-row: 4 / auto;
+    }
+    .contact-block2 .item4 {
+        grid-column: span 2;
+        margin-bottom: 10px;
+    }
+    .contact-item:hover {
+        outline: 2px solid #680099;
+    }
+    .contact-item1 {
+        grid-column: span 2;
+        background-color: #fbfbfb;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        max-height: 0;
+    }
+    .contact-visit {
+        padding: 20px;
+        display: grid;
+        grid-gap: 15px;
+    }
+    .brand-add {
+        transition: max-height 0.5s ease-in-out;
+    }
+    .brand-add1 {
+        margin-bottom: 20px;
+    }
+    .page-tab-highlight {
+        outline: 2px solid #680099;
+    }
+    .contact-office {
+        display: flex;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #000;
+    }
+    .contact-office img {
+        width: 30px;
+        border-radius: 6px;
+    }
+    .contact-blockSub {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #000;
+    }
+    .contact-block1 {
+        margin: auto;
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+    }
+    .contact-block1 h2 {
+        font-size: 28px;
+        line-height: 48px;
+        font-weight: 600;
+        color: #000;
+        margin: 0;
+    }
+    .contact-bottom {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        color: #000;
+        padding: 40px 0;
+    }
+    .page-tab {
+        border-bottom: 1px solid #d5d5d5;
+    }
+    .page-button {
+        width: 100%;
+        padding: 0.9375rem 1.25rem 0.9375rem 0;
+        text-align: start;
+        position: relative;
+        text-transform: uppercase;
+    }
+    .page-button:nth-last-child() {
+        border-bottom: none;
+    }
+    .page-button::after {
+        content: "✕";
+        display: block;
+        position: absolute;
+        font-size: 0.75rem;
+        right: 0;
+        text-align: center;
+        top: 50%;
+        transform: rotate(45deg);
+        width: 1.25rem;
+        transition: transform 0.3s ease 0s;
+        margin: -0.525rem 1.25rem 0;
+    }
+    .page-test {
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+    .page-test1 {
+        padding-bottom: 1.25rem;
+    }
+    .page-button1::after {
+        content: "―";
+        transform: rotate(0);
+    }
+    input[type="text"] {
+        width: 100%;
+        margin-top: 5px;
+        text-indent: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    input[type="number"] {
+        width: 100%;
+        margin-top: 5px;
+        text-indent: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    textarea {
+        width: 100%;
+        margin-top: 5px;
+        resize: none;
+        text-indent: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+    input:focus,
+    textarea:focus {
+        outline: 0;
+    }
+    .contact-item1 .form_button {
+        width: 100%;
+        background-color: #272727;
+        color: #fff;
+        border-radius: 5px;
+        padding: 15px 0;
+        max-width: 290px;
+        margin: 10px auto;
+    }
+    .contact-visit .list li {
+        margin: 20px 0;
+    }
+    .contact-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: top;
+    }
+    .contact-block3 {
+        grid-template-columns: unset;
+    }
+    .contact-block4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-block5 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-block6 {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .contact-block7 {
+        display: grid;
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .contact-block7 .contact-item {
+        margin-bottom: 10px;
+    }
+    .contact-block6 .contact-item {
+        margin-bottom: 10px;
+    }
+    .contact-item2 {
+        grid-row: 3 / auto;
+    }
+    .contact-item3 {
+        grid-row: 4 / auto;
+    }
+    .contact-block2 .item4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-office1 {
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    .contact-office2 {
+        border-left: 1px solid #000;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+    .contact-line {
+        height: 1px;
+        width: 100%;
+        background-color: #bfbfbf;
+        margin: 40px auto;
+        width: 90%;
+        max-width: 500px;
+    }
+    .page-button h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: unset;
+        width: 75%;
+        max-width: 500px;
+        color: #000;
+    }
+    .page-tab1 {
+        display: none;
+    }
+    .contact-bl1 .contact-item5 {
+        grid-row: 3 / auto;
+    }
+    .contact-bl1 .contact-item6 {
+        grid-row: 4 / auto;
+    }
+    .contact-visit .line2 {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin: 5px 0;
+    }
+    .contact-bl1 .item5 {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        height: 130px;
+    }
+    .contact-bl1 .item6 {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-bl1 .item7 {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-img1 {
+        height: 30px;
+    }
+    .text_desktop {
+        display: none;
+    }
+    .text_mobile {
+        display: contents;
+    }
+    .page-test1 p {
+            width: 90%;
+        }
+    @media (min-width: 320px) and (max-width: 375px) {
+        .contact-blockSub {
+            font-size: 16px;
+        }
+    }
+    @media (min-width: 600px) {
+        .contact-block1 h2 {
+            font-size: 30px;
+        }
+        .contact-line {
+            max-width: 450px;
+        }
+        .contact-main {
+            top: -120px;
+        }
+        .contact-block h1 {
+            padding: 50px 40px;
+        }
+        .contact-block2 {
+            max-width: 450px;
+            margin: auto;
+        }
+        .contact-item {
+            height: 175px;
+            display: flex;
+            padding: 20px;
+        }
+        .contact-block2 .item4 {
+            width: unset;
+            height: 150px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .contact-block1 {
+            max-width: 450px;
+            padding: unset;
+        }
+        .contact-blockSub {
+            font-size: 25px;
+        }
+        .contact-blockSub1 {
+            font-size: 15px;
+        }
+        .contact-item1 .form_button {
+            max-width: 250px;
+        }
+    }
+    @media (min-width: 900px) {
+        .contact-block2 .contact-item5 {
+            grid-row: 2 / auto;
+        }
+        .contact-block2 .contact-item6 {
+            grid-row: 3 / auto;
+        }
+        .contact-img2 {
+            height: 50px;
+        }
+        .contact-bl1 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .contact-bl1 .item5 {
+            grid-column: unset;
+            height: unset;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+        }
+        .contact-visit2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-img1 {
+            height: 50px;
+        }
+        .contact-visit a {
+            font-size: 15px;
+        }
+        .page-button h3 {
+            font-size: 18px;
+        }
+        .contact-visit1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-office {
+            align-items: flex-start;
+        }
+        .contact-office1 {
+            margin: unset;
+            width: 350px;
+        }
+        .contact-office2 {
+            border-left: unset;
+            padding-left: unset;
+        }
+        .contact-visit {
+            width: 660px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        .contact-img {
+            max-height: 617px;
+        }
+        .contact-blockSub {
+            font-size: 25px;
+        }
+        .contact-block2 .item4 {
+            justify-content: space-evenly;
+        }
+        .contact-image {
+            height: 40px;
+        }
+        .contact-image1 {
+            height: 40px;
+        }
+        .contact-item {
+            padding: 20px;
+        }
+        .contact-block {
+            max-width: 1000px;
+        }
+        .contact-line {
+            max-width: 700px;
+        }
+        .contact-block2 {
+            max-width: 800px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .contact-block6 {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+        }
+        .contact-item1 {
+            grid-column: span 3;
+        }
+        .contact-block6 .contact-item1 {
+            grid-column: span 3;
+        }
+        .contact-block6 .contact-item {
+            margin-bottom: 20px;
+            height: 200px;
+        }
+        .contact-block6 .contact-item4 {
+            grid-row: 2 / auto;
+        }
+        .contact-block6 .item4 {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            height: 200px;
+        }
+        .contact-block3 {
+            display: flex;
+            flex-direction: column;
+            row-gap: unset;
+            column-gap: unset;
+        }
+        .contact-block4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .contact-block7 {
+            column-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .contact-block7 .contact-item {
+            margin-bottom: 20px;
+            height: 200px;
+        }
+        .contact-block2 .item4 {
+            grid-column: unset;
+        }
+        .contact-block7 .contact-item5 {
+            grid-row: 2 / auto;
+        }
+        .contact-block7 .contact-item1 {
+            grid-column: span 4;
+        }
+        .contact-block1 {
+            max-width: 700px;
+        }
+        .contact-block h1 {
+            padding: unset;
+            padding-top: 50px;
+            padding-bottom: 30px;
+            width: 800px;
+            margin: auto;
+        }
+        .contact-visit ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .contact-main {
+            top: -20vw;
+            margin-bottom: -16vw;
+        }
+        .page-button h3 {
+            max-width: 600px;
+        }
+    }
+    @media (min-width: 1440px) {
+        .text_mobile {
+            display: none;
+        }
+        .text_desktop {
+            display: contents;
+        }
+        .contact-bl2 {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .contact-office {
+            font-size: 20px;
+        }
+        .contact-main label {
+            font-size: 16px;
+        }
+        .page-tab1 {
+            display: block;
+        }
+        .contact-block7 .contact-item {
+            padding: 35px;
+        }
+        .contact-blockSub {
+            font-size: 25px;
+            margin-bottom: 5px !important;
+        }
+        .contact-block6 .contact-item {
+            padding: 30px 60px;
+            height: 250px;
+        }
+        .contact-blockSub1 {
+            font-size: 16px;
+        }
+        .contact-image {
+            height: 40px;
+        }
+        .contact-image1 {
+            height: 40px;
+        }
+        .contact-block h1 {
+            width: 1100px;
+            padding-top: 70px;
+            padding-bottom: 40px;
+            font-size: 35px;
+        }
+        .contact-block1 h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        .contact-block {
+            max-width: 1400px;
+        }
+        .contact-block2 {
+            max-width: 1100px;
+        }
+        .contact-block1 {
+            max-width: 1100px;
+        }
+        .contact-line {
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+        .page-button {
+            font-size: 16px;
+            padding: 1.5rem 1.25rem 1.5rem 0;
+        }
+        .contact-office1 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .contact-office2 {
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        .page-tab-highlight {
+            border: #680099 2px solid;
+        }
+        .page-test1 p {
+            font-size: 16px;
+            width: 95%;
+        }
+        .form-ticket .para2 {
+            font-size: 18px;
+        }
+        .contact-item {
+            padding: 30px;
+            height: 210px;
+        }
+        .contact-blockSub2 {
+            height: 55px;
+        }
+        .contact-img2 {
+            height: 50px;
+        }
+        .contact-chatlive {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+        }
+    }
+</style>
+<div class="contact">
+    <div class="contact-hero">
+        <picture>
+            <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/bkg.jpg" />
+            <img class="contact-img" src="/content/images/marketing/contact-us/bkg-mobile.jpg" alt="Super Hair Pieces" />
+        </picture>
+    </div>
+    <div class="contact-main">
+        <div class="contact-block">
+            <h1>Need to reach us? We're here to help.</h1>
+            <div class="contact-block2">
+
+                    <div onclick="openContact1(this)" id="chat" class="contact-item item5">
+                        <div class="contact-click">
+                            <picture>
+                                <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/Chat1.png" />
+                                <img class="contact-img1" src="/content/images/marketing/contact-us/Chat1.png" />
+                            </picture>
+                        
+                        
+                            
+                                <p class="contact-blockSub">Chat Live</p>
+                                <p class="contact-blockSub1">
+                                    <span class="text_desktop">Available Mon - Fri</span><span class="text_mobile">Weekdays</span><br />
+                                <span class="text_desktop">9:30am - 6:00pm EST (Eng, Fr, Esp)</span><span class="text_mobile">9:30am - 6:00pm EST</span>
+                                </p>
+                        </div>
+                            
+                            
+                            
+                        
+                    </div>
+                    <div id="mail" onclick="openContact(this)" class="contact-item item6">
+                        <div class="contact-click">
+                            <picture>
+                                <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/Email1.png" />
+                                <img class="contact-img1" src="/content/images/marketing/contact-us/Email.png" />
+                            </picture>
+                        
+                        <p class="contact-blockSub">Mail</p>
+                        <p class="contact-blockSub1">
+                            View our mailing and <br />
+                            email addresses
+                        </p>
+                        </div>
+                            
+                    </div>
+                    <div class="contact-item1 contact-item5">
+                        <div class="contact-visit">
+                            <div class="contact-visit1">
+                                <div class="contact-office"><img src="/content/images/marketing/contact-us/mail.png" /> E-mail</div>
+                                <div class="contact-office1">
+                                    <p><a style="color: rgba(0, 106, 195, 1);" href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a>- North America</p>
+                                    <br />
+                                    <p><a style="color: rgba(0, 106, 195, 1);" href="mailto:Support@superhairpieces.fr">support@superhairpieces.fr</a>- Europe</p>
+                                </div>
+                            </div>
+                            <div class="line2"></div>
+                            <div class="contact-visit1">
+                                <div class="contact-office"><img src="https://cdn.stamped.io/cdn/flags/us.svg" /> USA Head Office</div>
+                                <div class="contact-office1">
+                                    <p>3736 SW 30th Ave,</p>
+                                    <p style="padding-bottom: 10px;">Fort Lauderdale, FL 33312</p>
+                                    <p>Operation Hours:</p>
+                                    <p>Mon-Fri / 10:00AM-6:00PM EST</p>
+                                    <p>Sat-Sun / Federal Holidays - Closed</p>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="contact-visit1">
+                                <div class="contact-office"><img src="https://cdn.stamped.io/cdn/flags/ca.svg" /> Canada Office</div>
+                                <div class="contact-office1">
+                                    <p>7295 Rapistan Ct,</p>
+                                    <p style="padding-bottom: 10px;">Mississauga, Ontario L5N 5Z4</p>
+                                    <p>Operation Hours:</p>
+                                    <p>Mon-Fri / 10:00AM-6:00PM EST</p>
+                                    <p>Sat-Sun / Federal Holidays - Closed</p>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="contact-visit1">
+                                <div class="contact-office"><img src="https://cdn.stamped.io/cdn/flags/eu.svg" /> EU Office</div>
+                                <div class="contact-office1">
+                                    <p>Trompenburgstraat 2c,</p>
+                                    <p>1079 TX Amsterdam the Netherlands</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="call" onclick="openContact(this)" class="contact-item item7">
+                        <div class="contact-click">
+                            <div class="contact-img1">
+                                <picture>
+                                    <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/Call1.png" />
+                                    <img class="contact-image1" src="/content/images/marketing/contact-us/Call.png" />
+                                </picture>
+                            </div>
+                            <p class="contact-blockSub">Call</p>
+                            <p class="contact-blockSub1">
+                                <span class="text_desktop">Available Mon - Fri </span><span class="text_mobile">Weekdays </span><br />
+                                9:30am - 6:00pm EST (Eng, Fr, Esp)
+                            </p>
+                        </div>
+                       
+                    </div>
+                    <div class="contact-item1 contact-item6">
+                        <div class="contact-visit">
+                            <div class="contact-office">Toll Free Call or Text:</div>
+                            <div>
+                                <ul class="list" style="color: rgba(0, 106, 195, 1);">
+                                    <li><a href="tel:+18668147879" style="color: rgba(0, 106, 195, 1);">1-866-814-7879 (English)</a></li>
+                                    <li><a href="tel:+14168005056" style="color: rgba(0, 106, 195, 1);">1-416-800-5056 (Canada)</a></li>
+                                    <li><a href="tel:+19059171805" style="color: rgba(0, 106, 195, 1);">1-905-917-1805 (GTA Appointments)</a></li>
+                                    <li><a href="tel:+19548352288" style="color: rgba(0, 106, 195, 1);">1-954-835-2288 (Global)</a></li>
+                                    <li><a href="tel:+18008010708" style="color: rgba(0, 106, 195, 1);">1-800-801-0708 (Spanish & French)</a></li>
+                                    <li><a href="https://wa.me/18668693477" style="color: rgba(0, 106, 195, 1);">1-866-869-3477 (WhatsApp SMS Only)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="consultation" class="contact-item">
+                        <a target="_blank" href="/online-professional-hair-consultant-for-hairpieces/" style="text-decoration: none;" class="contact-click">
+                            <div class="contact-img1">
+                                <picture>
+                                    <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/consult1.png" />
+                                    <img class="contact-image1" src="/content/images/marketing/contact-us/consult.png" />
+                                </picture>
+                            </div>
+                            <p class="contact-blockSub contact-blockSub2">Professional Consultation</p>
+                            <p class="contact-blockSub1">Online video consultations</p>
+                        </a>
+                    </div>
+                    <div id="whatsapp" class="contact-item">
+                        <a target="_blank" href="https://wa.me/18668693477" style="text-decoration: none;" class="contact-click">
+                            <div class="contact-img1">
+                                <picture>
+                                    <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/Whatsapp1.png" />
+                                    <img class="contact-image1" src="/content/images/marketing/contact-us/Whatsapp.png" />
+                                </picture>
+                            </div>
+                            <p class="contact-blockSub contact-blockSub2">WhatsApp</p>
+                            <p class="contact-blockSub1">Chat to an agent via WhatsApp</p>
+                        </a>
+                    </div>
+                    <div id="messenger" class="contact-item">
+                        <a target="_blank" href="https://www.messenger.com/t/1477336485868121" style="text-decoration: none;" class="contact-click">
+                            <div class="contact-img1">
+                                <picture>
+                                    <source media="(min-width:900px)" srcset="/content/images/marketing/contact-us/messenger1.png" />
+                                    <img class="contact-image1" src="/content/images/marketing/contact-us/messenger.png" />
+                                </picture>
+                            </div>
+                            <p class="contact-blockSub contact-blockSub2">Messenger</p>
+                            <p class="contact-blockSub1">Chat to an agent via Messenger</p>
+                        </a>
+                    </div>
+
+
+            </div>
+        </div>
+        <div class="contact-line"></div>
+        <div class="contact-block1">
+            <h2>Top Questions</h2>
+            <div class="page-tab">
+                <p style="display: flex;" onclick="openFAQ(this)">
+                    <button class="page-button"><h3>WHAT IS YOUR RETURN POLICY?</h3></button>
+                </p>
+                <div class="page-test" style="max-height: 0;">
+                    <div class="page-test1">
+                        <p>
+                            For retail clients, all stock hairpieces are returnable for exchange or a full refund, minus shipping fees, within 15 days of receiving the item, provided it is still in its original condition and packaging. Any
+                            final sale options like base cuts, hair styling, bleached knots, and perming mean that the item cannot be returned or exchanged. Custom orders, overstock/limited edition hair systems, and all supplies are also
+                            final sale. Hair extensions can be returned in their original condition and packaging within 2 weeks of placing the order. To read more about our return policy, click
+                            <a target="_blank" href="https://superhairpieces.ca/shipping-returns-warranty/">here</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-tab">
+                <p style="display: flex;" onclick="openFAQ(this)">
+                    <button class="page-button"><h3>HOW DO I CANCEL MY ORDER? ARE THERE CHARGES TO DO THIS?</h3></button>
+                </p>
+                <div class="page-test" style="max-height: 0;">
+                    <div class="page-test1">
+                        <p>
+                            Please contact us at <a href="tel:+18668147879">1-866-814-7879</a> or via email at <a href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a> to cancel your order, where one of our customer service
+                            specialists can assist you. There is no charge to do this, however, please keep in mind that if the order has already shipped, it will not be possible to cancel it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-tab">
+                <p style="display: flex;" onclick="openFAQ(this)">
+                    <button class="page-button"><h3>What payment options do you accept?</h3></button>
+                </p>
+                <div class="page-test" style="max-height: 0;">
+                    <div class="page-test1"><p>You are able to pay with credit cards, bank transfer, cash on delivery, or pay in store if you are picking up your order at our office</p></div>
+                </div>
+            </div>
+            <p class="contact-bottom"><a target="_blank" href="/faq/" style="text-decoration: none;">+ View All Questions</a></p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+           $('#mail').click(function() {
+            if (this.classList.contains('page-tab-highlight')) {
+                $('html,body').animate({
+       scrollTop: $("#mail").offset().top - 100},
+       'slow');
+            }
+           
+       })
+       $('#call').click(function() {
+        if (this.classList.contains('page-tab-highlight')) {
+                $('html,body').animate({
+       scrollTop: $("#call").offset().top - 100},
+       'slow');
+            }
+       })
+
+                function openFAQ(x) {
+                    let setheight = x.nextElementSibling.children[0].offsetHeight
+                    let checkClass = x.nextElementSibling.classList
+                    let checkHeight = $('.contact').height()
+                    let checkHeight1 = checkHeight + setheight
+                    let checkHeight2 = checkHeight - setheight
+                    if (checkClass.contains('brand-add')) {
+                        checkClass.remove('brand-add')
+
+
+                        x.children[0].classList.remove('page-button1')
+                        x.nextElementSibling.style.maxHeight = '0'
+                    } else if (checkClass.contains('page-test')) {
+                        checkClass.add('brand-add')
+                        x.children[0].classList.add('page-button1')
+  
+
+                        x.nextElementSibling.style.maxHeight = setheight + 'px'
+                    } else {
+                        checkClass.add('brand-add')
+                        x.children[0].classList.add('page-button1')
+                        x.nextElementSibling.style.maxHeight = setheight + 'px'
+                    }
+                }
+        function openContact(x) {
+
+            let setheight = x.nextElementSibling.children[0].offsetHeight
+            let checkClass = x.nextElementSibling.classList;
+            let contains = checkClass.contains('brand-add');
+            let checkHeight = $('.contact').height()
+            let checkHeight1 = checkHeight + setheight
+            let checkHeight2 = checkHeight - setheight
+
+            $(".page-tab-highlight").removeClass("page-tab-highlight");
+            $(".contact-item1").removeClass("brand-add").css({"max-height":0}); 
+            if (contains) {
+
+                checkClass.remove('brand-add')
+                checkClass.remove('brand-add1')
+                x.classList.remove('page-tab-highlight')
+
+
+                x.nextElementSibling.style.maxHeight = '0'
+
+
+            } else {
+
+                checkClass.add('brand-add')
+                checkClass.add('brand-add1')
+
+                x.classList.add('page-tab-highlight')
+
+
+                x.nextElementSibling.style.maxHeight = setheight + 'px'
+
+            }
+        }
+        function openContact1(x) {
+            let setheight = x.nextElementSibling.children[0].offsetHeight
+            let checkClass = x.classList;
+            let contains = checkClass.contains('page-tab-highlight');
+            Reamaze.popup();
+            $(".page-tab-highlight").removeClass("page-tab-highlight");
+            $(".contact-item1").removeClass("brand-add").css({"max-height":0}); 
+            if (contains) {
+                x.classList.remove('page-tab-highlight')
+            } else {
+                x.classList.add('page-tab-highlight')
+            }
+        }
+
+            
+</script>
+
+
+
+

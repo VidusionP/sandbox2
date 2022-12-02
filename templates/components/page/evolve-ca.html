@@ -1,1385 +1,78 @@
-<link rel="stylesheet" href="/content/css/slick.css">
-<!-- <link href="/content/css/video-js.css" rel="stylesheet" /> -->
-<style>
-    :root {
-        --color1: #f8f9fa;
-        --color2: #FFD84F;
-        --color3: #ecb906;
-        --color4: #411876;
-        --color5: #000;
-        --color6: #ff4e43;
-        --border-radius: 10px;
-        --section-margin: 60px;
-        --element-margin: 30px;
-    }
-    .overlay1 {
-        position: absolute;
-        background: linear-gradient(to left, transparent 0%, rgb(0 0 0 / 38%) 60%);
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-    .instruc6 {
-        object-position: 70%;
-    }
-    .body.page .container {
-        padding: 0;
-        max-width: 100% !important;
-    }
-    .body.page {
-        padding-top: 0;
-        margin: 0;
-    }
-    .body.page h1 {
-        display: none;
-    }
-    .body.page .page-content {
-        padding: 0;
-    }
-    .body.page .page-content p:first-child {
-        display: none;
-    }
-    .body.page .page {
-        margin: 0;
-    }
-    section {        
-        font-size: 16px;
-        padding: var(--element-margin);
-    }
-    .e-header {
-        position: relative;
+<link rel="stylesheet" href="/content/css/slick.css"><style>:root{--color1:#f8f9fa;--color2:#FFD84F;--color3:#ecb906;--color4:#411876;--color5:#000;--color6:#ff4e43;--border-radius:10px;--section-margin:60px;--element-margin:30px}.overlay1{position:absolute;background:linear-gradient(to left,transparent 0,rgb(0 0 0 / 38%) 60%);top:0;left:0;height:100%;width:100%}.instruc6{object-position:70%}.body.page .container{padding:0;max-width:100%!important}.body.page{padding-top:0;margin:0}.body.page h1{display:none}.body.page .page-content{padding:0}.body.page .page-content p:first-child{display:none}.body.page .page{margin:0}section{font-size:16px;padding:var(--element-margin)}.e-header{position:relative;display:flex;justify-content:center;align-items:center;overflow:hidden;padding:var(--section-margin) var(--element-margin)}.e-header img{width:100%;height:100%;object-fit:cover;position:absolute;left:0;top:0;object-position:top}.e-header .e-content{color:var(--color1);z-index:1;text-align:center}section .e-title{font-size:32px;font-weight:700;text-align:center;margin-bottom:calc(var(--section-margin)/ 1.7)}.e-header .e-content .e-title{font-size:30px;font-weight:700;margin-bottom:var(--section-margin)}.e-desp{display:grid;grid-gap:var(--element-margin);text-align:center}.e-benefit .e-content{display:grid;grid-gap:var(--element-margin)}.e-benefit .e-content .e-item{padding-left:30px;position:relative}.e-benefit .e-content .e-item::before{content:"";display:inline-block;width:24px;height:24px;background-image:url(/content/images/marketing/evolve/check.svg);background-repeat:no-repeat;background-position:center;background-size:contain;position:absolute;left:0;top:3px}.e-benefit .e-content .e-item .e-title{font-size:24px;text-align:left;margin-bottom:calc(var(--element-margin)/ 2)}.e-instructor{background-color:var(--color4)}.e-instructor .e-title{color:var(--color2)}.e-instructor .e-content{color:var(--color1);display:grid;grid-gap:var(--element-margin)}.e-instructor .e-item{display:grid;grid-gap:calc(var(--element-margin) - 5px);padding:0 5px}.e-instructor .e-profile{overflow:hidden;position:relative;display:flex;padding:var(--element-margin) 20px}.e-instructor .e-profile img{position:absolute;width:100%;height:100%;right:0;top:0;border-radius:var(--border-radius);object-fit:cover}.e-instructor .e-item .e-detail{width:50%;align-self:center;justify-content:flex-start;z-index:1;text-align:center}.e-instructor .e-item .e-name{font-size:32px;font-weight:700;text-transform:uppercase;padding-bottom:var(--element-margin);margin-bottom:var(--element-margin);position:relative}.e-instructor .e-item .e-name::after{content:"";position:absolute;width:14px;height:4px;background-color:var(--color1);bottom:0;left:50%;transform:translateX(-50%);z-index:1;display:inline-block}.e-instructor .e-item .e-job{font-weight:700}.e-instructor .e-desp{margin-bottom:calc(var(--section-margin)/ 1.7);color:var(--color1)}.e-instructor .e-desp[pc]{display:none}.e-instructor .e-item .e-desp{margin-bottom:0}.slick-intructor{display:none}.e-course .e-desp{margin-bottom:var(--element-margin)}.e-course .e-content-desp{text-align:justify}.center{text-align:center}.e-course .e-item{display:grid;grid-gap:var(--element-margin)}.e-course a{text-decoration:none}.e-course .list{display:grid;grid-template-columns:23px auto;grid-column-gap:10px;grid-row-gap:20px;font-size:13px;align-items:center}.e-course img{width:100%;height:auto}.e-course .add{width:210px;max-width:100%;background-color:var(--color3);padding:8px 0;border-radius:8px;text-decoration:none;text-transform:uppercase;display:block;margin:0 auto;text-align:center;font-weight:500}.e-course .slick-next,.e-course .slick-prev{top:100px}.e-course .slick-slide,.e-how .slick-slide,.e-press .slick-slide,.e-review .slick-slide{height:inherit}.slick-course{display:none}.e-schedule{background-color:var(--color3)}.e-schedule .e-content{display:grid;grid-template-columns:27px auto;grid-row-gap:var(--element-margin);grid-column-gap:10px}.e-kit{background-color:var(--color4);color:var(--color1)}.e-kit img{display:none}.e-kit .padding{margin:var(--element-margin) 0}.e-kit .e-content ul{padding-left:10px}.e-how .e-desp{margin-bottom:var(--element-margin)}.e-how .e-item{display:grid;grid-gap:var(--element-margin);justify-content:center}.e-how .e-item img{margin:0 auto;height:95px;width:auto}.e-how .e-item div{max-width:280px;text-align:center}.slick-course{display:none}.e-submit{background-color:var(--color4);color:var(--color1);display:grid;grid-gap:var(--element-margin)}.e-submit .e-title{font-size:26px;margin-bottom:0}.e-submit img{width:100%;height:auto;border-radius:21px}.e-submit .e-content{display:grid;grid-gap:10px;text-align:center;padding:0 15px}.e-submit .e-content div{margin-bottom:calc(var(--element-margin) - 10px)}.e-submit .e-content .e-title{font-size:26px;background-color:inherit;padding:0}.e-submit .e-content input{text-align:center;padding:10px;border-radius:4px;border:0;width:100%;color:var(--color5)}.e-submit .e-content button{width:160px;padding:10px 0;background-color:var(--color3);border-radius:4px;margin:0 auto;color:var(--color5)}.e-submit .e-content button img{width:25px;height:25px}.e-review .e-content{display:grid;grid-gap:var(--element-margin);overflow:hidden}.e-review .e-item{margin-right:10px;margin-bottom:5px;height:340px;position:relative;cursor:pointer}.e-review .e-item img{height:100%;width:auto}.e-review .e-item picture{position:relative;display:block}.e-review .e-item picture::after{content:"";width:40px;height:40px;background-image:url(/content/images/marketing/evolve/play.svg);background-size:contain;background-repeat:no-repeat;background-position:center;position:absolute;left:50%;top:50%;display:block;transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);z-index:9}.e-review .content{text-align:justify}.e-review .info{width:calc(100vw - var(--element-margin) * 2);height:auto}.slick-video{display:none;width:100%;overflow:hidden}.e-press{background-color:var(--color4);color:var(--color1)}.slick-press{display:none}.e-press .e-item{text-decoration:none;display:block;margin:5px;background-color:#f8f9fa}.e-press .content{display:grid;grid-gap:8px;padding:10px;color:var(--color5)}.e-press .press{font-weight:500;font-size:13px}.e-press .timeline{font-weight:500;font-size:7px}.e-press img{width:100%;height:auto}.e-disclaimer .e-desp{display:block;max-width:1070px;margin-left:auto;margin-right:auto}.er{color:var(--color6);font-size:13px}.result-modal{justify-content:center;align-items:center;font-size:20px;text-align:center;right:unset}.result-modal .modal-body{display:grid;grid-gap:10px}.hide{display:none}.center{text-align:center}.youtube1 .youtube1-bkg{display:none;position:relative;border-radius:36px;overflow:hidden;cursor:pointer}.slick-youtube .youtube1{height:fit-content;padding:0 5px;height:50vw}.e-videos .youtube2{display:none;height:50vw;max-height:500px;margin-bottom:20px}.e-videos-bkg{max-width:1038px;margin:auto}.slick-youtube .youtube-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.637)}    .e-schedule-top {
         display: flex;
-        justify-content: center;
-        align-items: center;        
-        overflow: hidden;
-        padding: var(--section-margin) var(--element-margin);
-    }
-    .e-header img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        left: 0;
-        top: 0;
-        object-position: top;
-    }
-    .e-header .e-content {
-        color: var(--color1);
-        z-index: 1;
-        text-align: center;
-    }
-    section .e-title {
-        font-size: 32px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: calc(var(--section-margin) / 1.7);
-    }
-    .e-header .e-content .e-title {
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: var(--section-margin);
-    }    
-    .e-desp {        
-        display: grid;
-        grid-gap: var(--element-margin);
-        text-align: center;
-    }
-    .e-benefit .e-content{
-        display: grid;
-        grid-gap: var(--element-margin);
-    }
-    .e-benefit .e-content .e-item {
-        padding-left: 30px;
-        position: relative;
-    }
-    .e-benefit .e-content .e-item::before {
-        content: "";
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background-image: url(/content/images/marketing/evolve/check.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        position: absolute;
-        left: 0;
-        top: 3px;
-    }
-    .e-benefit .e-content .e-item .e-title {
-        font-size: 24px;
-        text-align: left;
-        margin-bottom: calc(var(--element-margin) / 2);
-    }
-    .e-instructor {
-        background-color: var(--color4);
-    }
-    .e-instructor .e-title {
-        color: var(--color2);
-    }    
-    .e-instructor .e-content {
-        color: var(--color1);
-        display: grid;
-        grid-gap: var(--element-margin);
-    }
-    .e-instructor .e-item {
-        display: grid;
-        grid-gap: calc(var(--element-margin) - 5px);
-        padding: 0 5px;
-    }
-    .e-instructor .e-profile {
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        padding: var(--element-margin) 20px;
-    }    
-    .e-instructor .e-profile img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        right: 0;
-        top: 0;
-        border-radius: var(--border-radius);
-        object-fit: cover;        
-    }
-    .e-instructor .e-item .e-detail {
-        width: 50%;
-        align-self: center;
-        justify-content: flex-start;
-        z-index: 1;
-        text-align: center;
-    }
-    .e-instructor .e-item .e-name {
-        font-size: 32px;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding-bottom: var(--element-margin);
-        margin-bottom: var(--element-margin);
-        position: relative;
-    }
-    .e-instructor .e-item .e-name::after {
-        content: "";
-        position: absolute;
-        width: 14px;
-        height: 4px;
-        background-color: var(--color1);
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        display: inline-block;
-    }
-    .e-instructor .e-item .e-job {
-        font-weight: bold;
-    }
-    .e-instructor .e-desp {
-        margin-bottom: calc(var(--section-margin) / 1.7);
-        color: var(--color1);
-    }
-    .e-instructor .e-desp[pc] {
-        display: none;
-    }
-    .e-instructor .e-item .e-desp {
-        margin-bottom: 0;
-    }
-    .slick-intructor {
-        display: none;
-    }
-    .e-course .e-desp {
-        margin-bottom: var(--element-margin);
-    }
-    .e-course .e-content-desp {
-        text-align: justify;        
-    }
-    .center {
-        text-align: center;
-    }
-    .e-course .e-item {
-        display: grid;
-        grid-gap: var(--element-margin);
-    }
-    .e-course a {
-        text-decoration: none;
-    }
-    .e-course .list {
-        display: grid;
-        grid-template-columns: 23px auto;
-        grid-column-gap: 10px;
-        grid-row-gap: 20px;
-        font-size: 13px;
+        flex-direction: column;
         align-items: center;
     }
-    .e-course img {
-        width: 100%;
-        height: auto;
+    .e-schedule-button {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #411876;
+        border-radius: 20px;
+        max-width: 200px;
+        margin: auto;
     }
-    .e-course .add {
-        width: 210px;
-        max-width: 100%;
-        background-color: var(--color3);
-        padding: 8px 0;
-        border-radius: 8px;
+    .e-schedule-button a {
         text-decoration: none;
-        text-transform: uppercase;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        font-weight: 500;
-    }
-    .e-course .slick-next, .e-course .slick-prev {
-        top: 100px;
-    }
-    .e-course .slick-slide, .e-how .slick-slide, .e-press .slick-slide, .e-review .slick-slide {
-        height: inherit;
-    }
-    .slick-course {
-        display: none;
-    }
-    .e-schedule {
-        background-color: var(--color3);
-    }
-    .e-schedule .e-content {
-        display: grid;
-        grid-template-columns: 27px auto;
-        grid-row-gap: var(--element-margin);
-        grid-column-gap: 10px;
-    }
-    .e-kit {
-        background-color: var(--color4);
-        color: var(--color1);
-    }
-    .e-kit img {
-        display: none;
-    }
-    .e-kit .padding {
-        margin: var(--element-margin) 0;
-    }
-    .e-kit .e-content ul {
-        padding-left: 10px;
-    }
-    .e-how .e-desp {
-        margin-bottom: var(--element-margin);
-    }
-    .e-how .e-item {
-        display: grid;
-        grid-gap: var(--element-margin);
-        justify-content: center;        
-    }
-    .e-how .e-item img {
-        margin: 0 auto;
-        height: 95px;
-        width: auto;
-    }
-    .e-how .e-item div {
-        max-width: 280px;
-        text-align: center;
-    }
-    .slick-course {
-        display: none;
-    }
-    .e-submit {
-        background-color: var(--color4);
-        color: var(--color1);
-        display: grid;
-        grid-gap: var(--element-margin);
-    }    
-    .e-submit .e-title {
-        font-size: 26px;
-        margin-bottom: 0;
-    }
-    .e-submit img{
-        width: 100%;
-        height: auto;
-        border-radius: 21px;
-    }
-    .e-submit .e-content {        
-        display: grid;
-        grid-gap: 10px;                
-        text-align: center;
-        padding: 0 15px;
-    }
-    .e-submit .e-content div {
-        margin-bottom: calc(var(--element-margin) - 10px);
-    }
-    .e-submit .e-content .e-title {
-        font-size: 26px;
-        background-color: inherit;
-        padding: 0;        
-    }
-    .e-submit .e-content input {
-        text-align: center;
-        padding: 10px;
-        border-radius: 4px;
-        border: 0;
-        width: 100%;
-        color: var(--color5);
-    }
-    .e-submit .e-content button {
-        width: 160px;
-        padding: 10px 0;
-        background-color: var(--color3);
-        border-radius: 4px;
-        margin: 0 auto;
-        color: var(--color5);
-    }
-    .e-submit .e-content button img {
-        width: 25px;
-        height: 25px;
-    }
-    .e-review .e-content {
-        display: grid;
-        grid-gap: var(--element-margin);
-        overflow: hidden;
-    }
-    .e-review .e-item {
-        margin-right: 10px;
-        margin-bottom: 5px;
-        height: 340px;
-        position: relative;
-        cursor: pointer;
-    }
-    .e-review .e-item img {
-        height: 100%;
-        width: auto;        
-    }
-    .e-review .e-item picture {
-        position: relative;
-        display: block;
-    }
-    .e-review .e-item picture::after {
-        content: "";
-        width: 40px;
-        height: 40px;        
-        background-image: url("/content/images/marketing/evolve/play.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        left: 50%;        
-        top: 50%;
-        display: block;
-        transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        z-index: 9;        
-    }
-    .e-review .content {
-        /* width: calc(100vw - var(--element-margin) * 2 - 20px);         */
-        text-align: justify;
-    }
-    .e-review .info {
-        width: calc(100vw - var(--element-margin) * 2);
-        height: auto;
-    }
-    .slick-video {
-        display: none;
-        width: 100%;
-        overflow: hidden;
-    }
-    .e-press {
-        background-color: var(--color4);
-        color: var(--color1);        
-    }
-    .slick-press {
-        display: none;
-    }
-    .e-press .e-item {
-        text-decoration: none;
-        display: block;
-        margin:5px;
-        background-color: #f8f9fa;
-    }
-    .e-press .content {
-        display: grid;
-        grid-gap: 8px;
-        padding: 10px;        
-        color: var(--color5);
-    }
-    .e-press .press {
-        font-weight: 500;
-        font-size: 13px;
-    }
-    .e-press .timeline {
-        font-weight: 500;
-        font-size: 7px;
-    }
-    .e-press img {
-        width: 100%;
-        height: auto;
-    }
-    .e-disclaimer .e-desp {
-        display: block;
-        max-width: 1070px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .er {
-        color: var(--color6);
-        font-size: 13px;
-    }
-    .result-modal {
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        text-align: center;
-        right: unset;
-    }
-    .result-modal .modal-body {
-        display: grid;
-        grid-gap: 10px;
-    }    
-    .hide {
-        display: none;
-    }
-    .center {
-        text-align: center;
-    }   
-    @media (min-width:500px) {
-        .slick-press .slick-track {
-            display: flex !important;
-        }
-    }
-    @media (min-width: 551px) {
-        .breadcrumbs {
-            display: none;
-        }
-    }
-    /* @media (min-width: 600px) {
-        .slick-video {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 8px;
-            justify-content: center;
-        }
-        .e-review .e-item {
-            margin-right: 0;
-            height: inherit;
-            width: 100%;
-        }
-        .e-review .e-item img {
-            width: 100%;
-            height: auto;
-        }
-        .e-review .content {
-            width: 100%;
-        }
-    }*/
-    @media (min-width: 700px) {
-        :root {
-            --element-margin: 35px;
-        }
-        .overlay1 {
-        position: absolute;
-        background: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 50%) 60%);
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        }
-        .instruc6 {
-            object-position: unset;
-        }
-        .e-header {
-            padding-right: 200px;
-        }
-        .e-benefit .e-title {
-            text-align: left;
-        }
-        .e-benefit .e-content {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .e-instructor .e-desp {
-            max-width: 638px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .e-instructor .e-profile {
-            height: 50vw;
-            padding: var(--element-margin) 10px;
-        }              
-        .e-instructor .e-item .e-name {
-            font-size: 28px;
-        }
-        .e-instructor .e-item .e-detail {
-            width: 100%;
-            align-self: flex-end;
-            margin-bottom: 0;
-        }
-        .e-instructor .e-desp[mobile] {
-            display: none;
-        }
-        .e-instructor .e-item:hover .e-desp[pc]{
-            display: block;
-            font-size: 12px;
-            cursor: default;
-        }
-        .e-instructor .e-item:hover .e-job {
-            display: none;
-        }
-        .e-instructor .e-item:hover .e-detail {
-            align-self: center;
-        }
-        .e-instructor .e-item:hover .e-name {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-        }
-        .e-course .list {
-            font-size: 16px;
-        }
-        .e-course .list img {
-            width: 31px;
-            height: auto;
-        }
-        .e-course .e-cart a {
-            width: 100%;
-            display: block;
-            text-align: center;
-            padding: 8px 0;
-            text-transform: uppercase;
-            border-radius: 8px;
-            text-decoration: none;
-            border: 1px solid transparent;
-        }
-        .e-course .e-cart .link-cart {
-            background-color: var(--color3);
-            margin-bottom: 10px;
-            color: var(--color5);
-        }
-        .e-course .e-cart .link-info {
-            background-color: var(--color4);
-            color: var(--color1);
-        }
-        .e-course .e-cart a:hover {
-            border: 1px solid var(--color5);
-        }
-        .e-course .e-cart a:focus, .e-course .e-cart a:active {
-            outline: none;
-        }
-        .e-kit .e-content {
-            -webkit-column-count: 2;
-            -moz-column-count: 2;
-            column-count: 2;
+        color: white;
 
-            -webkit-column-gap: 20px;
-            -moz-column-gap: 20px;
-            column-gap: 20px;
-        }
-        .e-kit .section div {
-            font-weight: bold;
-        }
-        .e-submit .e-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }        
-        .e-submit .e-content div {
-            grid-column: 1 / span 2;
-        }
-        .e-submit .e-content input[name=email] {
-            grid-column: 1 / span 2;
-        }
-        .e-submit .e-content button {
-            grid-column: 1 / span 2;
-            margin: 0;
-        }
-        .e-press .press {
-            font-weight: bold;
-        }
+        font-weight: 700;
+
     }
-    @media (min-width: 801px) {
-        .body.page {
-            padding: 0;
+    .card-mark-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px !important;
+    height:50px !important;
+}@media (min-width:500px){.slick-press .slick-track{display:flex!important}}@media (min-width:551px){.breadcrumbs{display:none}}@media (min-width:700px){:root{--element-margin:35px}.overlay1{position:absolute;background:linear-gradient(to bottom,transparent 0,rgb(0 0 0 / 50%) 60%);top:0;left:0;height:100%;width:100%}.instruc6{object-position:unset}.e-header{padding-right:200px}.e-benefit .e-title{text-align:left}.e-benefit .e-content{grid-template-columns:repeat(2,1fr)}.e-instructor .e-desp{max-width:638px;margin-left:auto;margin-right:auto}.e-instructor .e-profile{height:50vw;padding:var(--element-margin) 10px}.e-instructor .e-item .e-name{font-size:28px}.e-instructor .e-item .e-detail{width:100%;align-self:flex-end;margin-bottom:0}.e-instructor .e-desp[mobile]{display:none}.e-instructor .e-item:hover .e-desp[pc]{display:block;font-size:12px;cursor:default}.e-instructor .e-item:hover .e-job{display:none}.e-instructor .e-item:hover .e-detail{align-self:center}.e-instructor .e-item:hover .e-name{margin-bottom:20px;padding-bottom:20px}.e-course .list{font-size:16px}.e-course .list img{width:31px;height:auto}.e-course .e-cart a{width:100%;display:block;text-align:center;padding:8px 0;text-transform:uppercase;border-radius:8px;text-decoration:none;border:1px solid transparent}.e-course .e-cart .link-cart{background-color:var(--color3);margin-bottom:10px;color:var(--color5)}.e-course .e-cart .link-info{background-color:var(--color4);color:var(--color1)}.e-course .e-cart a:hover{border:1px solid var(--color5)}.e-course .e-cart a:active,.e-course .e-cart a:focus{outline:0}.e-kit .e-content{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:20px;-moz-column-gap:20px;column-gap:20px}.e-kit .section div{font-weight:700}.e-submit .e-content{display:grid;grid-template-columns:repeat(2,1fr)}.e-submit .e-content div{grid-column:1/span 2}.e-submit .e-content input[name=email]{grid-column:1/span 2}.e-submit .e-content button{grid-column:1/span 2;margin:0}.e-press .press{font-weight:700}}@media (min-width:801px){.body.page{padding:0}.e-press .timeline{font-size:10px}.slick-youtube{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.slick-youtube .youtube1{height:auto;padding:unset}.youtube1 .side{display:none}.youtube1 .youtube1-bkg{display:block}.e-videos .youtube2{display:block}}@media (min-width:852px){.e-header{padding-right:280px}.e-instructor .e-item .e-name{width:180px;margin-left:auto;margin-right:auto}.e-submit{grid-template-columns:repeat(2,1fr);grid-row-gap:10px}.e-submit .e-title{font-size:32px;grid-column:2/span 1;grid-row:1/span 1;text-align:left}.e-submit img{height:100%;object-fit:cover;object-position:center}.e-submit picture{grid-column:1/span 1;grid-row:1/span 2}.e-submit .e-content{grid-column:2/span 1;grid-row:2/span 1;padding:0;text-align:left}.e-submit .e-content div{margin-bottom:5px}}@media (min-width:900px){        .card-mark-image {
+
+    width: 70px !important;
+    height:70px !important;
+}.slick-course{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:var(--element-margin)}.e-course .e-item{background-color:var(--color4);color:var(--color1);padding-bottom:calc(var(--element-margin) + 40px);position:relative}.e-course a{color:var(--color1)}.e-course .e-content-desp,.e-course .list{padding:0 30px}.e-course .e-item[extended]{grid-column:2/span 1;grid-row:1/span 1}.e-course .add{position:absolute;bottom:var(--element-margin);left:50%;transform:translateX(-50%)}.e-course .e-item[starter]{grid-column:1/span 1;grid-row:1/span 1}.e-instructor .e-item .e-name{font-size:22px}.e-press .timeline{font-size:12px}}@media (min-width:932px){        .e-schedule-top {
+            align-items: flex-start;
         }
-        .e-press .timeline {
-            font-size: 10px;
+        .e-schedule-top .e-title {
+            text-align: start;
         }
-    }
-    @media (min-width: 852px) {
-        .e-header {
-            padding-right: 280px;
-        }
-        .e-instructor .e-item .e-name {
-            width: 180px;
-            margin-left: auto;
-            margin-right: auto;            
-        }
-        .e-submit {
-            grid-template-columns: repeat(2, 1fr);
-            grid-row-gap: 10px;
-        }
-        .e-submit .e-title {
-            font-size: 32px;
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
-            text-align: left;
-        }                
-        .e-submit img {
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }    
-        .e-submit picture {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 2;
-        }   
-        .e-submit .e-content {
-            grid-column: 2 / span 1;
-            grid-row: 2 / span 1;
-            padding: 0;
-            text-align: left;
-        } 
-        .e-submit .e-content div {
-            margin-bottom: 5px;
-        }
-    }
-    @media (min-width: 900px) {
-        .slick-course {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: var(--element-margin);            
-        }
-        .e-course .e-item {
-            background-color: var(--color4);
-            color: var(--color1);  
-            padding-bottom: calc(var(--element-margin) + 40px); 
-            position: relative;         
-        }
-        .e-course a {
-            color: var(--color1);  
-        }
-        .e-course .e-content-desp, .e-course .list {
-            padding: 0 30px;
-        }
-        .e-course .e-item[extended] {
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
-        }
-        .e-course .add {
-            position: absolute;
-            bottom: var(--element-margin);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .e-course .e-item[starter] {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 1;
-        }                
-        .e-instructor .e-item .e-name {
-            font-size: 22px;
-        }
-        .e-press .timeline {
-            font-size: 12px;
-        }
-    }
-    @media (min-width:932px) {
-        .e-header {
-            padding-right: 300px;
-        }
-        .e-instructor .e-item:hover .e-desp[pc]{
-            font-size: 16px;
-        }
-        .e-instructor .e-item .e-name {
-            font-size: 24px;
-        }  
-        .e-schedule {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: var(--element-margin);
-            align-items: center;
-        }
-        .e-schedule .e-title {
-            margin-bottom: 0;
-        }
-    }
-    @media (min-width: 956px) {
-        .e-header {
-            padding-right: 350px;
-        }
-        .e-desp div {
-            font-size: 20px;
-        }        
-        .e-disclaimer .e-desp div {
-            font-size: 16px;            
-        }
-        .e-instructor .e-content, .e-course, .slick-how, .slick-press {
-            max-width: 1292px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .e-instructor .e-profile {
-            height: 478px;            
-        }   
-        .e-schedule {
-            padding: var(--element-margin) calc(50vw - 646px);
-        }            
-    }
-    @media (min-width: 1015px) {
-        .e-benefit .e-content {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .e-desp, .e-benefit, .e-review {
-            max-width: 1038px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .e-submit .e-title {
-            font-size: 40px;
-        }
-        .e-instructor .e-profile {
-            padding: var(--element-margin) 20px;
-        }        
-        .e-kit {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            padding: 0;            
-        }
-        .e-kit picture {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 2;
-        }
-        .e-kit img {
-            display: block;            
-            height: 100%;
-            width: auto;
-            object-fit: cover;
-        }
-        .e-kit .e-title {
-            grid-row: 1 / span 1;
-            grid-column: 2 / span 1;
-            padding: var(--element-margin) var(--element-margin) 0;
-            text-align: left;
-        }
-        .e-kit .e-content {
-            grid-row: 2 / span 1;
-            grid-column: 2 / span 1;
-            padding: 0 var(--element-margin) var(--element-margin);
-        }
-        .slick-how {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: var(--element-margin);
-        }        
-        .e-how .e-item {
-            display: block;
-        }
-        .e-how .e-item img {
-            margin: 0 auto var(--element-margin);
-            display: block;
-        }
-    }
-    @media (min-width: 1108px) {
-        :root {
-            --element-margin: 40px;
-            --section-margin: 80px;
-        }
-        .e-header {
-            padding-right: 430px;
-            min-height: 39vw;
-            padding-left: var(--section-margin);            
-        }
-        .e-header .e-content {
-            text-align: left;
-        }
-        .e-header .e-content .e-title {
-            font-size: 40px;
-            text-align: left;
-            margin-bottom: var(--element-margin);
-        }
-    }    
-    @media (min-width: 1130px) {
-        .slick-video {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);            
-            grid-gap: 10px;
-        }
-        .e-review .e-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            align-items: center;
-        }
-        .e-review .e-item {
-            width: 100%;
-            height: auto;
-        }
-        .e-review .e-item:nth-child(n+4) {
-            display: none;
-        }
-        .e-review .content.hide, .e-review picture.hide {
-            display: grid;
-        }
-        .e-review .content {            
-            grid-gap: var(--element-margin);
-        }
-        .e-review .content.left {
-            grid-column: 1 / span 1;
-        }
-        .e-review .content.right {
-            grid-column: 2 / span 1;
-        }
-        .e-review .content.first {
-            grid-row: 1 / span 1;
-        }
-        .e-review .content.second {
-            grid-row: 2 / span 1;
-        }
-        .e-review .content.third {
-            grid-row: 3 / span 1;
-        }
-        .e-review .show {
-            display: none;
-        }
-    }
-    @media (min-width:1300px) {
-        .e-header {
-            padding-right: 600px;
-            padding-left: calc(var(--section-margin) + 100px);
-        }
-        .e-header .e-content .e-title {
-            font-size: 48px;
-        }
-        .e-submit .e-title {
-            font-size: 50px;
-        }
-        .e-submit .e-content {
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            margin-left: -1px;            
-        }
-        .e-submit .e-content div {
-            grid-column: 1 / span 2;
-            text-align: left;
-        }
-        .e-submit .e-content input {
-            text-align: left;
-            height: 52px;
-        }
-        .e-submit .e-content button {
-            height: 52px;
-        }
-        .e-submit .e-content input[name=name] {
-            grid-column: 1 / span 1;            
-        }
-        .e-submit .e-content input[name=phone] {            
-            grid-column: 2 / span 1;
-        }
-        .e-submit .e-content input[name=email] {
-            grid-column: 1 / span 2;
-        }
-        .e-submit .e-content button {
-            margin: 0;
-        }
-        .e-instructor .e-content {
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 10px;             
-        }
-    }
-    @media (min-width: 1430px) {
-        .e-submit .e-content {
-            padding-right: 30%;
-        }
-    }
-</style>
-<img src="/content/images/marketing/evolve/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
-<div class="e-container">    
-    <section class="e-header">
-        <picture>
-            <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/banner-pc.webp" type="image/webp">
-            <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/banner-pc.jpg" type="image/jpeg">
-            <source srcset="/content/images/marketing/evolve/banner-mobile.webp" type="image/webp">
-            <source srcset="/content/images/marketing/evolve/banner-mobile.jpg" type="image/jpeg">
-            <img src="/content/images/marketing/evolve/banner-mobile.jpg" alt="Evolve">
-        </picture>
-        <div class="e-content">
-            <div class="e-title">Become a hair replacement specialist with Evolve Global Academy!</div>
-            <div>When you enroll in Evolve courses, you are working with only the best and most knowledgeable instructors in the hair system industry. With our experts boasting over a decade of experience, you can be rest assured that you will leave confident in your skills and techniques by the end of the program!</div>
-        </div>
-    </section>    
-    <section class="e-desp">
-        <div>If you're a barber or hairdresser who deals with male clients suffering from hair loss, you can now set yourself apart by offering hair replacement services!</div>
-        <div>With the expert advice and guidance you'll receive, you'll not only be well-equipped for this fast-growing industry, but also get on top of the competition!</div>
-    </section>
-    <section class="e-benefit">
-        <div class="e-title">Benefits</div>
-        <div class="e-content">
-            <div class="e-item">
-                <div class="e-title">Learn from the best</div>
-                <div>Learn from experts and instructors who work at Superhairpieces, a leading hair system supplier with over 20 years of history</div>
-            </div>
-            <div class="e-item">
-                <div class="e-title">Expert techniques</div>
-                <div>Learn hands-on methods of hair system application with simple but effective techniques</div>
-            </div>
-            <div class="e-item">
-                <div class="e-title">Stand out</div>
-                <div>Gain access to insider tips and tricks to set yourself apart from your competition</div>
-            </div>
-            <div class="e-item">
-                <div class="e-title">Get a headstart</div>
-                <div>Establish good habits to quickly make income for your business</div>
-            </div>
-            <div class="e-item">
-                <div class="e-title">Discounted prices</div>
-                <div>Graduate from a course to automatically become a Tier 1 client and get exclusive access to our special wholesale prices</div>
-            </div>
-            <div class="e-item">
-                <div class="e-title">Get certified by us!</div>
-                <div>Receive a certificate of completion from Superhairpieces to demonstrate your new expertise</div>
-            </div>
-        </div>
-    </section>
-    <section class="e-instructor">
-        <div class="e-title">Meet our Instructors</div>
-        <div class="e-desp">
-            You're not just learning from anyone — you're learning from real professionals with years of experience!
-        </div>
-        <div class="e-content slick-instructor">
-            <div class="e-item">
-                <div class="e-profile">
-                    <picture>
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor4-pc.webp" type="image/webp">
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor4-pc.jpg" type="image/jpeg">
-                        <source srcset="/content/images/marketing/evolve/instructor4-mobile.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/instructor4-mobile.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/instructor4-mobile.jpg" alt="TARA gerhart">
-                    </picture>
-                    <div class="e-detail">
-                        <div class="e-name">TARA GERHART</div>
-                        <div class="e-job">Hair specialist</div>
-                        <div class="e-desp" pc>
-                            Tara Gerhart is a hair specialist as well as the floor manager of the Mississauga location of Superhairpieces. She has been in the hair replacement industry for over a decade while she has also been a hair stylist for over 22 years.
-                        </div>
-                    </div>                    
-                </div>
-                <div class="e-desp" mobile>
-                    Tara Gerhart is a hair specialist as well as the floor manager of the Mississauga location of Superhairpieces. She has been in the hair replacement industry for over a decade while she has also been a hair stylist for over 22 years.
-                </div>
-            </div>
-            <div class="e-item">
-                <div class="e-profile">
-                    <picture>
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor2-pc.webp" type="image/webp">
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor2-pc.jpg" type="image/jpeg">
-                        <source srcset="/content/images/marketing/evolve/instructor2-mobile.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/instructor2-mobile.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/instructor2-mobile.jpg" alt="Cindy Enerio">
-                    </picture>
-                    <div class="e-detail">
-                        <div class="e-name">Teresa Chu</div>
-                        <div class="e-job">Hair replacement specialist</div>
-                        <div class="e-desp" pc>
-                            The owner of True Hair Replacement which has over 25 years of experience in non-surgical hair replacement for both men and women in the GTA. Teresa also serves as a stylist for Superhairpieces.
-                        </div>
-                    </div>                    
-                </div>
-                <div class="e-desp" mobile>
-                    The owner of True Hair Replacement which has over 25 years of experience in non-surgical hair replacement for both men and women in the GTA. Teresa also serves as a stylist for Superhairpieces.
-                </div>
-            </div>
-            <div class="e-item">
-                <div class="e-profile">
-                    <picture>
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor3-pc.webp" type="image/webp">
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor3-pc.jpg" type="image/jpeg">
-                        <source srcset="/content/images/marketing/evolve/instructor3-mobile.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/instructor3-mobile.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/instructor3-mobile.jpg" alt="Cindy Enerio">
-                    </picture>
-                    <div class="e-detail">
-                        <div class="e-name">Christina Luu</div>
-                        <div class="e-job">Hair replacement specialist</div>
-                        <div class="e-desp" pc>
-                            A hair stylist with over 11 years of experience while she has also been a hair loss specialist for over five years. Having previously worked for a prominent hair replacement company, she currently works as a stylist for Superhairpieces.
-                        </div>
-                    </div>
-                </div>
-                <div class="e-desp" mobile>
-                    A hair stylist with over 11 years of experience while she has also been a hair loss specialist for over five years. Having previously worked for a prominent hair replacement company, she currently works as a stylist for Superhairpieces.
-                </div>
-            </div>
-            <div class="e-item">
-                <div class="e-profile">
-                    <picture>
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor1-pc.webp" type="image/webp">
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor1-pc.jpg" type="image/jpeg">
-                        <source srcset="/content/images/marketing/evolve/instructor1-mobile.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/instructor1-mobile.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/instructor1-mobile.jpg" alt="Cindy Enerio">
-                    </picture>
-                    <div class="e-detail">
-                        <div class="e-name">Cindy Enerio</div>
-                        <div class="e-job">Hair replacement specialist</div>
-                        <div class="e-desp" pc>
-                            An experienced hair specialist with over 5 years of experience. She has also worked with Superhairpieces as a marketing director.
-                        </div>
-                    </div>                    
-                </div>
-                <div class="e-desp" mobile>
-                    An experienced hair specialist with over 5 years of experience. She has also worked with Superhairpieces as a marketing director.
-                </div>
-            </div>
-            <div class="e-item">
-                <div class="e-profile">
-                    <picture>
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor6-pc.webp" type="image/webp">
-                        <source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor6-pc.jpg" type="image/jpeg">
-                        <source srcset="/content/images/marketing/evolve/instructor6-mobile.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/instructor6-mobile.jpg" type="image/jpeg">
-                        <img class="instruc6" src="/content/images/marketing/evolve/instructor6-mobile.jpg" alt="stephanie knowles">
-                    </picture>
-                    <span class="overlay1"></span>
-                    <div class="e-detail">
-                        <div class="e-name">STEPHANIE KNOWLES</div>
-                        <div class="e-job">Hair replacement specialist</div>
-                        <div class="e-desp" pc>
-                            A hairstylist for the past 15 years, who has specialized in the hair replacement industry for 13 years.
-                        </div>
-                    </div>
-                </div>
-                <div class="e-desp" mobile>
-                    A hairstylist for the past 15 years, who has specialized in the hair replacement industry for 13 years.
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="e-course">
-        <div class="e-title">Available courses</div>
-        <div class="e-desp">Men's Hair Replacement Specialist Program</div>
-        <div class="e-content slick-course">
-            <div class="e-item" extended>
-                <picture>
-                    <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.webp" type="image/webp">
-                    <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.jpg" type="image/jpeg">
-                    <source srcset="/content/images/marketing/evolve/course-extended-mobile.webp" type="image/webp">
-                    <source srcset="/content/images/marketing/evolve/course-extended-mobile.jpg" type="image/jpeg">
-                    <img src="/content/images/marketing/evolve/course-extended-mobile.jpg" alt="course extended">
-                </picture>
-                <a href="/mens-hair-replacement-specialist-program-extended-course/"  target="_blank" class="e-content-desp">
-                    Our Men's Hair Replacement Specialist Program Extended course makes sure students are fully-equipped in their journey to become expert hair replacement technicians. Students will learn everything that is offered in our Starter course from the fundamentals to everything about monofilament hair systems. In addition, they will learn how to attach and remove poly skin and lace hair systems — two of the more popular hair system base materials. Upon completion of the course, students will graduate from the program and be completely ready to expand and grow their business and clientele by offering hair replacement services.
-                </a>
-                <a href="/mens-hair-replacement-specialist-program-extended-course/"  target="_blank" class="list">
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person">
-                    </picture>
-                    <div>10+ hours live course (Online or in-person)</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video">
-                    </picture>
-                    <div>60+ Pre-recorded classes with lifetime access</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit">
-                    </picture>
-                    <div>Startup full business kit (Extended version)</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system">
-                    </picture>
-                    <div>Two hair systems (M101 Basic - M109 Basic)</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog">
-                    </picture>
-                    <div>Training material and catalog</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate">
-                    </picture>
-                    <div>Course completion certificate</div>
-                </a>
-                <div>
-                    <a href="/cart.php?action=add&sku=academyExtended" class="add">add to cart</a>
-                </div>
-            </div>
-            <div class="e-item" starter>
-                <picture>
-                    <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.webp" type="image/webp">
-                    <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.jpg" type="image/jpeg">
-                    <source srcset="/content/images/marketing/evolve/course-starter-mobile.webp" type="image/webp">
-                    <source srcset="/content/images/marketing/evolve/course-starter-mobile.jpg" type="image/jpeg">
-                    <img src="/content/images/marketing/evolve/course-starter-mobile.jpg" alt="course starter">
-                </picture>
-                <a class="e-content-desp" href="/mens-hair-replacement-specialist-program-starter-course/" target="_blank">
-                    Our Men's Hair Replacement Specialist Program Starter course introduces students to the fundamentals of hair systems. Students will learn the different types of hair system bases, methods of attachment, types of hair, what to ask in a client consultation, how to build their business, how to wash a hair system, make a template and much more. Additionally, they will learn how to attach and remove monofilament hair systems while following the best practices taught by our expert stylists.
-                </a>
-                <a class="list" href="/mens-hair-replacement-specialist-program-starter-course/" target="_blank">
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person">
-                    </picture>
-                    <div>6+ hours live course (Online or in-person)</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video">
-                    </picture>
-                    <div>60+ Pre-recorded classes with lifetime access</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit">
-                    </picture>
-                    <div>Startup full business kit</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system">
-                    </picture>
-                    <div>One hair systems (M109 Basic)</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog">
-                    </picture>
-                    <div>Training material and catalog</div>
-                    <picture>
-                        <source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml">
-                        <source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml">
-                        <img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate">
-                    </picture>
-                    <div>Course completion certificate</div>
-                </a>
-                <div>
-                    <a href="/cart.php?action=add&sku=academyStarter" class="add">add to cart</a>
-                </div>
-            </div>
-        </div>        
-    </section>
-    <section class="e-schedule">
-        <div class="e-title">Schedule your next class:</div>
-        <div class="e-content">            
-            <img src="/content/images/marketing/evolve/icon-calendar.svg" alt="schedule starter course">
-            <div>July 11th: Class 1 (Starter course) Online</div>
-            <img src="/content/images/marketing/evolve/icon-calendar.svg" alt="schedule extended course">
-            <div>July 18th: Class 2 (Only for Extended course students) / Online</div>
-        </div>
-    </section>
-    <section class="e-kit">
-        <picture>
-            <source srcset="/content/images/marketing/evolve/info3.webp" type="image/webp">
-            <source srcset="/content/images/marketing/evolve/info3.jpg" type="image/jpeg">
-            <img src="/content/images/marketing/evolve/info3.jpg" alt="startup kit">
-        </picture>
-        <div class="e-title">Startup full business kit includes:</div>
-        <div class="e-content">
-            <div>
-                <div>1 x Hair System - M109 Basic</div>
-                <div>1 x Hair System - M101 Basic (Extended kit)</div>
-                <div>1 x Male Mannequin</div>
-                <div>1 x Stand</div>
-                <div>1 x Organizer</div>
-                <div>1 x Color Ring</div>
-                <div>1 x Just Rite Positioning Spray</div>
-                <div>1 x KP Skin Med</div>
-                <div>1 x KP Pro Solvent</div>
-                <div>1 x Measuring Tape</div>
-                <div>1 x Styling Beak Clips-2</div>
-                <div>1 x Marking Pencil</div>
-                <div>1 x Yes to Tea Tree Scalp Scrub</div>
-                <div>4 x Pins</div>
-                <div>1 x Blade</div>
-                <div>1 x Tail Comb</div>
-                <div>1 x Magic Tape</div>
-                <div>1 x Spray Bottle</div>
-                <div>1 x Silicon Brush</div>
-            </div>
-            <div class="padding section">
-                <div>Tape for attachment</div>
-                <ul>
-                    <li>1 x Blue Tape</li>
-                    <li>1 x Red Tape (Extended kit)</li>
-                </ul>
-            </div>
-            <div class="section">
-                <div>Glue for attachment</div>
-                <ul>
-                    <li>1 x Ultra Hold</li>
-                    <li>1 x Ghost Bond (Extended kit)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="e-how">
-        <div class="e-title">How to enroll in our online courses</div>
-        <div class="e-desp">Our check out process is very simple just follow the simple steps refered below:</div>
-        <div class="e-content slick-how">
-            <div class="e-item">
-                <img src="/content/images/marketing/evolve/icon-click.svg" alt="step 1">
-                <div>1. Select the course you want to take</div>
-            </div>
-            <div class="e-item">
-                <img src="/content/images/marketing/evolve/icon-calendar2.svg" alt="step 2">
-                <div>2. Choose the date and mode you want to take your course</div>
-            </div>
-            <div class="e-item">
-                <img src="/content/images/marketing/evolve/icon-security.svg" alt="step 3">
-                <div>3. Proceed with the payment through our website</div>
-            </div>
-            <div class="e-item">
-                <img src="/content/images/marketing/evolve/icon-learn.svg" alt="step 4">
-                <div>4. Start learning right away with our pre-recorded classes</div>
-            </div>
-            <div class="e-item">
-                <img src="/content/images/marketing/evolve/icon-professional.svg" alt="step 5">
-                <div>5. Assist to the selected class mode and get ready to become a professional</div>
-            </div>
-        </div>
-    </section>
-    <section class="e-submit">
-        <div class="e-title">Unlock a free lesson!</div>
-        <picture>
-            <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/submit-pc.webp" type="image/webp">
-            <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/submit-pc.jpg" type="image/jpeg">
-            <source srcset="/content/images/marketing/evolve/submit-mobile.webp" type="image/webp">
-            <source srcset="/content/images/marketing/evolve/submit-mobile.jpg" type="image/jpeg">
-            <img src="/content/images/marketing/evolve/submit-mobile.jpg" alt="free class">
-        </picture>
-        <form class="e-content">
-            <div>Simply provide your name, phone number and email address!</div>
-            <input required type="text" maxlength="100" name="name" id="e-input-name" placeholder="Name">
-            <input type="text" maxlength="30" name="phone" id="e-input-phone" placeholder="Phone Number">
-            <input required type="text" maxlength="255" name="email" id="e-input-email" placeholder="Email Address">
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    <section class="e-review">
-        <div class="e-title">Take your business to the next level</div>
-        <div class="e-content">
-            <div class="e-video slick-video first right">
-                <div class="e-item" url="/content/images/marketing/evolve/tiktok1.mp4">
-                    <picture>
-                        <source srcset="/content/images/marketing/evolve/tiktok1-thumbnail.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/tiktok1-thumbnail.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/tiktok1-thumbnail.jpg" alt="tiktok">
-                    </picture>
-                </div>
-                <div class="e-item" url="/content/images/marketing/evolve/tiktok2.mp4">
-                    <picture>
-                        <source srcset="/content/images/marketing/evolve/tiktok2-thumbnail.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/tiktok2-thumbnail.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/tiktok2-thumbnail.jpg" alt="tiktok">
-                    </picture>
-                </div>
-                <div class="e-item" url="/content/images/marketing/evolve/tiktok3.mp4">
-                    <picture>
-                        <source srcset="/content/images/marketing/evolve/tiktok3-thumbnail.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/tiktok3-thumbnail.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/tiktok3-thumbnail.jpg" alt="tiktok">
-                    </picture>
-                </div>
-                <div class="e-item" url="/content/images/marketing/evolve/tiktok4.mp4">
-                    <picture>
-                        <source srcset="/content/images/marketing/evolve/tiktok4-thumbnail.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/tiktok4-thumbnail.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/tiktok4-thumbnail.jpg" alt="tiktok">
-                    </picture>
-                </div>
-                <div class="e-item" url="/content/images/marketing/evolve/tiktok5.mp4">
-                    <picture>
-                        <source srcset="/content/images/marketing/evolve/tiktok5-thumbnail.webp" type="image/webp">
-                        <source srcset="/content/images/marketing/evolve/tiktok5-thumbnail.jpg" type="image/jpeg">
-                        <img src="/content/images/marketing/evolve/tiktok5-thumbnail.jpg" alt="tiktok">
-                    </picture>
-                </div>
-            </div>
-            <div class="content left first">
-                <div>The hair system industry is growing exponentially as each year passes. One just needs to browse through YouTube or TikTok to see the myriad of hair system content posted by both wearers and suppliers. It’s clear that hair replacement systems are now a widely-accepted solution for balding or hair loss. So why not get ahead of your competition by offering hair replacement services?</div>
-                <div>Whether you are a salon owner, barber or licensed hair stylist, you can now add a major source of revenue to your business by offering hairpiece installation, removal or maintenance services to your clientele. And thanks to Evolve Global Academy, you can secure the future of your business for many years to come!</div>
-            </div>
-            <a href="javascript:void(0)" onclick="ShowMore()" class="show">show more</a>
-            <picture class="hide left second">
-                <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info1-pc.webp" type="image/webp">
-                <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info1-pc.jpb" type="image/jpeg">
-                <source srcset="/content/images/marketing/evolve/info1-mobile.webp" type="image/webp">
-                <img class="info" src="/content/images/marketing/evolve/info1-mobile.jpg" alt="review">
-            </picture>
-            <div class="content hide right second">
-                When you complete our courses in the Men's Hair Replacement Specialist Program, in addition to receiving a certificate of completion from us, you will also be equipped with everything you need to know about the hair replacement business. From the consultation to the different types of hair system bases to the different methods of installation and much more; you are sure to become an expert hair system technician under the tutelage of our professional stylists who boast decades of experience.
-            </div>
-            <picture class="hide right third">
-                <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info2-pc.webp" type="image/webp">
-                <source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info2-pc.jpb" type="image/jpeg">
-                <source srcset="/content/images/marketing/evolve/info2-mobile.webp" type="image/webp">
-                <img class="info" src="/content/images/marketing/evolve/info2-mobile.jpg" alt="review">
-            </picture>
-            <div class="content hide left third">
-                <div>Once you've mastered our techniques and have gained the necessary knowledge, you can start promoting your new services and truly stand out from your competitors. The best part? You already have a wholesale supplier in us at Superhairpieces! Everyone who graduates from our courses will not only learn how to use our vast inventory, but will also automatically become Tier 1 clients. This means you get exclusive access to special wholesale prices for our hairpieces.</div>
-                <div>There's never been a better opportunity to invest early and get a head start in one of the fastest growing industries today. So enroll in Evolve Global Academy today!</div>
-            </div>
-        </div>
-    </section>
-    <section class="e-press">
-        <div class="e-title">Press</div>
-        <div class="e-content slick-press">
-            <a class="e-item" href="https://www.einpresswire.com/article/576784182/evolve-global-academy-hair-system-installation-live-class-to-commence-next-week" target="_blank">
-                <img src="/content/images/marketing/evolve/press1.jpg" alt="ein presswire">
-                <div class="content">
-                    <div class="press">EIN Presswire</div>
-                    <div class="timeline">June 14th, 2022</div>
-                    <div>Licensed hair stylists will be able to grow their businesses even more this month thanks to Evolve Global Academy.</div>
-                </div>
-            </a>
-            <a class="e-item" href="https://www.einpresswire.com/article/574014642/superhairpieces-introduces-evolve-global-academy-hair-system-installation-courses" target="_blank">
-                <img src="/content/images/marketing/evolve/press2.jpg" alt="ein presswire">
-                <div class="content">
-                    <div class="press">EIN Presswire</div>
-                    <div class="timeline">May 26, 2022</div>
-                    <div>Barbers and hairdressers can now add hair system installation services as part of their business offerings thanks to Superhairpieces.</div>
-                </div>
-            </a>
-            <a class="e-item" href="https://afvnews.ca/2022/06/14/evolve-global-academy-hair-system-installation-live-class-to-commence-next-week/" target="_blank">
-                <img src="/content/images/marketing/evolve/press3.jpg" alt="afv news">
-                <div class="content">
-                    <div class="press">AFV News</div>
-                    <div class="timeline">June 14th, 2022</div>
-                    <div>Our courses are created by stylists and taught by stylists to help you grow your business and stand out from the competition.</div>
-                </div>
-            </a>
-            <a class="e-item" href="https://kqeducationgroup.com/superhairpieces-introduces-evolve-global-academy-hair-system-installation-courses/" target="_blank">
-                <img src="/content/images/marketing/evolve/press4.jpg" alt="KQ Education Group">
-                <div class="content">
-                    <div class="press">KQ Education Group</div>
-                    <div class="timeline">May 26th, 2022</div>
-                    <div>It's a great opportunity to invest early and get a good start in one of the fastest growing industries today.</div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <section class="e-disclaimer">
-        <div class="e-title">Disclaimer</div>
-        <div class="e-desp">
-            <div>The certificate of completion for completing any of our courses is not equivalent to a license to practice. This program only serves to provide you with the knowledge and skills for hair replacement installation and to demonstrate your new expertise.</div>
-            <div>Clients can register for the same hair system live course for FREE for class after the main course but should bring their own training kit.</div>
-            <div>Clients are eligible to enroll for the next hair system training classes ONLY after registering the main course with us.</div>
-            <div>Please note that the training kit provided will be sufficient for taking all three different hair system training classes and if any of these items are completed in between the courses, they can be purchased online on our website.</div>
-        </div>
-    </section>
-</div>
-<div class="modal-background"></div>
-<div id="submit-result" class="modal modal--small result-modal" data-reveal>
-    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-        <span aria-hidden="true">&#215;</span>
-    </a>
-    <div class="modal-content">
-        <div class="modal-body">            
-        </div>
+        .e-schedule-button {
+            margin: unset;
+
+            margin-bottom: 10px;
+            padding: 5px 35px;
+            max-width: unset;
+        }.e-header{padding-right:300px}.e-instructor .e-item:hover .e-desp[pc]{font-size:16px}.e-instructor .e-item .e-name{font-size:24px}.e-schedule{            margin: auto;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            gap: 40px;}.e-schedule .e-title{margin-bottom:0}}@media (min-width:956px){.e-header{padding-right:350px}.e-desp div{font-size:20px}.e-disclaimer .e-desp div{font-size:16px}.e-course,.e-instructor .e-content,.slick-how,.slick-press{max-width:1292px;margin-left:auto;margin-right:auto}.e-instructor .e-profile{height:478px}.e-schedule{padding:var(--element-margin) calc(50vw - 646px)}}@media (min-width:1015px){.e-benefit .e-content{grid-template-columns:repeat(3,1fr)}.e-benefit,.e-desp,.e-review{max-width:1038px;margin-left:auto;margin-right:auto}.e-submit .e-title{font-size:40px}.e-instructor .e-profile{padding:var(--element-margin) 20px}.e-kit{display:grid;grid-template-columns:45% 55%;padding:0}.e-kit picture{grid-column:1/span 1;grid-row:1/span 2}.e-kit img{display:block;height:100%;width:auto;object-fit:cover}.e-kit .e-title{grid-row:1/span 1;grid-column:2/span 1;padding:var(--element-margin) var(--element-margin) 0;text-align:left}.e-kit .e-content{grid-row:2/span 1;grid-column:2/span 1;padding:0 var(--element-margin) var(--element-margin)}.slick-how{display:grid;grid-template-columns:repeat(5,1fr);grid-gap:var(--element-margin)}.e-how .e-item{display:block}.e-how .e-item img{margin:0 auto var(--element-margin);display:block}}@media (min-width:1108px){:root{--element-margin:40px;--section-margin:80px}.e-header{padding-right:430px;min-height:39vw;padding-left:var(--section-margin)}.e-header .e-content{text-align:left}.e-header .e-content .e-title{font-size:40px;text-align:left;margin-bottom:var(--element-margin)}}@media (min-width:1130px){.slick-video{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:10px}.e-review .e-content{display:grid;grid-template-columns:repeat(2,1fr);align-items:center}.e-review .e-item{width:100%;height:auto}.e-review .e-item:nth-child(n+4){display:none}.e-review .content.hide,.e-review picture.hide{display:grid}.e-review .content{grid-gap:var(--element-margin)}.e-review .content.left{grid-column:1/span 1}.e-review .content.right{grid-column:2/span 1}.e-review .content.first{grid-row:1/span 1}.e-review .content.second{grid-row:2/span 1}.e-review .content.third{grid-row:3/span 1}.e-review .show{display:none}}@media (min-width:1300px){.e-header{padding-right:600px;padding-left:calc(var(--section-margin) + 100px)}.e-header .e-content .e-title{font-size:48px}.e-submit .e-title{font-size:50px}.e-submit .e-content{grid-template-columns:repeat(2,1fr);grid-gap:20px;margin-left:-1px}.e-submit .e-content div{grid-column:1/span 2;text-align:left}.e-submit .e-content input{text-align:left;height:52px}.e-submit .e-content button{height:52px}.e-submit .e-content input[name=name]{grid-column:1/span 1}.e-submit .e-content input[name=phone]{grid-column:2/span 1}.e-submit .e-content input[name=email]{grid-column:1/span 2}.e-submit .e-content button{margin:0}.e-instructor .e-content{grid-template-columns:repeat(5,1fr);grid-gap:10px}}@media (min-width:1430px){.e-submit .e-content{padding-right:30%}}</style><img src="/content/images/marketing/evolve/thumbnail.jpg" alt="thumbnail" style="width:0;height:0;opacity:0"><div class="e-container"><section class="e-header"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/banner-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/banner-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/banner-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/banner-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/banner-mobile.jpg" alt="Evolve"></picture><div class="e-content"><div class="e-title">Become a hair replacement specialist with Evolve Global Academy!</div><div>When you enroll in Evolve courses, you are working with only the best and most knowledgeable instructors in the hair system industry. With our experts boasting over a decade of experience, you can be rest assured that you will leave confident in your skills and techniques by the end of the program!</div></div></section>
+
+<section class="e-schedule">
+    <div class="e-schedule-top">
+        <span style="text-align: center; font-size: 20px;"> Check out our </span>
+        <div class="e-title">upcoming classes in 2023!</div>
     </div>
-    <div class="loadingOverlay"></div>
-</div>
-<script src="/content/js/slick.min.js" defer></script>
-<!-- <script src="/content/js/video.min.js"></script> -->
-<script>
-    /**
+    <div class="e-schedule-button">
+        <a target="_blank" href="https://docs.google.com/spreadsheets/d/13-iwB6tPSEzcsOrNsiwRsNamxk4qms_4GyjHnvbT1WA/edit?usp=sharing">Click here</a>
+    </div>
+    
+</section>
+
+<section class="e-course"><div class="e-title">Get 10% by being an Early bird</div>
+<div class="e-title">Save in our Men's Hair Replacement Specialist Program<br>by paying before December 16th</div>
+<div class="e-desp">*Discount will be automatically applied during checkout</div>
+
+<div class="e-content slick-course"><div class="e-item" style="position: relative;" extended><picture><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/course-extended-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/course-extended-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/course-extended-mobile.jpg" alt="course extended"></picture><img class="card-mark-image" src="/content/images/common/10poff.svg" width="50" height="50" alt="10% OFF"><a href="/mens-hair-replacement-specialist-program-extended-course/" target="_blank" class="list"><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person"></picture><div>10+ hours live course (Online or in-person)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video"></picture><div>60+ Pre-recorded classes with lifetime access</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit"></picture><div>Startup full business kit (Extended version)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system"></picture><div>Two hair systems (M101 Basic - M109 Basic)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog"></picture><div>Training material and catalog</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate"></picture><div>Course completion certificate</div></a><div><a href="/cart.php?action=add&sku=academyExtended" class="add">add to cart</a></div></div><div class="e-item" style="position: relative;" starter><picture><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/course-starter-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/course-starter-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/course-starter-mobile.jpg" alt="course starter"></picture> <img class="card-mark-image" src="/content/images/common/10poff.svg" width="50" height="50" alt="10% OFF">
+<a class="list" href="/mens-hair-replacement-specialist-program-starter-course/" target="_blank"><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person"></picture><div>6+ hours live course (Online or in-person)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video"></picture><div>60+ Pre-recorded classes with lifetime access</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit"></picture><div>Startup full business kit</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system"></picture><div>One hair systems (M109 Basic)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog"></picture><div>Training material and catalog</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate"></picture><div>Course completion certificate</div></a><div><a href="/cart.php?action=add&sku=academyStarter" class="add">add to cart</a></div></div></div></section>
+
+
+
+<section class="e-desp"><div>If you're a barber or hairdresser who deals with male clients suffering from hair loss, you can now set yourself apart by offering hair replacement services!</div><div>With the expert advice and guidance you'll receive, you'll not only be well-equipped for this fast-growing industry, but also get on top of the competition!</div></section><section class="e-benefit"><div class="e-title">Benefits</div><div class="e-content"><div class="e-item"><div class="e-title">Learn from the best</div><div>Learn from experts and instructors who work at Superhairpieces, a leading hair system supplier with over 20 years of history</div></div><div class="e-item"><div class="e-title">Expert techniques</div><div>Learn hands-on methods of hair system application with simple but effective techniques</div></div><div class="e-item"><div class="e-title">Stand out</div><div>Gain access to insider tips and tricks to set yourself apart from your competition</div></div><div class="e-item"><div class="e-title">Get a headstart</div><div>Establish good habits to quickly make income for your business</div></div><div class="e-item"><div class="e-title">Discounted prices</div><div>Graduate from a course to automatically become a Tier 1 client and get exclusive access to our special wholesale prices</div></div><div class="e-item"><div class="e-title">Get certified by us!</div><div>Receive a certificate of completion from Superhairpieces to demonstrate your new expertise</div></div></div></section><section class="e-instructor"><div class="e-title">Meet our Instructors</div><div class="e-desp">You're not just learning from anyone — you're learning from real professionals with years of experience!</div><div class="e-content slick-instructor"><div class="e-item"><div class="e-profile"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor4-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor4-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/instructor4-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/instructor4-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/instructor4-mobile.jpg" alt="TARA gerhart"></picture><div class="e-detail"><div class="e-name">TARA GERHART</div><div class="e-job">Hair specialist</div><div class="e-desp" pc>Tara Gerhart is a hair specialist as well as the floor manager of the Mississauga location of Superhairpieces. She has been in the hair replacement industry for over a decade while she has also been a hair stylist for over 22 years.</div></div></div><div class="e-desp" mobile>Tara Gerhart is a hair specialist as well as the floor manager of the Mississauga location of Superhairpieces. She has been in the hair replacement industry for over a decade while she has also been a hair stylist for over 22 years.</div></div><div class="e-item"><div class="e-profile"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor2-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor2-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/instructor2-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/instructor2-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/instructor2-mobile.jpg" alt="Cindy Enerio"></picture><div class="e-detail"><div class="e-name">Teresa Chu</div><div class="e-job">Hair replacement specialist</div><div class="e-desp" pc>The owner of True Hair Replacement which has over 25 years of experience in non-surgical hair replacement for both men and women in the GTA. Teresa also serves as a stylist for Superhairpieces.</div></div></div><div class="e-desp" mobile>The owner of True Hair Replacement which has over 25 years of experience in non-surgical hair replacement for both men and women in the GTA. Teresa also serves as a stylist for Superhairpieces.</div></div><div class="e-item"><div class="e-profile"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor3-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor3-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/instructor3-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/instructor3-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/instructor3-mobile.jpg" alt="Cindy Enerio"></picture><div class="e-detail"><div class="e-name">Christina Luu</div><div class="e-job">Hair replacement specialist</div><div class="e-desp" pc>A hair stylist with over 11 years of experience while she has also been a hair loss specialist for over five years. Having previously worked for a prominent hair replacement company, she currently works as a stylist for Superhairpieces.</div></div></div><div class="e-desp" mobile>A hair stylist with over 11 years of experience while she has also been a hair loss specialist for over five years. Having previously worked for a prominent hair replacement company, she currently works as a stylist for Superhairpieces.</div></div><div class="e-item"><div class="e-profile"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor1-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor1-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/instructor1-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/instructor1-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/instructor1-mobile.jpg" alt="Cindy Enerio"></picture><div class="e-detail"><div class="e-name">Cindy Enerio</div><div class="e-job">Hair replacement specialist</div><div class="e-desp" pc>An experienced hair specialist with over 5 years of experience. She has also worked with Superhairpieces as a marketing director.</div></div></div><div class="e-desp" mobile>An experienced hair specialist with over 5 years of experience. She has also worked with Superhairpieces as a marketing director.</div></div><div class="e-item"><div class="e-profile"><picture><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor6-pc.webp" type="image/webp"><source media="(min-width:700px)" srcset="/content/images/marketing/evolve/instructor6-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/instructor6-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/instructor6-mobile.jpg" type="image/jpeg"><img class="instruc6" src="/content/images/marketing/evolve/instructor6-mobile.jpg" alt="stephanie knowles"></picture><span class="overlay1"></span><div class="e-detail"><div class="e-name">STEPHANIE KNOWLES</div><div class="e-job">Hair replacement specialist</div><div class="e-desp" pc>A hairstylist for the past 15 years, who has specialized in the hair replacement industry for 13 years.</div></div></div><div class="e-desp" mobile>A hairstylist for the past 15 years, who has specialized in the hair replacement industry for 13 years.</div></div></div></section><section class="e-videos" style="background-color:#d9d9D9B2"><div class="e-videos-bkg"><div class="e-title">Want an inside look?</div><div class="youtube2" id="player2"><iframe width="100%" height="100%" style="border-radius:28px" src="https://www.youtube.com/embed/cHVGi0NTZa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="slick-youtube"><div class="youtube1" style="position:relative" class="plyr__video-embed" id="player"><iframe class="side" width="100%" height="100%" style="border-radius:28px" src="https://www.youtube.com/embed/cHVGi0NTZa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><span onclick="changeVideo(this)" class="youtube1-bkg"><img style="border-radius:28px;height:100%;width:100%" src="/content/images/marketing/evolve/video1.png"><span class="youtube-overlay" style="position:absolute"></span></span></div><div class="youtube1" style="position:relative" class="plyr__video-embed" id="player"><iframe width="100%" height="100%" class="side" style="border-radius:28px" src="https://www.youtube.com/embed/5uDmDKzhMWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><span onclick="changeVideo(this)" class="youtube1-bkg"><img style="border-radius:28px;height:100%;width:100%" src="/content/images/marketing/evolve/video2.png"><span style="position:absolute"></span></span></div><div class="youtube1" style="position:relative" class="plyr__video-embed" id="player"><iframe width="100%" height="100%" class="side" style="border-radius:28px" src="https://www.youtube.com/embed/ZnhZbL8xUlg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><span onclick="changeVideo(this)" class="youtube1-bkg"  style="height:100%;"><img style="object-fit:cover;border-radius:28px;height:100%;width:100%" src="/content/images/marketing/evolve/video3.png"><span style="position:absolute"></span></span></div></div></div></section>
+
+<section class="e-course"><div class="e-title">Available courses</div><div class="e-desp">Men's Hair Replacement Specialist Program</div><div class="e-content slick-course"><div class="e-item" extended><picture><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-extended-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/course-extended-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/course-extended-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/course-extended-mobile.jpg" alt="course extended"></picture><a href="/mens-hair-replacement-specialist-program-extended-course/" target="_blank" class="e-content-desp">Our Men's Hair Replacement Specialist Program Extended course makes sure students are fully-equipped in their journey to become expert hair replacement technicians. Students will learn everything that is offered in our Starter course from the fundamentals to everything about monofilament hair systems. In addition, they will learn how to attach and remove poly skin and lace hair systems — two of the more popular hair system base materials. Upon completion of the course, students will graduate from the program and be completely ready to expand and grow their business and clientele by offering hair replacement services.</a><a href="/mens-hair-replacement-specialist-program-extended-course/" target="_blank" class="list"><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person"></picture><div>10+ hours live course (Online or in-person)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video"></picture><div>60+ Pre-recorded classes with lifetime access</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit"></picture><div>Startup full business kit (Extended version)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system"></picture><div>Two hair systems (M101 Basic - M109 Basic)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog"></picture><div>Training material and catalog</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate"></picture><div>Course completion certificate</div></a><div><a href="/cart.php?action=add&sku=academyExtended" class="add">add to cart</a></div></div><div class="e-item" starter><picture><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/course-starter-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/course-starter-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/course-starter-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/course-starter-mobile.jpg" alt="course starter"></picture><a class="e-content-desp" href="/mens-hair-replacement-specialist-program-starter-course/" target="_blank">Our Men's Hair Replacement Specialist Program Starter course introduces students to the fundamentals of hair systems. Students will learn the different types of hair system bases, methods of attachment, types of hair, what to ask in a client consultation, how to build their business, how to wash a hair system, make a template and much more. Additionally, they will learn how to attach and remove monofilament hair systems while following the best practices taught by our expert stylists.</a><a class="list" href="/mens-hair-replacement-specialist-program-starter-course/" target="_blank"><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-person-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-person-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-person-mobile.svg" alt="online or in-person"></picture><div>6+ hours live course (Online or in-person)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-video-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-video-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-video-mobile.svg" alt="Video"></picture><div>60+ Pre-recorded classes with lifetime access</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-kit-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-kit-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-kit-mobile.svg" alt="full kit"></picture><div>Startup full business kit</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-hair-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-hair-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-hair-mobile.svg" alt="hair system"></picture><div>One hair systems (M109 Basic)</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-catalog-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-catalog-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-catalog-mobile.svg" alt="catalog"></picture><div>Training material and catalog</div><picture><source media="(min-width:900px)" srcset="/content/images/marketing/evolve/icon-certificate-pc.svg" type="image/svg+xml"><source srcset="/content/images/marketing/evolve/icon-certificate-mobile.svg" type="image/svg+xml"><img src="/content/images/marketing/evolve/icon-certificate-mobile.svg" alt="certificate"></picture><div>Course completion certificate</div></a><div><a href="/cart.php?action=add&sku=academyStarter" class="add">add to cart</a></div></div></div></section>
+
+
+
+<section class="e-kit"><picture><source srcset="/content/images/marketing/evolve/info3.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/info3.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/info3.jpg" alt="startup kit"></picture><div class="e-title">Startup full business kit includes:</div><div class="e-content"><div><div>1 x Hair System - M109 Basic</div><div>1 x Hair System - M101 Basic (Extended kit)</div><div>1 x Male Mannequin</div><div>1 x Stand</div><div>1 x Organizer</div><div>1 x Color Ring</div><div>1 x Just Rite Positioning Spray</div><div>1 x KP Skin Med</div><div>1 x KP Pro Solvent</div><div>1 x Measuring Tape</div><div>1 x Styling Beak Clips-2</div><div>1 x Marking Pencil</div><div>1 x Yes to Tea Tree Scalp Scrub</div><div>4 x Pins</div><div>1 x Blade</div><div>1 x Tail Comb</div><div>1 x Magic Tape</div><div>1 x Spray Bottle</div><div>1 x Silicon Brush</div></div><div class="padding section"><div>Tape for attachment</div><ul><li>1 x Blue Tape</li><li>1 x Red Tape (Extended kit)</li></ul></div><div class="section"><div>Glue for attachment</div><ul><li>1 x Ultra Hold</li><li>1 x Ghost Bond (Extended kit)</li></ul></div></div></section><section class="e-how"><div class="e-title">How to enroll in our online courses</div><div class="e-desp">Our check out process is very simple just follow the simple steps refered below:</div><div class="e-content slick-how"><div class="e-item"><img src="/content/images/marketing/evolve/icon-click.svg" alt="step 1"><div>1. Select the course you want to take</div></div><div class="e-item"><img src="/content/images/marketing/evolve/icon-calendar2.svg" alt="step 2"><div>2. Choose the date and mode you want to take your course</div></div><div class="e-item"><img src="/content/images/marketing/evolve/icon-security.svg" alt="step 3"><div>3. Proceed with the payment through our website</div></div><div class="e-item"><img src="/content/images/marketing/evolve/icon-learn.svg" alt="step 4"><div>4. Start learning right away with our pre-recorded classes</div></div><div class="e-item"><img src="/content/images/marketing/evolve/icon-professional.svg" alt="step 5"><div>5. Assist to the selected class mode and get ready to become a professional</div></div></div></section><section class="e-submit"><div class="e-title">Unlock a free lesson!</div><picture><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/submit-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/submit-pc.jpg" type="image/jpeg"><source srcset="/content/images/marketing/evolve/submit-mobile.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/submit-mobile.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/submit-mobile.jpg" alt="free class"></picture><form class="e-content"><div>Simply provide your name, phone number and email address!</div><input required type="text" maxlength="100" name="name" id="e-input-name" placeholder="Name"> <input type="text" maxlength="30" name="phone" id="e-input-phone" placeholder="Phone Number"> <input required type="text" maxlength="255" name="email" id="e-input-email" placeholder="Email Address"><button type="submit">Submit</button></form></section><section class="e-review"><div class="e-title">Take your business to the next level</div><div class="e-content"><div class="e-video slick-video first right"><div class="e-item" url="/content/images/marketing/evolve/tiktok1.mp4"><picture><source srcset="/content/images/marketing/evolve/tiktok1-thumbnail.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/tiktok1-thumbnail.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/tiktok1-thumbnail.jpg" alt="tiktok"></picture></div><div class="e-item" url="/content/images/marketing/evolve/tiktok2.mp4"><picture><source srcset="/content/images/marketing/evolve/tiktok2-thumbnail.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/tiktok2-thumbnail.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/tiktok2-thumbnail.jpg" alt="tiktok"></picture></div><div class="e-item" url="/content/images/marketing/evolve/tiktok3.mp4"><picture><source srcset="/content/images/marketing/evolve/tiktok3-thumbnail.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/tiktok3-thumbnail.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/tiktok3-thumbnail.jpg" alt="tiktok"></picture></div><div class="e-item" url="/content/images/marketing/evolve/tiktok4.mp4"><picture><source srcset="/content/images/marketing/evolve/tiktok4-thumbnail.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/tiktok4-thumbnail.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/tiktok4-thumbnail.jpg" alt="tiktok"></picture></div><div class="e-item" url="/content/images/marketing/evolve/tiktok5.mp4"><picture><source srcset="/content/images/marketing/evolve/tiktok5-thumbnail.webp" type="image/webp"><source srcset="/content/images/marketing/evolve/tiktok5-thumbnail.jpg" type="image/jpeg"><img src="/content/images/marketing/evolve/tiktok5-thumbnail.jpg" alt="tiktok"></picture></div></div><div class="content left first"><div>The hair system industry is growing exponentially as each year passes. One just needs to browse through YouTube or TikTok to see the myriad of hair system content posted by both wearers and suppliers. It’s clear that hair replacement systems are now a widely-accepted solution for balding or hair loss. So why not get ahead of your competition by offering hair replacement services?</div><div>Whether you are a salon owner, barber or licensed hair stylist, you can now add a major source of revenue to your business by offering hairpiece installation, removal or maintenance services to your clientele. And thanks to Evolve Global Academy, you can secure the future of your business for many years to come!</div></div><a href="javascript:void(0)" onclick="ShowMore()" class="show">show more</a><picture class="hide left second"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info1-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info1-pc.jpb" type="image/jpeg"><source srcset="/content/images/marketing/evolve/info1-mobile.webp" type="image/webp"><img class="info" src="/content/images/marketing/evolve/info1-mobile.jpg" alt="review"></picture><div class="content hide right second">When you complete our courses in the Men's Hair Replacement Specialist Program, in addition to receiving a certificate of completion from us, you will also be equipped with everything you need to know about the hair replacement business. From the consultation to the different types of hair system bases to the different methods of installation and much more; you are sure to become an expert hair system technician under the tutelage of our professional stylists who boast decades of experience.</div><picture class="hide right third"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info2-pc.webp" type="image/webp"><source media="(min-width:400px)" srcset="/content/images/marketing/evolve/info2-pc.jpb" type="image/jpeg"><source srcset="/content/images/marketing/evolve/info2-mobile.webp" type="image/webp"><img class="info" src="/content/images/marketing/evolve/info2-mobile.jpg" alt="review"></picture><div class="content hide left third"><div>Once you've mastered our techniques and have gained the necessary knowledge, you can start promoting your new services and truly stand out from your competitors. The best part? You already have a wholesale supplier in us at Superhairpieces! Everyone who graduates from our courses will not only learn how to use our vast inventory, but will also automatically become Tier 1 clients. This means you get exclusive access to special wholesale prices for our hairpieces.</div><div>There's never been a better opportunity to invest early and get a head start in one of the fastest growing industries today. So enroll in Evolve Global Academy today!</div></div></div></section><section class="e-press"><div class="e-title">Press</div><div class="e-content slick-press"><a class="e-item" href="https://www.einpresswire.com/article/576784182/evolve-global-academy-hair-system-installation-live-class-to-commence-next-week" target="_blank"><img src="/content/images/marketing/evolve/press1.jpg" alt="ein presswire"><div class="content"><div class="press">EIN Presswire</div><div class="timeline">June 14th, 2022</div><div>Licensed hair stylists will be able to grow their businesses even more this month thanks to Evolve Global Academy.</div></div></a><a class="e-item" href="https://www.einpresswire.com/article/574014642/superhairpieces-introduces-evolve-global-academy-hair-system-installation-courses" target="_blank"><img src="/content/images/marketing/evolve/press2.jpg" alt="ein presswire"><div class="content"><div class="press">EIN Presswire</div><div class="timeline">May 26, 2022</div><div>Barbers and hairdressers can now add hair system installation services as part of their business offerings thanks to Superhairpieces.</div></div></a><a class="e-item" href="https://afvnews.ca/2022/06/14/evolve-global-academy-hair-system-installation-live-class-to-commence-next-week/" target="_blank"><img src="/content/images/marketing/evolve/press3.jpg" alt="afv news"><div class="content"><div class="press">AFV News</div><div class="timeline">June 14th, 2022</div><div>Our courses are created by stylists and taught by stylists to help you grow your business and stand out from the competition.</div></div></a><a class="e-item" href="https://kqeducationgroup.com/superhairpieces-introduces-evolve-global-academy-hair-system-installation-courses/" target="_blank"><img src="/content/images/marketing/evolve/press4.jpg" alt="KQ Education Group"><div class="content"><div class="press">KQ Education Group</div><div class="timeline">May 26th, 2022</div><div>It's a great opportunity to invest early and get a good start in one of the fastest growing industries today.</div></div></a></div></section><section class="e-disclaimer"><div class="e-title">Disclaimer</div><div class="e-desp"><div>The certificate of completion for completing any of our courses is not equivalent to a license to practice. This program only serves to provide you with the knowledge and skills for hair replacement installation and to demonstrate your new expertise.</div><div>Clients can register for the same hair system live course for FREE for class after the main course but should bring their own training kit.</div><div>Clients are eligible to enroll for the next hair system training classes ONLY after registering the main course with us.</div><div>Please note that the training kit provided will be sufficient for taking all three different hair system training classes and if any of these items are completed in between the courses, they can be purchased online on our website.</div></div></section></div><div class="modal-background"></div><div id="submit-result" class="modal modal--small result-modal" data-reveal><a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button"><span aria-hidden="true">×</span></a><div class="modal-content"><div class="modal-body"></div></div><div class="loadingOverlay"></div></div><script src="/content/js/slick.min.js" defer="defer"></script><script>/**
      * @summary Check if the input value is in phone format
      * 
      * @param {jQuery DOM object} input The input of phone
@@ -1413,7 +106,34 @@
         $(".e-review picture").removeClass("hide");
         $(".e-review .show").remove();
     }    
+
+    function changeVideo(x) {
+        let srcLink = $(".youtube2")[0].children[0].src
+        let clickLink = x.previousElementSibling.src
+        $('.youtube-overlay').removeClass('youtube-overlay')
+
+        if (srcLink != clickLink) {
+            $(".youtube2").eq(0).html(``)
+            x.children[1].classList.add('youtube-overlay')
+            $(".youtube2").eq(0).append(`
+                <iframe
+                    
+                    width="100%"
+                    height="100%"
+                    style="border-radius: 28px;"
+                    src=${clickLink}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            `)
+        }
+    }
     window.addEventListener("DOMContentLoaded", function() {
+
+
+
         $(".slick-instructor").on("init", function(slick) {
             $(".slick-instructor").show();                              
         }).slick({
@@ -1445,6 +165,27 @@
                 }
             ]
         });
+        $(".slick-youtube").on("init", function(slick) {
+            $(".slick-youtube").show()
+        }).slick({
+            "dots": false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    "breakpoint": 800,
+                    "settings":"unslick"
+                    
+                }
+            ]
+        
+        })
         $(".slick-course").on("init", function(slick) {
             $(".slick-course").css({display: "grid"});
         }).slick({            
@@ -1549,17 +290,7 @@
                 }
             ]
         });        
-        // $(".slick-video .e-item").on("click", function() {            
-        //     $(".slick-video").slick("slickPause");
-        //     if ($(this).find("picture").length>0) {                
-        //         $(this).html(`
-        //             <video width="${Math.ceil($(this).width())}" height="${Math.ceil($(this).height())}" controls autoplay>
-        //                 <source src="${$(this).attr("url")}" type="video/mp4">                
-        //                 Your browser does not support the video tag.
-        //             </video>
-        //         `);
-        //     }
-        // })   
+  
         $(".slick-video .e-item").on('mousedown', function(e) {
             $(this).data('p0', { x: e.pageX, y: e.pageY });
         }).on('mouseup', function(e) {
@@ -1584,6 +315,7 @@
             $(".slick-course").slick("resize");
             $(".slick-how").slick("resize");
             $(".slick-video").slick("resize");
+            $(".slick-youtube").slick("resize");
             if ($(window).width()<1283) {
                 $(".e-instructor .e-content").css({"grid-template-columns": "inherit"});
             } else {
@@ -1611,7 +343,7 @@
                         email: $("input[name=email]").val(),
                         phone: $("input[name=phone]").val(),
                         name: $("input[name=name]").val(),
-                        domain: "ca"
+                        domain: "com"
                     })
                 })
                 .then(r=>r.json())
@@ -1637,5 +369,6 @@
         $(".modal-close, .modal-background").on("click", function() {
             closePopup();
         })
-    });    
-</script>
+    });</script>
+
+
