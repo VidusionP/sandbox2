@@ -22,7 +22,7 @@
   padding: 0 !important;
 }
 p {
-  margin: 0 !important;
+  /* margin: 0 !important; */
 }
 body {
   -ms-overflow-style: none;
@@ -45,10 +45,119 @@ body {
   width: 100% !important;
 }
 .body.page .page-content p:first-child {
-  display: none;
+  /* display: none; */
+
 }
 </style>
-<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/> -->
-<section>
-    <div>hi</div>
+
+
+
+
+<style>
+  .mobilePopup {
+    position: absolute;
+    height: 100vh;
+    z-index: 1111;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    transition: all .4s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .mobilePopup1 {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+  }
+  .bookingButton {
+    background-color: rgba(0, 108, 255, 1);
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+  .bookingButton1 {
+    border:1px solid rgba(0, 108, 255, 1);
+    color: rgba(0, 108, 255, 1);
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    text-decoration: none;
+  }
+  .bookingTitle {
+    font-weight: 500;
+    font-size: 24px;
+    color: black;
+  }
+</style>
+<img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
+<section style="width: 90%; margin: auto; color: black;">
+    <div style="text-align: center;">
+      <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
+      <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid rgba(187, 187, 187, 1); border-bottom: 1px solid rgba(187, 187, 187, 1); padding: 20px 0;">
+      <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
+      <p style="font-weight: 500; padding: 10px 0; width: 80%; text-align: center; margin: auto;">Save Time And Money With Our Booking System</p>
+      <button class="buttonApt bookingButton">Book Appointment</button>
+    </div>
+    <div style="text-align: center; margin: 20px 0;">
+      <p>Want to cancel your appointment?</p>
+        <a href="mailto:sales@superhairpieces.com">
+          <button class="bookingButton1">
+            Email Us
+          </button></a>
+    </div>
+
+    <div class="mobilePopup">
+      <div class="mobilePopup1">
+        <div>
+          <div class="bookingLoad loaded"></div>
+          <div class="bookingLoad"></div>
+          <div class="bookingLoad"></div>
+          <div class="bookingLoad"></div>
+          <div class="bookingLoad"></div>
+        </div>
+        <div>
+          <p>Is this your first service appointment with Superhairpieces?</p>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <button class="bookingButton">Yes</button>
+            <button class="bookingButton">No, I'd like to sign in / sign up</button>
+          </div>
+        </div>
+        <div>
+          <button class="mobileCancel">Cancel</button>
+          <p>Any Questions?</p>
+          <p>Please Call: (905) 917-1805</p>
+        </div>
+      </div>
+
+    </div>
+
+
 </section>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    $('.buttonApt').on('click', ()=> {
+      let setheight = $('.page').height()
+
+        console.log(setheight)
+        $('.mobilePopup').css('max-height', `${setheight}px`)
+    })
+    $('.mobileCancel').on('click', () => {
+      $('.mobilePopup').css('max-height', '0')
+
+    })
+  })
+</script>
