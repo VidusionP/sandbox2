@@ -187,14 +187,17 @@
           )
           .then((r) => r.json())
           .then((r) => {
+
               var name = playlistIDs[idx].title;                                
               r.items.forEach((item) => {
-                  if (item.status.privacyStatus == "public") {                                         
+
+                  if (item.status.privacyStatus == "public") {    
                       videoList.push({
                           playlist: name,
                           date: item.snippet.publishedAt,
                           videoId: item.snippet.resourceId.videoId,
                           title: item.snippet.title
+                        
                       });
                   }                    
               });
@@ -240,7 +243,7 @@
               }
               $(".homebanner").append(`
                   <div class="top-title">
-                      <img src="https://img.youtube.com/vi/${videoList[i].videoId}/maxresdefault.jpg" width="560" onclick="setPlayVideo('${videoList[i].videoId}')"/>
+                      <img src="https://img.youtube.com/vi/${videoList[i].videoId}/sddefault.jpg" width="560" onclick="setPlayVideo('${videoList[i].videoId}')"/>
                       <p>${videoList[i].title}</p>
                       <div class="top-timeline">${timeline}</div>
                   </div>`);
