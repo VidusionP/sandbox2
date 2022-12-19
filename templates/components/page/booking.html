@@ -98,7 +98,22 @@ body {
   .bookingLoadbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    
+    gap: 5px;
+    margin-top: 25px;
+  }
+  .bookingLoad {
+    height: 3px;
+    width: 100%;
+    background-color: #D9D9D9;
+  }
+  .bookingLoad.loaded {
+    background-color: #006CFF;
+  }
+  .non-active {
+    display: none;
+  }
+  .active {
+    display: block;
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -128,17 +143,49 @@ body {
     <div class="mobilePopup">
       <div class="mobilePopup1">
         <div class="bookingLoadbar">
-          <div class="bookingLoad loaded"></div>
+          <div class="bookingLoad"></div>
+          <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
-        <div>
+        <div class="mobileMain mobileInitial non-active">
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
+            <button id="1" class="bookingButton">Yes</button>
+            <button id="2" class="bookingButton">No, I'd like to sign in / sign up</button>
+          </div>
+        </div>
+        <div id="service1" class="mobileMain mobileService non-active">
+          <p>Which service do you need?</p>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <button id='mens' class="bookingButton1">Men services</button>
+            <button id="womens" class="bookingButton1">Women services</button>
+            <button id="consultation" class="bookingButton1">Consultation</button>
+          </div>
+        </div>
+        <div id="system1" class="mobileMain mobileSystem non-active">
+          <p>Do you have any hair systems?</p>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <button id="systemYes" class="bookingButton">Yes</button>
+            <button id="systemBuy" class="bookingButton">No, Let's buy one</button>
+          </div>
+        </div>
+        <div id="service2" class="mobileMain mobileService2 non-active">
+          <p>What service do you need?</p>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <button id="Installation" class="bookingButton">Installation</button>
+            <button id="Maintenance" class="bookingButton">Maintenance</button>
+          </div>
+          <p>Don't know what to do? Let's listen to our expert advices</p>
+          <button id="serviceCons" class="bookingButton">Consultation</button>
+        </div>
+        <div id="service3" class="mobileMain mobileService3 non-active">
+          <p>Do you require color on your own hair?<span id="change"></span></p>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
             <button class="bookingButton">Yes</button>
-            <button class="bookingButton">No, I'd like to sign in / sign up</button>
+            <button class="bookingButton">No</button>
           </div>
         </div>
         <div>
@@ -154,15 +201,57 @@ body {
 </section>
 <script>
   window.addEventListener('DOMContentLoaded', function() {
+    let serviceGender = '';
+    let serviceType = '';
+    let color = true;
     $('.buttonApt').on('click', ()=> {
-      let setheight = $('.page').height()
 
-        console.log(setheight)
-        $('.mobilePopup').css('max-height', `${setheight}px`)
+      let setheight = $('.page').height();
+      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobileInitial').addClass('active')
+
+        $('.mobilePopup').css('max-height', `${setheight}px`);
     })
     $('.mobileCancel').on('click', () => {
-      $('.mobilePopup').css('max-height', '0')
+      $('.bookingLoad').removeClass('loaded')
+      $('.mobilePopup').css('max-height', '0');
+      $('.mobileMain').removeClass('active');
+      $('.mobileInitial').addClass('active')
 
+    })
+    $('#1').on('click', () => {
+      $('.mobileInitial').removeClass('active')
+      $('.mobileService').addClass('active')
+      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+    })
+    $('.mobileService .bookingButton1').on('click', (e) => {
+      e.preventDefault();
+      serviceGender = e.target.id;
+      if (serviceGender == 'mens' || serviceGender == 'womens') {
+      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobileService').removeClass('active');
+        $('.mobileSystem').addClass('active');
+      }
+    })
+    $('#systemYes').on('click', () => {
+      $('.mobileSystem').removeClass('active');
+      $('.mobileService2').addClass('active');
+    })
+    $('.mobileService2 .bookingButton').on('click', (e) => {
+      e.preventDefault();
+      serviceType = e.target.id;
+      if (serviceType == 'Installation' || serviceType == 'Maintenance') {
+      $('.mobileService2').removeClass('active');
+      $('.mobileService3').addClass('active');
+      $('#change').append(`
+        (${serviceType} + color) 
+      `)
+      }
+      
+    })
+    $('.mobileService3 .bookingButton').on('click', (e) => {
+      e.preventDefault();
+      e.target.innerHTML == 'Yes' ? color=true : color=false;
     })
   })
 </script>
