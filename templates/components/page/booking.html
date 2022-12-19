@@ -115,6 +115,47 @@ body {
   .active {
     display: block;
   }
+  .addNames {
+    width: 30px;
+    height: 30px;
+  }
+  .addNames .display_name {
+    width: 20px;
+    height: 20px;
+  }
+  .addNames .display_name:last-child {
+    position: relative;
+    top: -10px;
+    right: -10px;
+    border: 1px solid white;
+  }
+  .addNames1 {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #D9D9D9;
+    /* display: flex;
+    gap: 40px;
+    align-items: center; */
+  }
+  .salonist {
+    height: fit-content;
+    width: fit-content;
+    color: black;
+  }
+  .display_name {
+    background-color: #006CFF;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -188,6 +229,14 @@ body {
             <button class="bookingButton">No</button>
           </div>
         </div>
+        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
+            <p>Hair Stylist</p>
+            <div class="staffMembers">
+                <div class="bookingButton1 addNames1">
+                  <span class="addNames"></span>
+                  <div class="salonist">Any Available Staff Member</div></div>
+            </div>
+        </div>
         <div>
           <button class="mobileCancel">Cancel</button>
           <p>Any Questions?</p>
@@ -204,6 +253,41 @@ body {
     let serviceGender = '';
     let serviceType = '';
     let color = true;
+
+    fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        }
+    })
+    .then(r=>r.json())
+    .then(r=> {
+      r.team_member_booking_profiles.forEach(item => {
+        $('.addNames').append(`
+        <span class=display_name>${Array.from(item.display_name)[0]}</span>
+        `)
+        $('.staffMembers').append(`
+        
+        <div class='bookingButton1 addNames1'>
+          <span class=display_name>${Array.from(item.display_name)[0]}</span>
+          <div class=salonist>${item.display_name}</div>
+          </div>`)
+      });
+    })
+    fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
+      method: 'POST',
+      headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        }
+    })
+    .then(r=>r.json())
+    .then(r=> {
+      console.log(r)
+    })
+
+
     $('.buttonApt').on('click', ()=> {
 
       let setheight = $('.page').height();
@@ -252,6 +336,11 @@ body {
     $('.mobileService3 .bookingButton').on('click', (e) => {
       e.preventDefault();
       e.target.innerHTML == 'Yes' ? color=true : color=false;
+      $('.mobileService3').removeClass('active');
+      $('.serviceBooking').addClass('active');
+      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      
     })
+
   })
 </script>
