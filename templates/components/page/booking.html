@@ -156,6 +156,82 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .bookingButton1.loaded {
+    border: 2px solid #006CFF;
+  }
+  .arrow {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #006CFF;
+    border-radius: 5px;
+  }
+  .arrow use {
+    fill: #006CFF;
+  }
+  .arrow.disabled {
+    border: 1px solid #D9D9D9;
+    
+  }
+  .arrow.disabled use {
+    fill: #D9D9D9;
+  }
+
+  .calendarTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 10px;
+  }
+  .serviceBooking {
+    overflow: auto;
+  }
+  .calendarMain {
+    margin-top: 10px;
+  }
+  .calendarMain .weeks {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 600;
+  }
+  .calendarMain .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .calendarMain .days li {
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+    position: relative;
+    margin-top: 5px;
+    color: #006CFF;
+    font-weight: 500;
+  }
+  .calendarMain .days li::before {
+     position: absolute;
+     content: "";
+     height: 30px;
+     width: 30px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border-radius: 50%;
+     border: #006CFF 1px solid;
+     z-index: -1;
+  }
+  .calendarMain .days .selected::before {
+    background-color: #006CFF;
+    
+  }
+  .calendarMain .days .selected {
+    color: white;
+  }
+  .calendarMain ul {
+    list-style: none;
+  }
+  .calendarMain ul li {
+    width: calc(100%/7);
+  }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -191,7 +267,7 @@ body {
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
-        <div class="mobileMain mobileInitial non-active">
+        <div class="mobileMain mobileInitial non-active" style="display: none;">
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
             <button id="1" class="bookingButton">Yes</button>
@@ -229,13 +305,41 @@ body {
             <button class="bookingButton">No</button>
           </div>
         </div>
-        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
+        <div id="serviceBooking" class="mobileMain serviceBooking non-active active">
+          <div>
             <p>Hair Stylist</p>
             <div class="staffMembers">
-                <div class="bookingButton1 addNames1">
+                <div class="bookingButton1 addNames1 loaded">
                   <span class="addNames"></span>
                   <div class="salonist">Any Available Staff Member</div></div>
             </div>
+          </div>
+          <p>Select your preferred date and time</p>  
+          <div>
+            <div class="calendarTop">
+              <svg class="arrow disabled prev-arrow">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
+              </svg>
+              <p class="calendarMonth" style="margin: unset;"></p>
+              <svg class="arrow next-arrow">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
+              </svg>
+            </div>
+            <div class="calendarMain">
+              <ul class="weeks">
+                <li>S</li>
+                <li>M</li>
+                <li>T</li>
+                <li>W</li>
+                <li>Th</li>
+                <li>F</li>
+                <li>S</li>
+              </ul>
+              <ul class="days">
+
+              </ul>
+            </div>
+          </div>
         </div>
         <div>
           <button class="mobileCancel">Cancel</button>
@@ -249,11 +353,45 @@ body {
 
 </section>
 <script>
+  let date = new Date();
+  let currYear = date.getFullYear();
+  let currMonth = date.getMonth();
+  
+  function calendarChange() {
+    let letfirstDayofMonth = new Date(currYear, currMonth,1).getDate();
+    let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
+    let lastDateofLastMonth = new Date(currYear, currMonth + 1,0).getDate();
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
+
+
+    $('.calendarMonth').html(`
+      ${months[currMonth]} ${currYear}
+    `)
+    let change =''
+    for (let i=1; i<=lastDateofMonth;i++ ) {
+      change += `
+        <li>${i}</li>
+      `
+    }
+    $('.calendarMain .days').html(`${change}`)
+  }
+
   window.addEventListener('DOMContentLoaded', function() {
     let serviceGender = '';
     let serviceType = '';
     let color = true;
 
+    calendarChange() 
+
+    $('.calendarTop .next-arrow').on('click', function() {
+      currMonth = currMonth + 1
+      calendarChange()
+    })
+    $('.calendarTop .prev-arrow').on('click', function() {
+      currMonth = currMonth - 1
+      calendarChange()
+    })
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
         method: 'POST',
         headers: {
