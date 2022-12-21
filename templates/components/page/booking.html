@@ -204,7 +204,7 @@ body {
     z-index: 1;
     position: relative;
     margin-top: 5px;
-    color: #006CFF;
+    /* color: #006CFF; */
     font-weight: 500;
   }
   .calendarMain .days li::before {
@@ -221,7 +221,6 @@ body {
   }
   .calendarMain .days .selected::before {
     background-color: #006CFF;
-    
   }
   .calendarMain .days .selected {
     color: white;
@@ -231,6 +230,12 @@ body {
   }
   .calendarMain ul li {
     width: calc(100%/7);
+  }
+  .calendarMain li.inactive::before {
+    border: unset;
+  }
+  .calendarMain li.inactive {
+    color: #D9D9D9; 
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -358,21 +363,27 @@ body {
   let currMonth = date.getMonth();
   
   function calendarChange() {
-    let letfirstDayofMonth = new Date(currYear, currMonth,1).getDate();
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
-    let lastDateofLastMonth = new Date(currYear, currMonth + 1,0).getDate();
+    let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+    let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
 
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
+    let change =''
 
-
+    for (let i = firstDayofMonth ; i > 0; i--) {
+      change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`
+    }
     $('.calendarMonth').html(`
       ${months[currMonth]} ${currYear}
     `)
-    let change =''
     for (let i=1; i<=lastDateofMonth;i++ ) {
       change += `
-        <li>${i}</li>
+        <li class="inactive">${i}</li>
       `
+    }
+    for (let i = lastDayofMonth; i< 6; i++) {
+      change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
     }
     $('.calendarMain .days').html(`${change}`)
   }
@@ -386,6 +397,14 @@ body {
 
     $('.calendarTop .next-arrow').on('click', function() {
       currMonth = currMonth + 1
+      if (currMonth < 0 || currMonth > 11) {
+        date = new Date(currYear, currMonth);
+        currYear = date.getFullYear();
+        currMonth = date.getMonth();
+
+      } else {
+        date = new Date();
+      }
       calendarChange()
     })
     $('.calendarTop .prev-arrow').on('click', function() {
@@ -422,7 +441,10 @@ body {
     })
     .then(r=>r.json())
     .then(r=> {
-      console.log(r)
+      let apps = r.availabilities
+      apps.forEach((item) => {
+        console.log(Date.parse(item.startAt))
+      })
     })
 
 
