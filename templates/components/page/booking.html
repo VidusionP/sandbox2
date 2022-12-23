@@ -136,9 +136,9 @@ body {
     padding-left: 20px;
     margin-bottom: 10px;
     border: 1px solid #D9D9D9;
-    /* display: flex;
-    gap: 40px;
-    align-items: center; */
+  }
+  .bookingButton1.addNames1:not(.loaded):hover {
+    border: 1px solid rgba(0, 106, 255, 0.72)
   }
   .salonist {
     height: fit-content;
@@ -264,6 +264,9 @@ body {
   .belowCalendar .bookings {
     font-weight: 600;
   }
+  .belowCalendar .time {
+    padding: 10px 0;
+  }
   .bookBut {
     width: fit-content;
     padding: 10px 20px;
@@ -272,6 +275,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+  }
+  .slot2 {
+    width: 100px;
+    background-color: #f6f6f6;
+    color: #d3d3d3;
+    border: 1px solid #f6f6f6;
+    border-radius: 5px;
+    text-align: center;
+    padding: 6px;
+  }
+  .bookings {
+    margin: 0;
+    margin-bottom: 5px;
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -308,7 +324,7 @@ body {
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
-        <div class="mobileMain mobileInitial non-active" >
+        <div class="mobileMain mobileInitial non-active" style="display: none;" >
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
             <button id="1" class="bookingButton">Yes</button>
@@ -346,7 +362,7 @@ body {
             <button class="bookingButton">No</button>
           </div>
         </div>
-        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
+        <div id="serviceBooking" class="mobileMain serviceBooking non-active active">
           <div>
             <p>Hair Stylist</p>
             <div class="staffMembers">
@@ -382,18 +398,21 @@ body {
             <div class="belowCalendar">
               <div class="title">Available on <span class="dayAvailable"></span></div>
               <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
-              <div class="morning">
+              <div class="morning time">
                 <p class="bookings">Morning</p>
                 <div class="slot"></div>
+                <div class="slot2">All booked</div>
               </div>
-              <div class="afternoon">
+              <div class="afternoon time">
                 <p class="bookings">Afternoon</p>
                 <div class="slot"></div>
+                <div class="slot2">All booked</div>
 
               </div>
-              <div class="evening">
+              <div class="evening time">
                 <p class="bookings">Evening</p>
                 <div class="slot"></div>
+                <div class="slot2">All booked</div>
 
               </div>
             </div>
@@ -416,8 +435,8 @@ body {
   let currYear = date.getFullYear();
   let currMonth = date.getMonth();
   let test5 = new Date(currYear, currMonth + 1,0)
+  let serviceEnd = '';
   test5.setUTCHours(23,59,59,0)
-
   function calendarChange() {
     // console.log(vide)
 
@@ -426,7 +445,6 @@ body {
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
     let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
     let checking = new Date().toLocaleDateString('fr-CA', {year: 'numeric', month: '2-digit', day: '2-digit'});
-    // let vide = new Date(currMonth).toLocaleDateString('en-us', {month: '2-digit'})
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
     let change =''
     for (let i = firstDayofMonth ; i > 0; i--) {
@@ -441,7 +459,7 @@ body {
       change += `
         <li data-date="${currYear}-${("0" + (currMonth+1)).slice(-2)}-${("0" + i).slice(-2)}"  class="currMonth inactive ${isToday}">${i}</li>
       `
-     
+
     }
     for (let i = lastDayofMonth; i< 6; i++) {
       change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
@@ -452,29 +470,24 @@ body {
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
     if (x) {
-      // console.log(firstDate)
-      // console.log(apps)
-      // console.log(x)
-      // console.log(y)
-
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
- 
+
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
         const time2 = date.toLocaleTimeString('en-us', {hour12: false})
         
         if (time2 > '15:00:00') {
-          
+          $('.evening .slot2').remove();
           $('.evening .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
         } else if (time2 > "12:00:00" && time2 < '15:00:00') {
+          $('.afternoon .slot2').remove();
          
           $('.afternoon .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
         } else {
-         
-
+          $('.morning .slot2').remove();         
           $('.morning .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
 
         }
@@ -506,7 +519,7 @@ body {
   }
 
   function bookingSq(startDate, endDate, service) {
-    
+    serviceEnd = service;
     fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
       method: 'POST',
       headers: {
@@ -578,28 +591,24 @@ body {
       let test6 = new Date(currYear, currMonth,1)
       test5.setUTCHours(23,59,59,0)
       calendarChange()
-      bookingSq(test6.toISOString(), test5.toISOString())
+      bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
 
     })
     $('.calendarTop .prev-arrow').on('click', function() {
       currMonth = currMonth - 1
-      
       if (currMonth < 0 || currMonth > 11) {
-        date = new Date(currYear, currMonth);
-        
+        date = new Date(currYear, currMonth, currDate);
         currYear = date.getFullYear();
         currMonth = date.getMonth();
-
       } else {
         date = new Date();
-        console.log(date)
       }
       let test5 = new Date(currYear, currMonth + 1,0)
       let test6 = new Date(currYear, currMonth,1)
       if (currMonth === new Date().getMonth()) {
-        bookingSq(new Date().toISOString(), test5.toISOString())
+        bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
       } else {
-        bookingSq(test6.toISOString(), test5.toISOString())
+        bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
 
       }
       test5.setUTCHours(23,59,59,0)
@@ -680,7 +689,6 @@ body {
       $('.mobileService3').removeClass('active');
       $('.serviceBooking').addClass('active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded')
-      console.log(serviceGender, serviceType, color)
        if (serviceGender == 'mens') {
         if (serviceType == 'Maintenance') {
           if (color) {
