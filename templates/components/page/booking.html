@@ -136,6 +136,7 @@ body {
     padding-left: 20px;
     margin-bottom: 10px;
     border: 1px solid #D9D9D9;
+    cursor: pointer;
   }
   .bookingButton1.addNames1:not(.loaded):hover {
     border: 1px solid rgba(0, 106, 255, 0.72)
@@ -324,7 +325,7 @@ body {
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
-        <div class="mobileMain mobileInitial non-active" style="display: none;" >
+        <div class="mobileMain mobileInitial non-active" >
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
             <button id="1" class="bookingButton">Yes</button>
@@ -362,13 +363,13 @@ body {
             <button class="bookingButton">No</button>
           </div>
         </div>
-        <div id="serviceBooking" class="mobileMain serviceBooking non-active active">
+        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
           <div>
             <p>Hair Stylist</p>
             <div class="staffMembers">
-                <div class="bookingButton1 addNames1 loaded">
+                <div data-team-member-id="" class="bookingButton1 addNames1 loaded">
                   <span class="addNames"></span>
-                  <div class="salonist">Any Available Staff Member</div></div>
+                  <div class="salonist" >Any Available Staff Member</div></div>
             </div>
           </div>
           <p>Select your preferred date and time</p>  
@@ -436,10 +437,9 @@ body {
   let currMonth = date.getMonth();
   let test5 = new Date(currYear, currMonth + 1,0)
   let serviceEnd = '';
+  let stylist = ''
   test5.setUTCHours(23,59,59,0)
   function calendarChange() {
-    // console.log(vide)
-
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
@@ -469,7 +469,7 @@ body {
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
-    if (x) {
+    if (apps.length > 0) {
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
@@ -493,7 +493,9 @@ body {
         }
       })
       $('.dayAvailable').html(date)
-    } 
+    } else {
+
+    }
     // else {
     //   const test = apps.filter((item) => item === firstDate)
     // let date = new Date(apps[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
@@ -518,7 +520,9 @@ body {
 
   }
 
-  function bookingSq(startDate, endDate, service) {
+  function bookingSq(startDate, endDate, service, stylists) {
+    console.log(startDate, endDate)
+    
     serviceEnd = service;
     fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
       method: 'POST',
@@ -529,7 +533,8 @@ body {
       body: JSON.stringify ({
           start: startDate,
           end: endDate,
-          service: service
+          service: service,
+          stylist: stylists
         })
     })
     .then(r=>r.json())
@@ -538,20 +543,34 @@ body {
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       let firstDate = r.availabilities[0]
       let v = 0;
-      apps.forEach((item) => {
+      if (apps.length > 0) {
+        apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
         
         Array.from($('.currMonth')).forEach((item1) => {          
-          if (item1.innerHTML == day) {
+          if (day == item1.innerHTML) {
             if (!item1.classList.contains('active')) {
               item1.setAttribute("data-id", v)
               $(item1).addClass('active')
               v++
-            }
-          }
+            } 
+          } 
         })
       })
+      } else {
+        $('.currMonth').removeClass('active selected')
+        let jenny6 = new Date(currYear, currMonth +1, 1)
+        let jenny7 = new Date(currYear, currMonth +2, 0)
+        jenny7.setUTCHours(23,59,59,0)
+        bookingSq(jenny6.toISOString(), jenny7.toISOString(), serviceEnd, stylist)
+
+        // console.log(jenny6.toISOString())
+        // console.log(jenny7.toISOString())
+
+      }
+
+
       $('li.currMonth.active').on('click', function() {
         $('.currMonth.active').removeClass('selected')
         $(this).addClass('selected')
@@ -562,6 +581,7 @@ body {
       $('.currMonth.active').eq(0).addClass('selected')
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
+      // console.log(r.availabilities[x], apps, x , y)
       getCurrentDateAppointments(r.availabilities[x], apps, x, y)
     })
 
@@ -571,13 +591,7 @@ body {
     let serviceGender = '';
     let serviceType = '';
     let color = false;
-    let womenInstallColor = false;
-    let womenMainColor = false;
-    let menInstallColor = false;
-    let menMainColor = false;
     calendarChange() 
-    
-
     $('.calendarTop .next-arrow').on('click', function() {
       currMonth = currMonth + 1
       if (currMonth < 0 || currMonth > 11) {
@@ -609,12 +623,11 @@ body {
         bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
       } else {
         bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
-
       }
       test5.setUTCHours(23,59,59,0)
       calendarChange()
     })
-    
+
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
         method: 'POST',
         headers: {
@@ -624,17 +637,29 @@ body {
     })
     .then(r=>r.json())
     .then(r=> {
+      let ids = []
       r.team_member_booking_profiles.forEach(item => {
+        ids.push(item.team_member_id)
         $('.addNames').append(`
         <span class=display_name>${Array.from(item.display_name)[0]}</span>
         `)
         $('.staffMembers').append(`
         
-        <div class='bookingButton1 addNames1'>
+        <div data-team-member-id="${item.team_member_id}" class='bookingButton1 addNames1'>
           <span class=display_name>${Array.from(item.display_name)[0]}</span>
           <div class=salonist>${item.display_name}</div>
           </div>`)
       });
+      $('.staffMembers .addNames1.loaded').attr('data-team-member-id', ids)
+
+      stylist = ids
+      $('.staffMembers .addNames1').on('click', function() {
+        let memberId = $(this).data('team-member-id')
+        stylist = [memberId]
+        $('.staffMembers .addNames1').removeClass('loaded')
+        $(this).addClass('loaded')
+        bookingSq(date.toISOString(), test5.toISOString(), serviceEnd, stylist)
+    })
     })
 
 
@@ -692,7 +717,7 @@ body {
        if (serviceGender == 'mens') {
         if (serviceType == 'Maintenance') {
           if (color) {
-            bookingSq(date.toISOString(), test5.toISOString(), "VUIWQXOP26WUZWQMQGBNRGSZ")
+            bookingSq(date.toISOString(), test5.toISOString(), "VUIWQXOP26WUZWQMQGBNRGSZ", stylist)
           } else {
             bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC")
           }
