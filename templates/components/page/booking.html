@@ -439,11 +439,12 @@ body {
   let serviceEnd = '';
   let stylist = ''
   test5.setUTCHours(23,59,59,0)
-  function calendarChange() {
+  function calendarChange(x, y) {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
     let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
+    console.log(currDate, currMonth, currYear)
     let checking = new Date().toLocaleDateString('fr-CA', {year: 'numeric', month: '2-digit', day: '2-digit'});
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
     let change =''
@@ -469,6 +470,7 @@ body {
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
+    // console.log(firstDate, apps, x, y)
     if (apps.length > 0) {
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
@@ -544,10 +546,12 @@ body {
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
+        // console.log(apps)
+        $('.currMonth').removeClass('active selected')
+
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
-        
         Array.from($('.currMonth')).forEach((item1) => {          
           if (day == item1.innerHTML) {
             if (!item1.classList.contains('active')) {
@@ -558,16 +562,30 @@ body {
           } 
         })
       })
-      } else {
+      $('.currMonth.active').eq(0).addClass('selected')
+      let x = $('.currMonth.selected').attr('data-id');
+      let y = $('.currMonth.selected').attr('data-date');
+      // console.log(y)
+      console.log(r.availabilities[x], apps, x , y)
+      calendarChange()
+
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+      } 
+      else {
         $('.currMonth').removeClass('active selected')
-        let jenny6 = new Date(currYear, currMonth +1, 1)
-        let jenny7 = new Date(currYear, currMonth +2, 0)
-        jenny7.setUTCHours(23,59,59,0)
-        bookingSq(jenny6.toISOString(), jenny7.toISOString(), serviceEnd, stylist)
-
-        // console.log(jenny6.toISOString())
-        // console.log(jenny7.toISOString())
-
+        currMonth = currMonth + 1
+      if (currMonth < 0 || currMonth > 11) {
+        date = new Date(currYear, currMonth);
+        currYear = date.getFullYear();
+        currMonth = date.getMonth();
+      } else {
+        date = new Date();
+      }
+      let test7 = new Date(currYear, currMonth + 1,0)
+      let test8 = new Date(currYear, currMonth,1)
+      test7.setUTCHours(23,59,59,0)
+      calendarChange()
+      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
       }
 
 
@@ -578,11 +596,7 @@ body {
         let y = this.getAttribute('data-date')
         getCurrentDateAppointments(r.availabilities[x], apps, x, y)
     }) 
-      $('.currMonth.active').eq(0).addClass('selected')
-      let x = $('.currMonth.selected').attr('data-id');
-      let y = $('.currMonth.selected').attr('data-date');
-      // console.log(r.availabilities[x], apps, x , y)
-      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+
     })
 
   }
@@ -655,10 +669,15 @@ body {
       stylist = ids
       $('.staffMembers .addNames1').on('click', function() {
         let memberId = $(this).data('team-member-id')
-        stylist = [memberId]
+        // console.log(memberId.split(','))
+        stylist = memberId.split(',')
         $('.staffMembers .addNames1').removeClass('loaded')
         $(this).addClass('loaded')
-        bookingSq(date.toISOString(), test5.toISOString(), serviceEnd, stylist)
+        let date1 = new Date();
+        let year = date1.getFullYear();
+        let mon = date1.getMonth();
+        let test5 = new Date(year, mon + 1,0)
+        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
     })
     })
 
@@ -717,6 +736,7 @@ body {
        if (serviceGender == 'mens') {
         if (serviceType == 'Maintenance') {
           if (color) {
+
             bookingSq(date.toISOString(), test5.toISOString(), "VUIWQXOP26WUZWQMQGBNRGSZ", stylist)
           } else {
             bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC")
