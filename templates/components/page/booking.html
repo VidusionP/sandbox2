@@ -223,7 +223,7 @@ body {
     background-color: #006CFF;
   }
   .calendarMain .days .selected {
-    color: white;
+    color: white !important;
   }
   .calendarMain ul {
     list-style: none;
@@ -236,6 +236,42 @@ body {
   }
   .calendarMain li.inactive {
     color: #D9D9D9; 
+  }
+
+  .calendarMain .days .active::before {
+    border: #006CFF 1px solid;
+  }
+  .calendarMain .days .active {
+       color: #006CFF;
+  }
+  .currDay {
+    color: #006CFF !important;
+    text-decoration: underline;
+  }
+  .belowCalendar {
+    text-align: start;
+  }
+  .belowCalendar .title {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .belowCalendar .para {
+    color: #b3b3b3;
+    font-size: 12px;
+    padding: 10px 0;
+    line-height: 1.6;
+  }
+  .belowCalendar .bookings {
+    font-weight: 600;
+  }
+  .bookBut {
+    width: fit-content;
+    padding: 10px 20px;
+  }
+  .slot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -272,7 +308,7 @@ body {
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
-        <div class="mobileMain mobileInitial non-active" style="display: none;">
+        <div class="mobileMain mobileInitial non-active" >
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
             <button id="1" class="bookingButton">Yes</button>
@@ -310,7 +346,7 @@ body {
             <button class="bookingButton">No</button>
           </div>
         </div>
-        <div id="serviceBooking" class="mobileMain serviceBooking non-active active">
+        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
           <div>
             <p>Hair Stylist</p>
             <div class="staffMembers">
@@ -341,8 +377,25 @@ body {
                 <li>S</li>
               </ul>
               <ul class="days">
-
               </ul>
+            </div>
+            <div class="belowCalendar">
+              <div class="title">Available on <span class="dayAvailable"></span></div>
+              <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
+              <div class="morning">
+                <p class="bookings">Morning</p>
+                <div class="slot"></div>
+              </div>
+              <div class="afternoon">
+                <p class="bookings">Afternoon</p>
+                <div class="slot"></div>
+
+              </div>
+              <div class="evening">
+                <p class="bookings">Evening</p>
+                <div class="slot"></div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -359,41 +412,158 @@ body {
 </section>
 <script>
   let date = new Date();
+  let currDate = date.getDate();
   let currYear = date.getFullYear();
   let currMonth = date.getMonth();
-  
+  let test5 = new Date(currYear, currMonth + 1,0)
+  test5.setUTCHours(23,59,59,0)
+
   function calendarChange() {
+    // console.log(vide)
+
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
     let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
-
+    let checking = new Date().toLocaleDateString('fr-CA', {year: 'numeric', month: '2-digit', day: '2-digit'});
+    // let vide = new Date(currMonth).toLocaleDateString('en-us', {month: '2-digit'})
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
     let change =''
-
     for (let i = firstDayofMonth ; i > 0; i--) {
       change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`
     }
     $('.calendarMonth').html(`
       ${months[currMonth]} ${currYear}
     `)
+    
     for (let i=1; i<=lastDateofMonth;i++ ) {
+      let isToday = i === date.getDate() && currMonth === new Date().getMonth() && currYear === new Date().getFullYear() ? 'currDay': '';
       change += `
-        <li class="inactive">${i}</li>
+        <li data-date="${currYear}-${("0" + (currMonth+1)).slice(-2)}-${("0" + i).slice(-2)}"  class="currMonth inactive ${isToday}">${i}</li>
       `
+     
     }
     for (let i = lastDayofMonth; i< 6; i++) {
       change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
     }
+
     $('.calendarMain .days').html(`${change}`)
+  }
+
+  function getCurrentDateAppointments(firstDate, apps, x, y) {
+    if (x) {
+      // console.log(firstDate)
+      // console.log(apps)
+      // console.log(x)
+      // console.log(y)
+
+      const test2 = apps.filter((item) => item.startAt.includes(y))
+    let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
+    $('.slot').empty();
+ 
+    test2.forEach((item) => {
+        const date = new Date(item.startAt);
+        const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+        const time2 = date.toLocaleTimeString('en-us', {hour12: false})
+        
+        if (time2 > '15:00:00') {
+          
+          $('.evening .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
+        } else if (time2 > "12:00:00" && time2 < '15:00:00') {
+         
+          $('.afternoon .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
+        } else {
+         
+
+          $('.morning .slot').append(`<div class="bookingButton1 bookBut">${time}</div>`)
+
+        }
+      })
+      $('.dayAvailable').html(date)
+    } 
+    // else {
+    //   const test = apps.filter((item) => item === firstDate)
+    // let date = new Date(apps[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
+
+    //   test.forEach((item) => {
+    //     console.log(item)
+    //     const date = new Date(item.startAt);
+    //     const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+    //     const time2 = date.toLocaleTimeString('en-us', {hour12: false})
+
+    //     if (time2 > '15:00:00') {
+    //       $('.evening').append(`<div>${time}</div>`)
+    //     } else if (time2 > "12:00:00" && time2 > '15:00:00') {
+    //       $('.afternoon').append(`<div>${time}</div>`)
+    //     } else {
+    //       $('.morning').append(`<div class="bookingButton1 bookBut">${time}</div>`)
+
+    //     }
+    //   })
+    //   $('.dayAvailable').html(date)
+    // }
+
+  }
+
+  function bookingSq(startDate, endDate, service) {
+    
+    fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
+      method: 'POST',
+      headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+      body: JSON.stringify ({
+          start: startDate,
+          end: endDate,
+          service: service
+        })
+    })
+    .then(r=>r.json())
+    .then(r=> {
+      let apps = r.availabilities
+      let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
+      let firstDate = r.availabilities[0]
+      let v = 0;
+      apps.forEach((item) => {
+        const date = new Date(item.startAt);
+        const day = date.getDate();
+        
+        Array.from($('.currMonth')).forEach((item1) => {          
+          if (item1.innerHTML == day) {
+            if (!item1.classList.contains('active')) {
+              item1.setAttribute("data-id", v)
+              $(item1).addClass('active')
+              v++
+            }
+          }
+        })
+      })
+      $('li.currMonth.active').on('click', function() {
+        $('.currMonth.active').removeClass('selected')
+        $(this).addClass('selected')
+        let x = this.getAttribute('data-id')
+        let y = this.getAttribute('data-date')
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+    }) 
+      $('.currMonth.active').eq(0).addClass('selected')
+      let x = $('.currMonth.selected').attr('data-id');
+      let y = $('.currMonth.selected').attr('data-date');
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+    })
+
   }
 
   window.addEventListener('DOMContentLoaded', function() {
     let serviceGender = '';
     let serviceType = '';
-    let color = true;
-
+    let color = false;
+    let womenInstallColor = false;
+    let womenMainColor = false;
+    let menInstallColor = false;
+    let menMainColor = false;
     calendarChange() 
+    
 
     $('.calendarTop .next-arrow').on('click', function() {
       currMonth = currMonth + 1
@@ -401,16 +571,41 @@ body {
         date = new Date(currYear, currMonth);
         currYear = date.getFullYear();
         currMonth = date.getMonth();
-
       } else {
         date = new Date();
       }
+      let test5 = new Date(currYear, currMonth + 1,0)
+      let test6 = new Date(currYear, currMonth,1)
+      test5.setUTCHours(23,59,59,0)
       calendarChange()
+      bookingSq(test6.toISOString(), test5.toISOString())
+
     })
     $('.calendarTop .prev-arrow').on('click', function() {
       currMonth = currMonth - 1
+      
+      if (currMonth < 0 || currMonth > 11) {
+        date = new Date(currYear, currMonth);
+        
+        currYear = date.getFullYear();
+        currMonth = date.getMonth();
+
+      } else {
+        date = new Date();
+        console.log(date)
+      }
+      let test5 = new Date(currYear, currMonth + 1,0)
+      let test6 = new Date(currYear, currMonth,1)
+      if (currMonth === new Date().getMonth()) {
+        bookingSq(new Date().toISOString(), test5.toISOString())
+      } else {
+        bookingSq(test6.toISOString(), test5.toISOString())
+
+      }
+      test5.setUTCHours(23,59,59,0)
       calendarChange()
     })
+    
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
         method: 'POST',
         headers: {
@@ -431,20 +626,6 @@ body {
           <div class=salonist>${item.display_name}</div>
           </div>`)
       });
-    })
-    fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
-      method: 'POST',
-      headers: {
-            accept: "application/json",
-            "content-type": "application/json"
-        }
-    })
-    .then(r=>r.json())
-    .then(r=> {
-      let apps = r.availabilities
-      apps.forEach((item) => {
-        console.log(Date.parse(item.startAt))
-      })
     })
 
 
@@ -499,7 +680,36 @@ body {
       $('.mobileService3').removeClass('active');
       $('.serviceBooking').addClass('active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded')
-      
+      console.log(serviceGender, serviceType, color)
+       if (serviceGender == 'mens') {
+        if (serviceType == 'Maintenance') {
+          if (color) {
+            bookingSq(date.toISOString(), test5.toISOString(), "VUIWQXOP26WUZWQMQGBNRGSZ")
+          } else {
+            bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC")
+          }
+        } else {
+          if (color) {
+            bookingSq(date.toISOString(), test5.toISOString(), "O6RWN7NFJKTYCTSKXIVKNUUV")
+          } else {
+            bookingSq(date.toISOString(), test5.toISOString(), "QKVCJJZHAHG3AWGIOVHASRNA")
+          }
+        }
+       } else {
+        if (serviceType == 'Maintenance') {
+          if (color) {
+            bookingSq(date.toISOString(), test5.toISOString(), "OS255XE5HJCLHU43J4YT5R4F")
+          } else {
+            bookingSq(date.toISOString(), test5.toISOString(), "OK3BPUAMAJYINUKVQJRBHZMB")
+          }
+        } else {
+          if (color) {
+            bookingSq(date.toISOString(), test5.toISOString(), "WEXJ7MQTUFSVGFIERPF7IOUW")
+          } else {
+            bookingSq(date.toISOString(), test5.toISOString(), "RSDJ4PSD2SJ6JBPUSCK274QN")
+          }
+        }
+       }
     })
 
   })
