@@ -75,6 +75,18 @@ body {
     width: 80%;
     margin: auto;
   }
+  .serviceList {
+    position: absolute;
+    height: 100vh;
+    z-index: 1111;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    transition: all .4s ease;
+    max-height: 0;
+    overflow: hidden;
+  }
   .bookingButton {
     background-color: rgba(0, 108, 255, 1);
     color: white;
@@ -318,14 +330,73 @@ body {
   }
   .bookingConfirm {
     text-align: start;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+  .bookingConfirm .title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .bookingConfirm .title2 {
+    font-weight: 600;
+  }
+  .oldClients {
+    text-align: center;
+  }
+  .signIn_square {
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    gap: 10px;
+  }
+  .signIn_square .text {
+    margin-bottom: 0;
+  }
+  .oldClients .button2 {
+    border: 1px solid #C8C8C8;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 10px;
+  }
+  .oldClients .back {
+    margin: 15px 0;
+    color: #9D9D9D;
+  }
+  .bookingLoadbar.four {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .serviceList .top-list {
+    display: flex;
+    /* justify-content: space-around; */
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    /* padding: 7px; */
+  }
+  .serviceList .top-list .item {
+    border-radius: 25px;
+    padding: 10px 20px;
+    flex-grow: 1;
+  }
+  .serviceList .top-list .item.active {
+    background-color: #006CFF;
+    color: white;
+    /* border-radius: 25px;
+    padding: 10px 20px; */
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
-    <div style="text-align: center;">
-      <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-      <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
-    </div>
+  <div style="text-align: center;">
+    <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
+    <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
+  </div>
+  <div class="newClients">
+
 
     <div>
 
@@ -343,7 +414,49 @@ body {
             Email Us
           </button></a>
     </div>
+  </div>
+  <div class="oldClients non-active">
+    <div class="signIn_square">
+      <p class="text">Sign in to choose your preferences</p>
+      <button class="button bookingButton">Sign in / Sign up with Square</button>
+    </div>
+    <div>
+      <p>or</p>
+      <p>Choose a new service</p>
+    </div>
+    <div>
+      <div data-service="Men" class="button2">Men Services</div>
+      <div data-service="Women" class="button2">Women Services</div>
+      <div data-service="Consultation" class="button2">Consultation Services</div>
+    </div>
+    <div class="back">Back</div>
+  </div>
+  <div class="serviceList">
+    <div style="width: 80%; margin: auto;">
+      <div class="bookingLoadbar four">
+        <div class="bookingLoad"></div>
+        <div class="bookingLoad"></div>
+        <div class="bookingLoad"></div>
+        <div class="bookingLoad"></div>
+      </div>
+      <div style="text-align: center;">
+        <p>Service List</p>
+        <div class="top-list">
+          <div class="item active">Men</div>
+          <div class="item">Women</div>
+          <div class="item">Consultation</div>
+        </div>
+      </div>
+    </div>
 
+    <div class="mobileBottom1 non-active">
+      <div class="bots">
+        <button class="bookingButton1">Back</button>
+        <button class="bookingButton nextButton">Next</button>
+        <button class="bookingButton confirmButton non-active">Confirm</button>
+      </div>
+    </div>
+  </div>
     <div class="mobilePopup">
       <div class="mobilePopup1">
         <div class="bookingLoadbar">
@@ -354,6 +467,7 @@ body {
           <div class="bookingLoad"></div>
           <div class="bookingLoad"></div>
         </div>
+
         <div class="mobileMain mobileInitial non-active" >
           <p>Is this your first service appointment with Superhairpieces?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
@@ -361,6 +475,7 @@ body {
             <button id="2" class="bookingButton">No, I'd like to sign in / sign up</button>
           </div>
         </div>
+
         <div id="service1" class="mobileMain mobileService non-active">
           <p>Which service do you need?</p>
           <div style="display: flex; flex-direction: column; gap: 20px;">
@@ -449,21 +564,39 @@ body {
           </div>
         </div>
         <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
-          <p>Booking Information</p>
+          <p class="title">Booking Information</p>
           <div>
-            <p>Service:</p>
+            <p class="title2">Service :</p>
             <div id="serviceType"></div>
           </div>
           <div>
-            <p>Hair Stylist:</p>
+            <p class="title2">Hair Stylist :</p>
             <div id="stylistName"></div>
           </div>
           <div>
-            <p>Date and time:</p>
+            <p class="title2">Date and time :</p>
             <div id="dateSelected"></div>
           </div>
         </div>
+        <div class="bookingForm non-active">
+          <p>You're nearly done. Enter your details below.</p>
+          <form>
+            <div>
+              <select name="country" id="country">
+                <option value="+1">Canada</option>
+              </select>
+              <input placeholder="(000) 000 0000">
+            </div>
 
+            <input placeholder="Email">
+            <div>
+              <input placeholder="First name">
+              <input placeholder="Last name">
+            </div>
+
+            <textarea placeholder="Appointment notes (optional)"></textarea>
+          </form>
+        </div>
         <div class="mobileBottom non-active">
           <button class="mobileCancel">Cancel</button>
           <p>Any Questions?</p>
@@ -474,7 +607,8 @@ body {
       <div class="mobileBottom1 non-active">
         <div class="bots">
           <button class="bookingButton1">Back</button>
-          <button class="bookingButton">Next</button>
+          <button class="bookingButton nextButton">Next</button>
+          <button class="bookingButton confirmButton non-active">Confirm</button>
         </div>
       </div>
     </div>
@@ -482,6 +616,9 @@ body {
 
 </section>
 <script>
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
+
   let date = new Date();
   let currDate = date.getDate();
   let currYear = date.getFullYear();
@@ -489,7 +626,10 @@ body {
   let test5 = new Date(currYear, currMonth + 1,0)
   let serviceEnd = '';
   let stylist = '';
-  let startTime = ''
+  let startTime = '';
+  let bookedStylist = '';
+  let duration = '';
+  let currentStylers = []
   test5.setUTCHours(23,59,59,0)
   function calendarChange(x, y) {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
@@ -497,7 +637,6 @@ body {
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
     let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
     let checking = new Date().toLocaleDateString('fr-CA', {year: 'numeric', month: '2-digit', day: '2-digit'});
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
     let change =''
     for (let i = firstDayofMonth ; i > 0; i--) {
       change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`
@@ -525,7 +664,7 @@ body {
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
-
+      console.log(test2)
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
@@ -533,14 +672,14 @@ body {
         
         if (time2 > '15:00:00') {
           $('.evening .slot2').remove();
-          $('.evening .slot').append(`<div data-start-id="${item.startAt}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else if (time2 > "12:00:00" && time2 < '15:00:00') {
           $('.afternoon .slot2').remove();
          
-          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else {
           $('.morning .slot2').remove();         
-          $('.morning .slot').append(`<div data-start-id="${item.startAt}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
 
         }
       })
@@ -550,6 +689,8 @@ body {
     }
     $('.bookBut').on('click', function() {
       startTime = $(this).data('start-id')
+      bookedStylist = $(this).data('team-member')
+      duration = $(this).data('duration')
       $('.bookBut').removeClass('active3')
       $(this).addClass('active3')
     })
@@ -661,28 +802,48 @@ body {
     })
     .then(r=>r.json())
     .then(r=> { 
+      // $('.mobileBottom1 .bookingButton').html('Confirm')
+      $('.nextButton').addClass('non-active');
+      $('.confirmButton').removeClass('non-active');
       r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serviceEnd) {
-          console.log(item)
+          currentStylers.forEach((item2) => {
+            if(stylist == item2.team_member_id) {
+              $('#stylistName').append(item2.display_name)
+
+            }
+          })
           $('#serviceType').append(item.itemData.name)
-          $('#stylistName').append(stylist)
-          $('#dateSelected').append(startTime)
+          let durationMins = new Date(startTime)
+          let day = new Date(startTime).getDay();
+          let date = new Date(startTime).getDate();
+          let month = new Date(startTime).getMonth();
+          let year = new Date(startTime).getFullYear();
+          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
+          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          $('#dateSelected').append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+
         }
       })
     })
   }
-  $('.mobileBottom1 .bookingButton').on('click', function() {
-      // console.log(serviceEnd, stylist, startTime)
-      if (serviceEnd, stylist, startTime) {
+  $('.mobileBottom1 .bookingButton.nextButton').on('click', function() {
+      if (serviceEnd, bookedStylist, startTime) {
+        $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
       $('.bookingConfirm').addClass('active');
-        serviceType(serviceEnd, stylist, startTime);
+        serviceType(serviceEnd, bookedStylist, startTime);
       } else {
         console.log('Please select')
       }
       
     })
+  $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
+
+    
+  })
   window.addEventListener('DOMContentLoaded', function() {
     let serviceGender = '';
     let serviceType = '';
@@ -724,6 +885,18 @@ body {
       calendarChange()
     })
 
+    $('.oldClients .button2').on('click', (e) => {
+      let serviceType = e.target.getAttribute('data-service')
+      let setheight = $('.page').height();
+      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      // $('.oldClients').addClass('non-active')
+      $('.serviceList .mobileBottom1').addClass('active')
+        $('.serviceList').css('max-height', `${setheight}px`);
+        $('.serviceList .top-list .item').removeClass('active')
+       let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`)
+       selected.addClass('active')
+    })
+
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
         method: 'POST',
         headers: {
@@ -735,6 +908,7 @@ body {
     .then(r=> {
       let ids = []
       r.team_member_booking_profiles.forEach(item => {
+        currentStylers.push(item)
         ids.push(item.team_member_id)
         $('.addNames').append(`
         <span class=display_name>${Array.from(item.display_name)[0]}</span>
@@ -766,7 +940,7 @@ body {
     $('.buttonApt').on('click', ()=> {
 
       let setheight = $('.page').height();
-      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
       $('.mobileInitial').addClass('active')
       $('.mobileBottom').addClass('active');
 
@@ -783,6 +957,13 @@ body {
       $('.mobileInitial').removeClass('active')
       $('.mobileService').addClass('active')
       $('.bookingLoad:not(.loaded):first').addClass('loaded')
+    })
+    $('#2').on('click', () => {
+      $('.bookingLoad').removeClass('loaded')
+      $('.mobilePopup').css('max-height', '0');
+      // $('.mobileMain').removeClass('active');
+      $('.newClients').addClass('non-active')
+      $('.oldClients').removeClass('non-active')
     })
     $('.mobileService .bookingButton1').on('click', (e) => {
       e.preventDefault();
