@@ -78,7 +78,7 @@ body {
   .serviceList {
     position: absolute;
     height: 100vh;
-    z-index: 1111;
+    /* z-index: 1111; */
     bottom: 0;
     left: 0;
     width: 100%;
@@ -388,6 +388,70 @@ body {
     /* border-radius: 25px;
     padding: 10px 20px; */
   }
+
+
+    .page-heading {
+        text-align: start;
+    }
+    .page-test {
+        overflow: hidden;
+        transition: max-height .5s ease-in-out;
+    }
+    .page-test1 {
+        padding-bottom: 1.25rem;
+    }
+    .brand-add {
+        transition: max-height .5s ease-in-out;
+    }
+
+
+    .page-tab {
+        border-bottom: 1px solid #dddddd;
+    }
+    .page-menuIcon {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+    }
+    .page-button {
+        width: 100%;
+        padding: .9375rem 3.125rem .9375rem 1.25rem ;
+        text-align: start;
+        position: relative;
+        font-weight: 500;
+    }
+    .page-button::after {
+      content: "<";
+            display: block;
+            position: absolute;
+            font-size: 1.75rem;
+            right: 0px;
+            text-align: center;
+            top: 50%;
+            transform: rotate(90deg) translateX(-50%);
+            width: 1.25rem;
+            /* transition: transform 0.3s ease 0s; */
+            margin: -0.525rem 1.25rem 0px;
+    }
+    .page-button1::after {
+            content: "<";
+            transform: rotate(-90deg) translateX(50%);
+
+        }
+  .page-tab .list-item {
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+  .list-item.active {
+    border: 2px solid #006CFF;
+  }
+
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -425,8 +489,8 @@ body {
       <p>Choose a new service</p>
     </div>
     <div>
-      <div data-service="Men" class="button2">Men Services</div>
-      <div data-service="Women" class="button2">Women Services</div>
+      <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
+      <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
       <div data-service="Consultation" class="button2">Consultation Services</div>
     </div>
     <div class="back">Back</div>
@@ -439,21 +503,108 @@ body {
         <div class="bookingLoad"></div>
         <div class="bookingLoad"></div>
       </div>
-      <div style="text-align: center;">
+      <div class="gokutest" style="text-align: center;">
         <p>Service List</p>
         <div class="top-list">
           <div class="item active">Men</div>
           <div class="item">Women</div>
           <div class="item">Consultation</div>
         </div>
+        <div class="list-mens">
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Installation</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="installation" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Installation + Color</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="installationcolor" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Maintenance</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="maintenance" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Maintenance + Color</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="maintenancecolor" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Hair Trim</button>
+            </p>
+            <div  class="page-test" style="max-height: 0px;">
+                <div id="hairtrim" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Perm</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="perm" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">System Template</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="systemtemplate" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+          <div class="page-tab">
+            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                <button class="page-button">Misc</button>
+            </p>
+            <div class="page-test" style="max-height: 0px;">
+                <div id="misc" class="page-test1">
+  
+                </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <div class="mobileBottom1 non-active">
       <div class="bots">
-        <button class="bookingButton1">Back</button>
-        <button class="bookingButton nextButton">Next</button>
-        <button class="bookingButton confirmButton non-active">Confirm</button>
+        <div class="service"></div>
+        <div>
+          <button class="bookingButton1">Back</button>
+          <button class="bookingButton nextButton">Next</button>
+          <button class="bookingButton confirmButton non-active">Confirm</button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -631,6 +782,22 @@ body {
   let duration = '';
   let currentStylers = []
   test5.setUTCHours(23,59,59,0)
+
+  function openFAQ(x) {
+                    let setheight = x.nextElementSibling.children[0].offsetHeight
+                    let checkClass = x.nextElementSibling.classList
+                    if (checkClass.contains('brand-add')) {
+                        checkClass.remove('brand-add')
+                        x.children[0].classList.remove('page-button1')
+                        x.nextElementSibling.style.maxHeight = '0'
+                    } else {
+                        checkClass.add('brand-add')
+                        x.children[0].classList.add('page-button1')
+                        x.nextElementSibling.style.maxHeight = setheight + 'px'
+                    }
+                }
+
+
   function calendarChange(x, y) {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
@@ -887,6 +1054,7 @@ body {
 
     $('.oldClients .button2').on('click', (e) => {
       let serviceType = e.target.getAttribute('data-service')
+      let serviceCate = e.target.getAttribute('data-service-cate')
       let setheight = $('.page').height();
       $('.bookingLoad:not(.loaded):first').addClass('loaded')
       // $('.oldClients').addClass('non-active')
@@ -894,7 +1062,135 @@ body {
         $('.serviceList').css('max-height', `${setheight}px`);
         $('.serviceList .top-list .item').removeClass('active')
        let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`)
+       fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        }
+    })
+    .then(r=>r.json())
+    .then(r=> { 
+      const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate)
+      
+     var testing = new Promise((resolve, reject ) => {
+      vidu.forEach((item) => {
+        let product = item.itemData.variations[0]
+        const id = product.id
+        const mins = product.itemVariationData.serviceDuration
+        let cost = ''
+        cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
+        if (id == "BMENIVQM6YI6254XOMSI5QIB") {
+          $('.gokutest .page-tab #installation').append(`<div class="list-item" data-service-id="${id}">
+            <div>Hair System</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
+          $('.gokutest .page-tab #installation').append(`<div class="list-item" data-service-id="${id}">
+            <div>Full Cap System</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
+          $('.gokutest .page-tab #installation').append(`<div class="list-item" data-service-id="${id}">
+            <div>Partial Installation</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
+          $('.gokutest .page-tab #installation').append(`<div class="list-item" data-service-id="${id}">
+            <div>Other Company</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
+          $('.gokutest .page-tab #installationcolor').append(`<div class="list-item" data-service-id="${id}">
+            <div>Installation + color</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
+          $('.gokutest .page-tab #maintenance').append(`<div class="list-item" data-service-id="${id}">
+            <div>Toupee</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
+          $('.gokutest .page-tab #maintenance').append(`<div class="list-item" data-service-id="${id}">
+            <div>Full Cap</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
+          $('.gokutest .page-tab #maintenancecolor').append(`<div class="list-item" data-service-id="${id}">
+            <div>Maintenance + color</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
+          $('.gokutest .page-tab #hairtrim').append(`<div class="list-item" data-service-id="${id}">
+            <div>Hair Trim</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
+          $('.gokutest .page-tab #perm').append(`<div class="list-item" data-service-id="${id}">
+            <div>Own Hair Service</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
+          $('.gokutest .page-tab #perm').append(`<div class="list-item" data-service-id="${id}">
+            <div>System Service</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
+          $('.gokutest .page-tab #systemtemplate').append(`<div class="list-item" data-service-id="${id}">
+            <div>System Template</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "67ELY4T4HAC2WOOA42L37XZE") {
+          $('.gokutest .page-tab #misc').append(`<div class="list-item" data-service-id="${id}">
+            <div>Miscellaneous</div>
+            <div>${mins/60000}mins</div>
+            <div stlye="text-align:end;">${cost}</div>
+            </div>`)
+        }
+      })
+    
+      resolve()
+     }) 
+     testing.then(() => {
+        $('.list-item').on('click', function(){
+          let serviceId = $(this).data('service-id')
+          console.log(this)
+          // $(this).hasClass('active') ? $(this).removeClass('active'): $(this).addClass('active')
+          
+          if ($(this).closest('.service').length == 0) {
+            $('.bots .service').append($(this).clone())
+          }
+          console.log($(this).closest('.service').length)
+        })
+
+       })
+    })
        selected.addClass('active')
+
     })
 
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {

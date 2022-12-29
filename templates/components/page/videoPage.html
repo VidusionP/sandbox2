@@ -188,15 +188,15 @@
           .then((r) => r.json())
           .then((r) => {
 
-              var name = playlistIDs[idx].title;                                
+              var name = playlistIDs[idx].title;   
               r.items.forEach((item) => {
-
                   if (item.status.privacyStatus == "public") {    
                       videoList.push({
                           playlist: name,
                           date: item.snippet.publishedAt,
                           videoId: item.snippet.resourceId.videoId,
-                          title: item.snippet.title
+                          title: item.snippet.title,
+                          thumbnail: item.snippet.thumbnails
                         
                       });
                   }                    
@@ -211,6 +211,7 @@
           videoList.sort(function (a, b) {
               return new Date(b.date) - new Date(a.date);
           });
+
           videoList = videoList.filter(
               (value, index, self) =>
                   index ===
@@ -218,10 +219,12 @@
                       (t) => t.videoId === value.videoId
                   )
           );
+
           // <iframe width="100%" height="200px" src="https://www.youtube.com/embed/${uniqueList[i].videoId}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        
           for (let i = 0; i < 5; i++) {
               let diffDays = dayDiff(new Date(videoList[i].date), new Date());
               let timeline = "";
+                
               if (diffDays>365) {
                   if (Math.floor(diffDays / 365) > 1) {
                       timeline = Math.floor(diffDays / 365) + " years ago";
@@ -243,7 +246,7 @@
               }
               $(".homebanner").append(`
                   <div class="top-title">
-                      <img src="https://img.youtube.com/vi/${videoList[i].videoId}/sddefault.jpg" width="560" onclick="setPlayVideo('${videoList[i].videoId}')"/>
+                      <img src=${videoList[i].thumbnail.standard ? videoList[i].thumbnail.standard.url : videoList[i].thumbnail.high.url} width="560" onclick="setPlayVideo('${videoList[i].videoId}')"/>
                       <p>${videoList[i].title}</p>
                       <div class="top-timeline">${timeline}</div>
                   </div>`);
@@ -357,7 +360,7 @@
           }
           content+=`<div class="item" day-diff=${diffDays}>
                       <div>
-                          <img src="https://img.youtube.com/vi/${list[i].videoId}/${imgName}.jpg" width="560" onclick="setPlayVideo('${list[i].videoId}')"/>
+                          <img src=${videoList[i].thumbnail.standard ? videoList[i].thumbnail.standard.url : videoList[i].thumbnail.high.url} width="560" onclick="setPlayVideo('${list[i].videoId}')"/>
                       </div>
                       <div class="v-video-desp">
                           <div class="v-playlist">${list[i].playlist}</div>
