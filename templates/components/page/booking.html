@@ -440,7 +440,7 @@ body {
     }
     .page-button1::after {
             content: "<";
-            transform: rotate(-90deg) translateX(50%);
+            transform: rotate(-90deg) translateX(50%) translateY(2px);
 
         }
   .page-tab .list-item {
@@ -454,7 +454,35 @@ body {
   .list-item.active {
     border: 2px solid #006CFF;
   }
-
+  .list-item.newClass {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    position: relative;
+    padding: 7px 0;
+    padding-right: 25px;
+  }
+  .newClass::after {
+    content: "";
+    background-image: url('../../../assets/img/gta/delete.png');
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+  }
+  .newClass > div:first-of-type {
+    padding-right: 10px;
+  }
+  .list-mens {
+    overflow: auto;
+    height: 57%;
+    padding-bottom: 40px;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -1087,91 +1115,91 @@ body {
           $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Hair System</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
           $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Full Cap System</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
           $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Partial Installation</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
           $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Other Company</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
           $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Installation + color</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
           $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Toupee</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
           $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Full Cap</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
           $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Maintenance + color</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
           $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Hair Trim</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
           $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Own Hair Service</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
           $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>System Service</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
           $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>System Template</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "67ELY4T4HAC2WOOA42L37XZE") {
           $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Miscellaneous</div>
             <div>${mins/60000}mins</div>
-            <div stlye="text-align:end;">${cost}</div>
+            <div style="text-align:end;">${cost}</div>
             </div>`)
         }
       })
@@ -1180,12 +1208,17 @@ body {
      }) 
      testing.then(() => {
         $('.list-item').on('click', function(){
-          let serviceId = $(this).data('service-id')
-          let self = this.id
-          
+          let serviceId = $(this).data('service-id');
+          let self = this.id;
+          let total = '';
           if ($(`.botss .service #${self}`).length == 0) {
             $('.botss .service').append($(this).clone().addClass('newClass'))
+
           }
+          // Array.from($('.botss .service .newClass')).forEach((item) => {
+          //   let check = $("> div:last-of-type", item).text()
+          //   console.log(parseInt(check.replace(/[$,]/g, '')))
+          // })
           $(this).hasClass('active') ? '': $(this).addClass('active')
 
         })
