@@ -816,12 +816,15 @@ body {
   let currMonth = date.getMonth();
   let test5 = new Date(currYear, currMonth + 1,0)
   let serviceEnd = '';
+  let serviceEnd1 = []
   let stylist = '';
   let startTime = '';
   let bookedStylist = '';
   let duration = '';
   let currentStylers = [];
   let total = '0.00';
+  let servicesAvailable =[];
+  let totalTime = 0
   test5.setUTCHours(23,59,59,0)
 
   function openFAQ(x) {
@@ -946,6 +949,7 @@ body {
     .then(r=> {
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
+      
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
@@ -1036,7 +1040,7 @@ body {
       })
     })
   }
-  $('.mobileBottom1 .bookingButton.nextButton').on('click', function() {
+  $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
       if (serviceEnd, bookedStylist, startTime) {
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
@@ -1112,6 +1116,7 @@ body {
     })
     .then(r=>r.json())
     .then(r=> { 
+      servicesAvailable = r.items
       const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate)
       
      var testing = new Promise((resolve, reject ) => {
@@ -1236,6 +1241,19 @@ body {
           //   let check = $("> div:last-of-type", item).text()
           //   console.log(parseInt(check.replace(/[$,]/g, '')))
           // })
+          serviceEnd1.push(serviceId)
+          // checkAva()
+            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+            // console.log(totalTime)
+            // let x = date.setUTCHours(23,59,59,0)
+            console.log(date)
+            // let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
+          // serviceEnd1.forEach((item) => {
+          //   const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == item)
+          //   console.log(test)
+          // })
+          
           $(this).hasClass('active') ? '': $(this).addClass('active')
 
         })
@@ -1256,6 +1274,25 @@ body {
        selected.addClass('active')
 
     })
+
+    // function checkAva() {
+    //   fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
+    //     method: 'POST',
+    //     headers: {
+    //         accept: "application/json",
+    //         "content-type": "application/json"
+    //     },
+    //     body: JSON.stringify ({
+    //       start: startDate,
+    //       end: endDate,
+    //       service: service,
+    //       stylist: stylists
+    //     })
+    //   })
+    // }
+
+
+
 
     fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
         method: 'POST',
