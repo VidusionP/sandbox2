@@ -458,7 +458,7 @@ body {
     display: grid;
     grid-template-columns: auto auto 1fr;
     position: relative;
-    padding: 7px 0;
+    padding: 10px 0;
     padding-right: 25px;
   }
   .newClass::after {
@@ -482,6 +482,11 @@ body {
   }
   ::-webkit-scrollbar {
     display: none;
+  }
+  .botss .total {
+    text-align: end;
+    font-weight: 600;
+    font-size: 18px;
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -630,6 +635,10 @@ body {
     <div class="mobileBottom1 non-active">
       <div class="botss">
         <div class="service"></div>
+        <div class="total" style="display: none;">
+          <span>Total</span>
+          <span class="price"></span>
+        </div>
         <div style="display:flex;">
           <button class="bookingButton1">Back</button>
           <button class="bookingButton nextButton">Next</button>
@@ -811,7 +820,8 @@ body {
   let startTime = '';
   let bookedStylist = '';
   let duration = '';
-  let currentStylers = []
+  let currentStylers = [];
+  let total = '0.00';
   test5.setUTCHours(23,59,59,0)
 
   function openFAQ(x) {
@@ -1207,13 +1217,20 @@ body {
       resolve()
      }) 
      testing.then(() => {
-        $('.list-item').on('click', function(){
+      
+        $('.list-mens .list-item').on('click', function(){
           let serviceId = $(this).data('service-id');
           let self = this.id;
-          let total = '';
+          
           if ($(`.botss .service #${self}`).length == 0) {
+            let check = $("> div:last-of-type", this).text()
+            total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''))
+            $('.botss .total .price').html(`$${total}.00`)
+            if ($('.botss .total').css('display') == 'none') {
+              $('.botss .total').css('display','block')
+            }
             $('.botss .service').append($(this).clone().addClass('newClass'))
-
+            // $(".list-item.newClass").click();
           }
           // Array.from($('.botss .service .newClass')).forEach((item) => {
           //   let check = $("> div:last-of-type", item).text()
@@ -1223,8 +1240,19 @@ body {
 
         })
 
+
+
        })
+
     })
+    $(document).on('click', '.list-item.newClass', function() {
+            let check = $("> div:last-of-type", this).text();
+            total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
+            $('.botss .total .price').html(`$${total}.00`);
+            (this).remove();
+            $(`#${this.id}`).removeClass('active');
+
+          })
        selected.addClass('active')
 
     })
