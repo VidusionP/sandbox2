@@ -824,22 +824,23 @@ body {
   let currentStylers = [];
   let total = '0.00';
   let servicesAvailable =[];
-  let totalTime = 0
+  let totalTime = 0;
+  let multiService = [];
   test5.setUTCHours(23,59,59,0)
 
   function openFAQ(x) {
-                    let setheight = x.nextElementSibling.children[0].offsetHeight
-                    let checkClass = x.nextElementSibling.classList
-                    if (checkClass.contains('brand-add')) {
-                        checkClass.remove('brand-add')
-                        x.children[0].classList.remove('page-button1')
-                        x.nextElementSibling.style.maxHeight = '0'
-                    } else {
-                        checkClass.add('brand-add')
-                        x.children[0].classList.add('page-button1')
-                        x.nextElementSibling.style.maxHeight = setheight + 'px'
-                    }
-                }
+        let setheight = x.nextElementSibling.children[0].offsetHeight
+        let checkClass = x.nextElementSibling.classList
+        if (checkClass.contains('brand-add')) {
+            checkClass.remove('brand-add')
+            x.children[0].classList.remove('page-button1')
+            x.nextElementSibling.style.maxHeight = '0'
+        } else {
+            checkClass.add('brand-add')
+            x.children[0].classList.add('page-button1')
+            x.nextElementSibling.style.maxHeight = setheight + 'px'
+        }
+    }
 
 
   function calendarChange(x, y) {
@@ -1032,7 +1033,7 @@ body {
           let month = new Date(startTime).getMonth();
           let year = new Date(startTime).getFullYear();
           let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-          let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
+          let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
           let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
           $('#dateSelected').append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
 
@@ -1234,7 +1235,9 @@ body {
             if ($('.botss .total').css('display') == 'none') {
               $('.botss .total').css('display','block')
             }
-            $('.botss .service').append($(this).clone().addClass('newClass'))
+            $('.botss .service').append($(this).clone().addClass('newClass'));
+            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
             // $(".list-item.newClass").click();
           }
           // Array.from($('.botss .service .newClass')).forEach((item) => {
@@ -1242,12 +1245,15 @@ body {
           //   console.log(parseInt(check.replace(/[$,]/g, '')))
           // })
           serviceEnd1.push(serviceId)
-          // checkAva()
-            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
-            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
-            // console.log(totalTime)
+            
+            let lastTime = new Date(currYear, currMonth + 1,0)
+            let currTime = date
+            let vidu = Math.abs(lastTime-currTime) / 36e5
+            if ( vidu < 24) {
+              lastTime = new Date(currYear, currMonth+2, 0)
+            }
+            checkAva( currTime, lastTime, serviceId, totalTime)
             // let x = date.setUTCHours(23,59,59,0)
-            console.log(date)
             // let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
           // serviceEnd1.forEach((item) => {
           //   const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == item)
@@ -1275,21 +1281,29 @@ body {
 
     })
 
-    // function checkAva() {
-    //   fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
-    //     method: 'POST',
-    //     headers: {
-    //         accept: "application/json",
-    //         "content-type": "application/json"
-    //     },
-    //     body: JSON.stringify ({
-    //       start: startDate,
-    //       end: endDate,
-    //       service: service,
-    //       stylist: stylists
-    //     })
-    //   })
-    // }
+    function checkAva(currTime, lastTime, serviceId, durationTotal) {
+      let durationT = durationTotal/60000
+      fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify ({
+          start: currTime,
+          end: lastTime,
+          service: serviceId,
+          stylist: stylist
+        })
+      })
+      .then(r=>r.json())
+    .then(r=> {
+      multiService.push(r.availabilities)
+      console.log(durationT)
+      // for (let i=0; i < )
+      console.log(multiService[0])
+      })
+    }
 
 
 
