@@ -500,6 +500,9 @@ body {
   .serviceList .calendarMain li.inactive {
     text-align: center;
   }
+  .hidden {
+    display: none;
+  }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -713,6 +716,28 @@ body {
           <div id="dateSelected"></div>
         </div>
       </div>
+      <div class="bookingForm non-active">
+        <p>You're nearly done. Enter your details below.</p>
+        <form id="myForm">
+          <div>
+            <select name="country" id="country">
+              <option value="+1">Canada</option>
+            </select>
+            <input name="number" placeholder="(000) 000 0000">
+          </div>
+
+          <input name="email" placeholder="Email">
+          <div>
+            <input name="firstName" placeholder="First name">
+            <input name="lastName" placeholder="Last name">
+          </div>
+
+          <textarea name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+          <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+          <input type="submit" id="submit-form" class="hidden" />
+        </form>
+      </div>
     </div>
 
     <div class="mobileBottom1 non-active">
@@ -726,6 +751,7 @@ body {
           <button class="bookingButton1">Back</button>
           <button class="bookingButton nextButton">Next</button>
           <button class="bookingButton confirmButton non-active">Confirm</button>
+          <label style="text-align:center ;"  tabindex="0" for="submit-form" class="bookingButton bookNowButton non-active">Book Now</label>
         </div>
 
       </div>
@@ -956,6 +982,7 @@ body {
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
     if (apps.length > 0) {
+      console.log(apps)
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
@@ -983,8 +1010,9 @@ body {
     }
     $('.bookBut').on('click', function() {
       startTime = $(this).data('start-id')
+      const test3 = apps.filter((item) => item.startAt.includes(y)).filter((item2) => item2.startAt == startTime)
+      multiService.push(test3[0])
       bookedStylist = $(this).data('team-member')
-      // duration = $(this).data('duration')
       $('.bookBut').removeClass('active3')
       $(this).addClass('active3')
     })
@@ -1014,7 +1042,7 @@ body {
   }
 
   function bookingSq(startDate, endDate, service, stylists) {
-    serviceEnd = [service];
+    serviceEnd = service;
     let styling = [
     {
           serviceVariationId: service,
@@ -1039,7 +1067,7 @@ body {
     .then(r=> {
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      
+      console.log(apps)
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
@@ -1059,7 +1087,6 @@ body {
           } 
         })
       })
-      console.log($('.mobilePopup .currMonth.active'))
       $('.mobilePopup .currMonth.active').eq(0).addClass('selected')
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
@@ -1098,7 +1125,8 @@ body {
   
   
   function serviceType1(serviceEnd, stylist, startTime) {
-    console.log(serviceEnd, stylist, startTime)
+    // console.log(serviceEnd)
+    // console.log(duration)
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -1111,7 +1139,6 @@ body {
       // $('.mobileBottom1 .bookingButton').html('Confirm')
       $('.nextButton').addClass('non-active');
       $('.confirmButton').removeClass('non-active');
-      console.log(duration)
       serviceEnd.forEach((serv1) => {
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
@@ -1154,9 +1181,51 @@ body {
       
     })
   $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
-
+    // console.log(serviceEnd, bookedStylist, startTime, duration)
     
   })
+  $("form").on("submit", function(e) {
+            // $(".er").remove();
+            e.preventDefault();
+            console.log(multiService[0])
+            console.log($("input[name=email]").val())
+                // $("button").prop("disabled", "disabled");
+                // $(".e-submit .e-content input").prop("readonly", true);
+                // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+
+                // fetch(`https://shp-webserver.glitch.me/evolve-contact`, {
+                //     method: 'POST',
+                //     headers: {
+                //         accept: "application/json",
+                //         "content-type": "application/json"
+                //     },
+                //     body: JSON.stringify({
+                //         email: $("input[name=email]").val(),
+                //         phone: $("input[name=phone]").val(),
+                //         name: $("input[name=name]").val(),
+                //         domain: "com"
+                //     })
+                // })
+                // .then(r=>r.json())
+                // .then(r=>{
+                //     if (r.error) {
+                //         $(".modal-background").show();
+                //         $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
+                //         $("#submit-result .modal-body").html("Sorry, we can't complete your request, please try later.")                        ;
+                //     } else {
+                //         $(".modal-background").show();
+                //         $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
+                //         $("#submit-result .modal-body").html("You've unlocked a free lesson from Evolve Global Academy!<br/> Please check your inbox for the link to view the free lesson.");
+                //     }
+                // })
+                // .catch(e=>{
+                //     console.log(e);
+                //     $(".modal-background").show();
+                //     $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
+                //     $("#submit-result .modal-body").html("Sorry, we can't complete your request, please try later.")
+                // });
+            }
+        );
   window.addEventListener('DOMContentLoaded', function() {
     let serviceGender = '';
     let serviceType = '';
@@ -1362,12 +1431,6 @@ body {
           $(this).hasClass('active') ? '': $(this).addClass('active')
 
         })
-
-
-
-       })
-
-    })
         $(document).on('click', '.list-item.newClass', function() {
             let check = $("> div:last-of-type", this).text();
             let x = serviceEnd1.indexOf(this.id);
@@ -1381,6 +1444,12 @@ body {
             $(`#${this.id}`).removeClass('active');
 
           })
+
+
+       })
+
+    })
+
        selected.addClass('active')
 
     })
@@ -1410,9 +1479,9 @@ body {
       })
       .then(r=>r.json())
     .then(r=> {
-      console.log(r.availabilities)
       // multiService.push(r.availabilities);
-      $('.botss .nextButton').unbind('click')
+      $('.botss .nextButton').unbind('click');
+      $('.mobileBottom1 .bookingButton.confirmButton').unbind('click');
       if ($('.serviceList .serviceBooking').hasClass('active')) {
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
@@ -1421,13 +1490,11 @@ body {
       let v = 0;
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected')
-
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
         Array.from($('.currMonth')).forEach((item1) => {          
           if (day == item1.innerHTML) {
-
             if (!item1.classList.contains('active')) {
               item1.setAttribute("data-id", v)
               $(item1).addClass('active')
@@ -1468,11 +1535,20 @@ body {
         getCurrentDateAppointments(r.availabilities[x], apps, x, y)
     }) 
       }
+      $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
+        $('.confirmButton').addClass('non-active');
+        $('.bookNowButton').addClass('active');
+        $('.bookingConfirm').removeClass('active');
+        $('.bookingForm').addClass('active');
+      $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
+
+      })
       $('.botss .nextButton').on('click', function() {
         if ($('.serviceBooking').hasClass('active')) {
-
         $('.serviceBooking').removeClass('active');
+      $('.bookingLoad:not(.loaded):first').addClass('loaded');
+
         serviceType1(serviceId, bookedStylist, startTime);
 
         $('.bookingConfirm').addClass('active');
