@@ -365,6 +365,7 @@ body {
     border-radius: 8px;
     padding: 18px;
     margin-bottom: 10px;
+    cursor: pointer;
   }
   .oldClients .back {
     margin: 15px 0;
@@ -450,9 +451,13 @@ body {
     margin-top: 5px;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    cursor: pointer;
+  }
+  .page-tab .list-item:hover {
+    border: 1px solid #006CFF;
   }
   .list-item.active {
-    border: 2px solid #006CFF;
+    border: 2px solid #006CFF !important;
   }
   .list-item.newClass {
     display: grid;
@@ -487,6 +492,13 @@ body {
     text-align: end;
     font-weight: 600;
     font-size: 18px;
+  }
+  .serviceList .serviceBooking {
+    height: 100%;
+    padding-bottom: 300px;
+  }
+  .serviceList .calendarMain li.inactive {
+    text-align: center;
   }
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
@@ -629,6 +641,62 @@ body {
           </div>
         </div>
 
+      </div>
+      <div id="serviceBooking" class="mobileMain serviceBooking non-active">
+        <div>
+          <p>Hair Stylist</p>
+          <div class="staffMembers">
+              <div data-team-member-id="" class="bookingButton1 addNames1 addNames2 loaded">
+                <span class="addNames"></span>
+                <div class="salonist" >Any Available Staff Member</div></div>
+          </div>
+        </div>
+        <p>Select your preferred date and time</p>  
+        <div>
+          <div class="calendarTop">
+            <svg class="arrow disabled prev-arrow">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
+            </svg>
+            <p class="calendarMonth" style="margin: unset;"></p>
+            <svg class="arrow next-arrow">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
+            </svg>
+          </div>
+          <div class="calendarMain">
+            <ul class="weeks">
+              <li>S</li>
+              <li>M</li>
+              <li>T</li>
+              <li>W</li>
+              <li>Th</li>
+              <li>F</li>
+              <li>S</li>
+            </ul>
+            <ul class="days">
+            </ul>
+          </div>
+          <div class="belowCalendar">
+            <div class="title">Available on <span class="dayAvailable"></span></div>
+            <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
+            <div class="morning time">
+              <p class="bookings">Morning</p>
+              <div class="slot"></div>
+              <div class="slot2">All booked</div>
+            </div>
+            <div class="afternoon time">
+              <p class="bookings">Afternoon</p>
+              <div class="slot"></div>
+              <div class="slot2">All booked</div>
+
+            </div>
+            <div class="evening time">
+              <p class="bookings">Evening</p>
+              <div class="slot"></div>
+              <div class="slot2">All booked</div>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -876,7 +944,6 @@ body {
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
-      console.log(test2)
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
@@ -1005,6 +1072,8 @@ body {
     })
 
   }
+  
+  
   function serviceType(serviceEnd, stylist, startTime) {
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
@@ -1223,7 +1292,19 @@ body {
       resolve()
      }) 
      testing.then(() => {
-      
+      let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59)
+            let currTime = date
+            let vidu = Math.abs(lastTime-currTime) / 36e5
+            if ( vidu < 24) {
+              lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
+            }
+          $('.serviceList .staffMembers .addNames1').on('click', function() {
+                let memberId = $(this).data('team-member-id')
+                stylist = memberId.split(',')
+                $('.staffMembers .addNames1').removeClass('loaded')
+                $(this).addClass('loaded')
+                checkAva(currTime, lastTime, serviceEnd1, totalTime)
+            })  
         $('.list-mens .list-item').on('click', function(){
           let serviceId = $(this).data('service-id');
           let self = this.id;
@@ -1246,13 +1327,9 @@ body {
           // })
           serviceEnd1.push(serviceId)
             
-            let lastTime = new Date(currYear, currMonth + 1,0)
-            let currTime = date
-            let vidu = Math.abs(lastTime-currTime) / 36e5
-            if ( vidu < 24) {
-              lastTime = new Date(currYear, currMonth+2, 0)
-            }
-            checkAva( currTime, lastTime, serviceId, totalTime)
+
+            checkAva( currTime, lastTime, serviceEnd1, totalTime)
+
             // let x = date.setUTCHours(23,59,59,0)
             // let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
           // serviceEnd1.forEach((item) => {
@@ -1282,7 +1359,17 @@ body {
     })
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
-      let durationT = durationTotal/60000
+      
+      let durationT = durationTotal/60000;
+      let styleTest = []
+      serviceId.forEach((item) => {
+        styleTest.push({
+          serviceVariationId: item,
+          teamMemberIdFilter : {
+            any: stylist
+          }
+        })
+      })
       fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
         method: 'POST',
         headers: {
@@ -1292,17 +1379,132 @@ body {
         body: JSON.stringify ({
           start: currTime,
           end: lastTime,
-          service: serviceId,
-          stylist: stylist
+          styling: styleTest
         })
       })
       .then(r=>r.json())
     .then(r=> {
-      multiService.push(r.availabilities)
-      console.log(durationT)
-      // for (let i=0; i < )
-      console.log(multiService[0])
+      // multiService.push(r.availabilities);
+      console.log(r.availabilities);
+
+      if ($('.serviceList .serviceBooking').hasClass('active')) {
+        let apps = r.availabilities
+      let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
+      
+      let firstDate = r.availabilities[0]
+      let v = 0;
+      if (apps.length > 0) {
+        $('.currMonth').removeClass('active selected')
+
+        apps.forEach((item) => {
+        const date = new Date(item.startAt);
+        const day = date.getDate();
+        Array.from($('.currMonth')).forEach((item1) => {          
+          if (day == item1.innerHTML) {
+
+            if (!item1.classList.contains('active')) {
+              item1.setAttribute("data-id", v)
+              $(item1).addClass('active')
+              v++
+            } 
+          } 
+        })
       })
+      $('.currMonth.active').eq(0).addClass('selected')
+      let x = $('.currMonth.selected').attr('data-id');
+      let y = $('.currMonth.selected').attr('data-date');
+      // calendarChange()
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+      } 
+      // else {
+      //   $('.currMonth').removeClass('active selected')
+      //   currMonth = currMonth + 1
+      // if (currMonth < 0 || currMonth > 11) {
+      //   date = new Date(currYear, currMonth);
+      //   currYear = date.getFullYear();
+      //   currMonth = date.getMonth();
+      // } else {
+      //   date = new Date();
+      // }
+      // let test7 = new Date(currYear, currMonth + 1,0)
+      // let test8 = new Date(currYear, currMonth,1)
+      // test7.setUTCHours(23,59,59,0)
+      // calendarChange()
+      // bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
+      // }
+
+
+      $('li.currMonth.active').on('click', function() {
+        $('.currMonth.active').removeClass('selected')
+        $(this).addClass('selected')
+        let x = this.getAttribute('data-id')
+        let y = this.getAttribute('data-date')
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+    }) 
+      }
+
+      $('.botss .nextButton').on('click', function() {
+        $('.serviceBooking').addClass('active');
+        $('.gokutest').addClass('non-active');
+      $('.bookingLoad:not(.loaded):first').addClass('loaded');
+
+        let apps = r.availabilities
+      let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
+      
+      let firstDate = r.availabilities[0]
+      let v = 0;
+      if (apps.length > 0) {
+        $('.currMonth').removeClass('active selected')
+
+        apps.forEach((item) => {
+        const date = new Date(item.startAt);
+        const day = date.getDate();
+        Array.from($('.currMonth')).forEach((item1) => {          
+          if (day == item1.innerHTML) {
+
+            if (!item1.classList.contains('active')) {
+              item1.setAttribute("data-id", v)
+              $(item1).addClass('active')
+              v++
+            } 
+          } 
+        })
+      })
+      $('.currMonth.active').eq(0).addClass('selected')
+      let x = $('.currMonth.selected').attr('data-id');
+      let y = $('.currMonth.selected').attr('data-date');
+      // calendarChange()
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+      } 
+      // else {
+      //   $('.currMonth').removeClass('active selected')
+      //   currMonth = currMonth + 1
+      // if (currMonth < 0 || currMonth > 11) {
+      //   date = new Date(currYear, currMonth);
+      //   currYear = date.getFullYear();
+      //   currMonth = date.getMonth();
+      // } else {
+      //   date = new Date();
+      // }
+      // let test7 = new Date(currYear, currMonth + 1,0)
+      // let test8 = new Date(currYear, currMonth,1)
+      // test7.setUTCHours(23,59,59,0)
+      // calendarChange()
+      // bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
+      // }
+
+
+      $('li.currMonth.active').on('click', function() {
+        $('.currMonth.active').removeClass('selected')
+        $(this).addClass('selected')
+        let x = this.getAttribute('data-id')
+        let y = this.getAttribute('data-date')
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+    }) 
+      })
+
+    })
+
     }
 
 
