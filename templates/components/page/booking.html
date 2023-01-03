@@ -333,7 +333,7 @@ body {
   }
   .bookingConfirm {
     text-align: start;
-    width: 75%;
+    width: 95%;
     margin: 0 auto;
     margin-top: 25px;
   }
@@ -698,6 +698,21 @@ body {
           </div>
         </div>
       </div>
+      <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
+        <p class="title">Booking Information</p>
+        <div>
+          <p class="title2">Service :</p>
+          <div id="serviceType"></div>
+        </div>
+        <div>
+          <p class="title2">Hair Stylist :</p>
+          <div id="stylistName"></div>
+        </div>
+        <div>
+          <p class="title2">Date and time :</p>
+          <div id="dateSelected"></div>
+        </div>
+      </div>
     </div>
 
     <div class="mobileBottom1 non-active">
@@ -969,7 +984,7 @@ body {
     $('.bookBut').on('click', function() {
       startTime = $(this).data('start-id')
       bookedStylist = $(this).data('team-member')
-      duration = $(this).data('duration')
+      // duration = $(this).data('duration')
       $('.bookBut').removeClass('active3')
       $(this).addClass('active3')
     })
@@ -999,7 +1014,15 @@ body {
   }
 
   function bookingSq(startDate, endDate, service, stylists) {
-    serviceEnd = service;
+    serviceEnd = [service];
+    let styling = [
+    {
+          serviceVariationId: service,
+          teamMemberIdFilter : {
+            any: stylists
+          }
+        }
+    ]
     fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
       method: 'POST',
       headers: {
@@ -1009,8 +1032,7 @@ body {
       body: JSON.stringify ({
           start: startDate,
           end: endDate,
-          service: service,
-          stylist: stylists
+          styling: styling
         })
     })
     .then(r=>r.json())
@@ -1037,7 +1059,8 @@ body {
           } 
         })
       })
-      $('.currMonth.active').eq(0).addClass('selected')
+      console.log($('.mobilePopup .currMonth.active'))
+      $('.mobilePopup .currMonth.active').eq(0).addClass('selected')
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
       // calendarChange()
@@ -1074,7 +1097,8 @@ body {
   }
   
   
-  function serviceType(serviceEnd, stylist, startTime) {
+  function serviceType1(serviceEnd, stylist, startTime) {
+    console.log(serviceEnd, stylist, startTime)
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -1087,15 +1111,18 @@ body {
       // $('.mobileBottom1 .bookingButton').html('Confirm')
       $('.nextButton').addClass('non-active');
       $('.confirmButton').removeClass('non-active');
-      r.items.forEach((item) => {
-        if (item.itemData.variations[0].id == serviceEnd) {
+      console.log(duration)
+      serviceEnd.forEach((serv1) => {
+        r.items.forEach((item) => {
+        if (item.itemData.variations[0].id == serv1) {
           currentStylers.forEach((item2) => {
             if(stylist == item2.team_member_id) {
-              $('#stylistName').append(item2.display_name)
+              
+              $('#stylistName').html(item2.display_name)
 
             }
           })
-          $('#serviceType').append(item.itemData.name)
+          $('#serviceType').append(item.itemData.name + '</br>')
           let durationMins = new Date(startTime)
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
@@ -1104,19 +1131,23 @@ body {
           let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
           let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
           let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-          $('#dateSelected').append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('#dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
 
         }
       })
+      } )
+
     })
   }
+  
+  
   $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
       if (serviceEnd, bookedStylist, startTime) {
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
       $('.bookingConfirm').addClass('active');
-        serviceType(serviceEnd, bookedStylist, startTime);
+        serviceType1(serviceEnd, bookedStylist, startTime);
       } else {
         console.log('Please select')
       }
@@ -1321,21 +1352,12 @@ body {
             totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
             // $(".list-item.newClass").click();
           }
-          // Array.from($('.botss .service .newClass')).forEach((item) => {
-          //   let check = $("> div:last-of-type", item).text()
-          //   console.log(parseInt(check.replace(/[$,]/g, '')))
-          // })
+
           serviceEnd1.push(serviceId)
             
 
             checkAva( currTime, lastTime, serviceEnd1, totalTime)
 
-            // let x = date.setUTCHours(23,59,59,0)
-            // let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration)
-          // serviceEnd1.forEach((item) => {
-          //   const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == item)
-          //   console.log(test)
-          // })
           
           $(this).hasClass('active') ? '': $(this).addClass('active')
 
@@ -1346,8 +1368,13 @@ body {
        })
 
     })
-    $(document).on('click', '.list-item.newClass', function() {
+        $(document).on('click', '.list-item.newClass', function() {
             let check = $("> div:last-of-type", this).text();
+            let x = serviceEnd1.indexOf(this.id);
+            if (x > -1) {
+              serviceEnd1.splice(x, 1)
+              checkAva( currTime, lastTime, serviceEnd1, totalTime)
+            }
             total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
             $('.botss .total .price').html(`$${total}.00`);
             (this).remove();
@@ -1359,8 +1386,7 @@ body {
     })
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
-      
-      let durationT = durationTotal/60000;
+      duration = durationTotal/60000;
       let styleTest = []
       serviceId.forEach((item) => {
         styleTest.push({
@@ -1384,9 +1410,9 @@ body {
       })
       .then(r=>r.json())
     .then(r=> {
+      console.log(r.availabilities)
       // multiService.push(r.availabilities);
-      console.log(r.availabilities);
-
+      $('.botss .nextButton').unbind('click')
       if ($('.serviceList .serviceBooking').hasClass('active')) {
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
@@ -1434,7 +1460,7 @@ body {
       // }
 
 
-      $('li.currMonth.active').on('click', function() {
+      $('.serviceList li.currMonth.active').on('click', function() {
         $('.currMonth.active').removeClass('selected')
         $(this).addClass('selected')
         let x = this.getAttribute('data-id')
@@ -1444,7 +1470,17 @@ body {
       }
 
       $('.botss .nextButton').on('click', function() {
-        $('.serviceBooking').addClass('active');
+        if ($('.serviceBooking').hasClass('active')) {
+
+        $('.serviceBooking').removeClass('active');
+        serviceType1(serviceId, bookedStylist, startTime);
+
+        $('.bookingConfirm').addClass('active');
+
+
+        } else {
+
+          $('.serviceBooking').addClass('active');
         $('.gokutest').addClass('non-active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
@@ -1501,6 +1537,8 @@ body {
         let y = this.getAttribute('data-date')
         getCurrentDateAppointments(r.availabilities[x], apps, x, y)
     }) 
+        }
+
       })
 
     })
