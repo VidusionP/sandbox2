@@ -503,6 +503,39 @@ body {
   .hidden {
     display: none;
   }
+  .mobilePopup .bookNowButton::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+  }
+  .mobilePopup .bookNowButton.loading {
+    pointer-events: none;
+    font-size: 0;
+  }
+  .mobilePopup .bookNowButton.loading::before {
+    display: inline-block;
+            vertical-align: middle;
+  }
+  @keyframes button-load-animate {
+    0%{
+      transform: rotate(0deg);
+    }
+  
+    50%{
+      transform: rotate(180deg);
+      opacity: .35;
+    }
+  
+    100%{
+      transform: rotate(360deg);
+    }
+}
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
@@ -927,6 +960,7 @@ body {
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
 
+  let todaysMonth = new Date().getMonth();
   let date = new Date();
   let currDate = date.getDate();
   let currYear = date.getFullYear();
@@ -1002,7 +1036,7 @@ body {
         if (time2 > '15:00:00') {
           $('.evening .slot2').remove();
           $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
-        } else if (time2 > "12:00:00" && time2 < '15:00:00') {
+        } else if (time2 > "12:00:00" && time2 <= '15:00:00') {
           $('.afternoon .slot2').remove();
          
           $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
@@ -1081,7 +1115,6 @@ body {
       let v = 0;
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected')
-
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
@@ -1225,6 +1258,7 @@ body {
             e.preventDefault();
             // console.log(multiService[0])
             const serv = multiService[0]
+            $('.mobilePopup .bookNowButton').addClass('loading');
             // console.log($("#myForm1 input[name=email]").val())
             // console.log($("#myForm1 input[name=number]").val())
             // console.log($("#myForm1 input[name=firstName]").val())
@@ -1246,29 +1280,14 @@ body {
                 })
                 .then(r=>r.json())
                 .then(r=>{
-                  if (r.length > 0) {
-                    createBooking(r.customers[0].id, serv)
-                  } else {
+                  if (jQuery.isEmptyObject(r)) {
                     createCustomer()
+                  } else {
+                    createBooking(r.customers[0].id, serv)
+
                   }
                 })
 
-                //     if (r.error) {
-                //         $(".modal-background").show();
-                //         $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
-                //         $("#submit-result .modal-body").html("Sorry, we can't complete your request, please try later.")                        ;
-                //     } else {
-                //         $(".modal-background").show();
-                //         $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
-                //         $("#submit-result .modal-body").html("You've unlocked a free lesson from Evolve Global Academy!<br/> Please check your inbox for the link to view the free lesson.");
-                //     }
-                // })
-                // .catch(e=>{
-                //     console.log(e);
-                //     $(".modal-background").show();
-                //     $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
-                //     $("#submit-result .modal-body").html("Sorry, we can't complete your request, please try later.")
-                // });
             }
         );
 
@@ -1316,7 +1335,10 @@ function createBooking(id, serv) {
     })
     .then(r=>r.json())
     .then(r=>{
-      console.log("Created Booking")
+      $('.mobilePopup .bots').empty()
+      $('.mobilePopup .bots').append(`
+      <div style='text-align:center;' class='bookingButton'>Booked</div>
+      `)
     })
 }
   window.addEventListener('DOMContentLoaded', function() {
@@ -1324,23 +1346,13 @@ function createBooking(id, serv) {
     let serviceType = '';
     let color = false;
     calendarChange() 
-    $('.calendarTop .next-arrow').on('click', function() {
-      currMonth = currMonth + 1
-      if (currMonth < 0 || currMonth > 11) {
-        date = new Date(currYear, currMonth);
-        currYear = date.getFullYear();
-        currMonth = date.getMonth();
-      } else {
-        date = new Date();
-      }
-      let test5 = new Date(currYear, currMonth + 1,0)
-      let test6 = new Date(currYear, currMonth,1)
-      test5.setUTCHours(23,59,59,0)
-      calendarChange()
-      bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
+    $('.calendarTop .next-arrow').on('click', nextMonth)
 
-    })
-    $('.calendarTop .prev-arrow').on('click', function() {
+
+    function prevMonth() {
+
+      if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
+        // $('.calendarTop .prev-arrow').bind('click', prevMonth)
       currMonth = currMonth - 1
       if (currMonth < 0 || currMonth > 11) {
         date = new Date(currYear, currMonth, currDate);
@@ -1349,16 +1361,66 @@ function createBooking(id, serv) {
       } else {
         date = new Date();
       }
-      let test5 = new Date(currYear, currMonth + 1,0)
-      let test6 = new Date(currYear, currMonth,1)
-      if (currMonth === new Date().getMonth()) {
-        bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
+
+        let test5 = new Date(currYear, currMonth + 1,0)
+        let test6 = new Date(currYear, currMonth,1)
+        if (currMonth === new Date().getMonth()) {
+          bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
+        } else {
+          bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
+        }
+        test5.setUTCHours(23,59,59,0)
+        calendarChange()
+        // if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
+        //   $('.calendarTop .prev-arrow').unbind('click')
+      $('.calendarTop .next-arrow').removeClass('disabled')
+
+          $('.calendarTop .next-arrow').bind('click', nextMonth)
+        // } 
       } else {
-        bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
+        $('.calendarTop .prev-arrow').addClass('disabled')
+
+        console.log('Past')
+
       }
-      test5.setUTCHours(23,59,59,0)
-      calendarChange()
-    })
+
+    }
+
+    function nextMonth() {
+      currMonth = currMonth + 1
+      console.log(currMonth)
+      if (currMonth == new Date().getMonth() +2) {
+      $('.calendarTop .next-arrow').addClass('disabled')
+      }
+      if (currMonth <= new Date().getMonth() + 2) {
+        $('.calendarTop .prev-arrow').removeClass('disabled')
+
+          if (currMonth < 0 || currMonth > 11) {
+          date = new Date(currYear, currMonth);
+          currYear = date.getFullYear();
+          currMonth = date.getMonth();
+        } else {
+          date = new Date();
+        }
+        let test5 = new Date(currYear, currMonth + 1,0);
+        let test6 = new Date(currYear, currMonth,1);
+        test5.setUTCHours(23,59,59,0);
+        calendarChange();
+        bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd);
+      } else {
+      currMonth = currMonth - 1
+
+        $('.calendarTop .next-arrow').unbind('click')
+
+      }
+
+      if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
+        $('.calendarTop .prev-arrow').unbind('click')
+
+        $('.calendarTop .prev-arrow').bind('click', prevMonth)
+      } 
+
+    }
 
     $('.oldClients .button2').on('click', (e) => {
       let serviceType = e.target.getAttribute('data-service')
