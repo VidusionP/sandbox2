@@ -982,7 +982,7 @@ body {
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
     if (apps.length > 0) {
-      console.log(apps)
+      // console.log(apps)
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
@@ -1067,7 +1067,7 @@ body {
     .then(r=> {
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      console.log(apps)
+      // console.log(apps)
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
@@ -1125,7 +1125,7 @@ body {
   
   
   function serviceType1(serviceEnd, stylist, startTime) {
-    // console.log(serviceEnd)
+    console.log(serviceEnd)
     // console.log(duration)
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
@@ -1139,17 +1139,28 @@ body {
       // $('.mobileBottom1 .bookingButton').html('Confirm')
       $('.nextButton').addClass('non-active');
       $('.confirmButton').removeClass('non-active');
+
       serviceEnd.forEach((serv1) => {
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
           currentStylers.forEach((item2) => {
             if(stylist == item2.team_member_id) {
-              
-              $('#stylistName').html(item2.display_name)
+              if ($('.oldClients').hasClass('non-active')) {
+                $('.mobilePopup #stylistName').html(item2.display_name)
+              } else {
+                $('.serviceList #stylistName').html(item2.display_name)
+
+              }
 
             }
           })
-          $('#serviceType').append(item.itemData.name + '</br>')
+          if ($('.oldClients').hasClass('non-active')) {
+            $('.mobilePopup #serviceType').append(item.itemData.name + '</br>')
+
+          } else {
+            $('.serviceList #serviceType').append(item.itemData.name + '</br>')
+
+          }
           let durationMins = new Date(startTime)
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
@@ -1158,7 +1169,13 @@ body {
           let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
           let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
           let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-          $('#dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          if ($('.oldClients').hasClass('non-active')) {
+          $('.mobilePopup #dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          } else {
+          $('.serviceList #dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+
+
+          }
 
         }
       })
@@ -1169,12 +1186,14 @@ body {
   
   
   $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
+
       if (serviceEnd, bookedStylist, startTime) {
+
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
       $('.bookingConfirm').addClass('active');
-        serviceType1(serviceEnd, bookedStylist, startTime);
+        serviceType1([serviceEnd], bookedStylist, startTime);
       } else {
         console.log('Please select')
       }
@@ -1405,39 +1424,25 @@ body {
                 $(this).addClass('loaded')
                 checkAva(currTime, lastTime, serviceEnd1, totalTime)
             })  
-        $('.list-mens .list-item').on('click', function(){
-          let serviceId = $(this).data('service-id');
-          let self = this.id;
-          
-          if ($(`.botss .service #${self}`).length == 0) {
-            let check = $("> div:last-of-type", this).text()
-            total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''))
-            $('.botss .total .price').html(`$${total}.00`)
-            if ($('.botss .total').css('display') == 'none') {
-              $('.botss .total').css('display','block')
-            }
-            $('.botss .service').append($(this).clone().addClass('newClass'));
-            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
-            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
-            // $(".list-item.newClass").click();
-          }
-
-          serviceEnd1.push(serviceId)
-            
-
-            checkAva( currTime, lastTime, serviceEnd1, totalTime)
-
-          
-          $(this).hasClass('active') ? '': $(this).addClass('active')
-
-        })
+        $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
         $(document).on('click', '.list-item.newClass', function() {
             let check = $("> div:last-of-type", this).text();
             let x = serviceEnd1.indexOf(this.id);
             if (x > -1) {
-              serviceEnd1.splice(x, 1)
+              serviceEnd1.splice(x, 1);
+              let self = this.id;
+
+              const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+              totalTime -= parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+              Array.from($('.list-mens .list-item')).forEach((item) => {
+                if (this.id == item.id) {
+                  $(item).bind('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
+                }
+              })
               checkAva( currTime, lastTime, serviceEnd1, totalTime)
+              console.log(serviceEnd1.length)
             }
+            
             total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
             $('.botss .total .price').html(`$${total}.00`);
             (this).remove();
@@ -1453,6 +1458,29 @@ body {
        selected.addClass('active')
 
     })
+
+    function addService(e) {
+      let servicesAvailable = e.data.servicesAvailable;
+      let currTime = e.data.currTime;
+      let lastTime = e.data.lastTime;
+          $(this).unbind('click');
+          let serviceId = $(this).data('service-id');
+          let self = this.id;
+          if ($(`.botss .service #${self}`).length == 0) {
+            let check = $("> div:last-of-type", this).text()
+            total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''))
+            $('.botss .total .price').html(`$${total}.00`)
+            if ($('.botss .total').css('display') == 'none') {
+              $('.botss .total').css('display','block')
+            }
+            $('.botss .service').append($(this).clone().addClass('newClass'));
+            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+          }
+          serviceEnd1.push(serviceId)
+            checkAva( currTime, lastTime, serviceEnd1, totalTime)
+          $(this).hasClass('active') ? '': $(this).addClass('active')
+    }
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
       duration = durationTotal/60000;
@@ -1550,7 +1578,6 @@ body {
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
         serviceType1(serviceId, bookedStylist, startTime);
-
         $('.bookingConfirm').addClass('active');
 
 
