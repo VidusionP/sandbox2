@@ -880,21 +880,27 @@ body {
         </div>
         <div class="bookingForm non-active">
           <p>You're nearly done. Enter your details below.</p>
-          <form>
-            <div>
-              <select name="country" id="country">
+          <form id="myForm1">
+            <div style="display: flex;">
+              <select style="border: 1px solid lightgray; border-radius: 5px;" name="country" id="country">
                 <option value="+1">Canada</option>
               </select>
-              <input placeholder="(000) 000 0000">
+              <input style="border: 1px solid lightgray; border-radius: 5px;" name="number" placeholder="(000) 000 0000" required>
             </div>
-
-            <input placeholder="Email">
-            <div>
-              <input placeholder="First name">
-              <input placeholder="Last name">
+  
+            <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
+            <div style="display: flex;">
+              <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
+              <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
             </div>
-
-            <textarea placeholder="Appointment notes (optional)"></textarea>
+  
+            <textarea style="border: 1px solid lightgray; border-radius: 5px;" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+            <input type="checkbox" id="vehicle3" name="vehicle3" required>
+            <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+            <p>Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
+            <p>Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+            <p>By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
+            <input type="submit" id="submit-form1" class="hidden" />
           </form>
         </div>
         <div class="mobileBottom non-active">
@@ -909,6 +915,8 @@ body {
           <button class="bookingButton1">Back</button>
           <button class="bookingButton nextButton">Next</button>
           <button class="bookingButton confirmButton non-active">Confirm</button>
+          <label style="text-align:center ;"  tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
+
         </div>
       </div>
     </div>
@@ -1009,7 +1017,8 @@ body {
 
     }
     $('.bookBut').on('click', function() {
-      startTime = $(this).data('start-id')
+      duration = $(this).data('duration');
+      startTime = $(this).data('start-id');
       const test3 = apps.filter((item) => item.startAt.includes(y)).filter((item2) => item2.startAt == startTime)
       multiService.push(test3[0])
       bookedStylist = $(this).data('team-member')
@@ -1116,6 +1125,7 @@ body {
         $(this).addClass('selected')
         let x = this.getAttribute('data-id')
         let y = this.getAttribute('data-date')
+
         getCurrentDateAppointments(r.availabilities[x], apps, x, y)
     }) 
 
@@ -1125,8 +1135,6 @@ body {
   
   
   function serviceType1(serviceEnd, stylist, startTime) {
-    console.log(serviceEnd)
-    // console.log(duration)
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -1188,6 +1196,7 @@ body {
   $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
 
       if (serviceEnd, bookedStylist, startTime) {
+        $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
 
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
@@ -1200,33 +1209,50 @@ body {
       
     })
   $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
-    // console.log(serviceEnd, bookedStylist, startTime, duration)
-    
+    $('.confirmButton').addClass('non-active');
+        $('.bookNowButton').addClass('active');
+    $('.mobilePopup1 .bookingConfirm').removeClass('active')
+    $('.mobilePopup1 .bookingForm').addClass('active')
+    // $('.mobileBottom1').removeClass('active')
+    if ($('.oldClients').hasClass('non-active')) {
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+
+      $('.serviceList .mobileBottom1').removeClass('active')
+    }
   })
-  $("form").on("submit", function(e) {
-            // $(".er").remove();
+  $("#myForm1").on("submit", function(e) {
+
             e.preventDefault();
-            console.log(multiService[0])
-            console.log($("input[name=email]").val())
+            // console.log(multiService[0])
+            const serv = multiService[0]
+            // console.log($("#myForm1 input[name=email]").val())
+            // console.log($("#myForm1 input[name=number]").val())
+            // console.log($("#myForm1 input[name=firstName]").val())
+            // console.log($("#myForm1 input[name=lastName]").val())
+            // console.log($("#myForm1 textarea[name=appNotes]").val())
+
                 // $("button").prop("disabled", "disabled");
                 // $(".e-submit .e-content input").prop("readonly", true);
                 // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+                fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                    method: 'POST',
+                    headers: {
+                        accept: "application/json",
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email: $("#myForm1 input[name=email]").val()
+                    })
+                })
+                .then(r=>r.json())
+                .then(r=>{
+                  if (r.length > 0) {
+                    createBooking(r.customers[0].id, serv)
+                  } else {
+                    createCustomer()
+                  }
+                })
 
-                // fetch(`https://shp-webserver.glitch.me/evolve-contact`, {
-                //     method: 'POST',
-                //     headers: {
-                //         accept: "application/json",
-                //         "content-type": "application/json"
-                //     },
-                //     body: JSON.stringify({
-                //         email: $("input[name=email]").val(),
-                //         phone: $("input[name=phone]").val(),
-                //         name: $("input[name=name]").val(),
-                //         domain: "com"
-                //     })
-                // })
-                // .then(r=>r.json())
-                // .then(r=>{
                 //     if (r.error) {
                 //         $(".modal-background").show();
                 //         $("#submit-result").css({display: "flex", opacity: 1, visibility: "visible"});
@@ -1245,6 +1271,54 @@ body {
                 // });
             }
         );
+
+function createCustomer() {
+  const serv = multiService[0]
+  fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+                    method: 'POST',
+                    headers: {
+                        accept: "application/json",
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        firstName: $("#myForm1 input[name=firstName]").val(),
+                        lastName: $("#myForm1 input[name=lastName]").val(),
+                        email: $("#myForm1 input[name=email]").val(),
+                        phone: $("#myForm1 input[name=number]").val()
+                    })
+                })
+                .then(r=>r.json())
+                .then(r=>{
+                  createBooking(r.customer.id, serv)
+                })
+}
+
+function createBooking(id, serv) {
+      fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            startAt: serv.startAt,
+            locationId: serv.locationId,
+            customerId: id,
+            customerNote: $("#myForm1 textarea[name=appNotes]").val(),
+            book: {
+              "durationMinutes": serv.appointmentSegments[0].durationMinutes,
+              "serviceVariationId": serv.appointmentSegments[0].serviceVariationId,
+              "teamMemberId": serv.appointmentSegments[0].teamMemberId,
+              "serviceVariationVersion": serv.appointmentSegments[0].serviceVariationVersion
+            }
+
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      console.log("Created Booking")
+    })
+}
   window.addEventListener('DOMContentLoaded', function() {
     let serviceGender = '';
     let serviceType = '';
@@ -1322,90 +1396,90 @@ body {
             <div style="text-align:end;">${cost}</div>
             </div>`)
         }
-        if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
-          $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Full Cap System</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
-          $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Partial Installation</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
-          $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Other Company</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
-          $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Installation + color</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
-          $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Toupee</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
-          $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Full Cap</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
-          $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Maintenance + color</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
-          $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Hair Trim</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
-          $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Own Hair Service</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
-          $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>System Service</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
-          $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>System Template</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
-        if (id == "67ELY4T4HAC2WOOA42L37XZE") {
-          $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Miscellaneous</div>
-            <div>${mins/60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`)
-        }
+        // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
+        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Full Cap System</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
+        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Partial Installation</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
+        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Other Company</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
+        //   $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Installation + color</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
+        //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Toupee</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
+        //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Full Cap</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
+        //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Maintenance + color</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
+        //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Hair Trim</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
+        //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Own Hair Service</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
+        //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>System Service</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
+        //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>System Template</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
+        // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
+        //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+        //     <div>Miscellaneous</div>
+        //     <div>${mins/60000}mins</div>
+        //     <div style="text-align:end;">${cost}</div>
+        //     </div>`)
+        // }
       })
     
       resolve()
@@ -1710,7 +1784,7 @@ body {
     $('#1').on('click', () => {
       $('.mobileInitial').removeClass('active')
       $('.mobileService').addClass('active')
-      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
     })
     $('#2').on('click', () => {
       $('.bookingLoad').removeClass('loaded')
@@ -1723,7 +1797,7 @@ body {
       e.preventDefault();
       serviceGender = e.target.id;
       if (serviceGender == 'mens' || serviceGender == 'womens') {
-      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
       $('.mobileService').removeClass('active');
         $('.mobileSystem').addClass('active');
       }
@@ -1752,13 +1826,13 @@ body {
       $('.mobileBottom').removeClass('active');
       $('.mobileBottom1').addClass('active');
 
-      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
 
        if (serviceGender == 'mens') {
         if (serviceType == 'Maintenance') {
           if (color) {
 
-            bookingSq(date.toISOString(), test5.toISOString(), "VUIWQXOP26WUZWQMQGBNRGSZ", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "CXXZZX3QDWLRDLXMXSWLEDXG", stylist)
           } else {
             bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC", stylist)
           }
