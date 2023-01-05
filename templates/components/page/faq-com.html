@@ -2130,6 +2130,7 @@
                 .faq-input {
                     border: 1px solid black;
                     resize: none;
+                    padding: 3px 2px;
                 }
                 .faq-input:focus {
                     outline: none;
@@ -2148,23 +2149,23 @@
             <br />
 
             <div>
-                <form>
+                <form class="form-faq">
                     <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 20px;">
-                        <label>Full Name<span style="color: red;">*</span></label>
+                        <label>Full Name <span style="color: red;">*</span></label>
                         <input class="faq-input" name="Full Name" placeholder="" type="text" required="true">
                     </div>
                     <div style="display: flex; gap: 20px; margin-bottom: 20px;">
                         <div style="display: flex; flex-direction: column; width: 100%; gap: 5px;">
-                            <label>Email Address<span style="color: red;">*</span></label>
+                            <label>Email Address <span style="color: red;">*</span></label>
                             <input class="faq-input" name="Email" placeholder="" type="email" required="true">
                         </div>
                         <div style="display: flex; flex-direction: column; width: 100%; gap: 5px;">
-                            <label>Phone Number<span style="color: red;">*</span></label>
+                            <label>Phone Number <span style="color: red;">*</span></label>
                             <input class="faq-input" name="Phone Number" placeholder="" type="text" required="true">
                         </div>
                     </div>
                     <div style="margin: 30px 0; ">
-                        <label>How would you like us to respond<span style="color: red;">*</span></label>
+                        <label>How would you like us to respond <span style="color: red;">*</span></label>
                         <div style="margin: 10px 0;">
                             <input id="form-radio-button-How would you like us to respond?-Email" name="How would you like us to respond?" type="radio" value="Email" required="true" />
                             <label for="form-radio-button-How would you like us to respond?-Email">
@@ -2182,8 +2183,60 @@
                         <label>Your Message <span style="color: red;">*</span></label>
                         <textarea class="faq-input" rows="4" name="Your Message" placeholder="" required="true"></textarea>
                     </div>
-                    <button type="submit" style="margin: auto; background-color: #252525; border-radius: 0;">Submit</button>
+                    <div class="faq-success"></div>
+                    <button type="submit" style="width: fit-content; margin: auto; background-color: #252525; border-radius: 0; color: white;">Submit</button>
                 </form>
+                <script>
+                    $(".form-faq").on("submit", function(e) {
+                        e.preventDefault();
+                        event.preventDefault();
+                        if ($("[name='Full Name']").val().trim().length==0) {
+                        document.querySelector("[name='Full Name']").setCustomValidity("Please fill in your Full Name");
+                        document.querySelector("[name='Full Name']").reportValidity();
+                        }  else if ($("[name='Email']").val().trim().length==0 || $("[name='Email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+                        document.querySelector("[name='Email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+                        document.querySelector("[name='Email']").reportValidity();
+                        } else if ($("[name='Phone Number']").val().trim().length==0 || $("[name='Phone Number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
+                        document.querySelector("[name='Phone Number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
+                        document.querySelector("[name='Phone Number']").reportValidity();
+                    } else {
+                        $(".form-faq input").prop("disabled", true);
+                        $(".form-faq textarea").prop("disabled", true);
+                        $(".form-faq button").prop("disabled", true);
+                        console.log($('.form-faq [name="Full Name"]').val())
+                        console.log($('.form-faq [name="Email"]').val())
+                        console.log($('.form-faq [name="Phone Number"]').val())
+                        console.log($(".form-faq [name='How would you like us to respond?']:checked").val())
+                        console.log($('.form-faq [name="Your Message"]').val())
+                        // fetch(`//shp-webserver.glitch.me/send-email`, {
+                        //     method: 'POST',
+                        //     headers: {
+                        //         accept: 'application/json',
+                        //         'content-type': 'application/json'
+                        //     },
+                        //     body: JSON.stringify({
+                        //         to: 'sales@superhairpieces.com',
+                        //         subject: 'FAQ Contact',
+                        //         html: `
+                        //         Full Name : ${$(".form-faq [name='Full Name']").val()}<br/>
+                        //         Phone Number : ${$(".form-faq [name='Phone Number']").val()}<br/>
+                        //         Email : ${$(".form-faq [name='Email']").val()}<br/>
+                        //         Way of communication : ${$(".form-faq [name='How would you like us to respond?']:checked").val()}<br/>
+                        //         Message : ${$(".form-faq [name='Your Message']").val()}<br/>
+                        //         `
+                        //     })
+                        // })
+                        // .then(r=>r.json())
+                        // .then(r=>{
+                        //     $('.faq-success').html('<div style="text-align:center; margin:10px 0; color: green;">Thank you for submitting your form! We get back to you shortly.</div>')
+                        //     $(".form-faq button[type=submit]").html(`Submitted`);
+                        // })
+                        // .catch(e=>{
+                        //     $(".form-faq button[type=submit]").html(`Error`);
+                        // });
+                    }
+                    })
+                </script>
             </div>
         </div>
     </div>
@@ -2253,7 +2306,6 @@
     $(document).ready(function () {
         setInterval(function () {
             if ($("#shogun-form-success-msg-id").css("visibility") == "visible") {
-                console.log("refreshed");
                 window.location.reload();
             }
         }, 1000);
