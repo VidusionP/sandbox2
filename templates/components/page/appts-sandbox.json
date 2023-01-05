@@ -1,0 +1,296 @@
+{
+    "cursor": "Cg43emMxNTJseXNqZWtoZRIUMjAyMy0wMS0wNlQxNTowMDowMFo=",
+    "bookings": [
+      {
+        "id": "381s7h9ylchctc",
+        "version": 1,
+        "status": "CANCELLED_BY_SELLER",
+        "created_at": "2023-01-04T18:59:35Z",
+        "updated_at": "2023-01-04T19:11:41Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "CKBJJ68SV59CC258QDR3EFCAQC",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T14:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "g43pwi949gezn2",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T19:30:33Z",
+        "updated_at": "2023-01-04T19:30:33Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "5TFAEHQGV4G9WBNMAG9Z9KKVJ0",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T14:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "evi1xxdxrcem8w",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T19:33:31Z",
+        "updated_at": "2023-01-04T19:33:32Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "X9SY2QTPQFRXKR21PD5053KVPG",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T15:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "3yy9vhgco9c515",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T19:34:24Z",
+        "updated_at": "2023-01-04T19:34:24Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "9SHT8B0DB01QWGCS9FMR682SBM",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T16:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "3xln5ebsy0rd42",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T19:37:08Z",
+        "updated_at": "2023-01-04T19:37:08Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "JJDME6YZCC9YA1ABEVTCRSG8Y8",
+        "customer_note": "gil",
+        "start_at": "2023-01-05T17:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "m7hu5rz4g5am6y",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T21:05:52Z",
+        "updated_at": "2023-01-04T21:05:52Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "KAADYQWQWTGE7C19BAK5HX90SC",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T18:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "1o35fj13jqoh1s",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T21:15:16Z",
+        "updated_at": "2023-01-04T21:15:16Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "QT2RF8ARJ8WYDZC7NX9FT18WRG",
+        "customer_note": "hi",
+        "start_at": "2023-01-05T19:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "dhoyszqj8sq9iu",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T21:11:14Z",
+        "updated_at": "2023-01-04T21:11:15Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "81Y4ZGBMEP0KBYG8QMS9HGDEJ4",
+        "customer_note": "Hi",
+        "start_at": "2023-01-05T20:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "n3ggnztpr7a1v3",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T21:17:19Z",
+        "updated_at": "2023-01-04T21:17:19Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "VT0P1KFJ6FK26G2S0F58CKRDJM",
+        "customer_note": "hui",
+        "start_at": "2023-01-05T21:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      },
+      {
+        "id": "xxgn3t2c45h820",
+        "version": 0,
+        "status": "ACCEPTED",
+        "created_at": "2023-01-04T21:22:59Z",
+        "updated_at": "2023-01-04T21:23:00Z",
+        "location_id": "LH2NMP4RW2BRY",
+        "customer_id": "XS8W17Q7TNYBG9Y23H1BWQA93C",
+        "customer_note": "h",
+        "start_at": "2023-01-06T14:00:00Z",
+        "all_day": false,
+        "appointment_segments": [
+          {
+            "duration_minutes": 45,
+            "service_variation_id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "team_member_id": "TMvqI27HYp_PHtLv",
+            "service_variation_version": 1672844432563,
+            "any_team_member": false,
+            "intermission_minutes": 0
+          }
+        ],
+        "transition_time_minutes": 0,
+        "creator_details": {
+          "creator_type": "TEAM_MEMBER",
+          "team_member_id": "TMvqI27HYp_PHtLv"
+        },
+        "source": "API",
+        "location_type": "BUSINESS_LOCATION"
+      }
+    ],
+    "errors": []
+  }

@@ -1097,27 +1097,27 @@ body {
     // console.log(apps)
     // console.log(x)
     // console.log(y)
-    console.log(duration)
     if (apps.length > 0) {
       // console.log(apps)
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     $('.slot').empty();
+    console.log(test2)
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
         const time2 = date.toLocaleTimeString('en-us', {hour12: false})
-        
+       
         if (time2 > '15:00:00') {
           $('.evening .slot2').remove();
-          $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else if (time2 > "12:00:00" && time2 <= '15:00:00') {
           $('.afternoon .slot2').remove();
          
-          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else {
           $('.morning .slot2').remove();         
-          $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${item.appointmentSegments[0].durationMinutes}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
 
         }
       })
@@ -1187,6 +1187,7 @@ body {
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       // console.log(apps)
       let firstDate = r.availabilities[0]
+      duration = firstDate.appointmentSegments[0].durationMinutes;
       let v = 0;
       // console.log(apps)
       if (apps.length > 0) {
@@ -1370,8 +1371,59 @@ body {
             }
         );
 
-function createCustomer() {
-  const serv = multiService[0]
+$("#myForm").on("submit", function(e) {
+
+e.preventDefault();
+// console.log(multiService[0])
+const serv = multiService[0]
+let x = []
+const vidutest = serv.appointmentSegments.forEach((item) => {
+  x.push({
+    "teamMemberId": item.teamMemberId,
+    "durationMinutes": item.durationMinutes,
+    "serviceVariationId": item.serviceVariationId,
+    "serviceVariationVersion": item.serviceVariationVersion
+  })
+})
+if ($('.newClients').hasClass('non-active')) {
+    $('.serviceList .bookNowButton').addClass('loading');
+    } else {
+      $('.mobilePopup .bookNowButton').addClass('loading');
+
+    }
+
+
+    // $("button").prop("disabled", "disabled");
+    // $(".e-submit .e-content input").prop("readonly", true);
+    // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+    // console.log(vidutest);
+    // console.log(x)
+    fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            email: $("#myForm input[name=email]").val()
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      if (jQuery.isEmptyObject(r)) {
+
+        createCustomer(x)
+      } else {
+      createBooking("VW67E2GE0G17Y6D622JM2P2WAR", x)
+
+        // createBooking(r.customers[0].id, serv)
+
+      }
+    })
+
+}
+);
+function createCustomer(x) {
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
                     method: 'POST',
                     headers: {
@@ -1379,15 +1431,15 @@ function createCustomer() {
                         "content-type": "application/json"
                     },
                     body: JSON.stringify({
-                        firstName: $("#myForm1 input[name=firstName]").val(),
-                        lastName: $("#myForm1 input[name=lastName]").val(),
-                        email: $("#myForm1 input[name=email]").val(),
-                        phone: $("#myForm1 input[name=number]").val()
+                        firstName: $("#myForm input[name=firstName]").val(),
+                        lastName: $("#myForm input[name=lastName]").val(),
+                        email: $("#myForm input[name=email]").val(),
+                        phone: $("#myForm input[name=number]").val()
                     })
                 })
                 .then(r=>r.json())
                 .then(r=>{
-                  createBooking(r.customer.id, serv)
+                  createBooking(r.customer.id, x)
                 })
 }
 
@@ -1399,25 +1451,28 @@ function createBooking(id, serv) {
             "content-type": "application/json"
         },
         body: JSON.stringify({
-            startAt: serv.startAt,
-            locationId: serv.locationId,
+            startAt: multiService[0].startAt,
+            locationId: multiService[0].locationId,
             customerId: id,
-            customerNote: $("#myForm1 textarea[name=appNotes]").val(),
-            book: {
-              "durationMinutes": serv.appointmentSegments[0].durationMinutes,
-              "serviceVariationId": serv.appointmentSegments[0].serviceVariationId,
-              "teamMemberId": serv.appointmentSegments[0].teamMemberId,
-              "serviceVariationVersion": serv.appointmentSegments[0].serviceVariationVersion
-            }
+            customerNote: $("#myForm textarea[name=appNotes]").val(),
+            book: serv
 
         })
     })
     .then(r=>r.json())
     .then(r=>{
-      $('.mobilePopup .bots').empty()
-      $('.mobilePopup .bots').append(`
-      <div style='text-align:center;' class='bookingButton'>Booked</div>
-      `)
+
+      if ($('.newClients').hasClass('non-active')) {
+        $('.serviceList .botss').empty()
+        $('.serviceList .botss').append(`
+        <div style='text-align:center;' class='bookingButton'>Booked</div>
+        `)
+      } else {
+        $('.mobilePopup .bots').empty()
+        $('.mobilePopup .bots').append(`
+        <div style='text-align:center;' class='bookingButton'>Booked</div>
+        `)
+      }
     })
 }
   window.addEventListener('DOMContentLoaded', function() {
