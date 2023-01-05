@@ -313,7 +313,7 @@ body {
     transform: translateX(-50%);
     width: 100%;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 1px -2px 10px #888888;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -321,6 +321,7 @@ body {
   .mobileBottom1 .bots {
     display: flex;
     padding: 20px;
+    gap: 10px;
   }
   .mobileBottom1 .botss {
     padding: 20px;
@@ -343,6 +344,10 @@ body {
   }
   .bookingConfirm .title2 {
     font-weight: 600;
+    margin-bottom: unset;
+  }
+  .bookingConfirm .para {
+    margin: 10px 0;
   }
   .oldClients {
     text-align: center;
@@ -522,6 +527,54 @@ body {
     display: inline-block;
             vertical-align: middle;
   }
+  .loader2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    z-index: 2;
+    top: 0;
+  }
+  .loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: absolute;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+  top: 50%;
+  left: 50%;
+}
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #000000, 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.5), -1.8em -1.8em 0 0em rgba(0,0,0, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.7), 1.8em -1.8em 0 0em #000000, 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.5), 1.8em -1.8em 0 0em rgba(0,0,0, 0.7), 2.5em 0em 0 0em #000000, 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.5), 2.5em 0em 0 0em rgba(0,0,0, 0.7), 1.75em 1.75em 0 0em #000000, 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.5), 1.75em 1.75em 0 0em rgba(0,0,0, 0.7), 0em 2.5em 0 0em #000000, -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.5), 0em 2.5em 0 0em rgba(0,0,0, 0.7), -1.8em 1.8em 0 0em #000000, -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.5), -1.8em 1.8em 0 0em rgba(0,0,0, 0.7), -2.6em 0em 0 0em #000000, -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.5), -2.6em 0em 0 0em rgba(0,0,0, 0.7), -1.8em -1.8em 0 0em #000000;
+  }
+}
   @keyframes button-load-animate {
     0%{
       transform: rotate(0deg);
@@ -698,7 +751,10 @@ body {
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
             </svg>
           </div>
-          <div class="calendarMain">
+          <div class="calendarMain" style="position: relative;">
+            <span class="loader2">
+              <span class="loader"></span>
+            </span>
             <ul class="weeks">
               <li>S</li>
               <li>M</li>
@@ -736,17 +792,22 @@ body {
       </div>
       <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
         <p class="title">Booking Information</p>
-        <div>
-          <p class="title2">Service :</p>
-          <div id="serviceType"></div>
-        </div>
-        <div>
-          <p class="title2">Hair Stylist :</p>
-          <div id="stylistName"></div>
-        </div>
-        <div>
-          <p class="title2">Date and time :</p>
-          <div id="dateSelected"></div>
+        <div style="position:relative;">
+          <span class="loader2" style="height: 270px;">
+            <span class="loader"></span>
+          </span>
+          <div>
+            <p class="title2">Service :</p>
+            <div class="para" id="serviceType"></div>
+          </div>
+          <div>
+            <p class="title2">Hair Stylist :</p>
+            <div class="para" id="stylistName"></div>
+          </div>
+          <div>
+            <p class="title2">Date and time :</p>
+            <div class="para" id="dateSelected"></div>
+          </div>
         </div>
       </div>
       <div class="bookingForm non-active">
@@ -860,7 +921,10 @@ body {
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
               </svg>
             </div>
-            <div class="calendarMain">
+            <div class="calendarMain" style="position: relative;">
+              <span class="loader2">
+                <span class="loader"></span>
+              </span>
               <ul class="weeks">
                 <li>S</li>
                 <li>M</li>
@@ -898,18 +962,24 @@ body {
         </div>
         <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
           <p class="title">Booking Information</p>
-          <div>
-            <p class="title2">Service :</p>
-            <div id="serviceType"></div>
+          <div style="position:relative;">
+            <span class="loader2" style="height: 270px;">
+              <span class="loader"></span>
+            </span>
+            <div>
+              <p class="title2">Service :</p>
+              <div class="para" id="serviceType"></div>
+            </div>
+            <div>
+              <p class="title2">Hair Stylist :</p>
+              <div class="para" id="stylistName"></div>
+            </div>
+            <div>
+              <p class="title2">Date and time :</p>
+              <div class="para" id="dateSelected"></div>
+            </div>
           </div>
-          <div>
-            <p class="title2">Hair Stylist :</p>
-            <div id="stylistName"></div>
-          </div>
-          <div>
-            <p class="title2">Date and time :</p>
-            <div id="dateSelected"></div>
-          </div>
+
         </div>
         <div class="bookingForm non-active">
           <p>You're nearly done. Enter your details below.</p>
@@ -1023,6 +1093,11 @@ body {
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
+    // console.log(firstDate)
+    // console.log(apps)
+    // console.log(x)
+    // console.log(y)
+    console.log(duration)
     if (apps.length > 0) {
       // console.log(apps)
       const test2 = apps.filter((item) => item.startAt.includes(y))
@@ -1113,7 +1188,9 @@ body {
       // console.log(apps)
       let firstDate = r.availabilities[0]
       let v = 0;
+      // console.log(apps)
       if (apps.length > 0) {
+        $('.calendarMain .loader2').addClass('non-active')
         $('.currMonth').removeClass('active selected')
         apps.forEach((item) => {
         const date = new Date(item.startAt);
@@ -1210,10 +1287,11 @@ body {
           let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
           let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
           let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          $('.bookingConfirm .loader2').addClass('non-active');
           if ($('.oldClients').hasClass('non-active')) {
-          $('.mobilePopup #dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('.mobilePopup #dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
           } else {
-          $('.serviceList #dateSelected').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('.serviceList #dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
 
 
           }
@@ -1237,6 +1315,7 @@ body {
       $('.bookingConfirm').addClass('active');
         serviceType1([serviceEnd], bookedStylist, startTime);
       } else {
+
         console.log('Please select')
       }
       
@@ -1423,6 +1502,7 @@ function createBooking(id, serv) {
     }
 
     $('.oldClients .button2').on('click', (e) => {
+
       let serviceType = e.target.getAttribute('data-service')
       let serviceCate = e.target.getAttribute('data-service-cate')
       let setheight = $('.page').height();
@@ -1442,18 +1522,132 @@ function createBooking(id, serv) {
     .then(r=>r.json())
     .then(r=> { 
       servicesAvailable = r.items
+      // console.log(servicesAvailable)
       const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate)
-      
-     var testing = new Promise((resolve, reject ) => {
-      vidu.forEach((item) => {
-        let product = item.itemData.variations[0]
-        const id = product.id
-        const mins = product.itemVariationData.serviceDuration
-        let cost = ''
+     
+     //Production
+    //   var testing = new Promise((resolve, reject ) => {
+    //   vidu.forEach((item) => {
+    //     let product = item.itemData.variations[0]
+    //     const id = product.id
+    //     const mins = product.itemVariationData.serviceDuration
+    //     let cost = ''
+    //     cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
+    //     // PRODUCTION LEVEL
+    //     //
+    //     // if (id == "BMENIVQM6YI6254XOMSI5QIB") {
+    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Hair System</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
+    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Full Cap System</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
+    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Partial Installation</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
+    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Other Company</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
+    //     //   $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Installation + color</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
+    //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Toupee</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
+    //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Full Cap</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
+    //     //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Maintenance + color</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
+    //     //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Hair Trim</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
+    //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Own Hair Service</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
+    //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>System Service</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
+    //     //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>System Template</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
+    //     //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+    //     //     <div>Miscellaneous</div>
+    //     //     <div>${mins/60000}mins</div>
+    //     //     <div style="text-align:end;">${cost}</div>
+    //     //     </div>`)
+    //     // }
+    //     // END OF PRODUCTION
+    //   })
+
+    
+    //   resolve()
+    //  }) 
+     //END PRODUCT
+
+     //SANDBOX
+     var testing1 = new Promise((resolve, reject ) => {
+      // console.log(servicesAvailable);
+      servicesAvailable.forEach((item) => {
+        let product = item.itemData.variations[0];
+        const id = product.id;
+        const mins = product.itemVariationData.serviceDuration;
+        let cost = '';
         cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
-        if (id == "BMENIVQM6YI6254XOMSI5QIB") {
+        // PRODUCTION LEVEL
+        //
+        if (id == "YJDFATQVTOPCCERF44FTP73E") {
           $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Hair System</div>
+            <div>Men's Haircut</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
             </div>`)
@@ -1479,20 +1673,20 @@ function createBooking(id, serv) {
         //     <div style="text-align:end;">${cost}</div>
         //     </div>`)
         // }
-        // if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
-        //   $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Installation + color</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
-        //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Toupee</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
+        if (id == "CXXZZX3QDWLRDLXMXSWLEDXG") {
+          $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            <div>Test</div>
+            <div>${mins/60000}mins</div>
+            <div style="text-align:end;">${cost}</div>
+            </div>`)
+        }
+        if (id == "FYM523QRBQHJDGBJWD4MRS4S") {
+          $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            <div>Shampoo Style</div>
+            <div>${mins/60000}mins</div>
+            <div style="text-align:end;">${cost}</div>
+            </div>`)
+        }
         // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
         //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
         //     <div>Full Cap</div>
@@ -1542,11 +1736,16 @@ function createBooking(id, serv) {
         //     <div style="text-align:end;">${cost}</div>
         //     </div>`)
         // }
+        // END OF PRODUCTION
       })
+
     
       resolve()
      }) 
-     testing.then(() => {
+     //END SANDBOX
+     
+     
+     testing1.then(() => {
       let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59)
             let currTime = date
             let vidu = Math.abs(lastTime-currTime) / 36e5
@@ -1558,7 +1757,9 @@ function createBooking(id, serv) {
                 stylist = memberId.split(',')
                 $('.staffMembers .addNames1').removeClass('loaded')
                 $(this).addClass('loaded')
+
                 checkAva(currTime, lastTime, serviceEnd1, totalTime)
+
             })  
         $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
         $(document).on('click', '.list-item.newClass', function() {
@@ -1652,6 +1853,8 @@ function createBooking(id, serv) {
       
       let firstDate = r.availabilities[0]
       let v = 0;
+      $('.serviceList .calendarMain .loader2').addClass('non-active');
+
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected')
         apps.forEach((item) => {
@@ -1725,7 +1928,7 @@ function createBooking(id, serv) {
 
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      
+      $('.serviceList .calendarMain .loader2').addClass('non-active');
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
@@ -1814,6 +2017,10 @@ function createBooking(id, serv) {
 
       stylist = ids
       $('.staffMembers .addNames1').on('click', function() {
+        $('.calendarMain .loader2').removeClass('non-active')
+        $('.morning .slot').empty();
+        $('.afternoon .slot').empty();
+        $('.evening .slot').empty();
         let memberId = $(this).data('team-member-id')
         stylist = memberId.split(',')
         $('.staffMembers .addNames1').removeClass('loaded')
@@ -1822,6 +2029,7 @@ function createBooking(id, serv) {
         let year = date1.getFullYear();
         let mon = date1.getMonth();
         let test5 = new Date(year, mon + 1,0)
+        test5.setUTCHours(23,59,59,0)
         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
     })
     })

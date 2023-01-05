@@ -1,0 +1,171 @@
+{
+    "items": [
+      {
+        "type": "ITEM",
+        "id": "EBBXFXPHBOI5JDFF75QA4J73",
+        "updated_at": "2023-01-04T15:00:32.563Z",
+        "created_at": "2023-01-04T15:00:32.563Z",
+        "version": 1672844432563,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Colour Treatment",
+          "is_taxable": true,
+          "ordinal": 1,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+              "updated_at": "2023-01-04T15:00:32.563Z",
+              "created_at": "2023-01-04T15:00:32.563Z",
+              "version": 1672844432563,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "EBBXFXPHBOI5JDFF75QA4J73",
+                "name": "Regular",
+                "pricing_type": "VARIABLE_PRICING",
+                "service_duration": 2700000,
+                "price_description": "Price Varies",
+                "available_for_booking": true,
+                "transition_time": 0,
+                "sellable": true,
+                "stockable": true,
+                "team_member_ids": [
+                  "TMvqI27HYp_PHtLv"
+                ]
+              }
+            }
+          ],
+          "product_type": "APPOINTMENTS_SERVICE"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "WYU2VOCRGAWVM2MHWWAM7JA2",
+        "updated_at": "2023-01-04T15:00:32.621Z",
+        "created_at": "2023-01-04T15:00:32.621Z",
+        "version": 1672844432621,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Men’s Haircut",
+          "is_taxable": true,
+          "ordinal": 2,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "YJDFATQVTOPCCERF44FTP73E",
+              "updated_at": "2023-01-04T15:00:32.621Z",
+              "created_at": "2023-01-04T15:00:32.621Z",
+              "version": 1672844432621,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "WYU2VOCRGAWVM2MHWWAM7JA2",
+                "name": "Regular",
+                "pricing_type": "VARIABLE_PRICING",
+                "service_duration": 1800000,
+                "price_description": "Price Varies",
+                "available_for_booking": true,
+                "transition_time": 0,
+                "sellable": true,
+                "stockable": true,
+                "team_member_ids": [
+                  "TMvqI27HYp_PHtLv"
+                ]
+              }
+            }
+          ],
+          "product_type": "APPOINTMENTS_SERVICE"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "LEUUFVSSCPXI765Z4BS3KWD2",
+        "updated_at": "2023-01-04T15:00:32.899Z",
+        "created_at": "2023-01-04T15:00:32.899Z",
+        "version": 1672844432899,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Shampoo Style",
+          "is_taxable": true,
+          "ordinal": 3,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "FYM523QRBQHJDGBJWD4MRS4S",
+              "updated_at": "2023-01-04T15:00:32.899Z",
+              "created_at": "2023-01-04T15:00:32.899Z",
+              "version": 1672844432899,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "LEUUFVSSCPXI765Z4BS3KWD2",
+                "name": "Regular",
+                "pricing_type": "VARIABLE_PRICING",
+                "service_duration": 3600000,
+                "price_description": "Price Varies",
+                "available_for_booking": true,
+                "transition_time": 0,
+                "sellable": true,
+                "stockable": true,
+                "team_member_ids": [
+                  "TMvqI27HYp_PHtLv"
+                ]
+              }
+            }
+          ],
+          "product_type": "APPOINTMENTS_SERVICE"
+        }
+      },
+      {
+        "type": "ITEM",
+        "id": "LEEP6D5GPSDVJMKTFYS7WO7K",
+        "updated_at": "2023-01-04T15:00:32.465Z",
+        "created_at": "2023-01-04T15:00:32.465Z",
+        "version": 1672844432465,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "item_data": {
+          "name": "Women’s Haircut",
+          "is_taxable": true,
+          "ordinal": 0,
+          "variations": [
+            {
+              "type": "ITEM_VARIATION",
+              "id": "EPW77MNJOUFFKMDY4GSRLXAR",
+              "updated_at": "2023-01-04T15:00:32.465Z",
+              "created_at": "2023-01-04T15:00:32.465Z",
+              "version": 1672844432465,
+              "is_deleted": false,
+              "present_at_all_locations": true,
+              "item_variation_data": {
+                "item_id": "LEEP6D5GPSDVJMKTFYS7WO7K",
+                "name": "Regular",
+                "pricing_type": "VARIABLE_PRICING",
+                "service_duration": 3600000,
+                "price_description": "Price Varies",
+                "available_for_booking": true,
+                "transition_time": 0,
+                "sellable": true,
+                "stockable": true,
+                "team_member_ids": [
+                  "TMvqI27HYp_PHtLv"
+                ]
+              }
+            }
+          ],
+          "product_type": "APPOINTMENTS_SERVICE"
+        }
+      }
+    ],
+    "cursor": "",
+    "matched_variation_ids": [
+      "CXXZZX3QDWLRDLXMXSWLEDXG",
+      "YJDFATQVTOPCCERF44FTP73E",
+      "FYM523QRBQHJDGBJWD4MRS4S",
+      "EPW77MNJOUFFKMDY4GSRLXAR"
+    ]
+  }
