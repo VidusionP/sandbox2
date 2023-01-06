@@ -2482,3 +2482,38 @@
     "3MFRBXFO7754UWO37VKBBJHZ"
   ]
 }
+
+
+{
+  "team_members": [
+    {
+      "id": "TMWKP3N_BKSD9Xgb",
+      "is_owner": false,
+      "status": "ACTIVE",
+      "given_name": "Seller",
+      "family_name": "2",
+      "created_at": "2023-01-05T18:11:45Z",
+      "updated_at": "2023-01-05T18:11:45Z",
+      "assigned_locations": {
+        "assignment_type": "EXPLICIT_LOCATIONS",
+        "location_ids": [
+          "LH2NMP4RW2BRY"
+        ]
+      }
+    },
+    {
+      "id": "TMvqI27HYp_PHtLv",
+      "is_owner": true,
+      "status": "ACTIVE",
+      "given_name": "Sandbox",
+      "family_name": "Seller",
+      "email_address": "sandbox-merchant+nqo1tz1nzhrvmoicyxh4w76nigqowajz@squareup.com",
+      "phone_number": "+18668147879",
+      "created_at": "2022-06-08T14:41:37Z",
+      "updated_at": "2023-01-04T15:00:30Z",
+      "assigned_locations": {
+        "assignment_type": "ALL_CURRENT_AND_FUTURE_LOCATIONS"
+      }
+    }
+  ]
+}

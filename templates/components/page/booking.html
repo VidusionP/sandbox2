@@ -283,6 +283,7 @@ body {
   .bookBut {
     width: fit-content;
     padding: 10px 20px;
+    cursor: pointer;
   }
   .slot {
     display: flex;
@@ -319,9 +320,9 @@ body {
     border-top-right-radius: 5px;
   }
   .mobileBottom1 .bots {
-    display: flex;
+    /* display: flex; */
     padding: 20px;
-    gap: 10px;
+    /* gap: 10px; */
   }
   .mobileBottom1 .botss {
     padding: 20px;
@@ -345,9 +346,11 @@ body {
   .bookingConfirm .title2 {
     font-weight: 600;
     margin-bottom: unset;
+    font-size: 18px;
   }
   .bookingConfirm .para {
     margin: 10px 0;
+    margin-left: 13px;
   }
   .oldClients {
     text-align: center;
@@ -525,7 +528,26 @@ body {
   }
   .mobilePopup .bookNowButton.loading::before {
     display: inline-block;
-            vertical-align: middle;
+    vertical-align: middle;
+  }
+  .serviceList .bookNowButton::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+  }
+  .serviceList .bookNowButton.loading {
+    pointer-events: none;
+    font-size: 0;
+  }
+  .serviceList .bookNowButton.loading::before {
+    display: inline-block;
+    vertical-align: middle;
   }
   .loader2 {
     position: absolute;
@@ -547,6 +569,9 @@ body {
   transform: translateZ(0);
   top: 50%;
   left: 50%;
+}
+input:focus {
+  outline: none;
 }
 @keyframes mulShdSpin {
   0%,
@@ -797,38 +822,44 @@ body {
             <span class="loader"></span>
           </span>
           <div>
-            <p class="title2">Service :</p>
+            <p class="title2">&#x2022; Service :</p>
             <div class="para" id="serviceType"></div>
           </div>
           <div>
-            <p class="title2">Hair Stylist :</p>
+            <p class="title2">&#x2022; Hair Stylist :</p>
             <div class="para" id="stylistName"></div>
           </div>
           <div>
-            <p class="title2">Date and time :</p>
+            <p class="title2">&#x2022; Date and time :</p>
             <div class="para" id="dateSelected"></div>
           </div>
         </div>
       </div>
-      <div class="bookingForm non-active">
-        <p>You're nearly done. Enter your details below.</p>
+      <div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
+        <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
         <form id="myForm">
-          <div>
-            <select name="country" id="country">
+          <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
               <option value="+1">Canada</option>
             </select>
-            <input name="number" placeholder="(000) 000 0000">
+            <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
           </div>
 
-          <input name="email" placeholder="Email">
-          <div>
-            <input name="firstName" placeholder="First name">
-            <input name="lastName" placeholder="Last name">
+          <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
+          <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
+            <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
           </div>
 
-          <textarea name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-          <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+          <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+          <div style="font-weight: 500;">
+            <input type="checkbox" id="vehicle3" name="vehicle3" required>
+            <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+          </div>
+
+          <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
+          <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+          <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
           <input type="submit" id="submit-form" class="hidden" />
         </form>
       </div>
@@ -837,7 +868,7 @@ body {
     <div class="mobileBottom1 non-active">
       <div class="botss">
         <div class="service"></div>
-        <div class="total" style="display: none;">
+        <div class="total non-active" >
           <span>Total</span>
           <span class="price"></span>
         </div>
@@ -967,42 +998,45 @@ body {
               <span class="loader"></span>
             </span>
             <div>
-              <p class="title2">Service :</p>
+              <p class="title2">&#x2022; Service :</p>
               <div class="para" id="serviceType"></div>
             </div>
             <div>
-              <p class="title2">Hair Stylist :</p>
+              <p class="title2">&#x2022; Hair Stylist :</p>
               <div class="para" id="stylistName"></div>
             </div>
             <div>
-              <p class="title2">Date and time :</p>
+              <p class="title2">&#x2022; Date and time :</p>
               <div class="para" id="dateSelected"></div>
             </div>
           </div>
 
         </div>
-        <div class="bookingForm non-active">
-          <p>You're nearly done. Enter your details below.</p>
+        <div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
+          <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
           <form id="myForm1">
-            <div style="display: flex;">
-              <select style="border: 1px solid lightgray; border-radius: 5px;" name="country" id="country">
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+              <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
                 <option value="+1">Canada</option>
               </select>
-              <input style="border: 1px solid lightgray; border-radius: 5px;" name="number" placeholder="(000) 000 0000" required>
+              <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
             </div>
   
-            <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
-            <div style="display: flex;">
-              <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
-              <input style="width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
+            <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+              <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
+              <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
             </div>
   
-            <textarea style="border: 1px solid lightgray; border-radius: 5px;" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-            <input type="checkbox" id="vehicle3" name="vehicle3" required>
-            <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
-            <p>Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
-            <p>Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
-            <p>By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
+            <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+            <div style="font-weight: 500;">
+              <input type="checkbox" id="vehicle3" name="vehicle3" required>
+              <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+            </div>
+
+            <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
+            <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+            <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
             <input type="submit" id="submit-form1" class="hidden" />
           </form>
         </div>
@@ -1015,10 +1049,14 @@ body {
       </div>
       <div class="mobileBottom1 non-active">
         <div class="bots">
-          <button class="bookingButton1">Back</button>
-          <button class="bookingButton nextButton">Next</button>
-          <button class="bookingButton confirmButton non-active">Confirm</button>
-          <label style="text-align:center ;"  tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
+          <div class="pleaseSelect"></div>
+          <div style="display: flex; gap: 10px;">
+            <button class="bookingButton1">Back</button>
+            <button class="bookingButton nextButton">Next</button>
+            <button class="bookingButton confirmButton non-active">Confirm</button>
+            <label style="text-align:center ;"  tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
+          </div>
+
 
         </div>
       </div>
@@ -1101,7 +1139,13 @@ body {
       // console.log(apps)
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
+    let vidu1 = new Date(test2[0].startAt).toLocaleString('en-us', {weekday:"short"})
+    let vidu2 = new Date(test2[0].startAt).toLocaleString('en-us', {day:"numeric"})
+    let vidu4 = new Date(test2[0].startAt).toLocaleString('en-us', {year:"numeric"})
+    let vidu3 = new Date(test2[0].startAt).toLocaleString('en-us', {month:"short"});
+    let fullDate = `${vidu1}, ${vidu3} ${vidu2}, ${vidu4}`
     $('.slot').empty();
+    $('.slot2').removeClass('non-active');
     console.log(test2)
     test2.forEach((item) => {
         const date = new Date(item.startAt);
@@ -1109,19 +1153,19 @@ body {
         const time2 = date.toLocaleTimeString('en-us', {hour12: false})
        
         if (time2 > '15:00:00') {
-          $('.evening .slot2').remove();
+          $('.evening .slot2').addClass('non-active');
           $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else if (time2 > "12:00:00" && time2 <= '15:00:00') {
-          $('.afternoon .slot2').remove();
+          $('.afternoon .slot2').addClass('non-active');
          
           $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
         } else {
-          $('.morning .slot2').remove();         
+          $('.morning .slot2').addClass('non-active');         
           $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
 
         }
       })
-      $('.dayAvailable').html(date)
+      $('.dayAvailable').html(fullDate)
     } else {
 
     }
@@ -1133,6 +1177,9 @@ body {
       bookedStylist = $(this).data('team-member')
       $('.bookBut').removeClass('active3')
       $(this).addClass('active3')
+      if ($('.pleaseSelect').children.length > 0) {
+        $('.pleaseSelect').empty();
+      }
     })
 
 
@@ -1309,15 +1356,13 @@ body {
 
       if (serviceEnd, bookedStylist, startTime) {
         $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
       $('.bookingConfirm').addClass('active');
         serviceType1([serviceEnd], bookedStylist, startTime);
       } else {
-
-        console.log('Please select')
+        $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
       }
       
     })
@@ -1334,39 +1379,58 @@ body {
     }
   })
   $("#myForm1").on("submit", function(e) {
-
             e.preventDefault();
             // console.log(multiService[0])
             const serv = multiService[0]
-            $('.mobilePopup .bookNowButton').addClass('loading');
-            // console.log($("#myForm1 input[name=email]").val())
-            // console.log($("#myForm1 input[name=number]").val())
-            // console.log($("#myForm1 input[name=firstName]").val())
-            // console.log($("#myForm1 input[name=lastName]").val())
-            // console.log($("#myForm1 textarea[name=appNotes]").val())
+            let x = []
+            const vidutest = serv.appointmentSegments.forEach((item) => {
+              x.push({
+                "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+              })
+            })
+            if ($("#myForm1 [name='firstName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='firstName']").setCustomValidity("Please fill in your first name");
+              document.querySelector("#myForm1 [name='firstName']").reportValidity();
+            }  else if ($("#myForm1 [name='lastName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='lastName']").setCustomValidity("Please fill in your last name");
+              document.querySelector("#myForm1 [name='lastName']").reportValidity();
+
+            }else if ($("#myForm1 [name='email']").val().trim().length==0 || $("#myForm1 [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+              document.querySelector("#myForm1 [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+              document.querySelector("#myForm1 [name='email']").reportValidity();
+            } else if ($("#myForm1 [name='number']").val().trim().length==0 || $("#myForm1 [name='number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
+              document.querySelector("#myForm1 [name='number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
+              document.querySelector("#myForm1 [name='number']").reportValidity();
+            } else {
+              $('.mobilePopup .bookNowButton').addClass('loading');
+              fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                method: 'POST',
+                headers: {
+                    accept: "application/json",
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: $("#myForm1 input[name=email]").val()
+                })
+              })
+              .then(r=>r.json())
+              .then(r=>{
+                if (jQuery.isEmptyObject(r)) {
+                  createCustomer(x, "#myForm1")
+                } else {
+                  createBooking(r.customers[0].id, x, "#myForm1")
+
+                }
+              })
+            }
 
                 // $("button").prop("disabled", "disabled");
                 // $(".e-submit .e-content input").prop("readonly", true);
                 // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
-                fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
-                    method: 'POST',
-                    headers: {
-                        accept: "application/json",
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        email: $("#myForm1 input[name=email]").val()
-                    })
-                })
-                .then(r=>r.json())
-                .then(r=>{
-                  if (jQuery.isEmptyObject(r)) {
-                    createCustomer()
-                  } else {
-                    createBooking(r.customers[0].id, serv)
 
-                  }
-                })
 
             }
         );
@@ -1377,7 +1441,7 @@ e.preventDefault();
 // console.log(multiService[0])
 const serv = multiService[0]
 let x = []
-const vidutest = serv.appointmentSegments.forEach((item) => {
+serv.appointmentSegments.forEach((item) => {
   x.push({
     "teamMemberId": item.teamMemberId,
     "durationMinutes": item.durationMinutes,
@@ -1386,13 +1450,13 @@ const vidutest = serv.appointmentSegments.forEach((item) => {
   })
 })
 if ($('.newClients').hasClass('non-active')) {
-    $('.serviceList .bookNowButton').addClass('loading');
+  $('.serviceList .bookNowButton').addClass('loading');
+  console.log('hello')
     } else {
-      $('.mobilePopup .bookNowButton').addClass('loading');
+  $('.mobilePopup .bookNowButton').addClass('loading');
+
 
     }
-
-
     // $("button").prop("disabled", "disabled");
     // $(".e-submit .e-content input").prop("readonly", true);
     // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
@@ -1411,39 +1475,37 @@ if ($('.newClients').hasClass('non-active')) {
     .then(r=>r.json())
     .then(r=>{
       if (jQuery.isEmptyObject(r)) {
-
-        createCustomer(x)
+        createCustomer(x, "#myForm")
       } else {
-      createBooking("VW67E2GE0G17Y6D622JM2P2WAR", x)
-
-        // createBooking(r.customers[0].id, serv)
-
+        console.log(r)
+        // createBooking(r.customers[0].id, x, "#myForm")
       }
     })
 
 }
 );
-function createCustomer(x) {
+function createCustomer(x, form) {
+  console.log(form)
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
-                    method: 'POST',
-                    headers: {
-                        accept: "application/json",
-                        "content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        firstName: $("#myForm input[name=firstName]").val(),
-                        lastName: $("#myForm input[name=lastName]").val(),
-                        email: $("#myForm input[name=email]").val(),
-                        phone: $("#myForm input[name=number]").val()
-                    })
-                })
-                .then(r=>r.json())
-                .then(r=>{
-                  createBooking(r.customer.id, x)
-                })
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            firstName: $(`${form} input[name=firstName]`).val(),
+            lastName: $(`${form} input[name=lastName]`).val(),
+            email: $(`${form} input[name=email]`).val(),
+            phone: $(`${form} input[name=number]`).val()
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      createBooking(r.customer.id, x, form)
+    })
 }
 
-function createBooking(id, serv) {
+function createBooking(id, serv, form) {
       fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
         method: 'POST',
         headers: {
@@ -1454,7 +1516,7 @@ function createBooking(id, serv) {
             startAt: multiService[0].startAt,
             locationId: multiService[0].locationId,
             customerId: id,
-            customerNote: $("#myForm textarea[name=appNotes]").val(),
+            customerNote: $(`${form} textarea[name=appNotes]`).val() || "N/A",
             book: serv
 
         })
@@ -1818,7 +1880,7 @@ function createBooking(id, serv) {
             })  
         $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
         $(document).on('click', '.list-item.newClass', function() {
-            let check = $("> div:last-of-type", this).text();
+            let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
             let x = serviceEnd1.indexOf(this.id);
             if (x > -1) {
               serviceEnd1.splice(x, 1);
@@ -1859,11 +1921,11 @@ function createBooking(id, serv) {
           let serviceId = $(this).data('service-id');
           let self = this.id;
           if ($(`.botss .service #${self}`).length == 0) {
-            let check = $("> div:last-of-type", this).text()
+            let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text()
             total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''))
             $('.botss .total .price').html(`$${total}.00`)
-            if ($('.botss .total').css('display') == 'none') {
-              $('.botss .total').css('display','block')
+            if ($('.botss .total').hasClass('non-active')) {
+              $('.botss .total').addClass('active')
             }
             $('.botss .service').append($(this).clone().addClass('newClass'));
             const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
@@ -1899,13 +1961,14 @@ function createBooking(id, serv) {
       })
       .then(r=>r.json())
     .then(r=> {
+      
       // multiService.push(r.availabilities);
       $('.botss .nextButton').unbind('click');
       $('.mobileBottom1 .bookingButton.confirmButton').unbind('click');
       if ($('.serviceList .serviceBooking').hasClass('active')) {
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      
+      console.log(apps)
       let firstDate = r.availabilities[0]
       let v = 0;
       $('.serviceList .calendarMain .loader2').addClass('non-active');
@@ -1967,20 +2030,32 @@ function createBooking(id, serv) {
 
       })
       $('.botss .nextButton').on('click', function() {
-        if ($('.serviceBooking').hasClass('active')) {
-        $('.serviceBooking').removeClass('active');
-      $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
-        serviceType1(serviceId, bookedStylist, startTime);
-        $('.bookingConfirm').addClass('active');
+        if ($('.serviceBooking').hasClass('active')) {
+          if (serviceEnd, bookedStylist, startTime) {
+            $('.serviceBooking').removeClass('active');
+            $('.bookingLoad:not(.loaded):first').addClass('loaded');
+            $('.bookingConfirm').addClass('active');
+
+            serviceType1(serviceId, bookedStylist, startTime);
+           } else {
+            $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
+           }
+
+
 
 
         } else {
-
           $('.serviceBooking').addClass('active');
         $('.gokutest').addClass('non-active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
-
+          if ($('.gokutest').hasClass('non-active')) {
+              $('.mobileBottom1 .botss .service').addClass('non-active');
+              $('.mobileBottom1 .botss .total').removeClass('active');
+            } else {
+              $('.mobileBottom1 .botss .service').removeClass('non-active');
+              $('.mobileBottom1 .botss .total').addClass('active');
+            }
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       $('.serviceList .calendarMain .loader2').addClass('non-active');
@@ -2076,6 +2151,11 @@ function createBooking(id, serv) {
         $('.morning .slot').empty();
         $('.afternoon .slot').empty();
         $('.evening .slot').empty();
+
+        if ($('.pleaseSelect').children.length > 0) {
+          $('.pleaseSelect').empty();
+        }
+
         let memberId = $(this).data('team-member-id')
         stylist = memberId.split(',')
         $('.staffMembers .addNames1').removeClass('loaded')
