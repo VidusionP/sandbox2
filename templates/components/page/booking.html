@@ -212,7 +212,6 @@ body {
     flex-wrap: wrap;
   }
   .calendarMain .days li {
-    cursor: pointer;
     padding: 5px;
     z-index: 1;
     position: relative;
@@ -256,6 +255,8 @@ body {
   }
   .calendarMain .days .active {
        color: #006CFF;
+    cursor: pointer;
+
   }
   .currDay {
     color: #006CFF !important;
@@ -708,8 +709,10 @@ input:focus {
                 <button class="page-button">Maintenance + Color</button>
             </p>
             <div class="page-test" style="max-height: 0px;">
-                <div id="maintenancecolor" class="page-test1">
-  
+                <div style="position: relative;" id="maintenancecolor" class="page-test1">
+                  <div class="loader2">
+                    <div class="loader"></div>
+                  </div>
                 </div>
             </div>
           </div>
@@ -867,18 +870,20 @@ input:focus {
 
     <div class="mobileBottom1 non-active">
       <div class="botss">
+
+
         <div class="service"></div>
         <div class="total non-active" >
           <span>Total</span>
           <span class="price"></span>
         </div>
+        <div class="pleaseSelect"></div>
         <div style="display:flex;">
           <button class="bookingButton1">Back</button>
           <button class="bookingButton nextButton">Next</button>
           <button class="bookingButton confirmButton non-active">Confirm</button>
           <label style="text-align:center ;"  tabindex="0" for="submit-form" class="bookingButton bookNowButton non-active">Book Now</label>
         </div>
-
       </div>
     </div>
   </div>
@@ -1056,8 +1061,6 @@ input:focus {
             <button class="bookingButton confirmButton non-active">Confirm</button>
             <label style="text-align:center ;"  tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -1126,6 +1129,7 @@ input:focus {
     for (let i = lastDayofMonth; i< 6; i++) {
       change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
     }
+    $('calendarMain .loader2').addClass('non-active');
 
     $('.calendarMain .days').html(`${change}`)
   }
@@ -1146,7 +1150,6 @@ input:focus {
     let fullDate = `${vidu1}, ${vidu3} ${vidu2}, ${vidu4}`
     $('.slot').empty();
     $('.slot2').removeClass('non-active');
-    console.log(test2)
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
@@ -1208,14 +1211,23 @@ input:focus {
 
   function bookingSq(startDate, endDate, service, stylists) {
     serviceEnd = service;
-    let styling = [
-    {
-          serviceVariationId: service,
+    let styleTest = [];
+      service.forEach((item) => {
+        styleTest.push({
+          serviceVariationId: item,
           teamMemberIdFilter : {
-            any: stylists
+            any: stylist
           }
-        }
-    ]
+        })
+      })
+    // let styling = [
+    // {
+    //       serviceVariationId: service,
+    //       teamMemberIdFilter : {
+    //         any: stylists
+    //       }
+    //     }
+    // ]
     fetch('https://shp-webserver-temp.glitch.me/sq-availability', {
       method: 'POST',
       headers: {
@@ -1225,19 +1237,18 @@ input:focus {
       body: JSON.stringify ({
           start: startDate,
           end: endDate,
-          styling: styling
+          styling: styleTest
         })
     })
     .then(r=>r.json())
     .then(r=> {
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      // console.log(apps)
       let firstDate = r.availabilities[0]
       duration = firstDate.appointmentSegments[0].durationMinutes;
       let v = 0;
-      // console.log(apps)
       if (apps.length > 0) {
+
         $('.calendarMain .loader2').addClass('non-active')
         $('.currMonth').removeClass('active selected')
         apps.forEach((item) => {
@@ -1254,7 +1265,12 @@ input:focus {
           } 
         })
       })
-      $('.mobilePopup .currMonth.active').eq(0).addClass('selected')
+      if ($('.newClients').hasClass('non-active')) {
+      $('.serviceList .currMonth.active').eq(0).addClass('selected')
+      } else {
+        $('.mobilePopup .currMonth.active').eq(0).addClass('selected')
+
+      }
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
       // calendarChange()
@@ -1305,12 +1321,12 @@ input:focus {
       // $('.mobileBottom1 .bookingButton').html('Confirm')
       $('.nextButton').addClass('non-active');
       $('.confirmButton').removeClass('non-active');
-
       serviceEnd.forEach((serv1) => {
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
           currentStylers.forEach((item2) => {
             if(stylist == item2.team_member_id) {
+
               if ($('.oldClients').hasClass('non-active')) {
                 $('.mobilePopup #stylistName').html(item2.display_name)
               } else {
@@ -1321,10 +1337,22 @@ input:focus {
             }
           })
           if ($('.oldClients').hasClass('non-active')) {
-            $('.mobilePopup #serviceType').append(item.itemData.name + '</br>')
+
+            $('.mobilePopup #serviceType').append(`
+            <div>
+              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
+              <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
+              </div>
+            `)
 
           } else {
-            $('.serviceList #serviceType').append(item.itemData.name + '</br>')
+            $('.serviceList #serviceType').append(`
+            <div>
+              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
+              <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
+              </div>
+            `)
+
 
           }
           let durationMins = new Date(startTime)
@@ -1451,7 +1479,6 @@ serv.appointmentSegments.forEach((item) => {
 })
 if ($('.newClients').hasClass('non-active')) {
   $('.serviceList .bookNowButton').addClass('loading');
-  console.log('hello')
     } else {
   $('.mobilePopup .bookNowButton').addClass('loading');
 
@@ -1477,7 +1504,6 @@ if ($('.newClients').hasClass('non-active')) {
       if (jQuery.isEmptyObject(r)) {
         createCustomer(x, "#myForm")
       } else {
-        console.log(r)
         // createBooking(r.customers[0].id, x, "#myForm")
       }
     })
@@ -1485,7 +1511,6 @@ if ($('.newClients').hasClass('non-active')) {
 }
 );
 function createCustomer(x, form) {
-  console.log(form)
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
         method: 'POST',
         headers: {
@@ -1546,8 +1571,14 @@ function createBooking(id, serv, form) {
 
 
     function prevMonth() {
+            duration = '';
+            startTime = '';
+            multiService = [];
+            bookedStylist = '';
 
       if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
+      $('.loader2').removeClass('non-active');
+
         // $('.calendarTop .prev-arrow').bind('click', prevMonth)
       currMonth = currMonth - 1
       if (currMonth < 0 || currMonth > 11) {
@@ -1583,12 +1614,17 @@ function createBooking(id, serv, form) {
     }
 
     function nextMonth() {
+      duration = '';
+      startTime = '';
+      multiService = [];
+      bookedStylist = '';
       currMonth = currMonth + 1
-      console.log(currMonth)
       if (currMonth == new Date().getMonth() +2) {
       $('.calendarTop .next-arrow').addClass('disabled')
       }
       if (currMonth <= new Date().getMonth() + 2) {
+      $('.loader2').removeClass('non-active');
+
         $('.calendarTop .prev-arrow').removeClass('disabled')
 
           if (currMonth < 0 || currMonth > 11) {
@@ -1602,7 +1638,7 @@ function createBooking(id, serv, form) {
         let test6 = new Date(currYear, currMonth,1);
         test5.setUTCHours(23,59,59,0);
         calendarChange();
-        bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd);
+        bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd, stylist);
       } else {
       currMonth = currMonth - 1
 
@@ -1617,6 +1653,7 @@ function createBooking(id, serv, form) {
       } 
 
     }
+
 
     $('.oldClients .button2').on('click', (e) => {
 
@@ -1870,6 +1907,11 @@ function createBooking(id, serv, form) {
               lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
             }
           $('.serviceList .staffMembers .addNames1').on('click', function() {
+            duration = '';
+            startTime = '';
+            multiService = [];
+            bookedStylist = '';
+            
                 let memberId = $(this).data('team-member-id')
                 stylist = memberId.split(',')
                 $('.staffMembers .addNames1').removeClass('loaded')
@@ -1894,7 +1936,6 @@ function createBooking(id, serv, form) {
                 }
               })
               checkAva( currTime, lastTime, serviceEnd1, totalTime)
-              console.log(serviceEnd1.length)
             }
             
             total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
@@ -1917,6 +1958,7 @@ function createBooking(id, serv, form) {
       let servicesAvailable = e.data.servicesAvailable;
       let currTime = e.data.currTime;
       let lastTime = e.data.lastTime;
+
           $(this).unbind('click');
           let serviceId = $(this).data('service-id');
           let self = this.id;
@@ -1937,8 +1979,9 @@ function createBooking(id, serv, form) {
     }
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
+      serviceEnd = serviceId;
       duration = durationTotal/60000;
-      let styleTest = []
+      let styleTest = [];
       serviceId.forEach((item) => {
         styleTest.push({
           serviceVariationId: item,
@@ -1968,7 +2011,6 @@ function createBooking(id, serv, form) {
       if ($('.serviceList .serviceBooking').hasClass('active')) {
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      console.log(apps)
       let firstDate = r.availabilities[0]
       let v = 0;
       $('.serviceList .calendarMain .loader2').addClass('non-active');
@@ -2036,7 +2078,6 @@ function createBooking(id, serv, form) {
             $('.serviceBooking').removeClass('active');
             $('.bookingLoad:not(.loaded):first').addClass('loaded');
             $('.bookingConfirm').addClass('active');
-
             serviceType1(serviceId, bookedStylist, startTime);
            } else {
             $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
@@ -2046,6 +2087,7 @@ function createBooking(id, serv, form) {
 
 
         } else {
+
           $('.serviceBooking').addClass('active');
         $('.gokutest').addClass('non-active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
@@ -2058,7 +2100,6 @@ function createBooking(id, serv, form) {
             }
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      $('.serviceList .calendarMain .loader2').addClass('non-active');
       let firstDate = r.availabilities[0]
       let v = 0;
       if (apps.length > 0) {
@@ -2147,6 +2188,10 @@ function createBooking(id, serv, form) {
 
       stylist = ids
       $('.staffMembers .addNames1').on('click', function() {
+        duration = '';
+            startTime = '';
+            multiService = [];
+            bookedStylist = '';
         $('.calendarMain .loader2').removeClass('non-active')
         $('.morning .slot').empty();
         $('.afternoon .slot').empty();
@@ -2237,7 +2282,7 @@ function createBooking(id, serv, form) {
         if (serviceType == 'Maintenance') {
           if (color) {
 
-            bookingSq(date.toISOString(), test5.toISOString(), "CXXZZX3QDWLRDLXMXSWLEDXG", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist)
           } else {
             bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC", stylist)
           }
