@@ -615,32 +615,85 @@ input:focus {
       transform: rotate(360deg);
     }
 }
+.gtaTopDesktop {
+  display: none;
+}
+.gtaTopSide {
+  display: none;
+}
+.gtaInitialDesktop {
+  display: flex; 
+  flex-direction: 
+  column; 
+  gap: 20px;
+}
+.gtaMobileService {
+  display: flex; 
+  flex-direction: 
+  column; gap: 20px;
+}
+@media (min-width: 1024px) {
+  .gtaTop {
+    display: none;
+  }
+  .gtaTopDesktop {
+    display: block;
+    text-align: center;
+  }
+  .gtaTopSide {
+    display: block;
+  }
+  .newClients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .bookingButton {
+    max-width: 250px;
+  }
+  .bookingButton1 {
+    max-width: 250px;
+  }
+  .gtaInitialDesktop {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .gtaMobileService {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
 <section style="width: 90%; margin: auto; color: black;">
-  <div style="text-align: center;">
+  <div class="gtaTop" style="text-align: center;">
     <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
     <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
   </div>
   <div class="newClients">
+    <div class="gtaTopSide">
 
-
+    </div>
     <div>
-
+      <div class="gtaTopDesktop">
+        <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
+        <p>Mon - Fri / 10:00AM - 6:00PM. Sat-Sun Closed.</p>
+        <p>Federal Holidays Closed.</p>
+      </div>
+  
+      <div style="text-align: center; border-top: 1px solid rgba(187, 187, 187, 1); border-bottom: 1px solid rgba(187, 187, 187, 1); padding: 20px 0;">
+        <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
+        <p style="font-weight: 500; padding: 10px 0; width: 80%; text-align: center; margin: auto;">Save Time And Money With Our Booking System</p>
+        <button class="buttonApt bookingButton">Book Appointment</button>
+      </div>
+      <div style="text-align: center; margin: 20px 0;">
+        <p>Want to cancel your appointment?</p>
+          <a href="mailto:sales@superhairpieces.com">
+            <button class="bookingButton1">
+              Email Us
+            </button></a>
+      </div>
     </div>
 
-    <div style="text-align: center; border-top: 1px solid rgba(187, 187, 187, 1); border-bottom: 1px solid rgba(187, 187, 187, 1); padding: 20px 0;">
-      <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
-      <p style="font-weight: 500; padding: 10px 0; width: 80%; text-align: center; margin: auto;">Save Time And Money With Our Booking System</p>
-      <button class="buttonApt bookingButton">Book Appointment</button>
-    </div>
-    <div style="text-align: center; margin: 20px 0;">
-      <p>Want to cancel your appointment?</p>
-        <a href="mailto:sales@superhairpieces.com">
-          <button class="bookingButton1">
-            Email Us
-          </button></a>
-    </div>
   </div>
   <div class="oldClients non-active">
     <div class="signIn_square">
@@ -759,113 +812,7 @@ input:focus {
         </div>
 
       </div>
-      <div id="serviceBooking" class="mobileMain serviceBooking non-active">
-        <div>
-          <p>Hair Stylist</p>
-          <div class="staffMembers">
-              <div data-team-member-id="" class="bookingButton1 addNames1 addNames2 loaded">
-                <span class="addNames"></span>
-                <div class="salonist" >Any Available Staff Member</div></div>
-          </div>
-        </div>
-        <p>Select your preferred date and time</p>  
-        <div>
-          <div class="calendarTop">
-            <svg class="arrow disabled prev-arrow">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
-            </svg>
-            <p class="calendarMonth" style="margin: unset;"></p>
-            <svg class="arrow next-arrow">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
-            </svg>
-          </div>
-          <div class="calendarMain" style="position: relative;">
-            <span class="loader2">
-              <span class="loader"></span>
-            </span>
-            <ul class="weeks">
-              <li>S</li>
-              <li>M</li>
-              <li>T</li>
-              <li>W</li>
-              <li>Th</li>
-              <li>F</li>
-              <li>S</li>
-            </ul>
-            <ul class="days">
-            </ul>
-          </div>
-          <div class="belowCalendar">
-            <div class="title">Available on <span class="dayAvailable"></span></div>
-            <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
-            <div class="morning time">
-              <p class="bookings">Morning</p>
-              <div class="slot"></div>
-              <div class="slot2">All booked</div>
-            </div>
-            <div class="afternoon time">
-              <p class="bookings">Afternoon</p>
-              <div class="slot"></div>
-              <div class="slot2">All booked</div>
-
-            </div>
-            <div class="evening time">
-              <p class="bookings">Evening</p>
-              <div class="slot"></div>
-              <div class="slot2">All booked</div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
-        <p class="title">Booking Information</p>
-        <div style="position:relative;">
-          <span class="loader2" style="height: 270px;">
-            <span class="loader"></span>
-          </span>
-          <div>
-            <p class="title2">&#x2022; Service :</p>
-            <div class="para" id="serviceType"></div>
-          </div>
-          <div>
-            <p class="title2">&#x2022; Hair Stylist :</p>
-            <div class="para" id="stylistName"></div>
-          </div>
-          <div>
-            <p class="title2">&#x2022; Date and time :</p>
-            <div class="para" id="dateSelected"></div>
-          </div>
-        </div>
-      </div>
-      <div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
-        <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
-        <form id="myForm">
-          <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-            <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
-              <option value="+1">Canada</option>
-            </select>
-            <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
-          </div>
-
-          <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
-          <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-            <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
-            <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
-          </div>
-
-          <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-          <div style="font-weight: 500;">
-            <input type="checkbox" id="vehicle3" name="vehicle3" required>
-            <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
-          </div>
-
-          <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
-          <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
-          <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
-          <input type="submit" id="submit-form" class="hidden" />
-        </form>
-      </div>
+      <div class="form1234" style="overflow: auto; "></div>
     </div>
 
     <div class="mobileBottom1 non-active">
@@ -878,16 +825,16 @@ input:focus {
           <span class="price"></span>
         </div>
         <div class="pleaseSelect"></div>
-        <div style="display:flex;">
-          <button class="bookingButton1">Back</button>
+        <div style="display:flex; gap: 10px;">
+          <button class="bookingButton1 backButton">Back</button>
           <button class="bookingButton nextButton">Next</button>
           <button class="bookingButton confirmButton non-active">Confirm</button>
-          <label style="text-align:center ;"  tabindex="0" for="submit-form" class="bookingButton bookNowButton non-active">Book Now</label>
+          <label style="text-align:center ;"  tabindex="0" for="submit-form2" class="bookingButton bookNowButton non-active">Book Now</label>
         </div>
       </div>
     </div>
   </div>
-    <div class="mobilePopup">
+  <div class="mobilePopup">
       <div class="mobilePopup1">
         <div class="bookingLoadbar">
           <div class="bookingLoad"></div>
@@ -900,7 +847,7 @@ input:focus {
 
         <div class="mobileMain mobileInitial non-active" >
           <p>Is this your first service appointment with Superhairpieces?</p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="gtaInitialDesktop">
             <button id="1" class="bookingButton">Yes</button>
             <button id="2" class="bookingButton">No, I'd like to sign in / sign up</button>
           </div>
@@ -908,7 +855,7 @@ input:focus {
 
         <div id="service1" class="mobileMain mobileService non-active">
           <p>Which service do you need?</p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="gtaMobileService">
             <button id='mens' class="bookingButton1">Men services</button>
             <button id="womens" class="bookingButton1">Women services</button>
             <button id="consultation" class="bookingButton1">Consultation</button>
@@ -916,14 +863,14 @@ input:focus {
         </div>
         <div id="system1" class="mobileMain mobileSystem non-active">
           <p>Do you have any hair systems?</p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="gtaMobileService">
             <button id="systemYes" class="bookingButton">Yes</button>
             <button id="systemBuy" class="bookingButton">No, Let's buy one</button>
           </div>
         </div>
         <div id="service2" class="mobileMain mobileService2 non-active">
           <p>What service do you need?</p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="gtaMobileService">
             <button id="Installation" class="bookingButton">Installation</button>
             <button id="Maintenance" class="bookingButton">Maintenance</button>
           </div>
@@ -932,119 +879,14 @@ input:focus {
         </div>
         <div id="service3" class="mobileMain mobileService3 non-active">
           <p>Do you require color on your own hair?<span id="change"></span></p>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="gtaMobileService">
             <button class="bookingButton">Yes</button>
             <button class="bookingButton">No</button>
           </div>
         </div>
-        <div id="serviceBooking" class="mobileMain serviceBooking non-active">
-          <div>
-            <p>Hair Stylist</p>
-            <div class="staffMembers">
-                <div data-team-member-id="" class="bookingButton1 addNames1 loaded">
-                  <span class="addNames"></span>
-                  <div class="salonist" >Any Available Staff Member</div></div>
-            </div>
-          </div>
-          <p>Select your preferred date and time</p>  
-          <div>
-            <div class="calendarTop">
-              <svg class="arrow disabled prev-arrow">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
-              </svg>
-              <p class="calendarMonth" style="margin: unset;"></p>
-              <svg class="arrow next-arrow">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
-              </svg>
-            </div>
-            <div class="calendarMain" style="position: relative;">
-              <span class="loader2">
-                <span class="loader"></span>
-              </span>
-              <ul class="weeks">
-                <li>S</li>
-                <li>M</li>
-                <li>T</li>
-                <li>W</li>
-                <li>Th</li>
-                <li>F</li>
-                <li>S</li>
-              </ul>
-              <ul class="days">
-              </ul>
-            </div>
-            <div class="belowCalendar">
-              <div class="title">Available on <span class="dayAvailable"></span></div>
-              <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
-              <div class="morning time">
-                <p class="bookings">Morning</p>
-                <div class="slot"></div>
-                <div class="slot2">All booked</div>
-              </div>
-              <div class="afternoon time">
-                <p class="bookings">Afternoon</p>
-                <div class="slot"></div>
-                <div class="slot2">All booked</div>
 
-              </div>
-              <div class="evening time">
-                <p class="bookings">Evening</p>
-                <div class="slot"></div>
-                <div class="slot2">All booked</div>
 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
-          <p class="title">Booking Information</p>
-          <div style="position:relative;">
-            <span class="loader2" style="height: 270px;">
-              <span class="loader"></span>
-            </span>
-            <div>
-              <p class="title2">&#x2022; Service :</p>
-              <div class="para" id="serviceType"></div>
-            </div>
-            <div>
-              <p class="title2">&#x2022; Hair Stylist :</p>
-              <div class="para" id="stylistName"></div>
-            </div>
-            <div>
-              <p class="title2">&#x2022; Date and time :</p>
-              <div class="para" id="dateSelected"></div>
-            </div>
-          </div>
-
-        </div>
-        <div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
-          <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
-          <form id="myForm1">
-            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-              <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
-                <option value="+1">Canada</option>
-              </select>
-              <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
-            </div>
-  
-            <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
-            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-              <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
-              <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
-            </div>
-  
-            <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-            <div style="font-weight: 500;">
-              <input type="checkbox" id="vehicle3" name="vehicle3" required>
-              <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
-            </div>
-
-            <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
-            <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
-            <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
-            <input type="submit" id="submit-form1" class="hidden" />
-          </form>
-        </div>
+        <div class="form123" style="overflow: auto; "></div>
         <div class="mobileBottom non-active">
           <button class="mobileCancel">Cancel</button>
           <p>Any Questions?</p>
@@ -1056,7 +898,7 @@ input:focus {
         <div class="bots">
           <div class="pleaseSelect"></div>
           <div style="display: flex; gap: 10px;">
-            <button class="bookingButton1">Back</button>
+            <button class="bookingButton1 backButton">Back</button>
             <button class="bookingButton nextButton">Next</button>
             <button class="bookingButton confirmButton non-active">Confirm</button>
             <label style="text-align:center ;"  tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
@@ -1064,6 +906,113 @@ input:focus {
         </div>
       </div>
     </div>
+<div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
+  <p class="title">Booking Information</p>
+  <div style="position:relative;">
+    <span class="loader2" style="height: 270px;">
+      <span class="loader"></span>
+    </span>
+    <div>
+      <p class="title2">&#x2022; Service :</p>
+      <div class="para" id="serviceType"></div>
+    </div>
+    <div>
+      <p class="title2">&#x2022; Hair Stylist :</p>
+      <div class="para" id="stylistName"></div>
+    </div>
+    <div>
+      <p class="title2">&#x2022; Date and time :</p>
+      <div class="para" id="dateSelected"></div>
+    </div>
+  </div>
+</div>
+<div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
+  <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
+  <form id="myForm1">
+    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
+        <option value="+1">Canada</option>
+      </select>
+      <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
+    </div>
+
+    <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
+    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
+      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
+    </div>
+
+    <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+    <div style="font-weight: 500;">
+      <input type="checkbox" id="vehicle3" name="vehicle3" required>
+      <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+    </div>
+
+    <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
+    <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+    <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
+    <input type="submit" id="submit-form1" class="hidden" />
+  </form>
+</div>
+<div id="serviceBooking" class="mobileMain serviceBooking non-active">
+  <div>
+    <p>Hair Stylist</p>
+    <div class="staffMembers">
+        <div data-team-member-id="" class="bookingButton1 addNames1 loaded">
+          <span class="addNames"></span>
+          <div class="salonist" >Any Available Staff Member</div></div>
+    </div>
+  </div>
+  <p>Select your preferred date and time</p>  
+  <div>
+    <div class="calendarTop">
+      <svg class="arrow disabled prev-arrow">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
+      </svg>
+      <p class="calendarMonth" style="margin: unset;"></p>
+      <svg class="arrow next-arrow">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
+      </svg>
+    </div>
+    <div class="calendarMain" style="position: relative;">
+      <span class="loader2">
+        <span class="loader"></span>
+      </span>
+      <ul class="weeks">
+        <li>S</li>
+        <li>M</li>
+        <li>T</li>
+        <li>W</li>
+        <li>Th</li>
+        <li>F</li>
+        <li>S</li>
+      </ul>
+      <ul class="days">
+      </ul>
+    </div>
+    <div class="belowCalendar">
+      <div class="title">Available on <span class="dayAvailable"></span></div>
+      <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
+      <div class="morning time">
+        <p class="bookings">Morning</p>
+        <div class="slot"></div>
+        <div class="slot2">All booked</div>
+      </div>
+      <div class="afternoon time">
+        <p class="bookings">Afternoon</p>
+        <div class="slot"></div>
+        <div class="slot2">All booked</div>
+
+      </div>
+      <div class="evening time">
+        <p class="bookings">Evening</p>
+        <div class="slot"></div>
+        <div class="slot2">All booked</div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </section>
@@ -1071,7 +1020,6 @@ input:focus {
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
 
-  let todaysMonth = new Date().getMonth();
   let date = new Date();
   let currDate = date.getDate();
   let currYear = date.getFullYear();
@@ -1082,7 +1030,7 @@ input:focus {
   let stylist = '';
   let startTime = '';
   let bookedStylist = '';
-  let duration = '';
+  let duration = '0';
   let currentStylers = [];
   let total = '0.00';
   let servicesAvailable =[];
@@ -1106,6 +1054,8 @@ input:focus {
 
 
   function calendarChange(x, y) {
+    console.log('calendarChange');
+    console.log(currMonth)
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
@@ -1135,12 +1085,9 @@ input:focus {
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
-    // console.log(firstDate)
-    // console.log(apps)
-    // console.log(x)
-    // console.log(y)
     if (apps.length > 0) {
-      // console.log(apps)
+      $('.serviceList .calendarMain .loader2').addClass('non-active')
+      
       const test2 = apps.filter((item) => item.startAt.includes(y))
     let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
     let vidu1 = new Date(test2[0].startAt).toLocaleString('en-us', {weekday:"short"})
@@ -1245,7 +1192,12 @@ input:focus {
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       let firstDate = r.availabilities[0]
-      duration = firstDate.appointmentSegments[0].durationMinutes;
+      duration = '0';
+      firstDate.appointmentSegments.forEach((item) => {
+        duration = parseFloat(duration) + parseFloat(item.durationMinutes)
+
+      })
+      // duration = firstDate.appointmentSegments[0].durationMinutes;
       let v = 0;
       if (apps.length > 0) {
 
@@ -1320,7 +1272,10 @@ input:focus {
     .then(r=> { 
       // $('.mobileBottom1 .bookingButton').html('Confirm')
       $('.nextButton').addClass('non-active');
+      $('.nextButton').removeClass('active');
       $('.confirmButton').removeClass('non-active');
+      $('#serviceType').empty();
+      // console.log(serviceEnd)
       serviceEnd.forEach((serv1) => {
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
@@ -1328,17 +1283,17 @@ input:focus {
             if(stylist == item2.team_member_id) {
 
               if ($('.oldClients').hasClass('non-active')) {
-                $('.mobilePopup #stylistName').html(item2.display_name)
+                $('#stylistName').html(item2.display_name)
               } else {
-                $('.serviceList #stylistName').html(item2.display_name)
+                $('#stylistName').html(item2.display_name)
 
               }
 
             }
           })
           if ($('.oldClients').hasClass('non-active')) {
-
-            $('.mobilePopup #serviceType').append(`
+            $('#serviceType').empty();
+            $('#serviceType').append(`
             <div>
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
@@ -1346,7 +1301,7 @@ input:focus {
             `)
 
           } else {
-            $('.serviceList #serviceType').append(`
+            $('#serviceType').append(`
             <div>
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
@@ -1365,9 +1320,13 @@ input:focus {
           let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
           $('.bookingConfirm .loader2').addClass('non-active');
           if ($('.oldClients').hasClass('non-active')) {
-          $('.mobilePopup #dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+
+              $('.form123').empty().append($('.bookingConfirm').eq(0).clone());
+              $('.form123 .bookingConfirm').addClass('active');
+
           } else {
-          $('.serviceList #dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
 
 
           }
@@ -1375,10 +1334,41 @@ input:focus {
         }
       })
       } )
+      if ($('.oldClients').hasClass('non-active')) {
+
+      } else {
+        $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+
+      }
+
 
     })
   }
-  
+  $('.mobileBottom1 .bots .bookingButton1.backButton').on('click', function() {
+    if ($('.form123 .serviceBooking').hasClass('active')) {
+      $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+      $('.serviceBooking').removeClass('active');
+      $('.form123').empty();
+      $('.mobileService3').addClass('active');
+      $('.mobileBottom').addClass('active');
+      $('.mobileBottom1').removeClass('active');
+      $('.mobilePopup1').removeClass('mobileBookConfirm');
+      $('.calendarMain .loader2').removeClass('non-active');
+    } else if ($('.form123 .bookingConfirm').hasClass('active')) {
+      $('.confirmButton').removeClass('active');
+      $('.confirmButton').addClass('non-active');
+      $('.nextButton').addClass('active');
+      $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+      $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+      // console.log($('.form123 .calendarTop .next-arrow'))
+    } else if ($('.form123 .bookingForm').has('active')) {
+      $('.bookNowButton').removeClass('active');
+      $('.confirmButton').removeClass('non-active');
+      $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+      $('.form123').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'));
+    }
+
+    })
   
   $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
 
@@ -1387,25 +1377,89 @@ input:focus {
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
-      $('.bookingConfirm').addClass('active');
         serviceType1([serviceEnd], bookedStylist, startTime);
+        // $('.form123').empty().append($('.bookingConfirm').eq(0).clone());
+
       } else {
         $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
       }
       
     })
   $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
+    $('.form123').empty().append($('.bookingForm').eq(0).clone());
     $('.confirmButton').addClass('non-active');
         $('.bookNowButton').addClass('active');
     $('.mobilePopup1 .bookingConfirm').removeClass('active')
     $('.mobilePopup1 .bookingForm').addClass('active')
     // $('.mobileBottom1').removeClass('active')
+    $(".form123 #myForm1").on("submit", function(e) {
+            e.preventDefault();
+            // console.log(multiService[0])
+            const serv = multiService[0]
+            let x = []
+            const vidutest = serv.appointmentSegments.forEach((item) => {
+              x.push({
+                "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+              })
+            })
+            if ($("#myForm1 [name='firstName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='firstName']").setCustomValidity("Please fill in your first name");
+              document.querySelector("#myForm1 [name='firstName']").reportValidity();
+            }  else if ($("#myForm1 [name='lastName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='lastName']").setCustomValidity("Please fill in your last name");
+              document.querySelector("#myForm1 [name='lastName']").reportValidity();
+
+            }else if ($("#myForm1 [name='email']").val().trim().length==0 || $("#myForm1 [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+              document.querySelector("#myForm1 [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+              document.querySelector("#myForm1 [name='email']").reportValidity();
+            } else if ($("#myForm1 [name='number']").val().trim().length==0 || $("#myForm1 [name='number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
+              document.querySelector("#myForm1 [name='number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
+              document.querySelector("#myForm1 [name='number']").reportValidity();
+            } else {
+              $('.bookNowButton').addClass('loading');
+              $("#myForm1 input").prop("disabled", true);
+              $("#myForm1 select").prop("disabled", true);
+              $("#myForm1 textarea").prop("disabled", true);
+              $("#myForm1 button").prop("disabled", true);
+              fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                method: 'POST',
+                headers: {
+                    accept: "application/json",
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: $("#myForm1 input[name=email]").val()
+                })
+              })
+              .then(r=>r.json())
+              .then(r=>{
+                if (jQuery.isEmptyObject(r)) {
+                  createCustomer(x, "#myForm1")
+                } else {
+                  createBooking(r.customers[0].id, x, "#myForm1")
+
+                }
+              })
+            }
+
+                // $("button").prop("disabled", "disabled");
+                // $(".e-submit .e-content input").prop("readonly", true);
+                // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+
+
+            }
+        );
+      
     if ($('.oldClients').hasClass('non-active')) {
       $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-
       $('.serviceList .mobileBottom1').removeClass('active')
     }
+
   })
+ 
   $("#myForm1").on("submit", function(e) {
             e.preventDefault();
             // console.log(multiService[0])
@@ -1477,6 +1531,7 @@ serv.appointmentSegments.forEach((item) => {
     "serviceVariationVersion": item.serviceVariationVersion
   })
 })
+$('.bookNowButton').addClass('loading');
 if ($('.newClients').hasClass('non-active')) {
   $('.serviceList .bookNowButton').addClass('loading');
     } else {
@@ -1568,19 +1623,30 @@ function createBooking(id, serv, form) {
     let color = false;
     calendarChange() 
     $('.calendarTop .next-arrow').on('click', nextMonth)
-
+    $(".oldClients .back").on('click', function() {
+        $('.oldClients').addClass('non-active');
+        $('.newClients').removeClass('non-active');
+      })
 
     function prevMonth() {
             duration = '';
             startTime = '';
             multiService = [];
             bookedStylist = '';
-
+      
       if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
       $('.loader2').removeClass('non-active');
 
         // $('.calendarTop .prev-arrow').bind('click', prevMonth)
       currMonth = currMonth - 1
+      
+      if (currMonth == new Date().getMonth()) {
+        $('.calendarTop .prev-arrow').addClass('disabled')
+        $('.prev-arrow').unbind('click', prevMonth)
+      } else {
+        $('.next-arrow').bind('click', nextMonth)
+        
+      }
       if (currMonth < 0 || currMonth > 11) {
         date = new Date(currYear, currMonth, currDate);
         currYear = date.getFullYear();
@@ -1594,6 +1660,7 @@ function createBooking(id, serv, form) {
         if (currMonth === new Date().getMonth()) {
           bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
         } else {
+
           bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
         }
         test5.setUTCHours(23,59,59,0)
@@ -1601,13 +1668,11 @@ function createBooking(id, serv, form) {
         // if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
         //   $('.calendarTop .prev-arrow').unbind('click')
       $('.calendarTop .next-arrow').removeClass('disabled')
-
-          $('.calendarTop .next-arrow').bind('click', nextMonth)
+          // $('.calendarTop .next-arrow').bind('click', nextMonth)
         // } 
       } else {
         $('.calendarTop .prev-arrow').addClass('disabled')
 
-        console.log('Past')
 
       }
 
@@ -1621,6 +1686,7 @@ function createBooking(id, serv, form) {
       currMonth = currMonth + 1
       if (currMonth == new Date().getMonth() +2) {
       $('.calendarTop .next-arrow').addClass('disabled')
+      $('.calendarTop .next-arrow').unbind('click', nextMonth)
       }
       if (currMonth <= new Date().getMonth() + 2) {
       $('.loader2').removeClass('non-active');
@@ -1979,6 +2045,7 @@ function createBooking(id, serv, form) {
     }
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
+      console.log('checkAva')
       serviceEnd = serviceId;
       duration = durationTotal/60000;
       let styleTest = [];
@@ -2007,14 +2074,15 @@ function createBooking(id, serv, form) {
       
       // multiService.push(r.availabilities);
       $('.botss .nextButton').unbind('click');
+      $('.botss .backButton').unbind('click');
       $('.mobileBottom1 .bookingButton.confirmButton').unbind('click');
       if ($('.serviceList .serviceBooking').hasClass('active')) {
         let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       let firstDate = r.availabilities[0]
       let v = 0;
-      $('.serviceList .calendarMain .loader2').addClass('non-active');
 
+      $('.calendarMain .loader2').addClass('non-active');
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected')
         apps.forEach((item) => {
@@ -2066,19 +2134,124 @@ function createBooking(id, serv, form) {
         $('.confirmButton').addClass('non-active');
         $('.bookNowButton').addClass('active');
         $('.bookingConfirm').removeClass('active');
-        $('.bookingForm').addClass('active');
+        // $('.bookingForm').addClass('active');
+      $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'))
+        $('.form1234 .bookingForm input[type=submit]').attr('id', 'submit-form2')
+
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
+      $(".form1234 #myForm1").on("submit", function(e) {
+            e.preventDefault();
+            // console.log(multiService[0])
+            const serv = multiService[0]
+            let x = []
+            const vidutest = serv.appointmentSegments.forEach((item) => {
+              x.push({
+                "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+              })
+            })
+            if ($("#myForm1 [name='firstName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='firstName']").setCustomValidity("Please fill in your first name");
+              document.querySelector("#myForm1 [name='firstName']").reportValidity();
+            }  else if ($("#myForm1 [name='lastName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='lastName']").setCustomValidity("Please fill in your last name");
+              document.querySelector("#myForm1 [name='lastName']").reportValidity();
 
+            }else if ($("#myForm1 [name='email']").val().trim().length==0 || $("#myForm1 [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+              document.querySelector("#myForm1 [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+              document.querySelector("#myForm1 [name='email']").reportValidity();
+            } else if ($("#myForm1 [name='number']").val().trim().length==0 || $("#myForm1 [name='number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
+              document.querySelector("#myForm1 [name='number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
+              document.querySelector("#myForm1 [name='number']").reportValidity();
+            } else {
+              $('.bookNowButton').addClass('loading');
+              $("#myForm1 input").prop("disabled", true);
+              $("#myForm1 select").prop("disabled", true);
+              $("#myForm1 textarea").prop("disabled", true);
+                $("#myForm1 button").prop("disabled", true);
+              $('.mobilePopup .bookNowButton').addClass('loading');
+              fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                method: 'POST',
+                headers: {
+                    accept: "application/json",
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: $("#myForm1 input[name=email]").val()
+                })
+              })
+              .then(r=>r.json())
+              .then(r=>{
+                if (jQuery.isEmptyObject(r)) {
+                  createCustomer(x, "#myForm1")
+                } else {
+                  createBooking(r.customers[0].id, x, "#myForm1")
+
+                }
+              })
+            }
+
+                // $("button").prop("disabled", "disabled");
+                // $(".e-submit .e-content input").prop("readonly", true);
+                // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+
+
+            }
+        );
+      })
+
+      $('.botss .backButton').on('click', function() {
+        if ($('.form1234 .serviceBooking').hasClass('active')) {
+          $('.bookingLoad.loaded:last').removeClass('loaded');
+          $('.form1234').empty();
+          $('.gokutest').removeClass('non-active');
+          $('.service').removeClass('non-active');
+          $('.total').removeClass('non-active');
+          duration = '';
+          startTime = '';
+          multiService = [];
+          bookedStylist = '';
+        } else if ($('.form1234 .bookingConfirm').hasClass('active')) {
+          $('.bookingLoad.loaded:last').removeClass('loaded');
+          $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+
+          $('.currMonth.active').eq(0).addClass('selected');
+          $('.botss .confirmButton').addClass('non-active');
+          $('.botss .nextButton').removeClass('non-active');
+          let x = $('.currMonth.selected').attr('data-id');
+          let y = $('.currMonth.selected').attr('data-date');
+        getCurrentDateAppointments(r.availabilities[x], r.availabilities, x, y)
+        } else if ($('.form1234 .bookingForm').hasClass('active')) {
+          $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+          $('.botss .bookNowButton').removeClass('active');
+          $('.botss .confirmButton').removeClass('non-active');
+        } else if (!($('.gokutest').hasClass('non-active'))) {
+          $('.serviceList').css('max-height', `0px`);
+          $('.list-item').removeClass('active');
+          $('.service').empty();
+          $('.total').removeClass('active');
+          $('.page-test1').empty();
+          totalTime = 0;
+          total = '0.00';
+          serviceEnd1 = [];
+          $('.page-button').removeClass('page-button1')
+          $('.page-test').removeClass('brand-add')
+          $('.page-test').css('max-height', '0px')
+        }
       })
       $('.botss .nextButton').on('click', function() {
-
+       
         if ($('.serviceBooking').hasClass('active')) {
           if (serviceEnd, bookedStylist, startTime) {
+
             $('.serviceBooking').removeClass('active');
             $('.bookingLoad:not(.loaded):first').addClass('loaded');
-            $('.bookingConfirm').addClass('active');
+
             serviceType1(serviceId, bookedStylist, startTime);
+
            } else {
             $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
            }
@@ -2088,12 +2261,15 @@ function createBooking(id, serv, form) {
 
         } else {
 
-          $('.serviceBooking').addClass('active');
+          $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
+          $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
+
         $('.gokutest').addClass('non-active');
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
           if ($('.gokutest').hasClass('non-active')) {
               $('.mobileBottom1 .botss .service').addClass('non-active');
               $('.mobileBottom1 .botss .total').removeClass('active');
+              $('.mobileBottom1 .botss .total').addClass('non-active');
             } else {
               $('.mobileBottom1 .botss .service').removeClass('non-active');
               $('.mobileBottom1 .botss .total').addClass('active');
@@ -2104,7 +2280,6 @@ function createBooking(id, serv, form) {
       let v = 0;
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected')
-
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
@@ -2123,6 +2298,7 @@ function createBooking(id, serv, form) {
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
       // calendarChange()
+
       getCurrentDateAppointments(r.availabilities[x], apps, x, y)
       } 
       // else {
@@ -2225,10 +2401,11 @@ function createBooking(id, serv, form) {
         $('.mobilePopup').css('max-height', `${setheight}px`);
     })
     $('.mobileCancel').on('click', () => {
-      $('.bookingLoad').removeClass('loaded')
+      $('.bookingLoad').removeClass('loaded');
       $('.mobilePopup').css('max-height', '0');
       $('.mobileMain').removeClass('active');
-      $('.mobileInitial').addClass('active')
+      $('.mobileInitial').addClass('active');
+      $('#change').empty();
 
     })
     $('#1').on('click', () => {
@@ -2272,10 +2449,39 @@ function createBooking(id, serv, form) {
       e.preventDefault();
       e.target.innerHTML == 'Yes' ? color=true : color=false;
       $('.mobileService3').removeClass('active');
-      $('.serviceBooking').addClass('active');
+      $('.form123').empty().append($('.serviceBooking').eq(0).clone());
+      $('.form123 .serviceBooking').addClass('active');
+      $('.staffMembers .addNames1').on('click', function() {
+        duration = '';
+            startTime = '';
+            multiService = [];
+            bookedStylist = '';
+        $('.calendarMain .loader2').removeClass('non-active')
+        $('.morning .slot').empty();
+        $('.afternoon .slot').empty();
+        $('.evening .slot').empty();
+
+        if ($('.pleaseSelect').children.length > 0) {
+          $('.pleaseSelect').empty();
+        }
+
+        let memberId = $(this).data('team-member-id')
+        stylist = memberId.split(',')
+        $('.staffMembers .addNames1').removeClass('loaded')
+        $(this).addClass('loaded')
+        let date1 = new Date();
+        let year = date1.getFullYear();
+        let mon = date1.getMonth();
+        let test5 = new Date(year, mon + 1,0)
+        test5.setUTCHours(23,59,59,0);
+        currMonth = new Date().getMonth()
+        calendarChange()
+        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
+      })
+      $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
       $('.mobileBottom').removeClass('active');
       $('.mobileBottom1').addClass('active');
-
+      
       $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
 
        if (serviceGender == 'mens') {
