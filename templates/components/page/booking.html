@@ -1013,7 +1013,11 @@ input:focus {
     </div>
   </div>
 </div>
-
+<div class="gtaServiceBooking">
+  <div>
+    <p></p>
+  </div>
+</div>
 
 </section>
 <script>
@@ -2449,8 +2453,14 @@ function createBooking(id, serv, form) {
       e.preventDefault();
       e.target.innerHTML == 'Yes' ? color=true : color=false;
       $('.mobileService3').removeClass('active');
-      $('.form123').empty().append($('.serviceBooking').eq(0).clone());
+      if ($(window).width() > 1023) {
+
+      } else {
+        console.log
+        $('.form123').empty().append($('.serviceBooking').eq(0).clone());
       $('.form123 .serviceBooking').addClass('active');
+      }
+
       $('.staffMembers .addNames1').on('click', function() {
         duration = '';
             startTime = '';
