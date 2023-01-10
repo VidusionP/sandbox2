@@ -710,7 +710,14 @@ section {
   .mobileGTA{
     display: none;
   }
-  .mobileBottom1 {
+  .serviceList .mobileBottom1 {
+    box-shadow: unset;
+    border: unset;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    width: 80%;
+  }
+  .mobileBottom1 .botss {
     display: none;
   }
   .staffBooking .mobile {
@@ -868,14 +875,59 @@ section {
   }
   .multiServiceSide {
     display: block;
+    text-align: start;
+    width: 285px;
+  }
+  .multiServiceside p {
+    margin: 0;
+    
+  }
+  .list-mens {
+    height: 100%;
+    overflow: unset;
+  }
+  .multiServiceDesk .serviceLoaded p {
+    border-bottom: 1px solid #006CFF;
+    color: #006CFF;
+    width: fit-content;
+  }
+  .multiServiceSide .item {
+    margin-bottom: 20px;
   }
   .multiServiceDesk {
     display: flex;
     gap: 90px;
     margin-top: 50px;
+    height: 65%;
+    overflow: auto;
   }
   .list-mens {
     width: 100%;
+  }
+  .top-list {
+    margin-top: 50px;
+  }
+  .multiServiceSide .multiServiceItem {
+    background-color: #ededed;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+  }
+  .multiServiceSide .multiServiceItem::after {
+    content: "";
+    background-image: url('../../../assets/img/gta/delete.png');
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+  }
+  .multiServiceSide.non-active {
+    display: none;
+  }
+  .multiServiceSide.active {
+    display: block;
   }
 }
 @keyframes mulShdSpin {
@@ -978,6 +1030,23 @@ section {
     </div>
     <div class="back">Back</div>
   </div>
+  <div class="multiServiceSide non-active">
+    <div class="item service serviceLoaded">
+      <p>Select services</p>
+    </div>
+    <div class="item stylist">
+      <p>Select stylist</p>
+
+    </div>
+    <div class="item dateAndTime">
+      <p>Select date and time</p>
+
+    </div>
+    <div class="item details">
+      <p>Enter your details</p>
+
+    </div>
+  </div>
   <div class="serviceList non-active">
     <div style="width: 80%; margin: auto;">
       <div class="bookingLoadbar four">
@@ -994,23 +1063,7 @@ section {
           <div class="item">Consultation</div>
         </div>
         <div class="multiServiceDesk">
-          <div class="mutliServiceSide">
-            <div class="service">
-              <p>Select services</p>
-            </div>
-            <div class="stylist">
-              <p>Select stylist</p>
 
-            </div>
-            <div class="dateAndTime">
-              <p>Select date and time</p>
-
-            </div>
-            <div class="details">
-              <p>Enter your details</p>
-
-            </div>
-          </div>
           <div class="list-mens">
             <p class="list-service-title">Select one or more services:</p>
             <div class="page-tab">
@@ -1101,6 +1154,7 @@ section {
 
       </div>
       <div class="form1234" style="overflow: auto; "></div>
+
     </div>
 
     <div class="mobileBottom1 non-active">
@@ -1120,6 +1174,11 @@ section {
           <label style="text-align:center ;"  tabindex="0" for="submit-form2" class="bookingButton bookNowButton non-active">Book Now</label>
         </div>
       </div>
+      <div class="desktopBottom">
+        <p>Cancel</p>
+        <p class="next">Next</p>
+        <p>Back</p>
+    </div>
     </div>
   </div>
   <div class="mobilePopup">
@@ -2172,6 +2231,7 @@ function createBooking(id, serv, form) {
       // $('.oldClients').addClass('non-active')
       $('.serviceList .mobileBottom1').addClass('active')
         $('.serviceList').css('max-height', `${setheight}px`);
+        $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
         $('.serviceList .top-list .item').removeClass('active')
        let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`)
        fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
@@ -2453,7 +2513,15 @@ function createBooking(id, serv, form) {
             $(`#${this.id}`).removeClass('active');
 
           })
+          $('.mobileBottom1 .desktopBottom .next').on('click', function() {
+            $('.serviceList .gokutest').addClass('non-active');
+            $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
+            $('.form1234 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+            // $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
+            $('.serviceList .loader2').addClass('non-active')
 
+
+          })
 
        })
 
@@ -2467,7 +2535,6 @@ function createBooking(id, serv, form) {
       let servicesAvailable = e.data.servicesAvailable;
       let currTime = e.data.currTime;
       let lastTime = e.data.lastTime;
-
           $(this).unbind('click');
           let serviceId = $(this).data('service-id');
           let self = this.id;
@@ -2483,7 +2550,24 @@ function createBooking(id, serv, form) {
             totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
           }
           serviceEnd1.push(serviceId)
+          const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+          const testName = test[0].itemData.name;
+          const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration
+          let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text()
+          
+          // const testPrice = test[0].itemData.variations[0].itemVariationData.priceMoney ? test[0].itemData.variations[0].itemVariationData.priceMoney.amount
             checkAva( currTime, lastTime, serviceEnd1, totalTime)
+
+          $('.multiServiceSide .service').append(`
+          <div class='multiServiceItem'>
+            <div class='name'>${testName}</div>  
+            <div clas='price'>${check}</div>  
+            <div class='time'>${testDuration/60000} mins</div>  
+          </div>
+          `)
+            // console.log(testName)
+            // console.log(duration)
+
           $(this).hasClass('active') ? '': $(this).addClass('active')
     }
 
