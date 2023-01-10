@@ -531,6 +531,7 @@ body {
     display: inline-block;
     vertical-align: middle;
   }
+
   .serviceList .bookNowButton::before {
     content: '';
     display: none;
@@ -574,6 +575,309 @@ body {
 input:focus {
   outline: none;
 }
+
+.gtaTopDesktop {
+  display: none;
+}
+.gtaTopSide {
+  display: none;
+}
+.gtaInitialDesktop {
+  display: flex; 
+  flex-direction: 
+  column; 
+  gap: 20px;
+}
+.gtaMobileService {
+  display: flex; 
+  flex-direction: 
+  column; gap: 20px;
+}
+.desktopBottom {
+  display: none;
+}
+.staffBooking .desktop {
+  display: none;
+}
+.salonistBottom {
+  display: none;
+}
+.selectDesktop {
+    display: none;
+  }
+.serviceBooking .title2 {
+  text-align: start;
+  font-weight: 600;
+  font-size: 18px;
+}
+.serviceBookingSide {
+  display: none;
+}
+.serviceSideBooking {
+  display: none;
+}
+.bookingForm {
+  text-align: start;
+   margin-top: 10px;
+    padding-bottom:100px;
+   overflow: auto;
+}
+section {
+  width: 90%;
+   margin: auto;
+    color: black;
+}
+.gtaFirstDesktop {
+  text-align: center;
+   border-top: 1px solid rgba(187, 187, 187, 1);
+   border-bottom: 1px solid rgba(187, 187, 187, 1);
+   padding: 20px 0;
+}
+.bookingTitle2 {
+  font-weight: 500;
+   padding: 10px 0;
+    width: 80%;
+     text-align: center;
+      margin: auto;
+}
+.bookingTitle3 {
+  display: none;
+}
+.multiServiceSide {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .gtaFirstDesktop {
+    border: unset;
+  }
+  .gtaFirstDesktop .bookingTitle {
+    display: none;
+  }
+  .gtaFirstDesktop .bookingTitle2 {
+    display: none;
+  }
+  .gtaFirstDesktop .bookingTitle3 {
+    display: block;
+  }
+  .gtaTopSide img{
+    height: calc(50vh - 25px);
+  }
+  section {
+    overflow: hidden;
+  width: 100%;
+   margin: auto;
+    color: black;
+    /* max-height: 800px; */
+    height: calc(100vh - 51px);
+}
+  .gtaTop {
+    display: none;
+  }
+  .gtaTopDesktop {
+    display: block;
+    text-align: center;
+  }
+  .gtaTopSide {
+    display: block;
+  }
+  .newClients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .bookingButton {
+    max-width: 250px;
+  }
+  .bookingButton1 {
+    max-width: 250px;
+  }
+  .gtaInitialDesktop {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .gtaMobileService {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .desktopBottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #E7E7E7;
+    padding: 20px 0;
+  }
+  .mobileBottom {
+    display: block;
+  }
+  .mobileGTA{
+    display: none;
+  }
+  .mobileBottom1 {
+    display: none;
+  }
+  .staffBooking .mobile {
+    display: none;
+  }
+  .staffBooking .desktop {
+  display: block;
+}
+  .addNames1 {
+    max-width: 600px;
+    grid-template-columns: 0.25fr 1fr .25fr;
+    margin: auto;
+    height: 85px;
+    margin-bottom: 10px;
+  }
+  .salonistBottom {
+    display: block;
+    font-size: 12px;
+    color: gray;
+  }
+  .salonist {
+    text-align: start;
+  }
+  .selectDesktop {
+    display: block;
+    padding-right: 20px;
+    text-align: end;
+  }
+  .bookingButton1.loaded.desktop1 {
+    border: 1px solid #D9D9D9;
+  }
+  .serviceBookingSide {
+    display: block;
+    position: relative;
+    height: fit-content;
+    text-align: start;
+    width: 43%;
+  }
+  .serviceBookingSide p {
+    font-weight: 600;
+  }
+  .serviceBookingSide .sideBar {
+    background-color: #ededed;
+    padding: 15px;
+  }
+  .sideBar .bookingName {
+    text-transform: uppercase;
+  }
+  .sideBar .bookingTime {
+    color: #aaaaaa;
+  }
+  .sideBar .bookingStylist {
+    color: #777777;
+    font-weight: 600;
+  }
+  .serviceBooking.active {
+    display: flex;
+    gap: 90px;
+    margin-top: 50px;
+  }
+  .bookingForm.active {
+    display: flex;
+    gap: 90px;
+    margin-top: 50px;
+  }
+  .bookingForm .serviceSideBooking {
+    display: block;
+  }
+  .jenny {
+    display: block;
+    width: 100%;
+    background-color: #006CFF;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .jenny::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+  }
+  .jenny.loading {
+    pointer-events: none;
+    font-size: 0;
+  }
+  .jenny.non-active {
+    display: none;
+
+  }
+  .jenny.loading::before {
+    display: inline-block ;
+    vertical-align: middle;
+  }
+  .afterBooking {
+    width: 100%;
+    background-color: #006CFF;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .afterBooking::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+  }
+  .afterBooking.loading {
+    pointer-events: none;
+    font-size: 0;
+    display: block;
+    text-align: center;
+  }
+  .afterBooking.loading::before {
+    display: inline-block ;
+    vertical-align: middle ;
+  }
+  .gtaDesktop1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .newClients.non-active {
+    display: none;
+  }
+  .serviceList .bookingLoadbar {
+    display: none;
+  }
+  .multiServiceDesktop {
+    display: none;
+  }
+  .list-service-title {
+    text-align: start;
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .page-button {
+    padding: .9375rem 3.125rem .9375rem 5px;
+  }
+  .multiServiceSide {
+    display: block;
+  }
+  .multiServiceDesk {
+    display: flex;
+    gap: 90px;
+    margin-top: 50px;
+  }
+  .list-mens {
+    width: 100%;
+  }
+}
 @keyframes mulShdSpin {
   0%,
   100% {
@@ -615,75 +919,38 @@ input:focus {
       transform: rotate(360deg);
     }
 }
-.gtaTopDesktop {
-  display: none;
-}
-.gtaTopSide {
-  display: none;
-}
-.gtaInitialDesktop {
-  display: flex; 
-  flex-direction: 
-  column; 
-  gap: 20px;
-}
-.gtaMobileService {
-  display: flex; 
-  flex-direction: 
-  column; gap: 20px;
-}
-@media (min-width: 1024px) {
-  .gtaTop {
-    display: none;
-  }
-  .gtaTopDesktop {
-    display: block;
-    text-align: center;
-  }
-  .gtaTopSide {
-    display: block;
-  }
-  .newClients {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .bookingButton {
-    max-width: 250px;
-  }
-  .bookingButton1 {
-    max-width: 250px;
-  }
-  .gtaInitialDesktop {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .gtaMobileService {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
 </style>
 <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
-<section style="width: 90%; margin: auto; color: black;">
+<section style=>
   <div class="gtaTop" style="text-align: center;">
     <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
     <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
   </div>
   <div class="newClients">
     <div class="gtaTopSide">
+      <div>
+        <img src="../../../assets/img/gta/image1.jpg">
+      </div>
+      <div>
+        <img src="../../../assets/img/gta/image2.jpg">
 
+      </div>
     </div>
-    <div>
+    <div class="gtaDesktop1">
       <div class="gtaTopDesktop">
         <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-        <p>Mon - Fri / 10:00AM - 6:00PM. Sat-Sun Closed.</p>
-        <p>Federal Holidays Closed.</p>
+        <p style="font-weight: 600; margin: unset;">Mon - Fri / 10:00AM - 6:00PM. Sat-Sun Closed.</p>
+        <p style="font-weight: 600;">Federal Holidays Closed.</p>
       </div>
   
-      <div style="text-align: center; border-top: 1px solid rgba(187, 187, 187, 1); border-bottom: 1px solid rgba(187, 187, 187, 1); padding: 20px 0;">
+      <div class="gtaFirstDesktop">
         <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
-        <p style="font-weight: 500; padding: 10px 0; width: 80%; text-align: center; margin: auto;">Save Time And Money With Our Booking System</p>
+        <p class="bookingTitle2">Save Time And Money With Our Booking System</p>
+        <p class="bookingTitle3">Online Booking Directly</p>
         <button class="buttonApt bookingButton">Book Appointment</button>
+        <p class="bookingTitle3">or</p>
+        <p class="bookingTitle3">Call: (905) 917-1805</p>
+
       </div>
       <div style="text-align: center; margin: 20px 0;">
         <p>Want to cancel your appointment?</p>
@@ -711,7 +978,7 @@ input:focus {
     </div>
     <div class="back">Back</div>
   </div>
-  <div class="serviceList">
+  <div class="serviceList non-active">
     <div style="width: 80%; margin: auto;">
       <div class="bookingLoadbar four">
         <div class="bookingLoad"></div>
@@ -720,96 +987,117 @@ input:focus {
         <div class="bookingLoad"></div>
       </div>
       <div class="gokutest" style="text-align: center;">
-        <p>Service List</p>
+        <p class="multiServiceDesktop">Service List</p>
         <div class="top-list">
           <div class="item active">Men</div>
           <div class="item">Women</div>
           <div class="item">Consultation</div>
         </div>
-        <div class="list-mens">
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Installation</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="installation" class="page-test1">
-  
-                </div>
+        <div class="multiServiceDesk">
+          <div class="mutliServiceSide">
+            <div class="service">
+              <p>Select services</p>
+            </div>
+            <div class="stylist">
+              <p>Select stylist</p>
+
+            </div>
+            <div class="dateAndTime">
+              <p>Select date and time</p>
+
+            </div>
+            <div class="details">
+              <p>Enter your details</p>
+
             </div>
           </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Installation + Color</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="installationcolor" class="page-test1">
-  
-                </div>
-            </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Maintenance</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="maintenance" class="page-test1">
-  
-                </div>
-            </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Maintenance + Color</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div style="position: relative;" id="maintenancecolor" class="page-test1">
-                  <div class="loader2">
-                    <div class="loader"></div>
+          <div class="list-mens">
+            <p class="list-service-title">Select one or more services:</p>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Installation</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installation" class="page-test1">
+    
                   </div>
-                </div>
+              </div>
             </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Hair Trim</button>
-            </p>
-            <div  class="page-test" style="max-height: 0px;">
-                <div id="hairtrim" class="page-test1">
-  
-                </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Installation + Color</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installationcolor" class="page-test1">
+    
+                  </div>
+              </div>
             </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Perm</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="perm" class="page-test1">
-  
-                </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Maintenance</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="maintenance" class="page-test1">
+    
+                  </div>
+              </div>
             </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">System Template</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="systemtemplate" class="page-test1">
-  
-                </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Maintenance + Color</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div style="position: relative;" id="maintenancecolor" class="page-test1">
+                    <div class="loader2">
+                      <div class="loader"></div>
+                    </div>
+                  </div>
+              </div>
             </div>
-          </div>
-          <div class="page-tab">
-            <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
-                <button class="page-button">Misc</button>
-            </p>
-            <div class="page-test" style="max-height: 0px;">
-                <div id="misc" class="page-test1">
-  
-                </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Hair Trim</button>
+              </p>
+              <div  class="page-test" style="max-height: 0px;">
+                  <div id="hairtrim" class="page-test1">
+    
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Perm</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="perm" class="page-test1">
+    
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">System Template</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="systemtemplate" class="page-test1">
+    
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Misc</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="misc" class="page-test1">
+    
+                  </div>
+              </div>
             </div>
           </div>
         </div>
+
 
       </div>
       <div class="form1234" style="overflow: auto; "></div>
@@ -888,9 +1176,15 @@ input:focus {
 
         <div class="form123" style="overflow: auto; "></div>
         <div class="mobileBottom non-active">
-          <button class="mobileCancel">Cancel</button>
-          <p>Any Questions?</p>
-          <p>Please Call: (905) 917-1805</p>
+          <div class="mobileGTA">
+            <button class="mobileCancel">Cancel</button>
+            <p>Any Questions?</p>
+            <p>Please Call: (905) 917-1805</p>
+          </div>
+          <div class="desktopBottom">
+              <p>Cancel</p>
+              <p>Back</p>
+          </div>
         </div>
 
       </div>
@@ -926,94 +1220,137 @@ input:focus {
     </div>
   </div>
 </div>
-<div style="text-align: start; margin-top: 10px; padding-bottom:100px; overflow: auto;" class="bookingForm non-active">
-  <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
-  <form id="myForm1">
-    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-      <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
-        <option value="+1">Canada</option>
-      </select>
-      <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
-    </div>
+<div class="bookingForm non-active">
+  <div class="serviceBookingSide">
+  </div>
+  <div style="width: 100%;">
+    <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
+    <form id="myForm1">
+      <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
+          <option value="+1">Canada</option>
+        </select>
+        <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required>
+      </div>
+  
+      <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
+      <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
+        <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
+      </div>
+  
+      <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
+      <div style="font-weight: 500;">
+        <input type="checkbox" id="vehicle3" name="vehicle3" required>
+        <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+      </div>
+  
+      <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
+      <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+      <div class="submitFormButtons">
+        <input type="submit" id="submit-form1" class="hidden jenny" value="Book appointment"/>
+        <div class="afterBooking non-active"></div>
+      </div>
+      
+      <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
+    </form>
+  </div>
 
-    <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="email" placeholder="Email" required>
-    <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="firstName" placeholder="First name" required>
-      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" name="lastName" placeholder="Last name" required>
-    </div>
+</div>
+<div class="mobileMain staffBooking non-active">
+  <p class="mobile" style="font-size: 18px; margin: 10px 0;">Hair Stylist</p>
+  <p class="dekstop">Select staff for</p>
+  <div class="staffMembers">
+      <div data-team-member-name="Any available" data-team-member-id="" class="bookingButton1 addNames1 loaded desktop1">
+        <span class="addNames"></span>
+        <div class="salonist" >
+          Any Available Staff Member
+          <span class="salonistBottom">Looking for the first available appointment? Choose this option to see everyone's availability</span>
+        </div>
+        <div class="selectDesktop">Select</div>
+      </div>
+  </div>
+</div>
+<div class="serviceSide non-active">
 
-    <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-    <div style="font-weight: 500;">
-      <input type="checkbox" id="vehicle3" name="vehicle3" required>
-      <label>I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
+  <div>
+    <div class="loader2">
+      <div class="loader"></div>
     </div>
+    <p>Select services and staff - <span>Edit</span></p>
+    <div class="sideBar">
+      <div class="bookingName"></div>
+      <div class="bookingPrice"></div>
+      <div class="bookingTime"></div>
+      <div class="bookingStylist"></div>
+    </div>
+  </div>
+  <div class="serviceSideBooking">
+    <p>Date and time - <span>Edit</span></p>
+    <div class="sideBar">
+      <div class="bookingDate"></div>
 
-    <p style="margin-top:19px; color:gray;">Refunds and cancellations are subject to the <a style="color: #006CFF; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their privacy practices.</p>
-    <p style="color:gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
-    <p style="color:gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
-    <input type="submit" id="submit-form1" class="hidden" />
-  </form>
+    </div>
+  </div>
+
 </div>
 <div id="serviceBooking" class="mobileMain serviceBooking non-active">
-  <div>
-    <p>Hair Stylist</p>
-    <div class="staffMembers">
-        <div data-team-member-id="" class="bookingButton1 addNames1 loaded">
-          <span class="addNames"></span>
-          <div class="salonist" >Any Available Staff Member</div></div>
-    </div>
+  <div class="serviceBookingSide">
   </div>
-  <p>Select your preferred date and time</p>  
   <div>
-    <div class="calendarTop">
-      <svg class="arrow disabled prev-arrow">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
-      </svg>
-      <p class="calendarMonth" style="margin: unset;"></p>
-      <svg class="arrow next-arrow">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
-      </svg>
-    </div>
-    <div class="calendarMain" style="position: relative;">
-      <span class="loader2">
-        <span class="loader"></span>
-      </span>
-      <ul class="weeks">
-        <li>S</li>
-        <li>M</li>
-        <li>T</li>
-        <li>W</li>
-        <li>Th</li>
-        <li>F</li>
-        <li>S</li>
-      </ul>
-      <ul class="days">
-      </ul>
-    </div>
-    <div class="belowCalendar">
-      <div class="title">Available on <span class="dayAvailable"></span></div>
-      <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
-      <div class="morning time">
-        <p class="bookings">Morning</p>
-        <div class="slot"></div>
-        <div class="slot2">All booked</div>
+    <p class="title2">Select your preferred date and time</p>  
+    <div>
+      <div class="calendarTop">
+        <svg class="arrow disabled prev-arrow">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use>
+        </svg>
+        <p class="calendarMonth" style="margin: unset;"></p>
+        <svg class="arrow next-arrow">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use>
+        </svg>
       </div>
-      <div class="afternoon time">
-        <p class="bookings">Afternoon</p>
-        <div class="slot"></div>
-        <div class="slot2">All booked</div>
-
+      <div class="calendarMain" style="position: relative;">
+        <span class="loader2">
+          <span class="loader"></span>
+        </span>
+        <ul class="weeks">
+          <li>S</li>
+          <li>M</li>
+          <li>T</li>
+          <li>W</li>
+          <li>Th</li>
+          <li>F</li>
+          <li>S</li>
+        </ul>
+        <ul class="days">
+        </ul>
       </div>
-      <div class="evening time">
-        <p class="bookings">Evening</p>
-        <div class="slot"></div>
-        <div class="slot2">All booked</div>
-
+      <div class="belowCalendar">
+        <div class="title">Available on <span class="dayAvailable"></span></div>
+        <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
+        <div class="morning time">
+          <p class="bookings">Morning</p>
+          <div class="slot"></div>
+          <div class="slot2">All booked</div>
+        </div>
+        <div class="afternoon time">
+          <p class="bookings">Afternoon</p>
+          <div class="slot"></div>
+          <div class="slot2">All booked</div>
+  
+        </div>
+        <div class="evening time">
+          <p class="bookings">Evening</p>
+          <div class="slot"></div>
+          <div class="slot2">All booked</div>
+  
+        </div>
       </div>
     </div>
   </div>
+
 </div>
-<div class="gtaServiceBooking">
+<div class="gtaServiceBooking non-active">
   <div>
     <p></p>
   </div>
@@ -1034,6 +1371,7 @@ input:focus {
   let stylist = '';
   let startTime = '';
   let bookedStylist = '';
+  let stylistName = '';
   let duration = '0';
   let currentStylers = [];
   let total = '0.00';
@@ -1058,8 +1396,6 @@ input:focus {
 
 
   function calendarChange(x, y) {
-    console.log('calendarChange');
-    console.log(currMonth)
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
     let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
@@ -1134,6 +1470,16 @@ input:focus {
       if ($('.pleaseSelect').children.length > 0) {
         $('.pleaseSelect').empty();
       }
+      if ($(window).width() > 1023) {
+        $('.form123').scrollTop(0);
+        // console.log(serviceEnd, stylist, startTime)
+        serviceType1(serviceEnd, stylist, startTime);
+        $('.form123').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
+      $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+        $('.form123 #myForm1').on("submit", submitForm)
+      // $('.serviceBookingSide .loader2').addClass('non-active');
+      }
+
     })
 
 
@@ -1193,6 +1539,7 @@ input:focus {
     })
     .then(r=>r.json())
     .then(r=> {
+
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       let firstDate = r.availabilities[0]
@@ -1224,7 +1571,7 @@ input:focus {
       if ($('.newClients').hasClass('non-active')) {
       $('.serviceList .currMonth.active').eq(0).addClass('selected')
       } else {
-        $('.mobilePopup .currMonth.active').eq(0).addClass('selected')
+        $('.currMonth.active').eq(0).addClass('selected')
 
       }
       let x = $('.currMonth.selected').attr('data-id');
@@ -1305,6 +1652,7 @@ input:focus {
             `)
 
           } else {
+
             $('#serviceType').append(`
             <div>
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
@@ -1314,7 +1662,8 @@ input:focus {
 
 
           }
-          let durationMins = new Date(startTime)
+          if ($(window).width() < 1024) {
+            let durationMins = new Date(startTime)
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
           let month = new Date(startTime).getMonth();
@@ -1325,25 +1674,49 @@ input:focus {
           $('.bookingConfirm .loader2').addClass('non-active');
           if ($('.oldClients').hasClass('non-active')) {
           $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
-
               $('.form123').empty().append($('.bookingConfirm').eq(0).clone());
               $('.form123 .bookingConfirm').addClass('active');
-
           } else {
           $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
-
-
           }
+            } else {
+                if ($('.form123 .bookingForm').hasClass('active')) {
+                  let durationMins = new Date(startTime)
+          let day = new Date(startTime).getDay();
+          let date = new Date(startTime).getDate();
+          let month = new Date(startTime).getMonth();
+          let year = new Date(startTime).getFullYear();
+          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
+          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          $('.bookingDate').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('.serviceBookingSide .loader2').addClass('non-active');
+                
+        } else if ($('.form123 .serviceBooking').hasClass('active')) {
+          $('.bookingName').append(`${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins)`)
+              $('.bookingPrice').append(`${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}`)
+              $('.bookingTime').append(`${duration} minutes`)
+              $('.bookingStylist').append(stylistName)
+              $('.serviceBookingSide .loader2').addClass('non-active');
+        }
+
+
+
+            }
+
 
         }
       })
       } )
-      if ($('.oldClients').hasClass('non-active')) {
+      if ($(window).width() < 1024) { 
+        if ($('.oldClients').hasClass('non-active')) {
 
-      } else {
-        $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+} else {
+  $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
 
+}
       }
+
 
 
     })
@@ -1380,7 +1753,9 @@ input:focus {
         $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
         $('.serviceBooking').removeClass('active');
+        $('.staffBooking').removeClass('active');
         $('.mobilePopup1').addClass('mobileBookConfirm')
+
         serviceType1([serviceEnd], bookedStylist, startTime);
         // $('.form123').empty().append($('.bookingConfirm').eq(0).clone());
 
@@ -1464,6 +1839,62 @@ input:focus {
 
   })
  
+  function submitForm(e) {
+
+    e.preventDefault();
+            const serv = multiService[0]
+            let x = []
+            const vidutest = serv.appointmentSegments.forEach((item) => {
+              x.push({
+                "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+              })
+            })
+            if ($("#myForm1 [name='firstName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='firstName']").setCustomValidity("Please fill in your first name");
+              document.querySelector("#myForm1 [name='firstName']").reportValidity();
+            }  else if ($("#myForm1 [name='lastName']").val().trim().length==0) {
+              document.querySelector("#myForm1 [name='lastName']").setCustomValidity("Please fill in your last name");
+              document.querySelector("#myForm1 [name='lastName']").reportValidity();
+
+            }else if ($("#myForm1 [name='email']").val().trim().length==0 || $("#myForm1 [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+              document.querySelector("#myForm1 [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+              document.querySelector("#myForm1 [name='email']").reportValidity();
+            } else if ($("#myForm1 [name='number']").val().trim().length==0 || $("#myForm1 [name='number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
+              document.querySelector("#myForm1 [name='number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
+              document.querySelector("#myForm1 [name='number']").reportValidity();
+            } else {
+              $('.bookNowButton').addClass('loading');
+              $('.hidden').addClass('non-active');
+              $('.afterBooking').addClass('loading');
+
+              $("#myForm1 input").prop("disabled", true);
+              $("#myForm1 select").prop("disabled", true);
+              $("#myForm1 textarea").prop("disabled", true);
+              $("#myForm1 button").prop("disabled", true);
+              fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                method: 'POST',
+                headers: {
+                    accept: "application/json",
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: $("#myForm1 input[name=email]").val()
+                })
+              })
+              .then(r=>r.json())
+              .then(r=>{
+                if (jQuery.isEmptyObject(r)) {
+                  createCustomer(x, "#myForm1")
+                } else {
+                  createBooking(r.customers[0].id, x, "#myForm1")
+
+                }
+              })
+            }
+  }
   $("#myForm1").on("submit", function(e) {
             e.preventDefault();
             // console.log(multiService[0])
@@ -1619,6 +2050,13 @@ function createBooking(id, serv, form) {
         <div style='text-align:center;' class='bookingButton'>Booked</div>
         `)
       }
+      if ($(window).width() > 1023) {
+        $('.submitFormButtons').empty();
+        $('.submitFormButtons').append(
+          `<div style='text-align:center;' class='afterBooking'>Booked</div>`
+        );
+
+      }
     })
 }
   window.addEventListener('DOMContentLoaded', function() {
@@ -1726,7 +2164,7 @@ function createBooking(id, serv, form) {
 
 
     $('.oldClients .button2').on('click', (e) => {
-
+      $('.serviceList').removeClass('non-active')
       let serviceType = e.target.getAttribute('data-service')
       let serviceCate = e.target.getAttribute('data-service-cate')
       let setheight = $('.page').height();
@@ -1977,6 +2415,7 @@ function createBooking(id, serv, form) {
               lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
             }
           $('.serviceList .staffMembers .addNames1').on('click', function() {
+            
             duration = '';
             startTime = '';
             multiService = [];
@@ -2049,7 +2488,6 @@ function createBooking(id, serv, form) {
     }
 
     function checkAva(currTime, lastTime, serviceId, durationTotal) {
-      console.log('checkAva')
       serviceEnd = serviceId;
       duration = durationTotal/60000;
       let styleTest = [];
@@ -2252,6 +2690,7 @@ function createBooking(id, serv, form) {
           if (serviceEnd, bookedStylist, startTime) {
 
             $('.serviceBooking').removeClass('active');
+            $('.staffBooking').removeClass('active');
             $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
             serviceType1(serviceId, bookedStylist, startTime);
@@ -2264,8 +2703,8 @@ function createBooking(id, serv, form) {
 
 
         } else {
-
-          $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
+          $('.form1234').empty().append($('.staffBooking').eq(0).clone().addClass('active'))
+          $('.form1234').append($('.serviceBooking').eq(0).clone().addClass('active'))
           $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
 
         $('.gokutest').addClass('non-active');
@@ -2359,9 +2798,12 @@ function createBooking(id, serv, form) {
         `)
         $('.staffMembers').append(`
         
-        <div data-team-member-id="${item.team_member_id}" class='bookingButton1 addNames1'>
+        <div data-team-member-name="${item.display_name}" data-team-member-id="${item.team_member_id}" class='bookingButton1 addNames1'>
           <span class=display_name>${Array.from(item.display_name)[0]}</span>
-          <div class=salonist>${item.display_name}</div>
+          <div class=salonist>${item.display_name}
+            </div>
+        <div class="selectDesktop">Select</div>
+
           </div>`)
       });
       $('.staffMembers .addNames1.loaded').attr('data-team-member-id', ids)
@@ -2423,6 +2865,9 @@ function createBooking(id, serv, form) {
       // $('.mobileMain').removeClass('active');
       $('.newClients').addClass('non-active')
       $('.oldClients').removeClass('non-active')
+      if ($(window).width() >1023) {
+        console.log('hi')
+      }
     })
     $('.mobileService .bookingButton1').on('click', (e) => {
       e.preventDefault();
@@ -2454,14 +2899,19 @@ function createBooking(id, serv, form) {
       e.target.innerHTML == 'Yes' ? color=true : color=false;
       $('.mobileService3').removeClass('active');
       if ($(window).width() > 1023) {
+        $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
 
       } else {
-        console.log
-        $('.form123').empty().append($('.serviceBooking').eq(0).clone());
+
+        $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
+      $('.form123').append($('.serviceBooking').eq(0).clone().addClass('active'));
+
       $('.form123 .serviceBooking').addClass('active');
       }
 
       $('.staffMembers .addNames1').on('click', function() {
+
+
         duration = '';
             startTime = '';
             multiService = [];
@@ -2476,6 +2926,7 @@ function createBooking(id, serv, form) {
         }
 
         let memberId = $(this).data('team-member-id')
+        stylistName = $(this).data('team-member-name')
         stylist = memberId.split(',')
         $('.staffMembers .addNames1').removeClass('loaded')
         $(this).addClass('loaded')
@@ -2486,7 +2937,12 @@ function createBooking(id, serv, form) {
         test5.setUTCHours(23,59,59,0);
         currMonth = new Date().getMonth()
         calendarChange()
-        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
+        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
+        serviceType1(serviceEnd, stylist)
+        if ($(window).width() > 1023) {
+          $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+          $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
+        }
       })
       $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
       $('.mobileBottom').removeClass('active');
