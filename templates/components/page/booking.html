@@ -652,6 +652,50 @@ section {
 .list-service-title {
   display: none;
 }
+.signUpinput {
+  width: 100%;
+  border: 1px solid #C8C8C8;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.cancel {
+  color: #C8C8C8;
+}
+.squareupLogin .title {
+  font-weight: 600;
+  text-align: start;
+  font-size: 17px;
+}
+.oldClientsCode .title {
+  font-weight: 600;
+  text-align: start;
+  font-size: 17px;
+}
+.squareupLogin .bottom {
+  margin-top: 20px;
+}
+.requestButton::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+}
+.requestButton.loading {
+    pointer-events: none;
+    font-size: 0;
+    display: block;
+    text-align: center;
+  }
+  .requestButton.loading::before {
+    display: inline-block ;
+    vertical-align: middle ;
+  }
 @media (min-width: 1024px) {
   .list-service-title {
     display: block;
@@ -1050,20 +1094,23 @@ section {
 
   </div>
   <div class="oldClients non-active">
-    <div class="signIn_square">
-      <p class="text">Sign in to choose your preferences</p>
-      <button class="button bookingButton">Sign in / Sign up with Square</button>
+    <div class="oldClientsLogin">
+      <div class="signIn_square">
+        <p class="text">Sign in to choose your preferences</p>
+        <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+      </div>
+      <div>
+        <p>or</p>
+        <p>Choose a new service</p>
+      </div>
+      <div>
+        <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
+        <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
+        <div data-service="Consultation" class="button2">Consultation Services</div>
+      </div>
+      <div class="back">Back</div>
     </div>
-    <div>
-      <p>or</p>
-      <p>Choose a new service</p>
-    </div>
-    <div>
-      <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
-      <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
-      <div data-service="Consultation" class="button2">Consultation Services</div>
-    </div>
-    <div class="back">Back</div>
+
   </div>
   <div class="multiServiceSide non-active">
     <div class="item service serviceLoaded">
@@ -1456,7 +1503,63 @@ section {
     <p></p>
   </div>
 </div>
+<div class="squareupLogin non-active">
+  <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg">
+  <p class="title">Sign in to Superhairpieces.ca with Square Appointments</p>
+  <div class="loginForm">
+    <form id="loginForm">
+      <input class="signUpinput" name="email" placeholder="Email" required>
+      <div style="color: red; height: 25px;" class="accountExistence"></div>
+      <button class="bookingButton requestButton" type="submit" id="loginsubmit">Request Sign In Code</button>
+    </form>
+    <div class="cancel">Cancel</div>
+    <div class="bottom">
+      <p>Don't have a Square account></p>
+      <div class="squareSignUp">Sign Up</div>
+    </div>
+  </div>
 
+</div>
+<div class="squareupSignupForm non-active">
+  <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg">
+  <form id="signupForm">
+    <input placeholder="Phone Number" name="number">
+    <input placeholder="Email" name="email">
+    <div>
+      <input placeholder="First Name" name="firstName">
+      <input placeholder="Last Name" name="lastName">
+    </div>
+    <button type="submit" class="bookingButton">Sign Up</button>
+  </form>
+</div>
+<div class="oldClientsLogin non-active">
+  <div class="signIn_square">
+    <p class="text">Sign in to choose your preferences</p>
+    <button class="button bookingButton">Sign in / Sign up with Square</button>
+  </div>
+  <div>
+    <p>or</p>
+    <p>Choose a new service</p>
+  </div>
+  <div>
+    <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
+    <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
+    <div data-service="Consultation" class="button2">Consultation Services</div>
+  </div>
+  <div class="back">Back</div>
+</div>
+<div class="oldClientsCode non-active">
+  <p style="text-align: start; color: #777777; margin-bottom: 0;">Please check your inbox/spam for your code</p>
+  <p style="text-align: start; color: #777777;">Please allow up to 5 minutes</p>
+
+  <form id="codeLogin">
+    <input class="signUpinput" name="code" placeholder="Enter Code Here" required>
+    <div class="incorrectCode" style="height: 22px; color: red;"></div>
+    <button class="bookingButton requestButton" type="submit" id="codeSubmit">Sign in</button>
+  </form>
+  <div class="cancel">Cancel</div>
+
+</div>
 </section>
 <script>
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -2607,6 +2710,88 @@ section {
               })
             }
   }
+  function showCodeMessage(code) {
+    // console.log(code);
+
+    $('.oldClients .loginForm').empty().append($('.oldClientsCode').eq(0).clone().addClass('active'));
+    $('.oldClientsCode #codeLogin').on('submit', function(e) {
+        e.preventDefault();
+        $('.oldClientsCode .incorrectCode').html(``)
+
+        $('.oldClientsCode .requestButton').addClass('loading');
+
+        if ($('.oldClients #codeLogin [name=code]').val() == code) {
+          console.log('They match')
+        } else {
+          console.log('dont match')
+        $('.oldClientsCode .requestButton').removeClass('loading');
+          $('.oldClientsCode .incorrectCode').html(`The code you entered is incorrect.`)
+        }
+    })
+  }
+
+function checkCustomer(e) {
+  e.preventDefault();
+  $('.squareupLogin #loginForm .accountExistence').html(``)
+  $('.squareuplogin .requestButton').addClass('loading');
+  let email = $('.oldClients .squareupLogin [name=email]').val()
+  fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            email: email
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      if (jQuery.isEmptyObject(r)) {
+        $('.squareupLogin #loginForm .accountExistence').html(`Account does not exist. Please sign up!`)
+        $('.squareuplogin .requestButton').removeClass('loading');
+        
+        // createCustomer(x, "#myForm")
+      } else {
+        console.log('customer exists');
+        loginToSquareAcc()
+
+        // createBooking(r.customers[0].id, x, "#myForm")
+      }
+    })
+}
+
+  function loginToSquareAcc() {
+  if ($("#loginForm [name='email']").val().trim().length==0 || $("#loginForm [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
+  document.querySelector("#loginForm [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+  document.querySelector("#loginForm [name='email']").reportValidity();
+  } else {
+    let email = $("#loginForm [name='email']").val();
+
+    fetch(`https://shp-webserver-temp.glitch.me/squareup-log`, {
+      method: 'POST',
+      headers: {
+          accept: "application/json",
+          "content-type": "application/json"
+      },
+      body: JSON.stringify({
+          email: $("#loginForm [name='email']").val()
+      })
+    })
+    .then(r=>r.json())
+    .then(r=> {
+      let code = r.check
+      // checkCustomer($("#loginForm [name='email']").val(), code)
+      showCodeMessage(code)
+
+    })
+  }
+
+  }
+
+  
+
+
   $("#myForm1").on("submit", function(e) {
             e.preventDefault();
             const serv = multiService[0]
@@ -2709,6 +2894,26 @@ if ($('.newClients').hasClass('non-active')) {
 
 }
 );
+function createCustomer1(form) {
+  e.preventDefault()
+  fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            firstName: $(`${form} input[name=firstName]`).val(),
+            lastName: $(`${form} input[name=lastName]`).val(),
+            email: $(`${form} input[name=email]`).val(),
+            phone: $(`${form} input[name=number]`).val()
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      console.log('Created customer');
+    })
+}
 function createCustomer(x, form) {
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
         method: 'POST',
@@ -2773,6 +2978,15 @@ function createBooking(id, serv, form) {
     let serviceGender = '';
     let serviceType = '';
     let color = false;
+    $('.sqLogin').on('click', function() {
+      $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
+      $('.squareuplogin #loginForm').on("submit", checkCustomer)
+      $('.squareupLogin .squareSignUp').on('click', function() {
+      $('.oldClients').empty().append($('.squareupSignupForm').eq(0).clone().addClass('active'))
+      $('.oldClients #signupForm').on("submit", createCustomer1("#signupForm"))  
+    })
+    })
+
     calendarChange() 
     $('.calendarTop .next-arrow').on('click', nextMonth)
     $(".oldClients .back").on('click', function() {
