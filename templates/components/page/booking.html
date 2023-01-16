@@ -523,6 +523,25 @@ body {
     -webkit-animation: button-load-animate infinite linear 1s;
     animation: button-load-animate infinite linear 1s;
   }
+  .loadButton::before {
+    content: '';
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c5c5cf;
+    border-radius: 100%;
+    border-top: 2px solid transparent;
+    -webkit-animation: button-load-animate infinite linear 1s;
+    animation: button-load-animate infinite linear 1s;
+  }
+  .loadButton.loading {
+    pointer-events: none;
+    font-size: 0;
+  }
+  .loadButton.loading::before {
+    display: inline-block;
+    vertical-align: middle;
+  }
   .mobilePopup .bookNowButton.loading {
     pointer-events: none;
     font-size: 0;
@@ -696,6 +715,123 @@ section {
     display: inline-block ;
     vertical-align: middle ;
   }
+.clientProfile {
+  border: 1px solid #C8C8C8;
+  padding: 18px;
+  border-radius: 6px;
+margin-bottom: 10px;
+}
+.clientProfile .topBlock .info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.clientProfile .midBlock {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.clientProfile .topBlock .info .initial {
+  width: 50px;
+  height: 50px;
+  background-color: #006CFF;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.clientProfile .topBlock .info .name {
+  font-weight: 600;
+  font-size: 18px;
+
+}
+.clientProfile .bottomBlock {
+  margin-top: 30px;
+}
+.clientProfile .bottomBlock p {
+  margin: 0
+}
+.clientProfile .bottomBlock .title {
+  text-align: start;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+.clientProfile .bottomBlock .apptList {
+  width: 100%;
+  display: flex;
+  background-color: #D9D9D9;
+  border-radius: 25px;
+}
+.clientProfile .bottomBlock .apptList .active {
+  background-color: #006CFF;
+}
+.clientProfile .bottomBlock .apptList div {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+.clientProfile .bottomBlock .apptList div.active {
+  background-color: #006CFF;
+  color: white;
+}
+.clientProfile .bottomBlock .appointmentList .upcomingList {
+  position: relative;
+  min-height: 100px;
+}
+.clientProfile .bottomBlock .appointmentList .pastList {
+  position: relative;
+  min-height: 100px;
+
+}
+.apptBlock {
+  border: 1px solid #C8C8C8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: relative;
+}
+.apptBlock span {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  color: #006CFF;
+  font-weight: 600;
+  font-size: 13px;
+}
+.apptBlock:hover {
+  border: 1px solid #006CFF;
+}
+.apptBlock .sellerinfo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.apptBlock .sellerinfo .sellerFirst{
+  width: 50px;
+  height: 50px;
+  background-color: #006CFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.apptBlock .details {
+  display: flex;
+  gap: 15px;
+  text-align: start;
+}
+.apptBlock .dateTime.details {
+  margin: 10px 0;
+  font-weight: 600;
+}
 @media (min-width: 1024px) {
   .list-service-title {
     display: block;
@@ -1093,11 +1229,15 @@ section {
     </div>
 
   </div>
+
   <div class="oldClients non-active">
     <div class="oldClientsLogin">
       <div class="signIn_square">
-        <p class="text">Sign in to choose your preferences</p>
-        <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+        <div style="width: 100%;">
+          <p class="text">Sign in to choose your preferences</p>
+          <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+          <button class="button bookingButton non-active">My Appointments</button> 
+        </div>
       </div>
       <div>
         <p>or</p>
@@ -1503,6 +1643,39 @@ section {
     <p></p>
   </div>
 </div>
+
+<div class="clientProfile non-active">
+  <div class="topBlock">
+    <div class="info">
+      <div class="initial"></div>
+      <div class="name"></div>
+    </div>
+    <div class="midBlock">
+      <div class="bookingButton" style="width: unset; flex-grow: 1;">Book Appointments</div>
+      <div style="color: #006CFF; font-weight: 600;">View Profile</div>
+    </div>
+    <div class="bottomBlock">
+      <p class="title">My appointments</p>
+      <div class="apptList">
+        <div class="upcoming active">Upcoming</div>
+        <div class="past">Past</div>
+      </div>
+      <div class="appointmentList">
+        <div class="upcomingList">
+          <span class="loader2">
+            <span class="loader"></span>
+          </span>
+        </div>
+        <div class="pastList non-active">
+          <span class="loader2">
+            <span class="loader"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="squareupLogin non-active">
   <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg">
   <p class="title">Sign in to Superhairpieces.ca with Square Appointments</p>
@@ -1534,8 +1707,15 @@ section {
 </div>
 <div class="oldClientsLogin non-active">
   <div class="signIn_square">
-    <p class="text">Sign in to choose your preferences</p>
-    <button class="button bookingButton">Sign in / Sign up with Square</button>
+    <div class="block" style="width: 100%;">
+      <p class="text">Sign in to choose your preferences</p>
+      <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+    </div>
+    <div class="myAppts non-active" style="width: 100%;">
+      <button class="bookingButton">My Appointments</button> 
+      <div style="margin-top: 15px; color: #006CFF;">Sign out</div>
+    </div>
+
   </div>
   <div>
     <p>or</p>
@@ -2449,7 +2629,7 @@ section {
           }
 
           if ($(window).width() < 1024) {
-            let durationMins = new Date(startTime)
+          let durationMins = new Date(startTime)
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
           let month = new Date(startTime).getMonth();
@@ -2496,14 +2676,8 @@ section {
             $(item).empty().append(stylistName)
           })
           $('.serviceBookingSide .loader2').addClass('non-active')
-
         }
-
-
-
             }
-
-
         }
       })
       } )
@@ -2710,7 +2884,7 @@ section {
               })
             }
   }
-  function showCodeMessage(code) {
+  function showCodeMessage(code, email) {
     // console.log(code);
 
     $('.oldClients .loginForm').empty().append($('.oldClientsCode').eq(0).clone().addClass('active'));
@@ -2721,7 +2895,13 @@ section {
         $('.oldClientsCode .requestButton').addClass('loading');
 
         if ($('.oldClients #codeLogin [name=code]').val() == code) {
-          console.log('They match')
+          setTimeout(function() {
+            $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
+            $('.oldClientsLogin .signIn_square .block').addClass('non-active');
+            $('.oldClientsLogin .myAppts').addClass('active');
+            $('.oldCLientsLogin .myAppts button').on('click', {email:email}, clientInfo)
+          }, 2000)
+
         } else {
           console.log('dont match')
         $('.oldClientsCode .requestButton').removeClass('loading');
@@ -2730,11 +2910,201 @@ section {
     })
   }
 
+function clientInfo(e) {
+  let email = e.data.email
+  console.log(email)
+  $('.oldClientsLogin .myAppts button loadButton').addClass('loading');
+  fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+    method: 'POST',
+    headers: {
+        accept: "application/json",
+        "content-type": "application/json"
+    },
+    body: JSON.stringify({
+        email: email
+    })
+  })
+  .then(r=>r.json())
+  .then(r=>{
+    let results = r.customers[0];
+    $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
+    $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
+    $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
+    console.log(results);
+    getAppointments(results.id)
+  })
+}
+function getAppointments(id) {
+
+  fetch(`https://shp-webserver-temp.glitch.me/customerCustomAttributes`, {
+    method: 'POST',
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      id: id
+    })
+  })
+  .then(r=>r.json())
+  .then(r=> {
+    retrieveBookings(r.customAttributes[0].value);
+  })
+}
+ function serviceName(id) {
+  return fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        }
+    })
+    .then(r=> r.json())
+    .then(data=> { 
+      // console.log(r.items)
+      // console.log(data.items)
+      // const vidu = r.items.filter((item) => item.itemData.variations[0].id == id)
+      // let name = vidu[0].itemData.name
+      return data
+    })
+} 
+function retrieveBookings(id) {
+  // console.log(id)
+  fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
+    method: 'POST',
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      id: id
+    })
+  })
+  .then(r=>r.json())
+  .then(r=> {
+    let timeStart = r.booking.startAt
+    // console.log(timeStart)
+
+    var promises = [];
+   
+    r.booking.appointmentSegments.forEach((item) => {
+        // console.log(item)
+        let currentTime = new Date();
+          let durationMins = new Date(timeStart)
+          // console.log(currentTime);
+          // console.log(durationMins);
+          let day = new Date(timeStart).getDay();
+          let date = new Date(timeStart).getDate();
+          let month = new Date(timeStart).getMonth();
+          let year = new Date(timeStart).getFullYear();
+          let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
+          let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          timeStart = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
+        promises.push(
+          
+          serviceName()
+          .then(item1 => {
+              const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId)
+              const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId)
+              // console.log(vidu)
+              if (durationMins > currentTime) {
+                
+                $('.appointmentList .upcomingList').append(`
+                <div class='apptBlock'>
+                  <span>Edit Booking</span>
+                  <div class='sellerinfo'>
+
+                    <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
+
+                    <div style='text-align:start;'>
+                      <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
+                      <div style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
+                    </div>
+ 
+                  </div>
+
+                  <div class='dateTime details'>
+                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+                    <div>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
+                  </div>
+                  <div class='details'>
+                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+                    <div>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
+                  </div>
+                </div>
+                `)
+              } else {
+
+                $('.appointmentList .pastList').append(`
+                <div class='apptBlock'>
+                  <span>Edit Booking</span>
+                  <div class='sellerinfo'>
+
+                    <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
+
+                    <div style='text-align:start;'>
+                      <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
+                      <div style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
+                    </div>
+ 
+                  </div>
+
+                  <div class='dateTime details'>
+                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+                    <div>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
+                  </div>
+                  <div class='details'>
+                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+                    <div>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
+                  </div>
+                </div>
+                `)
+              }
+
+          })
+        )
+
+      
+  })
+    Promise.all(promises).then(() => {
+      let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().length;
+      let y = $('.oldClients .clientProfile .bottomBlock .pastList').children().length;
+      console.log(x)
+      if (x == 1) {
+        $('.oldClients .upcomingList .loader2').addClass('non-active');
+        $('.oldClients .upcomingList').append(`<div style='padding-top:20px;'>You have no upcoming appointments</div>`)
+      } else {
+        $('.oldClients .upcomingList .loader2').addClass('non-active');
+      }
+      if (y == 1) {
+        $('.oldClients .pastList .loader2').addClass('non-active');
+        $('.oldClients .pastList').append(`<div style='padding-top:20px;'>You have no upcoming appointments</div>`)
+      } else {
+        $('.oldClients .pastList .loader2').addClass('non-active');
+
+      }
+      console.log(y)
+    })
+    // testing2.then(() => {
+
+    //   // console.log($('.oldClients .bottomBlock .pastList'))
+    //   // if ($('.clientProfile .bottomBlock .upcomingList')) {
+
+    //   // }
+    // })
+  })
+}
+
+
+
 function checkCustomer(e) {
   e.preventDefault();
-  $('.squareupLogin #loginForm .accountExistence').html(``)
+  $('.squareupLogin #loginForm .accountExistence').html(``);
+  $('.squareupLogin #loginForm input').prop("disabled", true);
   $('.squareuplogin .requestButton').addClass('loading');
-  let email = $('.oldClients .squareupLogin [name=email]').val()
+
+  let email = $('.oldClients .squareupLogin [name=email]').val();
   fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
         method: 'POST',
         headers: {
@@ -2750,6 +3120,7 @@ function checkCustomer(e) {
       if (jQuery.isEmptyObject(r)) {
         $('.squareupLogin #loginForm .accountExistence').html(`Account does not exist. Please sign up!`)
         $('.squareuplogin .requestButton').removeClass('loading');
+        $('.squareupLogin #loginForm input').prop("disabled", false);
         
         // createCustomer(x, "#myForm")
       } else {
@@ -2781,8 +3152,14 @@ function checkCustomer(e) {
     .then(r=>r.json())
     .then(r=> {
       let code = r.check
+      // console.log(r)
       // checkCustomer($("#loginForm [name='email']").val(), code)
-      showCodeMessage(code)
+
+      //REAL
+      // showCodeMessage(code, email)
+
+      //TESTING
+      showCodeMessage(r, email)
 
     })
   }
@@ -2895,24 +3272,25 @@ if ($('.newClients').hasClass('non-active')) {
 }
 );
 function createCustomer1(form) {
-  e.preventDefault()
-  fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
-        method: 'POST',
-        headers: {
-            accept: "application/json",
-            "content-type": "application/json"
-        },
-        body: JSON.stringify({
-            firstName: $(`${form} input[name=firstName]`).val(),
-            lastName: $(`${form} input[name=lastName]`).val(),
-            email: $(`${form} input[name=email]`).val(),
-            phone: $(`${form} input[name=number]`).val()
-        })
-    })
-    .then(r=>r.json())
-    .then(r=>{
-      console.log('Created customer');
-    })
+  e.preventDefault();
+  $('.squareupSignupForm #signupForm .bookingButton').addClass('loading')
+  // fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+  //       method: 'POST',
+  //       headers: {
+  //           accept: "application/json",
+  //           "content-type": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //           firstName: $(`${form} input[name=firstName]`).val(),
+  //           lastName: $(`${form} input[name=lastName]`).val(),
+  //           email: $(`${form} input[name=email]`).val(),
+  //           phone: $(`${form} input[name=number]`).val()
+  //       })
+  //   })
+  //   .then(r=>r.json())
+  //   .then(r=>{
+  //     console.log('Created customer');
+  //   })
 }
 function createCustomer(x, form) {
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
@@ -2980,10 +3358,11 @@ function createBooking(id, serv, form) {
     let color = false;
     $('.sqLogin').on('click', function() {
       $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-      $('.squareuplogin #loginForm').on("submit", checkCustomer)
+      $('.squareuplogin #loginForm').on("submit", checkCustomer);
+
       $('.squareupLogin .squareSignUp').on('click', function() {
-      $('.oldClients').empty().append($('.squareupSignupForm').eq(0).clone().addClass('active'))
-      $('.oldClients #signupForm').on("submit", createCustomer1("#signupForm"))  
+        $('.oldClients').empty().append($('.squareupSignupForm').eq(0).clone().addClass('active'));
+        $('.oldClients #signupForm').on("submit", createCustomer1("#signupForm"));  
     })
     })
 
