@@ -93,6 +93,7 @@ body {
     width: 100%;
     border-radius: 5px;
     padding: 10px 0;
+    cursor: pointer;
   }
   .bookingButton1 {
     border:1px solid rgba(0, 108, 255, 1);
@@ -195,6 +196,24 @@ body {
     align-items: center;
     border-bottom: 1px solid #D9D9D9;
     padding-bottom: 10px;
+  }
+  .gtaTopSide {
+    display: none;
+  }
+  .gtaTopSide.slick-initialized {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .mobileText {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .button3 {
+    font-size: 18px;
+    padding: 10px 64px;
+  }
+  .slick-initialized .slick-slide {
+    height: fit-content;
   }
   .serviceBooking {
     overflow: auto;
@@ -363,7 +382,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 18px;
+    padding: 18px 40px;
     gap: 10px;
   }
   .signIn_square .text {
@@ -598,9 +617,9 @@ input:focus {
 .gtaTopDesktop {
   display: none;
 }
-.gtaTopSide {
+/* .gtaTopSide {
   display: none;
-}
+} */
 .gtaInitialDesktop {
   display: flex; 
   flex-direction: 
@@ -679,7 +698,8 @@ section {
   margin-bottom: 10px;
 }
 .cancel {
-  color: #C8C8C8;
+  color: #9D9D9D;
+  margin-top: 10px;
 }
 .squareupLogin .title {
   font-weight: 600;
@@ -692,7 +712,15 @@ section {
   font-size: 17px;
 }
 .squareupLogin .bottom {
-  margin-top: 20px;
+  margin:35px 0;
+}
+.squareupLogin .bottom p {
+  margin-bottom: 10px;
+  color: #777777;
+}
+.squareupLogin .bottom div {
+  color: #377DE7 ;
+  font-weight: 500;
 }
 .requestButton::before {
     content: '';
@@ -930,7 +958,38 @@ margin-bottom: 10px;
 .profileBlock .block p {
   margin: 0;
 }
+.accExistsOverlay {
+  position: absolute;
+  z-index: 111111;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .72);
 
+}
+.accExistsOverlay .block {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px 20px;
+  width: 80%;
+  max-width: 400px;
+}
+.accExistsOverlay .para {
+  font-weight: 500;
+  font-size: 18px;
+}
+.sqLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+}
 @media (min-width: 1024px) {
   .list-service-title {
     display: block;
@@ -1290,7 +1349,7 @@ margin-bottom: 10px;
 <section style=>
   <div class="gtaTop" style="text-align: center;">
     <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-    <p>Lorem ipsum dolor sit amet consectetur. Lorem nibh feugiat egestas sit mattis scelerisque nibh felis. Online booking Directly Or call: (905) 917-1805</p>
+    <p>For more accurate results and a better service experience, we will carefully review booking requests and approve or make adjustments ASPA.<br><span style="color:#377DE7;">Online booking Directly Or call: <a style=" color: #377DE7;" href="tel:+19059171805">(905) 917-1805</a></span></p>
   </div>
   <div class="newClients">
     <div class="gtaTopSide">
@@ -1334,7 +1393,11 @@ margin-bottom: 10px;
       <div class="signIn_square">
         <div class="block" style="width: 100%;">
           <p class="text">Sign in to choose your preferences</p>
-          <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+          <button class="button bookingButton sqLogin">Sign in / Sign up with 
+            <img style="width: 70px;" src="../../../assets/img/gta/Square_LogoLockup_White.svg">
+
+
+          </button>
         </div>
         <div class="myAppts non-active" style="width: 100%;">
           
@@ -1503,7 +1566,7 @@ margin-bottom: 10px;
         <div style="display:flex; gap: 10px;">
           <button class="bookingButton1 backButton">Back</button>
           <button class="bookingButton nextButton">Next</button>
-          <button class="bookingButton confirmButton non-active">Confirm</button>
+          <button class="bookingButton confirmButton loadButton non-active">Confirm</button>
           <label style="text-align:center ;"  tabindex="0" for="submit-form2" class="bookingButton bookNowButton non-active">Book Now</label>
         </div>
       </div>
@@ -1526,39 +1589,53 @@ margin-bottom: 10px;
         </div>
 
         <div class="mobileMain mobileInitial non-active" >
-          <p>Is this your first service appointment with Superhairpieces?</p>
+          <p class="mobileText">Is this your first service appointment with Superhairpieces?</p>
           <div class="gtaInitialDesktop">
-            <button id="1" class="bookingButton">Yes</button>
-            <button id="2" class="bookingButton">No, I'd like to sign in / sign up</button>
+            <button id="1" class="bookingButton button3">Yes</button>
+            <button id="2" class="bookingButton button3">No, I'd like to sign in / sign up</button>
           </div>
         </div>
 
         <div id="service1" class="mobileMain mobileService non-active">
-          <p>Which service do you need?</p>
+          <p class="mobileText">Which service do you need?</p>
           <div class="gtaMobileService">
-            <button id='mens' class="bookingButton1">Men services</button>
-            <button id="womens" class="bookingButton1">Women services</button>
-            <button id="consultation" class="bookingButton1">Consultation</button>
+            <button id='mens' class="bookingButton1 button3">Men services</button>
+            <button id="womens" class="bookingButton1 button3">Women services</button>
+            <button id="consultation" class="bookingButton1 button3">Consultation</button>
+          </div>
+        </div>
+        <div id="service2" class="mobileMain mobileSystem2 non-active">
+          <p class="mobileText">Do you require an in-person consultation to determine which system is right for you?</p>
+          <div class="gtaMobileService">
+            <button id="yes" class="bookingButton button3">Yes</button>
+            <button id="no" class="bookingButton button3">No</button>
+          </div>
+        </div>
+        <div class="mobileMain mobileSystem3 non-active">
+          <p class="mobileText">What hair system are you going to consult?</p>
+          <div class="gtaMobileService">
+            <button id="mens" class="bookingButton button3">Men's</button>
+            <button id="womens" class="bookingButton button3">Women's</button>
           </div>
         </div>
         <div id="system1" class="mobileMain mobileSystem non-active">
-          <p>Do you have any hair systems?</p>
+          <p class="mobileText">Do you have any hair systems?</p>
           <div class="gtaMobileService">
-            <button id="systemYes" class="bookingButton">Yes</button>
-            <button id="systemBuy" class="bookingButton">No, Let's buy one</button>
+            <button id="systemYes" class="bookingButton button3">Yes</button>
+            <button id="systemBuy" class="bookingButton button3">No, Let's buy one</button>
           </div>
         </div>
         <div id="service2" class="mobileMain mobileService2 non-active">
-          <p>What service do you need?</p>
+          <p class="mobileText">What service do you need?</p>
           <div class="gtaMobileService">
-            <button id="Installation" class="bookingButton">Installation</button>
-            <button id="Maintenance" class="bookingButton">Maintenance</button>
+            <button id="Installation" class="bookingButton button3">Installation</button>
+            <button id="Maintenance" class="bookingButton button3">Maintenance</button>
           </div>
-          <p>Don't know what to do? Let's listen to our expert advices</p>
-          <button id="serviceCons" class="bookingButton">Consultation</button>
+          <p style="font-weight: 400; font-size: 18px; margin-top: 50px;">Don't know what to do? Let's listen to our expert advices</p>
+          <button id="serviceCons" class="bookingButton button3">Consultation</button>
         </div>
         <div id="service3" class="mobileMain mobileService3 non-active">
-          <p>Do you require color on your own hair?<span id="change"></span></p>
+          <p class="mobileText">Do you require color on your own hair?<span id="change"></span></p>
           <div class="gtaMobileService">
             <button class="bookingButton">Yes</button>
             <button class="bookingButton">No</button>
@@ -1569,9 +1646,12 @@ margin-bottom: 10px;
         <div class="form123" style="overflow: auto; "></div>
         <div class="mobileBottom non-active">
           <div class="mobileGTA">
-            <button class="mobileCancel">Cancel</button>
-            <p>Any Questions?</p>
-            <p>Please Call: (905) 917-1805</p>
+            <p>
+            <button class="mobileCancel" style="color: #377DE7;">Cancel</button>
+            <button style="color: #377DE7;" class="backButton2 non-active">|&nbsp;&nbsp;&nbsp;&nbsp;Back</button>
+            </p>
+            <p style="color:#555555;">Any Questions?<br>
+            Please Call: (905) 917-1805</p>
           </div>
           <div class="desktopBottom">
               <p class="newCancel">Cancel</p>
@@ -1609,6 +1689,11 @@ margin-bottom: 10px;
     <div>
       <p class="title2">&#x2022; Date and time :</p>
       <div class="para" id="dateSelected"></div>
+    </div>
+    <div class="notes non-active">
+      <p class="title2">&#x2022; Appointment Notes :</p>
+      <div class="para" name="apptNotes" id="apptNotes"></div>
+
     </div>
   </div>
 </div>
@@ -1738,6 +1823,7 @@ margin-bottom: 10px;
   
         </div>
       </div>
+      <textarea style= "padding:12px;margin-bottom: 10px; width:100%; border: 1px solid lightgray; border-radius: 5px; resize: none; margin-top: 20px;" placeholder="Appointment notes (optional)" class="apptNote non-active" rows="4" name="appNotes"></textarea>
     </div>
   </div>
 
@@ -1769,6 +1855,7 @@ margin-bottom: 10px;
           <span class="loader2">
             <span class="loader"></span>
           </span>
+          
         </div>
         <div class="pastList non-active">
           <span class="loader2">
@@ -1815,7 +1902,7 @@ margin-bottom: 10px;
     </form>
     <div class="cancel">Cancel</div>
     <div class="bottom">
-      <p>Don't have a Square account></p>
+      <p>Don't have a Square account?</p>
       <div class="squareSignUp">Sign Up</div>
     </div>
   </div>
@@ -1823,21 +1910,30 @@ margin-bottom: 10px;
 </div>
 <div class="squareupSignupForm non-active">
   <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg">
-  <form id="signupForm">
-    <input placeholder="Phone Number" name="number">
-    <input placeholder="Email" name="email">
-    <div>
-      <input placeholder="First Name" name="firstName">
-      <input placeholder="Last Name" name="lastName">
+  <form id="signupForm" style="margin: 20px 0;">
+    <div class="topBlock" style="display: flex; gap: 10px; margin-bottom:10px;">
+      <select style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: auto;" name="country" id="country">
+        <option value="+1">Canada</option>
+      </select>
+      <input style="padding:12px;border: 1px solid lightgray; border-radius: 5px; width: 100%;" placeholder="Phone Number" name="number">
     </div>
-    <button type="submit" class="bookingButton">Sign Up</button>
+    <input style="margin-bottom: 10px; padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" class="midEmail" placeholder="Email" name="email">
+    <div class="bottomBlock"  style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" placeholder="First Name" name="firstName">
+      <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" placeholder="Last Name" name="lastName">
+    </div>
+    <button type="submit" class="bookingButton loadButton">Sign Up</button>
   </form>
 </div>
 <div class="oldClientsLogin non-active">
   <div class="signIn_square">
     <div class="block" style="width: 100%;">
       <p class="text">Sign in to choose your preferences</p>
-      <button class="button bookingButton sqLogin">Sign in / Sign up with Square</button>
+      <button class="button bookingButton sqLogin">Sign in / Sign up with 
+        <img style="width: 70px;" src="../../../assets/img/gta/Square_LogoLockup_White.svg">
+
+
+      </button>
     </div>
     <div class="myAppts non-active" style="width: 100%;">
       <p style="text-align: start; font-weight: 500; font-size: 18px; margin: 0; margin-bottom: 15px;">Welcome, <span class="newName"></span></p>
@@ -1894,8 +1990,17 @@ margin-bottom: 10px;
   </div>
 
 </div>
-
+<div class="accExistsOverlay non-active">
+  <div class="block">
+    <p class="para">Looks like your account already exists!</p>
+    <p class="bookingButton">Sign in</p>
+    
+  </div>
+</div>
 </section>
+
+<script type="text/javascript" src="/content/js/slick.min.js"></script>
+
 <script>
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
@@ -2003,7 +2108,20 @@ margin-bottom: 10px;
     }) 
       }
       $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
-        $('.confirmButton').addClass('non-active');
+        if (localStorage.getItem('email')) {
+          let x = [];
+          const vidutest = multiService[0].appointmentSegments.forEach((item) => {
+            x.push({
+              "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+            })
+          })
+          $('.mobileBottom1 .bookingButton.confirmButton').addClass('loading');
+          createBooking(localStorage.getItem('customerId'), x, ".serviceList")
+        } else {
+          $('.confirmButton').addClass('non-active');
         $('.bookNowButton').addClass('active');
         $('.bookingConfirm').removeClass('active');
         // $('.bookingForm').addClass('active');
@@ -2072,7 +2190,15 @@ margin-bottom: 10px;
 
             }
         );
+      
+      
+        }
+
+      
       })
+
+
+
 
       $('.botss .backButton').on('click', function() {
 
@@ -2185,14 +2311,19 @@ margin-bottom: 10px;
         }
       })
       $('.botss .nextButton').on('click', function() {
-       
+        if (localStorage.getItem('email')) {
+          $('.serviceBooking .apptNote').removeClass('non-active');
+
+        } else {
+          $('.serviceBooking .apptNote').addClass('non-active')
+        }
         if ($('.serviceBooking').hasClass('active')) {
           if (serviceEnd, bookedStylist, startTime) {
-
+            let value = $('.serviceBooking .apptNote').val()
             $('.serviceBooking').removeClass('active');
             $('.staffBooking').removeClass('active');
             $('.bookingLoad:not(.loaded):first').addClass('loaded');
-            serviceType1(serviceId, bookedStylist, startTime);
+            serviceType1(serviceId, bookedStylist, startTime, value);
            } else {
             $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
            }
@@ -2500,6 +2631,7 @@ margin-bottom: 10px;
       $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
         $('.form123 #myForm1').on("submit", submitForm)
 
+
       // $('.serviceBookingSide .loader2').addClass('non-active');
         } else {
 
@@ -2546,6 +2678,7 @@ margin-bottom: 10px;
   }
 
   function bookingSq(startDate, endDate, service, stylists) {
+    // console.log(startDate, endDate, service, stylists)
     serviceEnd = service;
     let styleTest = [];
       service.forEach((item) => {
@@ -2578,7 +2711,7 @@ margin-bottom: 10px;
     })
     .then(r=>r.json())
     .then(r=> {
-
+      // console.log(r)
       let apps = r.availabilities
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
       let firstDate = r.availabilities[0]
@@ -2732,7 +2865,7 @@ margin-bottom: 10px;
     bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
   }
   
-  function serviceType1(serviceEnd, stylist, startTime) {
+  function serviceType1(serviceEnd, stylist, startTime, note) {
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -2747,6 +2880,10 @@ margin-bottom: 10px;
       $('.nextButton').removeClass('active');
       $('.confirmButton').removeClass('non-active');
       $('#serviceType').empty();
+      if (localStorage.getItem('email') && !($('.oldClients').hasClass('non-active'))) {
+        $('#apptNotes').empty().append(note)
+        $('.bookingConfirm .notes').removeClass('non-active');
+      }
       serviceEnd.forEach((serv1) => {
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
@@ -2920,6 +3057,7 @@ margin-bottom: 10px;
             e.preventDefault();
             const serv = multiService[0]
             let x = []
+            console.log('hi')
             const vidutest = serv.appointmentSegments.forEach((item) => {
               x.push({
                 "teamMemberId": item.teamMemberId,
@@ -2962,8 +3100,37 @@ margin-bottom: 10px;
                 if (jQuery.isEmptyObject(r)) {
                   createCustomer(x, "#myForm1")
                 } else {
-                  createBooking(r.customers[0].id, x, "#myForm1")
+                  $('.accExistsOverlay').removeClass('non-active');
+                  // createBooking(r.customers[0].id, x, "#myForm1")
+                  $('.accExistsOverlay .bookingButton').on('click', function() {
+                    $('.newClients').addClass('non-active');
+                    $('.oldClients').removeClass('non-active');
+                    $('.mobilePopup').css('max-height', '0px');
+                    $('.accExistsOverlay').addClass('non-active')
+                    if (localStorage.getItem('email')) {
+                      $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
+                      $('.oldClientsLogin .signIn_square .block').addClass('non-active');
+                      $('.oldClientsLogin .myAppts').addClass('active');
+                      $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'))
+                      $('.oldClientsLogin .myAppts button').on('click', {email:localStorage.getItem('email')}, clientInfo);
+                      
+                      $('.oldClients .myAppts div').on('click', function() {
+                        localStorage.removeItem('email');
+                        localStorage.removeItem('name');
+                        $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
+                      $('.oldClientsLogin .myAppts').removeClass('active');
+                      $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
+                          
+                          $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
+                          $('.squareupLogin #loginForm .requestButton').removeClass('loading')
+                          $('.squareupLogin #loginForm input').prop("disabled", false);
+                          $('.requestButton').removeClass('loading')
 
+                          $('.squareuplogin #loginForm').on("submit", checkCustomer);
+                        })
+                      })
+                    }
+                  })
                 }
               })
             }
@@ -3039,7 +3206,7 @@ margin-bottom: 10px;
               })
             }
   }
-  function showCodeMessage(code, email, firstName, lastName) {
+  function showCodeMessage(code, email, firstName, customerId) {
     // console.log(code);
     // console.log(firstName)
     // console.log(lastName)
@@ -3075,7 +3242,8 @@ margin-bottom: 10px;
         $('.oldClients .button2').on('click',  showService)
 
             localStorage.setItem('email', email);
-            localStorage.setItem('name', firstName)
+            localStorage.setItem('name', firstName);
+            localStorage.setItem('customerId', customerId);
           }, 2000)
 
         } else {
@@ -3087,6 +3255,7 @@ margin-bottom: 10px;
   }
 
 function clientInfo(e) {
+
   let email = e.data.email
   $('.oldClientsLogin .myAppts .loadButton').addClass('loading');
   fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
@@ -3105,7 +3274,7 @@ function clientInfo(e) {
     $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
     $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
     $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
-    console.log(results);
+    // console.log(results);
     getAppointments(results.id, email)
   })
 }
@@ -3123,11 +3292,11 @@ function getAppointments(id, email) {
   })
   .then(r=>r.json())
   .then(r=> {
-    // console.log(r.customAttributes[0].value)
     retrieveBookings(r.customAttributes[0].value, email);
   })
 }
  function serviceName(id) {
+  console.log('hi')
   return fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -3144,143 +3313,99 @@ function getAppointments(id, email) {
       return data
     })
 } 
-function retrieveBookings(id, email) {
+async function retrieveBookings(id, email) {
   // console.log(id.split(','))
-  var promises = [];
+if (id) {
+  id.split(',').map((item) => {
 
-  id.split(',').forEach((item) => {
-    // console.log(promises)
-    promises.push(
-      fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
-    method: 'POST',
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json"
-    },
-    body: JSON.stringify({
-      id: item
-    })
-  })
-  .then(r=>r.json())
-  .then(r=> {
-    let timeStart = r.booking.startAt;
-    
-   
-    r.booking.appointmentSegments.forEach((item) => {
-        let currentTime = new Date();
-          let durationMins = new Date(timeStart)
-
-          let day = new Date(timeStart).getDay();
-          let date = new Date(timeStart).getDate();
-          let month = new Date(timeStart).getMonth();
-          let year = new Date(timeStart).getFullYear();
-          let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-          let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
-          let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-        
-          
-          serviceName()
-          .then(item1 => {
-              const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId)
-              const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId)
-              // console.log(vidu)
-
-              if (durationMins > currentTime) {
-                
-                $('.appointmentList .upcomingList').append(`
-                <div class='apptBlock'>
-                  <span>Edit Booking</span>
-                  <div class='sellerinfo'>
-
-                    <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
-
-                    <div style='text-align:start;'>
-                      <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
-                      <div style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
-                    </div>
- 
-                  </div>
-
-                  <div class='dateTime details'>
-                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
-                    <div>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
-                  </div>
-                  <div class='details'>
-                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
-                    <div>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
-                  </div>
-                </div>
-                `)
-              } else {
-
-                $('.appointmentList .pastList').append(`
-                <div class='apptBlock'>
-                  <span>View Details</span>
-                  <div class='sellerinfo'>
-                    <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
-                    <div style='text-align:start;'>
-                      <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
-                      <div class='displayName' style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
-                    </div>
-                  </div>
-
-                  <div class='dateTime details'>
-                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
-                    <div class='dateTimes'>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
-                  </div>
-                  <div class='details'>
-                    <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
-                    <div class='detailInfo'>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
-                  </div>
-                </div>
-                `)
-              }
-
-          })
-        
-
-      
-  })
+fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
+method: 'POST',
+headers: {
+accept: "application/json",
+"content-type": "application/json"
+},
+body: JSON.stringify({
+id: item
+})
+})
+.then(r=>r.json())
+.then(r=> {
+let timeStart = r.booking.startAt;
 
 
+r.booking.appointmentSegments.map((item) => {
+  let currentTime = new Date();
+    let durationMins = new Date(timeStart)
 
-    // testing2.then(() => {
+    let day = new Date(timeStart).getDay();
+    let date = new Date(timeStart).getDate();
+    let month = new Date(timeStart).getMonth();
+    let year = new Date(timeStart).getFullYear();
+    let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+    let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
+    let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
 
-    //   // console.log($('.oldClients .bottomBlock .pastList'))
-    //   // if ($('.clientProfile .bottomBlock .upcomingList')) {
+    serviceName()
+    .then(item1 => {
+        const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId)
+        const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId)
+        // console.log(vidu)
 
-    //   // }
-    // })
-  })
+        if (durationMins > currentTime) {
+          console.log(durationMins)
+          console.log('append')
+          $('.appointmentList .upcomingList').append(`
+          <div class='apptBlock'>
+            <span>Edit Booking</span>
+            <div class='sellerinfo'>
 
+              <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
 
-    )
+              <div style='text-align:start;'>
+                <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
+                <div style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
+              </div>
 
-  })
-  Promise.all(promises).then(() => {
-    console.log(promises)
-    let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().length;
-      let y = $('.oldClients .clientProfile .bottomBlock .pastList').children().length;
-      console.log(x);
-      console.log(y);
-      if (x == 1) {
-        $('.oldClients .upcomingList .loader2').addClass('non-active');
-        $('.oldClients .upcomingList').append(`<div class='noUpcoming' style='padding-top:20px; font-weight:500;'>You have no upcoming appointments</div>`)
-      } else {
+            </div>
 
-        $('.oldClients .upcomingList .loader2').addClass('non-active');
-        $('.oldClients .upcomingList .noUpcoming').addClass('non-active');
-      }
-      if (y == 1) {
-        $('.oldClients .pastList .loader2').addClass('non-active');
-        $('.oldClients .pastList').append(`<div class='noPast' style='padding-top:20px; font-weight: 500;'>You have no past appointments</div>`)
-      } else {
-        $('.oldClients .upcomingList .noPast').addClass('non-active');
-        $('.oldClients .pastList .loader2').addClass('non-active');
+            <div class='dateTime details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+              <div>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
+            </div>
+            <div class='details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+              <div>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
+            </div>
+          </div>
+          `)
+        } else {
 
-      }
+          $('.appointmentList .pastList').append(`
+          <div class='apptBlock'>
+            <span>View Details</span>
+            <div class='sellerinfo'>
+              <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
+              <div style='text-align:start;'>
+                <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
+                <div class='displayName' style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
+              </div>
+            </div>
 
+            <div class='dateTime details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+              <div class='dateTimes'>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
+            </div>
+            <div class='details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+              <div class='detailInfo'>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
+            </div>
+          </div>
+          `)
+        }
+
+    }).then(()=> {
       $('.oldClients .pastList .apptBlock span').on('click', function() {
+        console.log()
           let initial = $(this).siblings().find('.sellerFirst')[0].innerHTML;
           let name = $(this).siblings().find('.displayName')[0].innerHTML;
           let date = $(this).siblings().find('.dateTimes')[0].innerHTML;
@@ -3299,9 +3424,64 @@ function retrieveBookings(id, email) {
 
           })
       })
-  }
 
-);
+    })
+  
+
+
+})
+
+
+
+// testing2.then(() => {
+
+//   // console.log($('.oldClients .bottomBlock .pastList'))
+//   // if ($('.clientProfile .bottomBlock .upcomingList')) {
+
+//   // }
+// })
+})
+// .then(() => {
+
+  
+// }
+
+// )
+
+
+
+})
+
+
+} 
+
+let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().length;
+      let y = $('.oldClients .clientProfile .bottomBlock .pastList').children().length;
+      // console.log(x);
+      // console.log(y);
+      // console.log($('.oldClients .clientProfile .upcomingList'))
+      if (x == 1) {
+        $('.oldClients .upcomingList .loader2').addClass('non-active');
+        $('.oldClients .upcomingList').append(`<div class='noUpcoming' style='padding-top:20px; font-weight:500;'>You have no upcoming appointments</div>`)
+      } else {
+
+        $('.oldClients .upcomingList .loader2').addClass('non-active');
+        $('.oldClients .upcomingList .noUpcoming').addClass('non-active');
+      }
+      if (y == 1) {
+        $('.oldClients .pastList .loader2').addClass('non-active');
+        $('.oldClients .pastList').append(`<div class='noPast' style='padding-top:20px; font-weight: 500;'>You have no past appointments</div>`)
+      } else {
+        $('.oldClients .upcomingList .noPast').addClass('non-active');
+        $('.oldClients .pastList .loader2').addClass('non-active');
+
+      };
+
+
+
+
+
+
   $('.oldClients .apptList .past').on('click', function() {
     $('.oldClients .apptList .upcoming').removeClass('active')
     $('.oldClients .apptList .past').addClass('active')
@@ -3389,14 +3569,14 @@ function checkCustomer(e) {
         // createCustomer(x, "#myForm")
       } else {
 
-        loginToSquareAcc(r.customers[0].givenName, r.customers[0].familyName)
+        loginToSquareAcc(r.customers[0].givenName, r.customers[0].familyName, r.customers[0].id)
 
         // createBooking(r.customers[0].id, x, "#myForm")
       }
     })
 }
 
-  function loginToSquareAcc(firstName, lastName) {
+  function loginToSquareAcc(firstName, lastName, customerId) {
   if ($("#loginForm [name='email']").val().trim().length==0 || $("#loginForm [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
   document.querySelector("#loginForm [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
   document.querySelector("#loginForm [name='email']").reportValidity();
@@ -3423,7 +3603,7 @@ function checkCustomer(e) {
       // showCodeMessage(code, email)
 
       //TESTING
-      showCodeMessage(r, email, firstName, lastName)
+      showCodeMessage(r, email, firstName, customerId);
 
     })
   }
@@ -3536,28 +3716,10 @@ if ($('.newClients').hasClass('non-active')) {
 
 }
 );
-function createCustomer1(form) {
+function createCustomer1(e) {
+  let form = e.data.id
   e.preventDefault();
   $('.squareupSignupForm #signupForm .bookingButton').addClass('loading')
-  // fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
-  //       method: 'POST',
-  //       headers: {
-  //           accept: "application/json",
-  //           "content-type": "application/json"
-  //       },
-  //       body: JSON.stringify({
-  //           firstName: $(`${form} input[name=firstName]`).val(),
-  //           lastName: $(`${form} input[name=lastName]`).val(),
-  //           email: $(`${form} input[name=email]`).val(),
-  //           phone: $(`${form} input[name=number]`).val()
-  //       })
-  //   })
-  //   .then(r=>r.json())
-  //   .then(r=>{
-  //     console.log('Created customer');
-  //   })
-}
-function createCustomer(x, form) {
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
         method: 'POST',
         headers: {
@@ -3573,12 +3735,52 @@ function createCustomer(x, form) {
     })
     .then(r=>r.json())
     .then(r=>{
-      createBooking(r.customer.id, x, form)
+      let results = r.customer
+      console.log(results)
+      setTimeout(function() {
+        $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
+        $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
+        $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
+        getAppointments(results.id, results.emailAddress)
+        localStorage.setItem('email', results.emailAddress);
+        localStorage.setItem('name', results.givenName);
+        localStorage.setItem('customerId', results.id);
+      }, 1500)
+
+
+      // console.log('Created customer');
+    })
+}
+function createCustomer(x, form) {
+  console.log($(`${form} input[name=firstName]`).val())
+  fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+        method: 'POST',
+        headers: {
+            accept: "application/json",
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            firstName: $(`${form} input[name=firstName]`).val(),
+            lastName: $(`${form} input[name=lastName]`).val(),
+            email: $(`${form} input[name=email]`).val(),
+            phone: $(`${form} input[name=number]`).val()
+        })
+    })
+    .then(r=>r.json())
+    .then(r=>{
+      // console.log(r)
+      createBooking(r.customer.id, x, form, r.customer)
     })
 }
 
-function createBooking(id, serv, form) {
-
+function createBooking(id, serv, form, customerInfo) {
+  
+  let notes = '';
+  if (localStorage.getItem('email')) {
+    notes = $(`${form} div[name=apptNotes]`).html()
+  } else {
+    notes = $(`${form} textarea[name=appNotes]`).val()
+  }
       fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
         method: 'POST',
         headers: {
@@ -3589,20 +3791,33 @@ function createBooking(id, serv, form) {
             startAt: multiService[0].startAt,
             locationId: multiService[0].locationId,
             customerId: id,
-            customerNote: $(`${form} textarea[name=appNotes]`).val() || "N/A",
+            customerNote: notes || "N/A",
             book: serv
 
         })
     })
     .then(r=>r.json())
     .then(r=>{
-
+      console.log('booked')
+      let results = customerInfo
       if ($('.newClients').hasClass('non-active')) {
         $('.serviceList .botss').empty()
         $('.serviceList .botss').append(`
         <div style='text-align:center;' class='bookingButton'>Booked</div>
         `)
       } else {
+        setTimeout(function() {
+          $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
+          $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
+          $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
+          getAppointments(results.id, results.emailAddress)
+          localStorage.setItem('email', results.emailAddress);
+          localStorage.setItem('name', results.givenName);
+          localStorage.setItem('customerId', results.id);
+          $('.mobilePopup').css('max-height', '0px');
+          $('.newClients').addClass('non-active');
+          $('.oldClients').removeClass('non-active');
+        }, 1500)
         $('.mobilePopup .bots').empty()
         $('.mobilePopup .bots').append(`
         <div style='text-align:center;' class='bookingButton'>Booked</div>
@@ -3616,10 +3831,15 @@ function createBooking(id, serv, form) {
 
       }
     })
-}
+
+  }
 function showService(e) {
   // $('.oldClients .button2').on('click', (e) => {
-
+      // if ($('.oldClients .clientProfile').hasClass('active')) {
+      //   let x = window.scrollY + window.innerHeight
+      //   console.log(x)
+      //   $('.serviceList').css('max-height', `${x}px`);
+      // }
       $('.serviceList').removeClass('non-active')
       let serviceType = e.target.getAttribute('data-service')
       let serviceCate = e.target.getAttribute('data-service-cate')
@@ -4079,6 +4299,17 @@ function addService(e) {
 
 
   window.addEventListener('DOMContentLoaded', function() {
+    $('.gtaTopSide').slick({
+            "dots": false,
+            "infinite": true,
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "draggable" : true,
+            "pauseOnFocus" : false,
+        });
     let serviceGender = '';
     let serviceType = '';
     let color = false;
@@ -4088,7 +4319,7 @@ function addService(e) {
 
       $('.squareupLogin .squareSignUp').on('click', function() {
         $('.oldClients').empty().append($('.squareupSignupForm').eq(0).clone().addClass('active'));
-        $('.oldClients #signupForm').on("submit", createCustomer1("#signupForm"));  
+        $('.oldClients #signupForm').on("submit", {id: '#signupForm'}, createCustomer1);  
     })
     })
 
@@ -4647,7 +4878,6 @@ function addService(e) {
       $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
         $('.form123 #myForm1').on("submit", submitForm)
 
-      // $('.serviceBookingSide .loader2').addClass('non-active');
         } else {
 
           serviceType1(serviceEnd, stylist, startTime);
@@ -4698,6 +4928,7 @@ function addService(e) {
       $('.mobileInitial').removeClass('active')
       $('.mobileService').addClass('active')
       $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobileGTA .backButton2').removeClass('non-active')
     })
     $('#2').on('click', () => {
       $('.bookingLoad').removeClass('loaded')
@@ -5155,12 +5386,118 @@ function addService(e) {
       if (serviceGender == 'mens' || serviceGender == 'womens') {
       $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
       $('.mobileService').removeClass('active');
-        $('.mobileSystem').addClass('active');
+      $('.mobileSystem').addClass('active');
+      } else {
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobileService').removeClass('active');
+      $('.mobileSystem2').addClass('active');
+        $('.mobileSystem2 #no').on('click', function() {
+          var a = document.createElement('a');
+          a.target="_blank";
+          a.href="/online-professional-hair-consultant-for-hairpieces/";
+          a.click();
+        }) 
+        $('.mobileSystem2 #yes').on('click', function() {
+
+          $('.mobileSystem2').removeClass('active');
+          $('.mobileSystem3').addClass('active');
+
+          $('.mobileSystem3 #mens').on('click', function() {
+            $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+ 
+            $('.mobileSystem3').removeClass('active')
+            if ($(window).width() > 1023) {
+              $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
+
+            } else {
+
+              $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
+            $('.form123').append($('.serviceBooking').eq(0).clone().addClass('active'));
+
+            $('.form123 .serviceBooking').addClass('active');
+            }
+            $('.staffMembers .addNames1').on('click', function() {
+
+if ($(window).width() > 1023) { 
+  $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+}
+
+
+
+duration = '';
+  startTime = '';
+  multiService = [];
+  bookedStylist = '';
+$('.calendarMain .loader2').removeClass('non-active')
+$('.morning .slot').empty();
+$('.afternoon .slot').empty();
+$('.evening .slot').empty();
+
+if ($('.pleaseSelect').children.length > 0) {
+$('.pleaseSelect').empty();
+}
+
+let memberId = $(this).data('team-member-id');
+stylistName = $(this).data('team-member-name');
+stylist = memberId.split(',');
+$('.staffMembers .addNames1').removeClass('loaded');
+$(this).addClass('loaded');
+let date1 = new Date();
+let year = date1.getFullYear();
+let mon = date1.getMonth();
+let test5 = new Date(year, mon + 1,0);
+test5.setUTCHours(23,59,59,0);
+currMonth = new Date().getMonth();
+calendarChange();
+bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
+$('.form123 .calendarTop .next-arrow').removeClass('disabled')
+$('.form123 .calendarTop .prev-arrow').addClass('disabled')
+if ($(window).width() > 1023) {
+serviceType1(serviceEnd, stylist)
+
+$('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+$('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
+$('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+
+}
+})
+
+
+$('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+$('.mobileBottom').removeClass('active');
+if ($(window).width() >1023) {
+if ($('.newClients').hasClass('non-active')) {
+$('.mobileBottom1').addClass('active');
+}
+} else {
+$('.mobileBottom1').addClass('active');
+
+}
+            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist)
+          })
+        })
       }
     })
+
     $('#systemYes').on('click', () => {
       $('.mobileSystem').removeClass('active');
       $('.mobileService2').addClass('active');
+    })
+    $('#systemBuy').on('click', () => {
+      console.log(serviceGender)
+      if (serviceGender == 'mens') {
+        var a = document.createElement('a');
+        a.target="_blank";
+        a.href="/men-hair-pieces-toupees/";
+        a.click();
+      } else {
+        var a = document.createElement('a');
+        a.target="_blank";
+        a.href="/womens-hair-pieces-toppers-wigs/";
+        a.click();
+      }
+      // $('.mobileSystem').removeClass('active');
+      // $('.mobileService2').addClass('active');
     })
     $('.mobileService2 .bookingButton').on('click', (e) => {
       e.preventDefault();
