@@ -1001,9 +1001,67 @@ margin-bottom: 10px;
   gap: 5px;
   margin-top: 8px;
 }
-
+.serviceImg {
+  display: none;
+  width: 45px;
+}
+.clientProfile .signOutBlock {
+  margin-top: 10px;
+}
+.backButton2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
 @media (min-width: 1024px) {
-
+  .desktopConfirmation {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .desktopConfirmation .block1 {
+    border: 1px solid #888888;
+    border-radius: 5px;
+    width: 570px;
+    margin-bottom: 20px;
+    padding: 30px;
+  }
+  .desktopConfirmation .topBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: start;
+  }
+  .desktopConfirmation .name {
+    font-weight: 600;
+    font-weight: 16px;
+  }
+  .desktopConfirmation .intial {
+    width: 80px;
+    height: 80px;
+    background-color: #006CFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+  }
+  .desktopConfirmation .dateBlock {
+    font-weight: 600;
+    margin: 20px 0;
+  }
+  .desktopConfirmation .serviceBlock div {
+    font-size: 16px;
+  }
+  .clientProfile .signOutBlock {
+    /* display: none; */
+  }
+  .serviceImg {
+    display: inline-block;
+  }
   .clientProfile {
     max-width: 1300px;
     margin: auto;
@@ -1045,6 +1103,9 @@ margin-bottom: 10px;
   }
   .staffBooking .desktop {
     display: block;
+    color: gray;
+    font-weight: 500;
+    font-size: 16px;
   }
   .gtaFirstDesktop {
     border: unset;
@@ -1157,6 +1218,7 @@ margin-bottom: 10px;
     height: fit-content;
     text-align: start;
     width: 43%;
+    max-width: 250px;
   }
   .serviceBookingSide p {
     font-weight: 600;
@@ -1182,6 +1244,7 @@ margin-bottom: 10px;
     display: flex;
     gap: 90px;
     margin-top: 50px;
+    justify-content: center;
   }
   .bookingForm.active {
     display: flex;
@@ -1280,6 +1343,7 @@ margin-bottom: 10px;
   .loggedInDesktop p {
     color: #006CFF;
     margin: 0;
+    cursor: pointer;
   }
   .list-service-title {
     text-align: start;
@@ -1396,6 +1460,7 @@ margin-bottom: 10px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 }
 @keyframes mulShdSpin {
   0%,
@@ -1439,7 +1504,7 @@ margin-bottom: 10px;
     }
 }
 </style>
-<img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/>
+<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/> -->
 <section style=>
   <div class="gtaTop" style="text-align: center;">
     <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
@@ -1533,7 +1598,7 @@ margin-bottom: 10px;
     </div>
   </div>
   <div class="serviceList non-active">
-    <div style="width: 80%; margin: auto;">
+    <div style="width: 80%; margin: auto; max-width: 1200px;">
       <div class="bookingLoadbar four">
         <div class="bookingLoad"></div>
         <div class="bookingLoad"></div>
@@ -1702,14 +1767,14 @@ margin-bottom: 10px;
           <p class="mobileText">Which service do you need?</p>
           <div class="gtaMobileService">
             <button id='mens' class="bookingButton1 button3">
-              <img style="width: 45px;" src="../../../assets/img/gta/men.png">
+              <img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/men.png">
               Men services</button>
             <button id="womens" class="bookingButton1 button3">
-              <img style="width: 45px;" src="../../../assets/img/gta/women.png">
+              <img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/women.png">
             
               Women services</button>
             <button id="consultation" class="bookingButton1 button3">
-              <img style="width: 45px;" src="../../../assets/img/gta/consultation.png">
+              <img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/consultation.png">
               
               Consultation</button>
           </div>
@@ -1747,8 +1812,8 @@ margin-bottom: 10px;
         <div id="service3" class="mobileMain mobileService3 non-active">
           <p class="mobileText">Do you require color on your own hair?<span id="change"></span></p>
           <div class="gtaMobileService">
-            <button class="bookingButton">Yes</button>
-            <button class="bookingButton">No</button>
+            <button class="bookingButton button3">Yes</button>
+            <button class="bookingButton button3">No</button>
           </div>
         </div>
 
@@ -1756,10 +1821,13 @@ margin-bottom: 10px;
         <div class="form123" style="overflow: auto; "></div>
         <div class="mobileBottom non-active">
           <div class="mobileGTA">
-            <p>
-            <button class="mobileCancel" style="color: #377DE7;">Cancel</button>
-            <button style="color: #377DE7;" class="backButton2 non-active">|&nbsp;&nbsp;&nbsp;&nbsp;Back</button>
-            </p>
+            <div>
+              <button class="mobileCancel" style="color: #377DE7;">Cancel</button>
+              <div class="backButton2 non-active">
+                <p style="color: #377DE7; margin: 0;">|</p>
+                <button style="color: #377DE7;" class="backButton2 non-active">Back</button>
+              </div>
+            </div>
             <p style="color:#555555;">Any Questions?<br>
             Please Call: (905) 917-1805</p>
           </div>
@@ -1958,6 +2026,9 @@ margin-bottom: 10px;
         <div class="bookingButton" style="width: unset; flex-grow: 1;">Book Appointments</div>
         <div class="viewProfile" style="color: #006CFF; font-weight: 600;">View Profile</div>
       </div>
+      <div class="signOutBlock">
+        <div style="color: #006CFF; font-weight: 400;">Sign out</div>
+      </div>
     </div>
     <div class="bottomBlock">
       <p class="title">My appointments</p>
@@ -2111,21 +2182,50 @@ margin-bottom: 10px;
     <p class="bookingButton">Sign in</p>
   </div>
 </div>
+<div class="desktopConfirmation non-active" style=" min-height: 300px;">
+  <span class="loader2">
+    <span class="loader"></span>
+  </span>
+  <div class="block1">
+    <div class="topBlock">
+      <div class="intial"></div>
+      <div>
+        <div>Booking With</div>
+        <div class="name"></div>
+      </div>
+    </div>
+    <div class="dateBlock">
+      <div></div>
+    </div>
+    <div class="serviceBlock">
+      
+    </div>
+    <div style="color: gray;">
+      7295 Rapistan Ct<br>
+      Mississauga, ON<br>
+      L5N 5Z4<br>
+      416-800-5056
+    </div>
+  </div>
+  <div class="bookBlock">
+    <button class="bookingButton loadButton">Book</button>
+  </div>
+</div>
 </section>
 
 <script type="text/javascript" src="/content/js/slick.min.js"></script>
 
 <script>
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December']
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemeber', 'October', 'November', 'December'];
 
   let date = new Date();
   let currDate = date.getDate();
   let currYear = date.getFullYear();
   let currMonth = date.getMonth();
-  let test5 = new Date(currYear, currMonth + 1,0)
+  let test5 = new Date(currYear, currMonth + 1,0);
   let serviceEnd = '';
-  let serviceEnd1 = []
+  let serviceEnd1 = [];
   let stylist = '';
   let startTime = '';
   let bookedStylist = '';
@@ -2136,7 +2236,7 @@ margin-bottom: 10px;
   let servicesAvailable =[];
   let totalTime = 0;
   let multiService = [];
-  test5.setUTCHours(23,59,59,0)
+  test5.setUTCHours(23,59,59,0);
   function checkAva(currTime, lastTime, serviceId, durationTotal) {
       serviceEnd = serviceId;
       duration = durationTotal/60000;
@@ -2148,7 +2248,7 @@ margin-bottom: 10px;
             any: stylist
           }
         })
-      })
+      });
       fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
         method: 'POST',
         headers: {
@@ -2168,43 +2268,43 @@ margin-bottom: 10px;
       $('.botss .backButton').unbind('click');
       $('.mobileBottom1 .bookingButton.confirmButton').unbind('click');
       if ($('.serviceList .serviceBooking').hasClass('active')) {
-        let apps = r.availabilities
+        let apps = r.availabilities;
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      let firstDate = r.availabilities[0]
+      let firstDate = r.availabilities[0];
       let v = 0;
 
       // $('.calendarMain .loader2').addClass('non-active');
-      $('.calendarTest .loader2').addClass('non-active')
+      $('.calendarTest .loader2').addClass('non-active');
 
       if (apps.length > 0) {
-        $('.currMonth').removeClass('active selected')
+        $('.currMonth').removeClass('active selected');
         apps.forEach((item) => {
           const date = new Date(item.startAt);
           const day = date.getDate();
           Array.from($('.currMonth')).forEach((item1) => {          
             if (day == item1.innerHTML) {
               if (!item1.classList.contains('active')) {
-                item1.setAttribute("data-id", v)
-                $(item1).addClass('active')
-                v++
+                item1.setAttribute("data-id", v);
+                $(item1).addClass('active');
+                v++;
               } 
             } 
           })
-        })
-        $('.currMonth.active').eq(0).addClass('selected')
+        });
+        $('.currMonth.active').eq(0).addClass('selected');
         let x = $('.currMonth.selected').attr('data-id');
         let y = $('.currMonth.selected').attr('data-date');
         // calendarChange()
-        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y);
         if ($(window).width() >1023) {
           $('.multiServiceDesk .calendarTop .prev-arrow').addClass('disabled');
               $('.multiServiceDesk .calendarTop .next-arrow').removeClass('disabled');
-          $('.multiServiceDesk .calendarTop .next-arrow').on('click', nextMonth)
+          $('.multiServiceDesk .calendarTop .next-arrow').on('click', nextMonth);
         }
       } 
       else {
-        $('.currMonth').removeClass('active selected')
-        currMonth = currMonth + 1
+        $('.currMonth').removeClass('active selected');
+        currMonth = currMonth + 1;
       if (currMonth < 0 || currMonth > 11) {
         date = new Date(currYear, currMonth);
         currYear = date.getFullYear();
@@ -2212,22 +2312,23 @@ margin-bottom: 10px;
       } else {
         date = new Date();
       }
-      let test7 = new Date(currYear, currMonth + 1,0)
-      let test8 = new Date(currYear, currMonth,1)
-      $('.calendarTop .next-arrow').bind('click', nextMonth)
+      let test7 = new Date(currYear, currMonth + 1,0);
+      let test8 = new Date(currYear, currMonth,1);
+      $('.calendarTop .next-arrow').bind('click', nextMonth);
 
-      test7.setUTCHours(23,59,59,0)
-      calendarChange()
-      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
+      test7.setUTCHours(23,59,59,0);
+      calendarChange();
+      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist);
       }
 
 
       $('.serviceList li.currMonth.active').on('click', function() {
-        $('.currMonth.active').removeClass('selected')
-        $(this).addClass('selected')
-        let x = this.getAttribute('data-id')
-        let y = this.getAttribute('data-date')
-        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+
+        $('.currMonth.active').removeClass('selected');
+        $(this).addClass('selected');
+        let x = this.getAttribute('data-id');
+        let y = this.getAttribute('data-date');
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y);
     }) 
       }
       $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
@@ -2243,21 +2344,21 @@ margin-bottom: 10px;
             })
           })
           $('.mobileBottom1 .bookingButton.confirmButton').addClass('loading');
-          createBooking(localStorage.getItem('customerId'), x, ".serviceList", localStorage.getItem('customerId'))
+          createBooking(localStorage.getItem('customerId'), x, ".serviceList", localStorage.getItem('customerId'));
         } else {
           $('.confirmButton').addClass('non-active');
         $('.bookNowButton').addClass('active');
         $('.bookingConfirm').removeClass('active');
         // $('.bookingForm').addClass('active');
-      $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'))
-        $('.form1234 .bookingForm input[type=submit]').attr('id', 'submit-form2')
+      $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
+        $('.form1234 .bookingForm input[type=submit]').attr('id', 'submit-form2');
 
       $('.bookingLoad:not(.loaded):first').addClass('loaded');
 
       $(".form1234 #myForm1").on("submit", function(e) {
             e.preventDefault();
-            const serv = multiService[0]
-            let x = []
+            const serv = multiService[0];
+            let x = [];
             const vidutest = serv.appointmentSegments.forEach((item) => {
               x.push({
                 "teamMemberId": item.teamMemberId,
@@ -2299,7 +2400,7 @@ margin-bottom: 10px;
               .then(r=>r.json())
               .then(r=>{
                 if (jQuery.isEmptyObject(r)) {
-                  createCustomer(x, "#myForm1")
+                  createCustomer(x, "#myForm1");
                 } else {
                   $('.accExistsOverlay').removeClass('non-active');
                   $('.accExistsOverlay .bookingButton').on('click', function() {
@@ -2309,29 +2410,7 @@ margin-bottom: 10px;
                     $('.accExistsOverlay').addClass('non-active');
                     $('.serviceList').css('max-height', '0px');
                     $('.loader2').removeClass('non-active');
-                    // if (localStorage.getItem('email')) {
-                    //   $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
-                    //   $('.oldClientsLogin .signIn_square .block').addClass('non-active');
-                    //   $('.oldClientsLogin .myAppts').addClass('active');
-                    //   $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'))
-                    //   $('.oldClientsLogin .myAppts button').on('click', {email:localStorage.getItem('email')}, clientInfo);
-                      
-                    //   $('.oldClients .myAppts div').on('click', function() {
-                    //     localStorage.removeItem('email');
-                    //     localStorage.removeItem('name');
-                    //     $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
-                    //   $('.oldClientsLogin .myAppts').removeClass('active');
-                    //   $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
-                          
-                    //       $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-                    //       $('.squareupLogin #loginForm .requestButton').removeClass('loading')
-                    //       $('.squareupLogin #loginForm input').prop("disabled", false);
-                    //       $('.requestButton').removeClass('loading')
 
-                    //       $('.squareuplogin #loginForm').on("submit", checkCustomer);
-                    //     })
-                    //   })
-                    // }
                   })
                   // createBooking(r.customers[0].id, x, "#myForm1")
 
@@ -2373,7 +2452,7 @@ margin-bottom: 10px;
 
           $('.bookingLoad.loaded:last').removeClass('loaded');
           $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-          $('.form1234 .serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'))
+          $('.form1234 .serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'));
           
           $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
               $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
@@ -2382,17 +2461,17 @@ margin-bottom: 10px;
           $('.botss .nextButton').removeClass('non-active');
           let x = $('.currMonth.selected').attr('data-id');
           let y = $('.currMonth.selected').attr('data-date');
-          $('.form1234 .calendarTop .prev-arrow').on('click', prevMonth)
-          $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
+          $('.form1234 .calendarTop .prev-arrow').on('click', prevMonth);
+          $('.form1234 .calendarTop .next-arrow').on('click', nextMonth);
               currMonth = new Date().getMonth();
-              calendarChange()
+              calendarChange();
         // getCurrentDateAppointments(r.availabilities[x], r.availabilities, x, y)
-          let apps = r.availabilities
+          let apps = r.availabilities;
           let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-          let firstDate = r.availabilities[0]
+          let firstDate = r.availabilities[0];
           let v = 0;
           if (apps.length > 0) {
-            $('.currMonth').removeClass('active selected')
+            $('.currMonth').removeClass('active selected');
             apps.forEach((item) => {
             const date = new Date(item.startAt);
             const day = date.getDate();
@@ -2400,14 +2479,14 @@ margin-bottom: 10px;
               if (day == item1.innerHTML) {
 
                 if (!item1.classList.contains('active')) {
-                  item1.setAttribute("data-id", v)
-                  $(item1).addClass('active')
-                  v++
+                  item1.setAttribute("data-id", v);
+                  $(item1).addClass('active');
+                  v++;
                 } 
               } 
             })
           })
-          $('.currMonth.active').eq(0).addClass('selected')
+          $('.currMonth.active').eq(0).addClass('selected');
           let x = $('.currMonth.selected').attr('data-id');
           let y = $('.currMonth.selected').attr('data-date');
           // calendarChange()
@@ -2420,7 +2499,7 @@ margin-bottom: 10px;
                   multiService = [];
                   bookedStylist = '';
               // $('.calendarMain .loader2').removeClass('non-active');
-              $('.calendarTest .loader2').removeClass('non-active')
+              $('.calendarTest .loader2').removeClass('non-active');
 
               $('.morning .slot').empty();
               $('.afternoon .slot').empty();
@@ -2430,27 +2509,27 @@ margin-bottom: 10px;
                 $('.pleaseSelect').empty();
               }
 
-              let memberId = $(this).data('team-member-id')
+              let memberId = $(this).data('team-member-id');
               stylistName = $(this).data('team-member-name');
 
-              stylist = memberId.split(',')
-              $('.staffMembers .addNames1').removeClass('loaded')
-              $(this).addClass('loaded')
+              stylist = memberId.split(',');
+              $('.staffMembers .addNames1').removeClass('loaded');
+              $(this).addClass('loaded');
               let date1 = new Date();
               let year = date1.getFullYear();
               let mon = date1.getMonth();
-              let test5 = new Date(year, mon + 1,0)
+              let test5 = new Date(year, mon + 1,0);
               test5.setUTCHours(23,59,59,0);
               currMonth = new Date().getMonth();
-              calendarChange()
-              bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
+              calendarChange();
+              bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
               $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
               $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
               })
-              $('.form1234 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded')
+              $('.form1234 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded');
       
             } else if ($('.form1234 .bookingForm').hasClass('active')) {
-          $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+          $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'));
           $('.botss .bookNowButton').removeClass('active');
           $('.botss .confirmButton').removeClass('non-active');
         } else if (!($('.gokutest').hasClass('non-active'))) {
@@ -2462,9 +2541,9 @@ margin-bottom: 10px;
           totalTime = 0;
           total = '0.00';
           serviceEnd1 = [];
-          $('.page-button').removeClass('page-button1')
-          $('.page-test').removeClass('brand-add')
-          $('.page-test').css('max-height', '0px')
+          $('.page-button').removeClass('page-button1');
+          $('.page-test').removeClass('brand-add');
+          $('.page-test').css('max-height', '0px');
         }
       })
       $('.botss .nextButton').on('click', function() {
@@ -2472,30 +2551,30 @@ margin-bottom: 10px;
           $('.serviceBooking .apptNote').removeClass('non-active');
 
         } else {
-          $('.serviceBooking .apptNote').addClass('non-active')
+          $('.serviceBooking .apptNote').addClass('non-active');
         }
         if ($('.serviceBooking').hasClass('active')) {
           if (serviceEnd, bookedStylist, startTime) {
-            let value = $('.serviceBooking .apptNote').val()
+            let value = $('.serviceBooking .apptNote').val();
             $('.serviceBooking').removeClass('active');
             $('.staffBooking').removeClass('active');
             $('.bookingLoad:not(.loaded):first').addClass('loaded');
             serviceType1(serviceId, bookedStylist, startTime, value);
            } else {
-            $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
+            $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>');
            }
 
 
 
 
         } else {
-          $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
+          $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
           if (!($('.serviceBooking .staffBooking').hasClass('active'))) {
-          $('.serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'))
+          $('.serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'));
           }
           $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
               $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
-          $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
+          $('.form1234 .calendarTop .next-arrow').on('click', nextMonth);
           $('.staffMembers .addNames1').on('click', function() {
 
               duration = '';
@@ -2503,7 +2582,7 @@ margin-bottom: 10px;
                   multiService = [];
                   bookedStylist = '';
               // $('.calendarMain .loader2').removeClass('non-active');
-              $('.calendarTest .loader2').removeClass('non-active')
+              $('.calendarTest .loader2').removeClass('non-active');
 
               $('.morning .slot').empty();
               $('.afternoon .slot').empty();
@@ -2513,20 +2592,20 @@ margin-bottom: 10px;
                 $('.pleaseSelect').empty();
               }
 
-              let memberId = $(this).data('team-member-id')
+              let memberId = $(this).data('team-member-id');
               stylistName = $(this).data('team-member-name');
 
-              stylist = memberId.split(',')
-              $('.staffMembers .addNames1').removeClass('loaded')
-              $(this).addClass('loaded')
+              stylist = memberId.split(',');
+              $('.staffMembers .addNames1').removeClass('loaded');
+              $(this).addClass('loaded');
               let date1 = new Date();
               let year = date1.getFullYear();
               let mon = date1.getMonth();
-              let test5 = new Date(year, mon + 1,0)
+              let test5 = new Date(year, mon + 1,0);
               test5.setUTCHours(23,59,59,0);
               currMonth = new Date().getMonth();
-              calendarChange()
-              bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
+              calendarChange();
+              bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
               $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
               $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
               })
@@ -2540,12 +2619,12 @@ margin-bottom: 10px;
               $('.mobileBottom1 .botss .service').removeClass('non-active');
               $('.mobileBottom1 .botss .total').addClass('active');
             }
-        let apps = r.availabilities
+        let apps = r.availabilities;
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-      let firstDate = r.availabilities[0]
+      let firstDate = r.availabilities[0];
       let v = 0;
       if (apps.length > 0) {
-        $('.currMonth').removeClass('active selected')
+        $('.currMonth').removeClass('active selected');
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
@@ -2553,8 +2632,8 @@ margin-bottom: 10px;
           if (day == item1.innerHTML) {
 
             if (!item1.classList.contains('active')) {
-              item1.setAttribute("data-id", v)
-              $(item1).addClass('active')
+              item1.setAttribute("data-id", v);
+              $(item1).addClass('active');
               v++
             } 
           } 
@@ -2565,11 +2644,11 @@ margin-bottom: 10px;
       let y = $('.currMonth.selected').attr('data-date');
       // calendarChange()
 
-      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y);
       } 
       else {
-        $('.currMonth').removeClass('active selected')
-        currMonth = currMonth + 1
+        $('.currMonth').removeClass('active selected');
+        currMonth = currMonth + 1;
       if (currMonth < 0 || currMonth > 11) {
         date = new Date(currYear, currMonth);
         currYear = date.getFullYear();
@@ -2577,20 +2656,21 @@ margin-bottom: 10px;
       } else {
         date = new Date();
       }
-      let test7 = new Date(currYear, currMonth + 1,0)
-      let test8 = new Date(currYear, currMonth,1)
-      test7.setUTCHours(23,59,59,0)
-      calendarChange()
-      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
+      let test7 = new Date(currYear, currMonth + 1,0);
+      let test8 = new Date(currYear, currMonth,1);
+      test7.setUTCHours(23,59,59,0);
+      calendarChange();
+      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist);
       }
 
 
       $('li.currMonth.active').on('click', function() {
-        $('.currMonth.active').removeClass('selected')
-        $(this).addClass('selected')
-        let x = this.getAttribute('data-id')
-        let y = this.getAttribute('data-date')
-        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+
+        $('.currMonth.active').removeClass('selected');
+        $(this).addClass('selected');
+        let x = this.getAttribute('data-id');
+        let y = this.getAttribute('data-date');
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y);
     }) 
         }
 
@@ -2604,17 +2684,16 @@ margin-bottom: 10px;
       startTime = '';
       multiService = [];
       bookedStylist = '';
-      currMonth = currMonth + 1
+      currMonth = currMonth + 1;
       if (currMonth == new Date().getMonth() +2) {
-        console.log(currMonth)
-      $('.calendarTop .next-arrow').addClass('disabled')
-      $('.calendarTop .next-arrow').unbind('click', nextMonth)
+      $('.calendarTop .next-arrow').addClass('disabled');
+      $('.calendarTop .next-arrow').unbind('click', nextMonth);
       }
       if (currMonth <= new Date().getMonth() + 2) {
       // $('.calendarMain .loader2').removeClass('non-active');
-      $('.calendarTest .loader2').removeClass('non-active')
+      $('.calendarTest .loader2').removeClass('non-active');
 
-        $('.calendarTop .prev-arrow').removeClass('disabled')
+        $('.calendarTop .prev-arrow').removeClass('disabled');
 
           if (currMonth < 0 || currMonth > 11) {
           date = new Date(currYear, currMonth);
@@ -2629,16 +2708,16 @@ margin-bottom: 10px;
         calendarChange();
         bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd, stylist);
       } else {
-      currMonth = currMonth - 1
+      currMonth = currMonth - 1;
 
-        $('.calendarTop .next-arrow').unbind('click')
+        $('.calendarTop .next-arrow').unbind('click');
 
       }
 
       if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
-        $('.calendarTop .prev-arrow').unbind('click')
+        $('.calendarTop .prev-arrow').unbind('click');
 
-        $('.calendarTop .prev-arrow').bind('click', prevMonth)
+        $('.calendarTop .prev-arrow').bind('click', prevMonth);
       } 
 
     }
@@ -2650,17 +2729,17 @@ margin-bottom: 10px;
       
       if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
         // $('.calendarMain .loader2').removeClass('non-active');
-        $('.calendarTest .loader2').removeClass('non-active')
+        $('.calendarTest .loader2').removeClass('non-active');
 
 
         // $('.calendarTop .prev-arrow').bind('click', prevMonth)
-      currMonth = currMonth - 1
+      currMonth = currMonth - 1;
       
       if (currMonth == new Date().getMonth()) {
-        $('.calendarTop .prev-arrow').addClass('disabled')
-        $('.prev-arrow').unbind('click', prevMonth)
+        $('.calendarTop .prev-arrow').addClass('disabled');
+        $('.prev-arrow').unbind('click', prevMonth);
       } else {
-        $('.next-arrow').bind('click', nextMonth)
+        $('.next-arrow').bind('click', nextMonth);
         
       }
       if (currMonth < 0 || currMonth > 11) {
@@ -2671,39 +2750,39 @@ margin-bottom: 10px;
         date = new Date();
       }
 
-        let test5 = new Date(currYear, currMonth + 1,0)
-        let test6 = new Date(currYear, currMonth,1)
+        let test5 = new Date(currYear, currMonth + 1,0);
+        let test6 = new Date(currYear, currMonth,1);
         if (currMonth === new Date().getMonth()) {
-          bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd)
+          bookingSq(new Date().toISOString(), test5.toISOString(),serviceEnd);
         } else {
 
-          bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd)
+          bookingSq(test6.toISOString(), test5.toISOString(),serviceEnd);
         }
-        test5.setUTCHours(23,59,59,0)
-        calendarChange()
+        test5.setUTCHours(23,59,59,0);
+        calendarChange();
         // if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
         //   $('.calendarTop .prev-arrow').unbind('click')
-      $('.calendarTop .next-arrow').removeClass('disabled')
+      $('.calendarTop .next-arrow').removeClass('disabled');
           // $('.calendarTop .next-arrow').bind('click', nextMonth)
         // } 
       } else {
-        $('.calendarTop .prev-arrow').addClass('disabled')
+        $('.calendarTop .prev-arrow').addClass('disabled');
 
 
       }
 
     }
   function openFAQ(x) {
-        let setheight = x.nextElementSibling.children[0].offsetHeight
-        let checkClass = x.nextElementSibling.classList
+        let setheight = x.nextElementSibling.children[0].offsetHeight;
+        let checkClass = x.nextElementSibling.classList;
         if (checkClass.contains('brand-add')) {
-            checkClass.remove('brand-add')
-            x.children[0].classList.remove('page-button1')
-            x.nextElementSibling.style.maxHeight = '0'
+            checkClass.remove('brand-add');
+            x.children[0].classList.remove('page-button1');
+            x.nextElementSibling.style.maxHeight = '0';
         } else {
-            checkClass.add('brand-add')
-            x.children[0].classList.add('page-button1')
-            x.nextElementSibling.style.maxHeight = setheight + 'px'
+            checkClass.add('brand-add');
+            x.children[0].classList.add('page-button1');
+            x.nextElementSibling.style.maxHeight = setheight + 'px';
         }
     }
 
@@ -2714,101 +2793,120 @@ margin-bottom: 10px;
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
     let lastDateofLastMonth = new Date(currYear, currMonth,0).getDate();
     let checking = new Date().toLocaleDateString('fr-CA', {year: 'numeric', month: '2-digit', day: '2-digit'});
-    let change =''
+    let change ='';
     for (let i = firstDayofMonth ; i > 0; i--) {
-      change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`
+      change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
     }
     $('.calendarMonth').html(`
       ${months[currMonth]} ${currYear}
-    `)
+    `);
     
     for (let i=1; i<=lastDateofMonth;i++ ) {
       let isToday = i === date.getDate() && currMonth === new Date().getMonth() && currYear === new Date().getFullYear() ? 'currDay': '';
       change += `
         <li data-date="${currYear}-${("0" + (currMonth+1)).slice(-2)}-${("0" + i).slice(-2)}"  class="currMonth inactive ${isToday}">${i}</li>
-      `
+      `;
 
-    }
+    };
     for (let i = lastDayofMonth; i< 6; i++) {
       change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
-    }
+    };
     $('calendarMain .loader2').addClass('non-active');
 
-    $('.calendarMain .days').html(`${change}`)
+    $('.calendarMain .days').html(`${change}`);
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
     if (apps.length > 0) {
       // $('.serviceList .calendarMain .loader2').addClass('non-active')
-      $('.serviceList .calendarTest .loader2').addClass('non-active')
+      $('.serviceList .calendarTest .loader2').addClass('non-active');
       
-      const test2 = apps.filter((item) => item.startAt.includes(y))
-    let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
-    let vidu1 = new Date(test2[0].startAt).toLocaleString('en-us', {weekday:"short"})
-    let vidu2 = new Date(test2[0].startAt).toLocaleString('en-us', {day:"numeric"})
-    let vidu4 = new Date(test2[0].startAt).toLocaleString('en-us', {year:"numeric"})
+      const test2 = apps.filter((item) => item.startAt.includes(y));
+    let date = new Date(test2[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'});
+    let vidu1 = new Date(test2[0].startAt).toLocaleString('en-us', {weekday:"short"});
+    let vidu2 = new Date(test2[0].startAt).toLocaleString('en-us', {day:"numeric"});
+    let vidu4 = new Date(test2[0].startAt).toLocaleString('en-us', {year:"numeric"});
     let vidu3 = new Date(test2[0].startAt).toLocaleString('en-us', {month:"short"});
-    let fullDate = `${vidu1}, ${vidu3} ${vidu2}, ${vidu4}`
+    let fullDate = `${vidu1}, ${vidu3} ${vidu2}, ${vidu4}`;
     $('.slot').empty();
     $('.slot2').removeClass('non-active');
     test2.forEach((item) => {
         const date = new Date(item.startAt);
         const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
-        const time2 = date.toLocaleTimeString('en-us', {hour12: false})
+        const time2 = date.toLocaleTimeString('en-us', {hour12: false});
        
         if (time2 > '15:00:00') {
           $('.evening .slot2').addClass('non-active');
-          $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.evening .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
         } else if (time2 > "12:00:00" && time2 <= '15:00:00') {
           $('.afternoon .slot2').addClass('non-active');
          
-          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.afternoon .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
         } else {
           $('.morning .slot2').addClass('non-active');         
-          $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`)
+          $('.morning .slot').append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
 
         }
       })
-      $('.dayAvailable').html(fullDate)
+      $('.dayAvailable').html(fullDate);
     } else {
     }
     $('.bookBut').on('click', function() {
+
       duration = $(this).data('duration');
       startTime = $(this).data('start-id');
-      const test3 = apps.filter((item) => item.startAt.includes(y)).filter((item2) => item2.startAt == startTime)
+      const test3 = apps.filter((item) => item.startAt.includes(y)).filter((item2) => item2.startAt == startTime);
       multiService = [];
       multiService.push(test3[0]);
-      bookedStylist = $(this).data('team-member')
-      $('.bookBut').removeClass('active3')
-      $(this).addClass('active3')
+      bookedStylist = $(this).data('team-member');
+      localStorage.setItem('timeSelected', startTime);
+      $('.bookBut').removeClass('active3');
+      $(this).addClass('active3');
       if ($('.pleaseSelect').children.length > 0) {
         $('.pleaseSelect').empty();
       }
       if ($(window).width() > 1023) {
-        if ($('.oldClients').hasClass('non-active')) {
+
+        if ($('.oldClients').hasClass('non-active') && !($('.newClients').hasClass('non-active'))) {
           $('.form123').scrollTop(0);
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
 
         serviceType1(serviceEnd, stylist, startTime);
         $('.form123').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
       $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
-        $('.form123 #myForm1').on("submit", submitForm)
+        $('.form123 #myForm1').on("submit", submitForm);
 
 
       // $('.serviceBookingSide .loader2').addClass('non-active');
         } else {
-
+          // console.log('hi');
+          // console.log(serviceEnd);
+          // console.log(stylist);
+          // console.log(startTime);
           serviceType1(serviceEnd, stylist, startTime);
           Array.from($('.gokutest').children()).forEach((item) => {
 
             $(item).css('display', 'none');
 
           })
+          $('.gokutest').append($('.desktopConfirmation').eq(0).clone().addClass('active'));
+          $('.gokutest .desktopConfirmation .bookingButton').on('click', function() {
+            $('.gokutest .desktopConfirmation .bookingButton').addClass('loading');
+            setTimeout(function() {
+              // createBooking()
+              let x = [];
+              const vidutest = multiService[0].appointmentSegments.forEach((item) => {
+            x.push({
+              "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+            })
+          })
+          createBooking(localStorage.getItem('customerId'), x, ".serviceList", localStorage.getItem('customerId'));
 
-          $('.gokutest').append($('.bookingForm').eq(0).clone().addClass('active'))
-          $('.gokutest .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-          // $('.serviceBookingSide .loader2').addClass('non-active')
-        $('.gokutest #myForm1').on("submit", submitForm)
+            }, 1500)
+          })
 
         }
 
@@ -2867,20 +2965,20 @@ margin-bottom: 10px;
     })
     .then(r=>r.json())
     .then(r=> {
-      let apps = r.availabilities
+      let apps = r.availabilities;
       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
 
       // duration = firstDate.appointmentSegments[0].durationMinutes;
       let v = 0;
       if (apps.length > 0) {
-        let firstDate = r.availabilities[0]
-        console.log(firstDate)
+        
+        let firstDate = r.availabilities[0];
       duration = '0';
       firstDate.appointmentSegments.forEach((item) => {
-        duration = parseFloat(duration) + parseFloat(item.durationMinutes)
+        duration = parseFloat(duration) + parseFloat(item.durationMinutes);
       })
-        $('.calendarTest .loader2').addClass('non-active')
-        $('.currMonth').removeClass('active selected')
+        $('.calendarTest .loader2').addClass('non-active');
+        $('.currMonth').removeClass('active selected');
         apps.forEach((item) => {
         const date = new Date(item.startAt);
         const day = date.getDate();
@@ -2888,26 +2986,26 @@ margin-bottom: 10px;
           if (day == item1.innerHTML) {
 
             if (!item1.classList.contains('active')) {
-              item1.setAttribute("data-id", v)
-              $(item1).addClass('active')
-              v++
+              item1.setAttribute("data-id", v);
+              $(item1).addClass('active');
+              v++;
             } 
           } 
         })
       })
       if ($('.newClients').hasClass('non-active')) {
-      $('.serviceList .currMonth.active').eq(0).addClass('selected')
+      $('.serviceList .currMonth.active').eq(0).addClass('selected');
       } else {
-        $('.currMonth.active').eq(0).addClass('selected')
+        $('.currMonth.active').eq(0).addClass('selected');
       }
       let x = $('.currMonth.selected').attr('data-id');
       let y = $('.currMonth.selected').attr('data-date');
       // calendarChange()
-      getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+      getCurrentDateAppointments(r.availabilities[x], apps, x, y);
       } 
       else {
-        $('.currMonth').removeClass('active selected')
-        currMonth = currMonth + 1
+        $('.currMonth').removeClass('active selected');
+        currMonth = currMonth + 1;
         if (currMonth < 0 || currMonth > 11) {
           date = new Date(currYear, currMonth);
           currYear = date.getFullYear();
@@ -2915,23 +3013,26 @@ margin-bottom: 10px;
         } else {
           date = new Date();
         }
-      let test7 = new Date(currYear, currMonth + 1,0)
-      let test8 = new Date(currYear, currMonth,1)
-      test7.setUTCHours(23,59,59,0)
-      $('.calendarTop .next-arrow').bind('click', nextMonth)
-      calendarChange()
-      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
+      let test7 = new Date(currYear, currMonth + 1,0);
+      let test8 = new Date(currYear, currMonth,1);
+      test7.setUTCHours(23,59,59,0);
+      $('.calendarTop .next-arrow').bind('click', nextMonth);
+      calendarChange();
+      bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist);
       }
 
 
       $('li.currMonth.active').on('click', function() {
 
-        $('.currMonth.active').removeClass('selected')
-        $(this).addClass('selected')
-        let x = this.getAttribute('data-id')
-        let y = this.getAttribute('data-date')
-
-        getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+        $('.currMonth.active').removeClass('selected');
+        $(this).addClass('selected');
+        let x = this.getAttribute('data-id');
+        let y = this.getAttribute('data-date');
+        // console.log(x)
+        // console.log(y)
+        // console.log(r.availabilities[x])
+        // console.log(r.availabilities)
+        getCurrentDateAppointments(r.availabilities[x], apps, x, y);
     }) 
 
     })
@@ -2943,7 +3044,7 @@ margin-bottom: 10px;
             startTime = '';
             multiService = [];
             bookedStylist = '';
-        $('.calendarTest .loader2').removeClass('non-active')
+        $('.calendarTest .loader2').removeClass('non-active');
 
         // $('.calendarMain .loader2').removeClass('non-active')
         $('.morning .slot').empty();
@@ -2952,58 +3053,58 @@ margin-bottom: 10px;
         if ($('.pleaseSelect').children.length > 0) {
           $('.pleaseSelect').empty();
         }
-        let memberId = $(this).data('team-member-id')
-        stylistName = $(this).data('team-member-name')
-        stylist = memberId.split(',')
-        $('.staffMembers .addNames1').removeClass('loaded')
-        $(this).addClass('loaded')
+        let memberId = $(this).data('team-member-id');
+        stylistName = $(this).data('team-member-name');
+        stylist = memberId.split(',');
+        $('.staffMembers .addNames1').removeClass('loaded');
+        $(this).addClass('loaded');
         let date1 = new Date();
         let year = date1.getFullYear();
         let mon = date1.getMonth();
-        let test5 = new Date(year, mon + 1,0)
+        let test5 = new Date(year, mon + 1,0);
         test5.setUTCHours(23,59,59,0);
-        currMonth = new Date().getMonth()
-        calendarChange()
+        currMonth = new Date().getMonth();
+        calendarChange();
         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-        $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-      $('.form123 .calendarTop .prev-arrow').addClass('disabled')
+        $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+      $('.form123 .calendarTop .prev-arrow').addClass('disabled');
   }
   
   function addNames1() {
-
     duration = '';
     startTime = '';
     multiService = [];
     bookedStylist = '';
-    let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59)
-    let currTime = date
-    let vidu = Math.abs(lastTime-currTime) / 36e5
+    let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59);
+    let currTime = date;
+    let vidu = Math.abs(lastTime-currTime) / 36e5;
     if ( vidu < 24) {
-      lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
+      lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59);
     }
     if ($('.gokutest .multiServiceDesk')) {
       $('.multiServiceDesk1 .staffBooking').removeClass('active');
-     $('.multiServiceDesk1').append($('.serviceBooking').eq(0).clone().addClass('active'))
+     $('.multiServiceDesk1').append($('.serviceBooking').eq(0).clone().addClass('active'));
     }
 
 
-    let memberId = $(this).data('team-member-id')
+    let memberId = $(this).data('team-member-id');
     stylist = memberId.split(',');
     stylistName = $(this).data('team-member-name');
 
-    $('.staffMembers .addNames1').removeClass('loaded')
-    $(this).addClass('loaded')
+    $('.staffMembers .addNames1').removeClass('loaded');
+    $(this).addClass('loaded');
 
-    checkAva(currTime, lastTime, serviceEnd1, totalTime)
+    checkAva(currTime, lastTime, serviceEnd1, totalTime);
   }
   
   function addNames2() {
+
         duration = '';
         startTime = '';
         multiService = [];
         bookedStylist = '';
     // $('.calendarMain .loader2').removeClass('non-active');
-    $('.calendarTest .loader2').removeClass('non-active')
+    $('.calendarTest .loader2').removeClass('non-active');
 
     $('.morning .slot').empty();
     $('.afternoon .slot').empty();
@@ -3012,21 +3113,20 @@ margin-bottom: 10px;
       $('.pleaseSelect').empty();
     }
     let memberId = $(this).data('team-member-id');
-    stylistName = $(this).data('team-member-name')
-    stylist = memberId.split(',')
-    $('.staffMembers .addNames1').removeClass('loaded')
-    $(this).addClass('loaded')
+    stylistName = $(this).data('team-member-name');
+    stylist = memberId.split(',');
+    $('.staffMembers .addNames1').removeClass('loaded');
+    $(this).addClass('loaded');
     let date1 = new Date();
     let year = date1.getFullYear();
     let mon = date1.getMonth();
-    let test5 = new Date(year, mon + 1,0)
-    test5.setUTCHours(23,59,59,0)
+    let test5 = new Date(year, mon + 1,0);
+    test5.setUTCHours(23,59,59,0);
     if ($())
-    bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
+    bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
   }
   
   function serviceType1(serviceEnd, stylist, startTime, note) {
-console.log(duration)
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -3042,20 +3142,22 @@ console.log(duration)
       $('.confirmButton').removeClass('non-active');
       $('#serviceType').empty();
       if (localStorage.getItem('email') && !($('.oldClients').hasClass('non-active'))) {
-        $('#apptNotes').empty().append(note)
+        $('#apptNotes').empty().append(note);
         $('.bookingConfirm .notes').removeClass('non-active');
       }
       serviceEnd.forEach((serv1) => {
+        
         r.items.forEach((item) => {
         if (item.itemData.variations[0].id == serv1) {
           currentStylers.forEach((item2) => {
             if(stylist == item2.team_member_id) {
-
+              stylistName = item2.display_name;
               if ($('.oldClients').hasClass('non-active')) {
-                $('#stylistName').html(item2.display_name)
-              } else {
-                $('#stylistName').html(item2.display_name)
+                $('#stylistName').html(item2.display_name);
 
+
+              } else {
+                $('#stylistName').html(item2.display_name);
               }
 
             }
@@ -3067,56 +3169,72 @@ console.log(duration)
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
               </div>
-            `)
+            `);
 
           } else {
-
             $('#serviceType').append(`
             <div>
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
               </div>
-            `)
+            `);
 
 
           }
 
           if ($(window).width() < 1024) {
-          let durationMins = new Date(startTime)
+          let durationMins = new Date(startTime);
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
           let month = new Date(startTime).getMonth();
           let year = new Date(startTime).getFullYear();
-          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
           let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
-          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
           // $('.bookingConfirm .loader2').addClass('non-active');
           if ($('.oldClients').hasClass('non-active')) {
-          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
               $('.form123').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'));
               $('.bookingConfirm .loader2').addClass('non-active');
 
             } else {
-          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('#dateSelected').html(`${weekday[day]},</br> ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
           $('.bookingConfirm .loader2').addClass('non-active');
           
         }
             } else {
-              let durationMins = new Date(startTime)
+             
+              let durationMins = new Date(startTime);
           let day = new Date(startTime).getDay();
           let date = new Date(startTime).getDate();
           let month = new Date(startTime).getMonth();
           let year = new Date(startTime).getFullYear();
-          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+          let time = new Date(startTime).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
           let startTime2 = durationMins.setMinutes(durationMins.getMinutes() + duration);
-          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
-                if ($('.form123 .bookingForm').hasClass('active')) {
+          let time2 = new Date(startTime2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
+          
+          if ($(window).width() > 1023 && $('.oldClients').hasClass('active')) {
+            
+            // console.log(stylistName);
+            // console.log(stylistName[0]);
+            $('.gokutest .desktopConfirmation .intial').empty().append(stylistName[0]);
+            $('.gokutest .desktopConfirmation .name').empty().append(stylistName);
+            $('.gokutest .desktopConfirmation .dateBlock div').empty().append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
+            $('.gokutest .desktopConfirmation .serviceBlock').append(`            <div>
+              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
+              <p>${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}</p>
+              </div>`);
+              $('.gokutest .desktopConfirmation .loader2').addClass('non-active');
+            // console.log(time)
+            // console.log(time2)
+          }
+          if ($('.form123 .bookingForm').hasClass('active')) {
 
-          $('.bookingDate').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('.bookingDate').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
           $('.serviceBookingSide .loader2').addClass('non-active');
           $('.form123 .serviceEdit').on('click', function() {
 
-$('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
+$('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
 
 $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
 $('.staffMembers .addNames1').on('click', function() {
@@ -3126,7 +3244,7 @@ startTime = '';
 multiService = [];
 bookedStylist = '';
 //  $('.calendarMain .loader2').removeClass('non-active')
-$('.calendarTest .loader2').removeClass('non-active')
+$('.calendarTest .loader2').removeClass('non-active');
 $('.morning .slot').empty();
 $('.afternoon .slot').empty();
 $('.evening .slot').empty();
@@ -3135,56 +3253,56 @@ if ($('.pleaseSelect').children.length > 0) {
 $('.pleaseSelect').empty();
 }
 
-let memberId = $(this).data('team-member-id')
-stylistName = $(this).data('team-member-name')
-stylist = memberId.split(',')
-$('.staffMembers .addNames1').removeClass('loaded')
-$(this).addClass('loaded')
+let memberId = $(this).data('team-member-id');
+stylistName = $(this).data('team-member-name');
+stylist = memberId.split(',');
+$('.staffMembers .addNames1').removeClass('loaded');
+$(this).addClass('loaded');
 let date1 = new Date();
 let year = date1.getFullYear();
 let mon = date1.getMonth();
 let test5 = new Date(year, mon + 1,0)
 test5.setUTCHours(23,59,59,0);
-currMonth = new Date().getMonth()
-calendarChange()
+currMonth = new Date().getMonth();
+calendarChange();
 bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-serviceType1(serviceEnd, stylist)
+serviceType1(serviceEnd, stylist);
 if ($(window).width() > 1023) {
-$('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+$('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
 $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-$('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-$('.form123 .calendarTop .next-arrow').removeClass('disabled')
-$('.form123 .calendarTop .prev-arrow').addClass('disabled')
-$('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-$('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+$('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+$('.form123 .calendarTop .next-arrow').removeClass('disabled');
+$('.form123 .calendarTop .prev-arrow').addClass('disabled');
+$('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+$('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
 }
 })
 })
           $('.form123 .timeEdit').on('click', function() {
 
-            $('.calendarTest .loader2').removeClass('non-active')
-            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
-            $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
-            $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-            $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-            $('.form123 .calendarTop .prev-arrow').addClass('disabled')
-            $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+            $('.calendarTest .loader2').removeClass('non-active');
+            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+            $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+            $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+            $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+            $('.form123 .calendarTop .prev-arrow').addClass('disabled');
+            $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
             let date1 = new Date();
             let year = date1.getFullYear();
             let mon = date1.getMonth();
-            let test5 = new Date(year, mon + 1,0)
+            let test5 = new Date(year, mon + 1,0);
             test5.setUTCHours(23,59,59,0);
-            currMonth = new Date().getMonth()
-            calendarChange()
+            currMonth = new Date().getMonth();
+            calendarChange();
             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
             $('.serviceSideServices .loader2').addClass('non-active');
                 $('.bookBut').on('click', function() {
       duration = $(this).data('duration');
       startTime = $(this).data('start-id');
-      bookedStylist = $(this).data('team-member')
-      $('.bookBut').removeClass('active3')
-      $(this).addClass('active3')
+      bookedStylist = $(this).data('team-member');
+      $('.bookBut').removeClass('active3');
+      $(this).addClass('active3');
       if ($('.pleaseSelect').children.length > 0) {
         $('.pleaseSelect').empty();
       }
@@ -3197,15 +3315,15 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
         $('.form123').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
       $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
       ///mobile-version  
-      $('.form123 #myForm1').on("submit", submitForm)
+      $('.form123 #myForm1').on("submit", submitForm);
 
         } else {
 
           serviceType1(serviceEnd, stylist, startTime);
-          $('.gokutest').empty().append($('.bookingForm').eq(0).clone().addClass('active'))
-          $('.gokutest .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
+          $('.gokutest').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
+          $('.gokutest .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
           // $('.serviceBookingSide .loader2').addClass('non-active')
-        $('.gokutest #myForm1').on("submit", submitForm)
+        $('.gokutest #myForm1').on("submit", submitForm);
 
         }
 
@@ -3222,14 +3340,14 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
           })
 
         } else if ($('.form123 .serviceBooking').hasClass('active')) {
-          $('.bookingName').empty().append(`${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins)`)
-              $('.bookingPrice').empty().append(`${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}`)
-              $('.bookingTime').empty().append(`${duration} minutes`)
-              $('.bookingStylist').empty().append(stylistName)
+          $('.bookingName').empty().append(`${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins)`);
+              $('.bookingPrice').empty().append(`${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}`);
+              $('.bookingTime').empty().append(`${duration} minutes`);
+              $('.bookingStylist').empty().append(stylistName);
               $('.serviceBookingSide .loader2').addClass('non-active');
 
               $('.serviceEdit').on('click', function() {
-                $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
+                $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
 
               $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
               $('.staffMembers .addNames1').on('click', function() {
@@ -3239,7 +3357,7 @@ startTime = '';
 multiService = [];
 bookedStylist = '';
 //  $('.calendarMain .loader2').removeClass('non-active')
-$('.calendarTest .loader2').removeClass('non-active')
+$('.calendarTest .loader2').removeClass('non-active');
 $('.morning .slot').empty();
 $('.afternoon .slot').empty();
 $('.evening .slot').empty();
@@ -3248,40 +3366,40 @@ if ($('.pleaseSelect').children.length > 0) {
 $('.pleaseSelect').empty();
 }
 
-let memberId = $(this).data('team-member-id')
-stylistName = $(this).data('team-member-name')
-stylist = memberId.split(',')
-$('.staffMembers .addNames1').removeClass('loaded')
-$(this).addClass('loaded')
+let memberId = $(this).data('team-member-id');
+stylistName = $(this).data('team-member-name');
+stylist = memberId.split(',');
+$('.staffMembers .addNames1').removeClass('loaded');
+$(this).addClass('loaded');
 let date1 = new Date();
 let year = date1.getFullYear();
 let mon = date1.getMonth();
-let test5 = new Date(year, mon + 1,0)
+let test5 = new Date(year, mon + 1,0);
 test5.setUTCHours(23,59,59,0);
-currMonth = new Date().getMonth()
-calendarChange()
+currMonth = new Date().getMonth();
+calendarChange();
 bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-serviceType1(serviceEnd, stylist)
+serviceType1(serviceEnd, stylist);
 if ($(window).width() > 1023) {
-$('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+$('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
 $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-$('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-$('.form123 .calendarTop .next-arrow').removeClass('disabled')
-$('.form123 .calendarTop .prev-arrow').addClass('disabled')
-$('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-$('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+$('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+$('.form123 .calendarTop .next-arrow').removeClass('disabled');
+$('.form123 .calendarTop .prev-arrow').addClass('disabled');
+$('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+$('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
 }
 })
               })
 
         } else if ($('.serviceList .bookingForm').hasClass('active')) {
-          $('.bookingDate').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+          $('.bookingDate').html(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
           Array.from($('.gokutest .multiServiceItem .stylist')).forEach((item) => {
-            $(item).empty().append(stylistName)
+            $(item).empty().append(stylistName);
           })
 
           
-              $('.serviceBookingSide .loader2').addClass('non-active')
+              $('.serviceBookingSide .loader2').addClass('non-active');
         }
             }
         }
@@ -3291,7 +3409,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
         if ($('.oldClients').hasClass('non-active')) {
 
 } else {
-  $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+  $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'));
 
 }
       }
@@ -3311,8 +3429,12 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
       $('.mobileBottom1').removeClass('active');
       $('.mobilePopup1').removeClass('mobileBookConfirm');
       // $('.calendarMain .loader2').removeClass('non-active');
-      $('.calendarTest .loader2').removeClass('non-active')
-
+      $('.calendarTest .loader2').removeClass('non-active');
+      currMonth = new Date().getMonth();
+      duration = '';
+      startTime = '';
+      multiService = [];
+      bookedStylist = '';
     } else if ($('.form123 .bookingConfirm').hasClass('active')) {
       startTime = '';
       // $('.calendarMain .loader2').removeClass('non-active');
@@ -3324,21 +3446,22 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
       $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
       $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
       $('.form123').append($('.serviceBooking').eq(0).clone().addClass('active'));
-      $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-      $('.form123 .calendarTop .prev-arrow').addClass('disabled')
-      $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-      $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+      $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+      $('.form123 .calendarTop .prev-arrow').addClass('disabled');
+      $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+      $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
       let date1 = new Date();
         let year = date1.getFullYear();
         let mon = date1.getMonth();
-        let test5 = new Date(year, mon + 1,0)
+        let test5 = new Date(year, mon + 1,0);
         test5.setUTCHours(23,59,59,0);
-        currMonth = new Date().getMonth()
-        calendarChange()
+        currMonth = new Date().getMonth();
+        calendarChange();
         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-        $('.form123 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded')
+        $('.form123 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded');
+        $('.form123 .staffMembers div:first').removeClass('loaded')
+        $('.staffMembers .addNames1').on('click', addNames);
 
-        $('.staffMembers .addNames1').on('click', addNames)
     } else if ($('.form123 .bookingForm').has('active')) {
       $('.bookNowButton').removeClass('active');
       $('.confirmButton').removeClass('non-active');
@@ -3351,16 +3474,16 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
   $('.mobileBottom1 .bots .bookingButton.nextButton').on('click', function() {
 
       if (serviceEnd, bookedStylist, startTime) {
-        $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-        $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded')
+        $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
+        $('.bookingLoadbar.four .bookingLoad:not(.loaded):first').addClass('loaded');
         $('.serviceBooking').removeClass('active');
         $('.staffBooking').removeClass('active');
-        $('.mobilePopup1').addClass('mobileBookConfirm')
+        $('.mobilePopup1').addClass('mobileBookConfirm');
         serviceType1([serviceEnd], bookedStylist, startTime);
         // $('.form123').empty().append($('.bookingConfirm').eq(0).clone());
 
       } else {
-        $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
+        $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>');
       }
       
     })
@@ -3368,8 +3491,8 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
     $('.form123').empty().append($('.bookingForm').eq(0).clone());
     $('.confirmButton').addClass('non-active');
         $('.bookNowButton').addClass('active');
-    $('.mobilePopup1 .bookingConfirm').removeClass('active')
-    $('.mobilePopup1 .bookingForm').addClass('active')
+    $('.mobilePopup1 .bookingConfirm').removeClass('active');
+    $('.mobilePopup1 .bookingForm').addClass('active');
     // $('.mobileBottom1').removeClass('active')
     $(".form123 #myForm1").on("submit", function(e) {
             e.preventDefault();
@@ -3415,20 +3538,21 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
               .then(r=>r.json())
               .then(r=>{
                 if (jQuery.isEmptyObject(r)) {
-                  createCustomer(x, "#myForm1")
+                  createCustomer(x, "#myForm1");
                 } else {
                   $('.accExistsOverlay').removeClass('non-active');
                   // createBooking(r.customers[0].id, x, "#myForm1")
                   $('.accExistsOverlay .bookingButton').on('click', function() {
+
                     $('.newClients').addClass('non-active');
                     $('.oldClients').removeClass('non-active');
                     $('.mobilePopup').css('max-height', '0px');
-                    $('.accExistsOverlay').addClass('non-active')
+                    $('.accExistsOverlay').addClass('non-active');
                     if (localStorage.getItem('email')) {
                       $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
                       $('.oldClientsLogin .signIn_square .block').addClass('non-active');
                       $('.oldClientsLogin .myAppts').addClass('active');
-                      $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'))
+                      $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'));
                       $('.oldClientsLogin .myAppts button').on('click', {email:localStorage.getItem('email')}, clientInfo);
                       
                       $('.oldClients .myAppts div').on('click', function() {
@@ -3441,9 +3565,9 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
                       $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
                           
                           $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-                          $('.squareupLogin #loginForm .requestButton').removeClass('loading')
+                          $('.squareupLogin #loginForm .requestButton').removeClass('loading');
                           $('.squareupLogin #loginForm input').prop("disabled", false);
-                          $('.requestButton').removeClass('loading')
+                          $('.requestButton').removeClass('loading');
 
                           $('.squareuplogin #loginForm').on("submit", checkCustomer);
                         })
@@ -3454,17 +3578,15 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
               })
             }
 
-                // $("button").prop("disabled", "disabled");
-                // $(".e-submit .e-content input").prop("readonly", true);
-                // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+               
 
 
             }
         );
       
     if ($('.oldClients').hasClass('non-active')) {
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-      $('.serviceList .mobileBottom1').removeClass('active')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
+      $('.serviceList .mobileBottom1').removeClass('active');
     }
 
   })
@@ -3472,8 +3594,8 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
   function submitForm(e) {
 
     e.preventDefault();
-            const serv = multiService[0]
-            let x = []
+            const serv = multiService[0];
+            let x = [];
             const vidutest = serv.appointmentSegments.forEach((item) => {
               x.push({
                 "teamMemberId": item.teamMemberId,
@@ -3517,30 +3639,48 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
               .then(r=>r.json())
               .then(r=>{
                 if (jQuery.isEmptyObject(r)) {
-                  createCustomer(x, "#myForm1")
+                  createCustomer(x, "#myForm1");
                 } else {
                   // createBooking(r.customers[0].id, x, "#myForm1")
                   $('.accExistsOverlay').removeClass('non-active');
                   // createBooking(r.customers[0].id, x, "#myForm1")
                   $('.accExistsOverlay .bookingButton').on('click', function() {
+
                     $('.newClients').addClass('non-active');
                     $('.oldClients').removeClass('non-active');
                     $('.mobilePopup').css('max-height', '0px');
-                    $('.accExistsOverlay').addClass('non-active')
+                    $('.accExistsOverlay').addClass('non-active');
+                    if ($(window).width() > 1023) {
+                      if (localStorage.getItem('email')) {
+                        let setheight = $('.page').height();
+                        $('.serviceList').css('max-height', `${setheight}px`);
+                        showService();
+                        $('.loggedInDesktop .para').on('click', {email:localStorage.getItem('email')}, clientInfo);
+                        $('.newClients').addClass('non-active');
+                        $('.oldClients').addClass('active');
+                        // $('.oldClients .clientProfile')
+                          } else {
+                            $('.oldClients').removeClass('non-active');
+                        $('.newClients').addClass('non-active');
+                        $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
+                        $('.squareupLogin #loginForm .requestButton').removeClass('loading');
+                        $('.squareupLogin #loginForm input').prop("disabled", false);
+                        $('.requestButton').removeClass('loading');
 
+                        $('.squareuplogin #loginForm').on("submit", checkCustomer);
+                      }
+                    }
                   })
                 }
               })
             }
   }
   function showCodeMessage(code, email, firstName, customerId, lastName) {
-    // console.log(code);
-    // console.log(firstName)
-    // console.log(lastName)
+
     $('.oldClients .loginForm').empty().append($('.oldClientsCode').eq(0).clone().addClass('active'));
     $('.oldClientsCode #codeLogin').on('submit', function(e) {
         e.preventDefault();
-        $('.oldClientsCode .incorrectCode').html(``)
+        $('.oldClientsCode .incorrectCode').html(``);
 
         $('.oldClientsCode .requestButton').addClass('loading');
 
@@ -3565,7 +3705,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
             $('.oldClientsLogin .signIn_square .block').addClass('non-active');
             $('.oldClientsLogin .myAppts').addClass('active');
             $('.oldClientsLogin .myAppts button').on('click', {email:email}, clientInfo);
-            $('.oldClientsLogin .myAppts .newName').empty().append(`${firstName}`)
+            $('.oldClientsLogin .myAppts .newName').empty().append(`${firstName}`);
             $('.oldClients .myAppts div').on('click', function() {
               localStorage.removeItem('email');
               localStorage.removeItem('name');
@@ -3576,9 +3716,9 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
               $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
                 
                 $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-                $('.squareupLogin #loginForm .requestButton').removeClass('loading')
+                $('.squareupLogin #loginForm .requestButton').removeClass('loading');
                 $('.squareupLogin #loginForm input').prop("disabled", false);
-                $('.requestButton').removeClass('loading')
+                $('.requestButton').removeClass('loading');
 
                 $('.squareuplogin #loginForm').on("submit", checkCustomer);
               })
@@ -3594,9 +3734,8 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
 
 
         } else {
-          console.log('dont match')
         $('.oldClientsCode .requestButton').removeClass('loading');
-          $('.oldClientsCode .incorrectCode').html(`The code you entered is incorrect.`)
+          $('.oldClientsCode .incorrectCode').html(`The code you entered is incorrect.`);
         }
     })
   }
@@ -3619,12 +3758,14 @@ function clientInfo(e) {
   .then(r=>{
     let results = r.customers[0];
     $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
-    $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
-    $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
+    $('.clientProfile .topBlock .initial').empty().append(`${results.givenName[0]}${results.familyName[0]}`);
+    $('.clientProfile .topBlock .name').empty().append(`${results.givenName} ${results.familyName}`);
     // console.log(results);
+    $('.oldClientsLogin .myAppts .loadButton').removeClass('loading');
+
     getAppointments(results.id, email)
     if ($(window).width() > 1023) {
-    $('.serviceList').css('max-height', '0px')
+    $('.serviceList').css('max-height', '0px');
   }
   })
 }
@@ -3659,7 +3800,7 @@ function getAppointments(id, email) {
       // console.log(data.items)
       // const vidu = r.items.filter((item) => item.itemData.variations[0].id == id)
       // let name = vidu[0].itemData.name
-      return data
+      return data;
     })
 } 
 async function retrieveBookings(id, email) {
@@ -3669,7 +3810,6 @@ if (id) {
   $('.appointmentList .pastList .apptBlock').remove();
   
   id.split(',').map((item) => {
-    console.log(item)
     setTimeout(function() {
 fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
 method: 'POST',
@@ -3688,21 +3828,21 @@ let timeStart = r.booking.startAt;
 
 r.booking.appointmentSegments.map((item) => {
   let currentTime = new Date();
-    let durationMins = new Date(timeStart)
+    let durationMins = new Date(timeStart);
 
     let day = new Date(timeStart).getDay();
     let date = new Date(timeStart).getDate();
     let month = new Date(timeStart).getMonth();
     let year = new Date(timeStart).getFullYear();
-    let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+    let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
     let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
-    let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"})
+    let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
 
     serviceName()
     .then(item1 => {
-        const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId)
-        const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId)
-        // console.log(vidu)
+        const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
+        const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId);
+
 
         if (durationMins > currentTime) {
           $('.appointmentList .upcomingList').append(`
@@ -3765,7 +3905,7 @@ r.booking.appointmentSegments.map((item) => {
           $('.apptDetails .name').html(name);
           $('.apptDetails .date').html(date);
           $('.apptDetails .service').html(detail);
-          $('.apptDetails .detailsTopBlock').empty().append($('.apptPast').eq(0).clone().removeClass('non-active'))
+          $('.apptDetails .detailsTopBlock').empty().append($('.apptPast').eq(0).clone().removeClass('non-active'));
           let setheight = $('.page').height();
           $('.apptDetails').css('max-height', `${setheight}px`);
 
@@ -3782,14 +3922,6 @@ r.booking.appointmentSegments.map((item) => {
 })
 
 
-
-// testing2.then(() => {
-
-//   // console.log($('.oldClients .bottomBlock .pastList'))
-//   // if ($('.clientProfile .bottomBlock .upcomingList')) {
-
-//   // }
-// })
 })
 
 
@@ -3809,7 +3941,7 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
       // console.log($('.oldClients .clientProfile .upcomingList'))
       if (x == 1) {
         $('.oldClients .upcomingList .loader2').addClass('non-active');
-        $('.oldClients .upcomingList').append(`<div class='noUpcoming' style='padding-top:20px; font-weight:500;'>You have no upcoming appointments</div>`)
+        $('.oldClients .upcomingList').append(`<div class='noUpcoming' style='padding-top:20px; font-weight:500;'>You have no upcoming appointments</div>`);
       } else {
 
         $('.oldClients .upcomingList .loader2').addClass('non-active');
@@ -3817,7 +3949,7 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
       }
       if (y == 1) {
         $('.oldClients .pastList .loader2').addClass('non-active');
-        $('.oldClients .pastList').append(`<div class='noPast' style='padding-top:20px; font-weight: 500;'>You have no past appointments</div>`)
+        $('.oldClients .pastList').append(`<div class='noPast' style='padding-top:20px; font-weight: 500;'>You have no past appointments</div>`);
       } else {
         $('.oldClients .upcomingList .noPast').addClass('non-active');
         $('.oldClients .pastList .loader2').addClass('non-active');
@@ -3830,22 +3962,52 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
 
 
   $('.oldClients .apptList .past').on('click', function() {
-    $('.oldClients .apptList .upcoming').removeClass('active')
-    $('.oldClients .apptList .past').addClass('active')
+    $('.oldClients .apptList .upcoming').removeClass('active');
+    $('.oldClients .apptList .past').addClass('active');
     $('.oldClients .appointmentList .upcomingList').addClass('non-active');
     $('.oldClients .appointmentList .pastList').removeClass('non-active');
   })
   $('.oldClients .apptList .upcoming').on('click', function() {
-    $('.oldClients .apptList .upcoming').addClass('active')
-    $('.oldClients .apptList .past').removeClass('active')
+    $('.oldClients .apptList .upcoming').addClass('active');
+    $('.oldClients .apptList .past').removeClass('active');
     $('.oldClients .appointmentList .upcomingList').removeClass('non-active');
     $('.oldClients .appointmentList .pastList').addClass('non-active');
   })
   $('.oldClients .clientProfile .topBlock .info').on('click', function() {
-    $('.oldClients .clientProfile .bottomBlock').removeClass('non-active')
-      $('.oldClients .clientProfile .profileBlock').addClass('non-active')
+    $('.oldClients .clientProfile .bottomBlock').removeClass('non-active');
+      $('.oldClients .clientProfile .profileBlock').addClass('non-active');
   })
-  $('.oldClients .clientProfile .midBlock .bookingButton').on('click', showService)
+  $('.oldClients .clientProfile .midBlock .bookingButton').on('click', showService);
+  $('.oldClients .clientProfile .signOutBlock div').on('click', function() {
+    // console.log('hi')
+    localStorage.removeItem('email');
+    localStorage.removeItem('name');
+    localStorage.removeItem('lastName');
+    if ($(window).width() > 1023) {
+      $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
+      $('.squareupLogin #loginForm .requestButton').removeClass('loading');
+        $('.squareupLogin #loginForm input').prop("disabled", false);
+        $('.requestButton').removeClass('loading');
+        $('.squareuplogin #loginForm').on("submit", checkCustomer);
+    } else {
+      $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
+
+      $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
+      $('.oldClientsLogin .myAppts').removeClass('active');
+      $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
+        
+        $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
+        $('.squareupLogin #loginForm .requestButton').removeClass('loading');
+        $('.squareupLogin #loginForm input').prop("disabled", false);
+        $('.requestButton').removeClass('loading');
+
+        $('.squareuplogin #loginForm').on("submit", checkCustomer);
+      })
+    }
+
+
+  });
+
   if (!($._data($('.oldClients .viewProfile').get(0), 'events'))) {
     $('.clientProfile .viewProfile').on('click', function() {
 
@@ -3861,12 +4023,12 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
       })
       .then(r=>r.json())
       .then(r=>{
-        let cust = r.customers[0]
-        $('.profileBlock .name').empty().append(`${cust.givenName} ${cust.familyName}`)
-        $('.profileBlock .email').empty().append(`${cust.emailAddress}`)
+        let cust = r.customers[0];
+        $('.profileBlock .name').empty().append(`${cust.givenName} ${cust.familyName}`);
+        $('.profileBlock .email').empty().append(`${cust.emailAddress}`);
         $('.profileBlock .phoneNumber').empty().append(`${cust.phoneNumber} `);
-        $('.oldClients .clientProfile .bottomBlock').addClass('non-active')
-      $('.oldClients .clientProfile .profileBlock').removeClass('non-active')
+        $('.oldClients .clientProfile .bottomBlock').addClass('non-active');
+      $('.oldClients .clientProfile .profileBlock').removeClass('non-active');
       // <div class="profileBlock non-active">
       //   <p>My profile</p>
       //   <div>Please contact Superhairpieces.ca to update your contact information</div>
@@ -3908,14 +4070,14 @@ function checkCustomer(e) {
     .then(r=>r.json())
     .then(r=>{
       if (jQuery.isEmptyObject(r)) {
-        $('.squareupLogin #loginForm .accountExistence').html(`Account does not exist. Please sign up!`)
+        $('.squareupLogin #loginForm .accountExistence').html(`Account does not exist. Please sign up!`);
         $('.squareuplogin .requestButton').removeClass('loading');
         $('.squareupLogin #loginForm input').prop("disabled", false);
         
         // createCustomer(x, "#myForm")
       } else {
 
-        loginToSquareAcc(r.customers[0].givenName, r.customers[0].familyName, r.customers[0].id)
+        loginToSquareAcc(r.customers[0].givenName, r.customers[0].familyName, r.customers[0].id);
 
         // createBooking(r.customers[0].id, x, "#myForm")
       }
@@ -3941,15 +4103,18 @@ function checkCustomer(e) {
     })
     .then(r=>r.json())
     .then(r=> {
-      let code = r.check
+      let code = r.check;
+
       // console.log(r)
       // checkCustomer($("#loginForm [name='email']").val(), code)
 
-      //REAL
-      // showCodeMessage(code, email)
+
 
       //TESTING
-      showCodeMessage(r, email, firstName, customerId, lastName);
+      // showCodeMessage(r, email, firstName, customerId, lastName);
+
+      //REAl
+      showCodeMessage(code, email, firstName, customerId, lastName);
 
     })
   }
@@ -3961,8 +4126,8 @@ function checkCustomer(e) {
 
   $("#myForm1").on("submit", function(e) {
             e.preventDefault();
-            const serv = multiService[0]
-            let x = []
+            const serv = multiService[0];
+            let x = [];
             const vidutest = serv.appointmentSegments.forEach((item) => {
               x.push({
                 "teamMemberId": item.teamMemberId,
@@ -3999,10 +4164,10 @@ function checkCustomer(e) {
               .then(r=>r.json())
               .then(r=>{
                 if (jQuery.isEmptyObject(r)) {
-                  createCustomer(x, "#myForm1")
+                  createCustomer(x, "#myForm1");
                 } else {
 
-                  createBooking(r.customers[0].id, x, "#myForm1")
+                  createBooking(r.customers[0].id, x, "#myForm1");
 
                 }
               })
@@ -4019,8 +4184,8 @@ function checkCustomer(e) {
 $("#myForm").on("submit", function(e) {
 
 e.preventDefault();
-const serv = multiService[0]
-let x = []
+const serv = multiService[0];
+let x = [];
 serv.appointmentSegments.forEach((item) => {
   x.push({
     "teamMemberId": item.teamMemberId,
@@ -4054,7 +4219,7 @@ if ($('.newClients').hasClass('non-active')) {
     .then(r=>r.json())
     .then(r=>{
       if (jQuery.isEmptyObject(r)) {
-        createCustomer(x, "#myForm")
+        createCustomer(x, "#myForm");
       } else {
         // createBooking(r.customers[0].id, x, "#myForm")
       }
@@ -4063,9 +4228,9 @@ if ($('.newClients').hasClass('non-active')) {
 }
 );
 function createCustomer1(e) {
-  let form = e.data.id
+  let form = e.data.id;
   e.preventDefault();
-  $('.squareupSignupForm #signupForm .bookingButton').addClass('loading')
+  $('.squareupSignupForm #signupForm .bookingButton').addClass('loading');
   fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
         method: 'POST',
         headers: {
@@ -4081,12 +4246,12 @@ function createCustomer1(e) {
     })
     .then(r=>r.json())
     .then(r=>{
-      let results = r.customer
+      let results = r.customer;
       setTimeout(function() {
         $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
-        $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
-        $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
-        getAppointments(results.id, results.emailAddress)
+        $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`);
+        $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`);
+        getAppointments(results.id, results.emailAddress);
         localStorage.setItem('email', results.emailAddress);
         localStorage.setItem('name', results.givenName);
         localStorage.setItem('lastName', results.familyName);
@@ -4114,7 +4279,7 @@ function createCustomer(x, form) {
     .then(r=>r.json())
     .then(r=>{
       // console.log(r)
-      createBooking(r.customer.id, x, form, r.customer)
+      createBooking(r.customer.id, x, form, r.customer);
     })
 }
 
@@ -4122,9 +4287,9 @@ function createBooking(id, serv, form, customerInfo) {
   
   let notes = '';
   if (localStorage.getItem('email')) {
-    notes = $(`${form} div[name=apptNotes]`).html()
+    notes = $(`${form} div[name=apptNotes]`).html();
   } else {
-    notes = $(`.bookingForm.active ${form} textarea[name=appNotes]`).val()
+    notes = $(`.bookingForm.active ${form} textarea[name=appNotes]`).val();
   }
       fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
         method: 'POST',
@@ -4143,23 +4308,24 @@ function createBooking(id, serv, form, customerInfo) {
     })
     .then(r=>r.json())
     .then(r=>{
-      let results = customerInfo
+      let results = customerInfo;
+      console.log('created booking');
       if ($('.newClients').hasClass('non-active')) {
         setTimeout(function() {
           if ($('.oldClients .clientProfile').hasClass('active')) {
             // $('.appointmentList .upcomingList').empty();
             // $('.appointmentList .pastList').empty();
-            getAppointments(results, localStorage.getItem('email'))
+            getAppointments(results, localStorage.getItem('email'));
 
             $('.serviceList').css('max-height', '0px');
           } else {
-            let first = localStorage.getItem('name')
-            let last = localStorage.getItem('lastName')
+            let first = localStorage.getItem('name');
+            let last = localStorage.getItem('lastName');
 
             $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
-            $('.clientProfile .topBlock .initial').append(`${first[0]}${last[0]}`)
-            $('.clientProfile .topBlock .name').append(`${first} ${last}`)
-            getAppointments(results, localStorage.getItem('email'))
+            $('.clientProfile .topBlock .initial').append(`${first[0]}${last[0]}`);
+            $('.clientProfile .topBlock .name').append(`${first} ${last}`);
+            getAppointments(results, localStorage.getItem('email'));
             
             $('.serviceList').css('max-height', '0px');
             $('.upcomingList .loader2').addClass('non-active');
@@ -4167,7 +4333,7 @@ function createBooking(id, serv, form, customerInfo) {
           }
 
         }, 1500)
-        $('.serviceList .botss').empty()
+        $('.serviceList .botss').empty();
         $('.serviceList .botss').append(`
         <div style='text-align:center;' class='bookingButton'>Booked</div>
         `)
@@ -4175,9 +4341,9 @@ function createBooking(id, serv, form, customerInfo) {
 
         setTimeout(function() {
           $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
-          $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`)
-          $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`)
-          getAppointments(results.id, results.emailAddress)
+          $('.clientProfile .topBlock .initial').append(`${results.givenName[0]}${results.familyName[0]}`);
+          $('.clientProfile .topBlock .name').append(`${results.givenName} ${results.familyName}`);
+          getAppointments(results.id, results.emailAddress);
           localStorage.setItem('email', results.emailAddress);
           localStorage.setItem('name', results.givenName);
           localStorage.setItem('lastName', results.familyName);
@@ -4187,7 +4353,7 @@ function createBooking(id, serv, form, customerInfo) {
           $('.newClients').addClass('non-active');
           $('.oldClients').removeClass('non-active');
         }, 1500)
-        $('.mobilePopup .bots').empty()
+        $('.mobilePopup .bots').empty();
         $('.mobilePopup .bots').append(`
         <div style='text-align:center;' class='bookingButton'>Booked</div>
         `)
@@ -4208,7 +4374,6 @@ function showService(e) {
     serviceType = e.target.getAttribute('data-service');
     serviceCate = e.target.getAttribute('data-service-cate');
   } else {
-    console.log('hi')
     serviceType = "Men";
     serviceCate = "KYEHUUDWR5NEVDVGK2NOS2G4";
 
@@ -4219,13 +4384,13 @@ function showService(e) {
       //   console.log(x)
       //   $('.serviceList').css('max-height', `${x}px`);
       // }
-      $('.serviceList').removeClass('non-active')
+      $('.serviceList').removeClass('non-active');
       // let serviceType = e.target.getAttribute('data-service')
       // let serviceCate = e.target.getAttribute('data-service-cate')
       let setheight = $('.page').height();
-      $('.bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.bookingLoad:not(.loaded):first').addClass('loaded');
       // $('.oldClients').addClass('non-active')
-      $('.serviceList .mobileBottom1').addClass('active')
+      $('.serviceList .mobileBottom1').addClass('active');
         $('.serviceList').css('max-height', `${setheight}px`);
         $('.serviceList .mobileBottom1 .backButton').on('click', function() {
           if (!($('.serviceList .gokutest').hasClass('non-active'))) {
@@ -4259,9 +4424,9 @@ function showService(e) {
            else if ($('.serviceList .staffBooking').hasClass('active')) {
             $('.multiServiceDesk1 .staffBooking').remove();
             $('.serviceList .staffBooking').removeClass('active');
-            $('.serviceList .list-mens').removeClass('non-active')
+            $('.serviceList .list-mens').removeClass('non-active');
           } else if ($('.serviceList .serviceBooking').hasClass('active')) {
-            $('.multiServiceDesk1 .serviceBooking').remove()
+            $('.multiServiceDesk1 .serviceBooking').remove();
 
             $('.serviceList .staffBooking').addClass('active');
 
@@ -4300,7 +4465,7 @@ function showService(e) {
         $('.page-test').removeClass('brand-add');
         $('.page-test').css('max-height', '0px');
         $('.list-mens').removeClass('non-active');
-        $('.multiServiceDesk1 .staffBooking').addClass('active')
+        $('.multiServiceDesk1 .staffBooking').addClass('active');
         $('.multiServiceDesk1 .serviceBooking').remove();
         $('.multiServiceDesk1 .staffBooking').remove();
         if ($('.gokutest .bookingForm').hasClass('active')) {
@@ -4310,11 +4475,12 @@ function showService(e) {
             })
         }
         })
-        $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
+        $('.serviceList .multiServiceDesk .multiServiceSide').remove();
+        $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'));
         if (!($('.oldClients .clientProfile').hasClass('active'))) {
-          $('.serviceList .top-list .item').removeClass('active')
+          $('.serviceList .top-list .item').removeClass('active');
         }
-       let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`)
+       let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`);
        fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -4324,116 +4490,9 @@ function showService(e) {
     })
     .then(r=>r.json())
     .then(r=> { 
-      servicesAvailable = r.items
-      const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate)
-     //Production
-    //   var testing = new Promise((resolve, reject ) => {
-    //   vidu.forEach((item) => {
-    //     let product = item.itemData.variations[0]
-    //     const id = product.id
-    //     const mins = product.itemVariationData.serviceDuration
-    //     let cost = ''
-    //     cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
-    //     // PRODUCTION LEVEL
-    //     //
-    //     // if (id == "BMENIVQM6YI6254XOMSI5QIB") {
-    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Hair System</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
-    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Full Cap System</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
-    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Partial Installation</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
-    //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Other Company</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
-    //     //   $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Installation + color</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
-    //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Toupee</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
-    //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Full Cap</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
-    //     //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Maintenance + color</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
-    //     //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Hair Trim</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
-    //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Own Hair Service</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
-    //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>System Service</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
-    //     //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>System Template</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
-    //     //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-    //     //     <div>Miscellaneous</div>
-    //     //     <div>${mins/60000}mins</div>
-    //     //     <div style="text-align:end;">${cost}</div>
-    //     //     </div>`)
-    //     // }
-    //     // END OF PRODUCTION
-    //   })
+      servicesAvailable = r.items;
+      const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate);
 
-    
-    //   resolve()
-    //  }) 
-     //END PRODUCT
 
      //SANDBOX
      var testing1 = new Promise((resolve, reject ) => {
@@ -4442,121 +4501,51 @@ function showService(e) {
         const id = product.id;
         const mins = product.itemVariationData.serviceDuration;
         let cost = '';
-        cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
+        cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies');
         // PRODUCTION LEVEL
         //
         if (id == "YJDFATQVTOPCCERF44FTP73E") {
-          $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .page-tab #installation').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Men's Haircut</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
             </div>`)
         }
-        // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
-        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Full Cap System</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
-        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Partial Installation</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
-        //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Other Company</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
+
         if (id == "CXXZZX3QDWLRDLXMXSWLEDXG") {
-          $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .page-tab #installationcolor').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Test</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "FYM523QRBQHJDGBJWD4MRS4S") {
-          $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .page-tab #maintenance').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Shampoo Style</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
             </div>`)
         }
-        // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
-        //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Full Cap</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
-        //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Maintenance + color</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
-        //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Hair Trim</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
-        //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Own Hair Service</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
-        //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>System Service</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
-        //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>System Template</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
-        //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-        //     <div>Miscellaneous</div>
-        //     <div>${mins/60000}mins</div>
-        //     <div style="text-align:end;">${cost}</div>
-        //     </div>`)
-        // }
-        // END OF PRODUCTION
       })
-
-    
-      resolve()
+      resolve();
      }) 
      //END SANDBOX
      
      
      testing1.then(() => {
-      $('.gokutest .multiServiceDesk1 .loader2').addClass('non-active')
-      let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59)
-            let currTime = date
-            let vidu = Math.abs(lastTime-currTime) / 36e5
+      $('.gokutest .multiServiceDesk1 .loader2').addClass('non-active');
+      let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59);
+            let currTime = date;
+            let vidu = Math.abs(lastTime-currTime) / 36e5;
             if ( vidu < 24) {
-              lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
+              lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59);
             }
-          $('.serviceList .staffMembers .addNames1').on('click', addNames1)  
-        $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
+          $('.serviceList .staffMembers .addNames1').on('click', addNames1)  ;
+        $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService);
         
-
+          $(document).on('click', '.multiServiceItem', function() {
+            // let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
+          })
           $(document).on('click', '.list-item.newClass', function() {
             let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
             let x = serviceEnd1.indexOf(this.id);
@@ -4564,14 +4553,14 @@ function showService(e) {
               serviceEnd1.splice(x, 1);
               let self = this.id;
 
-              const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
-              totalTime -= parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+              const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
+              totalTime -= parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration);
               Array.from($('.list-mens .list-item')).forEach((item) => {
                 if (this.id == item.id) {
-                  $(item).bind('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
+                  $(item).bind('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService);
                 }
               })
-              checkAva( currTime, lastTime, serviceEnd1, totalTime)
+              checkAva( currTime, lastTime, serviceEnd1, totalTime);
             }
             
             total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
@@ -4586,35 +4575,11 @@ function showService(e) {
             $('.mobileBottom1 .desktopBottom .next').on('click', function() {
      
             $('.multiServiceDesk1 .list-mens').addClass('non-active');
-            $('.multiServiceDesk1 .staffBooking').addClass('active')
+            $('.multiServiceDesk1 .staffBooking').addClass('active');
 
-            $('.multiServiceDesk1').append($('.staffBooking').eq(0).clone().addClass('active'))
-            $('.serviceList .staffMembers .addNames1').on('click', addNames1) 
+            $('.multiServiceDesk1').append($('.staffBooking').eq(0).clone().addClass('active'));
+            $('.serviceList .staffMembers .addNames1').on('click', addNames1) ;
 
-            // $('.serviceList .gokutest').addClass('non-active');
-            // $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
-            // $('.form1234 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
-            // // $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
-            // $('.serviceList .loader2').addClass('non-active');
-
-
-    //  $('.serviceList .staffMembers .addNames1').on('click', function() {
-     
-    //   duration = '';
-    //  startTime = '';
-    //  multiService = [];
-    //  bookedStylist = '';
-    //  $('.multiServiceDesk1 .staffBooking').removeClass('active');
-    //  $('.multiServiceDesk1').append($('.serviceBooking').eq(0).clone().addClass('active'))
-     
-    //      let memberId = $(this).data('team-member-id')
-    //      stylist = memberId.split(',')
-    //      stylistName = $(this).data('team-member-name')
-    //      $('.staffMembers .addNames1').removeClass('loaded')
-    //      $(this).addClass('loaded')
-    //      checkAva(currTime, lastTime, serviceEnd1, totalTime)
-
-    //  }) 
    })
           }
 
@@ -4623,13 +4588,15 @@ function showService(e) {
 
     })
 
-       selected.addClass('active')
+       selected.addClass('active');
 
     
 
 
 }
    
+
+
 function addService(e) {
       let servicesAvailable = e.data.servicesAvailable;
       let currTime = e.data.currTime;
@@ -4638,44 +4605,44 @@ function addService(e) {
           let serviceId = $(this).data('service-id');
           let self = this.id;
           if ($(`.botss .service #${self}`).length == 0) {
-            let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text()
-            total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''))
-            $('.botss .total .price').html(`$${total}.00`)
+            let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
+            total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ''));
+            $('.botss .total .price').html(`$${total}.00`);
             if ($('.botss .total').hasClass('non-active')) {
-              $('.botss .total').addClass('active')
+              $('.botss .total').addClass('active');
             }
             $('.botss .service').append($(this).clone().addClass('newClass'));
-            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
-            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+            const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
+            totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration);
 
             if ($('.botss .service').children().length == 2) {
               $('.botss .service').css('max-height', '107px');
               $('.botss .service').css('overflow', 'hidden');
             } else if ($('.botss .service').children().length > 3) {
-              $('.botss .service .service-arrow').removeClass('non-active')
+              $('.botss .service .service-arrow').removeClass('non-active');
               $('.botss .service-arrow').on('click', function() {
                 if ($('.botss .service-arrow').hasClass('open')) {
-                  $('.botss .service-arrow').css('transform', 'rotate(0deg)')
+                  $('.botss .service-arrow').css('transform', 'rotate(0deg)');
 
                   $('.botss .service').css('max-height', '107px');
-                  $('.botss .service-arrow').removeClass('open')
+                  $('.botss .service-arrow').removeClass('open');
                 } else {
-                  $('.botss .service-arrow').css('transform', 'rotate(180deg)')
+                  $('.botss .service-arrow').css('transform', 'rotate(180deg)');
                   $('.botss .service').css('max-height', 'unset');
-                  $('.botss .service-arrow').addClass('open')
+                  $('.botss .service-arrow').addClass('open');
                 }
               })
             }
           
           }
-          serviceEnd1.push(serviceId)
-          const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
+          serviceEnd1.push(serviceId);
+          const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
           const testName = test[0].itemData.name;
-          const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration
-          let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text()
+          const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration;
+          let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
           
           // const testPrice = test[0].itemData.variations[0].itemVariationData.priceMoney ? test[0].itemData.variations[0].itemVariationData.priceMoney.amount
-          checkAva( currTime, lastTime, serviceEnd1, totalTime)
+          checkAva( currTime, lastTime, serviceEnd1, totalTime);
           $('.multiServiceSide .service').append(`
           <div class='multiServiceItem'>
             <div class='name'>${testName}</div>  
@@ -4694,9 +4661,36 @@ function addService(e) {
           `)
 
 
-          $(this).hasClass('active') ? '': $(this).addClass('active')
+          $(this).hasClass('active') ? '': $(this).addClass('active');
     }
 
+    function backToMain() {
+      $('.bookingLoad').removeClass('loaded');
+      $('.mobilePopup').css('max-height', '0');
+      $('.mobileMain').removeClass('active');
+      $('.mobileInitial').addClass('active');
+      $('#change').empty();
+
+      currDate = date.getDate();
+      currYear = date.getFullYear();
+      currMonth = date.getMonth();
+      test5 = new Date(currYear, currMonth + 1,0);
+      serviceEnd = '';
+      serviceEnd1 = [];
+
+      startTime = '';
+      bookedStylist = '';
+      stylistName = '';
+      duration = '0';
+      total = '0.00';
+      servicesAvailable =[];
+      totalTime = 0;
+      multiService = [];
+      calendarChange();
+      $('.staffMembers .addNames1:first').addClass('loaded');
+      $('.calendarTop .prev-arrow').addClass('disabled');
+      $('.calendarTop .next-arrow').removeClass('disabled');
+    }
 
   window.addEventListener('DOMContentLoaded', function() {
     $('.gtaTopSide').slick({
@@ -4730,7 +4724,7 @@ function addService(e) {
     })
 
     calendarChange() 
-    $('.calendarTop .next-arrow').on('click', nextMonth)
+    $('.calendarTop .next-arrow').on('click', nextMonth);
     $(".oldClients .back").on('click', function() {
         $('.oldClients').addClass('non-active');
         $('.newClients').removeClass('non-active');
@@ -4739,396 +4733,7 @@ function addService(e) {
 
 
 
-    // function checkAva(currTime, lastTime, serviceId, durationTotal) {
-    //   serviceEnd = serviceId;
-    //   duration = durationTotal/60000;
-    //   let styleTest = [];
-    //   serviceId.forEach((item) => {
-    //     styleTest.push({
-    //       serviceVariationId: item,
-    //       teamMemberIdFilter : {
-    //         any: stylist
-    //       }
-    //     })
-    //   })
-    //   fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
-    //     method: 'POST',
-    //     headers: {
-    //         accept: "application/json",
-    //         "content-type": "application/json"
-    //     },
-    //     body: JSON.stringify ({
-    //       start: currTime,
-    //       end: lastTime,
-    //       styling: styleTest
-    //     })
-    //   })
-    //   .then(r=>r.json())
-    // .then(r=> {
-    //   // multiService.push(r.availabilities);
-    //   $('.botss .nextButton').unbind('click');
-    //   $('.botss .backButton').unbind('click');
-    //   $('.mobileBottom1 .bookingButton.confirmButton').unbind('click');
-    //   if ($('.serviceList .serviceBooking').hasClass('active')) {
-    //     let apps = r.availabilities
-    //   let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-    //   let firstDate = r.availabilities[0]
-    //   let v = 0;
 
-    //   $('.calendarMain .loader2').addClass('non-active');
-    //   if (apps.length > 0) {
-    //     $('.currMonth').removeClass('active selected')
-    //     apps.forEach((item) => {
-    //     const date = new Date(item.startAt);
-    //     const day = date.getDate();
-    //     Array.from($('.currMonth')).forEach((item1) => {          
-    //       if (day == item1.innerHTML) {
-    //         if (!item1.classList.contains('active')) {
-    //           item1.setAttribute("data-id", v)
-    //           $(item1).addClass('active')
-    //           v++
-    //         } 
-    //       } 
-    //     })
-    //   })
-    //   $('.currMonth.active').eq(0).addClass('selected')
-    //   let x = $('.currMonth.selected').attr('data-id');
-    //   let y = $('.currMonth.selected').attr('data-date');
-    //   // calendarChange()
-    //   getCurrentDateAppointments(r.availabilities[x], apps, x, y)
-    //   } 
-    //   // else {
-    //   //   $('.currMonth').removeClass('active selected')
-    //   //   currMonth = currMonth + 1
-    //   // if (currMonth < 0 || currMonth > 11) {
-    //   //   date = new Date(currYear, currMonth);
-    //   //   currYear = date.getFullYear();
-    //   //   currMonth = date.getMonth();
-    //   // } else {
-    //   //   date = new Date();
-    //   // }
-    //   // let test7 = new Date(currYear, currMonth + 1,0)
-    //   // let test8 = new Date(currYear, currMonth,1)
-    //   // test7.setUTCHours(23,59,59,0)
-    //   // calendarChange()
-    //   // bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
-    //   // }
-
-
-    //   $('.serviceList li.currMonth.active').on('click', function() {
-    //     $('.currMonth.active').removeClass('selected')
-    //     $(this).addClass('selected')
-    //     let x = this.getAttribute('data-id')
-    //     let y = this.getAttribute('data-date')
-    //     getCurrentDateAppointments(r.availabilities[x], apps, x, y)
-    // }) 
-    //   }
-    //   $('.mobileBottom1 .bookingButton.confirmButton').on('click', function() {
-    //     $('.confirmButton').addClass('non-active');
-    //     $('.bookNowButton').addClass('active');
-    //     $('.bookingConfirm').removeClass('active');
-    //     // $('.bookingForm').addClass('active');
-    //   $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'))
-    //     $('.form1234 .bookingForm input[type=submit]').attr('id', 'submit-form2')
-
-    //   $('.bookingLoad:not(.loaded):first').addClass('loaded');
-
-    //   $(".form1234 #myForm1").on("submit", function(e) {
-    //         e.preventDefault();
-    //         const serv = multiService[0]
-    //         let x = []
-    //         const vidutest = serv.appointmentSegments.forEach((item) => {
-    //           x.push({
-    //             "teamMemberId": item.teamMemberId,
-    //             "durationMinutes": item.durationMinutes,
-    //             "serviceVariationId": item.serviceVariationId,
-    //             "serviceVariationVersion": item.serviceVariationVersion
-    //           })
-    //         })
-    //         if ($("#myForm1 [name='firstName']").val().trim().length==0) {
-    //           document.querySelector("#myForm1 [name='firstName']").setCustomValidity("Please fill in your first name");
-    //           document.querySelector("#myForm1 [name='firstName']").reportValidity();
-    //         }  else if ($("#myForm1 [name='lastName']").val().trim().length==0) {
-    //           document.querySelector("#myForm1 [name='lastName']").setCustomValidity("Please fill in your last name");
-    //           document.querySelector("#myForm1 [name='lastName']").reportValidity();
-
-    //         }else if ($("#myForm1 [name='email']").val().trim().length==0 || $("#myForm1 [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
-    //           document.querySelector("#myForm1 [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
-    //           document.querySelector("#myForm1 [name='email']").reportValidity();
-    //         } else if ($("#myForm1 [name='number']").val().trim().length==0 || $("#myForm1 [name='number']").val().match(/^[+]*[1]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g)==null) {
-    //           document.querySelector("#myForm1 [name='number']").setCustomValidity("Please fill in correct phone number format, i.e 0123456789");
-    //           document.querySelector("#myForm1 [name='number']").reportValidity();
-    //         } else {
-    //           $('.bookNowButton').addClass('loading');
-    //           $("#myForm1 input").prop("disabled", true);
-    //           $("#myForm1 select").prop("disabled", true);
-    //           $("#myForm1 textarea").prop("disabled", true);
-    //             $("#myForm1 button").prop("disabled", true);
-    //           $('.mobilePopup .bookNowButton').addClass('loading');
-    //           fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 accept: "application/json",
-    //                 "content-type": "application/json"
-    //             },
-    //             body: JSON.stringify({
-    //                 email: $("#myForm1 input[name=email]").val()
-    //             })
-    //           })
-    //           .then(r=>r.json())
-    //           .then(r=>{
-    //             if (jQuery.isEmptyObject(r)) {
-    //               createCustomer(x, "#myForm1")
-    //             } else {
-    //               createBooking(r.customers[0].id, x, "#myForm1")
-
-    //             }
-    //           })
-    //         }
-
-    //             // $("button").prop("disabled", "disabled");
-    //             // $(".e-submit .e-content input").prop("readonly", true);
-    //             // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
-
-
-    //         }
-    //     );
-    //   })
-
-    //   $('.botss .backButton').on('click', function() {
-
-    //     if ($('.form1234 .serviceBooking').hasClass('active')) {
-    //       $('.bookingLoad.loaded:last').removeClass('loaded');
-
-    //       $('.form1234').empty();
-    //       $('.gokutest').removeClass('non-active');
-    //       $('.service').removeClass('non-active');
-    //       $('.total').removeClass('non-active');
-    //       startTime = '';
-    //       currMonth = new Date().getMonth();
-    //           calendarChange()
-    //     } else if ($('.form1234 .bookingConfirm').hasClass('active')) {
-    //       startTime = '';
-
-    //       $('.bookingLoad.loaded:last').removeClass('loaded');
-    //       $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-    //       $('.form1234 .serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'))
-          
-    //       $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
-    //           $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
-    //       $('.currMonth.active').eq(0).addClass('selected');
-    //       $('.botss .confirmButton').addClass('non-active');
-    //       $('.botss .nextButton').removeClass('non-active');
-    //       let x = $('.currMonth.selected').attr('data-id');
-    //       let y = $('.currMonth.selected').attr('data-date');
-    //       $('.form1234 .calendarTop .prev-arrow').on('click', prevMonth)
-    //       $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
-    //           currMonth = new Date().getMonth();
-    //           calendarChange()
-    //     // getCurrentDateAppointments(r.availabilities[x], r.availabilities, x, y)
-    //       let apps = r.availabilities
-    //       let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-    //       let firstDate = r.availabilities[0]
-    //       let v = 0;
-    //       if (apps.length > 0) {
-    //         $('.currMonth').removeClass('active selected')
-    //         apps.forEach((item) => {
-    //         const date = new Date(item.startAt);
-    //         const day = date.getDate();
-    //         Array.from($('.currMonth')).forEach((item1) => {          
-    //           if (day == item1.innerHTML) {
-
-    //             if (!item1.classList.contains('active')) {
-    //               item1.setAttribute("data-id", v)
-    //               $(item1).addClass('active')
-    //               v++
-    //             } 
-    //           } 
-    //         })
-    //       })
-    //       $('.currMonth.active').eq(0).addClass('selected')
-    //       let x = $('.currMonth.selected').attr('data-id');
-    //       let y = $('.currMonth.selected').attr('data-date');
-    //       // calendarChange()
-
-    //       getCurrentDateAppointments(r.availabilities[x], apps, x, y)
-    //       } 
-    //       $('.staffMembers .addNames1').on('click', function() {
-
-    //           duration = '';
-    //               startTime = '';
-    //               multiService = [];
-    //               bookedStylist = '';
-    //           $('.calendarMain .loader2').removeClass('non-active')
-    //           $('.morning .slot').empty();
-    //           $('.afternoon .slot').empty();
-    //           $('.evening .slot').empty();
-
-    //           if ($('.pleaseSelect').children.length > 0) {
-    //             $('.pleaseSelect').empty();
-    //           }
-
-    //           let memberId = $(this).data('team-member-id')
-    //           stylistName = $(this).data('team-member-name');
-
-    //           stylist = memberId.split(',')
-    //           $('.staffMembers .addNames1').removeClass('loaded')
-    //           $(this).addClass('loaded')
-    //           let date1 = new Date();
-    //           let year = date1.getFullYear();
-    //           let mon = date1.getMonth();
-    //           let test5 = new Date(year, mon + 1,0)
-    //           test5.setUTCHours(23,59,59,0);
-    //           currMonth = new Date().getMonth();
-    //           calendarChange()
-    //           bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
-    //           $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
-    //           $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
-    //           })
-    //           $('.form1234 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded')
-      
-    //         } else if ($('.form1234 .bookingForm').hasClass('active')) {
-    //       $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
-    //       $('.botss .bookNowButton').removeClass('active');
-    //       $('.botss .confirmButton').removeClass('non-active');
-    //     } else if (!($('.gokutest').hasClass('non-active'))) {
-    //       $('.serviceList').css('max-height', `0px`);
-    //       $('.list-item').removeClass('active');
-    //       $('.service').empty();
-    //       $('.total').removeClass('active');
-    //       $('.page-test1').empty();
-    //       totalTime = 0;
-    //       total = '0.00';
-    //       serviceEnd1 = [];
-    //       $('.page-button').removeClass('page-button1')
-    //       $('.page-test').removeClass('brand-add')
-    //       $('.page-test').css('max-height', '0px')
-    //     }
-    //   })
-    //   $('.botss .nextButton').on('click', function() {
-       
-    //     if ($('.serviceBooking').hasClass('active')) {
-    //       if (serviceEnd, bookedStylist, startTime) {
-
-    //         $('.serviceBooking').removeClass('active');
-    //         $('.staffBooking').removeClass('active');
-    //         $('.bookingLoad:not(.loaded):first').addClass('loaded');
-    //         serviceType1(serviceId, bookedStylist, startTime);
-    //        } else {
-    //         $('.pleaseSelect').html('<div style="text-align: center; color: red; padding-bottom: 10px;">Please select a timing</div>')
-    //        }
-
-
-
-
-    //     } else {
-    //       $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
-    //       if (!($('.serviceBooking .staffBooking').hasClass('active'))) {
-    //       $('.serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'))
-    //       }
-    //       $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
-    //           $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
-    //       $('.form1234 .calendarTop .next-arrow').on('click', nextMonth)
-    //       $('.staffMembers .addNames1').on('click', function() {
-    //           duration = '';
-    //               startTime = '';
-    //               multiService = [];
-    //               bookedStylist = '';
-    //           $('.calendarMain .loader2').removeClass('non-active')
-    //           $('.morning .slot').empty();
-    //           $('.afternoon .slot').empty();
-    //           $('.evening .slot').empty();
-
-    //           if ($('.pleaseSelect').children.length > 0) {
-    //             $('.pleaseSelect').empty();
-    //           }
-
-    //           let memberId = $(this).data('team-member-id')
-    //           stylistName = $(this).data('team-member-name');
-
-    //           stylist = memberId.split(',')
-    //           $('.staffMembers .addNames1').removeClass('loaded')
-    //           $(this).addClass('loaded')
-    //           let date1 = new Date();
-    //           let year = date1.getFullYear();
-    //           let mon = date1.getMonth();
-    //           let test5 = new Date(year, mon + 1,0)
-    //           test5.setUTCHours(23,59,59,0);
-    //           currMonth = new Date().getMonth();
-    //           calendarChange()
-    //           bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist)
-    //           $('.form1234 .calendarTop .prev-arrow').addClass('disabled');
-    //           $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
-    //           })
-    //     $('.gokutest').addClass('non-active');
-    //   $('.bookingLoad:not(.loaded):first').addClass('loaded');
-    //       if ($('.gokutest').hasClass('non-active')) {
-    //           $('.mobileBottom1 .botss .service').addClass('non-active');
-    //           $('.mobileBottom1 .botss .total').removeClass('active');
-    //           $('.mobileBottom1 .botss .total').addClass('non-active');
-    //         } else {
-    //           $('.mobileBottom1 .botss .service').removeClass('non-active');
-    //           $('.mobileBottom1 .botss .total').addClass('active');
-    //         }
-    //     let apps = r.availabilities
-    //   let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
-    //   let firstDate = r.availabilities[0]
-    //   let v = 0;
-    //   if (apps.length > 0) {
-    //     $('.currMonth').removeClass('active selected')
-    //     apps.forEach((item) => {
-    //     const date = new Date(item.startAt);
-    //     const day = date.getDate();
-    //     Array.from($('.currMonth')).forEach((item1) => {          
-    //       if (day == item1.innerHTML) {
-
-    //         if (!item1.classList.contains('active')) {
-    //           item1.setAttribute("data-id", v)
-    //           $(item1).addClass('active')
-    //           v++
-    //         } 
-    //       } 
-    //     })
-    //   })
-    //   $('.currMonth.active').eq(0).addClass('selected')
-    //   let x = $('.currMonth.selected').attr('data-id');
-    //   let y = $('.currMonth.selected').attr('data-date');
-    //   // calendarChange()
-
-    //   getCurrentDateAppointments(r.availabilities[x], apps, x, y)
-    //   } 
-    //   // else {
-    //   //   $('.currMonth').removeClass('active selected')
-    //   //   currMonth = currMonth + 1
-    //   // if (currMonth < 0 || currMonth > 11) {
-    //   //   date = new Date(currYear, currMonth);
-    //   //   currYear = date.getFullYear();
-    //   //   currMonth = date.getMonth();
-    //   // } else {
-    //   //   date = new Date();
-    //   // }
-    //   // let test7 = new Date(currYear, currMonth + 1,0)
-    //   // let test8 = new Date(currYear, currMonth,1)
-    //   // test7.setUTCHours(23,59,59,0)
-    //   // calendarChange()
-    //   // bookingSq(test8.toISOString(), test7.toISOString(),serviceEnd, stylist)
-    //   // }
-
-
-    //   $('li.currMonth.active').on('click', function() {
-    //     $('.currMonth.active').removeClass('selected')
-    //     $(this).addClass('selected')
-    //     let x = this.getAttribute('data-id')
-    //     let y = this.getAttribute('data-date')
-    //     getCurrentDateAppointments(r.availabilities[x], apps, x, y)
-    // }) 
-    //     }
-
-    //   })
-
-    // })
-
-    // }
 
 
 
@@ -5142,10 +4747,10 @@ function addService(e) {
     })
     .then(r=>r.json())
     .then(r=> {
-      let ids = []
+      let ids = [];
       r.team_member_booking_profiles.forEach(item => {
-        currentStylers.push(item)
-        ids.push(item.team_member_id)
+        currentStylers.push(item);
+        ids.push(item.team_member_id);
         $('.addNames').append(`
         <span class=display_name>${Array.from(item.display_name)[0]}</span>
         `)
@@ -5159,38 +4764,38 @@ function addService(e) {
 
           </div>`)
       });
-      $('.staffMembers .addNames1.loaded').attr('data-team-member-id', ids)
+      $('.staffMembers .addNames1.loaded').attr('data-team-member-id', ids);
 
-      stylist = ids
-      $('.staffMembers .addNames1').on('click', addNames2)
+      stylist = ids;
+      $('.staffMembers .addNames1').on('click', addNames2);
     })
 
 
     $('.buttonApt').on('click', ()=> {
 
       let setheight = $('.page').height();
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-      $('.mobileInitial').addClass('active')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
+      $('.mobileInitial').addClass('active');
       $('.mobileBottom').addClass('active');
         $('.mobilePopup').css('max-height', `${setheight}px`);
         $('.desktopBottom .newCancel').on('click', function() {
-          $('.mobilePopup').css('max-height', '0px')
-          $('.mobileMain').removeClass('active')
-          $('.mobilePopup1 .bookingLoad.loaded').removeClass('loaded')
+          $('.mobilePopup').css('max-height', '0px');
+          $('.mobileMain').removeClass('active');
+          $('.mobilePopup1 .bookingLoad.loaded').removeClass('loaded');
           $('.form123').empty();
         })
         if (!($._data($('.desktopBottom .newBack').get(0), 'events'))) {
           $('.desktopBottom .newBack').on('click', function() {
           if ($('.mobileInitial').hasClass('active')) {
-            $('.mobilePopup').css('max-height', '0px')
-            $('.mobileMain').removeClass('active')
-            $('.mobilePopup1 .bookingLoad.loaded').removeClass('loaded')
+            $('.mobilePopup').css('max-height', '0px');
+            $('.mobileMain').removeClass('active');
+            $('.mobilePopup1 .bookingLoad.loaded').removeClass('loaded');
           } else if ($('.mobileService').hasClass('active')) {
-            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
+            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
             $('.mobileService').removeClass('active');
             $('.mobileInitial').addClass('active');
           } else if ($('.mobileSystem').hasClass('active')) {
-            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
+            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
             $('.mobileSystem').removeClass('active');
             $('.mobileService').addClass('active');
           } else if ($('.mobileService2').hasClass('active')) {
@@ -5205,7 +4810,7 @@ function addService(e) {
             $('.mobileService3').addClass('active');
 
           } else if ($('.form123 .serviceBooking').hasClass('active')) {
-            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
+            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
 
             $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
             $('.staffMembers .addNames1').on('click', function() {
@@ -5215,7 +4820,7 @@ function addService(e) {
            multiService = [];
            bookedStylist = '';
       //  $('.calendarMain .loader2').removeClass('non-active')
-       $('.calendarTest .loader2').removeClass('non-active')
+       $('.calendarTest .loader2').removeClass('non-active');
        $('.morning .slot').empty();
        $('.afternoon .slot').empty();
        $('.evening .slot').empty();
@@ -5224,55 +4829,55 @@ function addService(e) {
          $('.pleaseSelect').empty();
        }
 
-       let memberId = $(this).data('team-member-id')
-       stylistName = $(this).data('team-member-name')
-       stylist = memberId.split(',')
-       $('.staffMembers .addNames1').removeClass('loaded')
-       $(this).addClass('loaded')
+       let memberId = $(this).data('team-member-id');
+       stylistName = $(this).data('team-member-name');
+       stylist = memberId.split(',');
+       $('.staffMembers .addNames1').removeClass('loaded');
+       $(this).addClass('loaded');
        let date1 = new Date();
        let year = date1.getFullYear();
        let mon = date1.getMonth();
-       let test5 = new Date(year, mon + 1,0)
+       let test5 = new Date(year, mon + 1,0);
        test5.setUTCHours(23,59,59,0);
-       currMonth = new Date().getMonth()
-       calendarChange()
+       currMonth = new Date().getMonth();
+       calendarChange();
        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-       serviceType1(serviceEnd, stylist)
+       serviceType1(serviceEnd, stylist);
        if ($(window).width() > 1023) {
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
          $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-         $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-         $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-            $('.form123 .calendarTop .prev-arrow').addClass('disabled')
-            $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+         $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+         $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+            $('.form123 .calendarTop .prev-arrow').addClass('disabled');
+            $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
         }
      })
           } else if ($('.form123 .bookingForm').hasClass('active')) {
             // $('.calendarMain .loader2').removeClass('non-active')
-            $('.calendarTest .loader2').removeClass('non-active')
-            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded')
-            $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'))
-            $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-            $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-            $('.form123 .calendarTop .prev-arrow').addClass('disabled')
-            $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
-            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth)
+            $('.calendarTest .loader2').removeClass('non-active');
+            $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+            $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
+            $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+            $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+            $('.form123 .calendarTop .prev-arrow').addClass('disabled');
+            $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
+            $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
             let date1 = new Date();
             let year = date1.getFullYear();
             let mon = date1.getMonth();
-            let test5 = new Date(year, mon + 1,0)
+            let test5 = new Date(year, mon + 1,0);
             test5.setUTCHours(23,59,59,0);
-            currMonth = new Date().getMonth()
-            calendarChange()
+            currMonth = new Date().getMonth();
+            calendarChange();
             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
             $('.serviceSideServices .loader2').addClass('non-active');
                 $('.bookBut').on('click', function() {
       duration = $(this).data('duration');
       startTime = $(this).data('start-id');
-      bookedStylist = $(this).data('team-member')
-      $('.bookBut').removeClass('active3')
-      $(this).addClass('active3')
+      bookedStylist = $(this).data('team-member');
+      $('.bookBut').removeClass('active3');
+      $(this).addClass('active3');
       if ($('.pleaseSelect').children.length > 0) {
         $('.pleaseSelect').empty();
       }
@@ -5284,15 +4889,15 @@ function addService(e) {
 
         $('.form123').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
       $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
-        $('.form123 #myForm1').on("submit", submitForm)
+        $('.form123 #myForm1').on("submit", submitForm);
 
         } else {
 
           serviceType1(serviceEnd, stylist, startTime);
-          $('.gokutest').empty().append($('.bookingForm').eq(0).clone().addClass('active'))
-          $('.gokutest .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
+          $('.gokutest').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
+          $('.gokutest .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
           // $('.serviceBookingSide .loader2').addClass('non-active')
-        $('.gokutest #myForm1').on("submit", submitForm)
+        $('.gokutest #myForm1').on("submit", submitForm);
 
         }
 
@@ -5305,57 +4910,53 @@ function addService(e) {
         }
 
     })
-    $('.mobileCancel').on('click', () => {
-      $('.bookingLoad').removeClass('loaded');
-      $('.mobilePopup').css('max-height', '0');
-      $('.mobileMain').removeClass('active');
-      $('.mobileInitial').addClass('active');
-      $('#change').empty();
+    $('.mobileCancel').on('click', backToMain);
 
-      currDate = date.getDate();
-      currYear = date.getFullYear();
-      currMonth = date.getMonth();
-      test5 = new Date(currYear, currMonth + 1,0)
-      serviceEnd = '';
-      serviceEnd1 = []
-
-      startTime = '';
-      bookedStylist = '';
-      stylistName = '';
-      duration = '0';
-      total = '0.00';
-      servicesAvailable =[];
-      totalTime = 0;
-      multiService = [];
-      calendarChange() 
-      $('.staffMembers .addNames1:first').addClass('loaded');
-      $('.calendarTop .prev-arrow').addClass('disabled');
-      $('.calendarTop .next-arrow').removeClass('disabled');
+    $('.mobileGTA .backButton2 .backButton2').on('click', function() {
+      if ($('.mobilePopup .mobileInitial').hasClass('active')) {
+        backToMain();
+      } else if ($('.mobilePopup .mobileService').hasClass('active')) {
+      $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+        $('.mobilePopup .mobileService').removeClass('active');
+        $('.mobilePopup .mobileInitial').addClass('active');
+      } else if ($('.mobilePopup .mobileSystem').hasClass('active')) {
+        $('.mobilePopup1 .bookingLoad.loaded:last').removeClass('loaded');
+        $('.mobilePopup .mobileSystem').removeClass('active');
+        $('.mobilePopup .mobileService').addClass('active');
+        serviceGender = '';
+      } else if ($('.mobilePopup .mobileService2').hasClass('active')) {
+        $('.mobilePopup .mobileService2').removeClass('active');
+        $('.mobilePopup .mobileSystem').addClass('active');
+      } else if ($('.mobilePop .mobileService3').hasClass('active')) {
+        $('.mobilePopup .mobileService2').addClass('active');
+        $('.mobilePopup .mobileService3').removeClass('active');
+        serviceType = '';
+      }
     })
     $('#1').on('click', () => {
-      $('.mobileInitial').removeClass('active')
-      $('.mobileService').addClass('active')
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
-      $('.mobileGTA .backButton2').removeClass('non-active')
-    })
+      $('.mobileInitial').removeClass('active');
+      $('.mobileService').addClass('active');
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
+      $('.mobileGTA .backButton2').removeClass('non-active');
+    });
 
     $('#2').on('click', () => {
       if ($(window).width() >1023) {
         if (localStorage.getItem('email')) {
           let setheight = $('.page').height();
           $('.serviceList').css('max-height', `${setheight}px`);
-          showService()
+          showService();
           $('.loggedInDesktop .para').on('click', {email:localStorage.getItem('email')}, clientInfo);
-          $('.newClients').addClass('non-active')
+          $('.newClients').addClass('non-active');
           $('.oldClients').addClass('active');
           // $('.oldClients .clientProfile')
         } else {
           $('.oldClients').removeClass('non-active');
       $('.newClients').addClass('non-active');
       $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-      $('.squareupLogin #loginForm .requestButton').removeClass('loading')
+      $('.squareupLogin #loginForm .requestButton').removeClass('loading');
       $('.squareupLogin #loginForm input').prop("disabled", false);
-      $('.requestButton').removeClass('loading')
+      $('.requestButton').removeClass('loading');
 
       $('.squareuplogin #loginForm').on("submit", checkCustomer);
         }
@@ -5367,7 +4968,7 @@ function addService(e) {
         $('.newClients').addClass('non-active');
       $('.oldClients').removeClass('non-active');
       }
-      $('.bookingLoad').removeClass('loaded')
+      $('.bookingLoad').removeClass('loaded');
       $('.mobilePopup').css('max-height', '0');
       // $('.mobileMain').removeClass('active');
 
@@ -5377,7 +4978,7 @@ function addService(e) {
             $('.oldClients').empty().append($('.oldClientsLogin').eq(0).clone().addClass('active'));
             $('.oldClientsLogin .signIn_square .block').addClass('non-active');
             $('.oldClientsLogin .myAppts').addClass('active');
-            $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'))
+            $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'));
             $('.oldClientsLogin .myAppts button').on('click', {email:localStorage.getItem('email')}, clientInfo);
             
             $('.oldClients .myAppts div').on('click', function() {
@@ -5390,9 +4991,9 @@ function addService(e) {
             $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
                 
                 $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
-                $('.squareupLogin #loginForm .requestButton').removeClass('loading')
+                $('.squareupLogin #loginForm .requestButton').removeClass('loading');
                 $('.squareupLogin #loginForm input').prop("disabled", false);
-                $('.requestButton').removeClass('loading')
+                $('.requestButton').removeClass('loading');
 
                 $('.squareuplogin #loginForm').on("submit", checkCustomer);
               })
@@ -5403,413 +5004,8 @@ function addService(e) {
         
       }
       if (!($._data($('.oldClients .button2').get(0), 'events'))) {
-        $('.oldClients .button2').on('click',  showService)
-  //     $('.oldClients .button2').on('click', (e) => {
-      
-  //     $('.serviceList').removeClass('non-active')
-  //     let serviceType = e.target.getAttribute('data-service')
-  //     let serviceCate = e.target.getAttribute('data-service-cate')
-  //     let setheight = $('.page').height();
-  //     $('.bookingLoad:not(.loaded):first').addClass('loaded')
-  //     // $('.oldClients').addClass('non-active')
-  //     $('.serviceList .mobileBottom1').addClass('active')
-  //       $('.serviceList').css('max-height', `${setheight}px`);
-  //       $('.serviceList .mobileBottom1 .backButton').on('click', function() {
-  //         if (!($('.serviceList .gokutest').hasClass('non-active'))) {
-  //           total= '';
-  //           duration = '';
-  //           startTime = '';
-  //           multiService = [];
-  //           bookedStylist = '';
-  //           serviceEnd1 = [];
-  //           totalTime = 0;
-  //           $('.serviceList').css('max-height', `0px`);
-  //           $('.list-item').remove();
-  //           $('.page-button').removeClass('page-button1');
-  //           $('.page-test').removeClass('brand-add');
-  //           $('.page-test').css('max-height', '0px');
-  //           $('.list-mens').removeClass('non-active');
-  //           $('.total').removeClass('active');
-  //           $('.total .price').empty();
-  //         }
-  //       })
-  //       $('.serviceList .desktopBottom .oldBack').on('click', function() {
-  //         $('.loader2').removeClass('non-active');
-  //         if ($('.serviceList .bookingForm').hasClass('active')) {
-  //           $('.multiServiceDesk1 .serviceBooking').scrollTop(0);
-  //           $('.serviceList .bookingForm').remove();
-  //           $('.serviceList .serviceBookingSide').remove();
-  //           Array.from($('.gokutest').children()).forEach((item) => {
-  //           $(item).css('display', '');
-  //           })
-  //         }
-  //          else if ($('.serviceList .staffBooking').hasClass('active')) {
-  //           $('.multiServiceDesk1 .staffBooking').remove();
-  //           $('.serviceList .staffBooking').removeClass('active');
-  //           $('.serviceList .list-mens').removeClass('non-active')
-  //         } else if ($('.serviceList .serviceBooking').hasClass('active')) {
-  //           $('.multiServiceDesk1 .serviceBooking').remove()
+        $('.oldClients .button2').on('click',  showService);
 
-  //           $('.serviceList .staffBooking').addClass('active');
-
-  //         } else if (!($('.serviceList .list-mens').hasClass('non-active'))) {
-  //           duration = '';
-  //           startTime = '';
-  //           multiService = [];
-  //           bookedStylist = '';
-  //           serviceEnd1 = [];
-  //           totalTime = 0;
-  //           $('.serviceList').css('max-height', `0px`);
-  //           $('.serviceList .multiServiceSide').remove();
-  //           $('.multiServiceItem').remove();
-  //           $('.list-item').remove();
-  //           $('.page-button').removeClass('page-button1');
-  //           $('.page-test').removeClass('brand-add');
-  //           $('.page-test').css('max-height', '0px');
-  //           $('.list-mens').removeClass('non-active');
-  //         }
-  //       })
-  //       $('.serviceList .desktopBottom .oldCancel').on('click', function(){
-  //         $('.loader2').removeClass('non-active');
-
-  //           duration = '';
-  //           startTime = '';
-  //           multiService = [];
-  //           bookedStylist = '';
-  //           serviceEnd1 = [];
-  //           totalTime = 0;
-
-  //       $('.serviceList').css('max-height', `0px`);
-  //       $('.serviceList .multiServiceSide').remove();
-  //       $('.multiServiceItem').remove();
-  //       $('.list-item').remove();
-  //       $('.page-button').removeClass('page-button1');
-  //       $('.page-test').removeClass('brand-add');
-  //       $('.page-test').css('max-height', '0px');
-  //       $('.list-mens').removeClass('non-active');
-  //       $('.multiServiceDesk1 .staffBooking').addClass('active')
-  //       $('.multiServiceDesk1 .serviceBooking').remove();
-  //       $('.multiServiceDesk1 .staffBooking').remove();
-  //       if ($('.gokutest .bookingForm').hasClass('active')) {
-  //         $('.gokutest .bookingForm').remove();
-  //         Array.from($('.gokutest').children()).forEach((item) => {
-  //           $(item).css('display', '');
-  //           })
-  //       }
-  //       })
-  //       $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
-  //       $('.serviceList .top-list .item').removeClass('active')
-  //      let selected = $('.serviceList .top-list').find(`:contains('${serviceType}')`)
-  //      fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
-  //       method: 'POST',
-  //       headers: {
-  //           accept: "application/json",
-  //           "content-type": "application/json"
-  //       }
-  //   })
-  //   .then(r=>r.json())
-  //   .then(r=> { 
-  //     servicesAvailable = r.items
-  //     const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate)
-  //    //Production
-  //   //   var testing = new Promise((resolve, reject ) => {
-  //   //   vidu.forEach((item) => {
-  //   //     let product = item.itemData.variations[0]
-  //   //     const id = product.id
-  //   //     const mins = product.itemVariationData.serviceDuration
-  //   //     let cost = ''
-  //   //     cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
-  //   //     // PRODUCTION LEVEL
-  //   //     //
-  //   //     // if (id == "BMENIVQM6YI6254XOMSI5QIB") {
-  //   //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Hair System</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
-  //   //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Full Cap System</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
-  //   //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Partial Installation</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
-  //   //     //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Other Company</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
-  //   //     //   $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Installation + color</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "IQU3XIVADLWH4R26UHDEYNWN") {
-  //   //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Toupee</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
-  //   //     //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Full Cap</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
-  //   //     //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Maintenance + color</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
-  //   //     //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Hair Trim</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
-  //   //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Own Hair Service</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
-  //   //     //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>System Service</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
-  //   //     //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>System Template</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
-  //   //     //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //   //     //     <div>Miscellaneous</div>
-  //   //     //     <div>${mins/60000}mins</div>
-  //   //     //     <div style="text-align:end;">${cost}</div>
-  //   //     //     </div>`)
-  //   //     // }
-  //   //     // END OF PRODUCTION
-  //   //   })
-
-    
-  //   //   resolve()
-  //   //  }) 
-  //    //END PRODUCT
-
-  //    //SANDBOX
-  //    var testing1 = new Promise((resolve, reject ) => {
-  //     servicesAvailable.forEach((item) => {
-  //       let product = item.itemData.variations[0];
-  //       const id = product.id;
-  //       const mins = product.itemVariationData.serviceDuration;
-  //       let cost = '';
-  //       cost = (product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount/100).toLocaleString('en-us', {style:"currency", currency: "USD"}) : 'Price Varies')
-  //       // PRODUCTION LEVEL
-  //       //
-  //       if (id == "YJDFATQVTOPCCERF44FTP73E") {
-  //         $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //           <div>Men's Haircut</div>
-  //           <div>${mins/60000}mins</div>
-  //           <div style="text-align:end;">${cost}</div>
-  //           </div>`)
-  //       }
-  //       // if (id == "QOR7VBWPFJ6O7SWH2V4V7W62") {
-  //       //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Full Cap System</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
-  //       //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Partial Installation</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
-  //       //   $('.gokutest .page-tab #installation').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Other Company</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       if (id == "CXXZZX3QDWLRDLXMXSWLEDXG") {
-  //         $('.gokutest .page-tab #installationcolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //           <div>Test</div>
-  //           <div>${mins/60000}mins</div>
-  //           <div style="text-align:end;">${cost}</div>
-  //           </div>`)
-  //       }
-  //       if (id == "FYM523QRBQHJDGBJWD4MRS4S") {
-  //         $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //           <div>Shampoo Style</div>
-  //           <div>${mins/60000}mins</div>
-  //           <div style="text-align:end;">${cost}</div>
-  //           </div>`)
-  //       }
-  //       // if (id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
-  //       //   $('.gokutest .page-tab #maintenance').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Full Cap</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
-  //       //   $('.gokutest .page-tab #maintenancecolor').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Maintenance + color</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
-  //       //   $('.gokutest .page-tab #hairtrim').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Hair Trim</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "YPS4TL2QN6G6G7BAAVCQWZCC") {
-  //       //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Own Hair Service</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "L6AZYQW42R7M4LCGYG2DV3T4") {
-  //       //   $('.gokutest .page-tab #perm').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>System Service</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
-  //       //   $('.gokutest .page-tab #systemtemplate').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>System Template</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // if (id == "67ELY4T4HAC2WOOA42L37XZE") {
-  //       //   $('.gokutest .page-tab #misc').append(`<div id="${id}" class="list-item" data-service-id="${id}">
-  //       //     <div>Miscellaneous</div>
-  //       //     <div>${mins/60000}mins</div>
-  //       //     <div style="text-align:end;">${cost}</div>
-  //       //     </div>`)
-  //       // }
-  //       // END OF PRODUCTION
-  //     })
-
-    
-  //     resolve()
-  //    }) 
-  //    //END SANDBOX
-     
-     
-  //    testing1.then(() => {
-  //     $('.gokutest .multiServiceDesk1 .loader2').addClass('non-active')
-  //     let lastTime = new Date(currYear, currMonth + 1,0, 23, 59, 59)
-  //           let currTime = date
-  //           let vidu = Math.abs(lastTime-currTime) / 36e5
-  //           if ( vidu < 24) {
-  //             lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59)
-  //           }
-  //         $('.serviceList .staffMembers .addNames1').on('click', addNames1)  
-  //       $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
-        
-
-  //         $(document).on('click', '.list-item.newClass', function() {
-  //           let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
-  //           let x = serviceEnd1.indexOf(this.id);
-  //           if (x > -1) {
-  //             serviceEnd1.splice(x, 1);
-  //             let self = this.id;
-
-  //             const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self)
-  //             totalTime -= parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
-  //             Array.from($('.list-mens .list-item')).forEach((item) => {
-  //               if (this.id == item.id) {
-  //                 $(item).bind('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService)
-  //               }
-  //             })
-  //             checkAva( currTime, lastTime, serviceEnd1, totalTime)
-  //           }
-            
-  //           total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
-  //           $('.botss .total .price').html(`$${total}.00`);
-  //           (this).remove();
-  //           $(`#${this.id}`).removeClass('active');
-
-  //         })
-        
-
-  //         if (!($._data($('.mobileBottom1 .desktopBottom .next').get(0), 'events'))) {
-  //           $('.mobileBottom1 .desktopBottom .next').on('click', function() {
-     
-  //    $('.multiServiceDesk1 .list-mens').addClass('non-active');
-  //    $('.multiServiceDesk1 .staffBooking').addClass('active')
-
-  //    $('.multiServiceDesk1').append($('.staffBooking').eq(0).clone().addClass('active'))
-  //    // $('.serviceList .gokutest').addClass('non-active');
-  //    // $('.form1234').empty().append($('.bookingForm').eq(0).clone().addClass('active'));
-  //    // $('.form1234 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
-  //    // // $('.serviceList .multiServiceDesk').prepend($('.multiServiceSide').eq(0).clone().addClass('active'))
-  //    // $('.serviceList .loader2').addClass('non-active');
-
-  //    $('.serviceList .staffMembers .addNames1').on('click', addNames1) 
-
-  //   //  $('.serviceList .staffMembers .addNames1').on('click', function() {
-     
-  //   //   duration = '';
-  //   //  startTime = '';
-  //   //  multiService = [];
-  //   //  bookedStylist = '';
-  //   //  $('.multiServiceDesk1 .staffBooking').removeClass('active');
-  //   //  $('.multiServiceDesk1').append($('.serviceBooking').eq(0).clone().addClass('active'))
-     
-  //   //      let memberId = $(this).data('team-member-id')
-  //   //      stylist = memberId.split(',')
-  //   //      stylistName = $(this).data('team-member-name')
-  //   //      $('.staffMembers .addNames1').removeClass('loaded')
-  //   //      $(this).addClass('loaded')
-  //   //      checkAva(currTime, lastTime, serviceEnd1, totalTime)
-
-  //   //  }) 
-  //  })
-  //         }
-
-
-  //      })
-
-  //   })
-
-  //      selected.addClass('active')
-
-  //   })
 
 
     }
@@ -5820,11 +5016,11 @@ function addService(e) {
       e.preventDefault();
       serviceGender = e.target.id;
       if (serviceGender == 'mens' || serviceGender == 'womens') {
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
       $('.mobileService').removeClass('active');
       $('.mobileSystem').addClass('active');
       } else {
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
       $('.mobileService').removeClass('active');
       $('.mobileSystem2').addClass('active');
         $('.mobileSystem2 #no').on('click', function() {
@@ -5839,7 +5035,7 @@ function addService(e) {
           $('.mobileSystem3').addClass('active');
 
           $('.mobileSystem3 #mens').on('click', function() {
-            $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+            $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
             $('.mobileSystem3').removeClass('active');
             if ($(window).width() > 1023) {
               $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
@@ -5850,14 +5046,14 @@ function addService(e) {
             }
             $('.staffMembers .addNames1').on('click', function() {
               if ($(window).width() > 1023) { 
-                $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+                $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
               }
                 duration = '';
                 startTime = '';
                 multiService = [];
                 bookedStylist = '';
               // $('.calendarMain .loader2').removeClass('non-active')
-              $('.calendarTest .loader2').removeClass('non-active')
+              $('.calendarTest .loader2').removeClass('non-active');
               $('.morning .slot').empty();
               $('.afternoon .slot').empty();
               $('.evening .slot').empty();
@@ -5879,17 +5075,17 @@ function addService(e) {
               currMonth = new Date().getMonth();
               calendarChange();
               bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-              $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-              $('.form123 .calendarTop .prev-arrow').addClass('disabled')
+              $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+              $('.form123 .calendarTop .prev-arrow').addClass('disabled');
               if ($(window).width() > 1023) {
 
-                serviceType1(serviceEnd, stylist)
+                serviceType1(serviceEnd, stylist);
                 $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-                $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-                $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+                $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+                $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
               }
             })
-            $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+            $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
             $('.mobileBottom').removeClass('active');
             if ($(window).width() >1023) {
               if ($('.newClients').hasClass('non-active')) {
@@ -5898,7 +5094,7 @@ function addService(e) {
             } else {
               $('.mobileBottom1').addClass('active');
             }
-            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
           })
         })
       }
@@ -5937,7 +5133,7 @@ function addService(e) {
       `)
       } else if (serviceType == 'serviceCons') {
         if (serviceGender == 'mens') {
-          $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+          $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
             $('.mobileService2').removeClass('active');
             if ($(window).width() > 1023) {
               $('.form123').empty().append($('.staffBooking').eq(0).clone().addClass('active'));
@@ -5948,14 +5144,14 @@ function addService(e) {
             }
             $('.staffMembers .addNames1').on('click', function() {
               if ($(window).width() > 1023) { 
-                $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+                $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
               }
                 duration = '';
                 startTime = '';
                 multiService = [];
                 bookedStylist = '';
               // $('.calendarMain .loader2').removeClass('non-active')
-              $('.calendarTest .loader2').removeClass('non-active')
+              $('.calendarTest .loader2').removeClass('non-active');
               $('.morning .slot').empty();
               $('.afternoon .slot').empty();
               $('.evening .slot').empty();
@@ -5977,17 +5173,17 @@ function addService(e) {
               currMonth = new Date().getMonth();
               calendarChange();
               bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-              $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-              $('.form123 .calendarTop .prev-arrow').addClass('disabled')
+              $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+              $('.form123 .calendarTop .prev-arrow').addClass('disabled');
               if ($(window).width() > 1023) {
 
-                serviceType1(serviceEnd, stylist)
+                serviceType1(serviceEnd, stylist);
                 $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-                $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-                $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+                $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+                $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
               }
             })
-            $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+            $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
             $('.mobileBottom').removeClass('active');
             if ($(window).width() >1023) {
               if ($('.newClients').hasClass('non-active')) {
@@ -5996,7 +5192,7 @@ function addService(e) {
             } else {
               $('.mobileBottom1').addClass('active');
             }
-            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
         }
       }
       
@@ -6021,7 +5217,7 @@ function addService(e) {
 
         $('.staffMembers .addNames1').on('click', function() {
           if ($(window).width() > 1023) { 
-            $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+            $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
           }
 
        
@@ -6031,7 +5227,7 @@ function addService(e) {
             multiService = [];
             bookedStylist = '';
         // $('.calendarMain .loader2').removeClass('non-active')
-        $('.calendarTest .loader2').removeClass('non-active')
+        $('.calendarTest .loader2').removeClass('non-active');
         $('.morning .slot').empty();
         $('.afternoon .slot').empty();
         $('.evening .slot').empty();
@@ -6053,20 +5249,20 @@ function addService(e) {
         currMonth = new Date().getMonth();
         calendarChange();
         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-        $('.form123 .calendarTop .next-arrow').removeClass('disabled')
-        $('.form123 .calendarTop .prev-arrow').addClass('disabled')
+        $('.form123 .calendarTop .next-arrow').removeClass('disabled');
+        $('.form123 .calendarTop .prev-arrow').addClass('disabled');
         if ($(window).width() > 1023) {
-          serviceType1(serviceEnd, stylist)
+          serviceType1(serviceEnd, stylist);
 
           $('.form123').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
-          $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'))
-      $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+          $('.form123 .serviceBookingSide').empty().append($('.serviceSide').eq(0).clone().addClass('active'));
+      $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
         
         }
       })
       
 
-      $('.form123 .calendarTop .next-arrow').on('click', nextMonth)
+      $('.form123 .calendarTop .next-arrow').on('click', nextMonth);
       $('.mobileBottom').removeClass('active');
       if ($(window).width() >1023) {
         if ($('.newClients').hasClass('non-active')) {
@@ -6078,39 +5274,39 @@ function addService(e) {
       }
 
       
-      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded')
+      $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
       if ($(window).width() >1023) {
 
       }
        if (serviceGender == 'mens') {
         if (serviceType == 'Maintenance') {
           if (color) {
-            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
             if (stylistName) {
-              $('.form123 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded')
+              $('.form123 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded');
             }
           } else {
-            bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC", stylist);
           }
         } else {
           if (color) {
-            bookingSq(date.toISOString(), test5.toISOString(), "O6RWN7NFJKTYCTSKXIVKNUUV", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "O6RWN7NFJKTYCTSKXIVKNUUV", stylist);
           } else {
-            bookingSq(date.toISOString(), test5.toISOString(), "QKVCJJZHAHG3AWGIOVHASRNA", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "QKVCJJZHAHG3AWGIOVHASRNA", stylist);
           }
         }
        } else {
         if (serviceType == 'Maintenance') {
           if (color) {
-            bookingSq(date.toISOString(), test5.toISOString(), "OS255XE5HJCLHU43J4YT5R4F", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "OS255XE5HJCLHU43J4YT5R4F", stylist);
           } else {
-            bookingSq(date.toISOString(), test5.toISOString(), "OK3BPUAMAJYINUKVQJRBHZMB", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "OK3BPUAMAJYINUKVQJRBHZMB", stylist);
           }
         } else {
           if (color) {
-            bookingSq(date.toISOString(), test5.toISOString(), "WEXJ7MQTUFSVGFIERPF7IOUW", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "WEXJ7MQTUFSVGFIERPF7IOUW", stylist);
           } else {
-            bookingSq(date.toISOString(), test5.toISOString(), "RSDJ4PSD2SJ6JBPUSCK274QN", stylist)
+            bookingSq(date.toISOString(), test5.toISOString(), "RSDJ4PSD2SJ6JBPUSCK274QN", stylist);
           }
         }
        }
