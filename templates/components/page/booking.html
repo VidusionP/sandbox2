@@ -977,7 +977,26 @@ margin-bottom: 10px;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, .72);
-
+}
+.accExistsOverlay1 {
+  position: absolute;
+  z-index: 111111;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .72);
+}
+.accExistsOverlay1 .block {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
 }
 .accExistsOverlay .block {
   background-color: white;
@@ -989,6 +1008,14 @@ margin-bottom: 10px;
   padding: 10px 20px;
   width: 80%;
   max-width: 400px;
+}
+.accExistsOverlay1 .para {
+  font-weight: 500;
+  font-size: 18px;
+}
+.accExistsOverlay1 .para:last-of-type {
+  font-size: 14px;
+  color: gray;
 }
 .accExistsOverlay .para {
   font-weight: 500;
@@ -2182,6 +2209,13 @@ margin-bottom: 10px;
     <p class="bookingButton">Sign in</p>
   </div>
 </div>
+<div class="accExistsOverlay1 non-active">
+  <div class="block">
+    <p class="para">Looks like you account already exists!</p>
+    <p class="para">Please login to complete booking</p>
+    <button class="bookingButton">Sign in</button>
+  </div>
+</div>
 <div class="desktopConfirmation non-active" style=" min-height: 300px;">
   <span class="loader2">
     <span class="loader"></span>
@@ -2402,17 +2436,23 @@ margin-bottom: 10px;
                 if (jQuery.isEmptyObject(r)) {
                   createCustomer(x, "#myForm1");
                 } else {
-                  $('.accExistsOverlay').removeClass('non-active');
-                  $('.accExistsOverlay .bookingButton').on('click', function() {
+                  console.log('SIGN IN TO COMPLETE BOOKING')
+                  $('.accExistsOverlay1').removeClass('non-active');
+                  // $('.accExistsOverlay').removeClass('non-active');
+                  $('.accExistsOverlay1 .bookingButton').on('click', function() {
                     $('.newClients').addClass('non-active');
                     $('.oldClients').removeClass('non-active');
+                    $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'))
                     $('.mobilePopup').css('max-height', '0px');
-                    $('.accExistsOverlay').addClass('non-active');
+                    $('.accExistsOverlay1').addClass('non-active');
                     $('.serviceList').css('max-height', '0px');
                     $('.loader2').removeClass('non-active');
-
+                    $('.squareuplogin #loginForm').on("submit", checkCustomer);
+                    localStorage.setItem('savedBooking', 'savedBooking')
                   })
-                  // createBooking(r.customers[0].id, x, "#myForm1")
+
+
+
 
                 }
               })
@@ -2436,7 +2476,6 @@ margin-bottom: 10px;
 
 
       $('.botss .backButton').on('click', function() {
-
         if ($('.form1234 .serviceBooking').hasClass('active')) {
           $('.bookingLoad.loaded:last').removeClass('loaded');
 
@@ -2447,9 +2486,10 @@ margin-bottom: 10px;
           startTime = '';
           currMonth = new Date().getMonth();
               calendarChange()
-        } else if ($('.form1234 .bookingConfirm').hasClass('active')) {
-          startTime = '';
 
+        } 
+        else if ($('.form1234 .bookingConfirm').hasClass('active')) {
+          startTime = '';
           $('.bookingLoad.loaded:last').removeClass('loaded');
           $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
           $('.form1234 .serviceBooking').prepend($('.staffBooking').eq(0).clone().addClass('active'));
@@ -2463,9 +2503,17 @@ margin-bottom: 10px;
           let y = $('.currMonth.selected').attr('data-date');
           $('.form1234 .calendarTop .prev-arrow').on('click', prevMonth);
           $('.form1234 .calendarTop .next-arrow').on('click', nextMonth);
-              currMonth = new Date().getMonth();
-              calendarChange();
+          let date1 = new Date();
+        let year = date1.getFullYear();
+        let mon = date1.getMonth();
+        let test5 = new Date(year, mon + 1,0);
+        test5.setUTCHours(23,59,59,0);
+          currMonth = new Date().getMonth();
+
+          calendarChange();
         // getCurrentDateAppointments(r.availabilities[x], r.availabilities, x, y)
+          bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
+
           let apps = r.availabilities;
           let dateSelected = new Date().toLocaleString('en-us', {weekday: 'short'});
           let firstDate = r.availabilities[0];
@@ -2491,7 +2539,7 @@ margin-bottom: 10px;
           let y = $('.currMonth.selected').attr('data-date');
           // calendarChange()
 
-          getCurrentDateAppointments(r.availabilities[x], apps, x, y)
+          getCurrentDateAppointments(r.availabilities[x], apps, x, y);
           } 
           $('.staffMembers .addNames1').on('click', function() {
               duration = '';
@@ -2527,20 +2575,23 @@ margin-bottom: 10px;
               $('.form1234 .calendarTop .next-arrow').removeClass('disabled');
               })
               $('.form1234 .staffMembers').find(`[data-team-member-name='${stylistName}']`).addClass('loaded');
-      
+              $('.form1234 .staffMembers div:first').removeClass('loaded');
             } else if ($('.form1234 .bookingForm').hasClass('active')) {
           $('.form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'));
           $('.botss .bookNowButton').removeClass('active');
           $('.botss .confirmButton').removeClass('non-active');
         } else if (!($('.gokutest').hasClass('non-active'))) {
+          
           $('.serviceList').css('max-height', `0px`);
           $('.list-item').removeClass('active');
           $('.service').empty();
-          $('.total').removeClass('active');
+          $('.total').addClass('non-active');
           $('.page-test1').empty();
           totalTime = 0;
           total = '0.00';
           serviceEnd1 = [];
+          serviceEnd =[];
+          $('.botss .nextButton').unbind('click')
           $('.page-button').removeClass('page-button1');
           $('.page-test').removeClass('brand-add');
           $('.page-test').css('max-height', '0px');
@@ -2554,6 +2605,7 @@ margin-bottom: 10px;
           $('.serviceBooking .apptNote').addClass('non-active');
         }
         if ($('.serviceBooking').hasClass('active')) {
+
           if (serviceEnd, bookedStylist, startTime) {
             let value = $('.serviceBooking .apptNote').val();
             $('.serviceBooking').removeClass('active');
@@ -3172,6 +3224,7 @@ margin-bottom: 10px;
             `);
 
           } else {
+            console.log(item);
             $('#serviceType').append(`
             <div>
               ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins) </br>
@@ -3685,8 +3738,26 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
         $('.oldClientsCode .requestButton').addClass('loading');
 
         if ($('.oldClients #codeLogin [name=code]').val() == code) {
+          if (localStorage.getItem('savedBooking')) {
+            const serv = multiService[0];
+            let x = [];
+            serv.appointmentSegments.forEach((item) => {
+              x.push({
+                "teamMemberId": item.teamMemberId,
+                "durationMinutes": item.durationMinutes,
+                "serviceVariationId": item.serviceVariationId,
+                "serviceVariationVersion": item.serviceVariationVersion
+              })
+            })
+            let setheight = $('.page').height();
+            $('.serviceList').css('max-height', `${setheight}px`);
+            $('.serviceList .form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
+            $('.serviceList .form1234 .loader2').addClass('non-active');
+            /////////
+            ///////////AFTER LOGIN SUCCESSFUL, PULL UP BOOKING CONFIRMATION PAGE
+            ////////
+          } else {
           if ($(window).width() > 1023) {
-
             setTimeout(function() {
                 localStorage.setItem('email', email);
                 localStorage.setItem('name', firstName);
@@ -3731,6 +3802,8 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
             localStorage.setItem('customerId', customerId);
           }, 2000)
           }
+          }
+
 
 
         } else {
@@ -3770,7 +3843,6 @@ function clientInfo(e) {
   })
 }
 function getAppointments(id, email) {
-
   fetch(`https://shp-webserver-temp.glitch.me/customerCustomAttributes`, {
     method: 'POST',
     headers: {
@@ -4076,7 +4148,6 @@ function checkCustomer(e) {
         
         // createCustomer(x, "#myForm")
       } else {
-
         loginToSquareAcc(r.customers[0].givenName, r.customers[0].familyName, r.customers[0].id);
 
         // createBooking(r.customers[0].id, x, "#myForm")
@@ -4085,6 +4156,7 @@ function checkCustomer(e) {
 }
 
   function loginToSquareAcc(firstName, lastName, customerId) {
+
   if ($("#loginForm [name='email']").val().trim().length==0 || $("#loginForm [name='email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
   document.querySelector("#loginForm [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
   document.querySelector("#loginForm [name='email']").reportValidity();
@@ -4312,11 +4384,16 @@ function createBooking(id, serv, form, customerInfo) {
       console.log('created booking');
       if ($('.newClients').hasClass('non-active')) {
         setTimeout(function() {
+          // $('.serviceList').css('max-height', '0px');
+          localStorage.setItem('email', results.emailAddress);
+          localStorage.setItem('name', results.givenName);
+          localStorage.setItem('lastName', results.familyName);
+          localStorage.setItem('customerId', results.id);
           if ($('.oldClients .clientProfile').hasClass('active')) {
             // $('.appointmentList .upcomingList').empty();
             // $('.appointmentList .pastList').empty();
             getAppointments(results, localStorage.getItem('email'));
-
+            console.log('clientProfile')
             $('.serviceList').css('max-height', '0px');
           } else {
             let first = localStorage.getItem('name');
@@ -4325,7 +4402,8 @@ function createBooking(id, serv, form, customerInfo) {
             $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
             $('.clientProfile .topBlock .initial').append(`${first[0]}${last[0]}`);
             $('.clientProfile .topBlock .name').append(`${first} ${last}`);
-            getAppointments(results, localStorage.getItem('email'));
+            getAppointments(results.id, localStorage.getItem('email'));
+            // getAppointments(results, localStorage.getItem('email'));
             
             $('.serviceList').css('max-height', '0px');
             $('.upcomingList .loader2').addClass('non-active');
@@ -4636,6 +4714,7 @@ function addService(e) {
           
           }
           serviceEnd1.push(serviceId);
+          console.log(serviceEnd1)
           const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
           const testName = test[0].itemData.name;
           const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration;
@@ -4772,7 +4851,7 @@ function addService(e) {
 
 
     $('.buttonApt').on('click', ()=> {
-
+      localStorage.removeItem('savedBooking');
       let setheight = $('.page').height();
       $('.mobilePopup1 .bookingLoad:not(.loaded):first').addClass('loaded');
       $('.mobileInitial').addClass('active');
