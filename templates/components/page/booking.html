@@ -510,13 +510,14 @@ body {
     padding-right: 10px;
   }
   .list-mens {
+
+  }
+  .list-services {
     overflow: auto;
     height: 57%;
     padding-bottom: 40px;
   }
-  ::-webkit-scrollbar {
-    display: none;
-  }
+
   .botss .total {
     text-align: end;
     font-weight: 600;
@@ -1372,6 +1373,16 @@ margin-bottom: 10px;
     margin: 0;
     cursor: pointer;
   }
+  .squareupSignupForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .squareupSignupForm button {
+    max-width: unset;
+
+  }
   .list-service-title {
     text-align: start;
     margin: 0;
@@ -1391,8 +1402,13 @@ margin-bottom: 10px;
     
   }
   .list-mens {
+
+  }
+  .list-services {
     height: 100%;
     overflow: unset;
+    width: 100%;
+    padding-bottom: unset;
   }
   .multiServiceDesk .serviceLoaded p {
     border-bottom: 1px solid #006CFF;
@@ -1406,17 +1422,22 @@ margin-bottom: 10px;
     display: flex;
     gap: 90px;
     margin-top: 50px;
-    height: 65%;
+    /* height: 65%; */
     overflow: auto;
   }
   .list-mens {
-    width: 100%;
-    padding-bottom: unset;
+
   }
   .top-list {
     margin-top: 15px;
   }
   .multiServiceSide .multiServiceItem {
+    background-color: #ededed;
+    padding: 15px;
+    margin: 10px 0;
+    position: relative;
+  }
+  .multiServiceSide .multiServiceStylist {
     background-color: #ededed;
     padding: 15px;
     margin: 10px 0;
@@ -1428,8 +1449,18 @@ margin-bottom: 10px;
     margin: 10px 0;
     position: relative;
   }
-  .multiServiceSide .multiServiceItem::after {
+  /* .multiServiceSide .multiServiceItem::after {
     content: "";
+    background-image: url('../../../assets/img/gta/delete.png');
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+  } */
+  .multiServiceSide .multiServiceItem .trash {
+    /* content: ""; */
     background-image: url('../../../assets/img/gta/delete.png');
     position: absolute;
     top: 15px;
@@ -1615,14 +1646,14 @@ margin-bottom: 10px;
       <p>Select stylist</p>
 
     </div>
-    <div class="item dateAndTime">
+    <!-- <div class="item dateAndTime">
       <p>Select date and time</p>
 
     </div>
     <div class="item details">
       <p>Enter your details</p>
 
-    </div>
+    </div> -->
   </div>
   <div class="serviceList non-active">
     <div style="width: 80%; margin: auto; max-width: 1200px;">
@@ -1648,7 +1679,7 @@ margin-bottom: 10px;
           <p class="list-service-title">Select one or more services:</p>
           
 
-          <div class="list-mens" style="position: relative;">
+          <div class="list-mens list-services" style="position: relative;">
             <span class="loader2">
               <span class="loader"></span>
             </span>
@@ -1731,6 +1762,106 @@ margin-bottom: 10px;
               <div class="page-test" style="max-height: 0px;">
                   <div id="misc" class="page-test1">
     
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-womens list-services non-active" style="position: relative;">
+            <span class="loader2">
+              <span class="loader"></span>
+            </span>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Installation</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installation" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Installation + Color</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installationcolor" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Maintenance</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="maintenance" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Maintenance + Color</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="maintenancecolor" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Perm</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="perm" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">System Template</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="systemtemplate" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Misc</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="misc" class="page-test1">
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-consult list-services non-active" style="position: relative;">
+            <span class="loader2">
+              <span class="loader"></span>
+            </span>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Womens</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installation" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Mens</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installation" class="page-test1">
+                  </div>
+              </div>
+            </div>
+            <div class="page-tab">
+              <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)">
+                  <button class="page-button">Online</button>
+              </p>
+              <div class="page-test" style="max-height: 0px;">
+                  <div id="installation" class="page-test1">
                   </div>
               </div>
             </div>
@@ -2136,6 +2267,7 @@ margin-bottom: 10px;
       <input style="padding:12px; width: 100%; border: 1px solid lightgray; border-radius: 5px;" placeholder="Last Name" name="lastName">
     </div>
     <button type="submit" class="bookingButton loadButton">Sign Up</button>
+    <p>Cancel</p>
   </form>
 </div>
 <div class="oldClientsLogin non-active">
@@ -2164,7 +2296,7 @@ margin-bottom: 10px;
     <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
     <div data-service="Consultation" class="button2">Consultation Services</div>
   </div>
-  <div class="back">Back</div>
+  <div class="back back2">Back</div>
 </div>
 <div class="oldClientsCode non-active">
   <p style="text-align: start; color: #777777; margin-bottom: 0;">Please check your inbox/spam for your code</p>
@@ -2272,6 +2404,13 @@ margin-bottom: 10px;
   let multiService = [];
   test5.setUTCHours(23,59,59,0);
   function checkAva(currTime, lastTime, serviceId, durationTotal) {
+    // console.log(lastTime)
+    if (stylistName) {
+      $('.serviceList .multiServiceSide .multiServiceStylist').remove();
+      $('.serviceList .multiServiceSide .stylist').append(`
+      <div class='multiServiceStylist'>${stylistName}</div>
+      `)
+    }
       serviceEnd = serviceId;
       duration = durationTotal/60000;
       let styleTest = [];
@@ -2308,7 +2447,7 @@ margin-bottom: 10px;
       let v = 0;
 
       // $('.calendarMain .loader2').addClass('non-active');
-      $('.calendarTest .loader2').addClass('non-active');
+      // $('.calendarTest .loader2').addClass('non-active');
 
       if (apps.length > 0) {
         $('.currMonth').removeClass('active selected');
@@ -2477,6 +2616,8 @@ margin-bottom: 10px;
 
       $('.botss .backButton').on('click', function() {
         if ($('.form1234 .serviceBooking').hasClass('active')) {
+ 
+
           $('.bookingLoad.loaded:last').removeClass('loaded');
 
           $('.form1234').empty();
@@ -2489,6 +2630,7 @@ margin-bottom: 10px;
 
         } 
         else if ($('.form1234 .bookingConfirm').hasClass('active')) {
+          $('.serviceBooking .calendarTest .loader2').removeClass('non-active')
           startTime = '';
           $('.bookingLoad.loaded:last').removeClass('loaded');
           $('.form1234').empty().append($('.serviceBooking').eq(0).clone().addClass('active'));
@@ -2581,11 +2723,11 @@ margin-bottom: 10px;
           $('.botss .bookNowButton').removeClass('active');
           $('.botss .confirmButton').removeClass('non-active');
         } else if (!($('.gokutest').hasClass('non-active'))) {
-          
           $('.serviceList').css('max-height', `0px`);
           $('.list-item').removeClass('active');
           $('.service').empty();
           $('.total').addClass('non-active');
+          $('.total').removeClass('active');
           $('.page-test1').empty();
           totalTime = 0;
           total = '0.00';
@@ -2605,7 +2747,6 @@ margin-bottom: 10px;
           $('.serviceBooking .apptNote').addClass('non-active');
         }
         if ($('.serviceBooking').hasClass('active')) {
-
           if (serviceEnd, bookedStylist, startTime) {
             let value = $('.serviceBooking .apptNote').val();
             $('.serviceBooking').removeClass('active');
@@ -2869,6 +3010,7 @@ margin-bottom: 10px;
   }
 
   function getCurrentDateAppointments(firstDate, apps, x, y) {
+
     if (apps.length > 0) {
       // $('.serviceList .calendarMain .loader2').addClass('non-active')
       $('.serviceList .calendarTest .loader2').addClass('non-active');
@@ -2992,6 +3134,7 @@ margin-bottom: 10px;
 
   function bookingSq(startDate, endDate, service, stylists) {
     // console.log(startDate, endDate, service, stylists)
+    console.log('bookingSq')
     serviceEnd = service;
     let styleTest = [];
       service.forEach((item) => {
@@ -3023,7 +3166,7 @@ margin-bottom: 10px;
       // duration = firstDate.appointmentSegments[0].durationMinutes;
       let v = 0;
       if (apps.length > 0) {
-        
+        console.log(service)
         let firstDate = r.availabilities[0];
       duration = '0';
       firstDate.appointmentSegments.forEach((item) => {
@@ -3179,6 +3322,7 @@ margin-bottom: 10px;
   }
   
   function serviceType1(serviceEnd, stylist, startTime, note) {
+    console.log('serviceType')
     fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
         method: 'POST',
         headers: {
@@ -3393,6 +3537,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
           })
 
         } else if ($('.form123 .serviceBooking').hasClass('active')) {
+          console.log(item.itemData.name)
           $('.bookingName').empty().append(`${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration/60000}mins)`);
               $('.bookingPrice').empty().append(`${item.itemData.variations[0].itemVariationData.priceMoney?`$`+item.itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`:'Price Varies'}`);
               $('.bookingTime').empty().append(`${duration} minutes`);
@@ -3596,7 +3741,9 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
                   $('.accExistsOverlay').removeClass('non-active');
                   // createBooking(r.customers[0].id, x, "#myForm1")
                   $('.accExistsOverlay .bookingButton').on('click', function() {
-
+                    currMonth = new Date().getMonth();
+                    $('.serviceList .bookNowButton').removeClass('active');
+                    $('.serviceList .botss .nextButton').addClass('active');
                     $('.newClients').addClass('non-active');
                     $('.oldClients').removeClass('non-active');
                     $('.mobilePopup').css('max-height', '0px');
@@ -3616,7 +3763,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
                         $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
                       $('.oldClientsLogin .myAppts').removeClass('active');
                       $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
-                          
+
                           $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
                           $('.squareupLogin #loginForm .requestButton').removeClass('loading');
                           $('.squareupLogin #loginForm input').prop("disabled", false);
@@ -3709,6 +3856,16 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
                         $('.serviceList').css('max-height', `${setheight}px`);
                         showService();
                         $('.loggedInDesktop .para').on('click', {email:localStorage.getItem('email')}, clientInfo);
+                        $('.loggedInDesktop .para1').on('click', function() {
+                          console.log('Sign out')
+                          localStorage.removeItem('email');
+                          localStorage.removeItem('name');
+                          localStorage.removeItem('lastName');
+                          $('.oldClients').removeClass('active');
+                          $('.oldClients').addClass('non-active');
+                          $('.newClients').removeClass('non-active');
+                          $('.serviceList').css('max-height', '0px')
+                        });
                         $('.newClients').addClass('non-active');
                         $('.oldClients').addClass('active');
                         // $('.oldClients .clientProfile')
@@ -3739,6 +3896,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
 
         if ($('.oldClients #codeLogin [name=code]').val() == code) {
           if (localStorage.getItem('savedBooking')) {
+            console.log('saved')
             const serv = multiService[0];
             let x = [];
             serv.appointmentSegments.forEach((item) => {
@@ -3753,6 +3911,12 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
             $('.serviceList').css('max-height', `${setheight}px`);
             $('.serviceList .form1234').empty().append($('.bookingConfirm').eq(0).clone().addClass('active'))
             $('.serviceList .form1234 .loader2').addClass('non-active');
+            $('.serviceList .mobileBottom1 .botss .confirmButton').addClass('active');
+            $('.serviceList .mobileBottom1 .botss .bookNowButton').removeClass('active');
+            localStorage.setItem('email', email);
+            localStorage.setItem('name', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('customerId', customerId);
             /////////
             ///////////AFTER LOGIN SUCCESSFUL, PULL UP BOOKING CONFIRMATION PAGE
             ////////
@@ -3766,7 +3930,16 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
               showService()
             // $('.loggedInDesktop .para').on('click', {email:email}, clientInfo);
             $('.loggedInDesktop .para').on('click', {email:email}, clientInfo);
-
+            $('.loggedInDesktop .para1').on('click', function() {
+            console.log('Sign out')
+            localStorage.removeItem('email');
+            localStorage.removeItem('name');
+            localStorage.removeItem('lastName');
+            $('.oldClients').removeClass('active');
+            $('.oldClients').addClass('non-active');
+            $('.newClients').removeClass('non-active');
+            $('.serviceList').css('max-height', '0px')
+          });
             }, 1500)
 
 
@@ -3785,7 +3958,7 @@ $('.form123 .calendarTop .prev-arrow').on('click', prevMonth);
               $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
               $('.oldClientsLogin .myAppts').removeClass('active');
               $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
-                
+
                 $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
                 $('.squareupLogin #loginForm .requestButton').removeClass('loading');
                 $('.squareupLogin #loginForm input').prop("disabled", false);
@@ -3896,88 +4069,83 @@ id: item
 .then(r=>r.json())
 .then(r=> {
 let timeStart = r.booking.startAt;
-
-
-r.booking.appointmentSegments.map((item) => {
-  let currentTime = new Date();
+// console.log(r)
+let currentTime = new Date();
     let durationMins = new Date(timeStart);
-
     let day = new Date(timeStart).getDay();
     let date = new Date(timeStart).getDate();
     let month = new Date(timeStart).getMonth();
     let year = new Date(timeStart).getFullYear();
     let time = new Date(timeStart).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
+    // let timeStart2 = durationMins.getMinutes()
+    // let timeStart2 = durationMins.setMinutes(durationMins.getMinutes());
+    // let timeStart2 = durationMins.getMinutes()
+    // let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
+  // console.log(time2)
+serviceName()
+.then(item1 => {
+  
+  // console.log(r)''
+
+          $(`.appointmentList ${durationMins > currentTime ?`.upcomingList` : `.pastList` }`).append(`
+          <div id='${r.booking.id}' class='apptBlock'>
+            
+            ${durationMins > currentTime ? '' : `<span>View Details</span>` }
+            <div class='sellerinfo'>
+
+              <div class='sellerFirst'></div>
+
+              <div style='text-align:start;'>
+                <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
+                <div style='font-weight:600; font-size:16px;' class='stylistName'></div>
+              </div>
+
+            </div>
+
+            <div class='dateTime details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+              <div class='timeFrame'></div>
+            </div>
+            <div class='details'>
+              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+              <div class='serviceDetails'></div>
+            </div>
+          </div>
+          `)
+  
+  r.booking.appointmentSegments.map((item) => {
+    const vidu = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
+    const vidu1 = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId);
+    $(`#${r.booking.id}.apptBlock .sellerFirst`).empty().append(vidu[0].display_name[0])
+    // const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
     let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
     let time2 = new Date(timeStart2).toLocaleTimeString('en-US', {hour:"numeric", minute: "2-digit"});
 
-    serviceName()
-    .then(item1 => {
-        const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
-        const vidu = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId);
+    $(`#${r.booking.id}.apptBlock .dateTime .timeFrame`).empty().append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`)
+    $(`#${r.booking.id}.apptBlock .stylistName`).empty().append(vidu[0].display_name)
+    $(`#${r.booking.id}.apptBlock .serviceDetails`).append(`
+    <div>
+      ${vidu1[0].itemData.name} (${vidu1[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu1[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu1[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}
+    </div>
+    `)
+
+  })
 
 
-        if (durationMins > currentTime) {
-          $('.appointmentList .upcomingList').append(`
-          <div class='apptBlock'>
-            <span>Edit Booking</span>
-            <div class='sellerinfo'>
-
-              <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
-
-              <div style='text-align:start;'>
-                <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
-                <div style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
-              </div>
-
-            </div>
-
-            <div class='dateTime details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
-              <div>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
-            </div>
-            <div class='details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
-              <div>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
-            </div>
-          </div>
-          `)
-        } else {
-
-          $('.appointmentList .pastList').append(`
-          <div class='apptBlock'>
-            <span>View Details</span>
-            <div class='sellerinfo'>
-              <div class='sellerFirst'>${vidu1[0].display_name[0]}</div>
-              <div style='text-align:start;'>
-                <div style='color:#b3b3b3; font-size:13px;'>Confirmed With</div>
-                <div class='displayName' style='font-weight:600; font-size:16px;'>${vidu1[0].display_name}</div>
-              </div>
-            </div>
-
-            <div class='dateTime details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
-              <div class='dateTimes'>${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST</div>
-            </div>
-            <div class='details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
-              <div class='detailInfo'>${vidu[0].itemData.name} (${vidu[0].itemData.variations[0].itemVariationData.serviceDuration/60000}mins) ${vidu[0].itemData.variations[0].itemVariationData.priceMoney? `$`+ vidu[0].itemData.variations[0].itemVariationData.priceMoney.amount/100+`.00`: 'Price Varies'}</div>
-            </div>
-          </div>
-          `)
-        }
-
-    }).then(()=> {
-      $('.oldClients .pastList .apptBlock span').on('click', function() {
+}).then(() => {
+  $('.oldClients .pastList .apptBlock span').on('click', function() {
+          console.log($(this).siblings().find('.sellerFirst')[0].innerHTML)
           let initial = $(this).siblings().find('.sellerFirst')[0].innerHTML;
-          let name = $(this).siblings().find('.displayName')[0].innerHTML;
-          let date = $(this).siblings().find('.dateTimes')[0].innerHTML;
-          let detail = $(this).siblings().find('.detailInfo')[0].innerHTML;
+          let name = $(this).siblings().find('.stylistName')[0].innerHTML;
+          let date = $(this).siblings().find('.timeFrame')[0].innerHTML;
+          let detail = $(this).siblings().find('.serviceDetails')[0].innerHTML;
           $('.apptDetails').removeClass('non-active');
           $('.apptDetails .initial').html(initial);
+          console.log('sioker')
           $('.apptDetails .name').html(name);
           $('.apptDetails .date').html(date);
           $('.apptDetails .service').html(detail);
-          $('.apptDetails .detailsTopBlock').empty().append($('.apptPast').eq(0).clone().removeClass('non-active'));
+          $('.apptDetails .detailsTopBlock').empty().append($('.apptPast').eq(0).clone().removeClass('non-active'))
           let setheight = $('.page').height();
           $('.apptDetails').css('max-height', `${setheight}px`);
 
@@ -3986,27 +4154,11 @@ r.booking.appointmentSegments.map((item) => {
 
           })
       })
-
-    })
-  
-
-
 })
-
-
 })
-
-
     }, 500)
 
-
-
-})
-
-
-} 
-
-let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().length;
+    let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().length;
       let y = $('.oldClients .clientProfile .bottomBlock .pastList').children().length;
       // console.log(x);
       // console.log(y);
@@ -4027,6 +4179,13 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
         $('.oldClients .pastList .loader2').addClass('non-active');
 
       };
+
+})
+
+
+} 
+
+
 
 
 
@@ -4067,7 +4226,7 @@ let x = $('.oldClients .clientProfile .bottomBlock .upcomingList').children().le
       $('.oldClientsLogin .signIn_square .block').removeClass('non-active');
       $('.oldClientsLogin .myAppts').removeClass('active');
       $('.oldClientsLogin .signIn_square .sqLogin').on('click', function() {
-        
+
         $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
         $('.squareupLogin #loginForm .requestButton').removeClass('loading');
         $('.squareupLogin #loginForm input').prop("disabled", false);
@@ -4356,13 +4515,16 @@ function createCustomer(x, form) {
 }
 
 function createBooking(id, serv, form, customerInfo) {
-  
+  // console.log(id)
+  // console.log(serv)
+  // console.log(form)
+  // console.log(customerInfo)
   let notes = '';
   if (localStorage.getItem('email')) {
     notes = $(`${form} div[name=apptNotes]`).html();
   } else {
     notes = $(`.bookingForm.active ${form} textarea[name=appNotes]`).val();
-  }
+  } 
       fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
         method: 'POST',
         headers: {
@@ -4385,15 +4547,14 @@ function createBooking(id, serv, form, customerInfo) {
       if ($('.newClients').hasClass('non-active')) {
         setTimeout(function() {
           // $('.serviceList').css('max-height', '0px');
-          localStorage.setItem('email', results.emailAddress);
-          localStorage.setItem('name', results.givenName);
-          localStorage.setItem('lastName', results.familyName);
-          localStorage.setItem('customerId', results.id);
+          // localStorage.setItem('email', results.emailAddress);
+          // localStorage.setItem('name', results.givenName);
+          // localStorage.setItem('lastName', results.familyName);
+          // localStorage.setItem('customerId', results.id);
           if ($('.oldClients .clientProfile').hasClass('active')) {
             // $('.appointmentList .upcomingList').empty();
             // $('.appointmentList .pastList').empty();
             getAppointments(results, localStorage.getItem('email'));
-            console.log('clientProfile')
             $('.serviceList').css('max-height', '0px');
           } else {
             let first = localStorage.getItem('name');
@@ -4402,8 +4563,8 @@ function createBooking(id, serv, form, customerInfo) {
             $('.oldClients').empty().append($('.clientProfile').eq(0).clone().addClass('active'));
             $('.clientProfile .topBlock .initial').append(`${first[0]}${last[0]}`);
             $('.clientProfile .topBlock .name').append(`${first} ${last}`);
-            getAppointments(results.id, localStorage.getItem('email'));
-            // getAppointments(results, localStorage.getItem('email'));
+            // getAppointments(results.id, localStorage.getItem('email'));
+            getAppointments(results, localStorage.getItem('email'));
             
             $('.serviceList').css('max-height', '0px');
             $('.upcomingList .loader2').addClass('non-active');
@@ -4454,7 +4615,6 @@ function showService(e) {
   } else {
     serviceType = "Men";
     serviceCate = "KYEHUUDWR5NEVDVGK2NOS2G4";
-
   }
   // $('.oldClients .button2').on('click', (e) => {
       // if ($('.oldClients .clientProfile').hasClass('active')) {
@@ -4583,7 +4743,7 @@ function showService(e) {
         // PRODUCTION LEVEL
         //
         if (id == "YJDFATQVTOPCCERF44FTP73E") {
-          $('.gokutest .page-tab #installation').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .list-mens .page-tab #installation').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Men's Haircut</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
@@ -4591,14 +4751,14 @@ function showService(e) {
         }
 
         if (id == "CXXZZX3QDWLRDLXMXSWLEDXG") {
-          $('.gokutest .page-tab #installationcolor').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .list-mens .page-tab #installationcolor').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Test</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
             </div>`)
         }
         if (id == "FYM523QRBQHJDGBJWD4MRS4S") {
-          $('.gokutest .page-tab #maintenance').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
+          $('.gokutest .list-mens .page-tab #maintenance').empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
             <div>Shampoo Style</div>
             <div>${mins/60000}mins</div>
             <div style="text-align:end;">${cost}</div>
@@ -4619,10 +4779,36 @@ function showService(e) {
               lastTime = new Date(currYear, currMonth+2, 0, 23, 59 , 59);
             }
           $('.serviceList .staffMembers .addNames1').on('click', addNames1)  ;
+        $('.mobileBottom1 .next').addClass('non-active');  
         $('.list-mens .list-item').on('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService);
-        
           $(document).on('click', '.multiServiceItem', function() {
             // let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
+          })
+          $(document).on('click','.multiServiceItem .trash' ,function() {
+            let check = $(this).parent().find('.price')[0].innerHTML == "Price Varies" ?"$0.00"  : $(this).parent().find('.price')[0].innerHTML;
+            let x = serviceEnd1.indexOf(this.id);
+            if (x > -1) {
+              serviceEnd1.splice(x, 1);
+              let self = this.id;
+
+              const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
+              Array.from($('.list-mens .list-item')).forEach((item) => {
+                if (this.id == item.id) {
+                  $(item).bind('click', {lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable}, addService);
+                }
+              })
+              checkAva( currTime, lastTime, serviceEnd1, totalTime);
+            }
+            if (serviceEnd1.length > 0) {
+            $('.mobileBottom1 .next').removeClass('non-active');
+            } else {
+            $('.mobileBottom1 .next').addClass('non-active');
+
+            }
+            // total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
+            // $('.botss .total .price').html(`$${total}.00`);
+            $(this).parent().remove();
+            $(`.serviceList #${this.id}`).removeClass('active');
           })
           $(document).on('click', '.list-item.newClass', function() {
             let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
@@ -4640,11 +4826,12 @@ function showService(e) {
               })
               checkAva( currTime, lastTime, serviceEnd1, totalTime);
             }
+            console.log(serviceEnd1)
             
             total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
             $('.botss .total .price').html(`$${total}.00`);
             (this).remove();
-            $(`#${this.id}`).removeClass('active');
+            $(`.serviceList #${this.id}`).removeClass('active');
 
           })
         
@@ -4657,6 +4844,8 @@ function showService(e) {
 
             $('.multiServiceDesk1').append($('.staffBooking').eq(0).clone().addClass('active'));
             $('.serviceList .staffMembers .addNames1').on('click', addNames1) ;
+            $('.mobileBottom1 .desktopBottom .next').addClass('non-active');
+            $('.multiServiceItem .trash').addClass('non-active');
 
    })
           }
@@ -4679,6 +4868,7 @@ function addService(e) {
       let servicesAvailable = e.data.servicesAvailable;
       let currTime = e.data.currTime;
       let lastTime = e.data.lastTime;
+
           $(this).unbind('click');
           let serviceId = $(this).data('service-id');
           let self = this.id;
@@ -4715,6 +4905,9 @@ function addService(e) {
           }
           serviceEnd1.push(serviceId);
           console.log(serviceEnd1)
+          if (serviceEnd1.length > 0) {
+            $('.mobileBottom1 .next').removeClass('non-active');
+          }
           const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
           const testName = test[0].itemData.name;
           const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration;
@@ -4724,20 +4917,23 @@ function addService(e) {
           checkAva( currTime, lastTime, serviceEnd1, totalTime);
           $('.multiServiceSide .service').append(`
           <div class='multiServiceItem'>
+            <span id='${serviceId}' class='trash'></span>
             <div class='name'>${testName}</div>  
-            <div clas='price'>${check}</div>  
+            <div class='price'>${check}</div>  
             <div class='time'>${testDuration/60000} mins</div>  
           </div>
           `)
           $('.serviceSide .serviceSideServices').append(`
           <div class='multiServiceItem'>
+
             <div class='name'>${testName}</div>  
-            <div clas='price'>${check}</div>  
+            <div class='price'>${check}</div>  
             <div class='time'>${testDuration/60000} mins</div>  
             <div class='stylist'></div>
 
           </div>
           `)
+
 
 
           $(this).hasClass('active') ? '': $(this).addClass('active');
@@ -4793,6 +4989,7 @@ function addService(e) {
     let serviceType = '';
     let color = false;
     $('.sqLogin').on('click', function() {
+ 
       $('.oldClients').empty().append($('.squareupLogin').eq(0).clone().addClass('active'));
       $('.squareuplogin #loginForm').on("submit", checkCustomer);
 
@@ -5020,12 +5217,37 @@ function addService(e) {
     });
 
     $('#2').on('click', () => {
+      $('.top-list .item').on('click', function() {
+        $('.top-list .item').removeClass('active')
+        $(this).addClass('active')
+        // console.log($(this).html())
+        if ($(this).html() == 'Women') {
+          $('.serviceList .list-services').addClass('non-active');
+          $('.serviceList .list-services.list-womens').removeClass('non-active');
+        } else if ($(this).html() == 'Men') {
+          $('.serviceList .list-services').addClass('non-active');
+          $('.serviceList .list-services.list-mens').removeClass('non-active');
+        } else if ($(this).html() == 'Consultation') {
+          $('.serviceList .list-services').addClass('non-active');
+          $('.serviceList .list-services.list-consult').removeClass('non-active');
+        } 
+      })
       if ($(window).width() >1023) {
         if (localStorage.getItem('email')) {
           let setheight = $('.page').height();
           $('.serviceList').css('max-height', `${setheight}px`);
           showService();
           $('.loggedInDesktop .para').on('click', {email:localStorage.getItem('email')}, clientInfo);
+          $('.loggedInDesktop .para1').on('click', function() {
+            console.log('Sign out')
+            localStorage.removeItem('email');
+            localStorage.removeItem('name');
+            localStorage.removeItem('lastName');
+            $('.oldClients').removeClass('active');
+            $('.oldClients').addClass('non-active');
+            $('.newClients').removeClass('non-active');
+            $('.serviceList').css('max-height', '0px')
+          });
           $('.newClients').addClass('non-active');
           $('.oldClients').addClass('active');
           // $('.oldClients .clientProfile')
@@ -5036,7 +5258,10 @@ function addService(e) {
       $('.squareupLogin #loginForm .requestButton').removeClass('loading');
       $('.squareupLogin #loginForm input').prop("disabled", false);
       $('.requestButton').removeClass('loading');
-
+      $('.squareupLogin .squareSignUp').on('click', function() {
+          $('.oldClients').empty().append($('.squareupSignupForm').eq(0).clone().addClass('active'));
+          $('.oldClients #signupForm').on("submit", {id: '#signupForm'}, createCustomer1);  
+      })
       $('.squareuplogin #loginForm').on("submit", checkCustomer);
         }
       // showService()
@@ -5044,8 +5269,10 @@ function addService(e) {
       // $('.serviceList').css('max-height', `${setheight}px`);
 
       } else {
+
         $('.newClients').addClass('non-active');
       $('.oldClients').removeClass('non-active');
+
       }
       $('.bookingLoad').removeClass('loaded');
       $('.mobilePopup').css('max-height', '0');
@@ -5059,7 +5286,10 @@ function addService(e) {
             $('.oldClientsLogin .myAppts').addClass('active');
             $('.oldClientsLogin .myAppts .newName').empty().append(localStorage.getItem('name'));
             $('.oldClientsLogin .myAppts button').on('click', {email:localStorage.getItem('email')}, clientInfo);
-            
+            $(".oldClients .back2").on('click', function() {
+              $('.oldClients').addClass('non-active');
+              $('.newClients').removeClass('non-active');
+            })
             $('.oldClients .myAppts div').on('click', function() {
               localStorage.removeItem('email');
               localStorage.removeItem('name');

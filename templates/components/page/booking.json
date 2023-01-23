@@ -3,13 +3,14 @@
     {
       "type": "ITEM",
       "id": "YGXQDAUK3BLZF3XBHBGCA6ME",
-      "updated_at": "2022-11-14T16:16:44.246Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-11-14T16:16:44.246Z",
-      "version": 1668442604246,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "CANCELLATION FEE $10",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "variations": [
@@ -55,9 +56,9 @@
     {
       "type": "ITEM",
       "id": "CEA2AG34GDA6PX2NJ46CSAGP",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:33:55.472Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -73,6 +74,7 @@
         "name": "FIX (10 MINS) $0.00",
         "abbreviation": "Fi",
         "label_color": "ff0b8000",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "variations": [
@@ -126,9 +128,9 @@
     {
       "type": "ITEM",
       "id": "IRMQIHN4536NYLMLWHL4PPXM",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-23T15:14:15.13Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": false,
       "present_at_location_ids": [
@@ -136,6 +138,7 @@
       ],
       "item_data": {
         "name": "INSTALLATION OF OTHER COMPANY – 1 TIME ONLY (105 MINS) $180.00",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -183,9 +186,9 @@
     {
       "type": "ITEM",
       "id": "JXKZ5QKNEZ45TCWLYVWQ5AWE",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:32:07.712Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -201,6 +204,7 @@
         "name": "LUNCH BREAK (30 MINS) $0.00",
         "abbreviation": "Br",
         "label_color": "ffb21212",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "CRJX42I37KOBFBFQ53XVSNZ2",
         "variations": [
@@ -254,14 +258,15 @@
     {
       "type": "ITEM",
       "id": "5JBK2FF74LVUJJP5FG5AHTZQ",
-      "updated_at": "2022-12-01T19:01:50.94Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-25T16:46:02.497Z",
-      "version": 1669921310940,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "MEN'S INSTALLATION WITH COLOUR (120 MINS) $170.00",
         "label_color": "13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -305,9 +310,9 @@
     {
       "type": "ITEM",
       "id": "GE6EMSAJ6EXITSRGAGNQLJY4",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:40:57.809Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -323,6 +328,7 @@
         "name": "MEN'S MAINTENANCE SERVICE (60 MINS) $100.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -376,15 +382,16 @@
     {
       "type": "ITEM",
       "id": "VIOIUBLJX6SYHSHO7MX6BKH7",
-      "updated_at": "2022-12-01T19:02:00.234Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:18:31.904Z",
-      "version": 1669921320234,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "MEN'S MAINTENANCE WITH COLOUR (90 MINS) $130",
         "abbreviation": "M",
         "label_color": "13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -428,15 +435,16 @@
     {
       "type": "ITEM",
       "id": "ZAUWAKDBWWWSXRM2HSFLXSLR",
-      "updated_at": "2022-12-01T17:35:34.746Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-07T14:28:37.647Z",
-      "version": 1669916134746,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "MEN'S MISCELLANEOUS (15 MINS)",
         "abbreviation": "M",
         "label_color": "13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -535,9 +543,9 @@
     {
       "type": "ITEM",
       "id": "DZKYELU23SXHCXLUGT6GC4IK",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:46:14.564Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -553,6 +561,7 @@
         "name": "MEN’S  CONSULTATION (30 MINS) $20.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -607,9 +616,9 @@
     {
       "type": "ITEM",
       "id": "X6BZGZOKHEYS7LBDS4DGFLUV",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:44:39.544Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -625,6 +634,7 @@
         "name": "MEN’S FULL CAP INSTALLATION (90 MINS) $160.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -677,9 +687,9 @@
     {
       "type": "ITEM",
       "id": "7WLE2YLAWOSHEBUTKDVTTKBN",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:44:05.83Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -695,6 +705,7 @@
         "name": "MEN’S FULL CAP MAINTENANCE (75 MINS) $120.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -748,9 +759,9 @@
     {
       "type": "ITEM",
       "id": "6KYRQ253BNOGJHBIVU22XHXH",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-13T22:50:12.623Z",
       "created_at": "2022-06-13T20:45:36.099Z",
-      "version": 1668021127176,
+      "version": 1673650212623,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -766,6 +777,7 @@
         "name": "MEN’S HAIR TRIM (15 MINS) $25.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -775,9 +787,9 @@
           {
             "type": "ITEM_VARIATION",
             "id": "OYP3HMSC3G53MWKZYUX6UYC5",
-            "updated_at": "2022-11-09T19:12:07.176Z",
+            "updated_at": "2023-01-13T22:50:12.623Z",
             "created_at": "2022-06-13T20:45:36.099Z",
-            "version": 1668021127176,
+            "version": 1673650212623,
             "is_deleted": false,
             "catalog_v1_ids": [
               {
@@ -819,9 +831,9 @@
     {
       "type": "ITEM",
       "id": "ACYBHRAKAGL43YN3QO7JV5B2",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-19T17:51:12.17Z",
       "created_at": "2022-06-13T20:33:00.94Z",
-      "version": 1668021127176,
+      "version": 1674150672170,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -837,6 +849,7 @@
         "name": "MEN’S INSTALLATION (90 MINS) $140.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -846,9 +859,9 @@
           {
             "type": "ITEM_VARIATION",
             "id": "BMENIVQM6YI6254XOMSI5QIB",
-            "updated_at": "2022-11-09T19:12:07.176Z",
+            "updated_at": "2023-01-19T17:51:12.17Z",
             "created_at": "2022-06-13T20:33:00.94Z",
-            "version": 1668021127176,
+            "version": 1674150672170,
             "is_deleted": false,
             "catalog_v1_ids": [
               {
@@ -894,9 +907,9 @@
     {
       "type": "ITEM",
       "id": "WNAHXGX7O2DA44PADL725IY3",
-      "updated_at": "2022-12-01T17:31:07.574Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-06T14:34:30.055Z",
-      "version": 1669915867574,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -913,6 +926,7 @@
         "description": "If this is your first time having an installation with us.",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "7TPCHTTDGDBYR4TQ3NYOVZMN",
         "tax_ids": [
@@ -968,9 +982,9 @@
     {
       "type": "ITEM",
       "id": "7Q43LZMQKKWZTVAYZYAILTIQ",
-      "updated_at": "2022-12-01T17:31:18.971Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:28:23.892Z",
-      "version": 1669915878971,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
@@ -978,6 +992,7 @@
         "description": "If this is your first time having an installation with us.",
         "abbreviation": "M",
         "label_color": "13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "7TPCHTTDGDBYR4TQ3NYOVZMN",
         "tax_ids": [
@@ -1023,9 +1038,9 @@
     {
       "type": "ITEM",
       "id": "VEQPO5QJB3SDGGA2AVC5JX4A",
-      "updated_at": "2022-12-01T17:31:28.477Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-06T14:36:51.229Z",
-      "version": 1669915888477,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1041,6 +1056,7 @@
         "name": "NEW MEN'S MAINTENANCE (60 MINS) $100.00",
         "abbreviation": "M",
         "label_color": "ff13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "7TPCHTTDGDBYR4TQ3NYOVZMN",
         "tax_ids": [
@@ -1094,9 +1110,9 @@
     {
       "type": "ITEM",
       "id": "IVFXAZ6YFSG3HM67PX3RYIHV",
-      "updated_at": "2022-12-01T17:31:38.386Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:30:23.714Z",
-      "version": 1669915898386,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
@@ -1104,6 +1120,7 @@
         "description": "If this is your first time having any kind of service with us.",
         "abbreviation": "M",
         "label_color": "13b1bf",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "7TPCHTTDGDBYR4TQ3NYOVZMN",
         "tax_ids": [
@@ -1208,9 +1225,9 @@
     {
       "type": "ITEM",
       "id": "6EUP6XFH6XGLHEEYMQ6KBRG6",
-      "updated_at": "2022-12-01T17:31:48.876Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-06T14:35:01.174Z",
-      "version": 1669915908876,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1227,6 +1244,7 @@
         "description": "If this is your first time having an installation with us.",
         "abbreviation": "W",
         "label_color": "ffe5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDBE6GLF2H4FC4V3ADQE3O2F",
         "tax_ids": [
@@ -1282,9 +1300,9 @@
     {
       "type": "ITEM",
       "id": "4PZWDC7JPTOBIPU4CXUPKZQW",
-      "updated_at": "2022-12-01T17:31:59.371Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:36:22.722Z",
-      "version": 1669915919371,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
@@ -1292,6 +1310,7 @@
         "description": "If this is your first time having an installation with us.",
         "abbreviation": "W",
         "label_color": "e5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDBE6GLF2H4FC4V3ADQE3O2F",
         "tax_ids": [
@@ -1337,9 +1356,9 @@
     {
       "type": "ITEM",
       "id": "O66NNFLPEU32KCHYXI2AL5QM",
-      "updated_at": "2022-12-01T17:32:08.45Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-06T14:37:41.216Z",
-      "version": 1669915928450,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1355,6 +1374,7 @@
         "name": "NEW WOMEN'S MAINTENANCE (90 MINS) $130.00",
         "abbreviation": "W",
         "label_color": "ffe5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDBE6GLF2H4FC4V3ADQE3O2F",
         "tax_ids": [
@@ -1408,9 +1428,9 @@
     {
       "type": "ITEM",
       "id": "LXPFVPN4IVWGJWP5BKXUAKYQ",
-      "updated_at": "2022-12-01T17:32:16.614Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:37:54.357Z",
-      "version": 1669915936614,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
@@ -1418,6 +1438,7 @@
         "description": "If this is your first time having any kind of service with us.",
         "abbreviation": "W",
         "label_color": "e5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDBE6GLF2H4FC4V3ADQE3O2F",
         "tax_ids": [
@@ -1463,14 +1484,15 @@
     {
       "type": "ITEM",
       "id": "SDWWX2W5UERZXZ3TMNLUBTZ7",
-      "updated_at": "2022-12-01T17:32:23.193Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-11-21T19:43:03.319Z",
-      "version": 1669915943193,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "ONLINE CONSULTATION   (30 MINS)",
         "label_color": "a82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "CRJX42I37KOBFBFQ53XVSNZ2",
         "variations": [
@@ -1516,9 +1538,9 @@
     {
       "type": "ITEM",
       "id": "HMGKMHBN4W5FKHYEJEQBWZAX",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:51:38.013Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1534,6 +1556,7 @@
         "name": "PERM OWN HAIR SERVICE (60 MINS) $50.00",
         "abbreviation": "Pe",
         "label_color": "ff4ab200",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -1587,9 +1610,9 @@
     {
       "type": "ITEM",
       "id": "RCG2WFWC77N4K4BC44WQFJEG",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:52:14.375Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1605,6 +1628,7 @@
         "name": "PERM SYSTEM SERVICE (60 MINS) $50.00",
         "abbreviation": "Pe",
         "label_color": "ff4ab200",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -1660,15 +1684,16 @@
     {
       "type": "ITEM",
       "id": "ZE3VITDUIKHB7E5CAAFUMXXY",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-09-26T18:48:01.371Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "PROGRAM INSTALLATION (SUBSCRIPTION) (90 MINS) $0.00",
         "abbreviation": "PR",
         "label_color": "ffa82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "R655CCU46N5J2VUF3FRPVTEI",
         "tax_ids": [
@@ -1718,14 +1743,15 @@
     {
       "type": "ITEM",
       "id": "DQ5OLA5MUVRDA2WLRWELLX33",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:31:44.595Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "PROGRAM INSTALLATION WITH COLOUR (SUBSCRIPTION) (120 MINS) $0.00",
         "label_color": "a82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "R655CCU46N5J2VUF3FRPVTEI",
         "variations": [
@@ -1772,9 +1798,9 @@
     {
       "type": "ITEM",
       "id": "XXV2DTJHUXMI6OVN5OQGSJTC",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-09-26T18:46:38.233Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
@@ -1782,6 +1808,7 @@
         "description": "for subscription clients",
         "abbreviation": "PR",
         "label_color": "ffa82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "R655CCU46N5J2VUF3FRPVTEI",
         "variations": [
@@ -1830,14 +1857,15 @@
     {
       "type": "ITEM",
       "id": "BJQWTBWEG2MOBGQQDENR4VNQ",
-      "updated_at": "2022-12-01T17:32:32.571Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:20:55.078Z",
-      "version": 1669915952571,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "PROGRAM MAINTENANCE WITH COLOUR (SUBSCRIPTION) (90 MINS) $0.00",
         "label_color": "a82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "R655CCU46N5J2VUF3FRPVTEI",
         "variations": [
@@ -1884,15 +1912,16 @@
     {
       "type": "ITEM",
       "id": "WKCAPDPIN3VZ5NHCQZFGGQZM",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-19T20:13:37.763Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "PROGRAM PURCHASE",
         "abbreviation": "P",
         "label_color": "a82ee5",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "R655CCU46N5J2VUF3FRPVTEI",
         "tax_ids": [
@@ -1938,9 +1967,9 @@
     {
       "type": "ITEM",
       "id": "4ZNNX643XDSNVTECX3G5C2BZ",
-      "updated_at": "2022-11-17T17:07:10.422Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:52:44.475Z",
-      "version": 1668704830422,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -1956,6 +1985,7 @@
         "name": "SYSTEM TEMPLATE (25 MINS) $30.00",
         "abbreviation": "Sy",
         "label_color": "ff4ab200",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "KYEHUUDWR5NEVDVGK2NOS2G4",
         "tax_ids": [
@@ -2004,10 +2034,84 @@
     },
     {
       "type": "ITEM",
+      "id": "PMDWDVMG4S3NDFN57SR7YS36",
+      "updated_at": "2023-01-12T18:51:40.936Z",
+      "created_at": "2023-01-12T18:51:40.936Z",
+      "version": 1673549500936,
+      "is_deleted": false,
+      "catalog_v1_ids": [
+        {
+          "catalog_v1_id": "709873d3-cd45-4b6f-a957-ef9b07102a8f",
+          "location_id": "9G03BN2CFZ26B"
+        }
+      ],
+      "present_at_all_locations": false,
+      "present_at_location_ids": [
+        "9G03BN2CFZ26B"
+      ],
+      "item_data": {
+        "name": "Tip",
+        "abbreviation": "Ti",
+        "label_color": "ff9da2a6",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "tax_ids": [
+          "E4SBR2GAODYVBXYA2MIQY7GD"
+        ],
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "QZCUET3WBYTMWVG6YSI6KWNY",
+            "updated_at": "2023-01-12T18:51:40.936Z",
+            "created_at": "2023-01-12T18:51:40.936Z",
+            "version": 1673549500936,
+            "is_deleted": false,
+            "catalog_v1_ids": [
+              {
+                "catalog_v1_id": "a0139b36-b0f4-4f4a-80f9-0afea20e5546",
+                "location_id": "9G03BN2CFZ26B"
+              }
+            ],
+            "present_at_all_locations": false,
+            "present_at_location_ids": [
+              "9G03BN2CFZ26B"
+            ],
+            "item_variation_data": {
+              "item_id": "PMDWDVMG4S3NDFN57SR7YS36",
+              "name": "Regular",
+              "ordinal": 0,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 0,
+                "currency": "CAD"
+              },
+              "service_duration": 1800000,
+              "price_description": "",
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMoH4cm1jf7SvtqH",
+                "LXvPYdp6BtOmBmSdijKE",
+                "TMqT8NhUTOfwukQA",
+                "TMkQ3HSM35efOqj3",
+                "TMlhUdVFTOudgWlH",
+                "TMq7JLHUVJojevIQ",
+                "TMMJIBL2jQ8JllXi",
+                "TMUxQDbohxenqPym"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE"
+      }
+    },
+    {
+      "type": "ITEM",
       "id": "HEVQWHE22GZ4LVPGC3UNCTLK",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T20:53:27.663Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -2023,6 +2127,7 @@
         "name": "VACATION / TIME OFF (WHOLE DAY / 480 MINS) $0.00",
         "abbreviation": "Va",
         "label_color": "ffb21212",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "CRJX42I37KOBFBFQ53XVSNZ2",
         "variations": [
@@ -2077,9 +2182,9 @@
     {
       "type": "ITEM",
       "id": "MPRDTWDR5K6XIEXIWFJCOTOJ",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-04T19:20:09.262Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -2095,6 +2200,7 @@
         "name": "WOMEN'S CONSULTATION (30 MINS) $20.00",
         "abbreviation": "W",
         "label_color": "ffe5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2148,9 +2254,9 @@
     {
       "type": "ITEM",
       "id": "5YLV4AIQVWWHSJDSYUKPQTN7",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T21:05:07.818Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -2166,6 +2272,7 @@
         "name": "WOMEN'S INSTALLATION (105 MINS) $160.00",
         "abbreviation": "W",
         "label_color": "ffe5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2219,14 +2326,15 @@
     {
       "type": "ITEM",
       "id": "YQ63XGBIQINIZMPS424RNL4O",
-      "updated_at": "2022-12-01T17:29:01.101Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-25T16:49:18.822Z",
-      "version": 1669915741101,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "WOMEN'S INSTALLATION WITH COLOUR (135 MINS) $190.00",
         "label_color": "e5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2270,9 +2378,9 @@
     {
       "type": "ITEM",
       "id": "MAUB66EEIADARQ7K27VYCNUP",
-      "updated_at": "2022-11-09T19:12:07.176Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-06-13T21:03:56.201Z",
-      "version": 1668021127176,
+      "version": 1674393699665,
       "is_deleted": false,
       "catalog_v1_ids": [
         {
@@ -2288,6 +2396,7 @@
         "name": "WOMEN'S MAINTENANCE (90 MINS) $130.00",
         "abbreviation": "W",
         "label_color": "ffe5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2341,15 +2450,16 @@
     {
       "type": "ITEM",
       "id": "SWE2TYCGUZFLNADXQAS7JT2C",
-      "updated_at": "2022-12-01T17:29:08.466Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-11T14:24:01.712Z",
-      "version": 1669915748466,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "WOMEN'S MAINTENANCE WITH COLOUR (120 MINS) $160.00",
         "abbreviation": "W",
         "label_color": "e5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2393,15 +2503,16 @@
     {
       "type": "ITEM",
       "id": "4BEL76YJA54YC3STS2LJAI2V",
-      "updated_at": "2022-12-01T17:20:35.888Z",
+      "updated_at": "2023-01-22T13:21:39.665Z",
       "created_at": "2022-10-07T14:29:35.225Z",
-      "version": 1669915235888,
+      "version": 1674393699665,
       "is_deleted": false,
       "present_at_all_locations": true,
       "item_data": {
         "name": "WOMEN'S MISCELLANEOUS (15 MINS)",
         "abbreviation": "W",
         "label_color": "e5457a",
+        "is_taxable": true,
         "visibility": "PRIVATE",
         "category_id": "VDIJ4PWVCEC6JEX4INMJ4FO3",
         "tax_ids": [
@@ -2473,6 +2584,7 @@
     "IEP5V722VW4VSGZM2MDCOUOG",
     "ZXXXBSJCPBRWBUKH24QGBOC2",
     "2KURQYRV6SJKS3O6NODHP3QT",
+    "QZCUET3WBYTMWVG6YSI6KWNY",
     "6B3X6ZMIVFCNRSHHSGISBSOX",
     "TWIT5EETLCLOIPKPC43SXKOE",
     "NTK7CBMVNAYYLOPWB5XYWJZR",
@@ -2480,40 +2592,5 @@
     "TFQ7ALHTNIZETVBSPQWAKM4K",
     "LJLJHWOMJFD4WYEC4ZHAO3LP",
     "3MFRBXFO7754UWO37VKBBJHZ"
-  ]
-}
-
-
-{
-  "team_members": [
-    {
-      "id": "TMWKP3N_BKSD9Xgb",
-      "is_owner": false,
-      "status": "ACTIVE",
-      "given_name": "Seller",
-      "family_name": "2",
-      "created_at": "2023-01-05T18:11:45Z",
-      "updated_at": "2023-01-05T18:11:45Z",
-      "assigned_locations": {
-        "assignment_type": "EXPLICIT_LOCATIONS",
-        "location_ids": [
-          "LH2NMP4RW2BRY"
-        ]
-      }
-    },
-    {
-      "id": "TMvqI27HYp_PHtLv",
-      "is_owner": true,
-      "status": "ACTIVE",
-      "given_name": "Sandbox",
-      "family_name": "Seller",
-      "email_address": "sandbox-merchant+nqo1tz1nzhrvmoicyxh4w76nigqowajz@squareup.com",
-      "phone_number": "+18668147879",
-      "created_at": "2022-06-08T14:41:37Z",
-      "updated_at": "2023-01-04T15:00:30Z",
-      "assigned_locations": {
-        "assignment_type": "ALL_CURRENT_AND_FUTURE_LOCATIONS"
-      }
-    }
   ]
 }
