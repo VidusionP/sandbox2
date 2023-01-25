@@ -1,177 +1,1635 @@
 {
-    "items": [
-      {
-        "type": "ITEM",
-        "id": "WYU2VOCRGAWVM2MHWWAM7JA2",
-        "updated_at": "2023-01-04T15:00:32.621Z",
-        "created_at": "2023-01-04T15:00:32.621Z",
-        "version": 1672844432621,
-        "is_deleted": false,
-        "present_at_all_locations": true,
-        "item_data": {
-          "name": "Men’s Haircut",
-          "is_taxable": true,
-          "ordinal": 2,
-          "variations": [
-            {
-              "type": "ITEM_VARIATION",
-              "id": "YJDFATQVTOPCCERF44FTP73E",
-              "updated_at": "2023-01-04T15:00:32.621Z",
-              "created_at": "2023-01-04T15:00:32.621Z",
-              "version": 1672844432621,
-              "is_deleted": false,
-              "present_at_all_locations": true,
-              "item_variation_data": {
-                "item_id": "WYU2VOCRGAWVM2MHWWAM7JA2",
-                "name": "Regular",
-                "pricing_type": "VARIABLE_PRICING",
-                "service_duration": 1800000,
-                "price_description": "Price Varies",
-                "available_for_booking": true,
-                "transition_time": 0,
-                "sellable": true,
-                "stockable": true,
-                "team_member_ids": [
-                  "TMvqI27HYp_PHtLv"
-                ]
-              }
+  "items": [
+    {
+      "type": "ITEM",
+      "id": "5XKXKIQBKL3ZMIJ2AM4VQXEW",
+      "updated_at": "2023-01-25T20:27:26.557Z",
+      "created_at": "2023-01-25T20:27:26.557Z",
+      "version": 1674678446557,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "INSTALLATION OF OTHER COMPANY - 1 TIME ONLY",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "4QVGYXZWUIO2FRQFOGIA46HL",
+            "updated_at": "2023-01-25T20:27:26.557Z",
+            "created_at": "2023-01-25T20:27:26.557Z",
+            "version": 1674678446557,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "5XKXKIQBKL3ZMIJ2AM4VQXEW",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 18000,
+                "currency": "CAD"
+              },
+              "service_duration": 6300000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
             }
-          ],
-          "product_type": "APPOINTMENTS_SERVICE"
-        }
-      },
-      {
-        "type": "ITEM",
-        "id": "LEUUFVSSCPXI765Z4BS3KWD2",
-        "updated_at": "2023-01-04T15:00:32.899Z",
-        "created_at": "2023-01-04T15:00:32.899Z",
-        "version": 1672844432899,
-        "is_deleted": false,
-        "present_at_all_locations": true,
-        "item_data": {
-          "name": "Shampoo Style",
-          "is_taxable": true,
-          "ordinal": 3,
-          "variations": [
-            {
-              "type": "ITEM_VARIATION",
-              "id": "FYM523QRBQHJDGBJWD4MRS4S",
-              "updated_at": "2023-01-04T15:00:32.899Z",
-              "created_at": "2023-01-04T15:00:32.899Z",
-              "version": 1672844432899,
-              "is_deleted": false,
-              "present_at_all_locations": true,
-              "item_variation_data": {
-                "item_id": "LEUUFVSSCPXI765Z4BS3KWD2",
-                "name": "Regular",
-                "pricing_type": "VARIABLE_PRICING",
-                "service_duration": 3600000,
-                "price_description": "Price Varies",
-                "available_for_booking": true,
-                "transition_time": 0,
-                "sellable": true,
-                "stockable": true,
-                "team_member_ids": [
-                  "TMvqI27HYp_PHtLv"
-                ]
-              }
-            }
-          ],
-          "product_type": "APPOINTMENTS_SERVICE"
-        }
-      },
-      {
-        "type": "ITEM",
-        "id": "EBBXFXPHBOI5JDFF75QA4J73",
-        "updated_at": "2023-01-05T20:00:58.661Z",
-        "created_at": "2023-01-04T15:00:32.563Z",
-        "version": 1672948858661,
-        "is_deleted": false,
-        "present_at_all_locations": true,
-        "item_data": {
-          "name": "Test",
-          "is_taxable": true,
-          "ordinal": 1,
-          "variations": [
-            {
-              "type": "ITEM_VARIATION",
-              "id": "CXXZZX3QDWLRDLXMXSWLEDXG",
-              "updated_at": "2023-01-05T20:00:58.661Z",
-              "created_at": "2023-01-04T15:00:32.563Z",
-              "version": 1672948858661,
-              "is_deleted": false,
-              "present_at_all_locations": true,
-              "item_variation_data": {
-                "item_id": "EBBXFXPHBOI5JDFF75QA4J73",
-                "name": "Regular",
-                "ordinal": 0,
-                "pricing_type": "FIXED_PRICING",
-                "price_money": {
-                  "amount": 20000,
-                  "currency": "CAD"
-                },
-                "service_duration": 2700000,
-                "price_description": "Price Varies",
-                "available_for_booking": true,
-                "transition_time": 0,
-                "sellable": true,
-                "stockable": true,
-                "team_member_ids": [
-                  "TMvqI27HYp_PHtLv",
-                  "TMWKP3N_BKSD9Xgb"
-                ]
-              }
-            }
-          ],
-          "product_type": "APPOINTMENTS_SERVICE"
-        }
-      },
-      {
-        "type": "ITEM",
-        "id": "LEEP6D5GPSDVJMKTFYS7WO7K",
-        "updated_at": "2023-01-04T15:00:32.465Z",
-        "created_at": "2023-01-04T15:00:32.465Z",
-        "version": 1672844432465,
-        "is_deleted": false,
-        "present_at_all_locations": true,
-        "item_data": {
-          "name": "Women’s Haircut",
-          "is_taxable": true,
-          "ordinal": 0,
-          "variations": [
-            {
-              "type": "ITEM_VARIATION",
-              "id": "EPW77MNJOUFFKMDY4GSRLXAR",
-              "updated_at": "2023-01-04T15:00:32.465Z",
-              "created_at": "2023-01-04T15:00:32.465Z",
-              "version": 1672844432465,
-              "is_deleted": false,
-              "present_at_all_locations": true,
-              "item_variation_data": {
-                "item_id": "LEEP6D5GPSDVJMKTFYS7WO7K",
-                "name": "Regular",
-                "pricing_type": "VARIABLE_PRICING",
-                "service_duration": 3600000,
-                "price_description": "Price Varies",
-                "available_for_booking": true,
-                "transition_time": 0,
-                "sellable": true,
-                "stockable": true,
-                "team_member_ids": [
-                  "TMvqI27HYp_PHtLv"
-                ]
-              }
-            }
-          ],
-          "product_type": "APPOINTMENTS_SERVICE"
-        }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
       }
-    ],
-    "cursor": "",
-    "matched_variation_ids": [
-      "YJDFATQVTOPCCERF44FTP73E",
-      "FYM523QRBQHJDGBJWD4MRS4S",
-      "CXXZZX3QDWLRDLXMXSWLEDXG",
-      "EPW77MNJOUFFKMDY4GSRLXAR"
-    ]
-  }
+    },
+    {
+      "type": "ITEM",
+      "id": "IKX453HN35XLR2ZFDBLIIBNN",
+      "updated_at": "2023-01-25T20:37:29.315Z",
+      "created_at": "2023-01-25T20:35:17.337Z",
+      "version": 1674679049315,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "INSTALLATION OF OTHER COMPANY - 1 TIME ONLY",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "YOCHI4PSYJKTQRWZE7I5KRHD",
+            "updated_at": "2023-01-25T20:35:17.337Z",
+            "created_at": "2023-01-25T20:35:17.337Z",
+            "version": 1674678917337,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "IKX453HN35XLR2ZFDBLIIBNN",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 18000,
+                "currency": "CAD"
+              },
+              "service_duration": 6300000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "5FDNCLIMZR7Z2X4ABWNLNZ7M",
+      "updated_at": "2023-01-25T20:20:41.767Z",
+      "created_at": "2023-01-25T20:07:01.196Z",
+      "version": 1674678041767,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S CONSULTATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "EEC6OA7MY3H6OE2LCC32LCGL",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "EJOFRYTXG4AZTMA5VRQIJ6EY",
+            "updated_at": "2023-01-25T20:07:01.196Z",
+            "created_at": "2023-01-25T20:07:01.196Z",
+            "version": 1674677221196,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "5FDNCLIMZR7Z2X4ABWNLNZ7M",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 2000,
+                "currency": "CAD"
+              },
+              "service_duration": 1800000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "YKHPET3OY3XS7A2EMIK4M5GF",
+      "updated_at": "2023-01-25T20:23:09.49Z",
+      "created_at": "2023-01-25T20:23:09.49Z",
+      "version": 1674678189490,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S FULL CAP MAINTENANCE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "QUPT4I42DRU3GZHYCFCVGIRA",
+            "updated_at": "2023-01-25T20:23:09.49Z",
+            "created_at": "2023-01-25T20:23:09.49Z",
+            "version": 1674678189490,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "YKHPET3OY3XS7A2EMIK4M5GF",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 12000,
+                "currency": "CAD"
+              },
+              "service_duration": 4500000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "SADMCYQ3L4WGCM32ZFPM33GZ",
+      "updated_at": "2023-01-25T20:23:47.333Z",
+      "created_at": "2023-01-25T20:23:47.333Z",
+      "version": 1674678227333,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S HAIR TRIM",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "RL64PVLSIFALWMRX4MRZGMCJ",
+            "updated_at": "2023-01-25T20:23:47.333Z",
+            "created_at": "2023-01-25T20:23:47.333Z",
+            "version": 1674678227333,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "SADMCYQ3L4WGCM32ZFPM33GZ",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 2500,
+                "currency": "CAD"
+              },
+              "service_duration": 900000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "STOHTELKAUBADKZMJFIMYRF4",
+      "updated_at": "2023-01-25T20:21:52.532Z",
+      "created_at": "2023-01-25T20:21:52.532Z",
+      "version": 1674678112532,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "J75LIWBGTSJX57UMDKYUMOIG",
+            "updated_at": "2023-01-25T20:21:52.532Z",
+            "created_at": "2023-01-25T20:21:52.532Z",
+            "version": 1674678112532,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "STOHTELKAUBADKZMJFIMYRF4",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 14000,
+                "currency": "CAD"
+              },
+              "service_duration": 5400000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "2REU7CZJJ4G2ADDWLE4KNQTQ",
+      "updated_at": "2023-01-25T20:29:47.527Z",
+      "created_at": "2023-01-25T20:29:47.527Z",
+      "version": 1674678587527,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S INSTALLATION WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "T7SZGAE3VBBJTJA7VF6OR6WI",
+            "updated_at": "2023-01-25T20:29:47.527Z",
+            "created_at": "2023-01-25T20:29:47.527Z",
+            "version": 1674678587527,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "2REU7CZJJ4G2ADDWLE4KNQTQ",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 17000,
+                "currency": "CAD"
+              },
+              "service_duration": 7200000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "KBSCFJ3XZJM7SWRQ34RKPNNF",
+      "updated_at": "2023-01-25T20:22:25.268Z",
+      "created_at": "2023-01-25T20:22:25.268Z",
+      "version": 1674678145268,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S MAINTENANCE SERVICE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "Q2EYMQTQ52MHZCNWAXW73S5X",
+            "updated_at": "2023-01-25T20:22:25.268Z",
+            "created_at": "2023-01-25T20:22:25.268Z",
+            "version": 1674678145268,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "KBSCFJ3XZJM7SWRQ34RKPNNF",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 10000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": false,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "LWO4FR6ECDLCZCC55JE32JVM",
+      "updated_at": "2023-01-25T20:29:06.301Z",
+      "created_at": "2023-01-25T20:29:06.301Z",
+      "version": 1674678546301,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S MAINTENANCE WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "OGNC2IWHSGQZQZJ3S4H6A6T3",
+            "updated_at": "2023-01-25T20:29:06.301Z",
+            "created_at": "2023-01-25T20:29:06.301Z",
+            "version": 1674678546301,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "LWO4FR6ECDLCZCC55JE32JVM",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 13000,
+                "currency": "CAD"
+              },
+              "service_duration": 5400000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "TUSPNZQKSVBIGPRQEFINWZCP",
+      "updated_at": "2023-01-25T20:28:32.442Z",
+      "created_at": "2023-01-25T20:28:32.442Z",
+      "version": 1674678512442,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S MISCELLANOUS",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "VPDR3ILLW3TNXYMMZPV2ZX6D",
+            "updated_at": "2023-01-25T20:28:32.442Z",
+            "created_at": "2023-01-25T20:28:32.442Z",
+            "version": 1674678512442,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "TUSPNZQKSVBIGPRQEFINWZCP",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "VARIABLE_PRICING",
+              "service_duration": 900000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "transition_time": 0,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "2DCYLGIQERCZEK7DA3M3NQ3F",
+      "updated_at": "2023-01-25T20:31:17.639Z",
+      "created_at": "2023-01-25T20:31:17.639Z",
+      "version": 1674678677639,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "MEN'S PARTIAL INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "5QTDQAF35OYGBJDLFTWMKY7O",
+            "updated_at": "2023-01-25T20:31:17.639Z",
+            "created_at": "2023-01-25T20:31:17.639Z",
+            "version": 1674678677639,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "2DCYLGIQERCZEK7DA3M3NQ3F",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 10000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "WYU2VOCRGAWVM2MHWWAM7JA2",
+      "updated_at": "2023-01-04T15:00:32.621Z",
+      "created_at": "2023-01-04T15:00:32.621Z",
+      "version": 1672844432621,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "Men’s Haircut",
+        "is_taxable": true,
+        "ordinal": 2,
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "YJDFATQVTOPCCERF44FTP73E",
+            "updated_at": "2023-01-04T15:00:32.621Z",
+            "created_at": "2023-01-04T15:00:32.621Z",
+            "version": 1672844432621,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "WYU2VOCRGAWVM2MHWWAM7JA2",
+              "name": "Regular",
+              "pricing_type": "VARIABLE_PRICING",
+              "service_duration": 1800000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "transition_time": 0,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "22QCZXHKYMEUB2KHJTVQ5FTM",
+      "updated_at": "2023-01-25T19:50:22.277Z",
+      "created_at": "2023-01-25T19:50:22.277Z",
+      "version": 1674676222277,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW MEN'S INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "LDULQ6H4ZFAOXZHUIOMI6K3C",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "3WRDXUMI7MXEBFIEJQ3WZVXQ",
+            "updated_at": "2023-01-25T19:50:22.277Z",
+            "created_at": "2023-01-25T19:50:22.277Z",
+            "version": 1674676222277,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "22QCZXHKYMEUB2KHJTVQ5FTM",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 14000,
+                "currency": "CAD"
+              },
+              "service_duration": 5400000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "FABMLA7LUFL3RECP3734YX4X",
+      "updated_at": "2023-01-25T19:52:14.521Z",
+      "created_at": "2023-01-25T19:52:14.521Z",
+      "version": 1674676334521,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW MEN'S INSTALLATION WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "LDULQ6H4ZFAOXZHUIOMI6K3C",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "Q3GP2KCQNTC5LESEALDKJBDC",
+            "updated_at": "2023-01-25T19:52:14.521Z",
+            "created_at": "2023-01-25T19:52:14.521Z",
+            "version": 1674676334521,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "FABMLA7LUFL3RECP3734YX4X",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 17000,
+                "currency": "CAD"
+              },
+              "service_duration": 7200000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "TP6IMWIYUUMKTWSCHLJXELGT",
+      "updated_at": "2023-01-25T19:59:51.096Z",
+      "created_at": "2023-01-25T19:59:51.096Z",
+      "version": 1674676791096,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW MEN'S MAINTENANCE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "LDULQ6H4ZFAOXZHUIOMI6K3C",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "AHAJSEEWN2WKEJ32PZ26JO4V",
+            "updated_at": "2023-01-25T19:59:51.096Z",
+            "created_at": "2023-01-25T19:59:51.096Z",
+            "version": 1674676791096,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "TP6IMWIYUUMKTWSCHLJXELGT",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 10000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "SSI5V6ZT7SZ25XIRCSREBW7J",
+      "updated_at": "2023-01-25T20:00:47.043Z",
+      "created_at": "2023-01-25T20:00:47.043Z",
+      "version": 1674676847043,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW MEN'S MAINTENANCE WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "LDULQ6H4ZFAOXZHUIOMI6K3C",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "U26N6VFLZKSFXCQNFQIRHVG2",
+            "updated_at": "2023-01-25T20:00:47.043Z",
+            "created_at": "2023-01-25T20:00:47.043Z",
+            "version": 1674676847043,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "SSI5V6ZT7SZ25XIRCSREBW7J",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 9000,
+                "currency": "CAD"
+              },
+              "service_duration": 7800000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "W57JPR6MIE4GC7WCOKSN36NG",
+      "updated_at": "2023-01-25T20:01:24.274Z",
+      "created_at": "2023-01-25T20:01:24.274Z",
+      "version": 1674676884274,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW MEN'S PARTIAL INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "LDULQ6H4ZFAOXZHUIOMI6K3C",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "5XP3NLXOWYSOO6ICH2RSAKW4",
+            "updated_at": "2023-01-25T20:01:24.274Z",
+            "created_at": "2023-01-25T20:01:24.274Z",
+            "version": 1674676884274,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "W57JPR6MIE4GC7WCOKSN36NG",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 10000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "KSRA3J3M6OYBXJSOOF4ZWSVX",
+      "updated_at": "2023-01-25T20:02:09.719Z",
+      "created_at": "2023-01-25T20:02:09.719Z",
+      "version": 1674676929719,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW WOMEN'S INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "4Q7X27CXXMAZZIKR4NGDDHIA",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "33GH64PSSVWSSY5PIHUUQJAA",
+            "updated_at": "2023-01-25T20:02:09.719Z",
+            "created_at": "2023-01-25T20:02:09.719Z",
+            "version": 1674676929719,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "KSRA3J3M6OYBXJSOOF4ZWSVX",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 16000,
+                "currency": "CAD"
+              },
+              "service_duration": 6300000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "SR3A3AR2IGWOFM4C2U2BE3IV",
+      "updated_at": "2023-01-25T20:03:06.027Z",
+      "created_at": "2023-01-25T20:03:06.027Z",
+      "version": 1674676986027,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW WOMEN'S INSTALLATION WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "4Q7X27CXXMAZZIKR4NGDDHIA",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "DR6GFFRRQR42R2GN5YNIW6UL",
+            "updated_at": "2023-01-25T20:03:06.027Z",
+            "created_at": "2023-01-25T20:03:06.027Z",
+            "version": 1674676986027,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "SR3A3AR2IGWOFM4C2U2BE3IV",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 19000,
+                "currency": "CAD"
+              },
+              "service_duration": 8100000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "2GRDSA5BDF4Z3QQRDCFETGDN",
+      "updated_at": "2023-01-25T20:04:26.153Z",
+      "created_at": "2023-01-25T20:04:26.153Z",
+      "version": 1674677066153,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW WOMEN'S MAINTENANCE WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "4Q7X27CXXMAZZIKR4NGDDHIA",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "A63SLKGS53GPCXBNOMBCMAQA",
+            "updated_at": "2023-01-25T20:04:26.153Z",
+            "created_at": "2023-01-25T20:04:26.153Z",
+            "version": 1674677066153,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "2GRDSA5BDF4Z3QQRDCFETGDN",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 16000,
+                "currency": "CAD"
+              },
+              "service_duration": 7200000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "443YMEIZVZHYXBCVFIC5I4Q4",
+      "updated_at": "2023-01-25T20:03:40.605Z",
+      "created_at": "2023-01-25T20:03:40.605Z",
+      "version": 1674677020605,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "NEW WOMEN'S MAINTENANCE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "4Q7X27CXXMAZZIKR4NGDDHIA",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "WTRFAPG5ORECMGHCNRSCVR36",
+            "updated_at": "2023-01-25T20:03:40.605Z",
+            "created_at": "2023-01-25T20:03:40.605Z",
+            "version": 1674677020605,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "443YMEIZVZHYXBCVFIC5I4Q4",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 13000,
+                "currency": "CAD"
+              },
+              "service_duration": 5400000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "L5YL4G3CR7MYUDWKOWLNBSXD",
+      "updated_at": "2023-01-25T20:31:57.555Z",
+      "created_at": "2023-01-25T20:31:57.555Z",
+      "version": 1674678717555,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "PERM OWN HAIR SERVICE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "2OKGUG2BNVQER6TZOKAXJ2KN",
+            "updated_at": "2023-01-25T20:31:57.555Z",
+            "created_at": "2023-01-25T20:31:57.555Z",
+            "version": 1674678717555,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "L5YL4G3CR7MYUDWKOWLNBSXD",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 5000,
+                "currency": "CAD"
+              },
+              "service_duration": 3000000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "VTQDZJVFE5U5UKJNXKYBDMVB",
+      "updated_at": "2023-01-25T20:24:19.301Z",
+      "created_at": "2023-01-25T20:24:19.301Z",
+      "version": 1674678259301,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "PERM SYSTEM SERVICE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "HKST3HVY33JWS46PZQ7XTUZJ",
+            "updated_at": "2023-01-25T20:24:19.301Z",
+            "created_at": "2023-01-25T20:24:19.301Z",
+            "version": 1674678259301,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "VTQDZJVFE5U5UKJNXKYBDMVB",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 5000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": false,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "WGBRYMSRZ2X2RMYWPOB5VQOA",
+      "updated_at": "2023-01-25T20:32:26.69Z",
+      "created_at": "2023-01-25T20:32:26.69Z",
+      "version": 1674678746690,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "PERM SYSTEM SERVICE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "T7V5FCMDRV7LWOSAUISALDWC",
+            "updated_at": "2023-01-25T20:32:26.69Z",
+            "created_at": "2023-01-25T20:32:26.69Z",
+            "version": 1674678746690,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "WGBRYMSRZ2X2RMYWPOB5VQOA",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 5000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "LEUUFVSSCPXI765Z4BS3KWD2",
+      "updated_at": "2023-01-05T20:44:13.176Z",
+      "created_at": "2023-01-04T15:00:32.899Z",
+      "version": 1672951453176,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "Shampoo Style",
+        "is_taxable": true,
+        "ordinal": 3,
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "FYM523QRBQHJDGBJWD4MRS4S",
+            "updated_at": "2023-01-05T20:44:13.176Z",
+            "created_at": "2023-01-04T15:00:32.899Z",
+            "version": 1672951453176,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "LEUUFVSSCPXI765Z4BS3KWD2",
+              "name": "Regular",
+              "ordinal": 0,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 5000,
+                "currency": "CAD"
+              },
+              "service_duration": 3600000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "transition_time": 0,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv",
+                "TMWKP3N_BKSD9Xgb"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "7LIFSQF5ZUD6COS73V666BIR",
+      "updated_at": "2023-01-25T20:32:47.281Z",
+      "created_at": "2023-01-25T20:32:47.281Z",
+      "version": 1674678767281,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "SYSTEM TEMPLATE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "Q7HIFCBSN6TKLKPKQ5P6PRGH",
+            "updated_at": "2023-01-25T20:32:47.281Z",
+            "created_at": "2023-01-25T20:32:47.281Z",
+            "version": 1674678767281,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "7LIFSQF5ZUD6COS73V666BIR",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 3000,
+                "currency": "CAD"
+              },
+              "service_duration": 1500000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "JU36WCQNG7RNZTWXNFLKNXXR",
+      "updated_at": "2023-01-25T20:26:00.022Z",
+      "created_at": "2023-01-25T20:26:00.022Z",
+      "version": 1674678360022,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "SYSTEM TEMPLATE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "E3A4SGZ2E6R4UIDM3SUQF4VN",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "6PT7MTSSFOZEHBC7SEFHXNVG",
+            "updated_at": "2023-01-25T20:26:00.022Z",
+            "created_at": "2023-01-25T20:26:00.022Z",
+            "version": 1674678360022,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "JU36WCQNG7RNZTWXNFLKNXXR",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 3000,
+                "currency": "CAD"
+              },
+              "service_duration": 1500000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "EBBXFXPHBOI5JDFF75QA4J73",
+      "updated_at": "2023-01-05T20:00:58.661Z",
+      "created_at": "2023-01-04T15:00:32.563Z",
+      "version": 1672948858661,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "Test",
+        "is_taxable": true,
+        "ordinal": 1,
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "CXXZZX3QDWLRDLXMXSWLEDXG",
+            "updated_at": "2023-01-05T20:00:58.661Z",
+            "created_at": "2023-01-04T15:00:32.563Z",
+            "version": 1672948858661,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "EBBXFXPHBOI5JDFF75QA4J73",
+              "name": "Regular",
+              "ordinal": 0,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 20000,
+                "currency": "CAD"
+              },
+              "service_duration": 2700000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "transition_time": 0,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv",
+                "TMWKP3N_BKSD9Xgb"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "SBQUDKJN7LHUG5CUUYMNOPD6",
+      "updated_at": "2023-01-25T20:20:48.761Z",
+      "created_at": "2023-01-25T20:07:17.948Z",
+      "version": 1674678048761,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S CONSULTATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "EEC6OA7MY3H6OE2LCC32LCGL",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "N5VFZOSNAOP7RCKAR5VMDDUZ",
+            "updated_at": "2023-01-25T20:07:17.948Z",
+            "created_at": "2023-01-25T20:07:17.948Z",
+            "version": 1674677237948,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "SBQUDKJN7LHUG5CUUYMNOPD6",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 2000,
+                "currency": "CAD"
+              },
+              "service_duration": 1800000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "RGTRHZXH5MEU4E5TM6FABNVM",
+      "updated_at": "2023-01-25T20:33:45.245Z",
+      "created_at": "2023-01-25T20:33:45.245Z",
+      "version": 1674678825245,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S INSTALLATION",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "F2FGW7LYWEEIU2KYSGEN4GOU",
+            "updated_at": "2023-01-25T20:33:45.245Z",
+            "created_at": "2023-01-25T20:33:45.245Z",
+            "version": 1674678825245,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "RGTRHZXH5MEU4E5TM6FABNVM",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 16000,
+                "currency": "CAD"
+              },
+              "service_duration": 6300000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "KEEX66X22ZC2XVOX6R4CW377",
+      "updated_at": "2023-01-25T20:36:54.624Z",
+      "created_at": "2023-01-25T20:36:54.624Z",
+      "version": 1674679014624,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S INSTALLATION WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "IXDWEQWGJP3E4GOCFNUQE7VS",
+            "updated_at": "2023-01-25T20:36:54.624Z",
+            "created_at": "2023-01-25T20:36:54.624Z",
+            "version": 1674679014624,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "KEEX66X22ZC2XVOX6R4CW377",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 19000,
+                "currency": "CAD"
+              },
+              "service_duration": 8100000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "FQF4PWF73JIXPWSSNM6WBMCN",
+      "updated_at": "2023-01-25T20:33:18.084Z",
+      "created_at": "2023-01-25T20:33:18.084Z",
+      "version": 1674678798084,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S MAINTENANCE",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "H4EWJ7DRNXP7Z3Q6KY4FFXPV",
+            "updated_at": "2023-01-25T20:33:18.084Z",
+            "created_at": "2023-01-25T20:33:18.084Z",
+            "version": 1674678798084,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "FQF4PWF73JIXPWSSNM6WBMCN",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 13000,
+                "currency": "CAD"
+              },
+              "service_duration": 5400000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "L3RE4T3CU5SBJIKHJSA27PH3",
+      "updated_at": "2023-01-25T20:36:22.802Z",
+      "created_at": "2023-01-25T20:36:22.802Z",
+      "version": 1674678982802,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S MAINTENANCE WITH COLOR",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "DTW6FDIQU2KTKNEUXXLERUWY",
+            "updated_at": "2023-01-25T20:36:22.802Z",
+            "created_at": "2023-01-25T20:36:22.802Z",
+            "version": 1674678982802,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "L3RE4T3CU5SBJIKHJSA27PH3",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 16000,
+                "currency": "CAD"
+              },
+              "service_duration": 7200000,
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "DVPI2ARSZSLKCSA5ZDVUXP6I",
+      "updated_at": "2023-01-25T20:34:20.109Z",
+      "created_at": "2023-01-25T20:34:20.109Z",
+      "version": 1674678860109,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "WOMEN'S MISCELLANOUS",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "category_id": "UAMDEDR7ISRHPLWXIRIN73UV",
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "7N7N7GSLZ6ELCJW62TKEVTNQ",
+            "updated_at": "2023-01-25T20:34:20.109Z",
+            "created_at": "2023-01-25T20:34:20.109Z",
+            "version": 1674678860109,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "DVPI2ARSZSLKCSA5ZDVUXP6I",
+              "name": "Regular",
+              "ordinal": 1,
+              "pricing_type": "VARIABLE_PRICING",
+              "service_duration": 900000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED"
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "LEEP6D5GPSDVJMKTFYS7WO7K",
+      "updated_at": "2023-01-04T15:00:32.465Z",
+      "created_at": "2023-01-04T15:00:32.465Z",
+      "version": 1672844432465,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "Women’s Haircut",
+        "is_taxable": true,
+        "ordinal": 0,
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "EPW77MNJOUFFKMDY4GSRLXAR",
+            "updated_at": "2023-01-04T15:00:32.465Z",
+            "created_at": "2023-01-04T15:00:32.465Z",
+            "version": 1672844432465,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "LEEP6D5GPSDVJMKTFYS7WO7K",
+              "name": "Regular",
+              "pricing_type": "VARIABLE_PRICING",
+              "service_duration": 3600000,
+              "price_description": "Price Varies",
+              "available_for_booking": true,
+              "transition_time": 0,
+              "sellable": true,
+              "stockable": true,
+              "team_member_ids": [
+                "TMvqI27HYp_PHtLv"
+              ]
+            }
+          }
+        ],
+        "product_type": "APPOINTMENTS_SERVICE"
+      }
+    }
+  ],
+  "cursor": "",
+  "matched_variation_ids": [
+    "4QVGYXZWUIO2FRQFOGIA46HL",
+    "YOCHI4PSYJKTQRWZE7I5KRHD",
+    "EJOFRYTXG4AZTMA5VRQIJ6EY",
+    "QUPT4I42DRU3GZHYCFCVGIRA",
+    "RL64PVLSIFALWMRX4MRZGMCJ",
+    "J75LIWBGTSJX57UMDKYUMOIG",
+    "T7SZGAE3VBBJTJA7VF6OR6WI",
+    "Q2EYMQTQ52MHZCNWAXW73S5X",
+    "OGNC2IWHSGQZQZJ3S4H6A6T3",
+    "VPDR3ILLW3TNXYMMZPV2ZX6D",
+    "5QTDQAF35OYGBJDLFTWMKY7O",
+    "YJDFATQVTOPCCERF44FTP73E",
+    "3WRDXUMI7MXEBFIEJQ3WZVXQ",
+    "Q3GP2KCQNTC5LESEALDKJBDC",
+    "AHAJSEEWN2WKEJ32PZ26JO4V",
+    "U26N6VFLZKSFXCQNFQIRHVG2",
+    "5XP3NLXOWYSOO6ICH2RSAKW4",
+    "33GH64PSSVWSSY5PIHUUQJAA",
+    "DR6GFFRRQR42R2GN5YNIW6UL",
+    "A63SLKGS53GPCXBNOMBCMAQA",
+    "WTRFAPG5ORECMGHCNRSCVR36",
+    "2OKGUG2BNVQER6TZOKAXJ2KN",
+    "HKST3HVY33JWS46PZQ7XTUZJ",
+    "T7V5FCMDRV7LWOSAUISALDWC",
+    "FYM523QRBQHJDGBJWD4MRS4S",
+    "Q7HIFCBSN6TKLKPKQ5P6PRGH",
+    "6PT7MTSSFOZEHBC7SEFHXNVG",
+    "CXXZZX3QDWLRDLXMXSWLEDXG",
+    "N5VFZOSNAOP7RCKAR5VMDDUZ",
+    "F2FGW7LYWEEIU2KYSGEN4GOU",
+    "IXDWEQWGJP3E4GOCFNUQE7VS",
+    "H4EWJ7DRNXP7Z3Q6KY4FFXPV",
+    "DTW6FDIQU2KTKNEUXXLERUWY",
+    "7N7N7GSLZ6ELCJW62TKEVTNQ",
+    "EPW77MNJOUFFKMDY4GSRLXAR"
+  ]
+}
