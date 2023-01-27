@@ -31,6 +31,9 @@
         max-width: 100% !important;
         padding: 0 !important;
     }
+    p {
+        margin: 0 !important;
+    }
     .page {
         margin: 0 !important;
         margin-bottom: 0 !important;
@@ -46,7 +49,8 @@
     .mobilePopup {
         position: absolute;
         height: 100vh;
-        z-index: 1111;
+        /* z-index: 1111; */
+        z-index: 2;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -166,6 +170,7 @@
         height: 30px;
         border: 1px solid #006cff;
         border-radius: 5px;
+        cursor: pointer;
     }
     .arrow use {
         fill: #006cff;
@@ -193,6 +198,7 @@
     .mobileText {
         font-weight: 500;
         font-size: 20px;
+        margin-bottom: 1.5rem !important;
     }
     .button3 {
         font-size: 18px;
@@ -343,6 +349,7 @@
     .bookingConfirm .title {
         font-size: 18px;
         font-weight: 600;
+        margin-bottom: 1.5rem !important;
     }
     .bookingConfirm .title2 {
         font-weight: 600;
@@ -352,6 +359,10 @@
     .bookingConfirm .para {
         margin: 10px 0;
         margin-left: 13px;
+    }
+    .serviceList4 {
+        overflow: auto;
+        height: 100%;
     }
     .oldClients {
         text-align: center;
@@ -375,6 +386,11 @@
         padding: 18px;
         margin-bottom: 10px;
         cursor: pointer;
+        font-weight: 500;
+        font-size: 15px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
     }
     .oldClients .back {
         margin: 15px 0;
@@ -387,6 +403,7 @@
         display: flex;
         background-color: #d9d9d9;
         border-radius: 25px;
+        margin-bottom: 20px;
     }
     .serviceList .top-list .item {
         border-radius: 25px;
@@ -421,14 +438,14 @@
         transform: translate(-50%, -50%);
         font-size: 40px;
     }
-    .page-button {
+    .page-button2 {
         width: 100%;
         padding: 0.9375rem 3.125rem 0.9375rem 1.25rem;
         text-align: start;
         position: relative;
         font-weight: 500;
     }
-    .page-button::after {
+    .page-button2::after {
         content: "<";
         display: block;
         position: absolute;
@@ -440,7 +457,7 @@
         width: 1.25rem;
         margin: -0.525rem 1.25rem 0;
     }
-    .page-button1::after {
+    .page-button2::after {
         content: "<";
         transform: rotate(-90deg) translateX(50%) translateY(2px);
     }
@@ -450,8 +467,9 @@
         padding: 15px;
         margin-top: 5px;
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: 1fr .5fr auto;
         cursor: pointer;
+        align-items: center;
     }
     .page-tab .list-item:hover {
         border: 1px solid #006cff;
@@ -461,15 +479,16 @@
     }
     .list-item.newClass {
         display: grid;
-        grid-template-columns: auto auto 1fr;
+        grid-template-columns: 1fr .5fr auto;
         position: relative;
         padding: 10px 0;
         padding-right: 25px;
         width: 100%;
+        align-items: center;
     }
     .newClass::after {
         content: "";
-        background-image: url(assets/img/gta/delete.png);
+        background-image: url(../../../assets/img/gta/delete.png);
         position: absolute;
         top: 50%;
         right: 0;
@@ -502,7 +521,7 @@
     }
     .serviceList .serviceBooking {
         height: 100%;
-        padding-bottom: 300px;
+        padding-bottom: 100px;
     }
     .serviceList .calendarMain li.inactive {
         text-align: center;
@@ -649,7 +668,7 @@
         padding: 10px 0;
         width: 80%;
         text-align: center;
-        margin: auto;
+        margin: auto !important;
     }
     .bookingTitle3 {
         display: none;
@@ -678,6 +697,7 @@
         font-weight: 600;
         text-align: start;
         font-size: 17px;
+        margin-bottom: 1.5rem !important;
     }
     .oldClientsCode .title {
         font-weight: 600;
@@ -964,13 +984,15 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        padding: 10px 20px;
+        padding: 35px 20px;
         width: 80%;
         max-width: 400px;
+        border-radius: 5px;
     }
     .accExistsOverlay1 .para {
         font-weight: 500;
         font-size: 18px;
+        margin-bottom: 1rem !important;
     }
     .accExistsOverlay1 .para:last-of-type {
         font-size: 14px;
@@ -979,12 +1001,18 @@
     .accExistsOverlay .para {
         font-weight: 500;
         font-size: 18px;
+        margin-bottom: 1.5rem !important;
+    }
+    .multiServiceDesktop {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 20px !important;
     }
     .sqLogin {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 5px;
+        /* gap: 5px; */
         margin-top: 8px;
     }
     .serviceImg {
@@ -1006,6 +1034,19 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        .serviceList .top-list {
+            margin-bottom: unset;
+        }
+        .serviceList .serviceBooking {
+            padding-bottom: 300px;
+        }
+        .page-tab .list-item {
+            grid-template-columns: .5fr 1fr 1fr;
+        }
+        .serviceList4 {
+                overflow: unset;
+                height: unset;
+            }
         .desktopConfirmation .block1 {
             border: 1px solid #888;
             border-radius: 5px;
@@ -1115,7 +1156,7 @@
             width: 100%;
             margin: auto;
             color: #000;
-            height: calc(100vh - 51px);
+            height: calc(100vh - 85.5px);
         }
         .gtaTop {
             display: none;
@@ -1153,6 +1194,9 @@
             justify-content: space-between;
             border-top: 1px solid #e7e7e7;
             padding: 20px 0;
+        }
+        .desktopBottom p {
+            cursor: pointer;
         }
         .mobileBottom {
             display: block;
@@ -1345,7 +1389,7 @@
             font-weight: 600;
             font-size: 16px;
         }
-        .page-button {
+        .page-button2 {
             padding: 0.9375rem 3.125rem 0.9375rem 5px;
         }
         .multiServiceSide {
@@ -1395,15 +1439,17 @@
             padding: 15px;
             margin: 10px 0;
             position: relative;
+            padding-right: 30px;
         }
         .multiServiceSide .multiServiceItem .trash {
-            background-image: url(assets/img/gta/delete.png);
+            background-image: url(../../../assets/img/gta/delete.png);
             position: absolute;
             top: 15px;
             right: 15px;
             width: 25px;
             height: 25px;
             background-repeat: no-repeat;
+            cursor: pointer;
         }
         .multiServiceItem .name {
             text-transform: uppercase;
@@ -1444,7 +1490,7 @@
             max-width: unset;
         }
         .squareupLogin .title {
-            margin: 30px 0;
+            margin: 30px 0 !important;
         }
         .oldClientsLogin.active {
             width: 500px;
@@ -1454,6 +1500,9 @@
             transform: translate(-50%, -50%);
         }
         .oldClients.active {
+            height: 100%;
+        }
+        .oldClients {
             height: 100%;
         }
         .clientProfile.active {
@@ -1466,7 +1515,7 @@
             height: 100%;
         }
         .calendarBlockMain {
-            height: 80%;
+            height: 65%;
             overflow-y: auto;
         }
         .serviceList .mobileBottom1 .next {
@@ -1527,7 +1576,7 @@
 <section class="gtaBookinPage">
     <div class="gtaTop" style="text-align: center;">
         <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-        <p>
+        <p style="margin-bottom: 1.5rem !important;">
             For more accurate results and a better service experience, we will carefully review booking requests and approve or make adjustments ASAP.<br />
             <span style="color: #377de7;">Online booking Directly Or call:<a style="color: #377de7;" href="tel:+19059171805">(905) 917-1805</a></span>
         </p>
@@ -1556,13 +1605,13 @@
             <div class="gtaFirstDesktop">
                 <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
                 <p class="bookingTitle2">Save Time And Money With Our Booking System</p>
-                <p class="bookingTitle3">Online Booking Directly</p>
+                <p class="bookingTitle3" style="margin-bottom: 1.5rem !important;">Online Booking Directly</p>
                 <button class="buttonApt bookingButton">Book Appointment</button>
                 <p class="bookingTitle3">or</p>
                 <p class="bookingTitle3">Call: (905) 917-1805</p>
             </div>
             <div style="text-align: center; margin: 20px 0;">
-                <p>Want to cancel your appointment?</p>
+                <p style="margin-bottom: 1.5rem !important;">Want to cancel your appointment?</p>
                 <a href="mailto:sales@superhairpieces.com"><button class="bookingButton1">Email Us</button></a>
             </div>
         </div>
@@ -1572,7 +1621,7 @@
             <div class="signIn_square">
                 <div class="block" style="width: 100%;">
                     <p class="text">Sign in to choose your preferences</p>
-                    <button class="button bookingButton sqLogin">Sign in / Sign up with <img style="width: 70px;" src="../../../assets/img/gta/Square_Logo_White.png" /></button>
+                    <button class="button bookingButton sqLogin">Sign in / Sign up with <img style="width: 85px;" src="../../../assets/img/gta/Square_Logo_White.png" /></button>
                 </div>
                 <div class="myAppts non-active" style="width: 100%;">
                     <button class="bookingButton loadButton">My Appointments</button>
@@ -1580,13 +1629,19 @@
                 </div>
             </div>
             <div>
-                <p>or</p>
-                <p>Choose a new service</p>
+                <p style="margin: 10px !important;">or</p>
+                <p style="margin-bottom: 1.5rem !important; font-size: 16px; font-weight: 500;">Choose a new service</p>
             </div>
             <div>
-                <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
-                <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
-                <div data-service="Consultation" class="button2">Consultation Services</div>
+                <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">
+                    <img style="width: 35px;" src="../../../assets/img/gta/men.png">
+                    Men Services</div>
+                <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">
+                    <img style="width: 35px;" src="../../../assets/img/gta/women.png">
+                    Women Services</div>
+                <div data-service="Consultation" class="button2">
+                    <img style="width: 35px;" src="../../../assets/img/gta/consultation.png">
+                    Consultation Services</div>
             </div>
             <div class="back">Back</div>
         </div>
@@ -1596,7 +1651,7 @@
         <div class="item stylist"><p>Select stylist</p></div>
     </div>
     <div class="serviceList non-active">
-        <div style="width: 80%; margin: auto; max-width: 1200px;">
+        <div class="serviceList4" style="width: 80%; margin: auto; max-width: 1200px;">
             <div class="bookingLoadbar four">
                 <div class="bookingLoad"></div>
                 <div class="bookingLoad"></div>
@@ -1604,7 +1659,7 @@
                 <div class="bookingLoad"></div>
             </div>
             <div class="gokutest" style="text-align: center;">
-                <p class="multiServiceDesktop">Service List</p>
+                <p class="multiServiceDesktop" style="margin-bottom: 1.5rem !important;">Service List</p>
                 <div class="loggedInDesktop non-active">
                     <p class="para">My Appointments</p>
                     <p class="para1">Sign Out</p>
@@ -1620,87 +1675,84 @@
                         <div class="list-mens list-services" style="position: relative;">
                             <span class="loader2"><span class="loader"></span></span>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Installation</button></p>
                                 <div class="page-test" style="max-height: 0;"><div id="C2IRZ4FGQXXHRF4IPAE4FEPI" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installationcolor" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Installation + Color</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="NYEURUEDOMZVW7EWSZHQVA35" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Maintenance</button></p>
                                 <div class="page-test" style="max-height: 0;"><div id="CTXTZZ5QEK66V6KFEK5W5CM2" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance + Color</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Maintenance + Color</button></p>
                                 <div class="page-test" style="max-height: 0;">
-                                    <div style="position: relative;" id="maintenancecolor" class="page-test1">
+                                    <div style="position: relative;" id="AUY47YMRD5D3XWSW55R3P3UM" class="page-test1">
                                         <div class="loader2"><div class="loader"></div></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Hair Trim</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Hair Trim</button></p>
                                 <div class="page-test" style="max-height: 0;"><div id="SBORZO5HJQ44HNVSJCBAPJQP" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Perm</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="perm" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Perm</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="4COPI64XBSXYW6BYVZHHV6WA" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">System Template</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="systemtemplate" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">System Template</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="HU4ALRUZQ4KW3Z5GLYCC6VO2" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Misc</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="misc" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Misc</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="HBPI327PFDDKGYQEPLF7NH25" class="page-test1"></div></div>
                             </div>
                         </div>
                         <div class="list-womens list-services non-active" style="position: relative;">
                             <span class="loader2"><span class="loader"></span></span>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Installation</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="M5DD2M3DQ32KCIYU77NK7PII" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installationcolor" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Installation + Color</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="JIMGAKVKNKEYSBYK7XQOPP53" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="maintenance" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Maintenance</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="26GPWKG45J2NUC6SE3L44QGN" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="maintenancecolor" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Maintenance + Color</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="EC3GQR7MOAACVLJCCOLRN7TR" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Perm</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Perm</button></p>
                                 <div class="page-test" style="max-height: 0;"><div id="perm" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">System Template</button></p>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">System Template</button></p>
                                 <div class="page-test" style="max-height: 0;"><div id="systemtemplate" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Misc</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="misc" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Misc</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="X24ORICP55L3LBZNID7QK2QO" class="page-test1"></div></div>
                             </div>
                         </div>
                         <div class="list-consult list-services non-active" style="position: relative;">
                             <span class="loader2"><span class="loader"></span></span>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Womens</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Womens</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="CP5O6JJLKRVR2QQNBROJFVWT" class="page-test1"></div></div>
                             </div>
                             <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Mens</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
+                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button2">Mens</button></p>
+                                <div class="page-test" style="max-height: 0;"><div id="DXXAQ46JUD7HTKAOSEQNYONU" class="page-test1"></div></div>
                             </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Online</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1712,7 +1764,7 @@
                 <div class="service"><img class="service-arrow non-active" src="../../../assets/img/gta/arrow-double.png" /></div>
                 <div class="total non-active"><span>Total</span><span class="price"></span></div>
                 <div class="pleaseSelect"></div>
-                <div style="display: flex; gap: 10px;">
+                <div class="testing1995" style="display: flex; gap: 10px;">
                     <button class="bookingButton1 backButton">Back</button><button class="bookingButton nextButton">Next</button><button class="bookingButton confirmButton loadButton non-active">Confirm</button>
                     <label style="text-align: center;" tabindex="0" for="submit-form2" class="bookingButton bookNowButton non-active">Book Now</label>
                 </div>
@@ -1761,7 +1813,7 @@
             <div id="service2" class="mobileMain mobileService2 non-active">
                 <p class="mobileText">What service do you need?</p>
                 <div class="gtaMobileService"><button id="Installation" class="bookingButton button3">Installation</button><button id="Maintenance" class="bookingButton button3">Maintenance</button></div>
-                <p style="font-weight: 400; font-size: 18px; margin-top: 50px;">Don't know what to do? Let's listen to our expert advices</p>
+                <p style="font-weight: 400; font-size: 18px; margin-top: 50px !important; margin-bottom: 1.5rem !important">Don't know what to do? Let's listen to our expert advices</p>
                 <button id="serviceCons" class="bookingButton button3">Consultation</button>
             </div>
             <div id="service3" class="mobileMain mobileService3 non-active">
@@ -1778,7 +1830,7 @@
                             <button style="color: #377de7;" class="backButton2 non-active">Back</button>
                         </div>
                     </div>
-                    <p style="color: #555;">
+                    <p style="color: #555; margin-bottom: 1.5rem !important;">
                         Any Questions?<br />
                         Please Call: (905) 917-1805
                     </p>
@@ -1824,7 +1876,7 @@
     <div class="bookingForm non-active">
         <div class="serviceBookingSide"></div>
         <div style="width: 100%;">
-            <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
+            <p style="font-weight: 600; font-size: 18px; margin-bottom: 1.5rem !important;">You're nearly done. Enter your details below.</p>
             <form id="myForm1">
                 <div style="display: flex; gap: 10px; margin-bottom: 10px;">
                     <select style="padding: 12px; border: 1px solid #d3d3d3; border-radius: 5px; width: auto;" name="country" id="country">
@@ -1841,21 +1893,21 @@
                 <div style="font-weight: 500;">
                     <input type="checkbox" id="vehicle3" name="vehicle3" required /><label> I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
                 </div>
-                <p style="margin-top: 19px; color: gray;">
-                    Refunds and cancellations are subject to the <a style="color: #006cff; text-decoration: none;" target="_blank">cancellation policy</a>of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their
+                <p style="margin-top: 19px !important; color: gray;  margin-bottom: 1.5rem !important;">
+                    Refunds and cancellations are subject to the <a style="color: #006cff; text-decoration: none;" target="_blank">cancellation policy</a> of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their
                     privacy practices.
                 </p>
-                <p style="color: gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
+                <p style="color: gray; margin-bottom: 1.5rem !important;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
                 <div class="submitFormButtons">
                     <input type="submit" id="submit-form1" class="hidden jenny" value="Book appointment" />
                     <div class="afterBooking non-active"></div>
                 </div>
-                <p style="color: gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
+                <p style="color: gray; margin-bottom: 1.5rem !important;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
             </form>
         </div>
     </div>
     <div class="mobileMain staffBooking non-active">
-        <p class="mobile" style="font-size: 18px; margin: 10px 0;">Hair Stylist</p>
+        <p class="mobile" style="font-size: 18px; margin: 10px 0 !important;">Hair Stylist</p>
         <p class="desktop">Select staff for</p>
         <div class="staffMembers">
             <div data-team-member-name="Any available" data-team-member-id="" class="bookingButton1 addNames1 loaded desktop1">
@@ -1868,7 +1920,7 @@
     <div class="serviceSide non-active">
         <div class="serviceSideServices">
             <div class="loader2"><div class="loader"></div></div>
-            <p>Select services and staff -<span class="serviceEdit" style="color: #006cff;">Edit</span></p>
+            <p>Select services and staff -<span class="serviceEdit" style="color: #006cff; cursor: pointer;">Edit</span></p>
             <div class="sideBar">
                 <div class="bookingName"></div>
                 <div class="bookingPrice"></div>
@@ -1877,7 +1929,7 @@
             </div>
         </div>
         <div class="serviceSideBooking">
-            <p>Date and time -<span class="timeEdit" style="color: #006cff;">Edit</span></p>
+            <p>Date and time -<span class="timeEdit" style="color: #006cff; cursor: pointer;">Edit</span></p>
             <div class="sideBar"><div class="bookingDate"></div></div>
         </div>
     </div>
@@ -1952,7 +2004,7 @@
                 <div class="signOutBlock"><div style="color: #006cff; font-weight: 400; cursor: pointer;">Sign out</div></div>
             </div>
             <div class="bottomBlock">
-                <p class="title">My appointments</p>
+                <p class="title" style="margin-bottom: 1.5rem !important;">My appointments</p>
                 <div class="apptList">
                     <div class="upcoming active">Upcoming</div>
                     <div class="past">Past</div>
@@ -1967,7 +2019,7 @@
                 </div>
             </div>
             <div style="margin-top: 20px; text-align: start;" class="profileBlock non-active">
-                <p style="font-weight: 600; font-size: 15px;">My profile</p>
+                <p style="font-weight: 600; font-size: 15px; margin-bottom: 1.5rem !important;">My profile</p>
                 <div>Please contact Superhairpieces.ca to update your contact information</div>
                 <div class="profileInfo">
                     <div class="block">
@@ -1987,7 +2039,7 @@
         </div>
     </div>
     <div class="squareupLogin non-active">
-        <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_Logo_Black.png" />
+        <img style="width: 200px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_Logo_Black.png" />
         <p class="title">Sign in to Superhairpieces.ca with Square Appointments</p>
         <div class="loginForm">
             <form id="loginForm">
@@ -2028,25 +2080,28 @@
                 <button class="button bookingButton sqLogin">Sign in / Sign up with <img style="width: 70px;" src="../../../assets/img/gta/Square_Logo_White.png" /></button>
             </div>
             <div class="myAppts non-active" style="width: 100%;">
-                <p style="text-align: start; font-weight: 500; font-size: 18px; margin: 0; margin-bottom: 15px;">Welcome,<span class="newName"></span></p>
+                <p style="text-align: start; font-weight: 500; font-size: 18px; margin: 0; margin-bottom: 15px !important;">Welcome,<span class="newName"></span></p>
                 <button class="bookingButton loadButton">My Appointments</button>
                 <div style="margin-top: 15px; color: #006cff;">Sign out</div>
             </div>
         </div>
         <div>
-            <p>or</p>
-            <p>Choose a new service</p>
+            <p style="margin: 10px !important;">or</p>
+            <p style="margin-bottom: 1.5rem !important; font-size: 16px; font-weight: 500;">Choose a new service</p>
         </div>
         <div>
-            <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
-            <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
-            <div data-service="Consultation" class="button2">Consultation Services</div>
+            <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">
+                <img style="width: 35px;" src="../../../assets/img/gta/men.png">Men Services</div>
+            <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">
+                <img style="width: 35px;" src="../../../assets/img/gta/women.png">Women Services</div>
+            <div data-service="Consultation" class="button2">
+                <img style="width: 35px;" src="../../../assets/img/gta/consultation.png">Consultation Services</div>
         </div>
         <div class="back back2">Back</div>
     </div>
     <div class="oldClientsCode non-active">
         <p style="text-align: start; color: #777; margin-bottom: 0;">Please check your inbox/spam for your code</p>
-        <p style="text-align: start; color: #777;">Please allow up to 5 minutes</p>
+        <p style="text-align: start; color: #777; margin-bottom: 1.5rem !important;">Please allow up to 5 minutes</p>
         <form id="codeLogin">
             <input class="signUpinput" name="code" placeholder="Enter Code Here" required />
             <div class="incorrectCode" style="height: 22px; color: red;"></div>
@@ -2056,8 +2111,8 @@
         <div style="margin-top: 10px;">Didn't receive a code? <span class="resend" style="color: #006cff; font-weight: 500; cursor: pointer;">Resend</span></div>
     </div>
     <div class="apptPast non-active">
-        <p class="title">Appointment passed</p>
-        <p class="para">This appointment has already ended. Please book a new appointmnet.</p>
+        <p class="title" style="margin-bottom: 1.5rem !important;">Appointment passed</p>
+        <p class="para" style="margin-bottom: 1.5rem !important;">This appointment has already ended. Please book a new appointmnet.</p>
         <button class="bookingButton">Book another</button>
     </div>
     <div class="apptDetails non-active">
@@ -2070,7 +2125,7 @@
                     <div class="name"></div>
                 </div>
             </div>
-            <div class="bottomBlock">
+            <div class="bottomBlock" style="margin-bottom: 1.5rem !important;">
                 <div class="date"></div>
                 <div class="service"></div>
                 <div class="address">
@@ -2079,7 +2134,7 @@
                     416-800-5056
                 </div>
             </div>
-            <p class="bookings">Book another appointment</p>
+            <p class="bookings" style="margin-bottom: 0.5rem !important;">Book another appointment</p>
             <p class="back">Back</p>
         </div>
     </div>
@@ -2091,7 +2146,7 @@
     </div>
     <div class="accExistsOverlay1 non-active">
         <div class="block">
-            <p class="para">Looks like you account already exists!</p>
+            <p class="para">Looks like your account already exists!</p>
             <p class="para">Please login to complete booking</p>
             <button class="bookingButton">Sign in</button>
         </div>
@@ -2113,6 +2168,9 @@
                 Mississauga, ON<br />
                 L5N 5Z4<br />
                 416-800-5056
+            </div>
+            <div id="apptNotesDesktop">
+
             </div>
         </div>
         <div class="bookBlock"><button class="bookingButton loadButton">Book</button></div>
@@ -2141,8 +2199,8 @@
     let totalTime = 0;
     let multiService = [];
     test5.setUTCHours(23, 59, 59, 0);
-    function checkAva(currTime, lastTime, serviceId, durationTotal) {
-        // console.log(lastTime)
+    function checkAva(currTime, lastTime, serviceId, durationTotal, value) {
+
         if (stylistName) {
             $(".serviceList .multiServiceSide .multiServiceStylist").remove();
             $(".serviceList .multiServiceSide .stylist").append(`
@@ -2160,7 +2218,10 @@
                 },
             });
         });
-        fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
+
+
+        // fetch(`https://shp-webserver-temp.glitch.me/sq-availability`, {
+        fetch(`http://localhost:3000/sq-availability`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -2174,7 +2235,6 @@
         })
             .then((r) => r.json())
             .then((r) => {
-                // multiService.push(r.availabilities);
                 $(".botss .nextButton").unbind("click");
                 $(".botss .backButton").unbind("click");
                 $(".mobileBottom1 .bookingButton.confirmButton").unbind("click");
@@ -2184,8 +2244,7 @@
                     let firstDate = r.availabilities[0];
                     let v = 0;
 
-                    // $('.calendarMain .loader2').addClass('non-active');
-                    // $('.calendarTest .loader2').addClass('non-active');
+
 
                     if (apps.length > 0) {
                         $(".currMonth").removeClass("active selected");
@@ -2205,7 +2264,6 @@
                         $(".currMonth.active").eq(0).addClass("selected");
                         let x = $(".currMonth.selected").attr("data-id");
                         let y = $(".currMonth.selected").attr("data-date");
-                        // calendarChange()
                         getCurrentDateAppointments(r.availabilities[x], apps, x, y);
                         if ($(window).width() > 1023) {
                             $(".multiServiceDesk .calendarTop .prev-arrow").addClass("disabled");
@@ -2257,11 +2315,11 @@
                         $(".bookNowButton").addClass("active");
                         $(".bookingConfirm").removeClass("active");
                         // $('.bookingForm').addClass('active');
+
                         $(".form1234").empty().append($(".bookingForm").eq(0).clone().addClass("active"));
                         $(".form1234 .bookingForm input[type=submit]").attr("id", "submit-form2");
 
                         $(".bookingLoad:not(.loaded):first").addClass("loaded");
-
                         $(".form1234 #myForm1").on("submit", function (e) {
                             e.preventDefault();
                             const serv = multiService[0];
@@ -2303,7 +2361,8 @@
                                 $("#myForm1 textarea").prop("disabled", true);
                                 $("#myForm1 button").prop("disabled", true);
                                 $(".mobilePopup .bookNowButton").addClass("loading");
-                                fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                                // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                                fetch(`http://localhost:3000/squareup-checkCustomer`, {
                                     method: "POST",
                                     headers: {
                                         accept: "application/json",
@@ -2316,6 +2375,7 @@
                                     .then((r) => r.json())
                                     .then((r) => {
                                         if (jQuery.isEmptyObject(r)) {
+                                            // console.log('Create Customer')
                                             createCustomer(x, "#myForm1");
                                         } else {
                                             $(".accExistsOverlay1").removeClass("non-active");
@@ -2328,7 +2388,7 @@
                                                 $(".accExistsOverlay1").addClass("non-active");
                                                 $(".serviceList").css("max-height", "0px");
                                                 $(".loader2").removeClass("non-active");
-                                                $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                                                $(".squareupLogin #loginForm").on("submit", checkCustomer);
                                                 localStorage.setItem("savedBooking", "savedBooking");
                                             });
                                         }
@@ -2343,7 +2403,9 @@
                 });
 
                 $(".botss .backButton").on("click", function () {
+
                     if ($(".form1234 .serviceBooking").hasClass("active")) {
+
                         $(".bookingLoad.loaded:last").removeClass("loaded");
 
                         $(".form1234").empty();
@@ -2354,6 +2416,7 @@
                         currMonth = new Date().getMonth();
                         calendarChange();
                     } else if ($(".form1234 .bookingConfirm").hasClass("active")) {
+
                         $(".serviceBooking .calendarTest .loader2").removeClass("non-active");
                         startTime = "";
                         $(".bookingLoad.loaded:last").removeClass("loaded");
@@ -2407,6 +2470,7 @@
                             getCurrentDateAppointments(r.availabilities[x], apps, x, y);
                         }
                         $(".staffMembers .addNames1").on("click", function () {
+                            console.log('testing')
                             duration = "";
                             startTime = "";
                             multiService = [];
@@ -2441,11 +2505,14 @@
                         });
                         $(".form1234 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
                         $(".form1234 .staffMembers div:first").removeClass("loaded");
+
                     } else if ($(".form1234 .bookingForm").hasClass("active")) {
+
                         $(".form1234").empty().append($(".bookingConfirm").eq(0).clone().addClass("active"));
                         $(".botss .bookNowButton").removeClass("active");
                         $(".botss .confirmButton").removeClass("non-active");
                     } else if (!$(".gokutest").hasClass("non-active")) {
+
                         $(".serviceList").css("max-height", `0px`);
                         $(".list-item").removeClass("active");
                         $(".service").empty();
@@ -2457,13 +2524,14 @@
                         serviceEnd1 = [];
                         serviceEnd = [];
                         $(".botss .nextButton").unbind("click");
-                        $(".page-button").removeClass("page-button1");
+                        $(".page-button2").removeClass("page-button3");
                         $(".page-test").removeClass("brand-add");
                         $(".page-test").css("max-height", "0px");
                     }
                 });
                 $(".botss .nextButton").on("click", function () {
                     if (localStorage.getItem("email")) {
+                        console.log($('.apptNote'))
                         $(".serviceBooking .apptNote").removeClass("non-active");
                     } else {
                         $(".serviceBooking .apptNote").addClass("non-active");
@@ -2487,6 +2555,7 @@
                         $(".form1234 .calendarTop .next-arrow").removeClass("disabled");
                         $(".form1234 .calendarTop .next-arrow").on("click", nextMonth);
                         $(".staffMembers .addNames1").on("click", function () {
+
                             duration = "";
                             startTime = "";
                             multiService = [];
@@ -2583,6 +2652,7 @@
             });
     }
     function nextMonth() {
+        console.log(currMonth)
         duration = "";
         startTime = "";
         multiService = [];
@@ -2672,11 +2742,11 @@
         let checkClass = x.nextElementSibling.classList;
         if (checkClass.contains("brand-add")) {
             checkClass.remove("brand-add");
-            x.children[0].classList.remove("page-button1");
+            x.children[0].classList.remove("page-button3");
             x.nextElementSibling.style.maxHeight = "0";
         } else {
             checkClass.add("brand-add");
-            x.children[0].classList.add("page-button1");
+            x.children[0].classList.add("page-button3");
             x.nextElementSibling.style.maxHeight = setheight + "px";
         }
     }
@@ -2713,11 +2783,15 @@
     }
 
     function getCurrentDateAppointments(firstDate, apps, x, y) {
+        console.log(firstDate)
+        console.log(apps)
         if (apps.length > 0) {
             // $('.serviceList .calendarMain .loader2').addClass('non-active')
             $(".serviceList .calendarTest .loader2").addClass("non-active");
-
             const test2 = apps.filter((item) => item.startAt.includes(y));
+            // console.log(apps)
+            // console.log(test2)
+            // console.log(y)
             let date = new Date(test2[0].startAt).toLocaleString("en-us", { day: "numeric", weekday: "short", year: "numeric" });
             let vidu1 = new Date(test2[0].startAt).toLocaleString("en-us", { weekday: "short" });
             let vidu2 = new Date(test2[0].startAt).toLocaleString("en-us", { day: "numeric" });
@@ -2745,6 +2819,7 @@
             });
             $(".dayAvailable").html(fullDate);
         } else {
+            console.log('less')
         }
         $(".bookBut").on("click", function () {
             duration = $(this).data("duration");
@@ -2775,7 +2850,9 @@
                     // console.log(serviceEnd);
                     // console.log(stylist);
                     // console.log(startTime);
-                    serviceType1(serviceEnd, stylist, startTime);
+                    let value = $(".serviceBooking .apptNote").val();
+
+                    serviceType1(serviceEnd, stylist, startTime, value);
                     Array.from($(".gokutest").children()).forEach((item) => {
                         $(item).css("display", "none");
                     });
@@ -2826,6 +2903,8 @@
 
     function bookingSq(startDate, endDate, service, stylists) {
         // console.log(startDate, endDate, service, stylists)
+        console.log(startDate)
+        console.log(endDate)
         serviceEnd = service;
         let styleTest = [];
         service.forEach((item) => {
@@ -2836,8 +2915,10 @@
                 },
             });
         });
+        console.log(styleTest)
 
-        fetch("https://shp-webserver-temp.glitch.me/sq-availability", {
+        fetch(`http://localhost:3000/sq-availability`, {
+        // fetch("https://shp-webserver-temp.glitch.me/sq-availability", {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -2851,6 +2932,7 @@
         })
             .then((r) => r.json())
             .then((r) => {
+                console.log(r.availabilities)
                 let apps = r.availabilities;
                 let dateSelected = new Date().toLocaleString("en-us", { weekday: "short" });
 
@@ -2920,6 +3002,8 @@
     }
 
     function addNames() {
+        console.log('addnames')
+
         duration = "";
         startTime = "";
         multiService = [];
@@ -2951,6 +3035,9 @@
     }
 
     function addNames1() {
+        $(".calendarTop .next-arrow").unbind("click");
+            $(".calendarTop .prev-arrow").unbind("click");
+        
         duration = "";
         startTime = "";
         multiService = [];
@@ -2958,6 +3045,7 @@
         let lastTime = new Date(currYear, currMonth + 1, 0, 23, 59, 59);
         let currTime = date;
         let vidu = Math.abs(lastTime - currTime) / 36e5;
+
         if (vidu < 24) {
             lastTime = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
         }
@@ -2965,18 +3053,23 @@
             $(".multiServiceDesk1 .staffBooking").removeClass("active");
             $(".multiServiceDesk1").append($(".serviceBooking").eq(0).clone().addClass("active"));
         }
-
+        if (localStorage.getItem("email")) {
+                        $(".serviceBooking .apptNote").removeClass("non-active");
+                    } else {
+                        $(".serviceBooking .apptNote").addClass("non-active");
+                    }
         let memberId = $(this).data("team-member-id");
         stylist = memberId.split(",");
         stylistName = $(this).data("team-member-name");
 
         $(".staffMembers .addNames1").removeClass("loaded");
         $(this).addClass("loaded");
-
         checkAva(currTime, lastTime, serviceEnd1, totalTime);
     }
 
     function addNames2() {
+        console.log('addnames2')
+
         duration = "";
         startTime = "";
         multiService = [];
@@ -3000,10 +3093,13 @@
         let mon = date1.getMonth();
         let test5 = new Date(year, mon + 1, 0);
         test5.setUTCHours(23, 59, 59, 0);
-        if ($()) bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
+        calendarChange();
+         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
     }
 
     function addNames3() {
+        console.log('addnames3')
+
       if ($(window).width() > 1023) {
                             $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
                         }
@@ -3044,7 +3140,8 @@
                         }
     }
     function serviceType1(serviceEnd, stylist, startTime, note) {
-        fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        // fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        fetch(`http://localhost:3000/sq-servicetype`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -3053,6 +3150,7 @@
         })
             .then((r) => r.json())
             .then((r) => {
+                console.log($('mobilePopup .form123 .bookingConfirm'))
                 // $('.mobileBottom1 .bookingButton').html('Confirm')
                 $(".nextButton").addClass("non-active");
                 $(".nextButton").removeClass("active");
@@ -3061,6 +3159,11 @@
                 if (localStorage.getItem("email") && !$(".oldClients").hasClass("non-active")) {
                     $("#apptNotes").empty().append(note);
                     $(".bookingConfirm .notes").removeClass("non-active");
+                } else if (localStorage.getItem('email') && $(".oldClients").hasClass('active')) {
+                    if ($(window).width() > 1023) {
+                        $("#apptNotesDesktop").empty().append(note);
+
+                    }
                 }
                 serviceEnd.forEach((serv1) => {
                     r.items.forEach((item) => {
@@ -3143,6 +3246,8 @@
 
                                         $(".form123").empty().append($(".staffBooking").eq(0).clone().addClass("active"));
                                         $(".staffMembers .addNames1").on("click", function () {
+                console.log('heloo')
+
                                             duration = "";
                                             startTime = "";
                                             multiService = [];
@@ -3245,6 +3350,7 @@
 
                                         $(".form123").empty().append($(".staffBooking").eq(0).clone().addClass("active"));
                                         $(".staffMembers .addNames1").on("click", function () {
+
                                             duration = "";
                                             startTime = "";
                                             multiService = [];
@@ -3359,6 +3465,7 @@
         if ((serviceEnd, bookedStylist, startTime)) {
             $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
             $(".bookingLoadbar.four .bookingLoad:not(.loaded):first").addClass("loaded");
+            $('.mobilePopup .form123 .bookingConfirm .loader2').removeClass('non-active');
             $(".serviceBooking").removeClass("active");
             $(".staffBooking").removeClass("active");
             $(".mobilePopup1").addClass("mobileBookConfirm");
@@ -3415,7 +3522,9 @@
                 $("#myForm1 select").prop("disabled", true);
                 $("#myForm1 textarea").prop("disabled", true);
                 $("#myForm1 button").prop("disabled", true);
-                fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+                // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
                     method: "POST",
                     headers: {
                         accept: "application/json",
@@ -3461,7 +3570,7 @@
                                             $(".squareupLogin #loginForm input").prop("disabled", false);
                                             $(".requestButton").removeClass("loading");
 
-                                            $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                                            $(".squareupLogin #loginForm").on("submit", checkCustomer);
                                         });
                                     });
                                 }
@@ -3520,7 +3629,9 @@
             $("#myForm1 select").prop("disabled", true);
             $("#myForm1 textarea").prop("disabled", true);
             $("#myForm1 button").prop("disabled", true);
-            fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+            fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+            // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -3546,7 +3657,7 @@
                             if ($(window).width() > 1023) {
                                 if (localStorage.getItem("email")) {
                                     let setheight = $(".page").height();
-                                    console.log(setheight);
+                                    $('.form123').empty();
                                     $(".serviceList").css("max-height", `${setheight}px`);
                                     showService();
                                     $(".loggedInDesktop .para").on("click", { email: localStorage.getItem("email") }, clientInfo);
@@ -3571,7 +3682,7 @@
                                     $(".squareupLogin #loginForm input").prop("disabled", false);
                                     $(".requestButton").removeClass("loading");
 
-                                    $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                                    $(".squareupLogin #loginForm").on("submit", checkCustomer);
                                 }
                             }
                         });
@@ -3586,7 +3697,8 @@
             $(".newClients").removeClass("non-active");
         });
         $(".oldClientsCode.active .resend").on("click", function () {
-            fetch(`https://shp-webserver-temp.glitch.me/squareup-log`, {
+            fetch(`http://localhost:3000/squareup-log`, {
+            // fetch(`https://shp-webserver-temp.glitch.me/squareup-log`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -3643,7 +3755,9 @@
                             localStorage.setItem("customerId", customerId);
                             showService();
                             // $('.loggedInDesktop .para').on('click', {email:email}, clientInfo);
-                            $(".loggedInDesktop .para").on("click", { email: email }, clientInfo);
+
+                        }, 1500);
+                        $(".loggedInDesktop .para").on("click", { email: email }, clientInfo);
                             $(".loggedInDesktop .para1").on("click", function () {
                                 console.log("Sign out");
                                 localStorage.removeItem("email");
@@ -3654,7 +3768,6 @@
                                 $(".newClients").removeClass("non-active");
                                 $(".serviceList").css("max-height", "0px");
                             });
-                        }, 1500);
                     } else {
                         setTimeout(function () {
                             $(".oldClients").empty().append($(".oldClientsLogin").eq(0).clone().addClass("active"));
@@ -3675,7 +3788,7 @@
                                     $(".squareupLogin #loginForm input").prop("disabled", false);
                                     $(".requestButton").removeClass("loading");
 
-                                    $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                                    $(".squareupLogin #loginForm").on("submit", checkCustomer);
                                 });
                             });
                             $(".oldClients .button2").on("click", showService);
@@ -3697,7 +3810,9 @@
     function clientInfo(e) {
         let email = e.data.email;
         $(".oldClientsLogin .myAppts .loadButton").addClass("loading");
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -3723,7 +3838,10 @@
             });
     }
     function getAppointments(id, email) {
-        fetch(`https://shp-webserver-temp.glitch.me/customerCustomAttributes`, {
+        // console.log(id)
+        // console.log(email)
+        // fetch(`https://shp-webserver-temp.glitch.me/customerCustomAttributes`, {
+        fetch(`http://localhost:3000/customerCustomAttributes`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -3735,11 +3853,14 @@
         })
             .then((r) => r.json())
             .then((r) => {
+                console.log(r.customAttributes[0])
                 retrieveBookings(r.customAttributes[0].value, email);
             });
     }
     function serviceName(id) {
-        return fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        return fetch(`http://localhost:3000/sq-servicetype`, {
+
+        // return fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -3748,17 +3869,22 @@
         })
             .then((r) => r.json())
             .then((data) => {
+                return data;
+                // console.log('hello')
                 // console.log(r.items)
                 // console.log(data.items)
                 // const vidu = r.items.filter((item) => item.itemData.variations[0].id == id)
                 // let name = vidu[0].itemData.name
-                return data;
-            });
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
     async function retrieveBookings(id, email) {
         // console.log(id.split(','))
         // console.log(id)
         // console.log(email)
+        // console.log('hello')
         if (id) {
             $(".appointmentList .upcomingList .apptBlock").remove();
             $(".appointmentList .pastList .apptBlock").remove();
@@ -3766,7 +3892,8 @@
             await Promise.all(
                 id.split(",").map(async (item) => {
                     setTimeout(function () {
-                        fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
+                        // fetch(`https://shp-webserver-temp.glitch.me/retrieveBooking`, {
+                        fetch(`http://localhost:3000/retrieveBooking`, {
                             method: "POST",
                             headers: {
                                 accept: "application/json",
@@ -3794,7 +3921,6 @@
                                 // console.log(time2)
                                 serviceName()
                                     .then((item1) => {
-                                        // console.log(r)''
 
                                         $(`.appointmentList ${durationMins > currentTime ? `.upcomingList` : `.pastList`}`).append(`
           <div id='${r.booking.id}' class='apptBlock'>
@@ -3864,7 +3990,8 @@
                                         });
                                     })
                                     .then(() => {
-                                        let x = $(".oldClients .clientProfile .bottomBlock .upcomingList").children().length;
+                                        setTimeout(() => {
+                                            let x = $(".oldClients .clientProfile .bottomBlock .upcomingList").children().length;
                                         let y = $(".oldClients .clientProfile .bottomBlock .pastList").children().length;
                                         // console.log(x);
                                         // console.log(y);
@@ -3881,7 +4008,9 @@
                                         } else {
                                             $(".oldClients .upcomingList .noPast").addClass("non-active");
                                             $(".oldClients .pastList .loader2").addClass("non-active");
-                                        }
+                                        } 
+                                        }, 1500)
+
                                     });
                             });
                     }, 500);
@@ -3945,26 +4074,30 @@
                 $(".squareupLogin #loginForm .requestButton").removeClass("loading");
                 $(".squareupLogin #loginForm input").prop("disabled", false);
                 $(".requestButton").removeClass("loading");
-                $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                $(".squareupLogin #loginForm").on("submit", checkCustomer);
             } else {
                 $(".oldClients").empty().append($(".oldClientsLogin").eq(0).clone().addClass("active"));
 
                 $(".oldClientsLogin .signIn_square .block").removeClass("non-active");
                 $(".oldClientsLogin .myAppts").removeClass("active");
+                if (!$._data($(".oldClients .button2").get(0), "events")) {
+                    $(".oldClients .button2").on("click", showService);
+                }
                 $(".oldClientsLogin .signIn_square .sqLogin").on("click", function () {
                     $(".oldClients").empty().append($(".squareupLogin").eq(0).clone().addClass("active"));
                     $(".squareupLogin #loginForm .requestButton").removeClass("loading");
                     $(".squareupLogin #loginForm input").prop("disabled", false);
                     $(".requestButton").removeClass("loading");
-
-                    $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                    $(".squareupLogin #loginForm").on("submit", checkCustomer);
                 });
             }
         });
 
         if (!$._data($(".oldClients .viewProfile").get(0), "events")) {
             $(".clientProfile .viewProfile").on("click", function () {
-                fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+                fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+                // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
                     method: "POST",
                     headers: {
                         accept: "application/json",
@@ -4003,10 +4136,12 @@
         e.preventDefault();
         $(".squareupLogin #loginForm .accountExistence").html(``);
         $(".squareupLogin #loginForm input").prop("disabled", true);
-        $(".squareuplogin .requestButton").addClass("loading");
+        $(".squareupLogin .requestButton").addClass("loading");
 
         let email = $(".oldClients .squareupLogin [name=email]").val();
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4020,7 +4155,7 @@
             .then((r) => {
                 if (jQuery.isEmptyObject(r)) {
                     $(".squareupLogin #loginForm .accountExistence").html(`Account does not exist. Please sign up!`);
-                    $(".squareuplogin .requestButton").removeClass("loading");
+                    $(".squareupLogin .requestButton").removeClass("loading");
                     $(".squareupLogin #loginForm input").prop("disabled", false);
 
                     // createCustomer(x, "#myForm")
@@ -4043,8 +4178,9 @@
             document.querySelector("#loginForm [name='email']").reportValidity();
         } else {
             let email = $("#loginForm [name='email']").val();
+            fetch(`http://localhost:3000/squareup-log`, {
 
-            fetch(`https://shp-webserver-temp.glitch.me/squareup-log`, {
+            // fetch(`https://shp-webserver-temp.glitch.me/squareup-log`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -4103,7 +4239,9 @@
             document.querySelector("#myForm1 [name='number']").reportValidity();
         } else {
             $(".mobilePopup .bookNowButton").addClass("loading");
-            fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+            fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+            // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
                 method: "POST",
                 headers: {
                     accept: "application/json",
@@ -4149,8 +4287,9 @@
         // $("button").prop("disabled", "disabled");
         // $(".e-submit .e-content input").prop("readonly", true);
         // $("button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="20px" height="20px"/>`)
+        fetch(`http://localhost:3000/squareup-checkCustomer`, {
 
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4174,7 +4313,9 @@
         let form = e.data.id;
         e.preventDefault();
         $(".squareupSignupForm #signupForm .bookingButton").addClass("loading");
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
+        fetch(`http://localhost:3000/squareup-checkCustomer`, {
+
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-checkCustomer`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4187,7 +4328,8 @@
             .then((r) => r.json())
             .then((r) => {
                 if (jQuery.isEmptyObject(r)) {
-                    fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+                    fetch(`http://localhost:3000/squareup-createCustomer`, {
+                    // fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
                         method: "POST",
                         headers: {
                             accept: "application/json",
@@ -4221,7 +4363,9 @@
             });
     }
     function createCustomer(x, form) {
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
+        fetch(`http://localhost:3000/squareup-createCustomer`, {
+
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-createCustomer`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4236,7 +4380,11 @@
         })
             .then((r) => r.json())
             .then((r) => {
-                // console.log(r)
+                console.log(r)
+                localStorage.setItem("email", r.customer.emailAddress);
+                localStorage.setItem("name", r.customer.givenName);
+                localStorage.setItem("lastName", r.customer.familyName);
+                localStorage.setItem("customerId", r.customer.id);
                 setTimeout(() => {
                     createBooking(r.customer.id, x, form, r.customer);
                 }, 1000);
@@ -4254,7 +4402,8 @@
         } else {
             notes = $(`.bookingForm.active ${form} textarea[name=appNotes]`).val();
         }
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-createBooking`, {
+        fetch(`http://localhost:3000/squareup-createBooking`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4270,8 +4419,9 @@
         })
             .then((r) => r.json())
             .then((r) => {
+                console.log(r)
                 let results = customerInfo;
-                console.log("created booking");
+                // console.log("created booking");
                 if ($(".newClients").hasClass("non-active")) {
                     setTimeout(function () {
                         $(".loader2").removeClass("non-active");
@@ -4286,24 +4436,30 @@
                             getAppointments(results, localStorage.getItem("email"));
                             $(".serviceList").css("max-height", "0px");
                         } else {
+                            $(".serviceList").css("max-height", "0px");
+
                             let first = localStorage.getItem("name");
                             let last = localStorage.getItem("lastName");
 
                             $(".oldClients").empty().append($(".clientProfile").eq(0).clone().addClass("active"));
+                            $("oldClients .clientProfile .upcomingList .loader2").addClass("non-active");
+                            $('.form1234').empty();
+                            $('.serviceList .gokutest').removeClass('non-active');
+                            $('.serviceList .bookingLoad').removeClass('loaded');
                             $(".clientProfile .topBlock .initial").append(`${first[0]}${last[0]}`);
                             $(".clientProfile .topBlock .name").append(`${first} ${last}`);
                             // getAppointments(results.id, localStorage.getItem('email'));
                             setTimeout(() => {
-                                getAppointments(results, localStorage.getItem("email"));
+                                getAppointments(id, localStorage.getItem("email"));
                             }, 1000);
 
-                            $(".serviceList").css("max-height", "0px");
-                            $(".upcomingList .loader2").addClass("non-active");
                         }
                     }, 1500);
-                    $(".serviceList .botss").empty();
+                    Array.from($(".serviceList .botss .testing1995").children()).forEach((item) => {
+                        $(item).css("display", "none");
+                    });
                     $(".serviceList .botss").append(`
-        <div style='text-align:center;' class='bookingButton'>Booked</div>
+        <div style='text-align:center;' class='bookingButton oldBooked'>Booked</div>
         `);
                 } else {
                     setTimeout(function () {
@@ -4316,12 +4472,23 @@
                         localStorage.setItem("email", results.emailAddress);
                         localStorage.setItem("name", results.givenName);
                         localStorage.setItem("lastName", results.familyName);
-
                         localStorage.setItem("customerId", results.id);
                         $(".mobilePopup").css("max-height", "0px");
                         $(".newClients").addClass("non-active");
                         $(".oldClients").removeClass("non-active");
-                    }, 1500);
+
+                    }, 2500);
+                    $(".loggedInDesktop .para").on("click", { email: localStorage.getItem("email") }, clientInfo);
+                        $(".loggedInDesktop .para1").on("click", function () {
+                            console.log("Sign out");
+                            localStorage.removeItem("email");
+                            localStorage.removeItem("name");
+                            localStorage.removeItem("lastName");
+                            $(".oldClients").removeClass("active");
+                            $(".oldClients").addClass("non-active");
+                            $(".newClients").removeClass("non-active");
+                            $(".serviceList").css("max-height", "0px");
+                        });
                     $(".mobilePopup .bots").empty();
                     $(".mobilePopup .bots").append(`
         <div style='text-align:center;' class='bookingButton'>Booked</div>
@@ -4334,9 +4501,21 @@
             });
     }
     function showService(e) {
+        console.log($('.botss .service .list-item.newClass'))
+        $('.botss .oldBooked').remove();
+        Array.from($(".serviceList .botss .testing1995").children()).forEach((item) => {
+            $(item).css("display", "");
+        });
+        console.log(total)
+        $('.botss .service .list-item.newClass').unbind('click')
+        $('.botss .service').removeClass('non-active');
+        $('.botss .service .list-item').remove();
+        $('.botss .bookingButton').removeClass('loading').removeClass('active')
+        $('.botss .nextButton').addClass('active');
         serviceEnd1 = [];
         serviceEnd = [];
         stylistName = "";
+        total = "0.00";
         currMonth = new Date().getMonth();
         $(".gokutest .top-list").css("display", "");
         $(".gokutest .loggedInDesktop").css("display", "");
@@ -4347,7 +4526,7 @@
         $(".gokutest .multiServiceItem").remove();
         $(".gokutest .desktopConfirmation").removeClass("active");
         $(".list-item").unbind("click");
-
+        $(".list-item.newClass").unbind("click");
         let serviceType, serviceCate;
         if (e) {
             serviceType = e.target.getAttribute("data-service");
@@ -4371,6 +4550,7 @@
         $(".serviceList .mobileBottom1").addClass("active");
         $(".serviceList").css("max-height", `${setheight}px`);
         $(".serviceList .mobileBottom1 .backButton").on("click", function () {
+
             if (!$(".serviceList .gokutest").hasClass("non-active")) {
                 total = "";
                 duration = "";
@@ -4381,7 +4561,7 @@
                 totalTime = 0;
                 $(".serviceList").css("max-height", `0px`);
                 $(".list-item").remove();
-                $(".page-button").removeClass("page-button1");
+                $(".page-button2").removeClass("page-button3");
                 $(".page-test").removeClass("brand-add");
                 $(".page-test").css("max-height", "0px");
                 $(".list-mens").removeClass("non-active");
@@ -4400,12 +4580,15 @@
                     $(item).css("display", "");
                 });
             } else if (group.length < 3) {
-                console.log("serviceList");
+                $('.serviceList .multiServiceItem').remove();
                 $(".serviceList").css("max-height", "0px");
                 $(".oldClients").removeClass("active");
                 $(".newClients").removeClass("non-active");
                 $(".squareupLogin").removeClass("active");
                 $(".oldClientsLogin").removeClass("active");
+                $('.multiServiceItem').remove();
+                totalTime = 0;
+
             } else if ($(".serviceList .staffBooking").hasClass("active")) {
                 console.log("staff");
                 currMonth = new Date().getMonth();
@@ -4426,13 +4609,12 @@
                 $(".bookBut").removeClass("active3");
             } else if ($(".serviceList .serviceBooking").hasClass("active")) {
                 currMonth = new Date().getMonth();
-
+                calendarChange();
                 $(".multiServiceDesk1 .serviceBooking").remove();
 
                 $(".serviceList .staffBooking").addClass("active");
             } else if (!$(".serviceList .list-services").hasClass("non-active")) {
                 currMonth = new Date().getMonth();
-
                 duration = "";
                 startTime = "";
                 multiService = [];
@@ -4445,7 +4627,7 @@
                 $(".serviceList .multiServiceSide").remove();
                 $(".multiServiceItem").remove();
                 $(".list-item").remove();
-                $(".page-button").removeClass("page-button1");
+                $(".page-button2").removeClass("page-button3");
                 $(".page-test").removeClass("brand-add");
                 $(".page-test").css("max-height", "0px");
                 $(".list-mens").removeClass("non-active");
@@ -4466,7 +4648,7 @@
             $(".serviceList .multiServiceSide").remove();
             $(".multiServiceItem").remove();
             $(".list-item").remove();
-            $(".page-button").removeClass("page-button1");
+            $(".page-button2").removeClass("page-button3");
             $(".page-test").removeClass("brand-add");
             $(".page-test").css("max-height", "0px");
             $(".list-mens").removeClass("non-active");
@@ -4489,7 +4671,9 @@
             $(".serviceList .top-list .item").removeClass("active");
         }
         let selected = $(".serviceList .top-list").find(`:contains('${serviceType}')`);
-        fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
+        fetch(`http://localhost:3000/sq-servicetype`, {
+
+        // fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4500,14 +4684,13 @@
             .then((r) => {
                 servicesAvailable = r.items;
                 const vidu = r.items.filter((item) => item.itemData.categoryId == serviceCate);
-
+                $('.list-services .page-test .list-item').remove();
                 //SANDBOX
                 var testing1 = new Promise((resolve, reject) => {
                     servicesAvailable.forEach((item) => {
                         let product = item.itemData.variations[0];
                         const id = product.id;
                         const categoryId = item.itemData.categoryId;
-                        console.log(item.itemData)
                         const mins = product.itemVariationData.serviceDuration;
                         let cost = "";
                         cost = product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount / 100).toLocaleString("en-us", { style: "currency", currency: "USD" }) : "Price Varies";
@@ -4527,6 +4710,78 @@
                         </div>`);
                         }else if (categoryId == "SBORZO5HJQ44HNVSJCBAPJQP" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "NYEURUEDOMZVW7EWSZHQVA35" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "AUY47YMRD5D3XWSW55R3P3UM" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "4COPI64XBSXYW6BYVZHHV6WA" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "HU4ALRUZQ4KW3Z5GLYCC6VO2" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "HBPI327PFDDKGYQEPLF7NH25" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "M5DD2M3DQ32KCIYU77NK7PII" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "JIMGAKVKNKEYSBYK7XQOPP53" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "26GPWKG45J2NUC6SE3L44QGN" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "EC3GQR7MOAACVLJCCOLRN7TR" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "X24ORICP55L3LBZNID7QK2QO" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "CP5O6JJLKRVR2QQNBROJFVWT" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "DXXAQ46JUD7HTKAOSEQNYONU" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
                         <div>${item.itemData.name}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
@@ -4577,11 +4832,12 @@
                     }
                     $(".serviceList .staffMembers .addNames1").on("click", addNames1);
                     $(".mobileBottom1 .next").addClass("non-active");
-                    $(".list-mens .list-item").on("click", { lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable }, addService);
+                    $(".list-services .list-item").on("click", { lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable }, addService);
                     $(document).on("click", ".multiServiceItem", function () {
                         // let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
                     });
                     $(document).on("click", ".multiServiceItem .trash", function () {
+                        console.log('checl')
                         let check = $(this).parent().find(".price")[0].innerHTML == "Price Varies" ? "$0.00" : $(this).parent().find(".price")[0].innerHTML;
                         let x = serviceEnd1.indexOf(this.id);
                         if (x > -1) {
@@ -4589,6 +4845,8 @@
                             let self = this.id;
 
                             const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
+                            totalTime -= parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration)
+
                             Array.from($(".list-mens .list-item")).forEach((item) => {
                                 if (this.id == item.id) {
                                     $(item).bind("click", { lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable }, addService);
@@ -4604,12 +4862,23 @@
                         // total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ''));
                         // $('.botss .total .price').html(`$${total}.00`);
                         $(this).parent().remove();
-                        $(`.serviceList #${this.id}`).removeClass("active");
+                        // console.log($(`.list-services #${this.id}`))
+                        // console.log(this.id);
+                        // console.log($(`.serviceList #${this.id}`));
+                        // console.log($(`.list-item#${this.id}`))
+                
+                        // console.log($(`.serviceList .list-mens`))
+                        $('.serviceList').find(`#${this.id}`).removeClass("active");
                     });
-                    $(document).on("click", ".list-item.newClass", function () {
+                    $(document).off().on("click", ".list-item.newClass", function () {
+                        console.log('Deleting')
                         let check = $("> div:last-of-type", this).text() == "Price Varies" ? "$0.00" : $("> div:last-of-type", this).text();
                         let x = serviceEnd1.indexOf(this.id);
+                        // console.log(this.id)
+                        // console.log(serviceEnd1)
+                        // console.log(x)
                         if (x > -1) {
+
                             serviceEnd1.splice(x, 1);
                             let self = this.id;
 
@@ -4626,7 +4895,18 @@
                         total = parseFloat(total) - parseFloat(check.replace(/[$,]/g, ""));
                         $(".botss .total .price").html(`$${total}.00`);
                         this.remove();
-                        $(`.serviceList #${this.id}`).removeClass("active");
+                        $('.serviceList').find(`#${this.id}`).removeClass("active");
+                        if (serviceEnd1.length == 0) {
+                            $('.serviceList .botss .nextButton').unbind('click');
+                            $('.serviceList .botss .service-arrow').addClass('non-active');
+                            $('.serviceList .botss .total').removeClass('active');
+                        }
+                         if (serviceEnd1.length < 3)  {
+                            $('.serviceList .botss .service-arrow').addClass('non-active');
+
+                         }
+
+                        // $(`.serviceList #${this.id}`).removeClass("active");
                     });
 
                     if (!$._data($(".mobileBottom1 .desktopBottom .next").get(0), "events")) {
@@ -4644,6 +4924,16 @@
                 });
             });
         selected.addClass("active");
+        if (serviceType == 'Men') {
+            $('.list-services').addClass('non-active');
+            $('.list-mens').removeClass('non-active');
+        } else if (serviceType == 'Women') {
+            $('.list-services').addClass('non-active');
+            $('.list-womens').removeClass('non-active');
+        } else if (serviceType == 'Consultation') {
+            $('.list-services').addClass('non-active');
+            $('.list-consult').removeClass('non-active'); 
+        }
     }
     function addService(e) {
         let servicesAvailable = e.data.servicesAvailable;
@@ -4654,6 +4944,7 @@
         let serviceId = $(this).data("service-id");
         let self = this.id;
         if ($(`.botss .service #${self}`).length == 0) {
+
             let check = $("> div:last-of-type", this).text() == "Price Varies" ? "$0.00" : $("> div:last-of-type", this).text();
             total = parseFloat(total) + parseFloat(check.replace(/[$,]/g, ""));
             $(".botss .total .price").html(`$${total}.00`);
@@ -4663,17 +4954,32 @@
             $(".botss .service").append($(this).clone().addClass("newClass"));
             const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
             totalTime += parseInt(test[0].itemData.variations[0].itemVariationData.serviceDuration);
-
             if ($(".botss .service").children().length == 2) {
-                $(".botss .service").css("max-height", "107px");
+                // $(".botss .service").css("max-height", "107px");
                 $(".botss .service").css("overflow", "hidden");
-            } else if ($(".botss .service").children().length > 3) {
+            } else if ($(".botss .service").children().length == 3) {
+                let totalHeight = 0
+                
+                $('.botss .service').children().each(function() {
+                    totalHeight += $(this).outerHeight(true)
+                })
+                $(".botss .service").css("max-height", `${totalHeight}px`);
+
+            }else if ($(".botss .service").children().length > 3) {
+                let totalHeight = 0
+
+                $('.botss .service').children().slice(0,3).each(function() {
+                    totalHeight += $(this).outerHeight(true);
+                })
+
+                console.log(totalHeight)
                 $(".botss .service .service-arrow").removeClass("non-active");
                 $(".botss .service-arrow").on("click", function () {
                     if ($(".botss .service-arrow").hasClass("open")) {
                         $(".botss .service-arrow").css("transform", "rotate(0deg)");
 
-                        $(".botss .service").css("max-height", "107px");
+                        $(".botss .service").css("max-height", `${totalHeight}px`);
+
                         $(".botss .service-arrow").removeClass("open");
                     } else {
                         $(".botss .service-arrow").css("transform", "rotate(180deg)");
@@ -4744,10 +5050,11 @@
     }
 
 
-    window.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("DOMContentLoaded", function () {   
         $(".gtaTopSide").slick({
             dots: false,
             infinite: true,
+            lazyLoad: 'ondemand',
             arrows: false,
             mobileFirst: true,
             slidesToShow: 1,
@@ -4767,7 +5074,7 @@
         let color = false;
         $(".sqLogin").on("click", function () {
             $(".oldClients").empty().append($(".squareupLogin").eq(0).clone().addClass("active"));
-            $(".squareuplogin #loginForm").on("submit", checkCustomer);
+            $(".squareupLogin #loginForm").on("submit", checkCustomer);
             $(".squareupLogin .cancel").on("click", function () {
                 $(".oldClients").addClass("non-active");
                 $(".newClients").removeClass("non-active");
@@ -4779,12 +5086,16 @@
         });
 
         calendarChange();
+        
         $(".calendarTop .next-arrow").on("click", nextMonth);
         $(".oldClients .back").on("click", function () {
             $(".oldClients").addClass("non-active");
             $(".newClients").removeClass("non-active");
         });
-        fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
+
+
+        // fetch(`https://shp-webserver-temp.glitch.me/squareup-bookings1`, {
+        fetch(`http://localhost:3000/squareup-bookings1`, {
             method: "POST",
             headers: {
                 accept: "application/json",
@@ -4793,6 +5104,7 @@
         })
             .then((r) => r.json())
             .then((r) => {
+                console.log('hello2')
                 let ids = [];
                 r.team_member_booking_profiles.forEach((item) => {
                     currentStylers.push(item);
@@ -4818,7 +5130,9 @@
 
         $(".buttonApt").on("click", () => {
             localStorage.removeItem("savedBooking");
+            $('.form123').empty();
             let setheight = $(".page").height();
+            $('.mobilePopup1 .bookingLoad').removeClass("loaded");
             $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
             $(".mobileInitial").addClass("active");
             $(".mobileBottom").addClass("active");
@@ -4831,6 +5145,7 @@
             });
             if (!$._data($(".desktopBottom .newBack").get(0), "events")) {
                 $(".desktopBottom .newBack").on("click", function () {
+
                     if ($(".mobileInitial").hasClass("active")) {
                         $(".mobilePopup").css("max-height", "0px");
                         $(".mobileMain").removeClass("active");
@@ -4853,7 +5168,15 @@
                         $(".mobilePopup1 .bookingLoad.loaded:last").removeClass("loaded");
                         $(".form123 .staffBooking").removeClass("active");
                         $(".mobileService3").addClass("active");
-                    } else if ($(".form123 .serviceBooking").hasClass("active")) {
+                    } else if ($(".mobileSystem2").hasClass('active')){
+                        $(".mobilePopup1 .bookingLoad.loaded:last").removeClass("loaded");
+                        $(".mobileSystem2").removeClass('active');
+                        $(".mobileService").addClass('active');
+                    } else if ($(".mobileSystem3").hasClass('active')){
+                        $(".mobileSystem3").removeClass('active');
+                        $(".mobileSystem2").addClass('active');
+                    }
+                    else if ($(".form123 .serviceBooking").hasClass("active")) {
                         $(".mobilePopup1 .bookingLoad.loaded:last").removeClass("loaded");
                         $(".form123").empty().append($(".staffBooking").eq(0).clone().addClass("active"));
                         $(".staffMembers .addNames1").on("click", function () {
@@ -4962,7 +5285,7 @@
             } else if ($(".mobilePopup .mobileService2").hasClass("active")) {
                 $(".mobilePopup .mobileService2").removeClass("active");
                 $(".mobilePopup .mobileSystem").addClass("active");
-            } else if ($(".mobilePop .mobileService3").hasClass("active")) {
+            } else if ($(".mobilePopup .mobileService3").hasClass("active")) {
                 $(".mobilePopup .mobileService2").addClass("active");
                 $(".mobilePopup .mobileService3").removeClass("active");
                 serviceType = "";
@@ -5026,7 +5349,7 @@
                         $(".oldClients").empty().append($(".squareupSignupForm").eq(0).clone().addClass("active"));
                         $(".oldClients #signupForm").on("submit", { id: "#signupForm" }, createCustomer1);
                     });
-                    $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                    $(".squareupLogin #loginForm").on("submit", checkCustomer);
                 }
                 // showService()
                 // let setheight = $('.page').height();
@@ -5062,7 +5385,7 @@
                         $(".squareupLogin #loginForm input").prop("disabled", false);
                         $(".requestButton").removeClass("loading");
 
-                        $(".squareuplogin #loginForm").on("submit", checkCustomer);
+                        $(".squareupLogin #loginForm").on("submit", checkCustomer);
                     });
                 });
                 // console.log(localStorage.getItem('email'))
@@ -5070,6 +5393,7 @@
                 // console.log(localStorage.getItem('email'))
             }
             if (!$._data($(".oldClients .button2").get(0), "events")) {
+
                 $(".oldClients .button2").on("click", showService);
             }
         });
@@ -5131,12 +5455,12 @@
             if (serviceGender == "mens") {
                 var a = document.createElement("a");
                 a.target = "_blank";
-                a.href = "/men-hair-pieces-toupees/";
+                a.href = "/men/";
                 a.click();
             } else {
                 var a = document.createElement("a");
                 a.target = "_blank";
-                a.href = "/womens-hair-pieces-toppers-wigs/";
+                a.href = "/women/";
                 a.click();
             }
             // $('.mobileSystem').removeClass('active');
@@ -5196,6 +5520,8 @@
             }
 
             $(".staffMembers .addNames1").on("click", function () {
+                
+
                 if ($(window).width() > 1023) {
                     $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
                 }
@@ -5235,7 +5561,7 @@
                     $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
                 }
             });
-
+            
             $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
             $(".mobileBottom").removeClass("active");
             if ($(window).width() > 1023) {

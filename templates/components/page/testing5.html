@@ -1,2114 +1,3 @@
-<link rel="stylesheet" href="/content/css/slick.css" />
-<style>
-    .breadcrumbs {
-        display: none;
-    }
-    .body.page h1 {
-        display: none;
-    }
-    .css-1hcx8jb {
-        display: none !important;
-        font-size: 12px;
-    }
-    .page-heading {
-        padding-top: 4vh;
-    }
-    @media (min-width: 801px) and (max-width: 1149px) {
-        .body.page {
-            margin-top: 2.5rem !important;
-        }
-    }
-    .body.page {
-        padding: 0 !important;
-    }
-    body {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        overflow-y: scroll;
-        overflow-x: mensden;
-    }
-    .body.page .container {
-        max-width: 100% !important;
-        padding: 0 !important;
-    }
-    .page {
-        margin: 0 !important;
-        margin-bottom: 0 !important;
-        margin-top: 0 !important;
-        max-width: 100% !important;
-    }
-    .page-content.page-content--centered {
-        padding: 0 !important;
-        width: 100% !important;
-    }
-</style>
-<style>
-    .mobilePopup {
-        position: absolute;
-        height: 100vh;
-        z-index: 1111;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        transition: all 0.4s ease;
-        max-height: 0;
-        overflow: hidden;
-    }
-    .mobilePopup1 {
-        height: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 80%;
-        margin: auto;
-    }
-    .serviceList {
-        position: absolute;
-        height: 100vh;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        transition: all 0.4s ease;
-        max-height: 0;
-        overflow: hidden;
-    }
-    .bookingButton {
-        background-color: rgba(0, 108, 255, 1);
-        color: #fff;
-        width: 100%;
-        border-radius: 5px;
-        padding: 10px 0;
-        cursor: pointer;
-    }
-    .bookingButton1 {
-        border: 1px solid rgba(0, 108, 255, 1);
-        color: rgba(0, 108, 255, 1);
-        width: 100%;
-        border-radius: 5px;
-        padding: 10px 0;
-        text-decoration: none;
-    }
-    .bookingTitle {
-        font-weight: 500;
-        font-size: 24px;
-        color: #000;
-    }
-    .bookingLoadbar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 5px;
-        margin-top: 25px;
-    }
-    .bookingLoad {
-        height: 3px;
-        width: 100%;
-        background-color: #d9d9d9;
-    }
-    .bookingLoad.loaded {
-        background-color: #006cff;
-    }
-    .non-active {
-        display: none;
-    }
-    .active {
-        display: block;
-    }
-    .addNames {
-        width: 30px;
-        height: 30px;
-    }
-    .addNames .display_name {
-        width: 20px;
-        height: 20px;
-    }
-    .addNames .display_name:last-child {
-        position: relative;
-        top: -10px;
-        right: -10px;
-        border: 1px solid #fff;
-    }
-    .addNames1 {
-        display: grid;
-        grid-template-columns: 0.25fr 1fr;
-        align-items: center;
-        padding-left: 20px;
-        margin-bottom: 10px;
-        border: 1px solid #d9d9d9;
-        cursor: pointer;
-    }
-    .bookingButton1.addNames1:not(.loaded):hover {
-        border: 1px solid rgba(0, 106, 255, 0.72);
-    }
-    .salonist {
-        height: fit-content;
-        width: fit-content;
-        color: #000;
-    }
-    .display_name {
-        background-color: #006cff;
-        color: #fff;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        font-size: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .bookingButton1.loaded {
-        border: 2px solid #006cff;
-    }
-    .arrow {
-        width: 30px;
-        height: 30px;
-        border: 1px solid #006cff;
-        border-radius: 5px;
-    }
-    .arrow use {
-        fill: #006cff;
-    }
-    .arrow.disabled {
-        border: 1px solid #d9d9d9;
-    }
-    .arrow.disabled use {
-        fill: #d9d9d9;
-    }
-    .calendarTop {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #d9d9d9;
-        padding-bottom: 10px;
-    }
-    .gtaTopSide {
-        display: none;
-    }
-    .gtaTopSide.slick-initialized {
-        display: block;
-        margin-bottom: 20px;
-    }
-    .mobileText {
-        font-weight: 500;
-        font-size: 20px;
-    }
-    .button3 {
-        font-size: 18px;
-        padding: 10px 64px;
-    }
-    .slick-initialized .slick-slide {
-        height: fit-content;
-    }
-    .serviceBooking {
-        overflow: auto;
-    }
-    .calendarMain {
-        margin-top: 10px;
-    }
-    .calendarMain .weeks {
-        display: flex;
-        flex-wrap: wrap;
-        font-weight: 600;
-    }
-    .calendarMain .days {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .calendarMain .days li {
-        padding: 5px;
-        z-index: 1;
-        position: relative;
-        margin-top: 5px;
-        font-weight: 500;
-    }
-    .calendarMain .days li::before {
-        position: absolute;
-        content: "";
-        height: 30px;
-        width: 30px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: #006cff 1px solid;
-        z-index: -1;
-    }
-    .calendarMain .days .selected::before {
-        background-color: #006cff;
-    }
-    .calendarMain .days .selected {
-        color: #fff !important;
-    }
-    .calendarMain ul {
-        list-style: none;
-    }
-    .calendarMain ul li {
-        width: calc(100% / 7);
-    }
-    .calendarMain li.inactive::before {
-        border: unset;
-    }
-    .calendarMain li.inactive {
-        color: #d9d9d9;
-    }
-    .calendarMain .days .active::before {
-        border: #006cff 1px solid;
-    }
-    .calendarMain .days .active {
-        color: #006cff;
-        cursor: pointer;
-    }
-    .currDay {
-        color: #006cff !important;
-        text-decoration: underline;
-    }
-    .belowCalendar {
-        text-align: start;
-    }
-    .belowCalendar .title {
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .belowCalendar .para {
-        color: #b3b3b3;
-        font-size: 12px;
-        padding: 10px 0;
-        line-height: 1.6;
-    }
-    .belowCalendar .bookings {
-        font-weight: 600;
-    }
-    .belowCalendar .time {
-        padding: 10px 0;
-    }
-    .bookBut {
-        width: fit-content;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-    .slot {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-    .slot2 {
-        width: 100px;
-        background-color: #f6f6f6;
-        color: #d3d3d3;
-        border: 1px solid #f6f6f6;
-        border-radius: 5px;
-        text-align: center;
-        padding: 6px;
-    }
-    .bookings {
-        margin: 0;
-        margin-bottom: 5px;
-    }
-    .active3 {
-        color: #fff;
-        background-color: #006cff;
-    }
-    .mobileBottom1 {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        background-color: #fff;
-        z-index: 2;
-        box-shadow: 1px -2px 10px #888;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-    .mobileBottom1 .bots {
-        padding: 20px;
-    }
-    .mobileBottom1 .botss {
-        padding: 20px;
-    }
-    .serviceBooking {
-        padding-bottom: 120px;
-    }
-    .mobileBookConfirm {
-        justify-content: unset;
-    }
-    .bookingConfirm {
-        text-align: start;
-        width: 95%;
-        margin: 0 auto;
-        margin-top: 25px;
-    }
-    .bookingConfirm .title {
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .bookingConfirm .title2 {
-        font-weight: 600;
-        margin-bottom: unset;
-        font-size: 18px;
-    }
-    .bookingConfirm .para {
-        margin: 10px 0;
-        margin-left: 13px;
-    }
-    .oldClients {
-        text-align: center;
-    }
-    .signIn_square {
-        border: 1px solid #c8c8c8;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 18px 40px;
-        gap: 10px;
-    }
-    .signIn_square .text {
-        margin-bottom: 0;
-    }
-    .oldClients .button2 {
-        border: 1px solid #c8c8c8;
-        border-radius: 8px;
-        padding: 18px;
-        margin-bottom: 10px;
-        cursor: pointer;
-    }
-    .oldClients .back {
-        margin: 15px 0;
-        color: #9d9d9d;
-    }
-    .bookingLoadbar.four {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .serviceList .top-list {
-        display: flex;
-        background-color: #d9d9d9;
-        border-radius: 25px;
-    }
-    .serviceList .top-list .item {
-        border-radius: 25px;
-        padding: 10px 20px;
-        flex-grow: 1;
-        cursor: pointer;
-    }
-    .serviceList .top-list .item.active {
-        background-color: #006cff;
-        color: #fff;
-    }
-    .page-heading {
-        text-align: start;
-    }
-    .page-test {
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-    }
-    .page-test1 {
-        padding-bottom: 1.25rem;
-    }
-    .brand-add {
-        transition: max-height 0.5s ease-in-out;
-    }
-    .page-tab {
-        border-bottom: 1px solid #ddd;
-    }
-    .page-menuIcon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 40px;
-    }
-    .page-button {
-        width: 100%;
-        padding: 0.9375rem 3.125rem 0.9375rem 1.25rem;
-        text-align: start;
-        position: relative;
-        font-weight: 500;
-    }
-    .page-button::after {
-        content: "<";
-        display: block;
-        position: absolute;
-        font-size: 1.75rem;
-        right: 0;
-        text-align: center;
-        top: 50%;
-        transform: rotate(90deg) translateX(-50%);
-        width: 1.25rem;
-        margin: -0.525rem 1.25rem 0;
-    }
-    .page-button1::after {
-        content: "<";
-        transform: rotate(-90deg) translateX(50%) translateY(2px);
-    }
-    .page-tab .list-item {
-        border: 1px solid #d9d9d9;
-        border-radius: 8px;
-        padding: 15px;
-        margin-top: 5px;
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        cursor: pointer;
-    }
-    .page-tab .list-item:hover {
-        border: 1px solid #006cff;
-    }
-    .list-item.active {
-        border: 2px solid #006cff !important;
-    }
-    .list-item.newClass {
-        display: grid;
-        grid-template-columns: auto auto 1fr;
-        position: relative;
-        padding: 10px 0;
-        padding-right: 25px;
-        width: 100%;
-    }
-    .newClass::after {
-        content: "";
-        background-image: url(assets/img/gta/delete.png);
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%);
-        width: 25px;
-        height: 25px;
-        background-repeat: no-repeat;
-    }
-    .newClass > div:first-of-type {
-        padding-right: 10px;
-    }
-    .list-services {
-        overflow: auto;
-        height: 57%;
-        padding-bottom: 40px;
-    }
-    .botss .total {
-        text-align: end;
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .botss .service:not(.non-active) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .botss .service .service-arrow {
-        width: 20px;
-        margin-bottom: 5px;
-    }
-    .serviceList .serviceBooking {
-        height: 100%;
-        padding-bottom: 300px;
-    }
-    .serviceList .calendarMain li.inactive {
-        text-align: center;
-    }
-    .hidden {
-        display: none;
-    }
-    .mobilePopup .bookNowButton::before {
-        content: "";
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #c5c5cf;
-        border-radius: 100%;
-        border-top: 2px solid transparent;
-        -webkit-animation: button-load-animate infinite linear 1s;
-        animation: button-load-animate infinite linear 1s;
-    }
-    .loadButton::before {
-        content: "";
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #c5c5cf;
-        border-radius: 100%;
-        border-top: 2px solid transparent;
-        -webkit-animation: button-load-animate infinite linear 1s;
-        animation: button-load-animate infinite linear 1s;
-    }
-    .loadButton.loading {
-        pointer-events: none;
-        font-size: 0;
-    }
-    .loadButton.loading::before {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .mobilePopup .bookNowButton.loading {
-        pointer-events: none;
-        font-size: 0;
-    }
-    .mobilePopup .bookNowButton.loading::before {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .serviceList .bookNowButton::before {
-        content: "";
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #c5c5cf;
-        border-radius: 100%;
-        border-top: 2px solid transparent;
-        -webkit-animation: button-load-animate infinite linear 1s;
-        animation: button-load-animate infinite linear 1s;
-    }
-    .serviceList .bookNowButton.loading {
-        pointer-events: none;
-        font-size: 0;
-    }
-    .serviceList .bookNowButton.loading::before {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .loader2 {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        left: 0;
-        z-index: 2;
-        top: 0;
-    }
-    .loader {
-        font-size: 10px;
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        position: absolute;
-        text-indent: -9999em;
-        animation: mulShdSpin 1.1s infinite ease;
-        transform: translateZ(0);
-        top: 30%;
-        left: 50%;
-    }
-    input:focus {
-        outline: 0;
-    }
-    .gtaTopDesktop {
-        display: none;
-    }
-    .gtaInitialDesktop {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .gtaMobileService {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .desktopBottom {
-        display: none;
-    }
-    .staffBooking .desktop {
-        display: none;
-    }
-    .salonistBottom {
-        display: none;
-    }
-    .selectDesktop {
-        display: none;
-    }
-    .serviceBooking .title2 {
-        text-align: start;
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .serviceBookingSide {
-        display: none;
-    }
-    .serviceSideBooking {
-        display: none;
-    }
-    .bookingForm {
-        text-align: start;
-        margin-top: 10px;
-        padding-bottom: 100px;
-        overflow: auto;
-    }
-    .gtaBookinPage {
-        width: 90%;
-        margin: auto;
-        color: #000;
-    }
-    .gtaFirstDesktop {
-        text-align: center;
-        border-top: 1px solid rgba(187, 187, 187, 1);
-        border-bottom: 1px solid rgba(187, 187, 187, 1);
-        padding: 20px 0;
-    }
-    .bookingTitle2 {
-        font-weight: 500;
-        padding: 10px 0;
-        width: 80%;
-        text-align: center;
-        margin: auto;
-    }
-    .bookingTitle3 {
-        display: none;
-    }
-    .multiServiceSide {
-        display: none;
-    }
-    .staffBooking .desktop {
-        display: none;
-    }
-    .list-service-title {
-        display: none;
-    }
-    .signUpinput {
-        width: 100%;
-        border: 1px solid #c8c8c8;
-        border-radius: 5px;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    .cancel {
-        color: #9d9d9d;
-        margin-top: 10px;
-    }
-    .squareupLogin .title {
-        font-weight: 600;
-        text-align: start;
-        font-size: 17px;
-    }
-    .oldClientsCode .title {
-        font-weight: 600;
-        text-align: start;
-        font-size: 17px;
-    }
-    .squareupLogin .bottom {
-        margin: 35px 0;
-    }
-    .squareupLogin .bottom p {
-        margin-bottom: 10px;
-        color: #777;
-    }
-    .squareupLogin .bottom div {
-        color: #377de7;
-        font-weight: 500;
-    }
-    .requestButton::before {
-        content: "";
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #c5c5cf;
-        border-radius: 100%;
-        border-top: 2px solid transparent;
-        -webkit-animation: button-load-animate infinite linear 1s;
-        animation: button-load-animate infinite linear 1s;
-    }
-    .requestButton.loading {
-        pointer-events: none;
-        font-size: 0;
-        display: block;
-        text-align: center;
-    }
-    .requestButton.loading::before {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .clientProfile {
-        border: 1px solid #c8c8c8;
-        padding: 18px;
-        border-radius: 6px;
-        margin-bottom: 10px;
-    }
-    .clientProfile .topBlock .info {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-    .clientProfile .midBlock {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        align-items: center;
-    }
-    .clientProfile .topBlock .info .initial {
-        width: 50px;
-        height: 50px;
-        background-color: #006cff;
-        color: #fff;
-        border-radius: 50%;
-        padding: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .clientProfile .topBlock .info .name {
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .clientProfile .bottomBlock {
-        margin-top: 30px;
-    }
-    .clientProfile .bottomBlock p {
-        margin: 0;
-    }
-    .clientProfile .bottomBlock .title {
-        text-align: start;
-        margin-bottom: 10px;
-        font-weight: 600;
-        font-size: 16px;
-    }
-    .clientProfile .bottomBlock .apptList {
-        width: 100%;
-        display: flex;
-        background-color: #d9d9d9;
-        border-radius: 25px;
-    }
-    .clientProfile .bottomBlock .appointmentList {
-        margin-top: 30px;
-    }
-    .clientProfile .bottomBlock .apptList .active {
-        background-color: #006cff;
-    }
-    .clientProfile .bottomBlock .apptList div {
-        width: 100%;
-        padding: 10px 20px;
-        border-radius: 25px;
-        cursor: pointer;
-    }
-    .clientProfile .bottomBlock .apptList div.active {
-        background-color: #006cff;
-        color: #fff;
-    }
-    .clientProfile .bottomBlock .appointmentList .upcomingList {
-        position: relative;
-        min-height: 100px;
-    }
-    .clientProfile .bottomBlock .appointmentList .pastList {
-        position: relative;
-        min-height: 100px;
-    }
-    .apptBlock {
-        border: 1px solid #c8c8c8;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-        position: relative;
-    }
-    .apptBlock span {
-        position: absolute;
-        top: 10px;
-        right: 7px;
-        color: #006cff;
-        font-weight: 600;
-        font-size: 13px;
-    }
-    .apptBlock:hover {
-        border: 1px solid #006cff;
-    }
-    .apptBlock .sellerinfo {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-    .apptBlock .sellerinfo .sellerFirst {
-        width: 50px;
-        height: 50px;
-        background-color: #006cff;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-    }
-    .apptBlock .details {
-        display: flex;
-        gap: 15px;
-        text-align: start;
-    }
-    .apptBlock .dateTime.details {
-        margin: 10px 0;
-        font-weight: 600;
-    }
-    .apptDetails {
-        position: absolute;
-        height: 100vh;
-        z-index: 1111;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        transition: all 0.4s ease;
-        overflow: hidden;
-        max-height: 0;
-        text-align: center;
-    }
-    .apptDetails .topBlock {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        align-items: center;
-        gap: 20px;
-    }
-    .apptDetails .detailsBlock {
-        border: 1px solid #c8c8c8;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 10px;
-        position: relative;
-        width: 80%;
-        margin: auto;
-        max-width: 500px;
-    }
-    .apptDetails .detailsTopBlock {
-        width: 80%;
-        max-width: 500px;
-        margin: 25px auto;
-    }
-    .apptDetails .detailsTopBlock .title {
-        font-weight: 600;
-        font-size: 22px;
-    }
-    .apptDetails .initial {
-        width: 50px;
-        height: 50px;
-        background-color: #006cff;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-    }
-    .apptDetails .topBlock {
-        text-align: start;
-    }
-    .apptDetails .confirmed {
-        color: #8b8b8b;
-    }
-    .apptDetails .name {
-        font-weight: 600;
-        font-size: 16px;
-    }
-    .apptDetails .date {
-        font-weight: 600;
-    }
-    .apptDetails .service {
-        margin: 20px 0;
-        font-size: 16px;
-    }
-    .apptDetails .address {
-        color: #8b8b8b;
-    }
-    .apptDetails .bookings {
-        color: #006cff;
-        margin-top: 30px;
-        font-weight: 600;
-    }
-    .profileBlock .profileInfo {
-        border: 1px solid #c8c8c8;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
-    .profileBlock .block {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .profileBlock .block img {
-        width: 25px;
-    }
-    .profileBlock .block p {
-        margin: 0;
-    }
-    .accExistsOverlay {
-        position: absolute;
-        z-index: 111111;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.72);
-    }
-    .accExistsOverlay1 {
-        position: absolute;
-        z-index: 111111;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.72);
-    }
-    .accExistsOverlay1 .block {
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        padding: 20px;
-        width: 80%;
-        max-width: 400px;
-    }
-    .accExistsOverlay .block {
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        padding: 10px 20px;
-        width: 80%;
-        max-width: 400px;
-    }
-    .accExistsOverlay1 .para {
-        font-weight: 500;
-        font-size: 18px;
-    }
-    .accExistsOverlay1 .para:last-of-type {
-        font-size: 14px;
-        color: gray;
-    }
-    .accExistsOverlay .para {
-        font-weight: 500;
-        font-size: 18px;
-    }
-    .sqLogin {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        margin-top: 8px;
-    }
-    .serviceImg {
-        display: none;
-        width: 45px;
-    }
-    .clientProfile .signOutBlock {
-        margin-top: 10px;
-    }
-    .backButton2 {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-    }
-    @media (min-width: 1024px) {
-        .desktopConfirmation {
-            position: absolute;
-            top: 35%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .desktopConfirmation .block1 {
-            border: 1px solid #888;
-            border-radius: 5px;
-            width: 570px;
-            margin-bottom: 20px;
-            padding: 30px;
-        }
-        .desktopConfirmation .topBlock {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            text-align: start;
-        }
-        .desktopConfirmation .name {
-            font-weight: 600;
-            font-weight: 16px;
-        }
-        .desktopConfirmation .intial {
-            width: 80px;
-            height: 80px;
-            background-color: #006cff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 18px;
-        }
-        .desktopConfirmation .dateBlock {
-            font-weight: 600;
-            margin: 20px 0;
-        }
-        .desktopConfirmation .serviceBlock div {
-            font-size: 16px;
-        }
-        .serviceImg {
-            display: inline-block;
-        }
-        .clientProfile {
-            max-width: 1300px;
-            margin: auto;
-            border: unset;
-            padding-top: 50px;
-        }
-        .clientProfile .topBlock .info .initial {
-            width: 100px;
-            height: 100px;
-            font-size: 36px;
-            cursor: pointer;
-        }
-        .clientProfile .topBlock {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            height: 100%;
-        }
-        .clientProfile .info {
-            flex-direction: column;
-        }
-        .clientProfile .midBlock {
-            flex-direction: column;
-        }
-        .clientProfile .midBlock .bookingButton {
-            width: 100% !important;
-        }
-        .clientProfile .bottomBlock {
-            margin-top: 0;
-            max-height: 80%;
-            overflow-y: scroll;
-        }
-        .accExistsOverlay .block {
-            padding: 45px;
-        }
-        .accExistsOverlay p {
-            margin: unset;
-            margin-bottom: 10px;
-        }
-        .list-service-title {
-            display: block;
-        }
-        .list-service-title.non-active {
-            display: none;
-        }
-        .staffBooking .desktop {
-            display: block;
-            color: gray;
-            font-weight: 500;
-            font-size: 16px;
-        }
-        .gtaFirstDesktop {
-            border: unset;
-        }
-        .gtaFirstDesktop .bookingTitle {
-            display: none;
-        }
-        .gtaFirstDesktop .bookingTitle2 {
-            display: none;
-        }
-        .gtaFirstDesktop .bookingTitle3 {
-            display: block;
-        }
-        .gtaTopSide img {
-            height: calc(50vh - 25px);
-        }
-        .gtaBookinPage {
-            overflow: hidden;
-            width: 100%;
-            margin: auto;
-            color: #000;
-            height: calc(100vh - 51px);
-        }
-        .gtaTop {
-            display: none;
-        }
-        .gtaTopDesktop {
-            display: block;
-            text-align: center;
-        }
-        .gtaTopSide {
-            display: block;
-        }
-        .newClients {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .bookingButton {
-            max-width: 300px;
-        }
-        .bookingButton1 {
-            max-width: 300px;
-        }
-        .button3 {
-            padding: 15px 20px;
-        }
-        .gtaInitialDesktop {
-            flex-direction: row;
-            justify-content: center;
-        }
-        .gtaMobileService {
-            flex-direction: row;
-            justify-content: center;
-        }
-        .desktopBottom {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #e7e7e7;
-            padding: 20px 0;
-        }
-        .mobileBottom {
-            display: block;
-        }
-        .mobileGTA {
-            display: none;
-        }
-        .serviceList .mobileBottom1 {
-            box-shadow: unset;
-            border: unset;
-            border-top-left-radius: unset;
-            border-top-right-radius: unset;
-            width: 80%;
-        }
-        .mobileBottom1 .botss {
-            display: none;
-        }
-        .staffBooking .mobile {
-            display: none;
-        }
-        .staffBooking .desktop {
-            display: block;
-        }
-        .addNames1 {
-            max-width: 600px;
-            grid-template-columns: 0.25fr 1fr 0.25fr;
-            margin: auto;
-            height: 85px;
-            margin-bottom: 10px;
-        }
-        .salonistBottom {
-            display: block;
-            font-size: 12px;
-            color: gray;
-        }
-        .salonist {
-            text-align: start;
-        }
-        .selectDesktop {
-            display: block;
-            padding-right: 20px;
-            text-align: end;
-        }
-        .bookingButton1.loaded.desktop1 {
-            border: 1px solid #d9d9d9;
-        }
-        .serviceBookingSide {
-            display: block;
-            position: relative;
-            height: fit-content;
-            text-align: start;
-            width: 43%;
-            max-width: 250px;
-        }
-        .serviceBookingSide p {
-            font-weight: 600;
-        }
-        .serviceBookingSide .sideBar {
-            background-color: #ededed;
-            padding: 15px;
-        }
-        .gokutest .serviceBookingSide .serviceSideServices .sideBar {
-            display: none;
-        }
-        .sideBar .bookingName {
-            text-transform: uppercase;
-        }
-        .sideBar .bookingTime {
-            color: #aaa;
-        }
-        .sideBar .bookingStylist {
-            color: #777;
-            font-weight: 600;
-        }
-        .serviceBooking.active {
-            display: flex;
-            gap: 90px;
-            margin-top: 50px;
-            justify-content: center;
-        }
-        .bookingForm.active {
-            display: flex;
-            gap: 90px;
-            margin-top: 50px;
-        }
-        .bookingForm .serviceSideBooking {
-            display: block;
-        }
-        .jenny {
-            display: block;
-            width: 100%;
-            background-color: #006cff;
-            color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .jenny::before {
-            content: "";
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #c5c5cf;
-            border-radius: 100%;
-            border-top: 2px solid transparent;
-            -webkit-animation: button-load-animate infinite linear 1s;
-            animation: button-load-animate infinite linear 1s;
-        }
-        .jenny.loading {
-            pointer-events: none;
-            font-size: 0;
-        }
-        .jenny.non-active {
-            display: none;
-        }
-        .jenny.loading::before {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .afterBooking {
-            width: 100%;
-            background-color: #006cff;
-            color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .afterBooking::before {
-            content: "";
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #c5c5cf;
-            border-radius: 100%;
-            border-top: 2px solid transparent;
-            -webkit-animation: button-load-animate infinite linear 1s;
-            animation: button-load-animate infinite linear 1s;
-        }
-        .afterBooking.loading {
-            pointer-events: none;
-            font-size: 0;
-            display: block;
-            text-align: center;
-        }
-        .afterBooking.loading::before {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .gtaDesktop1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .newClients.non-active {
-            display: none;
-        }
-        .serviceList .bookingLoadbar {
-            display: none;
-        }
-        .multiServiceDesktop {
-            display: none;
-        }
-        .loggedInDesktop {
-            width: 100%;
-            display: flex;
-            justify-content: end;
-            gap: 20px;
-            margin-top: 30px;
-            font-weight: 600;
-        }
-        .loggedInDesktop p {
-            color: #006cff;
-            margin: 0;
-            cursor: pointer;
-        }
-        .squareupSignupForm {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .squareupSignupForm button {
-            max-width: unset;
-        }
-        .list-service-title {
-            text-align: start;
-            margin: 0;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        .page-button {
-            padding: 0.9375rem 3.125rem 0.9375rem 5px;
-        }
-        .multiServiceSide {
-            display: block;
-            text-align: start;
-            width: 285px;
-        }
-        .multiServiceside p {
-            margin: 0;
-        }
-        .list-services {
-            height: 100%;
-            overflow: unset;
-            width: 100%;
-            padding-bottom: unset;
-        }
-        .multiServiceDesk .serviceLoaded p {
-            border-bottom: 1px solid #006cff;
-            color: #006cff;
-            width: fit-content;
-        }
-        .multiServiceSide .item {
-            margin-bottom: 20px;
-        }
-        .multiServiceDesk {
-            display: flex;
-            gap: 90px;
-            margin-top: 50px;
-        }
-        .top-list {
-            margin-top: 15px;
-        }
-        .multiServiceSide .multiServiceItem {
-            background-color: #ededed;
-            padding: 15px;
-            margin: 10px 0;
-            position: relative;
-        }
-        .multiServiceSide .multiServiceStylist {
-            background-color: #ededed;
-            padding: 15px;
-            margin: 10px 0;
-            position: relative;
-        }
-        .gokutest .multiServiceItem {
-            background-color: #ededed;
-            padding: 15px;
-            margin: 10px 0;
-            position: relative;
-        }
-        .multiServiceSide .multiServiceItem .trash {
-            background-image: url(assets/img/gta/delete.png);
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 25px;
-            height: 25px;
-            background-repeat: no-repeat;
-        }
-        .multiServiceItem .name {
-            text-transform: uppercase;
-        }
-        .multiServiceItem .time {
-            color: #aaa;
-        }
-        .multiServiceItem .stylist {
-            color: #777;
-            font-weight: 600;
-        }
-        .multiServiceSide.non-active {
-            display: none;
-        }
-        .multiServiceSide.active {
-            display: block;
-        }
-        .gokutest .serviceBooking.active {
-            display: block;
-            padding-bottom: 100px;
-        }
-        .squareupLogin.active {
-            display: flex;
-            flex-direction: column;
-            max-width: 800px;
-            margin: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .squareupLogin .bottom {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .squareupLogin .requestButton {
-            max-width: unset;
-        }
-        .squareupLogin .title {
-            margin: 30px 0;
-        }
-        .oldClientsLogin.active {
-            width: 500px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .oldClients.active {
-            height: 100%;
-        }
-        .clientProfile.active {
-            height: 100%;
-        }
-        .oldClients.active .clientProfile.active .topBlock {
-            height: 100%;
-        }
-        .oldClients .clientProfile.active .topBlock {
-            height: 100%;
-        }
-        .calendarBlockMain {
-            height: 80%;
-            overflow-y: auto;
-        }
-        .serviceList .mobileBottom1 .next {
-            background-color: #006cff;
-            color: #fff;
-            padding: 5px 20px;
-            border-radius: 20px;
-        }
-    }
-    @keyframes mulShdSpin {
-        0%,
-        100% {
-            box-shadow: 0 -2.6em 0 0 #000, 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.5), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.7);
-        }
-        12.5% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.7), 1.8em -1.8em 0 0 #000, 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.5);
-        }
-        25% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.5), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.7), 2.5em 0 0 0 #000, 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
-        }
-        37.5% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.5), 2.5em 0 0 0 rgba(0, 0, 0, 0.7), 1.75em 1.75em 0 0 #000, 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
-        }
-        50% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.5), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.7), 0 2.5em 0 0 #000, -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
-        }
-        62.5% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.5), 0 2.5em 0 0 rgba(0, 0, 0, 0.7), -1.8em 1.8em 0 0 #000,
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
-        }
-        75% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.5), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.7),
-                -2.6em 0 0 0 #000, -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
-        }
-        87.5% {
-            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.5),
-                -2.6em 0 0 0 rgba(0, 0, 0, 0.7), -1.8em -1.8em 0 0 #000;
-        }
-    }
-    @keyframes button-load-animate {
-        0% {
-            transform: rotate(0);
-        }
-        50% {
-            transform: rotate(180deg);
-            opacity: 0.35;
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-</style>
-<section class="gtaBookinPage">
-    <div class="gtaTop" style="text-align: center;">
-        <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-        <p>
-            For more accurate results and a better service experience, we will carefully review booking requests and approve or make adjustments ASPA.<br />
-            <span style="color: #377de7;">Online booking Directly Or call:<a style="color: #377de7;" href="tel:+19059171805">(905) 917-1805</a></span>
-        </p>
-    </div>
-    <div class="newClients">
-        <div class="gtaTopSide">
-            <div><img style="object-fit: cover;" src="../../../assets/img/gta/image1.jpg" /></div>
-            <div><img style="object-fit: cover;" src="../../../assets/img/gta/image2.jpg" /></div>
-        </div>
-        <div class="gtaDesktop1">
-            <div class="gtaTopDesktop">
-                <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
-                <p style="font-weight: 600; margin: unset;">Mon - Fri / 10:00AM - 6:00PM. Sat-Sun Closed.</p>
-                <p style="font-weight: 600;">Federal Holidays Closed.</p>
-            </div>
-            <div class="gtaFirstDesktop">
-                <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
-                <p class="bookingTitle2">Save Time And Money With Our Booking System</p>
-                <p class="bookingTitle3">Online Booking Directly</p>
-                <button class="buttonApt bookingButton">Book Appointment</button>
-                <p class="bookingTitle3">or</p>
-                <p class="bookingTitle3">Call: (905) 917-1805</p>
-            </div>
-            <div style="text-align: center; margin: 20px 0;">
-                <p>Want to cancel your appointment?</p>
-                <a href="mailto:sales@superhairpieces.com"><button class="bookingButton1">Email Us</button></a>
-            </div>
-        </div>
-    </div>
-    <div class="oldClients non-active">
-        <div class="oldClientsLogin">
-            <div class="signIn_square">
-                <div class="block" style="width: 100%;">
-                    <p class="text">Sign in to choose your preferences</p>
-                    <button class="button bookingButton sqLogin">Sign in / Sign up with <img style="width: 70px;" src="../../../assets/img/gta/Square_LogoLockup_White.svg" /></button>
-                </div>
-                <div class="myAppts non-active" style="width: 100%;">
-                    <button class="bookingButton loadButton">My Appointments</button>
-                    <div style="margin-top: 15px; color: #006cff;">Sign out</div>
-                </div>
-            </div>
-            <div>
-                <p>or</p>
-                <p>Choose a new service</p>
-            </div>
-            <div>
-                <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
-                <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
-                <div data-service="Consultation" class="button2">Consultation Services</div>
-            </div>
-            <div class="back">Back</div>
-        </div>
-    </div>
-    <div class="multiServiceSide non-active">
-        <div class="item service serviceLoaded"><p>Select services</p></div>
-        <div class="item stylist"><p>Select stylist</p></div>
-    </div>
-    <div class="serviceList non-active">
-        <div style="width: 80%; margin: auto; max-width: 1200px;">
-            <div class="bookingLoadbar four">
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-            </div>
-            <div class="gokutest" style="text-align: center;">
-                <p class="multiServiceDesktop">Service List</p>
-                <div class="loggedInDesktop non-active">
-                    <p class="para">My Appointments</p>
-                    <p class="para1">Sign Out</p>
-                </div>
-                <div class="top-list">
-                    <div class="item active">Men</div>
-                    <div class="item">Women</div>
-                    <div class="item">Consultation</div>
-                </div>
-                <div class="multiServiceDesk">
-                    <div class="multiServiceDesk1" style="width: 100%;">
-                        <p class="list-service-title">Select one or more services:</p>
-                        <div class="list-mens list-services" style="position: relative;">
-                            <span class="loader2"><span class="loader"></span></span>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installationcolor" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="maintenance" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance + Color</button></p>
-                                <div class="page-test" style="max-height: 0;">
-                                    <div style="position: relative;" id="maintenancecolor" class="page-test1">
-                                        <div class="loader2"><div class="loader"></div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Hair Trim</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="hairtrim" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Perm</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="perm" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">System Template</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="systemtemplate" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Misc</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="misc" class="page-test1"></div></div>
-                            </div>
-                        </div>
-                        <div class="list-womens list-services non-active" style="position: relative;">
-                            <span class="loader2"><span class="loader"></span></span>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Installation + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installationcolor" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="maintenance" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Maintenance + Color</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="maintenancecolor" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Perm</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="perm" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">System Template</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="systemtemplate" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Misc</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="misc" class="page-test1"></div></div>
-                            </div>
-                        </div>
-                        <div class="list-consult list-services non-active" style="position: relative;">
-                            <span class="loader2"><span class="loader"></span></span>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Womens</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Mens</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
-                            <div class="page-tab">
-                                <p style="display: flex; margin-bottom: 0;" onclick="openFAQ(this)"><button class="page-button">Online</button></p>
-                                <div class="page-test" style="max-height: 0;"><div id="installation" class="page-test1"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form1234" style="overflow: auto; height: 100%; padding-bottom: 20px;"></div>
-        </div>
-        <div class="mobileBottom1 non-active">
-            <div class="botss">
-                <div class="service"><img class="service-arrow non-active" src="../../../assets/img/gta/arrow-double.png" /></div>
-                <div class="total non-active"><span>Total</span><span class="price"></span></div>
-                <div class="pleaseSelect"></div>
-                <div style="display: flex; gap: 10px;">
-                    <button class="bookingButton1 backButton">Back</button><button class="bookingButton nextButton">Next</button><button class="bookingButton confirmButton loadButton non-active">Confirm</button>
-                    <label style="text-align: center;" tabindex="0" for="submit-form2" class="bookingButton bookNowButton non-active">Book Now</label>
-                </div>
-            </div>
-            <div class="desktopBottom">
-                <p class="oldCancel">Cancel</p>
-                <p class="next">Next</p>
-                <p class="oldBack">Back</p>
-            </div>
-        </div>
-    </div>
-    <div class="mobilePopup">
-        <div class="mobilePopup1">
-            <div class="bookingLoadbar">
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-                <div class="bookingLoad"></div>
-            </div>
-            <div class="mobileMain mobileInitial non-active">
-                <p class="mobileText">Is this your first service appointment with Superhairpieces?</p>
-                <div class="gtaInitialDesktop"><button id="1" class="bookingButton button3">Yes</button><button id="2" class="bookingButton button3">No, I'd like to sign in / sign up</button></div>
-            </div>
-            <div id="service1" class="mobileMain mobileService non-active">
-                <p class="mobileText">Which service do you need?</p>
-                <div class="gtaMobileService">
-                    <button id="mens" class="bookingButton1 button3"><img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/men.png" /> Men services</button>
-                    <button id="womens" class="bookingButton1 button3"><img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/women.png" /> Women services</button>
-                    <button id="consultation" class="bookingButton1 button3"><img class="serviceImg" style="width: 45px;" src="../../../assets/img/gta/consultation.png" /> Consultation</button>
-                </div>
-            </div>
-            <div id="service2" class="mobileMain mobileSystem2 non-active">
-                <p class="mobileText">Do you require an in-person consultation to determine which system is right for you?</p>
-                <div class="gtaMobileService"><button id="yes" class="bookingButton button3">Yes</button><button id="no" class="bookingButton button3">No</button></div>
-            </div>
-            <div class="mobileMain mobileSystem3 non-active">
-                <p class="mobileText">What hair system are you going to consult?</p>
-                <div class="gtaMobileService"><button id="mens" class="bookingButton button3">Men's</button><button id="womens" class="bookingButton button3">Women's</button></div>
-            </div>
-            <div id="system1" class="mobileMain mobileSystem non-active">
-                <p class="mobileText">Do you have any hair systems?</p>
-                <div class="gtaMobileService"><button id="systemYes" class="bookingButton button3">Yes</button><button id="systemBuy" class="bookingButton button3">No, Let's buy one</button></div>
-            </div>
-            <div id="service2" class="mobileMain mobileService2 non-active">
-                <p class="mobileText">What service do you need?</p>
-                <div class="gtaMobileService"><button id="Installation" class="bookingButton button3">Installation</button><button id="Maintenance" class="bookingButton button3">Maintenance</button></div>
-                <p style="font-weight: 400; font-size: 18px; margin-top: 50px;">Don't know what to do? Let's listen to our expert advices</p>
-                <button id="serviceCons" class="bookingButton button3">Consultation</button>
-            </div>
-            <div id="service3" class="mobileMain mobileService3 non-active">
-                <p class="mobileText">Do you require color on your own hair?<span id="change"></span></p>
-                <div class="gtaMobileService"><button class="bookingButton button3">Yes</button><button class="bookingButton button3">No</button></div>
-            </div>
-            <div class="form123" style="overflow: auto;"></div>
-            <div class="mobileBottom non-active">
-                <div class="mobileGTA">
-                    <div>
-                        <button class="mobileCancel" style="color: #377de7;">Cancel</button>
-                        <div class="backButton2 non-active">
-                            <p style="color: #377de7; margin: 0;">|</p>
-                            <button style="color: #377de7;" class="backButton2 non-active">Back</button>
-                        </div>
-                    </div>
-                    <p style="color: #555;">
-                        Any Questions?<br />
-                        Please Call: (905) 917-1805
-                    </p>
-                </div>
-                <div class="desktopBottom">
-                    <p class="newCancel">Cancel</p>
-                    <p class="newBack">Back</p>
-                </div>
-            </div>
-        </div>
-        <div class="mobileBottom1 non-active">
-            <div class="bots">
-                <div class="pleaseSelect"></div>
-                <div style="display: flex; gap: 10px;">
-                    <button class="bookingButton1 backButton">Back</button><button class="bookingButton nextButton">Next</button><button class="bookingButton confirmButton non-active">Confirm</button>
-                    <label style="text-align: center;" tabindex="0" for="submit-form1" class="bookingButton bookNowButton non-active">Book Now</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="bookingConfirmation" class="mobileMain bookingConfirm non-active">
-        <p class="title">Booking Information</p>
-        <div style="position: relative;">
-            <span class="loader2" style="height: 270px;"><span class="loader"></span></span>
-            <div>
-                <p class="title2">&#x2022; Service :</p>
-                <div class="para" id="serviceType"></div>
-            </div>
-            <div>
-                <p class="title2">&#x2022; Hair Stylist :</p>
-                <div class="para" id="stylistName"></div>
-            </div>
-            <div>
-                <p class="title2">&#x2022; Date and time :</p>
-                <div class="para" id="dateSelected"></div>
-            </div>
-            <div class="notes non-active">
-                <p class="title2">&#x2022; Appointment Notes :</p>
-                <div class="para" name="apptNotes" id="apptNotes"></div>
-            </div>
-        </div>
-    </div>
-    <div class="bookingForm non-active">
-        <div class="serviceBookingSide"></div>
-        <div style="width: 100%;">
-            <p style="font-weight: 600; font-size: 18px;">You're nearly done. Enter your details below.</p>
-            <form id="myForm1">
-                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                    <select style="padding: 12px; border: 1px solid #d3d3d3; border-radius: 5px; width: auto;" name="country" id="country">
-                        <option value="+1">Canada</option>
-                    </select>
-                    <input style="padding: 12px; border: 1px solid #d3d3d3; border-radius: 5px; width: 100%;" name="number" placeholder="(000) 000 0000" required />
-                </div>
-                <input style="margin-bottom: 10px; padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" name="email" placeholder="Email" required />
-                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                    <input style="padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" name="firstName" placeholder="First name" required />
-                    <input style="padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" name="lastName" placeholder="Last name" required />
-                </div>
-                <textarea style="padding: 12px; margin-bottom: 10px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px; resize: none;" rows="4" name="appNotes" placeholder="Appointment notes (optional)"></textarea>
-                <div style="font-weight: 500;">
-                    <input type="checkbox" id="vehicle3" name="vehicle3" required /><label> I have read and agree to the <span style="text-decoration: underline;">cancellation policy</span></label>
-                </div>
-                <p style="margin-top: 19px; color: gray;">
-                    Refunds and cancellations are subject to the <a style="color: #006cff; text-decoration: none;" target="_blank">cancellation policy</a>of Superhairpieces.ca. Please contact Superhairpieces.ca to learn more about their
-                    privacy practices.
-                </p>
-                <p style="color: gray;">Upon booking, Square will automatically create an account for you with Square Appointments. You can sign back into Superhairpieces.ca using your mobile number at any time.</p>
-                <div class="submitFormButtons">
-                    <input type="submit" id="submit-form1" class="hidden jenny" value="Book appointment" />
-                    <div class="afterBooking non-active"></div>
-                </div>
-                <p style="color: gray;">By creating this appointment, you acknowledge you will receive automated transactional messages from this merchant.</p>
-            </form>
-        </div>
-    </div>
-    <div class="mobileMain staffBooking non-active">
-        <p class="mobile" style="font-size: 18px; margin: 10px 0;">Hair Stylist</p>
-        <p class="desktop">Select staff for</p>
-        <div class="staffMembers">
-            <div data-team-member-name="Any available" data-team-member-id="" class="bookingButton1 addNames1 loaded desktop1">
-                <span class="addNames"></span>
-                <div class="salonist">Any Available Staff Member<span class="salonistBottom">Looking for the first available appointment? Choose this option to see everyone's availability</span></div>
-                <div class="selectDesktop">Select</div>
-            </div>
-        </div>
-    </div>
-    <div class="serviceSide non-active">
-        <div class="serviceSideServices">
-            <div class="loader2"><div class="loader"></div></div>
-            <p>Select services and staff -<span class="serviceEdit" style="color: #006cff;">Edit</span></p>
-            <div class="sideBar">
-                <div class="bookingName"></div>
-                <div class="bookingPrice"></div>
-                <div class="bookingTime"></div>
-                <div class="bookingStylist"></div>
-            </div>
-        </div>
-        <div class="serviceSideBooking">
-            <p>Date and time -<span class="timeEdit" style="color: #006cff;">Edit</span></p>
-            <div class="sideBar"><div class="bookingDate"></div></div>
-        </div>
-    </div>
-    <div id="serviceBooking" class="mobileMain serviceBooking non-active">
-        <div class="serviceBookingSide"></div>
-        <div class="calendarBlockMain">
-            <p class="title2">Select your preferred date and time</p>
-            <div>
-                <div class="calendarTest" style="position: relative;">
-                    <span class="loader2"><span class="loader"></span></span>
-                    <div class="calendarTop">
-                        <svg class="arrow disabled prev-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use></svg>
-                        <p class="calendarMonth" style="margin: unset;"></p>
-                        <svg class="arrow next-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
-                    </div>
-                    <div class="calendarMain" style="position: relative;">
-                        <ul class="weeks">
-                            <li>S</li>
-                            <li>M</li>
-                            <li>T</li>
-                            <li>W</li>
-                            <li>Th</li>
-                            <li>F</li>
-                            <li>S</li>
-                        </ul>
-                        <ul class="days"></ul>
-                    </div>
-                    <div class="belowCalendar">
-                        <div class="title">Available on <span class="dayAvailable"></span></div>
-                        <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
-                        <div class="morning time">
-                            <p class="bookings">Morning</p>
-                            <div class="slot"></div>
-                            <div class="slot2">All booked</div>
-                        </div>
-                        <div class="afternoon time">
-                            <p class="bookings">Afternoon</p>
-                            <div class="slot"></div>
-                            <div class="slot2">All booked</div>
-                        </div>
-                        <div class="evening time">
-                            <p class="bookings">Evening</p>
-                            <div class="slot"></div>
-                            <div class="slot2">All booked</div>
-                        </div>
-                    </div>
-                    <textarea
-                        style="padding: 12px; margin-bottom: 10px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px; resize: none; margin-top: 20px;"
-                        placeholder="Appointment notes (optional)"
-                        class="apptNote non-active"
-                        rows="4"
-                        name="appNotes"
-                    ></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gtaServiceBooking non-active">
-        <div><p></p></div>
-    </div>
-    <div class="clientProfile non-active">
-        <div class="topBlock">
-            <div>
-                <div class="info">
-                    <div class="initial"></div>
-                    <div class="name"></div>
-                </div>
-                <div class="midBlock">
-                    <div class="bookingButton" style="width: unset; flex-grow: 1;">Book Appointments</div>
-                    <div class="viewProfile" style="color: #006cff; font-weight: 600; cursor: pointer;">View Profile</div>
-                </div>
-                <div class="signOutBlock"><div style="color: #006cff; font-weight: 400; cursor: pointer;">Sign out</div></div>
-            </div>
-            <div class="bottomBlock">
-                <p class="title">My appointments</p>
-                <div class="apptList">
-                    <div class="upcoming active">Upcoming</div>
-                    <div class="past">Past</div>
-                </div>
-                <div class="appointmentList">
-                    <div class="upcomingList">
-                        <span class="loader2"><span class="loader"></span></span>
-                    </div>
-                    <div class="pastList non-active">
-                        <span class="loader2"><span class="loader"></span></span>
-                    </div>
-                </div>
-            </div>
-            <div style="margin-top: 20px; text-align: start;" class="profileBlock non-active">
-                <p style="font-weight: 600; font-size: 15px;">My profile</p>
-                <div>Please contact Superhairpieces.ca to update your contact information</div>
-                <div class="profileInfo">
-                    <div class="block">
-                        <img src="../../../assets/img/gta/user.png" />
-                        <p class="name">Name</p>
-                    </div>
-                    <div class="block">
-                        <img src="../../../assets/img/gta/mail.png" />
-                        <p class="email">Email</p>
-                    </div>
-                    <div class="block">
-                        <img src="../../../assets/img/gta/phone.png" />
-                        <p class="phoneNumber">Phone Number</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="squareupLogin non-active">
-        <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg" />
-        <p class="title">Sign in to Superhairpieces.ca with Square Appointments</p>
-        <div class="loginForm">
-            <form id="loginForm">
-                <input class="signUpinput" name="email" placeholder="Email" required />
-                <div style="color: red; height: 25px;" class="accountExistence"></div>
-                <button class="bookingButton requestButton" type="submit" id="loginsubmit">Request Sign In Code</button>
-            </form>
-            <div class="cancel" style="cursor: pointer;">Cancel</div>
-            <div class="bottom">
-                <p>Don't have a Square account?</p>
-                <div class="squareSignUp" style="cursor: pointer;">Sign Up</div>
-            </div>
-        </div>
-    </div>
-    <div class="squareupSignupForm non-active">
-        <img style="width: 100px; margin-bottom: 10px;" src="../../../assets/img/gta/Square_LogoLockup_Black.svg" />
-        <form id="signupForm" style="margin: 20px 0;">
-            <div class="topBlock" style="display: flex; gap: 10px; margin-bottom: 10px;">
-                <select style="padding: 12px; border: 1px solid #d3d3d3; border-radius: 5px; width: auto;" name="country" id="country">
-                    <option value="+1">Canada</option>
-                </select>
-                <input style="padding: 12px; border: 1px solid #d3d3d3; border-radius: 5px; width: 100%;" placeholder="Phone Number" name="number" />
-            </div>
-            <input style="margin-bottom: 10px; padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" class="midEmail" placeholder="Email" name="email" />
-            <div class="bottomBlock" style="display: flex; gap: 10px; margin-bottom: 10px;">
-                <input style="padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" placeholder="First Name" name="firstName" />
-                <input style="padding: 12px; width: 100%; border: 1px solid #d3d3d3; border-radius: 5px;" placeholder="Last Name" name="lastName" />
-            </div>
-            <div class="non-active accExists" style="color: red;"></div>
-            <button type="submit" class="bookingButton loadButton">Sign Up</button>
-            <p style="margin-top: 10px; color: #777; cursor: pointer;">Cancel</p>
-        </form>
-    </div>
-    <div class="oldClientsLogin non-active">
-        <div class="signIn_square">
-            <div class="block" style="width: 100%;">
-                <p class="text">Sign in to choose your preferences</p>
-                <button class="button bookingButton sqLogin">Sign in / Sign up with <img style="width: 70px;" src="../../../assets/img/gta/Square_LogoLockup_White.svg" /></button>
-            </div>
-            <div class="myAppts non-active" style="width: 100%;">
-                <p style="text-align: start; font-weight: 500; font-size: 18px; margin: 0; margin-bottom: 15px;">Welcome,<span class="newName"></span></p>
-                <button class="bookingButton loadButton">My Appointments</button>
-                <div style="margin-top: 15px; color: #006cff;">Sign out</div>
-            </div>
-        </div>
-        <div>
-            <p>or</p>
-            <p>Choose a new service</p>
-        </div>
-        <div>
-            <div data-service="Men" data-service-cate="KYEHUUDWR5NEVDVGK2NOS2G4" class="button2">Men Services</div>
-            <div data-service="Women" data-service-cate="VDIJ4PWVCEC6JEX4INMJ4FO3" class="button2">Women Services</div>
-            <div data-service="Consultation" class="button2">Consultation Services</div>
-        </div>
-        <div class="back back2">Back</div>
-    </div>
-    <div class="oldClientsCode non-active">
-        <p style="text-align: start; color: #777; margin-bottom: 0;">Please check your inbox/spam for your code</p>
-        <p style="text-align: start; color: #777;">Please allow up to 5 minutes</p>
-        <form id="codeLogin">
-            <input class="signUpinput" name="code" placeholder="Enter Code Here" required />
-            <div class="incorrectCode" style="height: 22px; color: red;"></div>
-            <button class="bookingButton requestButton" type="submit" id="codeSubmit">Sign in</button>
-        </form>
-        <div class="cancel" style="cursor: pointer;">Cancel</div>
-        <div style="margin-top: 10px;">Didn't receive a code?<span class="resend" style="color: #006cff; font-weight: 500; cursor: pointer;">Resend</span></div>
-    </div>
-    <div class="apptPast non-active">
-        <p class="title">Appointment passed</p>
-        <p class="para">This appointment has already ended. Please book a new appointmnet.</p>
-        <button class="bookingButton">Book another</button>
-    </div>
-    <div class="apptDetails non-active">
-        <div class="detailsTopBlock"></div>
-        <div class="detailsBlock">
-            <div class="topBlock">
-                <div class="initial"></div>
-                <div class="nameInfo">
-                    <div class="confirmed">Confirmed with</div>
-                    <div class="name"></div>
-                </div>
-            </div>
-            <div class="bottomBlock">
-                <div class="date"></div>
-                <div class="service"></div>
-                <div class="address">
-                    7295 Rapistan Ct<br />
-                    Mississauga, On L5N5Z4<br />
-                    416-800-5056
-                </div>
-            </div>
-            <p class="bookings">Book another appointment</p>
-            <p class="back">Back</p>
-        </div>
-    </div>
-    <div class="accExistsOverlay non-active">
-        <div class="block">
-            <p class="para">Looks like your account already exists!</p>
-            <p class="bookingButton">Sign in</p>
-        </div>
-    </div>
-    <div class="accExistsOverlay1 non-active">
-        <div class="block">
-            <p class="para">Looks like you account already exists!</p>
-            <p class="para">Please login to complete booking</p>
-            <button class="bookingButton">Sign in</button>
-        </div>
-    </div>
-    <div class="desktopConfirmation non-active" style="min-height: 300px;">
-        <span class="loader2"><span class="loader"></span></span>
-        <div class="block1">
-            <div class="topBlock">
-                <div class="intial"></div>
-                <div>
-                    <div>Booking With</div>
-                    <div class="name"></div>
-                </div>
-            </div>
-            <div class="dateBlock"><div></div></div>
-            <div class="serviceBlock"></div>
-            <div style="color: gray;">
-                7295 Rapistan Ct<br />
-                Mississauga, ON<br />
-                L5N 5Z4<br />
-                416-800-5056
-            </div>
-        </div>
-        <div class="bookBlock"><button class="bookingButton loadButton">Book</button></div>
-    </div>
-</section>
-<script type="text/javascript" src="/content/js/slick.min.js"></script>
 <script>
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "Septemeber", "October", "November", "December"];
@@ -2993,6 +882,46 @@
         if ($()) bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
     }
 
+    function addNames3() {
+      if ($(window).width() > 1023) {
+                            $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
+                        }
+                        duration = "";
+                        startTime = "";
+                        multiService = [];
+                        bookedStylist = "";
+                        // $('.calendarMain .loader2').removeClass('non-active')
+                        $(".calendarTest .loader2").removeClass("non-active");
+                        $(".morning .slot").empty();
+                        $(".afternoon .slot").empty();
+                        $(".evening .slot").empty();
+
+                        if ($(".pleaseSelect").children.length > 0) {
+                            $(".pleaseSelect").empty();
+                        }
+
+                        let memberId = $(this).data("team-member-id");
+                        stylistName = $(this).data("team-member-name");
+                        stylist = memberId.split(",");
+                        $(".staffMembers .addNames1").removeClass("loaded");
+                        $(this).addClass("loaded");
+                        let date1 = new Date();
+                        let year = date1.getFullYear();
+                        let mon = date1.getMonth();
+                        let test5 = new Date(year, mon + 1, 0);
+                        test5.setUTCHours(23, 59, 59, 0);
+                        currMonth = new Date().getMonth();
+                        calendarChange();
+                        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
+                        $(".form123 .calendarTop .next-arrow").removeClass("disabled");
+                        $(".form123 .calendarTop .prev-arrow").addClass("disabled");
+                        if ($(window).width() > 1023) {
+                            serviceType1(serviceEnd, stylist);
+                            $(".form123").empty().append($(".serviceBooking").eq(0).clone().addClass("active"));
+                            $(".form123 .serviceBookingSide").empty().append($(".serviceSide").eq(0).clone().addClass("active"));
+                            $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
+                        }
+    }
     function serviceType1(serviceEnd, stylist, startTime, note) {
         fetch(`https://shp-webserver-temp.glitch.me/sq-servicetype`, {
             method: "POST",
@@ -3762,11 +1691,11 @@
             </div>
 
             <div class='dateTime details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/clock.png'>
+              <img style='width:25px; height:25px;' src='/content/images/marketing/gta-booking/clock.png'>
               <div class='timeFrame'></div>
             </div>
             <div class='details'>
-              <img style='width:25px; height:25px;' src='../../../assets/img/gta/price-tag.png'>
+              <img style='width:25px; height:25px;' src='/content/images/marketing/gta-booking/price-tag.png'>
               <div class='serviceDetails'></div>
             </div>
           </div>
@@ -4456,33 +2385,132 @@
                     servicesAvailable.forEach((item) => {
                         let product = item.itemData.variations[0];
                         const id = product.id;
+                        const categoryId = item.itemData.categoryId;
                         const mins = product.itemVariationData.serviceDuration;
                         let cost = "";
                         cost = product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount / 100).toLocaleString("en-us", { style: "currency", currency: "USD" }) : "Price Varies";
                         // PRODUCTION LEVEL
                         //
-                        if (id == "YJDFATQVTOPCCERF44FTP73E") {
-                            $(".gokutest .list-mens .page-tab #installation").empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Men's Haircut</div>
-            <div>${mins / 60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`);
+                        if (categoryId == "C2IRZ4FGQXXHRF4IPAE4FEPI") {
+                            $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "CTXTZZ5QEK66V6KFEK5W5CM2" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "SBORZO5HJQ44HNVSJCBAPJQP" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "NYEURUEDOMZVW7EWSZHQVA35" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "AUY47YMRD5D3XWSW55R3P3UM" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "4COPI64XBSXYW6BYVZHHV6WA" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "HU4ALRUZQ4KW3Z5GLYCC6VO2" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        }else if (categoryId == "HBPI327PFDDKGYQEPLF7NH25" ) {
+                          $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "M5DD2M3DQ32KCIYU77NK7PII" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "JIMGAKVKNKEYSBYK7XQOPP53" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "26GPWKG45J2NUC6SE3L44QGN" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "EC3GQR7MOAACVLJCCOLRN7TR" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "X24ORICP55L3LBZNID7QK2QO" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "CP5O6JJLKRVR2QQNBROJFVWT" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
+                        } else if (categoryId == "DXXAQ46JUD7HTKAOSEQNYONU" ) {
+                          $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        <div>${item.itemData.name}</div>
+                        <div>${mins / 60000}mins</div>
+                        <div style="text-align:end;">${cost}</div>
+                        </div>`);
                         }
 
-                        if (id == "CXXZZX3QDWLRDLXMXSWLEDXG") {
-                            $(".gokutest .list-mens .page-tab #installationcolor").empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Test</div>
-            <div>${mins / 60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`);
-                        }
-                        if (id == "FYM523QRBQHJDGBJWD4MRS4S") {
-                            $(".gokutest .list-mens .page-tab #maintenance").empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
-            <div>Shampoo Style</div>
-            <div>${mins / 60000}mins</div>
-            <div style="text-align:end;">${cost}</div>
-            </div>`);
-                        }
+            //             if (categoryId == "T7SZGAE3VBBJTJA7VF6OR6WI") {
+            //                 $(".gokutest .list-mens .page-tab #installationcolor").empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            // <div>${item.itemData.name}</div>
+            // <div>${mins / 60000}mins</div>
+            // <div style="text-align:end;">${cost}</div>
+            // </div>`);
+            //             }
+            //             if (categoryId == "Q2EYMQTQ52MHZCNWAXW73S5X") {
+            //                 $(".gokutest .list-mens .page-tab #maintenance").append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            // <div>${item.itemData.name}</div>
+            // <div>${mins / 60000}mins</div>
+            // <div style="text-align:end;">${cost}</div>
+            // </div>`);
+            //             }
+            //             if (categoryId == "QUPT4I42DRU3GZHYCFCVGIRA") {
+            //                 $(".gokutest .list-mens .page-tab #maintenance").append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            // <div>${item.itemData.name}</div>
+            // <div>${mins / 60000}mins</div>
+            // <div style="text-align:end;">${cost}</div>
+            // </div>`);
+            //             }
+            //             if (categoryId == "RL64PVLSIFALWMRX4MRZGMCJ") {
+            //                 $(".gokutest .list-mens .page-tab #hairtrim").empty().append(`<div id="${id}" class="list-item" data-service-id="${id}">
+            // <div>${item.itemData.name}</div>
+            // <div>${mins / 60000}mins</div>
+            // <div style="text-align:end;">${cost}</div>
+            // </div>`);
+            //             }
                     });
                     resolve();
                 });
@@ -4499,7 +2527,7 @@
                     }
                     $(".serviceList .staffMembers .addNames1").on("click", addNames1);
                     $(".mobileBottom1 .next").addClass("non-active");
-                    $(".list-mens .list-item").on("click", { lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable }, addService);
+                    $(".list-services .list-item").on("click", { lastTime: lastTime, currTime: currTime, servicesAvailable: servicesAvailable }, addService);
                     $(document).on("click", ".multiServiceItem", function () {
                         // let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
                     });
@@ -4664,6 +2692,7 @@
         $(".calendarTop .prev-arrow").addClass("disabled");
         $(".calendarTop .next-arrow").removeClass("disabled");
     }
+
 
     window.addEventListener("DOMContentLoaded", function () {
         $(".gtaTopSide").slick({
@@ -5008,15 +3037,14 @@
                 $(".mobileSystem2 #no").on("click", function () {
                     var a = document.createElement("a");
                     a.target = "_blank";
-                    a.href = "/online-professional-hair-consultant-for-hairpieces/";
+                    a.href = "/online-professional-hair-consultant-for-hair-pieces-toupee/";
                     a.click();
                 });
                 $(".mobileSystem2 #yes").on("click", function () {
                     $(".mobileSystem2").removeClass("active");
                     $(".mobileSystem3").addClass("active");
-
-                    $(".mobileSystem3 #mens").on("click", function () {
-                        $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
+                    $('.mobileSystem3 button').on("click", function() {
+                      $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
                         $(".mobileSystem3").removeClass("active");
                         if ($(window).width() > 1023) {
                             $(".form123").empty().append($(".staffBooking").eq(0).clone().addClass("active"));
@@ -5025,46 +3053,7 @@
                             $(".form123").append($(".serviceBooking").eq(0).clone().addClass("active"));
                             $(".form123 .serviceBooking").addClass("active");
                         }
-                        $(".staffMembers .addNames1").on("click", function () {
-                            if ($(window).width() > 1023) {
-                                $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
-                            }
-                            duration = "";
-                            startTime = "";
-                            multiService = [];
-                            bookedStylist = "";
-                            // $('.calendarMain .loader2').removeClass('non-active')
-                            $(".calendarTest .loader2").removeClass("non-active");
-                            $(".morning .slot").empty();
-                            $(".afternoon .slot").empty();
-                            $(".evening .slot").empty();
-
-                            if ($(".pleaseSelect").children.length > 0) {
-                                $(".pleaseSelect").empty();
-                            }
-
-                            let memberId = $(this).data("team-member-id");
-                            stylistName = $(this).data("team-member-name");
-                            stylist = memberId.split(",");
-                            $(".staffMembers .addNames1").removeClass("loaded");
-                            $(this).addClass("loaded");
-                            let date1 = new Date();
-                            let year = date1.getFullYear();
-                            let mon = date1.getMonth();
-                            let test5 = new Date(year, mon + 1, 0);
-                            test5.setUTCHours(23, 59, 59, 0);
-                            currMonth = new Date().getMonth();
-                            calendarChange();
-                            bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-                            $(".form123 .calendarTop .next-arrow").removeClass("disabled");
-                            $(".form123 .calendarTop .prev-arrow").addClass("disabled");
-                            if ($(window).width() > 1023) {
-                                serviceType1(serviceEnd, stylist);
-                                $(".form123").empty().append($(".serviceBooking").eq(0).clone().addClass("active"));
-                                $(".form123 .serviceBookingSide").empty().append($(".serviceSide").eq(0).clone().addClass("active"));
-                                $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
-                            }
-                        });
+                        $(".staffMembers .addNames1").on("click", addNames3);
                         $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
                         $(".mobileBottom").removeClass("active");
                         if ($(window).width() > 1023) {
@@ -5074,8 +3063,12 @@
                         } else {
                             $(".mobileBottom1").addClass("active");
                         }
-                        bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
-                    });
+                      if (this.id == 'mens') {
+                        bookingSq(date.toISOString(), test5.toISOString(), ["EJOFRYTXG4AZTMA5VRQIJ6EY"], stylist);
+                      } else {
+                        bookingSq(date.toISOString(), test5.toISOString(), ["N5VFZOSNAOP7RCKAR5VMDDUZ"], stylist);
+                      }
+                    })
                 });
             }
         });
@@ -5111,7 +3104,7 @@
         (${serviceType} + color) 
       `);
             } else if (serviceType == "serviceCons") {
-                if (serviceGender == "mens") {
+
                     $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
                     $(".mobileService2").removeClass("active");
                     if ($(window).width() > 1023) {
@@ -5121,46 +3114,7 @@
                         $(".form123").append($(".serviceBooking").eq(0).clone().addClass("active"));
                         $(".form123 .serviceBooking").addClass("active");
                     }
-                    $(".staffMembers .addNames1").on("click", function () {
-                        if ($(window).width() > 1023) {
-                            $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
-                        }
-                        duration = "";
-                        startTime = "";
-                        multiService = [];
-                        bookedStylist = "";
-                        // $('.calendarMain .loader2').removeClass('non-active')
-                        $(".calendarTest .loader2").removeClass("non-active");
-                        $(".morning .slot").empty();
-                        $(".afternoon .slot").empty();
-                        $(".evening .slot").empty();
-
-                        if ($(".pleaseSelect").children.length > 0) {
-                            $(".pleaseSelect").empty();
-                        }
-
-                        let memberId = $(this).data("team-member-id");
-                        stylistName = $(this).data("team-member-name");
-                        stylist = memberId.split(",");
-                        $(".staffMembers .addNames1").removeClass("loaded");
-                        $(this).addClass("loaded");
-                        let date1 = new Date();
-                        let year = date1.getFullYear();
-                        let mon = date1.getMonth();
-                        let test5 = new Date(year, mon + 1, 0);
-                        test5.setUTCHours(23, 59, 59, 0);
-                        currMonth = new Date().getMonth();
-                        calendarChange();
-                        bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
-                        $(".form123 .calendarTop .next-arrow").removeClass("disabled");
-                        $(".form123 .calendarTop .prev-arrow").addClass("disabled");
-                        if ($(window).width() > 1023) {
-                            serviceType1(serviceEnd, stylist);
-                            $(".form123").empty().append($(".serviceBooking").eq(0).clone().addClass("active"));
-                            $(".form123 .serviceBookingSide").empty().append($(".serviceSide").eq(0).clone().addClass("active"));
-                            $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
-                        }
-                    });
+                    $(".staffMembers .addNames1").on("click", addNames3);
                     $(".form123 .calendarTop .next-arrow").on("click", nextMonth);
                     $(".mobileBottom").removeClass("active");
                     if ($(window).width() > 1023) {
@@ -5170,7 +3124,10 @@
                     } else {
                         $(".mobileBottom1").addClass("active");
                     }
-                    bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
+                if (serviceGender == "mens") {
+                    bookingSq(date.toISOString(), test5.toISOString(), ["EJOFRYTXG4AZTMA5VRQIJ6EY"], stylist);
+                } else if (serviceGender == 'womens') {
+                  bookingSq(date.toISOString(), test5.toISOString(), ["N5VFZOSNAOP7RCKAR5VMDDUZ"], stylist);
                 }
             }
         });
@@ -5245,32 +3202,53 @@
             if (serviceGender == "mens") {
                 if (serviceType == "Maintenance") {
                     if (color) {
-                        bookingSq(date.toISOString(), test5.toISOString(), ["CXXZZX3QDWLRDLXMXSWLEDXG"], stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["3WRDXUMI7MXEBFIEJQ3WZVXQ"], stylist);
                         if (stylistName) {
                             $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
                         }
                     } else {
-                        bookingSq(date.toISOString(), test5.toISOString(), "RTGD32YYZ2YK36MUN43WMYEC", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["Q3GP2KCQNTC5LESEALDKJBDC"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     }
                 } else {
                     if (color) {
-                        bookingSq(date.toISOString(), test5.toISOString(), "O6RWN7NFJKTYCTSKXIVKNUUV", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["Q3GP2KCQNTC5LESEALDKJBDC"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     } else {
-                        bookingSq(date.toISOString(), test5.toISOString(), "QKVCJJZHAHG3AWGIOVHASRNA", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["3WRDXUMI7MXEBFIEJQ3WZVXQ"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     }
                 }
             } else {
                 if (serviceType == "Maintenance") {
                     if (color) {
-                        bookingSq(date.toISOString(), test5.toISOString(), "OS255XE5HJCLHU43J4YT5R4F", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["A63SLKGS53GPCXBNOMBCMAQA"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     } else {
-                        bookingSq(date.toISOString(), test5.toISOString(), "OK3BPUAMAJYINUKVQJRBHZMB", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["WTRFAPG5ORECMGHCNRSCVR36"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     }
                 } else {
                     if (color) {
-                        bookingSq(date.toISOString(), test5.toISOString(), "WEXJ7MQTUFSVGFIERPF7IOUW", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["DR6GFFRRQR42R2GN5YNIW6UL"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     } else {
-                        bookingSq(date.toISOString(), test5.toISOString(), "RSDJ4PSD2SJ6JBPUSCK274QN", stylist);
+                        bookingSq(date.toISOString(), test5.toISOString(), ["33GH64PSSVWSSY5PIHUUQJAA"], stylist);
+                        if (stylistName) {
+                            $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
+                        }
                     }
                 }
             }
