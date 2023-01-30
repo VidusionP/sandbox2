@@ -923,6 +923,10 @@
     .apptDetails .address {
         color: #8b8b8b;
     }
+    .address.desktop {
+        margin-top: 10px;
+        color: gray;
+    }
     .apptDetails .bookings {
         color: #006cff;
         margin-top: 30px;
@@ -1601,6 +1605,11 @@
                 <h2 class="bookingTitle">Welcome To GTA Online Booking System</h2>
                 <p style="font-weight: 600; margin: unset;">Mon - Fri / 10:00AM - 6:00PM. Sat-Sun Closed.</p>
                 <p style="font-weight: 600;">Federal Holidays Closed.</p>
+                <div class="address desktop">
+                    7295 Rapistan Ct<br />
+                    Mississauga, On L5N5Z4<br />
+                    416-800-5056
+                </div>
             </div>
             <div class="gtaFirstDesktop">
                 <h2 class="bookingTitle" style="margin: 0;">Let's Book Now!</h2>
@@ -1608,7 +1617,9 @@
                 <p class="bookingTitle3" style="margin-bottom: 1.5rem !important;">Online Booking Directly</p>
                 <button class="buttonApt bookingButton">Book Appointment</button>
                 <p class="bookingTitle3">or</p>
-                <p class="bookingTitle3">Call: (905) 917-1805</p>
+                <p class="bookingTitle3">Call: 
+                    <a style="color: #377de7;" href="tel:+19059171805">(905) 917-1805</a>
+                    </p>
             </div>
             <div style="text-align: center; margin: 20px 0;">
                 <p style="margin-bottom: 1.5rem !important;">Want to cancel your appointment?</p>
@@ -1832,7 +1843,7 @@
                     </div>
                     <p style="color: #555; margin-bottom: 1.5rem !important;">
                         Any Questions?<br />
-                        Please Call: (905) 917-1805
+                        Please Call: <a style="color: #377de7;" href="tel:+19059171805">(905) 917-1805</a>
                     </p>
                 </div>
                 <div class="desktopBottom">
@@ -3182,7 +3193,7 @@
                                 $("#serviceType").empty();
                                 $("#serviceType").append(`
             <div>
-              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
+              ${item.itemData.name.split("(")[0]} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney ? `$` + item.itemData.variations[0].itemVariationData.priceMoney.amount / 100 + `.00` : "Price Varies"}</p>
               </div>
             `);
@@ -3190,7 +3201,7 @@
                                 console.log(item);
                                 $("#serviceType").append(`
             <div>
-              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
+              ${item.itemData.name.split("(")[0]} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney ? `$` + item.itemData.variations[0].itemVariationData.priceMoney.amount / 100 + `.00` : "Price Varies"}</p>
               </div>
             `);
@@ -3231,7 +3242,7 @@
                                     $(".gokutest .desktopConfirmation .name").empty().append(stylistName);
                                     $(".gokutest .desktopConfirmation .dateBlock div").empty().append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
                                     $(".gokutest .desktopConfirmation .serviceBlock").append(`            <div>
-              ${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
+              ${item.itemData.name.split("(")[0]} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) </br>
               <p>${item.itemData.variations[0].itemVariationData.priceMoney ? `$` + item.itemData.variations[0].itemVariationData.priceMoney.amount / 100 + `.00` : "Price Varies"}</p>
               </div>`);
                                     $(".gokutest .desktopConfirmation .loader2").addClass("non-active");
@@ -3337,7 +3348,7 @@
                                 } else if ($(".form123 .serviceBooking").hasClass("active")) {
                                     $(".bookingName")
                                         .empty()
-                                        .append(`${item.itemData.name} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins)`);
+                                        .append(`${item.itemData.name.split("(")[0]} (${item.itemData.variations[0].itemVariationData.serviceDuration / 60000}mins)`);
                                     $(".bookingPrice")
                                         .empty()
                                         .append(`${item.itemData.variations[0].itemVariationData.priceMoney ? `$` + item.itemData.variations[0].itemVariationData.priceMoney.amount / 100 + `.00` : "Price Varies"}`);
@@ -3960,7 +3971,7 @@
                                             $(`#${r.booking.id}.apptBlock .stylistName`).empty().append(vidu[0].display_name);
                                             $(`#${r.booking.id}.apptBlock .serviceDetails`).append(`
     <div>
-      ${vidu1[0].itemData.name} (${vidu1[0].itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) ${
+      ${vidu1[0].itemData.name.split("(")[0]} (${vidu1[0].itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) ${
                                                 vidu1[0].itemData.variations[0].itemVariationData.priceMoney ? `$` + vidu1[0].itemData.variations[0].itemVariationData.priceMoney.amount / 100 + `.00` : "Price Varies"
                                             }
     </div>
@@ -4398,7 +4409,12 @@
         // console.log(customerInfo)
         let notes = "";
         if (localStorage.getItem("email")) {
-            notes = $(`${form} div[name=apptNotes]`).html();
+            if ($(window).width() > 1023) {
+                notes = $(`${form} #apptNotesDesktop`).html();
+            } else {
+                notes = $(`${form} div[name=apptNotes]`).html();
+            }
+
         } else {
             notes = $(`.bookingForm.active ${form} textarea[name=appNotes]`).val();
         }
@@ -4501,12 +4517,10 @@
             });
     }
     function showService(e) {
-        console.log($('.botss .service .list-item.newClass'))
         $('.botss .oldBooked').remove();
         Array.from($(".serviceList .botss .testing1995").children()).forEach((item) => {
             $(item).css("display", "");
         });
-        console.log(total)
         $('.botss .service .list-item.newClass').unbind('click')
         $('.botss .service').removeClass('non-active');
         $('.botss .service .list-item').remove();
@@ -4548,7 +4562,18 @@
         $(".bookingLoad:not(.loaded):first").addClass("loaded");
         // $('.oldClients').addClass('non-active')
         $(".serviceList .mobileBottom1").addClass("active");
-        $(".serviceList").css("max-height", `${setheight}px`);
+        if ($(window).width() < 1024) {
+            $('.serviceList').css('bottom', '');
+            $('.serviceList').css('top', '0');
+            if (setheight < window.innerHeight) {
+                $(".serviceList").css("max-height", `${setheight}px`);
+            } else {
+                $(".serviceList").css("max-height", `${window.innerHeight - 85.5}px`);
+            }
+
+        } else {
+            $(".serviceList").css("max-height", `${setheight}px`);
+        }
         $(".serviceList .mobileBottom1 .backButton").on("click", function () {
 
             if (!$(".serviceList .gokutest").hasClass("non-active")) {
@@ -4696,93 +4721,218 @@
                         cost = product.itemVariationData.priceMoney ? (product.itemVariationData.priceMoney.amount / 100).toLocaleString("en-us", { style: "currency", currency: "USD" }) : "Price Varies";
                         // PRODUCTION LEVEL
                         //
+                        /// MENS
+                        // if (id == "BMENIVQM6YI6254XOMSI5QIB" || id == "2JDUDQ6ZC2W5ISMY6ACJKIUC") {
+                        //     $(`.gokutest .list-mens .page-tab #installation`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // }  else if (id == "YFDOI5TIOTSEXYCLU7SW7GEQ") {
+                        //     $(`.gokutest .list-mens .page-tab #installation`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // $(`.gokutest .list-womens .page-tab #installation`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // }  else if (id == "5WY5OYLPSRO5ZEE3CAQVDCIK") {
+                        //     $(`.gokutest .list-mens .page-tab #installationcolor`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "IQU3XIVADLWH4R26UHDEYNWN" || id == "57ZOFDUG3EPA5ZQAJEDTQIJW") {
+                        //     $(`.gokutest .list-mens .page-tab #maintenance`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "OTR5CBY3WATSLBTHPPT72FRR") {
+                        //     $(`.gokutest .list-mens .page-tab #maintenancecolor`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "OYP3HMSC3G53MWKZYUX6UYC5") {
+                        //     $(`.gokutest .list-mens .page-tab #hairtrim`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "YPS4TL2QN6G6G7BAAVCQWZCC" || id == "L6AZYQW42R7M4LCGYG2DV3T4") {
+                        //     $(`.gokutest .list-mens .page-tab #perm`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // $(`.gokutest .list-womens .page-tab #perm`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "2KURQYRV6SJKS3O6NODHP3QT") {
+                        //     $(`.gokutest .list-mens .page-tab #system`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // $(`.gokutest .list-womens .page-tab #system`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // }  else if (id == "67ELY4T4HAC2WOOA42L37XZE") {
+                        //     $(`.gokutest .list-mens .page-tab #misc`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } 
+
+                        // /// WOMENS
+                        // if (id == "RSDJ4PSD2SJ6JBPUSCK274QN") {
+                        //     $(`.gokutest .list-womens .page-tab #installation`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "XGHKBCNVFW33IAKPPBZ2JYS4") {
+                        //     $(`.gokutest .list-womens .page-tab #installationcolor`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "TFQ7ALHTNIZETVBSPQWAKM4K") {
+                        //     $(`.gokutest .list-womens .page-tab #maintenance`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "LJLJHWOMJFD4WYEC4ZHAO3LP") {
+                        //     $(`.gokutest .list-womens .page-tab #maintenancecolor`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "3MFRBXFO7754UWO37VKBBJHZ") {
+                        //     $(`.gokutest .list-womens .page-tab #misc`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // }
+
+
+
+                        // /// CONSULTATION
+                        // if (id == "TWIT5EETLCLOIPKPC43SXKOE") {
+                        //     $(`.gokutest .list-consult .page-tab #womensconsult`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // } else if (id == "AXVUC7GSLVCOPLMBKS7PNTTR") {
+                        //     $(`.gokutest .list-consult .page-tab #mensconsult`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
+                        // <div>${item.itemData.name.split("(")[0]}</div>
+                        // <div>${mins / 60000}mins</div>
+                        // <div style="text-align:end;">${cost}</div>
+                        // </div>`);
+                        // }
+                        ////
+
+
+
                         if (categoryId == "C2IRZ4FGQXXHRF4IPAE4FEPI") {
                             $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "CTXTZZ5QEK66V6KFEK5W5CM2" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
-                        }else if (categoryId == "SBORZO5HJQ44HNVSJCBAPJQP" ) {
+                        } else if (categoryId == "SBORZO5HJQ44HNVSJCBAPJQP" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         }else if (categoryId == "NYEURUEDOMZVW7EWSZHQVA35" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         }else if (categoryId == "AUY47YMRD5D3XWSW55R3P3UM" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         }else if (categoryId == "4COPI64XBSXYW6BYVZHHV6WA" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         }else if (categoryId == "HU4ALRUZQ4KW3Z5GLYCC6VO2" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         }else if (categoryId == "HBPI327PFDDKGYQEPLF7NH25" ) {
                           $(`.gokutest .list-mens .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "M5DD2M3DQ32KCIYU77NK7PII" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "JIMGAKVKNKEYSBYK7XQOPP53" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "26GPWKG45J2NUC6SE3L44QGN" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "EC3GQR7MOAACVLJCCOLRN7TR" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "X24ORICP55L3LBZNID7QK2QO" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "CP5O6JJLKRVR2QQNBROJFVWT" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
                         } else if (categoryId == "DXXAQ46JUD7HTKAOSEQNYONU" ) {
                           $(`.gokutest .list-services .page-tab #${categoryId}`).append(`<div id="${id}" class="list-item" data-service-id="${id}">
-                        <div>${item.itemData.name}</div>
+                        <div>${item.itemData.name.split("(")[0]}</div>
                         <div>${mins / 60000}mins</div>
                         <div style="text-align:end;">${cost}</div>
                         </div>`);
@@ -4823,6 +4973,7 @@
 
                 testing1.then(() => {
                     $(".gokutest .multiServiceDesk1 .loader2").addClass("non-active");
+                    $(document).off();
                     currMonth = new Date().getMonth();
                     let lastTime = new Date(currYear, currMonth + 1, 0, 23, 59, 59);
                     let currTime = date;
@@ -4837,7 +4988,6 @@
                         // let check = $("> div:last-of-type", this).text() == "Price Varies" ?"$0.00"  : $("> div:last-of-type", this).text();
                     });
                     $(document).on("click", ".multiServiceItem .trash", function () {
-                        console.log('checl')
                         let check = $(this).parent().find(".price")[0].innerHTML == "Price Varies" ? "$0.00" : $(this).parent().find(".price")[0].innerHTML;
                         let x = serviceEnd1.indexOf(this.id);
                         if (x > -1) {
@@ -4870,7 +5020,7 @@
                         // console.log($(`.serviceList .list-mens`))
                         $('.serviceList').find(`#${this.id}`).removeClass("active");
                     });
-                    $(document).off().on("click", ".list-item.newClass", function () {
+                    $(document).on("click", ".list-item.newClass", function () {
                         console.log('Deleting')
                         let check = $("> div:last-of-type", this).text() == "Price Varies" ? "$0.00" : $("> div:last-of-type", this).text();
                         let x = serviceEnd1.indexOf(this.id);
@@ -4994,7 +5144,7 @@
             $(".mobileBottom1 .next").removeClass("non-active");
         }
         const test = servicesAvailable.filter((item1) => item1.itemData.variations[0].id == self);
-        const testName = test[0].itemData.name;
+        const testName = test[0].itemData.name.split("(")[0];
         const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration;
         let check = $("> div:last-of-type", this).text() == "Price Varies" ? "$0.00" : $("> div:last-of-type", this).text();
 
