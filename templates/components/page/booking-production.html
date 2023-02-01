@@ -1780,9 +1780,11 @@
                 </div>
             </div>
             <div class="desktopBottom">
-                <p class="oldCancel">Cancel</p>
-                <p class="next">Next</p>
-                <p class="oldBack">Back</p>
+                <div style="display: flex; gap: 20px;">
+                    <p class="oldCancel">Cancel</p>
+                    <p class="oldBack">Back</p>
+                </div>
+                <p class="next non-active">Next</p>
             </div>
         </div>
     </div>
@@ -2208,9 +2210,12 @@
     let servicesAvailable = [];
     let totalTime = 0;
     let multiService = [];
+    // let date1 = new Date();
+
     test5.setUTCHours(23, 59, 59, 0);
     function checkAva(currTime, lastTime, serviceId, durationTotal, value) {
-
+        // console.log(currTime)
+        // console.log(lastTime)
         if (stylistName) {
             $(".serviceList .multiServiceSide .multiServiceStylist").remove();
             $(".serviceList .multiServiceSide .stylist").append(`
@@ -2228,7 +2233,6 @@
                 },
             });
         });
-
 
         fetch(`https://shp-webserver.glitch.me/sq-availability`, {
 
@@ -2250,18 +2254,23 @@
                 $(".mobileBottom1 .bookingButton.confirmButton").unbind("click");
                 if ($(".serviceList .serviceBooking").hasClass("active")) {
                     let apps = r.availabilities;
+
                     let dateSelected = new Date().toLocaleString("en-us", { weekday: "short" });
                     let firstDate = r.availabilities[0];
                     let v = 0;
-
-
-
+                    let dateNow = date.getMonth();
                     if (apps.length > 0) {
+                        console.log(apps)
                         $(".currMonth").removeClass("active selected");
+                        let goku1 = new Date(apps[0].startAt);
+                        // console.log(goku1.getMonth())
+                        if (dateNow == goku1.getMonth()) {
                         apps.forEach((item) => {
                             const date = new Date(item.startAt);
                             const day = date.getDate();
-                            Array.from($(".currMonth")).forEach((item1) => {
+                            if (dateNow == date.getMonth()) {
+                                
+                                Array.from($(".currMonth")).forEach((item1) => {
                                 if (day == item1.innerHTML) {
                                     if (!item1.classList.contains("active")) {
                                         item1.setAttribute("data-id", v);
@@ -2270,10 +2279,46 @@
                                     }
                                 }
                             });
+                            } 
                         });
+                        } else {
+                            currMonth = currMonth + 1
+                            calendarChange();
+                            apps.forEach((item) => {
+                            const date = new Date(item.startAt);
+                            const day = date.getDate();
+                                Array.from($(".currMonth")).forEach((item1) => {
+                                if (day == item1.innerHTML) {
+                                    if (!item1.classList.contains("active")) {
+                                        item1.setAttribute("data-id", v);
+                                        $(item1).addClass("active");
+                                        v++;
+                                    }
+                                }
+                            });
+                            
+                        });
+                        }
+                        // apps.forEach((item) => {
+                        //     const date = new Date(item.startAt);
+                        //     const day = date.getDate();
+                        //     if (dateNow == date.getMonth()) {
+                        //         Array.from($(".currMonth")).forEach((item1) => {
+                        //         if (day == item1.innerHTML) {
+                        //             if (!item1.classList.contains("active")) {
+                        //                 item1.setAttribute("data-id", v);
+                        //                 $(item1).addClass("active");
+                        //                 v++;
+                        //             }
+                        //         }
+                        //     });
+                        //     } 
+                        // });
+
                         $(".currMonth.active").eq(0).addClass("selected");
                         let x = $(".currMonth.selected").attr("data-id");
                         let y = $(".currMonth.selected").attr("data-date");
+
                         getCurrentDateAppointments(r.availabilities[x], apps, x, y);
                         if ($(window).width() > 1023) {
                             $(".multiServiceDesk .calendarTop .prev-arrow").addClass("disabled");
@@ -2445,9 +2490,16 @@
                         let date1 = new Date();
                         let year = date1.getFullYear();
                         let mon = date1.getMonth();
-                        let test5 = new Date(year, mon + 1, 0);
-                        test5.setUTCHours(23, 59, 59, 0);
+                        let vidu = Math.abs(date1 - test5) / 36e5;
                         currMonth = new Date().getMonth();
+
+                        if (vidu < 24) {
+                            test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                            currMonth = currMonth + 1
+                        } else {
+                            test5.setUTCHours(23, 59, 59, 0);
+                        }
+                        test5.setUTCHours(23, 59, 59, 0);
 
                         calendarChange();
                         // getCurrentDateAppointments(r.availabilities[x], r.availabilities, x, y)
@@ -2505,7 +2557,13 @@
                             let year = date1.getFullYear();
                             let mon = date1.getMonth();
                             let test5 = new Date(year, mon + 1, 0);
-                            test5.setUTCHours(23, 59, 59, 0);
+                            let vidu = Math.abs(date1 - test5) / 36e5;
+                            if (vidu < 24) {
+                                test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                                currMonth = currMonth + 1
+                            } else {
+                                test5.setUTCHours(23, 59, 59, 0);
+                            }
                             currMonth = new Date().getMonth();
                             calendarChange();
                             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
@@ -2589,7 +2647,13 @@
                             let year = date1.getFullYear();
                             let mon = date1.getMonth();
                             let test5 = new Date(year, mon + 1, 0);
-                            test5.setUTCHours(23, 59, 59, 0);
+                            let vidu = Math.abs(date1 - test5) / 36e5;
+                            if (vidu < 24) {
+                                test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                                currMonth = currMonth + 1
+                            } else {
+                                test5.setUTCHours(23, 59, 59, 0);
+                            }
                             currMonth = new Date().getMonth();
                             calendarChange();
                             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
@@ -2665,6 +2729,7 @@
         multiService = [];
         bookedStylist = "";
         currMonth = currMonth + 1;
+
         if (currMonth == new Date().getMonth() + 2) {
             $(".calendarTop .next-arrow").addClass("disabled");
             $(".calendarTop .next-arrow").unbind("click", nextMonth);
@@ -2793,6 +2858,11 @@
             // $('.serviceList .calendarMain .loader2').addClass('non-active')
             $(".serviceList .calendarTest .loader2").addClass("non-active");
             const test2 = apps.filter((item) => item.startAt.includes(y));
+            // console.log(test2)
+            // console.log(y)
+             if (test2.length == 0) {
+                calendarChange();
+             }
             // console.log(apps)
             // console.log(test2)
             // console.log(y)
@@ -2906,6 +2976,8 @@
 
     function bookingSq(startDate, endDate, service, stylists) {
         // console.log(startDate, endDate, service, stylists)
+        // console.log(startDate)
+        // console.log(endDate)
         serviceEnd = service;
         let styleTest = [];
         service.forEach((item) => {
@@ -2916,7 +2988,9 @@
                 },
             });
         });
-
+        // console.log(startDate)
+        // console.log(endDate)
+        // console.log(styleTest)
         fetch("https://shp-webserver.glitch.me/sq-availability", {
             method: "POST",
             headers: {
@@ -2933,10 +3007,12 @@
             .then((r) => {
                 let apps = r.availabilities;
                 let dateSelected = new Date().toLocaleString("en-us", { weekday: "short" });
-
                 // duration = firstDate.appointmentSegments[0].durationMinutes;
                 let v = 0;
+                let dateNow = new Date().getMonth();
+                
                 if (apps.length > 0) {
+                    let goku1 = new Date(apps[0].startAt);
                     let firstDate = r.availabilities[0];
                     duration = "0";
                     firstDate.appointmentSegments.forEach((item) => {
@@ -2945,29 +3021,75 @@
                     $(".form123 .serviceBooking .sideBar .bookingTime").html(`${duration} minutes`);
                     $(".calendarTest .loader2").addClass("non-active");
                     $(".currMonth").removeClass("active selected");
-                    apps.forEach((item) => {
+                    if (dateNow == goku1.getMonth()) {
+                        apps.forEach((item) => {
                         const date = new Date(item.startAt);
                         const day = date.getDate();
-                        Array.from($(".currMonth")).forEach((item1) => {
-                            if (day == item1.innerHTML) {
-                                if (!item1.classList.contains("active")) {
-                                    item1.setAttribute("data-id", v);
-                                    $(item1).addClass("active");
-                                    v++;
+                        if (dateNow == date.getMonth()) {
+                            currMonth = goku1.getMonth();
+                            // calendarChange();
+                                Array.from($(".currMonth")).forEach((item1) => {
+                                if (day == item1.innerHTML) {
+                                    if (!item1.classList.contains("active")) {
+                                        item1.setAttribute("data-id", v);
+                                        $(item1).addClass("active");
+                                        v++;
+                                    }
                                 }
+                            });
                             }
-                        });
                     });
+                    } else {
+                        // currMonth = currMonth + 1
+                        // calendarChange();
+                        apps.forEach((item) => {
+                        const date = new Date(item.startAt);
+                        const day = date.getDate();
+                                Array.from($(".currMonth")).forEach((item1) => {
+                                if (day == item1.innerHTML) {
+                                    if (!item1.classList.contains("active")) {
+                                        item1.setAttribute("data-id", v);
+                                        $(item1).addClass("active");
+                                        v++;
+                                    }
+                                }
+                            });
+                            
+                    });
+                    }
+
+
+
+
+                    // apps.forEach((item) => {
+                    //     const date = new Date(item.startAt);
+                    //     const day = date.getDate();
+                    //     if (dateNow == date.getMonth()) {
+                    //             Array.from($(".currMonth")).forEach((item1) => {
+                    //             if (day == item1.innerHTML) {
+                    //                 if (!item1.classList.contains("active")) {
+                    //                     item1.setAttribute("data-id", v);
+                    //                     $(item1).addClass("active");
+                    //                     v++;
+                    //                 }
+                    //             }
+                    //         });
+                    //         }
+                    // });
                     if ($(".newClients").hasClass("non-active")) {
                         $(".serviceList .currMonth.active").eq(0).addClass("selected");
                     } else {
                         $(".currMonth.active").eq(0).addClass("selected");
                     }
+                    // calendarChange()
+
                     let x = $(".currMonth.selected").attr("data-id");
                     let y = $(".currMonth.selected").attr("data-date");
-                    // calendarChange()
-                    getCurrentDateAppointments(r.availabilities[x], apps, x, y);
+                    // console.log(new Date(date))
+                        getCurrentDateAppointments(r.availabilities[x], apps, x, y);
+                    
                 } else {
+
                     $(".currMonth").removeClass("active selected");
                     currMonth = currMonth + 1;
                     if (currMonth < 0 || currMonth > 11) {
@@ -2994,6 +3116,7 @@
                     // console.log(y)
                     // console.log(r.availabilities[x])
                     // console.log(r.availabilities)
+
                     getCurrentDateAppointments(r.availabilities[x], apps, x, y);
                 });
             });
@@ -3023,8 +3146,15 @@
         let year = date1.getFullYear();
         let mon = date1.getMonth();
         let test5 = new Date(year, mon + 1, 0);
-        test5.setUTCHours(23, 59, 59, 0);
+        let vidu = Math.abs(date1 - test5) / 36e5;
         currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
         calendarChange();
         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
         $(".form123 .calendarTop .next-arrow").removeClass("disabled");
@@ -3042,7 +3172,11 @@
         let lastTime = new Date(currYear, currMonth + 1, 0, 23, 59, 59);
         let currTime = date;
         let vidu = Math.abs(lastTime - currTime) / 36e5;
-
+        // console.log(lastTime)
+        // console.log(currTime)
+        // if (vidu < 24) {
+        //     lastTime = new Date(currYear, currMonth + 1, 2);
+        // }
         if (vidu < 24) {
             lastTime = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
         }
@@ -3058,7 +3192,6 @@
         let memberId = $(this).data("team-member-id");
         stylist = memberId.split(",");
         stylistName = $(this).data("team-member-name");
-
         $(".staffMembers .addNames1").removeClass("loaded");
         $(this).addClass("loaded");
         checkAva(currTime, lastTime, serviceEnd1, totalTime);
@@ -3088,7 +3221,13 @@
         let year = date1.getFullYear();
         let mon = date1.getMonth();
         let test5 = new Date(year, mon + 1, 0);
-        test5.setUTCHours(23, 59, 59, 0);
+        let vidu = Math.abs(date1 - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
         calendarChange();
          bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
     }
@@ -3121,8 +3260,15 @@
                         let year = date1.getFullYear();
                         let mon = date1.getMonth();
                         let test5 = new Date(year, mon + 1, 0);
-                        test5.setUTCHours(23, 59, 59, 0);
+                        let vidu = Math.abs(date1 - test5) / 36e5;
                         currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
                         calendarChange();
                         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                         $(".form123 .calendarTop .next-arrow").removeClass("disabled");
@@ -3262,8 +3408,15 @@
                                             let year = date1.getFullYear();
                                             let mon = date1.getMonth();
                                             let test5 = new Date(year, mon + 1, 0);
-                                            test5.setUTCHours(23, 59, 59, 0);
+                                            let vidu = Math.abs(date1 - test5) / 36e5;
                                             currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
                                             calendarChange();
                                             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                                             serviceType1(serviceEnd, stylist);
@@ -3291,8 +3444,15 @@
                                         let year = date1.getFullYear();
                                         let mon = date1.getMonth();
                                         let test5 = new Date(year, mon + 1, 0);
-                                        test5.setUTCHours(23, 59, 59, 0);
+                                        let vidu = Math.abs(date1 - test5) / 36e5;
                                         currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
                                         calendarChange();
                                         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                                         $(".serviceSideServices .loader2").addClass("non-active");
@@ -3365,8 +3525,15 @@
                                             let year = date1.getFullYear();
                                             let mon = date1.getMonth();
                                             let test5 = new Date(year, mon + 1, 0);
-                                            test5.setUTCHours(23, 59, 59, 0);
+                                            let vidu = Math.abs(date1 - test5) / 36e5;
                                             currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
                                             calendarChange();
                                             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                                             serviceType1(serviceEnd, stylist);
@@ -3437,8 +3604,15 @@
             let year = date1.getFullYear();
             let mon = date1.getMonth();
             let test5 = new Date(year, mon + 1, 0);
-            test5.setUTCHours(23, 59, 59, 0);
+            let vidu = Math.abs(date1 - test5) / 36e5;
             currMonth = new Date().getMonth();
+
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
             calendarChange();
             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
             $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
@@ -4962,8 +5136,12 @@
         const testName = test[0].itemData.name.split("(")[0];
         const testDuration = test[0].itemData.variations[0].itemVariationData.serviceDuration;
         let check = $("> div:last-of-type", this).text() == "Price Varies" ? "$0.00" : $("> div:last-of-type", this).text();
-
         // const testPrice = test[0].itemData.variations[0].itemVariationData.priceMoney ? test[0].itemData.variations[0].itemVariationData.priceMoney.amount
+        // console.log(currTime)
+        // console.log(lastTime)
+        // currMonth = currMonth + 1
+        // calendarChange();
+
         checkAva(currTime, lastTime, serviceEnd1, totalTime);
         $(".multiServiceSide .service").append(`
           <div class='multiServiceItem'>
@@ -5166,8 +5344,15 @@
                             let year = date1.getFullYear();
                             let mon = date1.getMonth();
                             let test5 = new Date(year, mon + 1, 0);
-                            test5.setUTCHours(23, 59, 59, 0);
+                            let vidu = Math.abs(date1 - test5) / 36e5;
                             currMonth = new Date().getMonth();
+                            if (vidu < 24) {
+                                test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                                currMonth = currMonth + 1
+                            } else {
+                                test5.setUTCHours(23, 59, 59, 0);
+                            }
+                            // test5.setUTCHours(23, 59, 59, 0);
                             calendarChange();
                             bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                             serviceType1(serviceEnd, stylist);
@@ -5195,8 +5380,15 @@
                         let year = date1.getFullYear();
                         let mon = date1.getMonth();
                         let test5 = new Date(year, mon + 1, 0);
-                        test5.setUTCHours(23, 59, 59, 0);
+                        let vidu = Math.abs(date1 - test5) / 36e5;
                         currMonth = new Date().getMonth();
+
+                            if (vidu < 24) {
+                                test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                                currMonth = currMonth + 1
+                            } else {
+                                test5.setUTCHours(23, 59, 59, 0);
+                            }
                         calendarChange();
                         bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                         $(".serviceSideServices .loader2").addClass("non-active");
@@ -5400,9 +5592,58 @@
                             $(".mobileBottom1").addClass("active");
                         }
                       if (this.id == 'mens') {
-                        bookingSq(date.toISOString(), test5.toISOString(), ["EJOFRYTXG4AZTMA5VRQIJ6EY"], stylist);
+                        let date1 = new Date();
+                        let year = date1.getFullYear();
+                        let mon = date1.getMonth();
+                            let test5 = new Date(year, mon + 1, 0);
+                        let vidu = Math.abs(date1 - test5) / 36e5;
+                        if (vidu < 24) {
+                            test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                            currMonth = currMonth + 1
+                            calendarChange();
+    
+                        } else {
+
+                            test5.setUTCHours(23, 59, 59, 0);
+
+                        }
+                        if ($(window).width() > 1023) {
+                            serviceEnd = ["AXVUC7GSLVCOPLMBKS7PNTTR"]
+                            $('.staffMembers .addNames1').on('click', function() {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["AXVUC7GSLVCOPLMBKS7PNTTR"], stylist);
+                        })
+                        } else {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["AXVUC7GSLVCOPLMBKS7PNTTR"], stylist);
+                        }
+
                       } else {
-                        bookingSq(date.toISOString(), test5.toISOString(), ["N5VFZOSNAOP7RCKAR5VMDDUZ"], stylist);
+                        let date1 = new Date();
+                        let year = date1.getFullYear();
+                        let mon = date1.getMonth();
+                            let test5 = new Date(year, mon + 1, 0);
+                        let vidu = Math.abs(date1 - test5) / 36e5;
+                        if (vidu < 24) {
+                            test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                            currMonth = currMonth + 1
+                            // calendarChange();
+    
+                        } else {
+
+                            test5.setUTCHours(23, 59, 59, 0);
+                            currMonth = currMonth + 1
+                    calendarChange();
+
+                        }
+                        if ($(window).width() > 1023) {
+                            serviceEnd = ["TWIT5EETLCLOIPKPC43SXKOE"]
+                            $('.staffMembers .addNames1').on('click', function() {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["TWIT5EETLCLOIPKPC43SXKOE"], stylist);
+
+                            })
+                        } else {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["TWIT5EETLCLOIPKPC43SXKOE"], stylist);
+
+                        }
                       }
                     })
                 });
@@ -5461,14 +5702,64 @@
                         $(".mobileBottom1").addClass("active");
                     }
                 if (serviceGender == "mens") {
-                    bookingSq(date.toISOString(), test5.toISOString(), ["EJOFRYTXG4AZTMA5VRQIJ6EY"], stylist);
+                    let date1 = new Date();
+                let year = date1.getFullYear();
+                let mon = date1.getMonth();
+                    let test5 = new Date(year, mon + 1, 0);
+                let vidu = Math.abs(date1 - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                    calendarChange();
+                } else {
+                    // currMonth = currMonth + 1
+                    // calendarChange();
+
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
+                if ($(window).width() > 1023) {
+                            serviceEnd = ["AXVUC7GSLVCOPLMBKS7PNTTR"]
+                            $('.staffMembers .addNames1').on('click', function() {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["AXVUC7GSLVCOPLMBKS7PNTTR"], stylist);
+
+                            })
+                        } else {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["AXVUC7GSLVCOPLMBKS7PNTTR"], stylist);
+
+                        }
+
                 } else if (serviceGender == 'womens') {
-                  bookingSq(date.toISOString(), test5.toISOString(), ["N5VFZOSNAOP7RCKAR5VMDDUZ"], stylist);
+                    let date1 = new Date();
+                let year = date1.getFullYear();
+                let mon = date1.getMonth();
+                    let test5 = new Date(year, mon + 1, 0);
+                let vidu = Math.abs(date1 - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                    calendarChange();
+                } else {
+                    currMonth = currMonth + 1
+                    calendarChange();
+
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
+                if ($(window).width() > 1023) {
+                            serviceEnd = ["TWIT5EETLCLOIPKPC43SXKOE"]
+                            $('.staffMembers .addNames1').on('click', function() {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["TWIT5EETLCLOIPKPC43SXKOE"], stylist);
+
+                            })
+                        } else {
+                            bookingSq(date.toISOString(), test5.toISOString(), ["TWIT5EETLCLOIPKPC43SXKOE"], stylist);
+
+                        }
                 }
             }
         });
         /////
         $(".mobileService3 .bookingButton").on("click", (e) => {
+  
             e.preventDefault();
             e.target.innerHTML == "Yes" ? (color = true) : (color = false);
             $(".mobileService3").removeClass("active");
@@ -5480,7 +5771,7 @@
 
                 $(".form123 .serviceBooking").addClass("active");
             }
-
+                
             $(".staffMembers .addNames1").on("click", function () {
                 
 
@@ -5510,8 +5801,16 @@
                 let year = date1.getFullYear();
                 let mon = date1.getMonth();
                 let test5 = new Date(year, mon + 1, 0);
-                test5.setUTCHours(23, 59, 59, 0);
+                let vidu = Math.abs(date1 - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                    
+                } else {
+                    test5.setUTCHours(23, 59, 59, 0);
+                }
                 calendarChange();
+                
                 bookingSq(date1.toISOString(), test5.toISOString(), serviceEnd, stylist);
                 $(".form123 .calendarTop .next-arrow").removeClass("disabled");
                 $(".form123 .calendarTop .prev-arrow").addClass("disabled");
@@ -5538,13 +5837,26 @@
             if ($(window).width() > 1023) {
             }
             if (serviceGender == "mens") {
+                if ($(window).width() < 1024) {
+                    let vidu = Math.abs(date - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                    calendarChange();
+                } else {
+                    // test5.setUTCHours(23, 59, 59, 0);
+                }
+                }
+
                 if (serviceType == "Maintenance") {
                     if (color) {
+                       
                         bookingSq(date.toISOString(), test5.toISOString(), ["VUIWQXOP26WUZWQMQGBNRGSZ"], stylist);
                         if (stylistName) {
                             $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
                         }
                     } else {
+  
                         bookingSq(date.toISOString(), test5.toISOString(), ["RTGD32YYZ2YK36MUN43WMYEC"], stylist);
                         if (stylistName) {
                             $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
@@ -5552,6 +5864,8 @@
                     }
                 } else {
                     if (color) {
+                        console.log(test5)
+                        console.log(date)
                         bookingSq(date.toISOString(), test5.toISOString(), ["O6RWN7NFJKTYCTSKXIVKNUUV"], stylist);
                         if (stylistName) {
                             $(".form123 .staffMembers").find(`[data-team-member-name='${stylistName}']`).addClass("loaded");
@@ -5564,6 +5878,16 @@
                     }
                 }
             } else {
+                if ($(window).width() < 1024) {
+                    let vidu = Math.abs(date - test5) / 36e5;
+                if (vidu < 24) {
+                    test5 = new Date(currYear, currMonth + 2, 0, 23, 59, 59);
+                    currMonth = currMonth + 1
+                    calendarChange();
+                } else {
+                    // test5.setUTCHours(23, 59, 59, 0);
+                }
+                }
                 if (serviceType == "Maintenance") {
                     if (color) {
                         bookingSq(date.toISOString(), test5.toISOString(), ["OS255XE5HJCLHU43J4YT5R4F"], stylist);
