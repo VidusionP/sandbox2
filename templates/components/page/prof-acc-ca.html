@@ -391,6 +391,40 @@ margin-bottom: 20px;
   justify-content: center;
   margin: 50px 0;
 }
+.profacc-inv .inventoryImg {
+  position: relative;
+}
+.profacc-inv .inventoryImg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.profacc-inv .inventoryImg::after {
+  content: "Men";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1;
+  font-size: 18px;
+}
+.profacc-inv .inventoryImg2::after {
+  content: "Women";
+
+}
+.profacc-inv .inventoryImg:hover::before {
+  display: none;
+}
+.profacc-inv .inventoryImg:hover::after {
+  display: none;
+}
 
 .profacc-inv .top .title2 {
   font-size: 18px;
@@ -1367,7 +1401,25 @@ input[type="text"]{
           </div>
           <div class="card">
             <h3>Easy-to-use inventory system</h3>
-            <p>Find the exact <a target="_blank" href="/inventory/">hair systems</a> you need and check whether they are in stock, in transit to our warehouses, or currently in production at our factory.
+            <p style="font-size: 16px; font-weight: 500; margin-bottom: 10px !important;">Hairpieces Inventory List</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 80%;">
+              <a href="/inventory/?loads=Mens" alt="Men's Inventory Search">
+                  <div style="background-color: white; border-radius: 50%; padding: 4px;">
+                    <div class="inventoryImg">
+                      <img  src="/product_images/uploaded_images/list-inventory-men-c128-w200.png">
+                    </div>
+                  </div>
+              </a>
+              <a href="/inventory/?loads=Womens" alt="Women's Inventory Search">
+                <div style="background-color: white; border-radius: 50%; padding: 4px;">
+                  <div class="inventoryImg inventoryImg2">
+                    <img src="/product_images/uploaded_images/list-inventory-women-c128-w200.png">
+                  </div>
+                </div>
+              </a>
+              <img>
+            </div>
+            <p>Find the exact hair systems you need and check whether they are in stock, in transit to our warehouses, or currently in production at our factory.
             </p>
           </div>
           <div class="card">
@@ -1619,8 +1671,6 @@ input[type="text"]{
             }
             })
       })
-
-      
 </script>
 
 
