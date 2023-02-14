@@ -1,0 +1,1252 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/product_images/uploaded_images/list-inventory-link-product-30.jpg" />
+<link rel="preload" as="image" href="/product_images/uploaded_images/list-inventory-add-v2-30.jpg" />
+<style>
+    .data-item,
+    .section-filter label,
+    .section-filter select,
+    [icon-tooltip] img {
+        cursor: pointer;
+    }
+    [section-part-number] {
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+    }
+    [section-sku] .sku-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    [section-production] {
+        flex-wrap: wrap;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    [section-category] {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    [section-category] .data-item {
+        width: 150px;
+        height: 150px;
+        margin: 0 10px;
+        padding: 0;
+    }
+    .section-filter input[type="radio"],
+    .section-filter label span,
+    .section-filter label[for="color-none2"]::after,
+    .section-filter label[for="color-none"]::after,
+    .section-production-desp-wrapper,
+    [section-category] .data-item.selected .category-content {
+        display: none;
+    }
+    [section-category] .category-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        color: #fff;
+        z-index: 9;
+        font-size: 1.8rem;
+    }
+    [section-category] .category-content::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    [section-category] .category-overlay {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    [section-category] [data-filter="Mens Toupee Instock"] {
+        background-image: url("/product_images/uploaded_images/list-inventory-men-c128-w200.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    [section-category] [data-filter="Womens Toupee Instock"] {
+        background-image: url("/product_images/uploaded_images/list-inventory-women-c128-w200.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    [section-production-desp] {
+        margin: 10px auto;
+        display: none;
+        text-align: center;
+        font-size: 0.93rem;
+    }
+    [section-production-desp][data-option="stock"] {
+        display: block;
+    }
+    [section-title] {
+        text-align: center;
+    }
+    [section-title] div {
+        margin: 15px auto;
+    }
+    [section-title] .title {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    [section-title] img {
+        max-width: 100%;
+        margin: 5px auto;
+    }
+    [section-title] .subtext {
+        color: #57a1db;
+    }
+    .section-filter {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+    .section-filter .title {
+        font-weight: 500;
+        font-style: italic;
+    }
+    .section-filter select {
+        padding: 5px 25px 5px 5px;
+        -webkit-appearance: none;
+        background-color: #fff;
+        border: 0;
+        background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z' fill='rgba(117, 117, 117, 0.999)'/></svg>");
+        background-position: right center;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+    .section-filter label {
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+    .section-filter label::after {
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 30px;
+        height: 30px;
+        content: "";
+    }
+    .section-filter label[for="color-none2"],
+    .section-filter label[for="color-none"] {
+        color: #000;
+        font-style: italic;
+        font-weight: 500;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 0;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-black2"],
+    .section-filter input[type="radio"]:checked + label[for="color-black"] {
+        border: 1px solid #000;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-black2"]::after,
+    .section-filter label[for="color-black"]::after {
+        background: #000;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-dark-brown"] {
+        border: 1px solid #683500;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-dark-brown"]::after {
+        background: #683500;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-medium-brown"] {
+        border: 1px solid #875715;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-medium-brown"]::after {
+        background: #875715;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-light-brown"] {
+        border: 1px solid #966a45;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-light-brown"]::after {
+        background: #966a45;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-blonde2"],
+    .section-filter input[type="radio"]:checked + label[for="color-blonde"] {
+        border: 1px solid #efdabd;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-blonde2"]::after,
+    .section-filter label[for="color-blonde"]::after {
+        background: #efdabd;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-full-grey"] {
+        border: 1px solid #f2f2f2;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-full-grey"]::after {
+        background: #f2f2f2;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-red"] {
+        border: 1px solid #a83731;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-red"]::after {
+        background: #a83731;
+    }
+    .section-filter input[type="radio"]:checked + label[for="color-ombre"] {
+        border: 1px solid #444;
+        border-radius: 50%;
+    }
+    .section-filter label[for="color-ombre"]::after {
+        background: url(/content/images/common/allure-round.jpg) 0 0 / cover;
+    }
+    .section-step {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 500;
+        margin: 2rem 0 0.8rem;
+        display: none;
+        border-top: 1px solid #f4f4f4;
+        padding-top: 2rem;
+    }
+    .data-item,
+    .filter-item {
+        padding: 5px 10px;
+    }
+    .section-step.step1 {
+        margin-top: 0;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+        display: none;
+    }
+    .data-item {
+        position: relative;
+        width: fit-content;
+    }
+    [section-production] .data-item {
+        font-weight: 500;
+        border: 1px solid #444;
+        border-radius: 50px;
+    }
+    [section-production] .data-item[data-option="transit"] {
+        margin: 0 10px;
+    }
+    [section-part-number] .data-item,
+    [section-sku] .data-item {
+        color: #959595;
+    }
+    .data-item.disabled {
+        cursor: not-allowed;
+        color: #ccc;
+    }
+    [section-sku] .data-item {
+        margin: 0 5px 5px 0;
+    }
+    .data-item.active {
+        color: #000;
+        font-weight: 700;
+        position: relative;
+        width: max-content;
+    }
+    .data-item.focus {
+        background: #000;
+        color: #fff;
+    }
+    .search-loading {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-loading svg {
+        width: 100px;
+        height: 100px;
+    }
+    [icon-mobile-tooltip] {
+        display: none;
+        position: fixed;
+        right: 22px;
+        bottom: 90px;
+        z-index: 99;
+        width: 58px;
+        height: 58px;
+        background: linear-gradient(135deg, #1d1d1d 0, #616161 100%);
+        border-radius: 50%;
+        box-shadow: rgb(0 0 0 / 20%) 0 3px 3px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    [icon-mobile-tooltip] .content,
+    [icon-tooltip][flex] {
+        display: flex;
+        justify-content: center;
+    }
+    [icon-mobile-tooltip] svg {
+        height: 30px;
+    }
+    [icon-mobile-tooltip]:hover {
+        transform: translateY(-5px);
+        box-shadow: rgb(0 0 0 / 20%) 0 4px 3px;
+        transition: 0.2s;
+    }
+    [icon-mobile-tooltip] .content {
+        align-items: center;
+        background-color: #fff;
+        width: 95%;
+        height: 95%;
+        border-radius: 50%;
+    }
+    [icon-tooltip]:after,
+    [icon-tooltip]:before {
+        content: "";
+        border-style: solid;
+        border-width: 5px 8px 0;
+        display: block;
+        width: 0;
+        left: 15px;
+        position: absolute;
+    }
+    [icon-mobile-tooltip] img {
+        width: 78%;
+    }
+    [icon-tooltip] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        transform: translate(30px, -41px);
+        width: 60px;
+        cursor: default;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 30px;
+        border: 1px solid #444;
+        padding: 5px 8px;
+        z-index: 9;
+        background-color: #fff;
+    }
+    [icon-tooltip][flex] img {
+        width: 18.5px;
+    }
+    [icon-tooltip]:after {
+        border-color: #fff transparent;
+        z-index: 1;
+        bottom: -5px;
+    }
+    [icon-tooltip]:before {
+        border-color: #444 transparent;
+        z-index: 0;
+        bottom: -6px;
+    }
+    [icon-tooltip] img:hover,
+    [modal-add-cart] .modal-add-cart-content .modal-add-cart-option:hover .modal-icon-add {
+        transform: scale(1.1);
+    }
+    [modal-add-cart] {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        display: none;
+    }
+    [modal-add-cart] .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    [modal-add-cart] .modal-add-cart-content {
+        background-color: #fff;
+        padding: 1rem;
+        max-height: 80%;
+        max-width: 90%;
+        overflow-y: auto;
+        z-index: 9;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    [modal-add-cart] .modal-add-cart-content .modal-add-cart-option {
+        margin: 15px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        vertical-align: middle;
+        position: relative;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 0.8rem;
+    }
+    [modal-add-cart] .modal-add-cart-content .modal-add-cart-option:hover {
+        box-shadow: 3px 2px 6px 3px #ccc;
+    }
+    .modal-add-cart-option[color="color-none"] {
+        border: 1px solid #000;
+    }
+    .modal-add-cart-option[color="color-black"] {
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #000;
+    }
+    .modal-add-cart-option[color="color-dark-brown"] {
+        background-color: #683500;
+        color: #fff;
+        border: 1px solid #683500;
+    }
+    .modal-add-cart-option[color="color-medium-brown"] {
+        background-color: #875715;
+        color: #fff;
+        border: 1px solid #875715;
+    }
+    .modal-add-cart-option[color="color-light-brown"] {
+        border: 1px solid #966a45;
+        background-color: #966a45;
+        color: #fff;
+    }
+    .modal-add-cart-option[color="color-blonde"] {
+        background-color: #efdabd;
+        color: #000;
+        border: 1px solid #7c7c7c;
+    }
+    .modal-add-cart-option[color="color-full-grey"] {
+        background-color: #f2f2f2;
+        color: #000;
+        border: 1px solid #7c7c7c;
+    }
+    [modal-add-cart] .modal-add-cart-content .modal-icon-add {
+        text-decoration: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -13px;
+        right: -8px;
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #444;
+        padding: 5px;
+        background: #fff;
+    }
+    [modal-add-cart] .modal-add-cart-content .modal-icon-add svg {
+        height: 30px;
+        color: #000;
+    }
+    [modal-add-cart] .modal-add-cart-title {
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 15px;
+    }
+    @media only screen and (min-width: 800px) {
+        .data-item.active:hover::before {
+            content: attr(tooltip-content);
+            display: inline-block;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: #444;
+            color: #fff;
+            padding: 0.8rem;
+            width: max-content;
+            font-size: 0.8rem;
+            z-index: 9;
+            font-weight: 400;
+            white-space: pre;
+        }
+    }
+    @media only screen and (min-width: 1024px) {
+        .section-filter label:hover span {
+            display: block;
+            position: absolute;
+            font-size: 0.8rem;
+            transform: translateY(40px);
+            z-index: 9;
+            width: max-content;
+        }
+        [section-category] .data-item:hover .category-content {
+            visibility: hidden;
+        }
+    }
+    @media only screen and (max-width: 1090px) {
+        [section-part-number] {
+            grid-template-columns: repeat(11, 1fr);
+        }
+    }
+    @media only screen and (max-width: 745px) {
+        [section-part-number] {
+            grid-template-columns: repeat(9, 1fr);
+        }
+    }
+    @media only screen and (max-width: 675px) {
+        [section-part-number] {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        [section-filter-color] .filter-item {
+            padding: 5px;
+        }
+        [icon-tooltip],
+        [icon-tooltip][flex] {
+            display: none;
+        }
+        [icon-mobile-tooltip] {
+            display: flex;
+        }
+    }
+    @media only screen and (max-width: 475px) {
+        [section-part-number] {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .section-filter[section-filter-model] .title {
+            text-align: center;
+            font-style: normal;
+        }
+        [section-category] .data-item {
+            width: 100px;
+            height: 100px;
+        }
+        [section-category] .category-content {
+            font-size: 1.5rem;
+        }
+    }
+    @media only screen and (max-width: 420px) {
+        [section-filter-color] .filter-item {
+            padding: 2px;
+        }
+    }
+</style>
+<div modal-add-cart>
+    <div class="overlay"></div>
+    <div class="modal-add-cart-content"></div>
+</div>
+<div section-category>
+    <div class="data-item" data-filter="Mens Toupee Instock"><div class="category-content">Men</div></div>
+    <div class="data-item" data-filter="Womens Toupee Instock"><div class="category-content">Women</div></div>
+</div>
+<div class="section-step step1">Step 1</div>
+<div class="section-title step1">Choose status</div>
+<div section-production>
+    <div class="data-item focus" data-stock="1" data-option="stock" section-option="production">In stock</div>
+    <div class="data-item" data-transit="1" data-option="transit" section-option="production">In transit</div>
+    <div class="data-item" data-incoming="1" data-option="incoming" section-option="production">In production</div>
+</div>
+<div class="section-production-desp-wrapper">
+    <div section-production-desp data-option="stock">These units are in stock and can be shipped out as soon as possible.</div>
+    <div section-production-desp data-option="transit">These units are in transit to our warehouses and can be shipped out in a few days.</div>
+    <div section-production-desp data-option="incoming">These units are still in production. Once they are complete, they will be in transit to our warehouses ready to be shipped out.</div>
+</div>
+<div class="section-step" step2>Step 2</div>
+<div class="section-title" step2>Model options</div>
+<div class="section-filter" section-filter-model men>
+    <div class="title">Filter</div>
+    <div class="filter-item">
+        <select filter-option="base">
+            <option value="" selected disabled>Base</option>
+            <option value="">Show All</option>
+            <option value="Mono">Mono</option>
+            <option value="Skin">Skin</option>
+            <option value="Lace">Lace</option>
+            <option value="Lace Front">Lace Front</option>
+            <option value="Lace (BF)">Lace (BF)</option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <select filter-option="size">
+            <option value="" selected disabled>Size</option>
+            <option value="">Show All</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="Full Cap">Full Cap</option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <select filter-option="density">
+            <option value="" selected disabled>Hair Density</option>
+            <option value="">Show All</option>
+            <option value="Light">Light</option>
+            <option value="Light to Medium">Light to Medium</option>
+            <option value="Medium">Medium</option>
+            <option value="Medium to Heavy">Medium to Heavy</option>
+            <option value="Heavy">Heavy</option>
+        </select>
+    </div>
+</div>
+<div class="section-filter" section-filter-model women>
+    <div class="title">Filter</div>
+    <div class="filter-item">
+        <select filter-option="base">
+            <option value="" selected disabled>Base</option>
+            <option value="">Show All</option>
+            <option value="mono top ">Mono Top</option>
+            <option value="Silicone">Silicone</option>
+            <option value="Lace">Lace</option>
+            <option value="Lace front">Lace Front</option>
+            <option value="Integration">Integration</option>
+            <option value="Poly">Poly</option>
+            <option value="Skin-weft top">Skin-Weft Top</option>
+            <option value="Lace-weft top">Lace-Weft Top</option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <select filter-option="size">
+            <option value="" selected disabled>Size</option>
+            <option value="">Show All</option>
+            <option value="full cap">Full Cap</option>
+            <option value="Topper">Topper</option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <select filter-option="length">
+            <option value="" selected disabled>Hair Length</option>
+            <option value="">Show All</option>
+            <option value="short">Short</option>
+            <option value="Medium">Medium</option>
+            <option value="long">Long</option>
+        </select>
+    </div>
+</div>
+<div section-part-number></div>
+<div class="search-loading">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+        width="200px"
+        height="200px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+    >
+        <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#000" stroke="none">
+            <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform>
+        </path>
+    </svg>
+</div>
+<div class="section-step">Step 3</div>
+<div class="section-title">Color options</div>
+<div class="section-filter" section-filter-color men>
+    <div class="filter-item"><input type="radio" id="color-none" name="color-option" value="" /><label for="color-none">Show all</label></div>
+    <div class="filter-item">
+        <input type="radio" id="color-black" name="color-option" value="Black" /><label for="color-black"><span>Black</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-dark-brown" name="color-option" value="Dark Brown" /><label for="color-dark-brown"><span>Dark Brown</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-medium-brown" name="color-option" value="Medium Brown" /><label for="color-medium-brown"><span>Medium Brown</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-light-brown" name="color-option" value="Light Brown" /><label for="color-light-brown"><span>Light Brown</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-blonde" name="color-option" value="Blonde" /><label for="color-blonde"><span>Blonde</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-full-grey" name="color-option" value="Full Grey" /><label for="color-full-grey"><span>Full Grey</span></label>
+    </div>
+</div>
+<div class="section-filter" section-filter-color women>
+    <div class="filter-item"><input type="radio" id="color-none2" name="color-option" value="" /><label for="color-none2">Show all</label></div>
+    <div class="filter-item">
+        <input type="radio" id="color-ombre" name="color-option" value="Ombre" /><label for="color-ombre"><span>Ombre</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-black2" name="color-option" value="Dark" /><label for="color-black2"><span>Dark</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-blonde2" name="color-option" value="Light" /><label for="color-blonde2"><span>Light</span></label>
+    </div>
+    <div class="filter-item">
+        <input type="radio" id="color-red" name="color-option" value="Red Tone" /><label for="color-red"><span>Red Tone</span></label>
+    </div>
+</div>
+<div section-sku></div>
+<script>
+    const colorOrder = [
+        { color: "1", group: "Black" },
+        { color: "11B", group: "Black" },
+        { color: "1B", group: "Black" },
+        { color: "1BASH", group: "Black" },
+        { color: "2", group: "Dark Brown" },
+        { color: "2ASH", group: "Dark Brown" },
+        { color: "3", group: "Dark Brown" },
+        { color: "3ASH", group: "Dark Brown" },
+        { color: "4", group: "Medium Brown" },
+        { color: "4ASH", group: "Medium Brown" },
+        { color: "5", group: "Medium Brown" },
+        { color: "5R", group: "Medium Brown" },
+        { color: "6", group: "Medium Brown" },
+        { color: "6R", group: "Medium Brown" },
+        { color: "7", group: "Light Brown" },
+        { color: "8R", group: "Light Brown" },
+        { color: "17", group: "Blonde" },
+        { color: "18", group: "Blonde" },
+        { color: "20", group: "Blonde" },
+        { color: "20R", group: "Blonde" },
+        { color: "22R", group: "Blonde" },
+        { color: "30R", group: "Blonde" },
+        { color: "60", group: "Full Grey" },
+        { color: "60H", group: "Full Grey" },
+    ];
+    let womenColor = {
+        S318613: "Ombre",
+        S3214: "Ombre",
+        S3816: "Ombre",
+        1: "Dark",
+        "1B": "Dark",
+        2: "Dark",
+        3: "Dark",
+        4: "Dark",
+        6: "Dark",
+        5: "Dark",
+        8: "Dark",
+        S1: "Dark",
+        S2: "Dark",
+        S3: "Dark",
+        S5: "Dark",
+        "CARAMEL SWIRL": "Dark",
+        CINNAMON: "Dark",
+        10: "Light",
+        "10_16": "Light",
+        "10_12": "Light",
+        12: "Light",
+        14: "Light",
+        "14_24": "Light",
+        16: "Light",
+        "16_613": "Light",
+        18: "Light",
+        22: "Light",
+        24: "Light",
+        25: "Light",
+        26: "Light",
+        27: "Light",
+        613: "Light",
+        S4: "Light",
+        S6: "Light",
+        S7: "Light",
+        S9: "Light",
+        S10: "Light",
+        S16: "Light",
+        S17: "Light",
+        S18: "Light",
+        S2814: "Light",
+        28: "Red Tone",
+        30: "Red Tone",
+        33: "Red Tone",
+        BUG: "Red Tone",
+        S11: "Red Tone",
+    };
+    const mModelOrder = [
+            "M100",
+            "M101",
+            "M101BF",
+            "M102",
+            "M103",
+            "M103BF",
+            "M104",
+            "M104BF",
+            "M105",
+            "M105BF",
+            "HD105",
+            "HD105BF",
+            "M106",
+            "M106L",
+            "HD106XL",
+            "M107",
+            "M108",
+            "M108CC",
+            "M109",
+            "M110",
+            "M110BF",
+            "M110P",
+            "M111",
+            "HD111",
+            "M112",
+            "M115",
+            "M115BF",
+            "M116S",
+            "M116M",
+            "M116L",
+            "M118",
+            "M121",
+            "M151",
+            "M158",
+            "M159",
+            "M161",
+            "M161V",
+            "M162",
+            "M178",
+            "M179",
+            "M204",
+            "M258",
+            "PW106HD",
+            "W1",
+            "W8",
+        ],
+        mModelBasicOrder = ["M100MBSC", "M101MBSC", "M102LBSC", "M104MBSC", "M108MBSC", "M109LBSC", "M112SBSC"];
+    function sortByProperty(t, a) {
+        return function (o, e) {
+            return o[t] > e[t] ? 1 : o[t] < e[t] ? -1 : o[a] > e[a] ? 1 : -1;
+        };
+    }
+    function applyWomenData(t) {
+        if (t.length > 0) {
+            let a = [],
+                o = [];
+            for (let e of t) {
+                let _ = e.SKU.indexOf("#");
+                _ < 0 && (_ = e.SKU.replace(e["Part Number"], "").indexOf("_") + e["Part Number"].length);
+                let i = e.SKU.substring(_ + 1).toUpperCase(),
+                    s = e["Available Quantity"],
+                    n = "Locked for processing" != e["Lock Status"] ? (0 > Number(e["Available Quantity"]) ? Number(e["Unlocked for sale quantity"]) + Number(e["Available Quantity"]) : Number(e["Unlocked for sale quantity"])) : 0,
+                    r = 0 > Number(e["Available Quantity"]) ? Number(e["Quantity Incoming"]) + Number(e["Available Quantity"]) - 2 : Number(e["Quantity Incoming"]) - 2,
+                    c = e["Available Quantity"] != e["Total On Hand"] ? 0 : e["2"],
+                    l = e["Available Quantity"] != e["Total On Hand"] ? 0 : e.WH1,
+                    d = Number(e["Total On Hand"]) - Number(e["Available Quantity"]);
+                r < 0 && (r = 0), s < 0 && (s = 0), n < 0 && (n = 0);
+                let p = a.findIndex((t) => t.part.toLowerCase() == e["Part Number"].toLowerCase());
+                p >= 0
+                    ? ((a[p].stock += s), (a[p].transit += n), (a[p].incoming += r), a[p].SKUs.push({ sku: e.SKU, stock: s, transit: n, incoming: r, stockUS: c, stockCA: l, pending: d }))
+                    : a.push({
+                          part: e["Part Number"],
+                          stock: s,
+                          transit: n,
+                          incoming: r,
+                          url: e.URLCA,
+                          base: e.Base ? e.Base : "",
+                          size: e.Size ? e.Size : "",
+                          length: e["Hair Length"] ? e["Hair Length"] : "",
+                          SKUs: [{ sku: e.SKU, stock: s, transit: n, incoming: r, stockUS: c, stockCA: l, pending: d }],
+                      });
+                let m = o.findIndex((t) => t.color == i);
+                m >= 0
+                    ? o[m].array.push({ part: e["Part Number"], sku: e.SKU, stock: s, transit: n, incoming: r, stockUS: c, stockCA: l, pending: d })
+                    : o.push({ color: i, array: [{ part: e["Part Number"], sku: e.SKU, stock: s, transit: n, incoming: r, stockUS: c, stockCA: l, pending: d }] });
+            }
+            let u = "",
+                h = "";
+            for (let g of (a.sort((t, a) => (t.part < a.part ? -1 : t.part > a.part ? 1 : 0)), a))
+                u += `<div class="data-item" section-option="model" data-stock=${g.stock} data-transit=${g.transit} data-incoming=${g.incoming} data-part-number='${g.part}' data-url='${g.url}' data-base='${g.base}' data-size='${g.size}' data-length='${g.length}'>${g.part}</div>`;
+            for (let f of ($(".search-loading").hide(), $("[section-part-number]").html(u), o.sort((t, a) => (t.color < a.color ? -1 : t.color > a.color ? 1 : 0)), (h += '<div class="sku-content">'), o)) {
+                let v = "",
+                    k = "",
+                    b = 0,
+                    y = 0,
+                    M = 0;
+                for (let w of f.array)
+                    (b += w.stock),
+                        (y += w.transit),
+                        (M += w.incoming),
+                        (v += ` ${w.part}-stock=${w.stock} ${w.part}-transit=${w.transit} ${w.part}-incoming=${w.incoming} ${w.part}-stockus=${w.stockUS} ${w.part}-stockca=${w.stockCA} ${w.part}-pending=${w.pending}`),
+                        0 == k.length ? (k = `${w.part}`) : (k += `-${w.part}`);
+                womenColor[f.color]
+                    ? (h += `<div class="data-item" section-option="color" color-group="${womenColor[f.color]}" color-code="${f.color}" data-stock=${b} data-transit=${y} data-incoming=${M} data-part-number='${k}' ${v}>
+                    #${f.color}
+                </div>`)
+                    : (h += `<div class="data-item" section-option="color" color-code="${f.color}" data-stock=${b} data-transit=${y} data-incoming=${M} data-part-number='${k}' ${v}>
+                    #${f.color}
+                </div>`);
+            }
+            function L(t) {
+                $(".data-item").removeAttr("tooltip-content"),
+                    t && t.removeClass("focus"),
+                    $(".data-item").removeClass("active"),
+                    $("[section-sku] .data-item").removeClass("focus"),
+                    $("[section-part-number] .data-item").removeClass("focus"),
+                    $("[icon-tooltip]").remove(),
+                    $("[icon-mobile-tooltip]").remove();
+            }
+            (h += "</div>"),
+                $("[section-sku]").html(h),
+                $(".section-title").show(),
+                $(".section-step").show(),
+                $(".section-filter[men]").hide(),
+                $("[section-category] .data-item").css({ "pointer-events": "auto" }),
+                475 > $(window).width() ? $(".section-filter[section-filter-model][women]").css({ display: "block" }) : $(".section-filter[section-filter-model][women]").css({ display: "flex" }),
+                $(".section-filter[section-filter-color][women]").css({ display: "flex" }),
+                $("[section-production] .data-item").on("click", function () {
+                    L($("[section-production] .data-item")),
+                        $("[section-production-desp]").hide(),
+                        $(`[section-production-desp][data-option='${$(this).attr("data-option")}']`).show(),
+                        $(".data-item").removeClass("focus"),
+                        $(this).addClass("focus");
+                }),
+                $("[section-part-number] .data-item").on("click", function () {
+                    L(null),
+                        (function a(o, e) {
+                            let _ = o.attr("data-option"),
+                                i = "";
+                            switch (_) {
+                                case "stock":
+                                    i = "In Stock";
+                                    break;
+                                case "transit":
+                                    i = "In transit";
+                                    break;
+                                case "incoming":
+                                    i = "In production";
+                            }
+                            let s = e.attr("data-part-number"),
+                                n = [];
+                            for (let r of ($("[section-sku] .data-item")
+                                .filter(function () {
+                                    return (
+                                        $(this).attr(`${s.toLowerCase()}-${_}`) > 0 &&
+                                        ("stock" == _
+                                            ? Number($(this).attr(`${s.toLowerCase()}-pending`)) < 0
+                                                ? $(this).attr("tooltip-content", `Qty ${i}: ${Number($(this).attr(`${s.toLowerCase()}-${_}`)) > 10 ? "More than 10" : $(this).attr(`${s.toLowerCase()}-${_}`)}`)
+                                                : $(this).attr(
+                                                      "tooltip-content",
+                                                      `Qty in US: ${Number($(this).attr(`${s.toLowerCase()}-stockus`)) > 10 ? "More than 10" : $(this).attr(`${s.toLowerCase()}-stockus`)}
+Qty in Canada: ${Number($(this).attr(`${s.toLowerCase()}-stockca`)) > 10 ? "More than 10" : $(this).attr(`${s.toLowerCase()}-stockca`)}`
+                                                  )
+                                            : $(this).attr("tooltip-content", `Qty ${i}: ${Number($(this).attr(`${s.toLowerCase()}-${_}`)) > 10 ? "More than 10" : $(this).attr(`${s.toLowerCase()}-${_}`)}`),
+                                        !0)
+                                    );
+                                })
+                                .addClass("active"),
+                            $("[section-sku] .data-item.active"))) {
+                                let c = t.findIndex((t) => t.SKU == s + $(r).html().trim()) >= 0 ? s + $(r).html().trim() : s + "_" + $(r).html().trim().substring(1);
+                                n.push({ value: c, text: $(r).html().trim(), color: "none" });
+                            }
+                            $(e).append(
+                                `<div icon-tooltip><a href="${$(e).attr(
+                                    "data-url"
+                                )}" target="_blank"><img src="/product_images/uploaded_images/list-inventory-link-product-30.jpg"/></a><img src="/product_images/uploaded_images/list-inventory-add-v2-30.jpg" icon-add/></div>`
+                            ),
+                                $("[section-sku]").after(
+                                    '<div icon-mobile-tooltip icon-add><div class="content"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892.13 758.83"><defs><style>.cls-1{fill:#1d1918;}</style></defs><path class="cls-1" d="M776.27,473.69H721.45V418.86a20,20,0,0,0-20-20h0a20,20,0,0,0-20,20v54.83H626.66a20,20,0,0,0-20,20h0a20,20,0,0,0,20,20h54.82v54.82a20,20,0,0,0,20,20h0a20.05,20.05,0,0,0,20-20V513.65h54.82a20,20,0,0,0,20-20h0A20,20,0,0,0,776.27,473.69Z"/><path class="cls-1" d="M335.33,566.75a96,96,0,1,0,96,96A96.14,96.14,0,0,0,335.33,566.75Zm0,147.36a51.32,51.32,0,1,1,51.32-51.32A51.38,51.38,0,0,1,335.33,714.11Z"/><path class="cls-1" d="M828.3,398.88A162.54,162.54,0,0,0,787,359.24a160.45,160.45,0,0,0-89.26-27c-86.68,0-157.6,68.67-161.27,154.46-.1,2.31-.16,4.63-.16,7a161.43,161.43,0,1,0,292-94.79Zm-67.57,195A117.75,117.75,0,0,1,701.46,612a51,51,0,0,0-7.56-.56,51.92,51.92,0,0,0-5.32.27,117.63,117.63,0,0,1-58.33-20.81,119.14,119.14,0,0,1-42.61-53.61,117.73,117.73,0,0,1-8.34-43.65c0-2.34.08-4.66.21-7A118.42,118.42,0,1,1,760.73,593.9Z"/><path class="cls-1" d="M511.62,486.7H248.45l-103.71-461c0-.14,0-.28,0-.43A25.39,25.39,0,0,0,119.46,0H25.31a25.31,25.31,0,0,0,0,50.62H98.46L203.34,516.8a25.39,25.39,0,0,0,21.17,19.47,25.25,25.25,0,0,0,7.16,1.05h285a186.41,186.41,0,0,1-5.18-43.65C511.47,491.33,511.53,489,511.62,486.7Z"/><path class="cls-1" d="M886.6,156.32a25.38,25.38,0,0,0-23.15-15.14H296.63a25.31,25.31,0,0,0,0,50.62H834.86L794.1,334.36c2.24,1.35,4.44,2.75,6.62,4.2a187.89,187.89,0,0,1,35.91,31.19L891.17,179A25.31,25.31,0,0,0,886.6,156.32Z"/><path class="cls-1" d="M744,674.11a51.31,51.31,0,0,1-100.56-2.29c-2.07-.63-4.13-1.29-6.16-2a185.76,185.76,0,0,1-38.67-18.6,96,96,0,1,0,191.38,11.56c0-2.43-.11-4.83-.29-7.21a185.24,185.24,0,0,1-39.46,16.81Q747.1,673.31,744,674.11Z"/></svg></div></div>'
+                                ),
+                                bindAddToCartAction(n, s);
+                        })($("[section-production] .data-item.focus"), $(this)),
+                        $(this).addClass("focus");
+                }),
+                $("[section-sku] .data-item").on("click", function () {
+                    L(null),
+                        (function a(o, e) {
+                            let _ = o.attr("data-option"),
+                                i = "";
+                            switch (_) {
+                                case "stock":
+                                    i = "In Stock";
+                                    break;
+                                case "transit":
+                                    i = "In transit";
+                                    break;
+                                case "incoming":
+                                    i = "In production";
+                            }
+                            let s = e.attr("data-part-number").split("-"),
+                                n = [];
+                            for (let r of s)
+                                e.attr(`${r}-${_}`) > 0 &&
+                                    ($(`[section-part-number] .data-item[data-part-number='${r}']`).addClass("active"),
+                                    "stock" == _
+                                        ? Number(e.attr(`${r}-pending`)) < 0
+                                            ? $(`[section-part-number] .data-item[data-part-number='${r}']`).attr("tooltip-content", `Qty ${i}: ${Number(e.attr(`${r}-${_}`)) > 10 ? "More than 10" : e.attr(`${r}-${_}`)}`)
+                                            : $(`[section-part-number] .data-item[data-part-number='${r}']`).attr(
+                                                  "tooltip-content",
+                                                  `Qty in US: ${Number(e.attr(`${r}-stockus`)) > 10 ? "More than 10" : e.attr(`${r}-stockus`)}
+Qty in Canada: ${Number(e.attr(`${r}-stockca`)) > 10 ? "More than 10" : e.attr(`${r}-stockca`)}`
+                                              )
+                                        : $(`[section-part-number] .data-item[data-part-number='${r}']`).attr("tooltip-content", `Qty ${i}: ${Number(e.attr(`${r}-${_}`)) > 10 ? "More than 10" : e.attr(`${r}-${_}`)}`));
+                            for (let c of $("[section-part-number] .data-item.active")) {
+                                let l = t.findIndex((t) => t.SKU == $(c).html().trim() + $(e).html().trim()) >= 0 ? $(c).html().trim() + $(e).html().trim() : $(c).html().trim() + "_" + $(e).html().trim().substring(1);
+                                n.push({ value: l, text: $(c).html().trim(), color: "none" });
+                            }
+                            $(e).append('<div icon-tooltip flex><img src="/product_images/uploaded_images/list-inventory-add-v2-30.jpg" icon-add/></div>'),
+                                $("[section-sku]").after(
+                                    '<div icon-mobile-tooltip icon-add><div class="content"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892.13 758.83"><defs><style>.cls-1{fill:#1d1918;}</style></defs><path class="cls-1" d="M776.27,473.69H721.45V418.86a20,20,0,0,0-20-20h0a20,20,0,0,0-20,20v54.83H626.66a20,20,0,0,0-20,20h0a20,20,0,0,0,20,20h54.82v54.82a20,20,0,0,0,20,20h0a20.05,20.05,0,0,0,20-20V513.65h54.82a20,20,0,0,0,20-20h0A20,20,0,0,0,776.27,473.69Z"/><path class="cls-1" d="M335.33,566.75a96,96,0,1,0,96,96A96.14,96.14,0,0,0,335.33,566.75Zm0,147.36a51.32,51.32,0,1,1,51.32-51.32A51.38,51.38,0,0,1,335.33,714.11Z"/><path class="cls-1" d="M828.3,398.88A162.54,162.54,0,0,0,787,359.24a160.45,160.45,0,0,0-89.26-27c-86.68,0-157.6,68.67-161.27,154.46-.1,2.31-.16,4.63-.16,7a161.43,161.43,0,1,0,292-94.79Zm-67.57,195A117.75,117.75,0,0,1,701.46,612a51,51,0,0,0-7.56-.56,51.92,51.92,0,0,0-5.32.27,117.63,117.63,0,0,1-58.33-20.81,119.14,119.14,0,0,1-42.61-53.61,117.73,117.73,0,0,1-8.34-43.65c0-2.34.08-4.66.21-7A118.42,118.42,0,1,1,760.73,593.9Z"/><path class="cls-1" d="M511.62,486.7H248.45l-103.71-461c0-.14,0-.28,0-.43A25.39,25.39,0,0,0,119.46,0H25.31a25.31,25.31,0,0,0,0,50.62H98.46L203.34,516.8a25.39,25.39,0,0,0,21.17,19.47,25.25,25.25,0,0,0,7.16,1.05h285a186.41,186.41,0,0,1-5.18-43.65C511.47,491.33,511.53,489,511.62,486.7Z"/><path class="cls-1" d="M886.6,156.32a25.38,25.38,0,0,0-23.15-15.14H296.63a25.31,25.31,0,0,0,0,50.62H834.86L794.1,334.36c2.24,1.35,4.44,2.75,6.62,4.2a187.89,187.89,0,0,1,35.91,31.19L891.17,179A25.31,25.31,0,0,0,886.6,156.32Z"/><path class="cls-1" d="M744,674.11a51.31,51.31,0,0,1-100.56-2.29c-2.07-.63-4.13-1.29-6.16-2a185.76,185.76,0,0,1-38.67-18.6,96,96,0,1,0,191.38,11.56c0-2.43-.11-4.83-.29-7.21a185.24,185.24,0,0,1-39.46,16.81Q747.1,673.31,744,674.11Z"/></svg></div></div>'
+                                ),
+                                bindAddToCartAction(n, $(e).html().trim());
+                        })($("[section-production] .data-item.focus"), $(this)),
+                        $(this).addClass("focus");
+                });
+        }
+    }
+    function applyMenData(t) {
+        if (t.length > 0) {
+            let a = [],
+                o = [];
+            for (let e of t) {
+                let _ = e.SKU.indexOf("#"),
+                    i = e.SKU.substring(_ + 1).toUpperCase(),
+                    s = i,
+                    n = "";
+                i.length >= 3 &&
+                    ("H" == i[i.length - 1]
+                        ? !1 == i.includes("ASH") && i.length >= 4 && ((n = i.substring(i.length - 3)), (s = i.substring(0, i.length - 3)))
+                        : Number(i[i.length - 1]) >= 0 && ((n = i.substring(i.length - 2)), (s = i.substring(0, i.length - 2))));
+                let r = e["Available Quantity"],
+                    c = "Locked for processing" != e["Lock Status"] ? (0 > Number(e["Available Quantity"]) ? Number(e["Unlocked for sale quantity"]) + Number(e["Available Quantity"]) : Number(e["Unlocked for sale quantity"])) : 0,
+                    l = 0 > Number(e["Available Quantity"]) ? Number(e["Quantity Incoming"]) + Number(e["Available Quantity"]) - 2 : Number(e["Quantity Incoming"]) - 2,
+                    d = e["Available Quantity"] != e["Total On Hand"] ? 0 : e["2"],
+                    p = e["Available Quantity"] != e["Total On Hand"] ? 0 : e.WH1,
+                    m = Number(e["Total On Hand"]) - Number(e["Available Quantity"]);
+                l < 0 && (l = 0), r < 0 && (r = 0), c < 0 && (c = 0);
+                let u = a.findIndex((t) => t.part.toLowerCase() == e["Part Number"].toLowerCase());
+                u >= 0
+                    ? ((a[u].stock += r), (a[u].transit += c), (a[u].incoming += l), a[u].SKUs.push({ sku: e.SKU, stock: r, transit: c, incoming: l, stockUS: d, stockCA: p, pending: m }))
+                    : a.push({
+                          part: e["Part Number"],
+                          stock: r,
+                          transit: c,
+                          incoming: l,
+                          url: e.URLCA,
+                          base: e.Base ? e.Base : "",
+                          size: e.Size ? e.Size : "",
+                          density: e["Hair Density"] ? e["Hair Density"] : "",
+                          SKUs: [{ sku: e.SKU, stock: r, transit: c, incoming: l, stockUS: d, stockCA: p, pending: m }],
+                      });
+                let h = o.findIndex((t) => t.code == `${s.toUpperCase()}--${n.toUpperCase()}`);
+                h >= 0
+                    ? o[h].array.push({ part: e["Part Number"], sku: e.SKU, stock: r, transit: c, incoming: l, stockUS: d, stockCA: p, pending: m })
+                    : o.push({ code: `${s.toUpperCase()}--${n.toUpperCase()}`, color: s, grey: n, combination: i, array: [{ part: e["Part Number"], sku: e.SKU, stock: r, transit: c, incoming: l, stockUS: d, stockCA: p, pending: m }] });
+            }
+            let g = "",
+                f = "";
+            for (let v of mModelOrder) {
+                let k = a.find((t) => t.part == v);
+                k &&
+                    (g += `<div class="data-item" section-option="model" data-stock=${k.stock} data-transit=${k.transit} data-incoming=${k.incoming} data-part-number='${v}' data-base='${k.base}' data-size='${k.size}' data-density='${k.density}' data-url='${k.url}'>${v}</div>`);
+            }
+            for (let b of ($(".search-loading").hide(),
+            $("[section-part-number]").html(""),
+            2 == $("[section-part-number").length && $("[section-part-number").eq(1).remove(),
+            $("[section-part-number]").html(g),
+            (g = ""),
+            mModelBasicOrder)) {
+                let y = a.find((t) => t.part == b);
+                y &&
+                    (g += `<div class="data-item" section-option="model" data-stock=${y.stock} data-transit=${y.transit} data-incoming=${y.incoming} data-part-number='${b}' data-base='${y.base}' data-size='${y.size}' data-density='${y.density}' data-url='${y.url}'>${b}</div>`);
+            }
+            for (let M of ($("[section-part-number]").after(`<div section-part-number>${g}</div>`), o.sort((t, a) => (t.code < a.code ? -1 : t.code > a.code ? 1 : 0)), colorOrder)) {
+                let w = o.filter((t) => t.color == M.color);
+                if (w.length > 0) {
+                    for (let L of ((f += '<div class="sku-content">'), w)) {
+                        let C = "",
+                            A = "",
+                            S = 0,
+                            B = 0,
+                            H = 0;
+                        for (let Q of L.array)
+                            (S += Q.stock),
+                                (B += Q.transit),
+                                (H += Q.incoming),
+                                (C += ` ${Q.part}-stock=${Q.stock} ${Q.part}-transit=${Q.transit} ${Q.part}-incoming=${Q.incoming} ${Q.part}-stockus=${Q.stockUS} ${Q.part}-stockca=${Q.stockCA} ${Q.part}-pending=${Q.pending}`),
+                                0 == A.length ? (A = `${Q.part}`) : (A += `-${Q.part}`);
+                        f += `<div class="data-item" section-option="color" color-group="${M.group}" color-code="${L.color}" grey-code="${L.grey}" data-stock=${S} data-transit=${B} data-incoming=${H} data-part-number='${A}' ${C}>
+                            #${L.combination}
+                        </div>`;
+                    }
+                    f += "</div>";
+                }
+            }
+            function U(t) {
+                $(".data-item").removeAttr("tooltip-content"),
+                    t && t.removeClass("focus"),
+                    $(".data-item").removeClass("active"),
+                    $("[section-sku] .data-item").removeClass("focus"),
+                    $("[section-part-number] .data-item").removeClass("focus"),
+                    $("[icon-tooltip]").remove(),
+                    $("[icon-mobile-tooltip]").remove();
+            }
+            $("[section-sku]").html(f),
+                $(".section-title").show(),
+                $(".section-step").show(),
+                $("[section-category] .data-item").css({ "pointer-events": "auto" }),
+                475 > $(window).width() ? $(".section-filter[section-filter-model][men]").css({ display: "block" }) : $(".section-filter[section-filter-model][men]").css({ display: "flex" }),
+                $(".section-filter[section-filter-color][men]").css({ display: "flex" }),
+                $(".section-filter[women]").hide(),
+                $("[section-production] .data-item").on("click", function () {
+                    U($("[section-production] .data-item")),
+                        $("[section-production-desp]").hide(),
+                        $(`[section-production-desp][data-option='${$(this).attr("data-option")}']`).show(),
+                        $(".data-item").removeClass("focus"),
+                        $(this).addClass("focus");
+                }),
+                $("[section-part-number] .data-item").on("click", function () {
+                    U(null),
+                        (function t(a, o) {
+                            let e = a.attr("data-option"),
+                                _ = "";
+                            switch (e) {
+                                case "stock":
+                                    _ = "In Stock";
+                                    break;
+                                case "transit":
+                                    _ = "In transit";
+                                    break;
+                                case "incoming":
+                                    _ = "In production";
+                            }
+                            let i = o.attr("data-part-number"),
+                                s = [];
+                            $("[section-sku] .data-item")
+                                .filter(function () {
+                                    return (
+                                        $(this).attr(`${i.toLowerCase()}-${e}`) > 0 &&
+                                        ("stock" == e
+                                            ? Number($(this).attr(`${i.toLowerCase()}-pending`)) < 0
+                                                ? $(this).attr("tooltip-content", `Qty ${_}: ${Number($(this).attr(`${i.toLowerCase()}-${e}`)) > 10 ? "More than 10" : $(this).attr(`${i.toLowerCase()}-${e}`)}`)
+                                                : $(this).attr(
+                                                      "tooltip-content",
+                                                      `Qty in US: ${Number($(this).attr(`${i.toLowerCase()}-stockus`)) > 10 ? "More than 10" : $(this).attr(`${i.toLowerCase()}-stockus`)}
+Qty in Canada: ${Number($(this).attr(`${i.toLowerCase()}-stockca`)) > 10 ? "More than 10" : $(this).attr(`${i.toLowerCase()}-stockca`)}`
+                                                  )
+                                            : $(this).attr("tooltip-content", `Qty ${_}: ${Number($(this).attr(`${i.toLowerCase()}-${e}`)) > 10 ? "More than 10" : $(this).attr(`${i.toLowerCase()}-${e}`)}`),
+                                        s.push({ value: i + $(this).html().trim(), text: $(this).html().trim(), color: $(this).attr("color-group") }),
+                                        !0)
+                                    );
+                                })
+                                .addClass("active"),
+                                $(o).append(
+                                    `<div icon-tooltip><a href="${$(o).attr(
+                                        "data-url"
+                                    )}" target="_blank"><img src="/product_images/uploaded_images/list-inventory-link-product-30.jpg"/></a><img src="/product_images/uploaded_images/list-inventory-add-v2-30.jpg" icon-add/></div>`
+                                ),
+                                $("[section-sku]").after(
+                                    '<div icon-mobile-tooltip icon-add><div class="content"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892.13 758.83"><defs><style>.cls-1{fill:#1d1918;}</style></defs><path class="cls-1" d="M776.27,473.69H721.45V418.86a20,20,0,0,0-20-20h0a20,20,0,0,0-20,20v54.83H626.66a20,20,0,0,0-20,20h0a20,20,0,0,0,20,20h54.82v54.82a20,20,0,0,0,20,20h0a20.05,20.05,0,0,0,20-20V513.65h54.82a20,20,0,0,0,20-20h0A20,20,0,0,0,776.27,473.69Z"/><path class="cls-1" d="M335.33,566.75a96,96,0,1,0,96,96A96.14,96.14,0,0,0,335.33,566.75Zm0,147.36a51.32,51.32,0,1,1,51.32-51.32A51.38,51.38,0,0,1,335.33,714.11Z"/><path class="cls-1" d="M828.3,398.88A162.54,162.54,0,0,0,787,359.24a160.45,160.45,0,0,0-89.26-27c-86.68,0-157.6,68.67-161.27,154.46-.1,2.31-.16,4.63-.16,7a161.43,161.43,0,1,0,292-94.79Zm-67.57,195A117.75,117.75,0,0,1,701.46,612a51,51,0,0,0-7.56-.56,51.92,51.92,0,0,0-5.32.27,117.63,117.63,0,0,1-58.33-20.81,119.14,119.14,0,0,1-42.61-53.61,117.73,117.73,0,0,1-8.34-43.65c0-2.34.08-4.66.21-7A118.42,118.42,0,1,1,760.73,593.9Z"/><path class="cls-1" d="M511.62,486.7H248.45l-103.71-461c0-.14,0-.28,0-.43A25.39,25.39,0,0,0,119.46,0H25.31a25.31,25.31,0,0,0,0,50.62H98.46L203.34,516.8a25.39,25.39,0,0,0,21.17,19.47,25.25,25.25,0,0,0,7.16,1.05h285a186.41,186.41,0,0,1-5.18-43.65C511.47,491.33,511.53,489,511.62,486.7Z"/><path class="cls-1" d="M886.6,156.32a25.38,25.38,0,0,0-23.15-15.14H296.63a25.31,25.31,0,0,0,0,50.62H834.86L794.1,334.36c2.24,1.35,4.44,2.75,6.62,4.2a187.89,187.89,0,0,1,35.91,31.19L891.17,179A25.31,25.31,0,0,0,886.6,156.32Z"/><path class="cls-1" d="M744,674.11a51.31,51.31,0,0,1-100.56-2.29c-2.07-.63-4.13-1.29-6.16-2a185.76,185.76,0,0,1-38.67-18.6,96,96,0,1,0,191.38,11.56c0-2.43-.11-4.83-.29-7.21a185.24,185.24,0,0,1-39.46,16.81Q747.1,673.31,744,674.11Z"/></svg></div></div>'
+                                ),
+                                bindAddToCartAction(s, i);
+                        })($("[section-production] .data-item.focus"), $(this)),
+                        $(this).addClass("focus");
+                }),
+                $("[section-sku] .data-item").on("click", function () {
+                    U(null),
+                        (function t(a, o) {
+                            let e = a.attr("data-option"),
+                                _ = "";
+                            switch (e) {
+                                case "stock":
+                                    _ = "In Stock";
+                                    break;
+                                case "transit":
+                                    _ = "In transit";
+                                    break;
+                                case "incoming":
+                                    _ = "In production";
+                            }
+                            let i = o.attr("data-part-number").split("-"),
+                                s = [];
+                            for (let n of i)
+                                o.attr(`${n}-${e}`) > 0 &&
+                                    ($(`[section-part-number] .data-item[data-part-number='${n}']`).addClass("active"),
+                                    "stock" == e
+                                        ? Number(o.attr(`${n}-pending`)) < 0
+                                            ? $(`[section-part-number] .data-item[data-part-number='${n}']`).attr("tooltip-content", `Qty ${_}: ${Number(o.attr(`${n}-${e}`)) > 10 ? "More than 10" : o.attr(`${n}-${e}`)}`)
+                                            : $(`[section-part-number] .data-item[data-part-number='${n}']`).attr(
+                                                  "tooltip-content",
+                                                  `Qty in US: ${Number(o.attr(`${n}-stockus`)) > 10 ? "More than 10" : o.attr(`${n}-stockus`)}
+Qty in Canada: ${Number(o.attr(`${n}-stockca`)) > 10 ? "More than 10" : o.attr(`${n}-stockca`)}`
+                                              )
+                                        : $(`[section-part-number] .data-item[data-part-number='${n}']`).attr("tooltip-content", `Qty ${_}: ${Number(o.attr(`${n}-${e}`)) > 10 ? "More than 10" : o.attr(`${n}-${e}`)}`));
+                            for (let r of $("[section-part-number] .data-item.active")) s.push({ value: $(r).html().trim() + $(o).html().trim(), text: $(r).html().trim(), color: "none" });
+                            $(o).append('<div icon-tooltip flex><img src="/product_images/uploaded_images/list-inventory-add-v2-30.jpg" icon-add/></div>'),
+                                $("[section-sku]").after(
+                                    '<div icon-mobile-tooltip icon-add><div class="content"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892.13 758.83"><defs><style>.cls-1{fill:#1d1918;}</style></defs><path class="cls-1" d="M776.27,473.69H721.45V418.86a20,20,0,0,0-20-20h0a20,20,0,0,0-20,20v54.83H626.66a20,20,0,0,0-20,20h0a20,20,0,0,0,20,20h54.82v54.82a20,20,0,0,0,20,20h0a20.05,20.05,0,0,0,20-20V513.65h54.82a20,20,0,0,0,20-20h0A20,20,0,0,0,776.27,473.69Z"/><path class="cls-1" d="M335.33,566.75a96,96,0,1,0,96,96A96.14,96.14,0,0,0,335.33,566.75Zm0,147.36a51.32,51.32,0,1,1,51.32-51.32A51.38,51.38,0,0,1,335.33,714.11Z"/><path class="cls-1" d="M828.3,398.88A162.54,162.54,0,0,0,787,359.24a160.45,160.45,0,0,0-89.26-27c-86.68,0-157.6,68.67-161.27,154.46-.1,2.31-.16,4.63-.16,7a161.43,161.43,0,1,0,292-94.79Zm-67.57,195A117.75,117.75,0,0,1,701.46,612a51,51,0,0,0-7.56-.56,51.92,51.92,0,0,0-5.32.27,117.63,117.63,0,0,1-58.33-20.81,119.14,119.14,0,0,1-42.61-53.61,117.73,117.73,0,0,1-8.34-43.65c0-2.34.08-4.66.21-7A118.42,118.42,0,1,1,760.73,593.9Z"/><path class="cls-1" d="M511.62,486.7H248.45l-103.71-461c0-.14,0-.28,0-.43A25.39,25.39,0,0,0,119.46,0H25.31a25.31,25.31,0,0,0,0,50.62H98.46L203.34,516.8a25.39,25.39,0,0,0,21.17,19.47,25.25,25.25,0,0,0,7.16,1.05h285a186.41,186.41,0,0,1-5.18-43.65C511.47,491.33,511.53,489,511.62,486.7Z"/><path class="cls-1" d="M886.6,156.32a25.38,25.38,0,0,0-23.15-15.14H296.63a25.31,25.31,0,0,0,0,50.62H834.86L794.1,334.36c2.24,1.35,4.44,2.75,6.62,4.2a187.89,187.89,0,0,1,35.91,31.19L891.17,179A25.31,25.31,0,0,0,886.6,156.32Z"/><path class="cls-1" d="M744,674.11a51.31,51.31,0,0,1-100.56-2.29c-2.07-.63-4.13-1.29-6.16-2a185.76,185.76,0,0,1-38.67-18.6,96,96,0,1,0,191.38,11.56c0-2.43-.11-4.83-.29-7.21a185.24,185.24,0,0,1-39.46,16.81Q747.1,673.31,744,674.11Z"/></svg></div></div>'
+                                ),
+                                bindAddToCartAction(s, $(o).html().trim());
+                        })($("[section-production] .data-item.focus"), $(this)),
+                        $(this).addClass("focus");
+                });
+        }
+    }
+    function bindAddToCartAction(t, a) {
+        $("[icon-add]").on("click", function () {
+            let o = `<div class="modal-add-cart-title">${a}</div>`;
+            for (let e of t)
+                o += `<a href="/cart.php?action=add&sku=${encodeURIComponent(e.value)}" target="_blank" class="modal-add-cart-option" color="color-${e.color.replaceAll(" ", "-")}"><span>${
+                    e.text
+                }</span><span class="modal-icon-add"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span></div>`;
+            $("[modal-add-cart] .modal-add-cart-content").empty(), $("[modal-add-cart] .modal-add-cart-content").append(o), $("[modal-add-cart]").css({ display: "flex" });
+        });
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+        $("[section-category] .data-item").on("click", function () {
+            let t = $("[section-category] .selected"),
+                a = $(this).attr("data-filter");
+            if (t.attr("data-filter") != a) {
+                if (
+                    ($("[section-category] .data-item").removeClass("selected"),
+                    $("[section-category] .data-item").css({ "pointer-events": "none" }),
+                    $(this).addClass("selected"),
+                    $("[section-sku]").html(""),
+                    $("[section-part-number]").html(""),
+                    $(".section-title").hide(),
+                    $(".section-step").hide(),
+                    $(".section-filter").hide(),
+                    $(".search-loading").css({ display: "flex" }),
+                    $("[section-production]").css({ display: "flex" }),
+                    $(".step1").show(),
+                    $(".section-production-desp-wrapper").show(),
+                    2 == $("[section-part-number").length && $("[section-part-number").eq(1).remove(),
+                    a.includes("Mens"))
+                ) {
+                    $(".section-step[step2]").show(), $(".section-filter[step2]").show();
+                    let o = "",
+                        e = "";
+                    for (let _ of mModelOrder) o += `<div class="data-item disabled">${_}</div>`;
+                    for (let i of mModelBasicOrder) e += `<div class="data-item disabled">${i}</div>`;
+                    $("[section-part-number").html(o), $("[section-part-number]").after(`<div section-part-number>${e}</div>`);
+                }
+                let s = `[Classification]='${a}' and not Contains([Part Number],'PERM') and (Sum([Available Quantity])>0 or ([Unlocked for sale quantity]>0 and [Lock Status] <> "Locked for processing") or [Quantity Incoming]>2)`;
+                fetch("https://shp-webserver-temp.glitch.me/search-inventory", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ filter: s }) })
+                    .then((t) => t.json())
+                    .then((t) => {
+                        a.includes("Women") ? applyWomenData(t) : a.includes("Men") && applyMenData(t);
+                    })
+                    .catch((t) => console.log(t));
+            }
+        }),
+            $("[section-filter-model] select").on("change", function () {
+                $("[section-part-number] .data-item").hide();
+                let t = $(this).parents("[section-filter-model]").find("select"),
+                    a = "";
+                for (let o of t) $(o).val() && (a += `[data-${$(o).attr("filter-option")}='${$(o).val()}']`);
+                $(`[section-part-number] .data-item${a}`).show();
+            }),
+            $("[section-filter-color] input").on("change", function () {
+                let t = $("input[name='color-option']:checked").val();
+                t ? ($("[section-sku] .data-item").hide(), $(`[section-sku] .data-item[color-group='${t}']`).show()) : $("[section-sku] .data-item").show();
+            }),
+            $("[modal-add-cart] .overlay").on("click", function () {
+                $("[modal-add-cart]").hide();
+            }),
+            location.href.includes("?loads=Mens")
+                ? $('[section-category] .data-item[data-filter="Mens Toupee Instock"]').trigger("click")
+                : location.href.includes("?loads=Womens") && $('[section-category] .data-item[data-filter="Womens Toupee Instock"]').trigger("click");
+        let t = new Proxy(new URLSearchParams(window.location.search), { get: (t, a) => t.get(a) });
+        t.load && $(`[section-category] .data-item[data-filter="${t.load} Toupee Instock"]`).trigger("click");
+    });
+</script>

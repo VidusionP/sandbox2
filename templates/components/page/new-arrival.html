@@ -1,1052 +1,1084 @@
-<link rel="stylesheet" href="/content/css/slick.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/content/css/slick.css" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
 <style>
     .breadcrumbs {
-    display: none;
-}
-.body.page h1 {
-    display: none;
-}
-.css-1hcx8jb {
-    display: none !important;
-    font-size: 12px;
-}
-.page-heading {
-    padding-top: 4vh;
-}
-@media (min-width: 801px) and (max-width:1149px) {
-    .body.page {
-        margin-top: 2.5rem !important;
+        display: none;
     }
-}
-.body.page {
-  padding: 0 !important;
-}
-p {
-  margin: 0 !important;
-}
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow-y: scroll;
-  overflow-x: mensden;
-}
-.body.page .container {
-  max-width: 100% !important;
-  padding: 0px !important;
-}
-.page {
-  margin: 0 !important;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  max-width: 100% !important;
-}
-.page-content.page-content--centered {
-  padding: 0 !important;
-  width: 100% !important;
-}
+    .body.page h1 {
+        display: none;
+    }
+    .css-1hcx8jb {
+        display: none !important;
+        font-size: 12px;
+    }
+    .page-heading {
+        padding-top: 4vh;
+    }
+    @media (min-width: 801px) and (max-width: 1149px) {
+        .body.page {
+            margin-top: 2.5rem !important;
+        }
+    }
+    .body.page {
+        padding: 0 !important;
+    }
+    p {
+        margin: 0 !important;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        overflow-x: mensden;
+    }
+    .body.page .container {
+        max-width: 100% !important;
+        padding: 0px !important;
+    }
+    .page {
+        margin: 0 !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        max-width: 100% !important;
+    }
+    .page-content.page-content--centered {
+        padding: 0 !important;
+        width: 100% !important;
+    }
 </style>
 <style>
-  .newArrival h2 {
-    text-align: center;
-    font-weight: 500;
-    font-size: 30px;
-    color: black;
-    line-height: 1.2;
-    margin-bottom:30px;
-  }
-  .arrivalNav {
-    /* display: flex;
-    align-items: center;
-    padding: 20px 30px;
-    gap: 40px;
-    overflow: auto; */
-
-    background-color: rgba(119, 110, 101, 1);
-  }
-  .arrivalNav .list {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 20px 30px;
-    overflow: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .arrivalNav .list::-webkit-scrollbar {
-    display: none;
-  }
-  .arrivalNav .item {
-    width: fit-content;
-    color: white;
-    flex: 0 0 auto;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 16px;
-  }
-  .arrivalExplore {
-    padding: 40px;
-    text-align: center;
-    
-  }
-  .arrivalExplore h2 {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 0;
-    margin-bottom: 20px;
-    color: black;
-  }
-  .arrivalExplore p {
-    padding-bottom: 20px;
-    color: black;
-  }
-  .arrivalLuxury .banner {
-    display: flex;
-  }
-  .arrivalLuxury .block {
-    background-color: rgba(61, 1, 82, 1);
-    color: white;
-    padding: 40px 60px;
-  }
-  .arrivalLuxury .block h3 {
-    font-size: 45px;
-    font-weight: 400;
-    color: white;
-    margin: 0;
-    font-family: 'Cinzel', serif;
-    line-height: 0.9;
-    text-align: center;
-    letter-spacing: 1px;
-    margin: auto;
-    margin-bottom: 20px;
-    max-width: 300px;
-  }
-  .arrivalLuxury .block p {
-    padding-bottom: 10px;
-    font-weight: 300;
-  }
-  .arrivalLuxury .block div {
-    color: black;
-    background-color: rgba(241, 241, 241, 1);
-    width: 100%;
-    border-radius: 40px;
-    text-align: center;
-    padding: 10px 25px;
-    text-transform: capitalize;
-    margin: auto;
-    max-width: 411px;
-    margin-top: 30px ;
-  }
-  .arrivalWomen {
-    width: 90%;
-    margin: auto;
-  }
-
-  .arrivalWomen .productGrid {
-    height: fit-content;
-  }
-  .newArrival .form {
-    border: none;
-    width: 65px;
-    font-size: 18px;
-  }
-  .newArrival .form option {
-    font-size: 14px;
-    max-width:90%;
-  }
-  .newArrival .form:hover,.form:focus,.form:active,.form:checked{
-    outline: none;
-  }
-  .newArrival .topBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .arrivalMen {
-    width: 90%;
-    margin: auto;
-  }
-  .arrivalMen .productGrid {
-    height: fit-content;
-  }
-  .arrivalKids .productGrid {
-    height: fit-content;
-  }
-  .arrivalKids {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    color: black;
-  }
-  .arrivalKids .kidsText {
-    font-weight: 600;
-    padding-bottom: 10px;
-    width: 59%;
-    margin: auto !important;
-  }
-  .arrivalKids .kidsText1 {
-    padding-bottom: 20px;
-  }
-  .arrivalSupplies {
-    width: 90%;
-    margin: auto;
-  }
-  .arrivalSupplies .productGrid {
-    height: fit-content;
-  }
-  .gweftBanner {
-    background-color: #F1F1F1;
-    overflow: hidden;
-    height: 55vw;
-  }
-  .arrivalGweft {
-    width: 90%;
-    margin: auto;
-  }
-  .arrivalGweft .block {
-    width: 90%;
-    margin: auto;
-  }
-  .arrivalGweft .block p {
-  text-align: center;
-  }
-  .arrivalColor {
-
-    background-color: #F3F3F3;
-    padding: 30px 0;
-  }
-  .arrivalColor .block {
-    width: 90%;
-    margin: auto;
-  }
-  .arrivalColor .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-  }
-  .arrivalColor .list .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .arrivalColor .list .item img{
-    background-color: white;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: bottom;
-    /* height: 33vw; */
-    width: 100%;
-    aspect-ratio: 1 / 1;
-  }
- 
-  .card-mark-image {
-    position: absolute;
-    z-index: 1;
-    right: 20px;
-  }
-  .slick-list .card-link {
-    display: block;
-  }
-  .slick-list .card-price {
-    display: block;
-  }
-  .kidsBanner .kids-desktop {
-    display: none;
-    background-color: #CFDDFF;
-  }
-  .kidsBanner .kids-desktop h2 {
-    margin: 0;
-    text-align: start;
-  }
-  .kidsBanner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  @media (min-width:680px) {
-    .arrivalNav .list {
-      justify-content: center;
-    }
-  }
-  @media (min-width: 700px) {
-
-    .kidsBanner .kids-desktop {
-      display: block;
-      padding: 25px;
-    }
-    .kidsText {
-      display: none;
-    }
-    .kidsText1 {
-      display: none;
-    }
-    .kidsBanner span {
-      height: 1px;
-      width: 200px;
-      background-color: black;
-      display: block;
-      margin: 10px 0;
-    }
-    .kidsBanner {
-      display: grid;
-      grid-template-columns: 0.8fr 1fr;
-    }
-  }
-  @media (min-width:801px) {
-    .arrivalLuxury {
-      display: flex;
-      flex-direction: row-reverse;
-    }
-    .arrivalLuxury .block {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 15px;
-    }
-    .arrivalLuxury .block div {
-      margin: unset;
-    }
-    .arrivalLuxury .block h3 {
-      text-align: start;
-      margin: unset;
-      margin-bottom: 10px;
-      padding-left: 2.2em;
-        text-indent:-2.2em;
-    }
-    .arrivalLuxury .banner {
-      width: 40%;
-      flex-direction: column;
-    }
-    .arrivalLuxury .block p {
-      font-size: 16px;
-    }
-    .newArrival .topBlock {
-      position: relative;
-    }
-    .newArrival .form {
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-      right: 0;
+    .textShowMore {
+        display: none;
     }
     .newArrival h2 {
-      margin: 40px 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 30px;
+        color: black;
+        line-height: 1.2;
+        margin-bottom: 30px;
     }
-  }
+    .arrivalNav {
+        /* display: flex; align-items: center; padding: 20px 30px; gap: 40px; overflow: auto; */
+        position: sticky;
+        top: 50px;
+        z-index: 11;
+        background-color: rgba(119, 110, 101, 1);
+    }
+    .arrivalNav .list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 20px 30px;
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .arrivalNav .list::-webkit-scrollbar {
+        display: none;
+    }
+    .arrivalNav .item {
+        width: fit-content;
+        color: white;
+        flex: 0 0 auto;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .arrivalExplore {
+        padding: 40px;
+        text-align: center;
+    }
+    .non-active {
+        display: none;
+    }
+    .arrivalExplore h2 {
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 20px;
+        color: black;
+    }
+    .arrivalExplore p {
+        padding-bottom: 20px;
+        color: black;
+    }
+    .arrivalLuxury .banner {
+        display: flex;
+    }
+    .arrivalLuxury .block {
+        background-color: rgba(61, 1, 82, 1);
+        color: white;
+        padding: 40px 60px;
+    }
+    .arrivalLuxury .block h3 {
+        font-size: 45px;
+        font-weight: 400;
+        color: white;
+        margin: 0;
+        font-family: "Cinzel", serif;
+        line-height: 0.9;
+        text-align: center;
+        letter-spacing: 1px;
+        margin: auto;
+        margin-bottom: 20px;
+        max-width: 300px;
+    }
+    .arrivalLuxury .block p {
+        padding-bottom: 10px;
+        font-weight: 300;
+    }
+    .arrivalLuxury .block div {
+        color: black;
+        background-color: rgba(241, 241, 241, 1);
+        width: 100%;
+        border-radius: 40px;
+        text-align: center;
+        padding: 10px 25px;
+        text-transform: capitalize;
+        margin: auto;
+        max-width: 411px;
+        margin-top: 30px;
+    }
+    .arrivalWomen {
+        width: 90%;
+        margin: auto;
+    }
+    .arrivalWomen .productGrid {
+        height: fit-content;
+    }
+    .newArrival .form {
+        border: none;
+        width: 65px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .newArrival .form option {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    .newArrival .form:hover,
+    .form:focus,
+    .form:active,
+    .form:checked {
+        outline: none;
+    }
+    .newArrival .topBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .arrivalMen {
+        width: 90%;
+        margin: auto;
+    }
+    .arrivalMen .productGrid {
+        height: fit-content;
+    }
+    .arrivalKids .productGrid {
+        height: fit-content;
+    }
+    .arrivalKids {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        color: black;
+    }
+    .arrivalKids .kidsText {
+        font-weight: 600;
+        padding-bottom: 10px;
+        width: 59%;
+        margin: auto !important;
+    }
+    .arrivalKids .kidsText1 {
+        padding-bottom: 20px;
+    }
+    .kidsBanner .kidsText2 {
+        font-weight: 600;
+        padding-bottom: 10px;
+        color: black;
+    }
+    .kidsBanner .kidsText3 {
+        color: black;
+    }
+    .arrivalSupplies {
+        width: 90%;
+        margin: auto;
+    }
+    .arrivalSupplies .productGrid {
+        height: fit-content;
+    }
+    .gweftBanner {
+        background-color: #f1f1f1;
+        overflow: hidden;
+        height: 55vw;
+        max-height: 415px;
+    }
+    .arrivalGweft {
+        width: 90%;
+        margin: auto;
+    }
+    .arrivalGweft .block {
+        width: 90%;
+        margin: auto;
+        max-width: 525px;
+    }
+    .arrivalGweft .block p {
+        text-align: center;
+    }
+    .arrivalColor {
+        background-color: #f3f3f3;
+        padding: 30px 0;
+    }
+    .arrivalColor .block {
+        width: 90%;
+        margin: auto;
+    }
+    .arrivalColor .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    .arrivalColor .list .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .arrivalColor .list .item p {
+        font-weight: 600;
+    }
+    .arrivalColor .list .item img {
+        background-color: white;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: bottom; /* height: 33vw; */
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    .card-mark-image {
+        position: absolute;
+        z-index: 1;
+        right: -5px;
+    }
+    .slick-list .card-link {
+        display: block;
+    }
+    .slick-list .card-price {
+        display: block;
+    }
+    .kidsBanner .kids-desktop {
+        display: none;
+        margin: auto;
+    }
+    .kidsBanner .kids-desktop h2 {
+        margin: 0;
+        text-align: start;
+    }
+    .gweftBanner .image1 {
+        z-index: 1;
+        width: 68%;
+        position: absolute;
+        top: -11px;
+        right: 115px;
+        max-width: 450px;
+    }
+    .gweftBanner .image2 {
+        width: 60%;
+        position: absolute;
+        right: 0;
+        max-width: 400px;
+    }
+    .gweftBanner .image3 {
+        display: none;
+    }
+    .gweftBanner .block {
+        display: none;
+    }
+    .arrivalGweft .titleDesktop {
+        display: none;
+    }
+    .loadMore {
+        display: none;
+        cursor: pointer;
+    }
+    @media (min-width: 680px) {
+        .arrivalNav .list {
+            justify-content: center;
+        }
+    }
+    @media (min-width: 700px) {
+      .hotspot1 {
+        position: absolute;
+        top: 0;
+        right: 29%;
+        border: 1px solid black;
+        width: 17vw;
+        height: 13vw;
+      }
+      .hotspot2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 26vw;
+        height: 12vw;
+        border: 1px solid;
+      }
+      .hotspot3 {
+        position: absolute;
+        top: 21vw;
+        right: 33%;
+        border: 1px solid black;
+        width: 13vw;
+        height: 15vw;
+      }
+      .hotspot4 {
+        position: absolute;
+        top: 27vw;
+        right: 0;
+        width: 23vw;
+        height: 8vw;
+        border: 1px solid;
+      }
+      .hotspot5 {
+        position: absolute;
+        bottom: 2vw;
+        right: 24%;
+        width: 20vw;
+        height: 9vw;
+        max-width: 255px;
+        max-height: 132px;
+        border: 1px solid;
+      }
+      .hotspot6 {
+        position: absolute;
+        bottom: 5vw;
+        right: 13%;
+        width: 10vw;
+        height: 15.5vw;
+        max-width: 140px;
+        max-height: 218px;
+        border: 1px solid;
+      }
+      .hotspot7 {
+        position: absolute;
+        bottom: 5vw;
+        right: 2%;
+        width: 10vw;
+        height: 15.5vw;
+        max-width: 140px;
+        max-height: 218px;
+        border: 1px solid;
+      }
+        .kidsBanner .kids-desktop {
+            display: block;
+            padding: 25px;
+            max-width: 550px;
+            margin: auto 0;
+        }
+        .kidsBanner {
+            background-color: #cfddff;
+        }
+        .kidsBanner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .kidsText {
+            display: none;
+        }
+        .kidsText1 {
+            display: none;
+        }
+        .kidsBanner span {
+            height: 1px;
+            width: 200px;
+            background-color: black;
+            display: block;
+            margin: 10px 0;
+        }
+        .kidsBanner {
+            display: grid;
+            grid-template-columns: 0.8fr 1fr;
+        }
+    }
+    @media (min-width: 801px) {
+        .loadMore {
+            display: block;
+            width: fit-content;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 5px 40px;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+        .non-active {
+            display: none;
+        }
+        .slick-list .card-link {
+            display: none;
+        }
+        .arrivalLuxury {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .arrivalLuxury .block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+        .arrivalLuxury .block div {
+            margin: unset;
+        }
+        .arrivalLuxury .block h3 {
+            text-align: start;
+            margin: unset;
+            margin-bottom: 10px;
+            padding-left: 2.2em;
+            text-indent: -2.2em;
+        }
+        .arrivalLuxury .banner {
+            width: 40%;
+            flex-direction: column;
+        }
+        .arrivalLuxury .block p {
+            font-size: 16px;
+        }
+        .newArrival .topBlock {
+            position: relative;
+        }
+        .newArrival .form {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 0;
+        }
+        .newArrival h2 {
+            margin: 40px 0;
+        }
+        .gweftBanner .image1 {
+            top: -70px;
+            right: 65px;
+        }
+        .gweftBanner .image2 {
+            top: 72px;
+            right: -111px;
+        }
+        .gweftBanner .image3 {
+            display: block;
+            width: 445px;
+            position: relative;
+            left: -75px;
+        }
+        .arrivalColor .block {
+            max-width: 580px;
+        }
+        .arrivalColor {
+            padding: 50px;
+        }
+        .arrivalColor .list {
+            gap: 50px;
+        }
+        .arrivalColor .list .item p {
+            margin-top: 5px !important;
+        }
+    }
+    @media (min-width: 1024px) {
+        .arrivalNav .list {
+            gap: 90px;
+            padding: 25px 30px;
+        }
+        .newArrival h2 {
+            font-size: 40px;
+        }
+        .kidsBanner span {
+            margin: 30px 0;
+        }
+        .arrivalExplore p {
+            font-size: 16px;
+            max-width: 1180px;
+            margin: auto !important;
+        }
+        .arrivalExplore p:last-of-type {
+            margin-bottom: 40px !important;
+        }
+    }
+    @media (min-width: 1261px) {
+        .product .card .card-image {
+            height: 100%;
+        }
+        .product .card .card-mark-image {
+            right: -5px;
+            top: 0px;
+            width: 70px;
+        }
+        .productGrid {
+            max-width: 1300px;
+            margin: auto;
+        }
+    }
+    @media (min-width: 1280px) {
+        .arrivalNav .item {
+            font-size: 20px;
+        }
+        .kidsBanner .kids-desktop {
+            padding: 0 120px;
+            max-width: 660px;
+        }
+        .kidsBanner .kids-desktop p {
+            font-size: 16px;
+        }
+        .gweftBanner {
+            max-height: 450px;
+        }
+        .gweftBanner .block {
+            display: block;
+            width: 420px;
+            position: absolute; /* left: -45px; */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .gweftBanner .block h2 {
+            width: fit-content;
+            margin: 0;
+            margin-bottom: 22px;
+        }
+        .gweftBanner .block .list {
+            font-size: 16px;
+        }
+        .gweftBanner .block p {
+            font-size: 16px;
+        }
+        .arrivalGweft .block {
+            display: none;
+        }
+        .arrivalGweft h2 {
+            display: none;
+        }
+        .arrivalGweft .titleDesktop {
+            display: block;
+        }
+        .arrivalLuxury .banner {
+            width: 100%;
+            flex-direction: row;
+        }
+        .arrivalLuxury .image1 {
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            aspect-ratio: 1 / 1;
+        }
+        .arrivalLuxury .block {
+            width: 70%;
+        }
+    }
+    @media (min-width:1400px) {
+      .hotspot1 {
+        max-width: 250px;
+        max-height: 190px;
+      }
+      .hotspot2 {
+        max-width: 364px;
+        max-height: 168px;
+      }
+      .hotspot3 {
+        /* position: absolute; */
+        top: 300px;
+        height: 215px;
+        width: 186px;
+      }
+      .hotspot4 {
+       top: 375px;
+       height: 118px;
+       width: 340px;
+      }
+    }
+    @media (min-width: 1440px) {
+        .newArrival .form {
+            width: 185px;
+            border: 1px solid;
+        }
+        .gweftBanner {
+            max-height: 500px;
+        }
+        .arrivalLuxury .block {
+            width: 100%;
+        }
+        .gweftBanner .image1 {
+            max-width: unset;
+            width: 33%;
+        }
+        .gweftBanner .image2 {
+            max-width: unset;
+            width: 28%;
+            max-width: 500px;
+        }
+        .gweftBanner .image3 {
+            width: 540px;
+        }
+        .arrivalLuxury .banner picture {
+            width: 50%;
+        }
+        .arrivalLuxury .banner .image1 {
+            width: 100%;
+        }
+    }
+    @media (min-width: 1750px) {
+        .arrivalLuxury .block {
+            padding: 0 150px;
+            width: 85%;
+        }
+        .arrivalLuxury .block h3 {
+            font-size: 55px;
+        }
+        .gweftBanner .image1 {
+            top: -85px;
+            right: 120px;
+        }
+        .gweftBanner .block {
+            left: 45%;
+        }
+    }
 </style>
-<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0"/> -->
+<img src="/content/images/marketing/newArrivals/thumbnail.jpg" alt="thumbnail" style="width: 0px; height: 0px; opacity: 0;" />
 <section class="newArrival">
-  <div>
-    <picture>
-      <source media="(min-width:700px)" srcset="../../../assets/img/new-arrivals/hero-desktop.jpg" type="image/jpg">
-      <img src="../../../assets/img/new-arrivals/hero-mobile.jpg">
-    </picture>
-  </div>
-  <div class="arrivalNav">
-    <div class="list">
-      <div class="item">Women</div>
-      <div class="item">Men</div>
-      <div class="item">Kids</div>
-      <div class="item">Supplies</div>
-      <div class="item">Extensions</div>
-      <div class="item">New Colors</div>
+    <div>
+        <picture>
+            <source media="(min-width:700px)" srcset="/content/images/marketing/newArrivals/hero-desktop.jpg" type="image/jpg" />
+            <img src="/content/images/marketing/newArrivals/hero-mobile.jpg" />
+        </picture>
     </div>
-
- 
-
-  </div>
-  <div class="arrivalExplore">
-    <h2>Explore Our Latest Collection of Hair Systems, Wigs, Toppers and More</h2>
-    <p>At Superhairpieces we are proud to be a major part of transformational real life stories, where our hairpieces/hair systems boost a person’s appearance, confidence, and self-esteem. <a>Show more</a></p>
-    <p>
-      Call us at 1-866-814-7879 or email us at <a href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a> to talk to a customer support agent.
-    </p>
-    <picture>
-      <source media="(min-width:700px)" srcset="../../../assets/img/new-arrivals/explore1-desktop.jpg" type="image/jpg">
-      <img src="../../../assets/img/new-arrivals/explore1-mobile.jpg">
-    </picture>
-  </div>
-  <div class="arrivalLuxury">
-    <div class="banner">
-      <picture>
-        <img src="../../../assets/img/new-arrivals/luxury1-mobile.jpg">
-      </picture>
-      <picture>
-        <img style="height:100%; object-fit: cover; object-position: left;" src="../../../assets/img/new-arrivals/luxury2-mobile.jpg">
-      </picture>
-    </div>
-    <div class="block">
-      <h3>Absolute Luxury</h3>
-      <p>100% Premium Chinese human hair</p>
-      <p>An enviable range of exclusive new hair toppers & wigs that reflect extraordinary, unmatched hair quality. Each hairpiece is handcrafted to perfection, durable, and super natural-looking.</p>
-      <div>Indulge in our exceptional hair toppers & wigs</div>
-    </div>
-  </div>
-  <div class="arrivalWomen">
-    <div class="topBlock">
-      <h2>Women's wigs & toppers</h2>
-      <select class="form">
-        <option hidden="true" selected="true" disabled="disabled">SORT</option>
-        <option value="DEFAULT">Recommended</option>
-        <option value="FEATURED">Featured Items</option>
-        <option value="NEWEST">Newest Items</option>
-        <option value="A_TO_Z">A to Z</option>
-        <option value="Z_TO_A">Z to A</option>
-        <option value="BEST_REVIEWED">By Review</option>
-        <option value="LOWEST_PRICE">Price: Ascending</option>
-        <option value="HIGHEST_PRICE">Price: Descending</option>
-      </select>
-    </div>
-    <ul class="productGrid">
-    </ul>
-
-  </div>
-  <div>
-    <picture>
-      <img src="../../../assets/img/new-arrivals/m151.jpg">
-    </picture>
-  </div>
-  <div class="arrivalMen">
-    <div class="topBlock">
-      <h2>Hair Systems</h2>
-      <select class="form">
-        <option hidden="true" selected="true" disabled="disabled">SORT</option>
-        <option value="DEFAULT">Recommended</option>
-        <option value="FEATURED">Featured Items</option>
-        <option value="NEWEST">Newest Items</option>
-        <option value="A_TO_Z">A to Z</option>
-        <option value="Z_TO_A">Z to A</option>
-        <option value="BEST_REVIEWED">By Review</option>
-        <option value="LOWEST_PRICE">Price: Ascending</option>
-        <option value="HIGHEST_PRICE">Price: Descending</option>
-      </select>
-    </div>
-    <ul class="productGrid">
-    </ul>
-
-  </div>
-  <div class="kidsBanner">
-    <picture>
-      <img src="../../../assets/img/new-arrivals/kids.jpg">
-    </picture>
-    <div class="kids-desktop">
-      <h2>Wigs for Kids</h2>
-      <span></span>
-      <p>Camouflaging hair loss for a normal lifestyle</p>
-      <p>A 100% human hair, adhesive-less, breathable silicon base wig. This lightweight, natural looking children’s wig provides a firm, slip-free grip to help children live their exciting childhood without worrying about hair loss.</p>
-    </div>
-  </div>
-  <div class="arrivalKids">
-    <h2>Wigs for Kids</h2>
-    <p class="kidsText">Camouflaging hair loss for a normal lifestyle</p>
-    <p class="kidsText1">A 100% human hair, adhesive-less, breathable silicon base wig. This lightweight, natural looking children’s wig provides a firm, slip-free grip to help children live their exciting childhood without worrying about hair loss.</p>
-    <ul class="productGrid">
-
-    </ul>
-  </div>
-  <div>
-    <picture>
-      <img src="../../../assets/img/new-arrivals/supplies.jpg">
-    </picture>
-  </div>
-  <div class="arrivalSupplies">
-    <div class="topBlock">
-      <h2>Supplies</h2>
-      <select class="form">
-        <option hidden="true" selected="true" disabled="disabled">SORT</option>
-        <option value="DEFAULT">Recommended</option>
-        <option value="FEATURED">Featured Items</option>
-        <option value="NEWEST">Newest Items</option>
-        <option value="A_TO_Z">A to Z</option>
-        <option value="Z_TO_A">Z to A</option>
-        <option value="BEST_REVIEWED">By Review</option>
-        <option value="LOWEST_PRICE">Price: Ascending</option>
-        <option value="HIGHEST_PRICE">Price: Descending</option>
-      </select>
-    </div>
-    <ul class="productGrid">
-
-    </ul>
-  </div>
-  <div class="gweftBanner">
-    <div style="display:flex; position: relative; justify-content: unset;">
-      <img class="image1" style="z-index:1; width:68%; position:absolute; top:-11px; right: 200px; max-width:450px" src="../../../assets/img/new-arrivals/gweft1.png">
-      <img class="image2" style="width:60%; position:absolute; right:0; max-width:400px" src="../../../assets/img/new-arrivals/gweft2.jpg">
-      <img style="position:absolute; z-index: 1; right: 0; width: 53%; max-width: 195px;" src="../../../assets/img/new-arrivals/Group 55.png">
-    </div>
-  </div>
-  <div class="arrivalGweft">
-    <h2>G-Weft</h2>
-    <div class="block">
-      <ul class="list">
-        <li>Ideal for those with fine, thin hair.</li>
-        <li>Extremely lightweight human hair.</li>
-        <li>Natural-looking, invisible, and undetectable.</li>
-        <li>Seamless appearance with less bulk at the scalp.</li>
-        <li>No shedding hair, no knots.</li>
-        <li>Affordable alternative for added volume & durability.</li>
-      </ul>
-      <p>
-        Now available in 20’’/20 inch length , 100 grams per pack in hair blend 6A quality. Choose between 7 popular colors. If a length or color you want is not currently in stock, contact our customer support team to place a pre-order.
-      </p>
-    </div>
-
-    <ul class="productGrid">
-
-    </ul>
-  </div>
-  <div class="arrivalColor" >
-    <h2>New Women's Color</h2>
-    <div class="block">
-      <div class="list">
-        <div class="item">
-          <img src="../../../assets/img/new-arrivals/s5.png">
-          <p>#S5</p>
+    <div class="arrivalNav">
+        <div class="list">
+            <div id="women" class="item">Women</div>
+            <div id="men" class="item">Men</div>
+            <div id="kids" class="item">Kids</div>
+            <div id="supplies" class="item">Supplies</div>
+            <div id="extensions" class="item">Extensions</div>
+            <div id="colors" class="item">New Colors</div>
         </div>
-        <div class="item">
-          <img src="../../../assets/img/new-arrivals/s6.png">
-          <p>#S6</p>
-        </div>
-        <div class="item">
-          <img src="../../../assets/img/new-arrivals/s17.png">
-          <p>#S17</p>
-        </div>
-      </div>
     </div>
+    <div class="arrivalExplore">
+        <h2>Explore Our Latest Collection of Hair Systems, Wigs, Toppers and More</h2>
+        <p>
+            At Superhairpieces we are proud to be a major part of transformational real life stories, where our hairpieces/hair systems boost a person’s appearance, confidence, and self-esteem.
+            <span class="textShowMore">
+                That's exactly what we promise to deliver - premium quality hair that brings out the superstar in you! Our commitment is to bring you high caliber hair in the latest trends for you to flaunt in an easy and effortless way.
+                You are not alone. From consultation until product delivery and beyond, we are there with you in every step of this journey.
+            </span>
+            <a class="showMoreButton" style="text-decoration: none; color: rgba(0, 71, 255, 1);">Show more</a>
+        </p>
+        <p>Call us at 1-866-814-7879 or email us at <a href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a> to talk to a customer support agent.</p>
+        <div style="position:relative; width: fit-content; margin: auto;">
+          <picture>
+            <source media="(min-width:700px)" srcset="/content/images/marketing/newArrivals/explore1-desktop.jpg" type="image/jpg" />
+            <img src="/content/images/marketing/newArrivals/explore1-mobile.jpg" />
+        </picture>
+        <a target="_blank" href="/hd106xl-french-lace-poly-back-mens-hairpiece/">
+          <span class="hotspot1"></span>
+        </a>
+        <a target="_blank" href="/mens-partial-wig-pw106hd-french-lace-poly-back-mens-hairpiece/">
+          <span class="hotspot2"></span>
+        </a>
+        <a target="_blank" href="/monofilament-hair-toppers/">
+          <span class="hotspot3"></span>
+        </a>
+        <a target="_blank" href="/p41-full-clear-skin-base-ladys-top-hairpiece-16-long-hair/">
+          <span class="hotspot4"></span>
+        </a>
+        <a target="_blank" href="/european-human-hair-wigs-toppers/">
+          <span class="hotspot5"></span>
+        </a>
+        <a href="/skin-weft-6814-womens-skin-front-hair-topper/" target="_blank">
+          <span class="hotspot6"></span>
+        </a>
+        <a>
+          <span class="hotspot7"></span>
+        </a>
+        </div>
 
-  </div>
+
+    </div>
+    <div class="arrivalLuxury">
+        <div class="banner">
+            <picture> 
+              <img class="image1" src="/content/images/marketing/newArrivals/luxury1-mobile.jpg" /> 
+            </picture>
+            <picture> <img class="image2" style="height: 100%; object-fit: cover; object-position: left;" src="/content/images/marketing/newArrivals/luxury2-mobile.jpg" /> </picture>
+        </div>
+        <div class="block">
+            <h3>Absolute Luxury</h3>
+            <p>100% Premium Chinese human hair</p>
+            <p>An enviable range of exclusive new hair toppers & wigs that reflect extraordinary, unmatched hair quality. Each hairpiece is handcrafted to perfection, durable, and super natural-looking.</p>
+            <a target="_blank" style="text-decoration: none;" href="/premium-remy-human-hair-wigs-pieces-for-women/"> <div>Indulge in our exceptional hair toppers & wigs</div></a>
+        </div>
+    </div>
+    <div data-id="women" class="arrivalWomen">
+        <div class="topBlock">
+            <h2>Women's wigs & toppers</h2>
+            <select class="form">
+                <option hidden="true" selected="true" disabled="disabled">SORT</option>
+                <option value="DEFAULT">Recommended</option>
+                <option value="FEATURED">Featured Items</option>
+                <option value="NEWEST">Newest Items</option>
+                <option value="A_TO_Z">A to Z</option>
+                <option value="Z_TO_A">Z to A</option>
+                <option value="BEST_REVIEWED">By Review</option>
+                <option value="LOWEST_PRICE">Price: Ascending</option>
+                <option value="HIGHEST_PRICE">Price: Descending</option>
+            </select>
+        </div>
+        <ul class="productGrid"></ul>
+        <div class="loadMore">Load More</div>
+    </div>
+    <div>
+        <picture> <img style="width: 100%;" src="/content/images/marketing/newArrivals/m151.jpg" /> </picture>
+    </div>
+    <div data-id="men" class="arrivalMen">
+        <div class="topBlock">
+            <h2>Hair Systems</h2>
+            <select class="form">
+                <option hidden="true" selected="true" disabled="disabled">SORT</option>
+                <option value="DEFAULT">Recommended</option>
+                <option value="FEATURED">Featured Items</option>
+                <option value="NEWEST">Newest Items</option>
+                <option value="A_TO_Z">A to Z</option>
+                <option value="Z_TO_A">Z to A</option>
+                <option value="BEST_REVIEWED">By Review</option>
+                <option value="LOWEST_PRICE">Price: Ascending</option>
+                <option value="HIGHEST_PRICE">Price: Descending</option>
+            </select>
+        </div>
+        <ul class="productGrid"></ul>
+    </div>
+    <div class="kidsBanner">
+        <picture> <img src="/content/images/marketing/newArrivals/kids.jpg" /> </picture>
+        <div class="kids-desktop">
+            <h2>Wigs for Kids</h2>
+            <span></span>
+            <p class="kidsText2">Camouflaging hair loss for a normal lifestyle</p>
+            <p class="kidsText3">
+                A 100% human hair, adhesive-less, breathable silicon base wig. This lightweight, natural looking children’s wig provides a firm, slip-free grip to help children live their exciting childhood without worrying about hair loss.
+            </p>
+        </div>
+    </div>
+    <div data-id="kids" class="arrivalKids">
+        <div class="topBlock">
+            <h2>Wigs for Kids</h2>
+            <select class="form">
+                <option hidden="true" selected="true" disabled="disabled">SORT</option>
+                <option value="DEFAULT">Recommended</option>
+                <option value="FEATURED">Featured Items</option>
+                <option value="NEWEST">Newest Items</option>
+                <option value="A_TO_Z">A to Z</option>
+                <option value="Z_TO_A">Z to A</option>
+                <option value="BEST_REVIEWED">By Review</option>
+                <option value="LOWEST_PRICE">Price: Ascending</option>
+                <option value="HIGHEST_PRICE">Price: Descending</option>
+            </select>
+        </div>
+        <p class="kidsText">Camouflaging hair loss for a normal lifestyle</p>
+        <p class="kidsText1">
+            A 100% human hair, adhesive-less, breathable silicon base wig. This lightweight, natural looking children’s wig provides a firm, slip-free grip to help children live their exciting childhood without worrying about hair loss.
+        </p>
+        <ul class="productGrid"></ul>
+    </div>
+    <div>
+        <picture>
+            <source media="(min-width: 600px)" srcset="/content/images/marketing/newArrivals/supplies-desktop.jpg" type="image/jpg" />
+            <img style="width: 100%;" src="/content/images/marketing/newArrivals/supplies-mobile.jpg" />
+        </picture>
+    </div>
+    <div data-id="supplies" class="arrivalSupplies">
+        <div class="topBlock">
+            <h2>Supplies</h2>
+            <select class="form">
+                <option hidden="true" selected="true" disabled="disabled">SORT</option>
+                <option value="DEFAULT">Recommended</option>
+                <option value="FEATURED">Featured Items</option>
+                <option value="NEWEST">Newest Items</option>
+                <option value="A_TO_Z">A to Z</option>
+                <option value="Z_TO_A">Z to A</option>
+                <option value="BEST_REVIEWED">By Review</option>
+                <option value="LOWEST_PRICE">Price: Ascending</option>
+                <option value="HIGHEST_PRICE">Price: Descending</option>
+            </select>
+        </div>
+        <ul class="productGrid"></ul>
+    </div>
+    <div class="gweftBanner">
+        <div style="display: flex; position: relative; justify-content: unset; height: 100%;">
+            <img class="image3" src="/content/images/marketing/newArrivals/gweft3.jpg" />
+            <div class="block">
+                <h2>G-Weft</h2>
+                <ul class="list">
+                    <li>Ideal for those with fine, thin hair.</li>
+                    <li>Extremely lightweight human hair.</li>
+                    <li>Natural-looking, invisible, and undetectable.</li>
+                    <li>Seamless appearance with less bulk at the scalp.</li>
+                    <li>No shedding hair, no knots.</li>
+                    <li>Affordable alternative for added volume & durability.</li>
+                </ul>
+                <p>
+                    Now available in 20’’/20 inch length , 100 grams per pack in hair blend 6A quality. Choose between 7 popular colors. If a length or color you want is not currently in stock, contact our customer support team to place a
+                    pre-order.
+                </p>
+            </div>
+            <img class="image1" src="/content/images/marketing/newArrivals/gweft1.png" /> <img class="image2" src="/content/images/marketing/newArrivals/gweft2.jpg" />
+            <img style="position: absolute; z-index: 1; right: 0; width: 53%; max-width: 260px;" src="/content/images/marketing/newArrivals/hotsign.png" />
+        </div>
+    </div>
+    <div data-id="extensions" class="arrivalGweft">
+        <div class="topBlock">
+            <h2>G-Weft</h2>
+            <h2 class="titleDesktop">Extensions</h2>
+            <select class="form">
+                <option hidden="true" selected="true" disabled="disabled">SORT</option>
+                <option value="DEFAULT">Recommended</option>
+                <option value="FEATURED">Featured Items</option>
+                <option value="NEWEST">Newest Items</option>
+                <option value="A_TO_Z">A to Z</option>
+                <option value="Z_TO_A">Z to A</option>
+                <option value="BEST_REVIEWED">By Review</option>
+                <option value="LOWEST_PRICE">Price: Ascending</option>
+                <option value="HIGHEST_PRICE">Price: Descending</option>
+            </select>
+        </div>
+        <div class="block">
+            <ul class="list">
+                <li>Ideal for those with fine, thin hair.</li>
+                <li>Extremely lightweight human hair.</li>
+                <li>Natural-looking, invisible, and undetectable.</li>
+                <li>Seamless appearance with less bulk at the scalp.</li>
+                <li>No shedding hair, no knots.</li>
+                <li>Affordable alternative for added volume & durability.</li>
+            </ul>
+            <p>
+                Now available in 20’’/20 inch length , 100 grams per pack in hair blend 6A quality. Choose between 7 popular colors. If a length or color you want is not currently in stock, contact our customer support team to place a
+                pre-order.
+            </p>
+        </div>
+        <ul class="productGrid"></ul>
+    </div>
+    <div data-id="colors" class="arrivalColor">
+        <h2>New Women's Color</h2>
+        <div class="block">
+            <div class="list">
+                <div class="item">
+                    <img src="/content/images/marketing/newArrivals/s5.png" />
+                    <p>#S5</p>
+                </div>
+                <div class="item">
+                    <img src="/content/images/marketing/newArrivals/s6.png" />
+                    <p>#S6</p>
+                </div>
+                <div class="item">
+                    <img src="/content/images/marketing/newArrivals/s17.png" />
+                    <p>#S17</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<script async id='stamped-script-widget' data-store-hash='cavofu' src='https://cdn1.stamped.io/files/bigcommerce.min.js'></script>
+
 <script src="/content/js/slick.min.js" defer></script>
-
 <script>
-  function addGweft() {
-    let token = $("[name=store-token]").val();
-    fetch("/graphql", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({query:`
-                query productById {
-                    site {
-                        category (entityId: 1082) {
-                          
-                                    entityId
-                                    products (first:16){
-                                      
-                                      edges {
-                                        node {
-                                          entityId
-                                          sku
-                                          path
-                                          name
-                                          categories {
-                                            edges {
-                                              node {
-                                                name
-                                              }
-                                            }
-                                          }
-                                          defaultImage {
-                                              url (width: 200)
-                                          } 
-                                          prices {
-                                            price {
-                                              ...PriceFields
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                    
-                               
+    function addGweft(check) {
+        let token = $("[name=store-token]").val();
+        fetch("/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                query: ` query productById{site{category (entityId: 1082){entityId products (first:16,sortBy:${check}){edges{node{entityId sku path name customFields{edges{node{name value}}}categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+            }),
+        })
+            .then((r) => r.json())
+            .then((r) => {
+                let products = r.data.site.category.products.edges;
+                products.forEach((item) => {
+                    let name1 = "";
+                    item.node.customFields.edges.forEach((item2) => {
+                        if (item2.node.name == "Highlight") {
+                            name1 = item2.node.value;
                         }
+                    });
+                    $(".arrivalGweft .productGrid").append(
+                        ` <li class='product'> <article class="card "> <figure class="card-figure"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <div class="card-highlight">${name1}</div><h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                    );
+                });
+                var checkNumberOfProducts = $(".arrivalGweft .productGrid .product").length;
+                if (checkNumberOfProducts == 1) {
+                    $(".arrivalGweft .productGrid .product").css("margin", "auto");
+                }
+                if ($(".arrivalGweft ul .product").length > 4) {
+                    var productdivs = $(".arrivalGweft ul .product");
+                    for (var i = 0; i < productdivs.length; i += 4) {
+                        productdivs.slice(i, i + 4).wrapAll("<div class='productRow'></div>");
                     }
+                    $(".arrivalGweft .productGrid").slick({ dots: true, infinite: true, arrows: false, mobileFirst: true, slidesToShow: 1, slidesToScroll: 1, autoplay: false, draggable: true });
                 }
-                fragment PriceFields on Money {
-                    value
-                    currencyCode
-                    formatted
+            });
+    }
+    function addSuppliesProduct(check) {
+        let token = $("[name=store-token]").val();
+        fetch("/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                query: ` query productById{site{category (entityId: 426){entityId products (first: 16, sortBy:${check}, hideOutOfStock: true){edges{node{entityId sku path name categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+            }),
+        })
+            .then((r) => r.json())
+            .then((r) => {
+                let products = r.data.site.category.products.edges;
+                products.forEach((item) => {
+                    $(".arrivalSupplies .productGrid").append(
+                        ` <li class='product'> <article class="card "> <figure class="card-figure"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class="stamped-product-reviews-badge" data-product-type data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                    );
+                });
+                var productdivs = $(".arrivalSupplies ul .product");
+                for (var i = 0; i < productdivs.length; i += 4) {
+                    productdivs.slice(i, i + 4).wrapAll("<div class='productRow'></div>");
                 }
-                
-            `})                    
+                $(".arrivalSupplies .productGrid").slick({ dots: true, infinite: true, arrows: false, mobileFirst: true, slidesToShow: 1, slidesToScroll: 1, autoplay: false, draggable: true });
+            });
+    }
+    function addMenProducts(check) {
+        let token = $("[name=store-token]").val();
+        fetch("/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                query: ` query NewProducts{site{category (entityId: 1047){entityId products (first: 20, sortBy: ${check}){edges{node{entityId sku path name customFields{edges{node{name value}}}categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+            }),
         })
-        .then((r) => r.json())
-        .then((r) => {
-          console.log(r)
-          let products = r.data.site.category.products.edges;
-          products.forEach((item) => {
-              $('.arrivalGweft .productGrid').append(`
-            <li class='product'>
-              <article class="card ">
-                <figure class="card-figure"> 
-
-                        <a target="_blank" href="">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" >
-                        </a>
-                    <a target="_blank" href="" class="card-figure-overlay-wrap">
-                        <div class="card-figure-overlay"></div>
-                        <div class="card-link--alternate">See Buying Options</div>
-                    </a>
-                    
-                </figure>
-                <div class="card-body">
-                    <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span>
-                    <h4 class="card-title">
-                            <a target="_blank" href="">${item.node.name}</a>
-                    </h4>
-                          
-                </div>
-              </article>
-              <div class='card-price'>
-                          <div class="card-text" data-test-info-type="price">
-                            <div class="price-section price-section--withoutTax "  >
-                                <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span>
-                            </div>
-                          </div>
-                          <a href="" class="card-link">See Buying Options</a>
-              </div>  
-            </li>
-            
-            `)
-            
-
-          });
-          var checkNumberOfProducts = $('.arrivalGweft .productGrid .product').length;
-          if (checkNumberOfProducts == 1) {
-            $('.arrivalGweft .productGrid .product').css('margin','auto')
-          }
-          if ($('.arrivalGweft ul .product').length > 4) {
-            var productdivs = $('.arrivalGweft ul .product');
-          for(var i=0; i < productdivs.length; i+=4) {
-            productdivs.slice(i, i+4).wrapAll("<div class='productRow'></div>");
-          }
-          $('.arrivalGweft .productGrid').slick({
-            "dots": true,
-            "infinite": true,
-            "arrows": false,
-            "mobileFirst": true,
-            "slidesToShow": 1,
-            "slidesToScroll": 1,
-            "autoplay" : false,
-            "draggable" : true,
-          })
-          }
-          
-        })
-  }
-  function addSuppliesProduct(check) {
-    let token = $("[name=store-token]").val();
-    fetch("/graphql", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({query:`
-                query productById {
-                    site {
-                        category (entityId: 426) {
-                          
-                                    entityId
-                                    products (first: 16, sortBy:${check}, hideOutOfStock: true){
-                                      
-                                      edges {
-                                        node {
-                                          entityId
-                                          sku
-                                          path
-                                          name
-                                          categories {
-                                            edges {
-                                              node {
-                                                name
-                                              }
-                                            }
-                                          }
-                                          defaultImage {
-                                              url (width: 200)
-                                          } 
-                                          prices {
-                                            price {
-                                              ...PriceFields
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                    
-                               
+            .then((r) => r.json())
+            .then((r) => {
+                let products = r.data.site.category.products.edges;
+                products.forEach((item) => {
+                    let name1 = "";
+                    item.node.customFields.edges.forEach((item2) => {
+                        if (item2.node.name == "Highlight") {
+                            name1 = item2.node.value;
                         }
+                    });
+                    if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
+                        $(".arrivalMen .productGrid").append(
+                            ` <li class='product'> <article class="card "> <figure class="card-figure"> <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <div class="card-highlight">${name1}</div><h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                        );
                     }
-                }
-                fragment PriceFields on Money {
-                    value
-                    currencyCode
-                    formatted
-                }
-                
-            `})                    
+                });
+            });
+    }
+    function addKidsProducts(check) {
+        let token = $("[name=store-token]").val();
+        fetch("/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                query: ` query NewProducts{site{category (entityId: 1055){entityId products (first: 20,sortBy:${check}){edges{node{entityId sku path name customFields{edges{node{name value}}}categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+            }),
         })
-        .then((r) => r.json())
-        .then((r) => {
-          console.log(r)
-          let products = r.data.site.category.products.edges;
-          console.log(products)
-          products.forEach((item) => {
-              $('.arrivalSupplies .productGrid').append(`
-            <li class='product'>
-              <article class="card ">
-                <figure class="card-figure"> 
-
-                        <a target="_blank" href="">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" >
-                        </a>
-                    <a target="_blank" href="" class="card-figure-overlay-wrap">
-                        <div class="card-figure-overlay"></div>
-                        <div class="card-link--alternate">See Buying Options</div>
-                    </a>
-                    
-                </figure>
-                <div class="card-body">
-                    <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span>
-                    <h4 class="card-title">
-                            <a target="_blank" href="">${item.node.name}</a>
-                    </h4>
-                          
-                </div>
-              </article>
-              <div class='card-price'>
-                          <div class="card-text" data-test-info-type="price">
-                            <div class="price-section price-section--withoutTax "  >
-                                <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span>
-                            </div>
-                          </div>
-                          <a href="" class="card-link">See Buying Options</a>
-              </div>  
-            </li>
-            
-            `)
-            
-            
-              
-
-          });
-          var productdivs = $('.arrivalSupplies ul .product');
-          for(var i=0; i < productdivs.length; i+=4) {
-            productdivs.slice(i, i+4).wrapAll("<div class='productRow'></div>");
-          }
-          $('.arrivalSupplies .productGrid').slick({
-            "dots": true,
-            "infinite": true,
-            "arrows": false,
-            "mobileFirst": true,
-            "slidesToShow": 1,
-            "slidesToScroll": 1,
-            "autoplay" : false,
-            "draggable" : true,
-          })
-        })
-  }
-  function addMenProducts(check) {
-    let token = $("[name=store-token]").val();
-    fetch("/graphql", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({query:`
-                query NewProducts {
-                    site {
-                        category (entityId: 1047) {
-                            
-                                    entityId
-                                    products (first: 20, sortBy: ${check}){
-                                      edges {
-                                        node {
-                                          entityId
-                                          sku
-                                          path
-                                          name
-                                          categories {
-                                            edges {
-                                              node {
-                                                name
-                                              }
-                                            }
-                                          }
-                                          defaultImage {
-                                              url (width: 200)
-                                          } 
-                                          prices {
-                                            price {
-                                              ...PriceFields
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                    
-                               
-                        }
+            .then((r) => r.json())
+            .then((r) => {
+                let products = r.data.site.category.products.edges;
+                products.forEach((item) => {
+                    if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
+                    } else {
+                        $(".arrivalKids .productGrid").append(
+                            ` <li class='product'> <article class="card "> <figure class="card-figure"> <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                        );
                     }
+                });
+                var checkNumberOfProducts = $(".arrivalKids .productGrid .product").length;
+                if (checkNumberOfProducts == 1) {
+                    $(".arrivalKids .productGrid .product").css("margin", "auto");
                 }
-                fragment PriceFields on Money {
-                    value
-                    currencyCode
-                    formatted
-                }
-                
-            `})                    
+            });
+    }
+    function addWomenProducts(check) {
+        let token = $("[name=store-token]").val();
+        fetch("/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+                query: ` query NewProducts{site{category (entityId: 1055){entityId products (first: 20,sortBy:${check}){edges{node{entityId sku path name customFields{edges{node{name value}}}categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+            }),
         })
-        .then((r) => r.json())
-        .then((r) => {
-          // console.log(r)
-          let products = r.data.site.category.products.edges;
-          products.forEach((item) => {
-            if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
-              console.log(item)
-              $('.arrivalMen .productGrid').append(`
-            <li class='product'>
-              <article class="card ">
-                <figure class="card-figure">
-            <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival">  
-
-                        <a target="_blank" href="">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" >
-                        </a>
-                    <a target="_blank" href="" class="card-figure-overlay-wrap">
-                        <div class="card-figure-overlay"></div>
-                        <div class="card-link--alternate">See Buying Options</div>
-                    </a>
-                    
-                </figure>
-                <div class="card-body">
-                    <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span>
-                    <h4 class="card-title">
-                            <a target="_blank" href="">${item.node.name}</a>
-                    </h4>
-                          
-                </div>
-              </article>
-              <div class='card-price'>
-                          <div class="card-text" data-test-info-type="price">
-                            <div class="price-section price-section--withoutTax "  >
-                                <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span>
-                            </div>
-                          </div>
-                          <a href="" class="card-link">See Buying Options</a>
-              </div>  
-            </li>
-            
-            `)
-            }
-            
-              
-
-          });
-          // var productdivs = $('ul .product');
-          // for(var i=0; i < productdivs.length; i+=4) {
-          //   productdivs.slice(i, i+4).wrapAll("<div class='productRow'></div>");
-          // }
-          // $('.arrivalMen .productGrid').slick({
-          //   "dots": true,
-          //   "infinite": true,
-          //   "arrows": false,
-          //   "mobileFirst": true,
-          //   "slidesToShow": 1,
-          //   "slidesToScroll": 1,
-          //   "autoplay" : false,
-          //   "draggable" : true,
-          // })
-        })
-  }
-  function addWomenProducts(check) {
-
-    let token = $("[name=store-token]").val();
-    fetch("/graphql", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({query:`
-                query NewProducts {
-                    site {
-                        category (entityId: 1055) {
-                            
-                                    entityId
-                                    products (first: 20,sortBy:${check}){
-                                      edges {
-                                        node {
-                                          entityId
-                                          sku
-                                          path
-                                          name
-                                          categories {
-                                            edges {
-                                              node {
-                                                name
-                                              }
-                                            }
-                                          }
-                                          defaultImage {
-                                              url (width: 200)
-                                          } 
-                                          prices {
-                                            price {
-                                              ...PriceFields
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                    
-                               
-                        }
+            .then((r) => r.json())
+            .then((r) => {
+                let products = r.data.site.category.products.edges;
+                products.forEach((item) => {
+                    if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
+                        $(".arrivalWomen .productGrid").append(
+                            ` <li class='product'> <article class="card "> <figure class="card-figure"> <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                        );
                     }
+                });
+                var productdivs = $(".arrivalWomen ul .product");
+                for (var i = 0; i < productdivs.length; i += 4) {
+                    productdivs.slice(i, i + 4).wrapAll("<div class='productRow'></div>");
                 }
-                fragment PriceFields on Money {
-                    value
-                    currencyCode
-                    formatted
+                $(".arrivalWomen .productGrid")
+                    .on("init", function (slick) {})
+                    .slick({ dots: true, infinite: true, arrows: false, mobileFirst: true, slidesToShow: 1, slidesToScroll: 1, autoplay: false, draggable: true, responsive: [{ breakpoint: 800, settings: "unslick" }] });
+                if ($(window).width() > 800) {
+                    $(".arrivalWomen .productGrid .productRow:nth-child(n+3)").addClass("non-active");
                 }
-                
-            `})                    
-        })
-        .then((r) => r.json())
-        .then((r) => {
-          // console.log(r)
-          let products = r.data.site.category.products.edges;
-          console.log(products)
-          products.forEach((item) => {
-            if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
-              $('.arrivalWomen .productGrid').append(`
-            <li class='product'>
-              <article class="card ">
-                <figure class="card-figure">
-            <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival">  
-
-                        <a target="_blank" href="">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" >
-                        </a>
-                    <a target="_blank" href="" class="card-figure-overlay-wrap">
-                        <div class="card-figure-overlay"></div>
-                        <div class="card-link--alternate">See Buying Options</div>
-                    </a>
-                    
-                </figure>
-                <div class="card-body">
-                    <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span>
-                    <h4 class="card-title">
-                            <a target="_blank" href="">${item.node.name}</a>
-                    </h4>
-                          
-                </div>
-              </article>
-              <div class='card-price'>
-                          <div class="card-text" data-test-info-type="price">
-                            <div class="price-section price-section--withoutTax "  >
-                                <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span>
-                            </div>
-                          </div>
-                          <a href="" class="card-link">See Buying Options</a>
-              </div>  
-            </li>
-            
-            `)
+            });
+    }
+    window.addEventListener("DOMContentLoaded", function () {
+        addWomenProducts("DEFAULT");
+        addMenProducts("DEFAULT");
+        addSuppliesProduct("BEST_SELLING");
+        addGweft("DEFAULT");
+        addKidsProducts("DEFAULT");
+        $(".showMoreButton").on("click", function () {
+            if ($(".showMoreButton").hasClass("active")) {
+                $(".showMoreButton").removeClass("active");
+                $(".textShowMore").css("display", "none");
+                $(".showMoreButton").html("Show More");
             } else {
-
-              $('.arrivalKids .productGrid').append(`
-            <li class='product'>
-              <article class="card ">
-                <figure class="card-figure">
-            <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival">  
-
-                        <a target="_blank" href="">
-                            <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" >
-                        </a>
-                    <a target="_blank" href="" class="card-figure-overlay-wrap">
-                        <div class="card-figure-overlay"></div>
-                        <div class="card-link--alternate">See Buying Options</div>
-                    </a>
-                    
-                </figure>
-                <div class="card-body">
-                    <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span>
-                    <h4 class="card-title">
-                            <a target="_blank" href="">${item.node.name}</a>
-                    </h4>
-                          
-                </div>
-              </article>
-              <div class='card-price'>
-                          <div class="card-text" data-test-info-type="price">
-                            <div class="price-section price-section--withoutTax "  >
-                                <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span>
-                            </div>
-                          </div>
-                          <a href="" class="card-link">See Buying Options</a>
-              </div>  
-            </li>
-            
-            `)
+                $(".showMoreButton").addClass("active");
+                $(".textShowMore").css("display", "inline");
+                $(".showMoreButton").html("Show Less");
             }
-            
-              
-
-          });
-          var checkNumberOfProducts = $('.arrivalKids .productGrid .product').length;
-          if (checkNumberOfProducts == 1) {
-            $('.arrivalKids .productGrid .product').css('margin','auto')
-          }
-          var productdivs = $('.arrivalWomen ul .product');
-          for(var i=0; i < productdivs.length; i+=4) {
-            productdivs.slice(i, i+4).wrapAll("<div class='productRow'></div>");
-          }
-          $('.arrivalWomen .productGrid').on('init' ,function(slick) {
-            
-          }).slick({
-            "dots": true,
-            "infinite": true,
-            "arrows": false,
-            "mobileFirst": true,
-            "slidesToShow": 1,
-            "slidesToScroll": 1,
-            "autoplay" : false,
-            "draggable" : true,
-          })
-          // $('.arrivalWomen .productGrid')
-
-        })
-  }
-  
-  
-  window.addEventListener('DOMContentLoaded', function() {
-    addWomenProducts('DEFAULT');
-    addMenProducts('DEFAULT');
-    addSuppliesProduct('BEST_SELLING');
-    addGweft();
-    $('.arrivalWomen select').on('change', function(e) {
-      $('.arrivalWomen .productGrid').slick('unslick');
-      $('.arrivalWomen .productGrid').empty();
-      addWomenProducts(this.value);
+        });
+        $(".arrivalWomen select").on("change", function (e) {
+            $(".arrivalWomen .productGrid").slick("unslick");
+            $(".arrivalWomen .productGrid").empty();
+            addWomenProducts(this.value);
+        });
+        $(".arrivalGweft select").on("change", function (e) {
+            $(".arrivalGweft .productGrid").empty();
+            addGweft(this.value);
+        });
+        $(".arrivalMen select").on("change", function (e) {
+            $(".arrivalMen .productGrid").empty();
+            addMenProducts(this.value);
+        });
+        $(".arrivalKids select").on("change", function (e) {
+            $(".arrivalKids .productGrid").empty();
+            addKidsProducts(this.value);
+        });
+        $(".arrivalSupplies select").on("change", function (e) {
+            $(".arrivalSupplies .productGrid").slick("unslick");
+            $(".arrivalSupplies .productGrid").empty();
+            addSuppliesProduct(this.value);
+        });
+        $(".arrivalWomen .loadMore").on("click", function () {
+            $(".arrivalWomen .productRow.non-active:first").removeClass("non-active");
+            if ($(".arrivalWomen .productRow.non-active").length == 0) {
+                $(".arrivalWomen .loadMore").addClass("non-active");
+            }
+        });
+        $(".arrivalNav .list .item").on("click", function () {
+            $("html,body").animate({ scrollTop: $(`div[data-id='${this.id}']`).offset().top - 100 }, 1000);
+        });
     });
-    $('.arrivalMen select').on('change', function(e) {
-      // $('.arrivalMen .productGrid').slick('unslick');
-      $('.arrivalMen .productGrid').empty();
-      addMenProducts(this.value);
-    })
-    $('.arrivalSupplies select').on('change', function(e) {
-      $('.arrivalSupplies .productGrid').slick('unslick');
-      $('.arrivalSupplies .productGrid').empty();
-      addSuppliesProduct(this.value);
-    })
-  })
 </script>

@@ -19,11 +19,12 @@
     top: 0;
     width: 100%;
     z-index: zIndex("low");
-
     @include breakpoint(1150px) {
         border-bottom: container("border");
         overflow: visible;
         position: relative;
+    position: sticky;
+
     }
 
     &.is-open {
