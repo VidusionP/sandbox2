@@ -150,7 +150,7 @@
     }
     .newArrival .form {
         border: none;
-        width: 65px;
+        width: 180px;
         font-size: 18px;
         cursor: pointer;
     }
@@ -308,68 +308,6 @@
         }
     }
     @media (min-width: 700px) {
-      .hotspot1 {
-        position: absolute;
-        top: 0;
-        right: 29%;
-        border: 1px solid black;
-        width: 17vw;
-        height: 13vw;
-      }
-      .hotspot2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 26vw;
-        height: 12vw;
-        border: 1px solid;
-      }
-      .hotspot3 {
-        position: absolute;
-        top: 21vw;
-        right: 33%;
-        border: 1px solid black;
-        width: 13vw;
-        height: 15vw;
-      }
-      .hotspot4 {
-        position: absolute;
-        top: 27vw;
-        right: 0;
-        width: 23vw;
-        height: 8vw;
-        border: 1px solid;
-      }
-      .hotspot5 {
-        position: absolute;
-        bottom: 2vw;
-        right: 24%;
-        width: 20vw;
-        height: 9vw;
-        max-width: 255px;
-        max-height: 132px;
-        border: 1px solid;
-      }
-      .hotspot6 {
-        position: absolute;
-        bottom: 5vw;
-        right: 13%;
-        width: 10vw;
-        height: 15.5vw;
-        max-width: 140px;
-        max-height: 218px;
-        border: 1px solid;
-      }
-      .hotspot7 {
-        position: absolute;
-        bottom: 5vw;
-        right: 2%;
-        width: 10vw;
-        height: 15.5vw;
-        max-width: 140px;
-        max-height: 218px;
-        border: 1px solid;
-      }
         .kidsBanner .kids-desktop {
             display: block;
             padding: 25px;
@@ -576,27 +514,6 @@
             width: 70%;
         }
     }
-    @media (min-width:1400px) {
-      .hotspot1 {
-        max-width: 250px;
-        max-height: 190px;
-      }
-      .hotspot2 {
-        max-width: 364px;
-        max-height: 168px;
-      }
-      .hotspot3 {
-        /* position: absolute; */
-        top: 300px;
-        height: 215px;
-        width: 186px;
-      }
-      .hotspot4 {
-       top: 375px;
-       height: 118px;
-       width: 340px;
-      }
-    }
     @media (min-width: 1440px) {
         .newArrival .form {
             width: 185px;
@@ -644,7 +561,7 @@
         }
     }
 </style>
-<img src="/content/images/marketing/newArrivals/thumbnail.jpg" alt="thumbnail" style="width: 0px; height: 0px; opacity: 0;" />
+<img src="/content/images/marketing/newArrivals/thumbnail.jpg" alt="thumbnail" style="width: 0px; height: 0px; opacity: 0; position: absolute;" />
 <section class="newArrival">
     <div>
         <picture>
@@ -672,43 +589,21 @@
             </span>
             <a class="showMoreButton" style="text-decoration: none; color: rgba(0, 71, 255, 1);">Show more</a>
         </p>
+        <p></p>
         <p>Call us at 1-866-814-7879 or email us at <a href="mailto:sales@superhairpieces.com">sales@superhairpieces.com</a> to talk to a customer support agent.</p>
-        <div style="position:relative; width: fit-content; margin: auto;">
-          <picture>
+        <picture>
             <source media="(min-width:700px)" srcset="/content/images/marketing/newArrivals/explore1-desktop.jpg" type="image/jpg" />
             <img src="/content/images/marketing/newArrivals/explore1-mobile.jpg" />
         </picture>
-        <a target="_blank" href="/hd106xl-french-lace-poly-back-mens-hairpiece/">
-          <span class="hotspot1"></span>
-        </a>
-        <a target="_blank" href="/mens-partial-wig-pw106hd-french-lace-poly-back-mens-hairpiece/">
-          <span class="hotspot2"></span>
-        </a>
-        <a target="_blank" href="/monofilament-hair-toppers/">
-          <span class="hotspot3"></span>
-        </a>
-        <a target="_blank" href="/p41-full-clear-skin-base-ladys-top-hairpiece-16-long-hair/">
-          <span class="hotspot4"></span>
-        </a>
-        <a target="_blank" href="/european-human-hair-wigs-toppers/">
-          <span class="hotspot5"></span>
-        </a>
-        <a href="/skin-weft-6814-womens-skin-front-hair-topper/" target="_blank">
-          <span class="hotspot6"></span>
-        </a>
-        <a>
-          <span class="hotspot7"></span>
-        </a>
-        </div>
-
-
     </div>
     <div class="arrivalLuxury">
-        <div class="banner">
-            <picture> 
-              <img class="image1" src="/content/images/marketing/newArrivals/luxury1-mobile.jpg" /> 
+        <div class="banner" style="max-width: 100%">
+            <picture style="width: 100%"> 
+                <img class="image1" src="/content/images/marketing/newArrivals/luxury1-mobile.jpg" /> 
             </picture>
-            <picture> <img class="image2" style="height: 100%; object-fit: cover; object-position: left;" src="/content/images/marketing/newArrivals/luxury2-mobile.jpg" /> </picture>
+            <picture  style="width: 100%; aspect-ratio: 1;"> 
+                <img class="image2" style="height: 100%; object-fit: cover; object-position: left;" src="/content/images/marketing/newArrivals/luxury2-mobile.jpg" /> 
+            </picture>
         </div>
         <div class="block">
             <h3>Absolute Luxury</h3>
@@ -884,8 +779,7 @@
         </div>
     </div>
 </section>
-<script async id='stamped-script-widget' data-store-hash='cavofu' src='https://cdn1.stamped.io/files/bigcommerce.min.js'></script>
-
+<script async id="stamped-script-widget" data-store-hash="cavofu" src="https://cdn1.stamped.io/files/bigcommerce.min.js"></script>
 <script src="/content/js/slick.min.js" defer></script>
 <script>
     function addGweft(check) {
@@ -930,7 +824,7 @@
             method: "POST",
             headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
             body: JSON.stringify({
-                query: ` query productById{site{category (entityId: 426){entityId products (first: 16, sortBy:${check}, hideOutOfStock: true){edges{node{entityId sku path name categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
+                query: ` query productById{site{category (entityId: 169){entityId products (first: 16, sortBy:${check}, hideOutOfStock: true){edges{node{entityId sku path name categories{edges{node{name}}}defaultImage{url(width: 500, height: 500)}prices{price{...PriceFields}}}}}}}}fragment PriceFields on Money{value currencyCode formatted}`,
             }),
         })
             .then((r) => r.json())
@@ -938,7 +832,7 @@
                 let products = r.data.site.category.products.edges;
                 products.forEach((item) => {
                     $(".arrivalSupplies .productGrid").append(
-                        ` <li class='product'> <article class="card "> <figure class="card-figure"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class="stamped-product-reviews-badge" data-product-type data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
+                        ` <li class='product'> <article class="card "> <figure class="card-figure"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
                     );
                 });
                 var productdivs = $(".arrivalSupplies ul .product");
@@ -1015,6 +909,7 @@
                 let products = r.data.site.category.products.edges;
                 products.forEach((item) => {
                     if (item.node.categories.edges.filter((item2) => item2.node.name === "Kid's Wigs").length == 0) {
+                        
                         $(".arrivalWomen .productGrid").append(
                             ` <li class='product'> <article class="card "> <figure class="card-figure"> <img class="card-mark-image" src="/content/images/common/New.svg" width="50" height="50" alt="New Arrival"> <a target="_blank" href="${item.node.path}"> <img class="card-image lazyload" data-sizes="auto" src="https://cdn11.bigcommerce.com/s-gmosz3ja/stencil/7a9ce710-ea8d-013a-285f-7ec12a36f777/e/adc09730-ee7e-013a-90a8-7a18066a9229/img/loading.svg" data-src="${item.node.defaultImage.url}" > </a> <a target="_blank" href="${item.node.path}" class="card-figure-overlay-wrap"> <div class="card-figure-overlay"></div><div class="card-link--alternate">See Buying Options</div></a> </figure> <div class="card-body"> <span class=" stamped-product-reviews-badge" data-id="${item.node.entityId}" data-product-sku="${item.node.sku}" style="display:block;"></span> <h4 class="card-title"> <a target="_blank" href="${item.node.path}">${item.node.name}</a> </h4> </div></article> <div class='card-price'> <div class="card-text" data-test-info-type="price"> <div class="price-section price-section--withoutTax " > <span data-price-id="${item.node.entityId}" data-product-price-without-tax class="price price--withoutTax">${item.node.prices.price.formatted}</span> </div></div><a href="${item.node.path}" class="card-link">See Buying Options</a> </div></li>`
                         );
@@ -1029,13 +924,17 @@
                     .slick({ dots: true, infinite: true, arrows: false, mobileFirst: true, slidesToShow: 1, slidesToScroll: 1, autoplay: false, draggable: true, responsive: [{ breakpoint: 800, settings: "unslick" }] });
                 if ($(window).width() > 800) {
                     $(".arrivalWomen .productGrid .productRow:nth-child(n+3)").addClass("non-active");
+                };
+                if ($('.arrivalWomen .productGrid .product').length < 5) {
+                    $('.arrivalWomen .loadMore').css('display', 'none')
                 }
+
             });
     }
     window.addEventListener("DOMContentLoaded", function () {
         addWomenProducts("DEFAULT");
         addMenProducts("DEFAULT");
-        addSuppliesProduct("BEST_SELLING");
+        addSuppliesProduct("NEWEST");
         addGweft("DEFAULT");
         addKidsProducts("DEFAULT");
         $(".showMoreButton").on("click", function () {
