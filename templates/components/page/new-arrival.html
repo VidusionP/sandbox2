@@ -614,7 +614,7 @@
     </div>
     <div data-id="women" class="arrivalWomen">
         <div class="topBlock">
-            <h2>Women's wigs & toppers</h2>
+        <h2>Women's wigs & toppers</h2>
             <select class="form">
                 <option hidden="true" selected="true" disabled="disabled">SORT</option>
                 <option value="DEFAULT">Recommended</option>
@@ -916,14 +916,16 @@
                     }
                 });
                 var productdivs = $(".arrivalWomen ul .product");
+                console.log(productdivs.length)
                 for (var i = 0; i < productdivs.length; i += 4) {
-                    productdivs.slice(i, i + 4).wrapAll("<div class='productRow'></div>");
+                    productdivs.slice(i, i + 4).wrapAll("<div style='width: 100%' class='productRow'></div>");
                 }
                 $(".arrivalWomen .productGrid")
                     .on("init", function (slick) {})
                     .slick({ dots: true, infinite: true, arrows: false, mobileFirst: true, slidesToShow: 1, slidesToScroll: 1, autoplay: false, draggable: true, responsive: [{ breakpoint: 800, settings: "unslick" }] });
                 if ($(window).width() > 800) {
-                    $(".arrivalWomen .productGrid .productRow:nth-child(n+3)").addClass("non-active");
+
+                    $(".arrivalWomen .productGrid .productRow:nth-child(n+2)").addClass("non-active");
                 };
                 if ($('.arrivalWomen .productGrid .product').length < 5) {
                     $('.arrivalWomen .loadMore').css('display', 'none')
