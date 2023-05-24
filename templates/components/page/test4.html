@@ -2332,146 +2332,30 @@
 <div section-sku></div>
 <div class="preview-popup">
 </div>
-<style>
-    .omnisend-dynamic-container {
-        display: none;
-    }
-    .omni-send-email {
-        width: 100%;
-        max-width: 700px;
-        margin: auto;
-        margin-top: 20px;
-    }
-    .omni-send-title {
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-    .omni-form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        /* height: 30px; */
-    }
-    .omni-form .input_text {
-        width: 100%;
-        height: 100%;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: .78571rem 1.5rem;
-        height: 40px;
-    }
-    .omni-form .input_text:focus {
-        /* border:1px solid #007185; */
-        outline: none;
-    }
-    .omni-form .form_button_omni {
-        background-color: black;
-        color: white;
-        /* width: 35%; */
-        height: 100%;
-        /* padding: 2px 0; */
-        border-radius: 5px;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        height: 40px;
-        width: 100%;
-
-    }
-    .omniOverlay {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.301);
-        z-index: 1111111111111;
-        display: none;
-    }
-    .omniOverlay-block {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-    }
-    .omniOverlay-block1 {
-        background-color: white;
-        text-align: center;
-        font-size: 1.5rem;
-        width: 80%;
-        padding: 30px;
-        margin: auto;
-        position: relative;
-        display: none;
-        max-width: 600px;
-    }
-    .omniOverlay-block1 img {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-    }
-    .omniOverlay-block1.active {
-        display: block;
-    }
-    @media (min-width: 801px) {
-        .omni-send-email {
-            padding: 50px 0;
-        }
-        .omni-form {
-            flex-direction: row;
-        }
-        .omni-form .form_button_omni {
-            width: 35%;
-        }
-        .omniOverlay-block1 {
-            font-size: 2rem;
-            padding: 50px;
-        }
-    }
-</style>
-<div class="omni-send-email">
-    <div class="omni-send-title">Discounts, Specials & New Products. Delivered Regularly.</div>
-    <form class="omni-form">
-        <input class="input_text" type="text" name="Email" placeholder="Your email address">
-        <button class="form_button_omni" type="submit">SUBSCRIBE</button>
-    </form>
-</div>
-<div class="omniOverlay">
-    <div class="omniOverlay-block">
-        <div data-id="subscribed" class="omniOverlay-block1">
-            <img src='/content/images/common/close.svg'>
-            <div>Thank you for subscribing!</div>
-        </div>
-        <div data-id="alrdysubscribed" class="omniOverlay-block1">
-            <img src='/content/images/common/close.svg'>
-            <div>Thank you! You're already subscribed to this list!</div>
-        </div>
-    </div>
-
-</div>
-
 <div class="reamazepopup1">
     <div class="reamaze-title">How can we help you
         <img src="/content/images/common/reamazeclose.png">
     </div>
-            <div class="reamaze-block livesupport1" style="position: relative;">
+    <div class="reamaze-block livesupport1" style="position: relative;">
         <div class="item1"><img src="/content/images/common/chat1.png"></div>
         <div class="item2">
             <div class="title1">Live Support</div>
             <div class="title2">Available weekdays<br> 9:30am - 6:00pm EST</div>
         </div>
-                <img style="position:absolute; top: 50%; right: 30px; transform: translateY(-50%);" src="/content/images/common/arrow_forward.png">
+        <img style="position:absolute; top: 50%; right: 30px; transform: translateY(-50%);" src="/content/images/common/arrow_forward.png">
 
     </div>
-            <span class="chat-line" style="display:block; height: 1px; width:70%; background-color: #ECECEC; margin: auto;"></span>
+    <span class="chat-line" style="display:block; height: 1px; width:70%; background-color: #ECECEC; margin: auto;"></span>
+    <div class="reamaze-block videochat1" style="position: relative;">
+        <div class="item1"><img src="/content/images/common/chat1.png"></div>
+        <div class="item2">
+            <div class="title1">Video Chat</div>
+            <div class="title2">Available weekdays<br> 9:30am - 6:00pm EST</div>
+        </div>
+        <img style="position:absolute; top: 50%; right: 30px; transform: translateY(-50%);" src="/content/images/common/arrow_forward.png">
 
+    </div>
+    <span class="chat-line" style="display:block; height: 1px; width:70%; background-color: #ECECEC; margin: auto;"></span>
             <div class="reamaze-block stampedrewards1"  style="position: relative;">
         <div class="item1"><img src="/content/images/common/rewards2.png"></div>
         <div class="item2">
@@ -2484,160 +2368,7 @@
 </div>
 <div class="reamazeicon" >
     <img class="open" src="/content/images/common/reamaze-icon-4.svg">
-    <!-- <img class="open" src="/content/images/common/reamaze.png"> -->
 </div>
-<script>
-    window.addEventListener('DOMContentLoaded', function() {
-        $('.omni-form').on('submit', function(e) {
-            e.preventDefault();
-            if ($(".omni-form [name='Email']").val().trim().length==0 || $("[name='Email']").val().match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g)==null) {
-                document.querySelector("[name='Email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
-                document.querySelector("[name='Email']").reportValidity();
-            } else {
-                $('.omni-form input').prop('disabled', true);
-                $('.omni-form button').prop('disabled', true);
-                $('.omni-form button').html(`<img src="/content/images/common/loading.svg" style="height:20px;width:auto"/>`);
-                // fetch(`https://ec2-3-131-40-120.us-east-2.compute.amazonaws.com/omnisend/create-contact`, {
-                fetch(`https://ec2-3-131-40-120.us-east-2.compute.amazonaws.com/omnisend-create-contact/`, {
-                    method: 'POST',
-                    headers: {
-                        "Accept": "application/json",
-                        "Content-Type": 'application/json'
-                     },
-                     body: JSON.stringify({
-                        email: $(".omni-form [name='Email']").val()
-                     })
-                })
-                .then(r => r.json())
-                .then(r => {
-                    if (r == 'subscribed') {
-                                $(".omni-form button").html(`SUBSCRIBED`);
-                                $('.omniOverlay').css('display', 'block');
-                                $('.omniOverlay-block [data-id="subscribed"]').addClass('active');
-                                    $('.omniOverlay-block1 img').on('click', function() {
-                                    $('.omniOverlay-block1').removeClass('active');
-                                    $('.omniOverlay').css('display', 'none');
-                                })
-                    } else if (r == 'Already subscribed') {
-                        $('.omniOverlay').css('display', 'block')
-            $('.omniOverlay-block [data-id="alrdysubscribed"]').addClass('active');
-            $('.omniOverlay-block1 img').on('click', function() {
-                $('.omniOverlay-block1').removeClass('active');
-                $('.omniOverlay').css('display', 'none');
-            })
-            $(".omni-form button").html(`SUBSCRIBED`);
-                    }
-                })
-                // .then(r => r.json())
-                // .then(r => {
-                //     console.log(r)
-                // })
-                .catch((e) => console.log(e))
-                
-
-                // fetch(`https://api.omnisend.com/v3/contacts?email=${$(".omni-form [name='Email']").val()}`, {
-                //     method: 'GET',
-                //     headers: {
-                //         'Accept': 'application/json',
-                //         'Content-Type': 'application/json',
-                //         'X-API-KEY': "6060908999f0b705daab2fab-wy0My3817bjphKcoEhFeLINHfqcx32LZnONgmPE7MCOMYMuYb6"
-                //     }
-                // })
-                // .then(r => r.json())
-                // .then(r => {
-                //     if (r.contacts.length > 0) {
-                //         let contact = r.contacts[0];
-                //         console.log(contact);
-                //         if (contact.status != 'subscribed') {
-                //             //UPDATE CONTACT
-                //             fetch(`https://api.omnisend.com/v3/contacts`, {
-                //                 method: "POST",
-                //                 headers: {
-                //                     'Accept': 'application/json',
-                //                     'Content-Type': 'application/json',
-                //                     'X-API-KEY': "6060908999f0b705daab2fab-wy0My3817bjphKcoEhFeLINHfqcx32LZnONgmPE7MCOMYMuYb6"
-                //                 },
-                //                 body: JSON.stringify({
-                //                     "identifiers": [
-                //                         {
-                //                         "channels": {
-                //                             "email": {
-                //                             "status": "subscribed"
-                //                             }
-                //                         },
-                //                         "id": `${$(".omni-form [name='Email']").val()}`,
-                //                         "type": "email"
-                //                         }
-                //                     ]
-                //                 })
-                //             })
-                //             .then(r => r.json())
-                //             .then(r => {
-                //                 //POPUP OVERLAY
-                //                 //THANK YOU FOR SUBSCRIBING
-                //                 $(".omni-form button").html(`SUBSCRIBED`);
-                //                 $('.omniOverlay').css('display', 'block');
-                //                 $('.omniOverlay-block [data-id="subscribed"]').addClass('active');
-                //                     $('.omniOverlay-block1 img').on('click', function() {
-                //                     $('.omniOverlay-block1').removeClass('active');
-                //                     $('.omniOverlay').css('display', 'none');
-                //                 })
-                //             })
-                //         } else {
-                //             $('.omniOverlay').css('display', 'block')
-
-                //             $('.omniOverlay-block [data-id="alrdysubscribed"]').addClass('active');
-                //             $('.omniOverlay-block1 img').on('click', function() {
-                //                 $('.omniOverlay-block1').removeClass('active');
-                //                 $('.omniOverlay').css('display', 'none');
-                //             })
-                //             $(".omni-form button").html(`SUBSCRIBED`);
-
-                //         }
-                //     } else {
-                //         fetch(`https://api.omnisend.com/v3/contacts`, {
-                //             method: "POST",
-                //             headers: {
-                //                 'Accept': 'application/json',
-                //                 'Content-Type': 'application/json',
-                //                 'X-API-KEY': "6060908999f0b705daab2fab-wy0My3817bjphKcoEhFeLINHfqcx32LZnONgmPE7MCOMYMuYb6"
-                //             },
-                //             body: JSON.stringify({
-                //                 "identifiers": [
-                //                     {
-                //                     "channels": {
-                //                         "email": {
-                //                         "status": "subscribed"
-                //                         }
-                //                     },
-                //                     "id": `${$(".omni-form [name='Email']").val()}`,
-                //                     "type": "email"
-                //                     }
-                //                 ]
-                //             })
-                //         })
-                //         .then(r => r.json())
-                //         .then(r => {
-                //             //POPUP OVERLAY
-                //             //THANK YOU FOR SUBSCRIBING
-                //             $(".omni-form button").html(`SUBSCRIBED`);
-                //             $('.omniOverlay').css('display', 'block');
-                //             $('.omniOverlay-block [data-id="subscribed"]').addClass('active');
-                //                 $('.omniOverlay-block1 img').on('click', function() {
-                //                 $('.omniOverlay-block1').removeClass('active');
-                //                 $('.omniOverlay').css('display', 'none');
-                //             })
-                //         })
-                //         .catch(err => {
-                //             console.log(err)
-                //         })
-                //     }
-
-                // })
-            }
-        })
-    })
-</script>
 <script src="/content/js/pieChart.min.js" defer></script>
 <script>
     const colorOrder= [{
@@ -5153,9 +4884,6 @@
                 }
             }
         });
-
-
-
                 $('.reamaze-block').on('mouseenter', function() {
             $('.chat-line').css('background-color','white');
         })
@@ -5176,7 +4904,7 @@
                $('.reamazeicon img').attr('src','/content/images/common/reamaze-icon-4.svg');
             })
             },500)
-        } else {
+        } else if($(this).hasClass('stampedrewards1')) {
             StampedFn.toggleRewardsModal();
             $('.reamazepopup1').removeClass('active');
 document.querySelector('body').addEventListener('click', function(event) {
@@ -5189,6 +4917,8 @@ console.log(event.target)
 
 
 
+        } else if ($(this).hasClass('videochat1')) {
+            window.open('https://zoom.us/j/3934942751?pwd=RFZvRFhBajlMeGkrSHNINWtXYUFhUT09'), '_blank'
         }
         })
 function addEventListenerStamped(el, eventName, handler) {

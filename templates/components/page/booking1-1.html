@@ -1,0 +1,1390 @@
+<link rel="stylesheet" href="/content/css/slick.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    .breadcrumbs {
+    display: none;
+}
+.body.page h1 {
+    display: none;
+}
+.css-1hcx8jb {
+    display: none !important;
+    font-size: 12px;
+}
+.page-heading {
+    padding-top: 4vh;
+}
+@media (min-width: 801px) and (max-width:1149px) {
+    .body.page {
+        margin-top: 2.5rem !important;
+    }
+}
+.body.page {
+  padding: 0 !important;
+}
+p {
+  margin: 0 !important;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  overflow-x: mensden;
+}
+.body.page .container {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+.page {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  max-width: 100% !important;
+}
+.page-content.page-content--centered {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+</style>
+<style>
+  .booking {
+    text-align: center;
+
+  }
+  .gta--top {
+    width: 85%;
+    margin: auto;
+  }
+  .gta--top h2{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: black;
+    line-height: 1.2;
+  }
+  .gta--top .timings {
+    font-weight: 600;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .gta--top ul li {
+    /* list-style: none; */
+    width: fit-content;
+    margin: auto;
+  }
+  .gta--top .bookNow {
+    width: 100%;
+    background: rgba(199, 22, 64, 1);
+    color: white;
+    border-radius: 7px;
+    padding: 15px 0;
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  .gta--top .bookIcons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  .gta--top .bookIcons .signIn .signInSide,
+  .gta--top .bookIcons .priceList .priceListSide {
+    display: none;
+  }
+  .gta--top .bookIcons .signIn .signInSide.active,
+  .gta--top .bookIcons .priceList .priceListSide.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .7);
+    height: 100%;
+    width: 100%;
+    z-index: 111111;
+    color: white;
+    text-align: start;
+  }
+  .bookIcons .signIn .signInSide .block, 
+  .bookIcons .priceList .priceListSide .block {
+    width: 90%;
+    margin: 30px auto;
+    /* overflow: auto; */
+    height: inherit;
+  }
+  .signIn .signInSide .block2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+  }
+  .signIn .signInSide .block2 .name {
+    font-weight: 600;
+    font-size: 32px;
+  }
+  .signIn .signInSide .block2 .subButton {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    border-radius: 50px;
+    padding: 15px 0;
+  }
+
+  .priceListSide .block .back {
+    font-family: 'Inter',sans-serif;
+    font-weight: 400;
+  }
+  .priceListSide .block .title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .priceListSide .block .subs {
+    display: flex;
+    /* gap: 20px; */
+    align-items: center;
+    font-size: 16px;
+    overflow: auto;
+  }
+  .priceListSide .block .subs .item {
+    padding: 10px 30px;
+  }
+
+  .priceListSide .block .subs .item.active {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px 25px;
+    border-radius: 50px;
+  }
+  .priceListSide .block2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    overflow: auto;
+  }
+  .priceListSide .block1 {
+    height: 80%;
+    overflow: auto;
+    display: none;
+    margin-top: 1rem;
+
+  }
+  .priceListSide .block1.active {
+    display: block;
+  }
+  .priceListSide .block1 .card {
+    background-color: rgba(241, 244, 248, 1);
+    color: rgba(51, 51, 51, 1);
+    margin-bottom: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  .priceListSide .block1 .card .name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .priceListSide .block1 .card .subText {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+  }
+  .priceListSide .block1 .card .info {
+    color: rgba(69, 146, 237, 1);
+    text-decoration: underline;
+  }
+  .priceListSide .block1 .card .book {
+    background-color: rgba(69, 146, 237, 1);
+    color: white;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin-top: 10px;
+  }
+  .gta--imageSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gta--imageSection div:nth-child(1),
+  .gta--imageSection div:nth-child(2),
+  .gta--imageSection div:nth-child(3){
+    width: 33%;
+    float:left;
+clear:none; 
+  }
+  .gta--imageSection div:nth-child(4) {
+    width: 40%;
+    float:left;
+clear:none; 
+  }
+  .gta--imageSection div:nth-child(5),
+  .gta--imageSection div:nth-child(6) {
+    width: 30%;
+    float:left;
+clear:none; 
+  }
+  .gta--imageSection div img:nth-child(1) {
+    object-position: left;
+  }
+  .gta--imageSection div img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .newSystem {
+    background-color: black;
+    color: white;
+  }
+  .newSystem .block1 {
+    width: 85%;
+    margin: auto;
+  }
+  .newSystem .block1 .title,
+  .bookInstall .block1 .title {
+    font-size: 2rem;
+    padding: 20px 0;
+  }
+  .newSystem .block1 .para,
+  .bookInstall .block1 .para {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .newSystem .bookButton {
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    border-radius: 7px;
+    padding: 12px 0;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .bookInstall .block1 .bookButton {
+    background: black;
+    color: white;
+    border-radius: 7px;
+    padding: 12px 0;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .bookInstall {
+    background-color: white;
+    color: black;
+  }
+  .bookInstall .block1 {
+    width: 85%;
+    margin: auto;
+  }
+
+.gtaChat {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+}
+.gtaChat.active {
+  display: flex;
+  flex-direction: column;
+}
+.gtaChat .chatTop {
+  background-color: rgba(88, 88, 88, 1);
+  color: white;
+  text-align: start;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+.gtaChat .chatTop img {
+  margin-right: 10px;
+}
+.gtaChat .chatMain {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.gtaChat .chatMain .chatText {
+  flex-grow: 1;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+  position: relative;
+  max-height: 71vh;
+  overflow: auto;
+}
+.gtaChat .chatMain .chatText .chatBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 15px;
+
+}
+.gtaChat .chatMain .chatText .chatAnswer1 {
+  /* position: absolute; */
+  bottom: 25px;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+.chatText .chatAnswer1 .clientAnswer {
+  width: fit-content;
+  background-color: rgba(229, 248, 255, 1);
+  border-radius: 8px;
+  color: rgba(5, 29, 65, 1);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.gtaChat .chatMain .chatBlock .clientAnswer1 {
+  background-color: rgba(0, 74, 102, 1);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  text-transform: capitalize;
+}
+.gtaChat .chatMain .chatText2 {
+  display: flex;
+  align-items: self-end;
+  gap: 10px;
+  width: 100%;
+}
+.gtaChat .chatMain .chatText2 .chatText3 {
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: start;
+  font-size: 16px;
+  color: black;
+  width: fit-content;
+}
+.gtaChat .chatMain .chatText2 .multiChat {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.gtaChat .chatMain .chatAnswer {
+  background-color: rgba(254, 254, 254, 1);
+  box-shadow: 0px -1px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  text-align: start;
+
+}
+
+.chatMain .chatText span {
+  position: relative;
+  bottom: 0px;
+  animation: jump 2s infinite;
+}
+.chatText .dot-1 {
+  animation-delay: 200ms !important;
+}
+.chatText .dot-2 {
+  animation-delay: 400ms !important;
+}
+.chatText .dot-3 {
+  animation-delay: 600ms !important;
+}
+@keyframes jump {
+  0%   {bottom: 0px;}
+  20%  {bottom: 5px;}
+  40%  {bottom: 0px;}
+}
+
+.staffMembers {
+  background-color: rgba(229, 248, 255, 1);
+  border-radius: 12px;
+  text-align: start;
+  padding: 0 20px;
+  width: 333px;
+}
+.anyMembers {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+.staffMembers .staffImage {
+  margin-right: 15px;
+}
+.staffMembers .name {
+  font-size: 12px;
+  font-weight: 600;
+}
+.staffMembers .subText {
+  font-size: 10px;
+}
+.staffMembers .stylist {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-top:  1px solid rgba(223, 223, 223, 1);
+  padding: 10px 0;
+}
+.anyMembers .staffImage img:first-of-type {
+  width: 33px;
+  position: relative;
+  left: -5px;
+  top: 10px;
+}
+.anyMembers .staffImage img:last-of-type {
+  width: 33px;
+  position: relative;
+  right: -13px;
+  top: -5px;
+}
+.arrow {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #006cff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .arrow use {
+        fill: #006cff;
+    }
+    .arrow.disabled {
+        border: 1px solid #d9d9d9;
+    }
+    .arrow.disabled use {
+        fill: #d9d9d9;
+    }
+    .calendarTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border-bottom: 1px solid #d9d9d9; */
+        padding: 10px;
+        background-color: white;
+    }
+    .calendarMain {
+        margin-top: 10px;
+        background-color: white;
+
+    }
+    .calendarBlockMain {
+      background: rgba(229, 248, 255, 1);
+      padding: 25px;
+      border-radius: 8px;
+
+    }
+    .belowCalendar {
+        text-align: start;
+    }
+    .belowCalendar .title {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .belowCalendar .para {
+        color: #b3b3b3;
+        font-size: 12px;
+        padding: 10px 0;
+        line-height: 1.6;
+    }
+    .belowCalendar .bookings {
+        font-weight: 600;
+    }
+    .belowCalendar .time {
+        padding: 10px 0;
+    }
+    .slot {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .slot2 {
+        width: 100px;
+        background-color: #f6f6f6;
+        color: #d3d3d3;
+        border: 1px solid #f6f6f6;
+        border-radius: 5px;
+        text-align: center;
+        padding: 6px;
+    }
+    .calendarMain .weeks {
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 600;
+    }
+    .calendarMain .days {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .calendarMain .days li {
+        padding: 5px;
+        z-index: 1;
+        position: relative;
+        margin-top: 5px;
+        font-weight: 500;
+    }
+    .calendarMain .days li::before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: #006cff 1px solid;
+        z-index: -1;
+    }
+    .calendarMain .days .selected::before {
+        background-color: #006cff;
+    }
+    .calendarMain .days .selected {
+        color: #fff !important;
+    }
+    .calendarMain ul {
+        list-style: none;
+    }
+    .calendarMain ul li {
+        width: calc(100% / 7);
+    }
+    .calendarMain li.inactive::before {
+        border: unset;
+    }
+    .calendarMain li.inactive {
+        color: #d9d9d9;
+    }
+    .calendarMain .days .active::before {
+        border: #006cff 1px solid;
+    }
+    .calendarMain .days .active {
+        color: #006cff;
+        cursor: pointer;
+    }
+    .currDay {
+        color: #006cff !important;
+        text-decoration: underline;
+    }
+    .loader2 {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        left: 0;
+        z-index: 2;
+        top: 0;
+    }
+    .loader {
+        font-size: 10px;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        position: absolute;
+        text-indent: -9999em;
+        animation: mulShdSpin 1.1s infinite ease;
+        transform: translateZ(0);
+        top: 30%;
+        left: 50%;
+    }
+    @keyframes mulShdSpin {
+        0%,
+        100% {
+            box-shadow: 0 -2.6em 0 0 #000, 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.5), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.7);
+        }
+        12.5% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.7), 1.8em -1.8em 0 0 #000, 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.5);
+        }
+        25% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.5), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.7), 2.5em 0 0 0 #000, 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
+        }
+        37.5% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.5), 2.5em 0 0 0 rgba(0, 0, 0, 0.7), 1.75em 1.75em 0 0 #000, 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
+        }
+        50% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.5), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.7), 0 2.5em 0 0 #000, -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.2),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
+        }
+        62.5% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.5), 0 2.5em 0 0 rgba(0, 0, 0, 0.7), -1.8em 1.8em 0 0 #000,
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.2), -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
+        }
+        75% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.5), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.7),
+                -2.6em 0 0 0 #000, -1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2);
+        }
+        87.5% {
+            box-shadow: 0 -2.6em 0 0 rgba(0, 0, 0, 0.2), 1.8em -1.8em 0 0 rgba(0, 0, 0, 0.2), 2.5em 0 0 0 rgba(0, 0, 0, 0.2), 1.75em 1.75em 0 0 rgba(0, 0, 0, 0.2), 0 2.5em 0 0 rgba(0, 0, 0, 0.2), -1.8em 1.8em 0 0 rgba(0, 0, 0, 0.5),
+                -2.6em 0 0 0 rgba(0, 0, 0, 0.7), -1.8em -1.8em 0 0 #000;
+        }
+    }
+</style>
+<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0; position: absolute;"/> -->
+<section class="booking">
+  <div class="gta--top">
+    <h2>Welcome To GTA Online Booking System</h2>
+    <div class="timings">
+      Mon - Fri / 10:00AM - 6:00PM<br>
+      Sat-Sun & Federal Holidays Closed
+    </div>
+    <ul>
+      <li>7295 Rapistan Ct, Mississauga, ON L5N5Z4</li>
+      <li>3220 Dufferin St North York, ON M6A 2T3</li>
+    </ul>
+    <div class="bookNow">Book Appointment Online Here!</div>
+    <div class="bookIcons">
+      <div class="signIn">
+        <div class="signInBlock">
+          <img src="../../../assets/img/booking/signin.png">
+          <div>Sign In</div>
+        </div>
+        <div class="signInSide">
+          <div class="block">
+            <div class="back">Back</div>
+            <div class="block2">
+              <div class="name">Sign In</div>
+              <div class="subButton">Re-Book</div>
+              <div class="subButton">Reschedule</div>
+              <div class="subButton">Cancel Appointment</div>
+              <div class="subButton">Check Appointments</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/contact.png">
+        <div>Call For Booking</div>
+      </div>
+      <div class="priceList">
+        <div class="clickBlock">
+          <img src="../../../assets/img/booking/pricing.png">
+          <div>Pricing List</div>
+        </div>
+        <div class="priceListSide">
+          <div class="block">
+            <div class="back">Back</div>
+            <div class="title">Pricing List</div>
+            <div class="subs">
+              <div class="item active">Installation</div>
+              <div class="item">Maintenance</div>
+              <div class="item">Other</div>
+            </div>
+            <div id="InstallationPrice" class="block1 active">
+              <div class="block2">
+              </div>
+            </div>
+            <div id="MaintenancePrice" class="block1">
+              <div class="block2">
+              </div>
+            </div>
+            <div id="OtherPrice" class="block1">
+              <div class="block2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="gta--imageSection">
+    <div>
+      <img src="../../../assets/img/booking/sub1.png">
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/sub2.png">
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/sub3.png">
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/sub4.png">
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/sub5.png">
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/sub6.png">
+    </div>
+
+  </div>
+  <div class="newSystem">
+    <div class="block1">
+      <div class="title">Considering A New Hair System?</div>
+      <div class="para">
+        Whether you are a first-time hair system user or not, a flood of questions may cloud your mind, but we are here to answer each one. A 30-minute consultation with one of our experts will clear your doubts and help you choose the hair system that best suits you & your needs.
+      </div>
+      <div class="bookButton">
+        <img src="../../../assets/img/booking/consult.png">
+        BOOKING A CONSULTATION
+      </div>
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/stylists.png">
+    </div>
+  </div>
+  <div class="bookInstall">
+    <div class="block1">
+      <div class="title">We Help Install & Maintain Your Hair System Too!</div>
+      <div class="para">We don't just stop at consultations; once you purchase a hair system, we can install them too. While installing it onto your scalp, we ensure it blends with your natural hair to give seamless coverage. This one-time process involves customizing the base and styling the hair as well. Show All</div>
+      <div class="bookButton">
+        <img src="../../../assets/img/booking/consult1.png">
+        BOOK AN INSTALLATION / MAINTENACE
+      </div>
+    </div>
+    <div>
+      <div>
+        <img src="../../../assets/img/booking/landingin1.png">
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/landingin2.png">
+        <img src="../../../assets/img/booking/landingin3.png">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>Subscribe To Save up to 20%</div>
+      <div>Our annual hair system subscription service comes at a mind-blowing price of as low as $127 per month. This guarantees you benefits galore!  Save time & money as you skip the effort of regular ordering, maintenance, or additional costs. We keep a database of your required hair system specifications to make your superior quality hair system experience with us a fast, convenient, affordable, and worry-free process.</div>
+      <div>GET A FREE QUOTE</div>
+    </div>
+    <div>
+      <img src="../../../assets/img/booking/subscribe.png">
+    </div>
+  </div>
+  <div>
+    <div>Meet our team</div>
+    <div>
+      <div>
+        <img src="../../../assets/img/booking/team1.png">
+        <div>
+          <div>Tara Gerhart</div>
+          Our expert hair stylist and store manager has over 10 years of experience in the hair replacement industry.</div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/team2.png">
+        <div>
+          <div>Stephanie Knowles</div>
+          A seasoned hairstylist with 13 years of experience specializing in the hair replacement industry.</div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/team3.png">
+        <div>
+          <div>Christina Liu</div>
+          An exceptional stylist and hair loss specialist with over 5 years of experience in the hair replacement system industry.</div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/team4.png">
+        <div>
+          <div>Sanaya Clair</div>
+          With 6 years of customer care expertise, our receptionist greets and guides our vast and varied clientele with a smile.</div>
+      </div>
+    </div>
+    <div>
+      <div>FAQ</div>
+      <div>
+        <div>
+          <div>
+            <h5>What is a hair system? +</h5>
+          </div>
+          <div>A hair system refers to a toupee, hair topper, or wig made of high-quality human hair that is used to conceal hair loss, thinning hair, or bald areas.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div class="mainVideo"></div>
+      <div class="sideVideo"></div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2889.013073552021!2d-79.7652718!3d43.6062694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6af30b8d006d%3A0xd71f48c949773d6!2s7925%20Rapistan%20Ct%2C%20Mississauga%2C%20ON%20L5N%205Z4!5e0!3m2!1sen!2sca!4v1684521204408!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div>Mississauga Location</div>
+    </div>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.6008943267598!2d-79.46041522338996!3d43.71884254818212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b33cdeb17ae93%3A0x8108007ac1daa66f!2s3220%20Dufferin%20St%2C%20North%20York%2C%20ON%20M6A%202T3!5e0!3m2!1sen!2sca!4v1684521279400!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div>Toronto Location</div>
+    </div>
+  </div>
+
+  <div class="gtaChat">
+    <div class="chatTop">
+      <img src="../../../assets/img/booking/arrow.png">
+      GTA Online Booking System
+    </div>
+    <div class="chatMain">
+
+      <div class="chatText">
+        
+        <div class="chatBlock">
+          <div class="initialText chatText2">
+            <img src="../../../assets/img/booking/chatIcon.png"> 
+            <div class="chatText3">
+              <span class="dot-1">.</span>
+              <span class="dot-2">.</span>
+              <span class="dot-3">.</span>
+            </div>
+          </div>
+        </div>
+        <div class="chatAnswer1">
+
+        </div>
+      </div>
+      <div class="chatAnswer">
+        <div style="display: flex; justify-content: space-between;">Select your answer
+          <img src="../../../assets/img/booking/submit.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <script src="https://www.youtube.com/iframe_api" defer></script>
+
+<script>
+  const priceListInstallation = [];
+  const priceListMaintenance = [];
+  const priceListOthers = [];
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "Septemeber", "October", "November", "December"];
+
+    let date = new Date();
+    let currDate = date.getDate();
+    let currYear = date.getFullYear();
+    let currMonth = date.getMonth();
+    let test5 = new Date(currYear, currMonth + 1, 0);
+    let duration = "0";
+    let total = "0.00";
+    test5.setUTCHours(23, 59, 59, 0);
+
+  function getAnswer(answer) {
+    console.log(answer)
+    switch (answer) {
+      case 'newClient':
+        $('.chatBlock').append(`
+        <div class='clientAnswer1'>Yes</div>
+        `)
+        $('.chatBlock').append(`
+        <div class="chatText2">
+          <img src="../../../assets/img/booking/chatIcon.png"> 
+            <div class=multiChat>
+              <div class=chatText3>
+                <span class="dot-1">.</span>
+                <span class="dot-2">.</span>
+                <span class="dot-3">.</span>
+              </div>
+            </div>
+
+          </div>
+        `)
+        setTimeout(function() {
+          $('.chatText2 .multiChat').html(`
+            <div class=chatText3>Great! Welcome to Superhairpieces!</div>
+            <div class=chatText3>We're thrilled to have you here.
+Which service do you need?</div>
+          `)
+        }, 1000);
+        addChat(2000, '.gtaChat .chatAnswer1', 
+          ['Men Services', 'Women Services', 'Consultation', 'Start Over']
+        )
+        break;
+      case 'oldClient':
+        console.log('Old Clients');
+        break;
+      case 'men-services':
+        clientChat('Men Services');
+        addDot();
+        addBotChat(1000, ["That's great!", "May I ask if you currently have a hair system in place, or are you looking to get a brand new one?"]);
+        addChat(2000, '.gtaChat .chatAnswer1', 
+          ['Yes, I currently have a hair system', 'Not yet, finding the right one for me', 'Consultation', 'Back to last step']
+        )
+        break;
+      case 'yes,-i':
+      clientChat('Yes, I currently have a hair system');
+      addDot();
+      addBotChat(1000, ["Of course! To better assist you, could you please specify which service you are looking for?", "Please note, servicing another company's hair system incurs an extra $40 fee."]);
+      addChat(2000, '.gtaChat .chatAnswer1', 
+          ['Installation','Maintenace','Back to last step']
+        )
+        break;
+      case 'installation':
+      case 'maintenance':
+      clientChat(answer);
+      addDot();
+      addBotChat(1000, [`Thank you for letting us know you need ${answer} services`, "May I ask if you also require color services for your own hair during this appoinment?"]);
+      addChat(2000, '.gtaChat .chatAnswer1', 
+          ['Yes','No','Back to last step']
+        )
+        break;
+      case 'yes':
+      case 'no':
+        clientChat(answer);
+        addDot();
+        addBotChat(1000, ["Great! To proceed, please choose from the following locations that suit you best."]);
+        addChat(2000, '.gtaChat .chatAnswer1', 
+          ['7295 Rapistan Ct, Mississauga, ON L5N 5Z4', '3220 Dufferin St, North York, ON M6A 2T3','Back to last step']
+        )
+        break;
+      case 'Christina':
+        clientChat(answer);
+        addDot();
+        addBotChat(1000, ["Please select your prefered data and time"]);
+
+        addCalender(2000, '.gtaChat .chatAnswer1', 
+          ['7295 Rapistan Ct, Mississauga, ON L5N 5Z4', '3220 Dufferin St, North York, ON M6A 2T3','Back to last step']
+        )
+        break;
+      case '7295-rapistan':
+        clientChat('7295 Rapistan Ct, Mississauga, ON L5N 5Z4');
+        addDot();
+        addBotChat(1000, ["Please select a preferred hairstylist for your appointment"]);
+
+        addStylist(2000, '.gtaChat .chatAnswer1', 
+          ['Any available staff member', 'Christina L.', 'Stephanie K.', 'Back to last step' ]
+        );
+        break;
+    }
+  }
+  async function getSquareCatalog() {
+    await fetch('http://localhost:3000/get-sq-catalog', {
+      method: 'POST'
+    })
+    .then(r=> r.json())
+    .then(r => {
+      
+      for (const service of r.items) {
+        // console.log(service.item_data.name.toLowerCase())
+        if (service.item_data.name.toLowerCase().includes('installation')) {
+          priceListInstallation.push(service)
+        } else if (service.item_data.name.toLowerCase().includes('maintenance')) {
+          priceListMaintenance.push(service)
+        } else {
+          priceListOthers.push(service)
+        }
+      }
+
+      for (const service of priceListInstallation) {
+        $('.priceListSide #InstallationPrice.block1 .block2').append(`
+          <div class='card'>
+            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
+            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='subText'>
+              <div class='price'>$${service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00`}</div>
+              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+            </div>
+
+            <div class='book'>Book now</div>
+          </div>
+        `)
+      }
+      for (const service of priceListMaintenance) {
+        $('.priceListSide #MaintenancePrice.block1 .block2').append(`
+          <div class='card'>
+            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
+            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='subText'>
+              <div class='price'>$${service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00`}</div>
+              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+            </div>
+
+            <div class='book'>Book now</div>
+          </div>
+        `)
+      }
+      for (const service of priceListOthers) {
+        $('.priceListSide #OtherPrice.block1 .block2').append(`
+          <div class='card'>
+            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
+            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='subText'>
+              <div class='price'>${service.item_data.variations[0].item_variation_data.price_money ? `$` + service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00` : "Price Varies"}</div>
+              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+            </div>
+
+            <div class='book'>Book now</div>
+          </div>
+        `)
+      }
+
+    })
+
+  }
+  function openFAQ(x) {
+    let setheight = x.nextElementSibling.children[0].offsetHeight
+    let checkClass = x.nextElementSibling.classList
+    if (checkClass.contains('brand-add')) {
+        checkClass.remove('brand-add')
+        x.children[0].classList.remove('page-button1')
+        // x.classList.remove('page-tab-highlight')
+        x.nextElementSibling.style.maxHeight = '0'
+    } else {
+        checkClass.add('brand-add')
+        x.children[0].classList.add('page-button1')
+        // x.classList.add('page-tab-highlight')
+        x.nextElementSibling.style.maxHeight = setheight + 'px'
+    }
+}
+  function loadYTP(id) {
+    fetch(
+        `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${id}&part=snippet,status&maxResults=50&key=AIzaSyCDIwU1LciGZnn-cZBcpsEJZivX4lw4xHw`,
+        {
+            method: "GET",
+            headers: {
+                accept: "application/json",
+                "content-type": "application/json",
+            },
+        }
+    )
+    .then(r => r.json())
+    .then(r => {
+      r.items.sort((a,b) => {
+        return new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+      })
+      for (let i = 0; i < 4 ; i++) {
+        console.log(r.items[i])
+        if (i == 0) {
+          $('.mainVideo').append(`
+          <iframe title="YouTube video player" src="https://www.youtube.com/embed/${r.items[i].snippet.resourceId.videoId}" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          `)
+        } 
+        // else {
+        //   $('.sideVideo').append(`
+        //   <iframe title="YouTube video player" src="https://www.youtube.com/embed/${r.items[i].snippet.resourceId.videoId}" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        //   `)
+        // }
+      }
+    })
+  }
+  
+  function addDot() {
+    $('.chatBlock').append(`
+        <div class="chatText2">
+          <img src="../../../assets/img/booking/chatIcon.png"> 
+            <div class=multiChat>
+              <div class=chatText3>
+                <span class="dot-1">.</span>
+                <span class="dot-2">.</span>
+                <span class="dot-3">.</span>
+              </div>
+            </div>
+
+          </div>
+        `);
+        $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+  }
+
+  function clientChat(data) {
+    $(`.chatBlock`).append(`
+      <div class='clientAnswer1'>${data}</div>
+    `);
+    $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+  }
+
+  function addStylist(time, parent, data) {
+    let answer = '';
+    for (const [i,ans] of data.entries()) {
+      let newWord = ans.replace(' ', '-').toLowerCase();
+      if (ans.includes('staff')) {
+        answer = `<div data-ans='anyStaf' class='anyMembers'>
+                    <div class='staffImage'>
+                      <img src='../../../assets/img/booking/stylist1.png'>  
+                      <img src='../../../assets/img/booking/stylist2.png'> 
+                    </div>
+                    <div class='textBlock'>
+                      <div class='name'>${ans}</div>
+                      <div class='subText'>Looking for the first available appointment?
+Choose this option to see everyone’s availablity.</div>
+                    </div>
+                  </div>`
+      } else if(!ans.includes('last step')){
+        answer = answer + `<div data-ans=${ans} class='stylist'>
+                  <div class='staffImage'><img src='../../../assets/img/booking/stylist${i}.png'></div>
+                  <div class='name'>${ans}</div>
+              </div>`
+      }
+    }
+    setTimeout(function() {
+      $(`${parent}`).html(`<div class='staffMembers'>${answer}</div>`);
+      $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+      $('.chatAnswer1 div').on('click', function() {
+          answer = $(this).attr('data-ans');
+          getAnswer(answer);
+          $('.chatAnswer1').empty();
+        })
+    }, time)
+
+  }
+  function addCalender(time, parent, data) {
+    setTimeout(function() {
+        $(`${parent}`).html(`
+        <div class="calendarBlockMain">
+            <div>
+                <div class="calendarTest" style="position: relative;">
+                    <span class="loader2"><span class="loader"></span></span>
+                    <div class="calendarTop">
+                        <svg class="arrow disabled prev-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use></svg>
+                        <p class="calendarMonth" style="margin: unset;"></p>
+                        <svg class="arrow next-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
+                    </div>
+                    <div class="calendarMain" style="position: relative;">
+                        <ul class="weeks">
+                            <li>S</li>
+                            <li>M</li>
+                            <li>T</li>
+                            <li>W</li>
+                            <li>Th</li>
+                            <li>F</li>
+                            <li>S</li>
+                        </ul>
+                        <ul class="days"></ul>
+                    </div>
+                    <div class="belowCalendar">
+                        <div class="title">Available on <span class="dayAvailable"></span></div>
+                        <div class="para">You can schedule an appointmnt between 12 hours and 60 days ahead of time. Time zone: Eastern Time Zone (EST)</div>
+                        <div class="morning time">
+                            <p class="bookings">Morning</p>
+                            <div class="slot"></div>
+                            <div class="slot2">All booked</div>
+                        </div>
+                        <div class="afternoon time">
+                            <p class="bookings">Afternoon</p>
+                            <div class="slot"></div>
+                            <div class="slot2">All booked</div>
+                        </div>
+                        <div class="evening time">
+                            <p class="bookings">Evening</p>
+                            <div class="slot"></div>
+                            <div class="slot2">All booked</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        `);
+        calendarChange();
+        $(".calendarTop .next-arrow").bind("click", nextMonth);
+
+
+    }, time);
+    
+    
+    // setTimeout(function() {
+    //   $(`${parent}`).html(answer)
+    //   $('.chatAnswer1 div').on('click', function() {
+    //       answer = $(this).attr('data-ans');
+    //       getAnswer(answer);
+    //       $('.chatAnswer1').empty();
+    //     })
+    // }, time)
+}
+
+  function addChat(time, parent, data) {
+
+    let answer = '';
+    for (const ans of data) {
+      let newWord = ans.replace(' ', '-').toLowerCase();
+      answer = answer + `<div class=clientAnswer data-ans=${newWord}>${ans}</div>`
+    }
+    setTimeout(function() {
+      $(`${parent}`).html(answer);
+      $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+      $('.chatAnswer1 div').on('click', function() {
+          answer = $(this).attr('data-ans');
+          getAnswer(answer);
+          $('.chatAnswer1').empty();
+        })
+    }, time)
+  }
+  
+  function addBotChat(time, data) {
+    let answer = '';
+    for (const ans of data) {
+      answer = answer + `<div class=chatText3>${ans}</div>`
+    }
+    setTimeout(function() {
+      $(`.chatText2 .multiChat`).last().html(answer)
+      $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+    }, time);
+  }
+  function nextMonth() {
+        console.log(currMonth)
+        duration = "";
+        startTime = "";
+        multiService = [];
+        bookedStylist = "";
+        currMonth = currMonth + 1;
+        if (currMonth == new Date().getMonth() + 2) {
+            $(".calendarTop .next-arrow").addClass("disabled");
+            $(".calendarTop .next-arrow").unbind("click", nextMonth);
+        }
+        if (currMonth <= new Date().getMonth() + 2) {
+            // $('.calendarMain .loader2').removeClass('non-active');
+            $(".calendarTest .loader2").removeClass("non-active");
+
+            $(".calendarTop .prev-arrow").removeClass("disabled");
+
+            if (currMonth < 0 || currMonth > 11) {
+                date = new Date(currYear, currMonth);
+                currYear = date.getFullYear();
+                currMonth = date.getMonth();
+            } else {
+                date = new Date();
+            }
+            let test5 = new Date(currYear, currMonth + 1, 0);
+            let test6 = new Date(currYear, currMonth, 1);
+            test5.setUTCHours(23, 59, 59, 0);
+            calendarChange();
+            bookingSq(test6.toISOString(), test5.toISOString(), serviceEnd, stylist);
+        } else {
+            currMonth = currMonth - 1;
+
+            $(".calendarTop .next-arrow").unbind("click");
+        }
+
+        if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear) {
+            $(".calendarTop .prev-arrow").unbind("click");
+
+            $(".calendarTop .prev-arrow").bind("click", prevMonth);
+        }
+    }
+    function prevMonth() {
+        duration = "";
+        startTime = "";
+        multiService = [];
+        bookedStylist = "";
+
+        if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear) {
+            // $('.calendarMain .loader2').removeClass('non-active');
+            $(".calendarTest .loader2").removeClass("non-active");
+
+            // $('.calendarTop .prev-arrow').bind('click', prevMonth)
+            currMonth = currMonth - 1;
+
+            if (currMonth == new Date().getMonth()) {
+                $(".calendarTop .prev-arrow").addClass("disabled");
+                $(".prev-arrow").unbind("click", prevMonth);
+            } else {
+                $(".next-arrow").bind("click", nextMonth);
+            }
+            if (currMonth < 0 || currMonth > 11) {
+                date = new Date(currYear, currMonth, currDate);
+                currYear = date.getFullYear();
+                currMonth = date.getMonth();
+            } else {
+                date = new Date();
+            }
+
+            let test5 = new Date(currYear, currMonth + 1, 0);
+            let test6 = new Date(currYear, currMonth, 1);
+            if (currMonth === new Date().getMonth()) {
+                bookingSq(new Date().toISOString(), test5.toISOString(), serviceEnd);
+            } else {
+                bookingSq(test6.toISOString(), test5.toISOString(), serviceEnd);
+            }
+            test5.setUTCHours(23, 59, 59, 0);
+            calendarChange();
+            // if (new Date().getMonth() < currMonth && new Date().getFullYear() >= currYear ) {
+            //   $('.calendarTop .prev-arrow').unbind('click')
+            $(".calendarTop .next-arrow").removeClass("disabled");
+            // $('.calendarTop .next-arrow').bind('click', nextMonth)
+            // }
+        } else {
+            $(".calendarTop .prev-arrow").addClass("disabled");
+        }
+    }
+    
+    
+  function calendarChange(x, y) {
+        // console.log(currMonth)
+        $("calendarMain .loader2").removeClass("non-active");
+
+        let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
+        let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate();
+        let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+        let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+        let checking = new Date().toLocaleDateString("fr-CA", { year: "numeric", month: "2-digit", day: "2-digit" });
+        let change = "";
+        for (let i = firstDayofMonth; i > 0; i--) {
+            change += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+        }
+        $(".calendarMonth").html(`
+      ${months[currMonth]} ${currYear}
+    `);
+
+        for (let i = 1; i <= lastDateofMonth; i++) {
+            let isToday = i === date.getDate() && currMonth === new Date().getMonth() && currYear === new Date().getFullYear() ? "currDay" : "";
+            change += `
+        <li data-date="${currYear}-${("0" + (currMonth + 1)).slice(-2)}-${("0" + i).slice(-2)}"  class="currMonth inactive ${isToday}">${i}</li>
+      `;
+        }
+        for (let i = lastDayofMonth; i < 6; i++) {
+            change += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+        }
+        $("calendarMain .loader2").addClass("non-active");
+
+        $(".calendarMain .days").html(`${change}`);
+    }
+  window.addEventListener("DOMContentLoaded", function() {
+    
+    let answer = 'hi'
+    // loadYTP('PLZR8iVgNY2TdvV0AFopJLmGHd7S_gAEjg')
+    $('.bookIcons .priceList .clickBlock').on("click", function() {
+      $('.priceList .priceListSide').addClass('active');
+    })
+    $('.bookIcons .signIn .signInBlock').on("click", function() {
+      $('.signIn .signInSide').addClass('active')
+    })
+    getSquareCatalog();
+    
+    $('.priceListSide .block .subs .item').on('click', function() {
+      let id = $(this).html();
+      if (!($(this).hasClass('active'))) {
+        $('.priceListSide .block .subs .item').removeClass('active');
+        $(this).addClass('active')
+        $('.priceListSide .block .block1').removeClass('active');
+        $(`.priceListSide .block #${id}Price.block1`).addClass('active')
+      }
+
+    }) ;
+    $('.priceListSide .block .back').on('click', function() {
+      $('.priceListSide').removeClass('active');
+    });
+    $('.signInSide .block .back').on('click', function() {
+      $('.signInSide').removeClass('active');
+    });
+    $('.gta--top .bookNow').on('click', function() {
+      let height = $('.header').height();
+      $('.gtaChat').css(`height`, `calc(100% - ${height}px)`)
+      $('.gtaChat').addClass('active');
+      setTimeout(function() {
+        $('.gtaChat .chatText .initialText div').html(`
+        Welcome! Is this your first service appointment with Superhairpieces?
+        `)
+      }, 1000);
+      setTimeout(function() {
+        $('.chatText .chatAnswer1').append(`
+        <div data-ans='newClient' class='clientAnswer'>Yes</div>
+        <div data-ans='oldClient' class='clientAnswer'>Returning Client</div>
+        `);
+        $('.chatAnswer1 div').on('click', function() {
+          answer = $(this).attr('data-ans');
+          getAnswer(answer);
+          $('.chatAnswer1').empty();
+        })
+      }, 1500);
+    })
+
+
+  })
+
+
+</script>
+

@@ -4,6 +4,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 <style>
+    .card-link {
+        width: fit-content;
+    }
     .breadcrumbs {
     display: none;
 }
@@ -80,7 +83,7 @@ body {
 }
 .hairpatch--top .block div {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 20px 0;
 }
 .hairpatch--top .patchGrid {
@@ -168,11 +171,12 @@ body {
 .hairpatch--top .line1 {
   display: none;
 }
-@media (min-width: 500px) {
-  .hairpatch--mid .block1 .text {
-    padding-top: 225px;
+@media (min-width : 400px) {
+.hairpatch--mid .block1 .text {
+    padding-top: 175px;
   }
 }
+
 @media (min-width: 700px) {
   .hairpatch--top {
     max-width: 1000px;
@@ -183,6 +187,7 @@ body {
     gap: 20px;
     margin-bottom: 30px;
     text-align: start;
+    align-items: center;
   }
 
   .hairpatch--top .block img {
@@ -196,10 +201,10 @@ body {
 }
 @media (min-width: 900px) {
   .hairpatch--top .block div {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .hairpatch--mid {
-    margin-top: 100px;
+    margin-top: 200px;
   }
   .hairpatch--mid .block1 {
     display: flex;
@@ -209,7 +214,7 @@ body {
     width: 60%;
     text-align: left;
     margin: unset;
-    padding: 60px 0;
+    padding: 95px 0;
     margin-right: 5vw;
     line-height: 1.7;
   } 
@@ -291,11 +296,12 @@ body {
   }
 }
 </style>
-<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0; position: absolute;"/> -->
+<img src="/content/images/marketing/hairPatches/thumbnail-2.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0; position: absolute;"/>
 <section class="hairpatch">
   <div class="banner">
     <picture>
-      <source media="(min-width:700px)" srcset="/content/images/marketing/hairPatches/banner-pc.jpg" type="image/jpg" />
+      <!-- <source media="(min-width:700px)" srcset="/content/images/marketing/hairPatches/banner-pc.jpg" type="image/jpg" /> -->
+      <source media="(min-width:700px)" srcset="/content/images/marketing/hairPatches/banner-pc.png" type="image/png" />
       <img src="/content/images/marketing/hairPatches/banner-mobile.jpg" />
     </picture>
   </div>
@@ -305,7 +311,7 @@ body {
     <div class="block">
       <img src="/content/images/marketing/hairPatches/image1.jpg">
       <div>
-        Is your receding hairline affecting your self-image and confidence at a young age? Try our cost-effective, light-density FR111 frontal hairpiece to give your hairline a fuller look and an instant transformation.
+        Are you a young adult noticing a significant receding frontal hairline and needing an immediate solution? Try out our super comfortable, natural-looking FR111, a small hairpiece specially made to camouflage hair loss in the frontal hairline. Its soft, clear see-through thin-skin polyurethane base comes with v-looped 4-6'' high-quality soft fine regular Indian remy human hair strands without any knots. It allows you to carry out just about any frontal hairstyle with ease.
       </div>
     </div>
     <div class="patchGrid">
@@ -315,35 +321,19 @@ body {
   <div class="hairpatch--mid">
     <div class="block">
       <picture>
-        <source media="(min-width:700px)" srcset="/content/images/marketing/hairPatches/mid-image-desktop.png" type="image/png" />
+        <source media="(min-width:900px)" srcset="/content/images/marketing/hairPatches/mid-image-desktop.png" type="image/png" />
       <img src="/content/images/marketing/hairPatches/mid-image.png">
       </picture>
-      <!-- <div class="img1">
-        <picture>
-          <source media="(min-width:700px)" srcset="../../../assets/img/hairpatch/image2-desktop.png" type="image/jpng" />
-          <img src="../../../assets/img/hairpatch/image2.png" />
-        </picture>
-      </div>
-      <div class="img2">
-        <picture>
-          <source media="(min-width:700px)" srcset="../../../assets/img/hairpatch/image3-desktop.png" type="image/jpng" />
-          <img src="../../../assets/img/hairpatch/image3.png" />
-        </picture>
-      </div> -->
     </div>
     <div class="block1">
-      <div class="text">This hair system is made with a super soft, clear see-through thin-skin polyurethane base that looks just like your own skin when attached. It can be sized down to match the area of your frontal hair loss, providing much-needed coverage only where needed. It comes with v-looped 4-6'' high-quality soft fine regular Indian remy human hair strands for you to showcase the best hairstyles and latest trends.</div>
+      <div class="text">This light-density, cost-effective, small hair patch can be sized down to match the area of your frontal hair loss, providing much-needed coverage only where needed.</div>
     </div>
   </div>
   <div class="patchBottomGrid">
     <div class="block">
       <ul class="productGrid">
-
       </ul>
     </div>
-
-   
-
   </div>
 </section>
 <script async id="stamped-script-widget" data-store-hash="cavofu" src="https://cdn1.stamped.io/files/bigcommerce.min.js"></script>
@@ -500,9 +490,9 @@ body {
   
 
   window.addEventListener("DOMContentLoaded", function() {
-    // addHairPatch('[7261, 7262]');
-    addHairPatch('[3574, 3575]');
-    // addProducts('[437, 439, 1294, 561]');
-    addProducts('[1224, 1226, 1558, 1267]');
+    addHairPatch('[7261, 7262]');
+    // addHairPatch('[3574, 3575]');
+    addProducts('[437, 439, 1294, 561]');
+    // addProducts('[1224, 1226, 1558, 1267]');
   })
 </script>
