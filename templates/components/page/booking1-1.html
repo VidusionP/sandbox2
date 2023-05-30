@@ -50,10 +50,30 @@ body {
 
 </style>
 <style>
+      .non-active {
+        display: none;
+    }
   .booking {
     text-align: center;
 
   }
+  .bookingButton {
+        background-color: rgba(0, 108, 255, 1);
+        color: #fff;
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+    .bookingButton1 {
+        border: 1px solid rgba(68, 68, 68, 1);
+        color: rgba(68, 68, 68, 1);
+        background-color: white;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
   .gta--top {
     width: 85%;
     margin: auto;
@@ -114,6 +134,7 @@ body {
     height: inherit;
   }
   .signIn .signInSide .block2 {
+    color: black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,20 +145,21 @@ body {
     align-items: center;
     width: 90%;
     gap: 20px;
+    background-color: white;
+    padding: 30px;
   }
-  .signIn .signInSide .block2 .name {
-    font-weight: 600;
-    font-size: 32px;
+  .signIn .signInSide .block2  .squareLogo {
+    width: 150px;
   }
-  .signIn .signInSide .block2 .subButton {
+  .signInSide .block2 form {
     width: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    color: rgba(51, 51, 51, 1);
-    text-align: center;
-    border-radius: 50px;
-    padding: 15px 0;
   }
-
+  .signInSide .block2 .signUpInput {
+    width: 100%;
+  }
+  .signinSide .block2 .requestButton {
+    width: 100%;
+  }
   .priceListSide .block .back {
     font-family: 'Inter',sans-serif;
     font-weight: 400;
@@ -623,228 +645,499 @@ clear:none;
                 -2.6em 0 0 0 rgba(0, 0, 0, 0.7), -1.8em -1.8em 0 0 #000;
         }
     }
+    .confirmSection {
+      display: flex;
+      justify-content: end;
+    }
+    .calendarConfirm {
+      width: fit-content;
+      background-color: rgba(51, 51, 51, 1);
+      color: white;
+      font-size: 10px;
+      padding: 5px 25px;
+      border-radius: 3px;
+    }
+    .active3 {
+        color: #fff;
+        background-color: rgba(68, 68, 68, 1);
+    }
+
+    .gtaProfile .name {
+      font-weight:700;
+      font-size: 20px;
+      color: black;
+    }
+    .gtaProfile .profileBlock {
+      width: 90%;
+      border: 1px solid #c8c8c8;
+      border-radius: 6px;
+      padding: 18px;
+      margin: 20px auto;
+      
+    }
+    .gtaProfile .topBlock {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 15px;
+    }
+    .gtaProfile .topBlock .nameInitials {
+      background-color: #006CFF;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      width: 50px;
+      aspect-ratio: 1 /1 ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .gtaProfile .topBlock .fullname {
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-align: start;
+      margin-left: 15px;
+    }
+    .gtaProfile .topBlock .signOut {
+      color: 006CFF;
+      font-weight: 500;
+      flex-grow: 1;
+    }
+    .gtaProfile .dropdownBlock select{
+      border-radius: 10px;
+    }
+    .gtaProfile .apptsBlock {
+      margin-top: 10px;
+    }
+    .gtaProfile .apptsBlock .name {
+      font-size: 1.1rem;
+    }
+    .gtaProfile .bookAptBlock .barAppts,
+    .gtaProfile .apptsBlock .barAppts {
+      display: flex;
+      position: relative;
+      background-color: #E0E0E0;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+    .gtaProfile .bookAptBlock .barApptName,
+    .gtaProfile .apptsBlock .barApptName {
+      color: black;
+      width: 100%;
+      font-size: 12px;
+      padding: 5px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+    .gtaProfile .barApptName.on {
+      color: white;
+    }
+    .gtaProfile .bookAptBlock .barApptSlider,
+    .gtaProfile .apptsBlock .barApptSlider {
+      background-color: #006CFF;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      border-radius: 20px;
+      transition:all 0.2s linear;
+    }
+    .gtaProfile .barApptSlider.move {
+      left: 50%;
+    }
+    .gtaProfile .apptItem {
+      border: 1px solid #CACACA;
+      text-align: start;
+      padding: 10px 20px;
+      margin-top: 10px;
+      position: relative;
+    }
+    .gtaprofile .apptItem .faveStar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #D9D9D9;
+      height: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 5px 2px;
+    }
+    .gtaProfile .apptItem .bottomBlock {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .gtaProfile .apptItem .topSub {
+      color: rgb(117, 121, 122);
+      font-size: 12px;
+    }
+    .gtaProfile .apptItem .topSub1{
+      font-weight: 600;
+    }
+    .gtaProfile .apptItem .bottomBlock .apptLink {
+      color: rgba(0, 108, 255, 1);
+      font-weight: 600;
+    }
 </style>
 <!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0; position: absolute;"/> -->
 <section class="booking">
-  <div class="gta--top">
-    <h2>Welcome To GTA Online Booking System</h2>
-    <div class="timings">
-      Mon - Fri / 10:00AM - 6:00PM<br>
-      Sat-Sun & Federal Holidays Closed
-    </div>
-    <ul>
-      <li>7295 Rapistan Ct, Mississauga, ON L5N5Z4</li>
-      <li>3220 Dufferin St North York, ON M6A 2T3</li>
-    </ul>
-    <div class="bookNow">Book Appointment Online Here!</div>
-    <div class="bookIcons">
-      <div class="signIn">
-        <div class="signInBlock">
-          <img src="../../../assets/img/booking/signin.png">
-          <div>Sign In</div>
-        </div>
-        <div class="signInSide">
-          <div class="block">
-            <div class="back">Back</div>
-            <div class="block2">
-              <div class="name">Sign In</div>
-              <div class="subButton">Re-Book</div>
-              <div class="subButton">Reschedule</div>
-              <div class="subButton">Cancel Appointment</div>
-              <div class="subButton">Check Appointments</div>
+  <div class="main">
+    <div class="gta--top">
+      <h2>Welcome To GTA Online Booking System</h2>
+      <div class="timings">
+        Mon - Fri / 10:00AM - 6:00PM<br>
+        Sat-Sun & Federal Holidays Closed
+      </div>
+      <ul>
+        <li>7295 Rapistan Ct, Mississauga, ON L5N5Z4</li>
+        <li>3220 Dufferin St North York, ON M6A 2T3</li>
+      </ul>
+      <div class="bookNow">Book Appointment Online Here!</div>
+      <div class="bookIcons">
+        <div class="signIn">
+          <div class="signInBlock">
+            <img src="../../../assets/img/booking/signin.png">
+            <div>Sign In</div>
+          </div>
+          <div class="signInSide">
+            <div class="block">
+              <div class="back">Back</div>
+              <div class="block2">
+                <img class="squareLogo" src="../../../assets/img/booking/square_logo.png">
+                <p>Sign in to Superhairpieces.ca with Square Appointments</p>
+                <div class="signInBlock" style="width: 100%">
+                  <form class="signInForm">
+                    <input class="signUpInput" name="email" placeholder="Email" required>
+                    <div style="color:red; height: 25px;" class="accountExistence"></div>
+                    <button class="bookingButton requestButton" type="submit" id="loginSubmit" value="vidusion@superhairpieces.com">Request Sign In Code</button>
+                  </form>
+                  <div class="cancel" style="cursor: pointer;">Cancel</div>
+                  <div class="bottom">
+                    <p>Don't have a Square account?</p>
+                    <div class="squareSignUp" style="cursor: pointer;">Sign Up</div>
+                  </div>
+                </div>
+                <div class="codeBlock non-active" style="width: 100%">
+                  <p>Please check your inbox/spam for your code.</p>
+                  <p>Please allow up to 5 minutes</p>
+                  <form id="codeLogin">
+                    <input class="codeInput" name="codeInput" placeholder="Enter Code Here">
+                    <div class="incorrectCode" style="height: 22px; color: red;"></div>
+                    <button class="bookingButton requestButton">Sign In</button>
+                  </form>
+                  <div class="cancel" style="cursor: pointer;">Cancel</div>
+                  <div>
+                    <div>Didn't receive a code?</div>
+                    <span class="resend" style="color:#006cff; font-weight: 500; cursor: pointer; margin-left: 5px;"></span>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <img src="../../../assets/img/booking/contact.png">
-        <div>Call For Booking</div>
-      </div>
-      <div class="priceList">
-        <div class="clickBlock">
-          <img src="../../../assets/img/booking/pricing.png">
-          <div>Pricing List</div>
+        <div>
+          <img src="../../../assets/img/booking/contact.png">
+          <div>Call For Booking</div>
         </div>
-        <div class="priceListSide">
-          <div class="block">
-            <div class="back">Back</div>
-            <div class="title">Pricing List</div>
-            <div class="subs">
-              <div class="item active">Installation</div>
-              <div class="item">Maintenance</div>
-              <div class="item">Other</div>
-            </div>
-            <div id="InstallationPrice" class="block1 active">
-              <div class="block2">
+        <div class="priceList">
+          <div class="clickBlock">
+            <img src="../../../assets/img/booking/pricing.png">
+            <div>Pricing List</div>
+          </div>
+          <div class="priceListSide">
+            <div class="block">
+              <div class="back">Back</div>
+              <div class="title">Pricing List</div>
+              <div class="subs">
+                <div class="item active">Installation</div>
+                <div class="item">Maintenance</div>
+                <div class="item">Other</div>
               </div>
-            </div>
-            <div id="MaintenancePrice" class="block1">
-              <div class="block2">
+              <div id="InstallationPrice" class="block1 active">
+                <div class="block2">
+                </div>
               </div>
-            </div>
-            <div id="OtherPrice" class="block1">
-              <div class="block2">
+              <div id="MaintenancePrice" class="block1">
+                <div class="block2">
+                </div>
+              </div>
+              <div id="OtherPrice" class="block1">
+                <div class="block2">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-    </div>
-  </div>
-  <div class="gta--imageSection">
-    <div>
-      <img src="../../../assets/img/booking/sub1.png">
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/sub2.png">
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/sub3.png">
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/sub4.png">
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/sub5.png">
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/sub6.png">
-    </div>
-
-  </div>
-  <div class="newSystem">
-    <div class="block1">
-      <div class="title">Considering A New Hair System?</div>
-      <div class="para">
-        Whether you are a first-time hair system user or not, a flood of questions may cloud your mind, but we are here to answer each one. A 30-minute consultation with one of our experts will clear your doubts and help you choose the hair system that best suits you & your needs.
-      </div>
-      <div class="bookButton">
-        <img src="../../../assets/img/booking/consult.png">
-        BOOKING A CONSULTATION
+        
       </div>
     </div>
-    <div>
-      <img src="../../../assets/img/booking/stylists.png">
-    </div>
-  </div>
-  <div class="bookInstall">
-    <div class="block1">
-      <div class="title">We Help Install & Maintain Your Hair System Too!</div>
-      <div class="para">We don't just stop at consultations; once you purchase a hair system, we can install them too. While installing it onto your scalp, we ensure it blends with your natural hair to give seamless coverage. This one-time process involves customizing the base and styling the hair as well. Show All</div>
-      <div class="bookButton">
-        <img src="../../../assets/img/booking/consult1.png">
-        BOOK AN INSTALLATION / MAINTENACE
-      </div>
-    </div>
-    <div>
+    <div class="gta--imageSection">
       <div>
-        <img src="../../../assets/img/booking/landingin1.png">
+        <img src="../../../assets/img/booking/sub1.png">
       </div>
       <div>
-        <img src="../../../assets/img/booking/landingin2.png">
-        <img src="../../../assets/img/booking/landingin3.png">
+        <img src="../../../assets/img/booking/sub2.png">
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/sub3.png">
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/sub4.png">
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/sub5.png">
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/sub6.png">
+      </div>
+  
+    </div>
+    <div class="newSystem">
+      <div class="block1">
+        <div class="title">Considering A New Hair System?</div>
+        <div class="para">
+          Whether you are a first-time hair system user or not, a flood of questions may cloud your mind, but we are here to answer each one. A 30-minute consultation with one of our experts will clear your doubts and help you choose the hair system that best suits you & your needs.
+        </div>
+        <div class="bookButton">
+          <img src="../../../assets/img/booking/consult.png">
+          BOOKING A CONSULTATION
+        </div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/stylists.png">
       </div>
     </div>
-  </div>
-  <div>
-    <div>
-      <div>Subscribe To Save up to 20%</div>
-      <div>Our annual hair system subscription service comes at a mind-blowing price of as low as $127 per month. This guarantees you benefits galore!  Save time & money as you skip the effort of regular ordering, maintenance, or additional costs. We keep a database of your required hair system specifications to make your superior quality hair system experience with us a fast, convenient, affordable, and worry-free process.</div>
-      <div>GET A FREE QUOTE</div>
-    </div>
-    <div>
-      <img src="../../../assets/img/booking/subscribe.png">
-    </div>
-  </div>
-  <div>
-    <div>Meet our team</div>
-    <div>
+    <div class="bookInstall">
+      <div class="block1">
+        <div class="title">We Help Install & Maintain Your Hair System Too!</div>
+        <div class="para">We don't just stop at consultations; once you purchase a hair system, we can install them too. While installing it onto your scalp, we ensure it blends with your natural hair to give seamless coverage. This one-time process involves customizing the base and styling the hair as well. Show All</div>
+        <div class="bookButton">
+          <img src="../../../assets/img/booking/consult1.png">
+          BOOK AN INSTALLATION / MAINTENACE
+        </div>
+      </div>
       <div>
-        <img src="../../../assets/img/booking/team1.png">
         <div>
-          <div>Tara Gerhart</div>
-          Our expert hair stylist and store manager has over 10 years of experience in the hair replacement industry.</div>
-      </div>
-      <div>
-        <img src="../../../assets/img/booking/team2.png">
+          <img src="../../../assets/img/booking/landingin1.png">
+        </div>
         <div>
-          <div>Stephanie Knowles</div>
-          A seasoned hairstylist with 13 years of experience specializing in the hair replacement industry.</div>
-      </div>
-      <div>
-        <img src="../../../assets/img/booking/team3.png">
-        <div>
-          <div>Christina Liu</div>
-          An exceptional stylist and hair loss specialist with over 5 years of experience in the hair replacement system industry.</div>
-      </div>
-      <div>
-        <img src="../../../assets/img/booking/team4.png">
-        <div>
-          <div>Sanaya Clair</div>
-          With 6 years of customer care expertise, our receptionist greets and guides our vast and varied clientele with a smile.</div>
+          <img src="../../../assets/img/booking/landingin2.png">
+          <img src="../../../assets/img/booking/landingin3.png">
+        </div>
       </div>
     </div>
     <div>
-      <div>FAQ</div>
       <div>
+        <div>Subscribe To Save up to 20%</div>
+        <div>Our annual hair system subscription service comes at a mind-blowing price of as low as $127 per month. This guarantees you benefits galore!  Save time & money as you skip the effort of regular ordering, maintenance, or additional costs. We keep a database of your required hair system specifications to make your superior quality hair system experience with us a fast, convenient, affordable, and worry-free process.</div>
+        <div>GET A FREE QUOTE</div>
+      </div>
+      <div>
+        <img src="../../../assets/img/booking/subscribe.png">
+      </div>
+    </div>
+    <div>
+      <div>Meet our team</div>
+      <div>
+        <div>
+          <img src="../../../assets/img/booking/team1.png">
+          <div>
+            <div>Tara Gerhart</div>
+            Our expert hair stylist and store manager has over 10 years of experience in the hair replacement industry.</div>
+        </div>
+        <div>
+          <img src="../../../assets/img/booking/team2.png">
+          <div>
+            <div>Stephanie Knowles</div>
+            A seasoned hairstylist with 13 years of experience specializing in the hair replacement industry.</div>
+        </div>
+        <div>
+          <img src="../../../assets/img/booking/team3.png">
+          <div>
+            <div>Christina Liu</div>
+            An exceptional stylist and hair loss specialist with over 5 years of experience in the hair replacement system industry.</div>
+        </div>
+        <div>
+          <img src="../../../assets/img/booking/team4.png">
+          <div>
+            <div>Sanaya Clair</div>
+            With 6 years of customer care expertise, our receptionist greets and guides our vast and varied clientele with a smile.</div>
+        </div>
+      </div>
+      <div>
+        <div>FAQ</div>
         <div>
           <div>
-            <h5>What is a hair system? +</h5>
+            <div>
+              <h5>What is a hair system? +</h5>
+            </div>
+            <div>A hair system refers to a toupee, hair topper, or wig made of high-quality human hair that is used to conceal hair loss, thinning hair, or bald areas.</div>
           </div>
-          <div>A hair system refers to a toupee, hair topper, or wig made of high-quality human hair that is used to conceal hair loss, thinning hair, or bald areas.</div>
+  
         </div>
-
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="mainVideo"></div>
+        <div class="sideVideo"></div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2889.013073552021!2d-79.7652718!3d43.6062694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6af30b8d006d%3A0xd71f48c949773d6!2s7925%20Rapistan%20Ct%2C%20Mississauga%2C%20ON%20L5N%205Z4!5e0!3m2!1sen!2sca!4v1684521204408!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div>Mississauga Location</div>
+      </div>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.6008943267598!2d-79.46041522338996!3d43.71884254818212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b33cdeb17ae93%3A0x8108007ac1daa66f!2s3220%20Dufferin%20St%2C%20North%20York%2C%20ON%20M6A%202T3!5e0!3m2!1sen!2sca!4v1684521279400!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div>Toronto Location</div>
+      </div>
+    </div>
+  
+    <div class="gtaChat">
+      <div class="chatTop">
+        <img src="../../../assets/img/booking/arrow.png">
+        GTA Online Booking System
+      </div>
+      <div class="chatMain">
+  
+        <div class="chatText">
+          
+          <div class="chatBlock">
+            <div class="initialText chatText2">
+              <img src="../../../assets/img/booking/chatIcon.png"> 
+              <div class="chatText3">
+                <span class="dot-1">.</span>
+                <span class="dot-2">.</span>
+                <span class="dot-3">.</span>
+              </div>
+            </div>
+          </div>
+          <div class="chatAnswer1">
+  
+          </div>
+        </div>
+        <div class="chatAnswer">
+          <div style="display: flex; justify-content: space-between;">Select your answer
+            <img src="../../../assets/img/booking/submit.png">
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div>
-    <div>
-      <div class="mainVideo"></div>
-      <div class="sideVideo"></div>
-    </div>
-  </div>
-  <div>
-    <div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2889.013073552021!2d-79.7652718!3d43.6062694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6af30b8d006d%3A0xd71f48c949773d6!2s7925%20Rapistan%20Ct%2C%20Mississauga%2C%20ON%20L5N%205Z4!5e0!3m2!1sen!2sca!4v1684521204408!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div>Mississauga Location</div>
-    </div>
-    <div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2883.6008943267598!2d-79.46041522338996!3d43.71884254818212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b33cdeb17ae93%3A0x8108007ac1daa66f!2s3220%20Dufferin%20St%2C%20North%20York%2C%20ON%20M6A%202T3!5e0!3m2!1sen!2sca!4v1684521279400!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div>Toronto Location</div>
-    </div>
-  </div>
 
-  <div class="gtaChat">
-    <div class="chatTop">
-      <img src="../../../assets/img/booking/arrow.png">
-      GTA Online Booking System
-    </div>
-    <div class="chatMain">
+  <div class="gtaProfile non-active">
+    <div class="name">GTA Online Booking System</div>
+    <div class="profileBlock">
+      <div class="topBlock">
+        <div class="nameInitials">VP</div>
+        <div class="fullname">Vidusion P</div>
+        <div class="signOut">Sign out</div>
+      </div>
 
-      <div class="chatText">
-        
-        <div class="chatBlock">
-          <div class="initialText chatText2">
-            <img src="../../../assets/img/booking/chatIcon.png"> 
-            <div class="chatText3">
-              <span class="dot-1">.</span>
-              <span class="dot-2">.</span>
-              <span class="dot-3">.</span>
+      <div class="dropdownBlock">
+        <select>
+          <option>My appointments</option>
+          <option>Book a new appointment</option>
+          <option>Subscription Program</option>
+        </select>
+      </div>
+      <div class="profileBlockBottom apptsBlock">
+        <div class="name">My Appointments</div>
+        <div class="barAppts">
+          <div data-tab="first" class="barApptName on">Upcoming</div>
+          <div data-tab="second" class="barApptName">Past</div>
+          <span class="barApptSlider"></span>
+        </div>
+        <div class="upComingAppts">
+          <div class="apptItem">
+            
+            <div class="topBlock">
+              <div class="topImage"><img src="../../../assets/img/booking/stylist-1-pc.png"></div>
+              <div class="topNames">
+                <div class="topSub">Scheduled with:</div>
+                <div class="topSub1">Christina</div>
+              </div>
+            </div>
+            <div class="midBlock" style="display:flex; gap: 15px;">
+              <div><img style="width: 20px" src="../../../assets/img/booking/clock.png"></div>
+              <div>
+                <div style="font-weight: 600;">Date and Time</div>
+                <div>Pending</div>
+              </div>
+            </div>
+            <div class="mid2Block" style="display:flex; gap: 15px;">
+              <div><img style="width: 20px" src="../../../assets/img/booking/price-tag.png"></div>
+              <div>MEN'S INSTALLATION</div>
+            </div>
+            <div class="bottomBlock">
+              <div class="apptLink">View Details</div>
+              <div class="apptLink">Reschedule</div>
+              <div class="apptLink">Cancel</div>
             </div>
           </div>
         </div>
-        <div class="chatAnswer1">
+        <div class="pastAppts non-active">
+          <div class="apptItem">
+            <div class="faveStar">
+              <img src="../../../assets/img/booking/fave.png">
+            </div>
+            <div class="topBlock">
+              <div class="topImage"><img src="../../../assets/img/booking/stylist-1-pc.png"></div>
+
+              <div class="topNames">
+                <div class="topSub">Scheduled with:</div>
+                <div class="topSub1">Christina</div>
+              </div>
+            </div>
+            <div class="midBlock" style="display:flex; gap: 15px">
+              <div><img style="width: 20px" src="../../../assets/img/booking/clock.png"></div>
+
+              <div>
+                <div style="font-weight: 600;">Date and Time</div>
+                <div>Pending or Confirmed</div>
+              </div>
+            </div>
+            <div class="mid2Block" style="display: flex; gap: 15px;">
+              <div><img style="width: 20px" src="../../../assets/img/booking/price-tag.png"></div>
+
+              <div>MEN'S INSTALLATION</div>
+            </div>
+            <div class="bottomBlock">
+              <div class="apptLink">View Details</div>
+              <div class="apptLink">Rebook</div>
+              <div class="apptLink">Add to favorites</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profileBlockBottom bookAptBlock non-active">
+        <div class="name">Book Appointment</div>
+        <div class="barAppts">
+          <div data-tab="first" class="barApptName on">Men</div>
+          <div data-tab="second" class="barApptName"> Women</div>
+          <span class="barApptSlider"></span>
+        </div>
+        <div class="mensProfileAppts">
+          
+        </div>
+        <div class="womensProfileAppts non-active">
 
         </div>
       </div>
-      <div class="chatAnswer">
-        <div style="display: flex; justify-content: space-between;">Select your answer
-          <img src="../../../assets/img/booking/submit.png">
-        </div>
+      <div class="profileBlockBottom subsBlock non-active">
+
       </div>
     </div>
   </div>
+
 </section>
   <script src="https://www.youtube.com/iframe_api" defer></script>
 
@@ -852,6 +1145,8 @@ clear:none;
   const priceListInstallation = [];
   const priceListMaintenance = [];
   const priceListOthers = [];
+  const priceListAll = [];
+  let backClicked = false;
   const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "Septemeber", "October", "November", "December"];
 
@@ -862,7 +1157,250 @@ clear:none;
     let test5 = new Date(currYear, currMonth + 1, 0);
     let duration = "0";
     let total = "0.00";
+    let serviceEnd = "";
+    let gender = '';
+    let service = '';
+    let color = false;
+    let havePiece = false;
+    let salon = '';
+    let stylist = '';
+    let stylistId;
+    const currentStylers = [] 
     test5.setUTCHours(23, 59, 59, 0);
+  
+    const getStylists = async (location) => {
+      const response =  await fetch('http://localhost:3009/sq-team-members', {
+      method: 'POST',
+      headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        location: location
+      })
+    })
+    const data = await response.json();
+    for (const person of data.team_member_booking_profiles) {
+      currentStylers.push(person);
+
+    }
+    console.log('helo')
+    return data
+    }
+
+    function getCurrentDateAppointments(firstDate, apps, x, y) {
+        console.log(firstDate)
+        console.log(apps)
+        if (apps.length > 0) {
+            // $('.serviceList .calendarMain .loader2').addClass('non-active')
+            $(".serviceList .calendarTest .loader2").addClass("non-active");
+            const test2 = apps.filter((item) => item.startAt.includes(y));
+            // console.log(apps)
+            // console.log(test2)
+            // console.log(y)
+            let date = new Date(test2[0].startAt).toLocaleString("en-us", { day: "numeric", weekday: "short", year: "numeric" });
+            let vidu1 = new Date(test2[0].startAt).toLocaleString("en-us", { weekday: "short" });
+            let vidu2 = new Date(test2[0].startAt).toLocaleString("en-us", { day: "numeric" });
+            let vidu4 = new Date(test2[0].startAt).toLocaleString("en-us", { year: "numeric" });
+            let vidu3 = new Date(test2[0].startAt).toLocaleString("en-us", { month: "short" });
+            let fullDate = `${vidu1}, ${vidu3} ${vidu2}, ${vidu4}`;
+            $(".slot").empty();
+            $(".slot2").removeClass("non-active");
+            test2.forEach((item) => {
+                const date = new Date(item.startAt);
+                const time = date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+                const time2 = date.toLocaleTimeString("en-us", { hour12: false });
+
+                if (time2 > "15:00:00") {
+                    $(".evening .slot2").addClass("non-active");
+                    $(".evening .slot").append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
+                } else if (time2 > "12:00:00" && time2 <= "15:00:00") {
+                    $(".afternoon .slot2").addClass("non-active");
+
+                    $(".afternoon .slot").append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
+                } else {
+                    $(".morning .slot2").addClass("non-active");
+                    $(".morning .slot").append(`<div data-start-id="${item.startAt}" data-duration="${duration}" data-team-member="${item.appointmentSegments[0].teamMemberId}" class="bookingButton1 bookBut">${time}</div>`);
+                }
+            });
+            $(".dayAvailable").html(fullDate);
+        } else {
+            console.log('less')
+        }
+        $(".bookBut").on("click", function () {
+            duration = $(this).data("duration");
+            startTime = $(this).data("start-id");
+            const test3 = apps.filter((item) => item.startAt.includes(y)).filter((item2) => item2.startAt == startTime);
+            multiService = [];
+            multiService.push(test3[0]);
+            bookedStylist = $(this).data("team-member");
+            localStorage.setItem("timeSelected", startTime);
+            $(".bookBut").removeClass("active3");
+            $(this).addClass("active3");
+            $('.calendarConfirm').removeClass('non-active');
+            $('.calendarConfirm').on('click', function() {
+              $('.chatAnswer1').empty();
+              // clientChat('');
+              const newService = priceListAll.find(item => item.itemData.variations[0].id == serviceEnd);
+              // clientChat(`${newService.itemData.name} <br> ${stylist}`)
+              clientChat(`${newService.itemData.name} <br> ${stylist}`)
+              addBotChat(1000, [`${newService.itemData.name.toLowerCase().replace("(", "<br>")} <br> ${stylist}`])
+              console.log(newService);
+              addDot();
+
+            })
+            if ($(".pleaseSelect").children.length > 0) {
+                $(".pleaseSelect").empty();
+            }
+            if ($(window).width() > 1023) {
+                if ($(".oldClients").hasClass("non-active") && !$(".newClients").hasClass("non-active")) {
+                    $(".form123").scrollTop(0);
+                    $(".mobilePopup1 .bookingLoad:not(.loaded):first").addClass("loaded");
+
+                    serviceType1(serviceEnd, stylist, startTime);
+                    $(".form123").empty().append($(".bookingForm").eq(0).clone().addClass("active"));
+                    $(".form123 .serviceBookingSide").empty().append($(".serviceSide").eq(0).clone().addClass("active"));
+                    $(".form123 #myForm1").on("submit", submitForm);
+
+                    // $('.serviceBookingSide .loader2').addClass('non-active');
+                } else {
+                    // console.log('hi');
+                    // console.log(serviceEnd);
+                    // console.log(stylist);
+                    // console.log(startTime);
+                    let value = $(".serviceBooking .apptNote").val();
+
+                    serviceType1(serviceEnd, stylist, startTime, value);
+                    Array.from($(".gokutest").children()).forEach((item) => {
+                        $(item).css("display", "none");
+                    });
+                    $(".gokutest .desktopConfirmation").remove();
+                    $(".gokutest").append($(".desktopConfirmation").eq(0).clone().addClass("active"));
+                    $(".gokutest .desktopConfirmation .bookingButton").on("click", function () {
+                        $(".gokutest .desktopConfirmation .bookingButton").addClass("loading");
+                        setTimeout(function () {
+                            // createBooking()
+                            let x = [];
+                            const vidutest = multiService[0].appointmentSegments.forEach((item) => {
+                                x.push({
+                                    teamMemberId: item.teamMemberId,
+                                    durationMinutes: item.durationMinutes,
+                                    serviceVariationId: item.serviceVariationId,
+                                    serviceVariationVersion: item.serviceVariationVersion,
+                                });
+                            });
+                            createBooking(localStorage.getItem("customerId"), x, ".serviceList", localStorage.getItem("customerId"));
+                            $(".oldClients").addClass("active");
+                        }, 1500);
+                    });
+                }
+            }
+        });
+
+        // else {
+        //   const test = apps.filter((item) => item === firstDate)
+        // let date = new Date(apps[0].startAt).toLocaleString('en-us', { day: 'numeric',weekday: 'short' , year: 'numeric'})
+
+        //   test.forEach((item) => {
+        //     const date = new Date(item.startAt);
+        //     const time = date.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+        //     const time2 = date.toLocaleTimeString('en-us', {hour12: false})
+
+        //     if (time2 > '15:00:00') {
+        //       $('.evening').append(`<div>${time}</div>`)
+        //     } else if (time2 > "12:00:00" && time2 > '15:00:00') {
+        //       $('.afternoon').append(`<div>${time}</div>`)
+        //     } else {
+        //       $('.morning').append(`<div class="bookingButton1 bookBut">${time}</div>`)
+
+        //     }
+        //   })
+        //   $('.dayAvailable').html(date)
+        // }
+    }
+
+  function bookingAva(startDate, endDate, service, stylists, salon) {
+    console.log(startDate);
+    console.log(endDate);
+    serviceEnd = service;
+    let styleTest = [];
+    service.forEach((item) => {
+        styleTest.push({
+            serviceVariationId: item,
+            teamMemberIdFilter: {
+                any: stylistId,
+            },
+        });
+    });
+    fetch(`http://localhost:3009/sq-availability`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        start: startDate,
+        end: endDate,
+        styling: styleTest,
+        location: salon
+      })
+    })
+    .then(r=> r.json())
+    .then(r => {
+      let apps = r.availabilities;
+      let dateSelected = new Date().toLocaleString("en-us", { weekday: "short" });
+      console.log(r)
+      // duration = firstDate.appointmentSegments[0].durationMinutes;
+      let v = 0;
+      if (apps.length > 0) {
+        let firstDate = r.availabilities[0];
+                    duration = "0";
+                    firstDate.appointmentSegments.forEach((item) => {
+                        duration = parseFloat(duration) + parseFloat(item.durationMinutes);
+                    });
+                    $(".calendarTest .loader2").addClass("non-active");
+                    $(".currMonth").removeClass("active selected");
+                    apps.forEach((item) => {
+                        const date = new Date(item.startAt);
+                        const day = date.getDate();
+                        Array.from($(".currMonth")).forEach((item1) => {
+                            if (day == item1.innerHTML) {
+                                if (!item1.classList.contains("active")) {
+                                    item1.setAttribute("data-id", v);
+                                    $(item1).addClass("active");
+                                    v++;
+                                }
+                            }
+                        });
+                    });
+                    if ($(".newClients").hasClass("non-active")) {
+                        $(".serviceList .currMonth.active").eq(0).addClass("selected");
+                    } else {
+                        $(".currMonth.active").eq(0).addClass("selected");
+                    }
+                    let x = $(".currMonth.selected").attr("data-id");
+                    let y = $(".currMonth.selected").attr("data-date");
+
+                    getCurrentDateAppointments(r.availabilities[x], apps, x, y);
+
+      }else {
+          $(".currMonth").removeClass("active selected");
+          currMonth = currMonth + 1;
+          if (currMonth < 0 || currMonth > 11) {
+              date = new Date(currYear, currMonth);
+              currYear = date.getFullYear();
+              currMonth = date.getMonth();
+          } else {
+              date = new Date();
+          }
+          let test7 = new Date(currYear, currMonth + 1, 0);
+          let test8 = new Date(currYear, currMonth, 1);
+          test7.setUTCHours(23, 59, 59, 0);
+          $(".calendarTop .next-arrow").bind("click", nextMonth);
+          calendarChange();
+          bookingAva(test8.toISOString(), test7.toISOString(), serviceEnd, stylist,salon);
+      }
+    })
+  }
 
   function getAnswer(answer) {
     console.log(answer)
@@ -899,6 +1437,7 @@ Which service do you need?</div>
         console.log('Old Clients');
         break;
       case 'men-services':
+        gender = 'men'
         clientChat('Men Services');
         addDot();
         addBotChat(1000, ["That's great!", "May I ask if you currently have a hair system in place, or are you looking to get a brand new one?"]);
@@ -907,6 +1446,7 @@ Which service do you need?</div>
         )
         break;
       case 'yes,-i':
+        havePiece = true;
       clientChat('Yes, I currently have a hair system');
       addDot();
       addBotChat(1000, ["Of course! To better assist you, could you please specify which service you are looking for?", "Please note, servicing another company's hair system incurs an extra $40 fee."]);
@@ -917,6 +1457,7 @@ Which service do you need?</div>
       case 'installation':
       case 'maintenance':
       clientChat(answer);
+      service = answer;
       addDot();
       addBotChat(1000, [`Thank you for letting us know you need ${answer} services`, "May I ask if you also require color services for your own hair during this appoinment?"]);
       addChat(2000, '.gtaChat .chatAnswer1', 
@@ -925,6 +1466,7 @@ Which service do you need?</div>
         break;
       case 'yes':
       case 'no':
+        answer = 'yes' ? color = true : color = false;
         clientChat(answer);
         addDot();
         addBotChat(1000, ["Great! To proceed, please choose from the following locations that suit you best."]);
@@ -932,7 +1474,8 @@ Which service do you need?</div>
           ['7295 Rapistan Ct, Mississauga, ON L5N 5Z4', '3220 Dufferin St, North York, ON M6A 2T3','Back to last step']
         )
         break;
-      case 'Christina':
+      case 'christina-l.':
+        stylist = answer;
         clientChat(answer);
         addDot();
         addBotChat(1000, ["Please select your prefered data and time"]);
@@ -942,6 +1485,7 @@ Which service do you need?</div>
         )
         break;
       case '7295-rapistan':
+        salon = '7295';
         clientChat('7295 Rapistan Ct, Mississauga, ON L5N 5Z4');
         addDot();
         addBotChat(1000, ["Please select a preferred hairstylist for your appointment"]);
@@ -953,17 +1497,18 @@ Which service do you need?</div>
     }
   }
   async function getSquareCatalog() {
-    await fetch('http://localhost:3000/get-sq-catalog', {
+    await fetch('http://localhost:3009/get-sq-catalog', {
       method: 'POST'
     })
     .then(r=> r.json())
     .then(r => {
-      
-      for (const service of r.items) {
+      for (const service of r) {
+        console.log(service)
+        priceListAll.push(service);
         // console.log(service.item_data.name.toLowerCase())
-        if (service.item_data.name.toLowerCase().includes('installation')) {
+        if (service.itemData.name.toLowerCase().includes('installation')) {
           priceListInstallation.push(service)
-        } else if (service.item_data.name.toLowerCase().includes('maintenance')) {
+        } else if (service.itemData.name.toLowerCase().includes('maintenance')) {
           priceListMaintenance.push(service)
         } else {
           priceListOthers.push(service)
@@ -973,11 +1518,11 @@ Which service do you need?</div>
       for (const service of priceListInstallation) {
         $('.priceListSide #InstallationPrice.block1 .block2').append(`
           <div class='card'>
-            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
-            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='name'>${service.itemData.name.split("$")[0].split("(")[0]}</div>` +
+            (service.itemData.description? `<div class='info'>More Info</div>`: '') +`
             <div class='subText'>
-              <div class='price'>$${service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00`}</div>
-              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+              <div class='price'>$${service.itemData.variations[0].itemVariationData.priceMoney.amount/ 100 + `.00`}</div>
+              <div class='time'>${service.itemData.variations[0].itemVariationData.service_duration / 60000 + " mins"}</div>
             </div>
 
             <div class='book'>Book now</div>
@@ -987,11 +1532,11 @@ Which service do you need?</div>
       for (const service of priceListMaintenance) {
         $('.priceListSide #MaintenancePrice.block1 .block2').append(`
           <div class='card'>
-            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
-            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='name'>${service.itemData.name.split("$")[0].split("(")[0]}</div>` +
+            (service.itemData.description? `<div class='info'>More Info</div>`: '') +`
             <div class='subText'>
-              <div class='price'>$${service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00`}</div>
-              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+              <div class='price'>$${service.itemData.variations[0].itemVariationData.priceMoney.amount/ 100 + `.00`}</div>
+              <div class='time'>${service.itemData.variations[0].itemVariationData.service_duration / 60000 + " mins"}</div>
             </div>
 
             <div class='book'>Book now</div>
@@ -1001,11 +1546,11 @@ Which service do you need?</div>
       for (const service of priceListOthers) {
         $('.priceListSide #OtherPrice.block1 .block2').append(`
           <div class='card'>
-            <div class='name'>${service.item_data.name.split("$")[0].split("(")[0]}</div>` +
-            (service.item_data.description? `<div class='info'>More Info</div>`: '') +`
+            <div class='name'>${service.itemData.name.split("$")[0].split("(")[0]}</div>` +
+            (service.itemData.description? `<div class='info'>More Info</div>`: '') +`
             <div class='subText'>
-              <div class='price'>${service.item_data.variations[0].item_variation_data.price_money ? `$` + service.item_data.variations[0].item_variation_data.price_money.amount/ 100 + `.00` : "Price Varies"}</div>
-              <div class='time'>${service.item_data.variations[0].item_variation_data.service_duration / 60000 + " mins"}</div>
+              <div class='price'>${service.itemData.variations[0].itemVariationData.priceMoney ? `$` + service.itemData.variations[0].itemVariationData.priceMoney.amount/ 100 + `.00` : "Price Varies"}</div>
+              <div class='time'>${service.itemData.variations[0].itemVariationData.service_duration / 60000 + " mins"}</div>
             </div>
 
             <div class='book'>Book now</div>
@@ -1087,12 +1632,25 @@ Which service do you need?</div>
     $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
   }
 
-  function addStylist(time, parent, data) {
+  async function addStylist(time, parent, data) {
     let answer = '';
+    let locationId = ''
+    if (salon = '7295') {
+      locationId = '9G03BN2CFZ26B'
+    }
+    const test = async() => {
+      const result = await getStylists(locationId);
+      return result;
+    }
+    await test();
+    console.log(currentStylers)
     for (const [i,ans] of data.entries()) {
+      
       let newWord = ans.replace(' ', '-').toLowerCase();
+      
       if (ans.includes('staff')) {
-        answer = `<div data-ans='anyStaf' class='anyMembers'>
+
+        answer = `<div data-ans='anyStaff' class='anyMembers'>
                     <div class='staffImage'>
                       <img src='../../../assets/img/booking/stylist1.png'>  
                       <img src='../../../assets/img/booking/stylist2.png'> 
@@ -1104,7 +1662,9 @@ Choose this option to see everyone’s availablity.</div>
                     </div>
                   </div>`
       } else if(!ans.includes('last step')){
-        answer = answer + `<div data-ans=${ans} class='stylist'>
+      let newWord = ans.replace(' ', '-').toLowerCase();
+        const per = currentStylers.find(item => item.display_name.includes(ans.split(' ')[0]));
+        answer = answer + `<div data-person-id=${per.team_member_id} data-ans=${newWord} class='stylist'>
                   <div class='staffImage'><img src='../../../assets/img/booking/stylist${i}.png'></div>
                   <div class='name'>${ans}</div>
               </div>`
@@ -1112,9 +1672,13 @@ Choose this option to see everyone’s availablity.</div>
     }
     setTimeout(function() {
       $(`${parent}`).html(`<div class='staffMembers'>${answer}</div>`);
-      $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
-      $('.chatAnswer1 div').on('click', function() {
+      setTimeout(function() {
+        $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
+      }, 200)
+      $('.chatAnswer1 .stylist').on('click', function() {
           answer = $(this).attr('data-ans');
+          stylistId = $(this).attr('data-person-id').split(',');
+
           getAnswer(answer);
           $('.chatAnswer1').empty();
         })
@@ -1164,14 +1728,38 @@ Choose this option to see everyone’s availablity.</div>
                             <div class="slot2">All booked</div>
                         </div>
                     </div>
+                    <div class='confirmSection'>
+                      <div class='calendarConfirm non-active'>Confirm</div>
+                    </div>
 
                 </div>
             </div>
         </div>
         `);
         calendarChange();
+        // $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
         $(".calendarTop .next-arrow").bind("click", nextMonth);
-
+        console.log(gender);
+        console.log(havePiece);
+        console.log(service);
+        console.log(color);
+        console.log(salon);
+        console.log(stylist);
+        if (gender == "men") {
+            if (havePiece) {
+              if (service == 'installation') {
+                if (color) {
+                  if (salon == '7295') {
+                    if (stylist = 'christina-l.') {
+                      bookingAva(date.toISOString(), test5.toISOString(), ["5WY5OYLPSRO5ZEE3CAQVDCIK"], stylist, salon)
+                      // bookingSq(date.toISOString(), test5.toISOString(), ["EJOFRYTXG4AZTMA5VRQIJ6EY"], stylist);
+   
+                    }
+                  }
+                }
+              }
+            }
+        }
 
     }, time);
     
@@ -1194,13 +1782,15 @@ Choose this option to see everyone’s availablity.</div>
       answer = answer + `<div class=clientAnswer data-ans=${newWord}>${ans}</div>`
     }
     setTimeout(function() {
-      $(`${parent}`).html(answer);
+      if (!backClicked) {
+        $(`${parent}`).html(answer);
       $('.chatText').scrollTop($('.chatText')[0].scrollHeight);
       $('.chatAnswer1 div').on('click', function() {
           answer = $(this).attr('data-ans');
           getAnswer(answer);
           $('.chatAnswer1').empty();
         })
+      }
     }, time)
   }
   
@@ -1332,8 +1922,109 @@ Choose this option to see everyone’s availablity.</div>
 
         $(".calendarMain .days").html(`${change}`);
     }
-  window.addEventListener("DOMContentLoaded", function() {
-    
+  
+    const checkCustomer = async (email) => {
+      const response = await fetch (`http://localhost:3009/squareup-checkCustomer`, {
+        method: "POST",
+        headers: {
+          accept: 'application/json',
+          "Content-Type": "application/json"
+        },
+         body: JSON.stringify({
+          email: email
+         })
+      })
+    const data = await response.json();
+    return data
+    }
+
+
+  async function requestCode(email) {
+
+    const test = async() => {
+      const result = await checkCustomer(email);
+      return result;
+    }
+    const data = await test();
+    if (jQuery.isEmptyObject(data)) {
+      $(".signInSide .signInForm .accountExistence").html(`Account does not exist. Please sign up!`)
+        // $(".squareupLogin #loginForm .accountExistence").html(`Account does not exist. Please sign up!`);
+        // $(".squareupLogin .requestButton").removeClass("loading");
+        // $(".squareupLogin #loginForm input").prop("disabled", false);
+
+        // createCustomer(x, "#myForm")
+    } else {
+      loginToSquareAcc(data)
+    }
+  }
+
+  async function loginToSquareAcc(data) {
+    if (
+        $(".signInForm [name='email']").val().trim().length == 0 ||
+        $(".signInForm [name='email']")
+            .val()
+            .match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g) == null
+    )  {
+      document.querySelector(".signInForm [name='email']").setCustomValidity("Please fill in correct email format, i.e example@example.com");
+        document.querySelector(".signInForm [name='email']").reportValidity();
+    } else {
+      let email = data.customers[0].emailAddress
+      console.log(email);
+      await fetch(`http://localhost:3009/squareup-log`, {
+        method: "POST",
+        headers: {
+          'accept': "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email
+        })
+      })
+      .then(r=> r.json())
+      .then(r => {
+        let code = r.check;
+        console.log(code);
+        showCodeMessage(code)
+      })
+    }
+  }
+  function showCodeMessage(code, data) {
+    $('.signInSide .signInBlock').addClass('non-active');
+    $('.signInSide .codeBlock').removeClass('non-active');
+    $('.signInSide #codeLogin').on("submit", function() {
+      event.preventDefault();
+      console.log('hello')
+      $(".codeBlock #codeInput .requestButton").addClass("loading");
+      if ($('.codeBlock .codeInput').val() == code) {
+        console.log('matches');
+        localStorage.removeItem("SQEmail");
+        localStorage.removeItem("SQName");
+        localStorage.removeItem("SQLastName");
+        $('.signInSide').removeClass('active');
+        $('.booking .main').addClass('non-active');
+        $('.gtaProfile').removeClass('non-active');
+        console.log(priceListAll);
+        for (const server of priceListAll) {
+          if (server.itemData.name.includes("WOMEN'S")) {
+            $('.womensProfileAppts').append(`
+            <div>
+              ${server.itemData.name}
+            </div>
+              `)
+          } else if (server.itemData.name.includes("MEN'S")) {
+            $('.mensProfileAppts').append(`
+            <div>
+              ${server.itemData.name}
+            </div>
+              `)
+          }
+        }
+      } else {
+        console.log('no match')
+      }
+    })
+  }
+    window.addEventListener("DOMContentLoaded", function() {
     let answer = 'hi'
     // loadYTP('PLZR8iVgNY2TdvV0AFopJLmGHd7S_gAEjg')
     $('.bookIcons .priceList .clickBlock').on("click", function() {
@@ -1361,6 +2052,7 @@ Choose this option to see everyone’s availablity.</div>
       $('.signInSide').removeClass('active');
     });
     $('.gta--top .bookNow').on('click', function() {
+      backClicked = false;
       let height = $('.header').height();
       $('.gtaChat').css(`height`, `calc(100% - ${height}px)`)
       $('.gtaChat').addClass('active');
@@ -1381,6 +2073,82 @@ Choose this option to see everyone’s availablity.</div>
         })
       }, 1500);
     })
+
+    $('.chatTop img').on('click', function() {
+      backClicked = true;
+      $('.gtaChat').removeClass('active');
+      $('.chatText').empty();
+      $('.chatAnswer1').empty();
+      $('.chatText').html(`
+      <div class="chatBlock">
+          <div class="initialText chatText2">
+            <img src="../../../assets/img/booking/chatIcon.png"> 
+            <div class="chatText3">
+              <span class="dot-1">.</span>
+              <span class="dot-2">.</span>
+              <span class="dot-3">.</span>
+            </div>
+          </div>
+        </div>
+        <div class="chatAnswer1">
+
+        </div>
+      `)
+    })
+
+    //Request Sign In Code
+    $('.signInForm').on('submit', function() {
+      event.preventDefault();
+      $(".signInSide .signInForm .accountExistence").html(``);
+        // $(".signInSide .signInForm input").prop("disabled", true);
+        $(".squareupLogin .requestButton").addClass("loading");
+
+      let email = $(this).find(".signUpInput").val();
+      requestCode(email);
+    });
+    $('.barApptName').on('click', function() {
+      let info = $(this).attr('data-tab');
+      // $('.barApptName').removeClass('on')
+      $(this).parent().find('.barApptName').removeClass('on')
+      if (info == 'first') {
+        $(this).addClass('on');
+        $(this).parent().find('.barApptSlider').removeClass('move');
+
+        if ($(this).parent().parent().hasClass('apptsBlock')) {
+          $('.upComingAppts').removeClass('non-active');
+          $('.pastAppts').addClass('non-active');
+        } else if ($(this).parent().parent().hasClass('bookAptBlock')) {
+          $('.mensProfileAppts').removeClass('non-active');
+          $('.womensProfileAppts').addClass('non-active');
+        }
+        
+      } else {
+        $(this).addClass('on')
+        $(this).parent().find('.barApptSlider').addClass('move');
+        if ($(this).parent().parent().hasClass('apptsBlock')) {
+          $('.upComingAppts').addClass('non-active');
+          $('.pastAppts').removeClass('non-active');
+        }else if ($(this).parent().parent().hasClass('bookAptBlock')) {
+          $('.mensProfileAppts').addClass('non-active');
+          $('.womensProfileAppts').removeClass('non-active');
+        }
+
+      }
+
+    })
+
+    $('.dropdownBlock select').on('change', function() {
+      $('.profileBlockBottom').addClass('non-active')
+      if ($(this).val() == 'Book a new appointment') {
+        $('.bookAptBlock').removeClass('non-active')
+      } else if ($(this).val() == 'My appointments') {
+        $('.apptsBlock').removeClass('non-active')
+
+      }
+    })
+    
+
+
 
 
   })

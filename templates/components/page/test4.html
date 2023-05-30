@@ -2039,6 +2039,119 @@
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     }
+    .reamazepopup2 {
+        position: fixed;
+        bottom: 100px;
+        right: 22px;
+        border-radius: 7px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px; 
+        z-index: 2147483647;
+        width: 290px;
+        display: none;
+
+    max-height: 410px;
+    }
+    .reamazepopup2.active {
+        display: block;
+    }
+    .reamazepopup2.timerOpen {
+        max-height: 590px;
+    }
+    .reamazepopup2 .videoConsult {
+        background: linear-gradient(135deg, #282828 0%, #8a737b 100%);
+        border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    }
+    .reamazepopup2 .videoTitle {
+        color: white;
+        font-size: 1.4rem;
+    }
+    .reamazepopup2 .videoConsultBlock {
+        padding: 15px;
+        padding-bottom: 70px;
+        padding-top: 30px;
+        border-top-left-radius:5px;
+        border-top-right-radius:5px;
+    }
+    .reamazepopup2 .videoTextBlock {
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px; 
+        background-color: white;
+        position: relative;
+        top: -80px;
+        padding: 20px;
+        font-size: 12px;
+    }
+    .reamazepopup2 .videoTextBlock .videoZoomButton{
+        width: 100%;
+        border: 1px solid gray;
+        border-radius: 20px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba(132,132,132, 1);
+    }
+    .reamazepopup2 .videoJoinButton {
+        background-color: rgb(104,104,104);
+        border-radius: 20px;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        padding: 5px 0;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .reamazepopup2 .videoTextBottom {
+        display: none;
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px; 
+        background-color: white;
+        position: relative;
+        top: -80px;
+        padding: 13px 20px;
+        font-size: 12px;
+        border-top: 2px solid rgb(104,104,104);
+    }
+    .reamazepopup2 .videoTextBottom .zoomNumber {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 1;
+        color: rgb(144,144,144);
+    }
+    .reamazepopup2 .videoTextBottom .zoomNumberText {
+        color: rgb(144,144,144);
+        letter-spacing: 1px;
+    }
+    .reamazepopup2 .videoTextBottom.active {
+        display: block;
+    }
+    .reamazepopup2 .videoTextBottom #zoomTimer.active {
+        display: flex !important;
+    }
+    .reamazepopup2 .videoTextBottom .zoomLoad {
+        text-align: center;
+    }
+    .reamazepopup2 .videoTextBottom .zoomLoad.non-active {
+        display: none;
+    }
+    .reamazepopup2 .videoTextBottom .joinNowZoom {
+        background-color: #228b22;
+        border-radius: 20px;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+    }
     .reamazepopup1.active {
         display: block;
     }
@@ -2349,8 +2462,8 @@
     <div class="reamaze-block videochat1" style="position: relative;">
         <div class="item1"><img src="/content/images/common/chat1.png"></div>
         <div class="item2">
-            <div class="title1">Video Chat</div>
-            <div class="title2">Available weekdays<br> 9:30am - 6:00pm EST</div>
+            <div class="title1">Video Consultation</div>
+            <div class="title2">Available weekdays<br> 10:00am - 5:00pm EST</div>
         </div>
         <img style="position:absolute; top: 50%; right: 30px; transform: translateY(-50%);" src="/content/images/common/arrow_forward.png">
 
@@ -2371,6 +2484,8 @@
 </div>
 <script src="/content/js/pieChart.min.js" defer></script>
 <script>
+            let intervalId = null;
+        let isRunning = false;
     const colorOrder= [{
         color: '1',
         group: 'Black'
@@ -4871,7 +4986,6 @@
 
             }else {
 
-
                 if ($('#reamaze-popup').hasClass('reamaze-visible')) {
                     $('#reamaze-popup').removeClass('reamaze-visible');
                     $('#reamaze-popup').attr('aria-hidden','true')
@@ -4908,9 +5022,7 @@
             StampedFn.toggleRewardsModal();
             $('.reamazepopup1').removeClass('active');
 document.querySelector('body').addEventListener('click', function(event) {
-console.log(event.target)
   if (event.target.className == 'stamped-rewards-header-close') {
-    console.log('hello');
     // do your action on your 'li' or whatever it is you're listening for
   }
 });
@@ -4918,8 +5030,112 @@ console.log(event.target)
 
 
         } else if ($(this).hasClass('videochat1')) {
-            window.open('https://zoom.us/j/3934942751?pwd=RFZvRFhBajlMeGkrSHNINWtXYUFhUT09'), '_blank'
+            $('.reamazepopup1').removeClass('active');
+            if (!($('.reamazepopup2').length)) {
+                $('body').append(`
+                <div class='reamazepopup2 active'>
+                    <div class='videoConsult'>
+                        <img style='float: right; width: 25px; cursor: pointer;' src=/content/images/common/reamazeclose.png>
+                        <div class='videoConsultBlock'>
+                            <div class='videoTitle'>Join Our Online 5mins Video Consultation</div>    
+                        
+                        </div>
+                    </div>
+                    <div class="videoTextBlock">
+                        <div>This is a <span style='font-weight: 600; text-transform: uppercase;'>free</span> consultation. Ready to find your perfect hair systm with our experts? Here's how:</div>
+                        <ol type="1">
+                            <li>Download Zoom app (if you dont't have it yet).</li>
+                            <li>Click "Join Consultation" to start chat.</li>
+                            <li>Our expert will join you soon.</li>
+                        </ol>
+                        <a style='text-decoration: none;' href="https://zoom.us/download" target='_blank'>
+                            <div class='videoZoomButton'>DOWNLOAD ZOOM</div>
+                        </a>
+                        <div class='videoJoinButton'>JOIN CONSULTATION</div>
+                    </div>
+
+                    <div class='videoTextBottom'>
+                        <div class='zoomTimer'>
+                            <div>Our hair system expert will allow you to join the consultation in:</div>
+                            <div class='zoomLoad'>
+                                <img src='/content/images/common/loading.svg'>
+                            </div>
+                            <div style='display:none; justify-content:center; gap:5px; margin-top:10px; ' id='zoomTimer'>
+                                <div style='display: flex; flex-direction:column; align-items: center;'>
+                                    <div class='zoomNumber'>0<span id='zoomMinute'></span></div>
+                                    <div class='zoomNumberText'>Minutes</div>
+                                </div>
+                                <div class='zoomNumber'>:</div>
+                                <div style='display: flex; flex-direction:column; align-items: center;'>
+                                    <div class='zoomNumber'><span id='zoomSecond'></span></div>
+                                    <div class='zoomNumberText'>Seconds</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            `);
+            } else {
+                $('.reamazepopup2').addClass('active')
+            }
+
+            $('.reamazeicon .open').on('click', function() {
+                $('.reamazepopup2').removeClass('active');
+                $('.reamazepopup2').removeClass('timerOpen');
+                $('.zoomTimer .zoomLoad').removeClass('non-active');
+                $('.joinNowZoom').remove();
+                $("#zoomTimer").removeClass('active');
+                // clearInterval(test);
+
+            })
+            $('.videoConsult img').on('click', function() {
+                $('.reamazepopup2').removeClass('active');
+                $('.reamazepopup2').removeClass('timerOpen');
+                $('.zoomTimer .zoomLoad').removeClass('non-active');
+                $('.joinNowZoom').remove();
+                $("#zoomTimer").removeClass('active');
+                $('.reamazeicon .open').attr("src","/content/images/common/reamaze-icon-4.svg");
+
+
+            })
+            $('.videoJoinButton').on('click', function() {
+                $('.reamazepopup2 .videoTextBottom').addClass('active');
+                $('.reamazepopup2').addClass('timerOpen');
+                if (sessionStorage.getItem("zoomTimer")) {
+                } else {
+                    sessionStorage.setItem("zoomTimer", 60)
+                };
+            })
+            if (sessionStorage.getItem("zoomTimer")) {
+                $('.reamazepopup2 .videoTextBottom').addClass('active');
+                $('.reamazepopup2').addClass('timerOpen');
+                if (sessionStorage.getItem('zoomTimer') == "0"){
+                        $('#zoomMinute').html(0);
+                        $('#zoomSecond').html("00");
+                        $('.zoomLoad').addClass('non-active');
+                        $('#zoomTimer').addClass('active');
+                        $('.zoomTimer').append(`<div class='joinNowZoom'>JOIN NOW</div>`);
+                        $('.zoomTimer .joinNowZoom').on('click', function() {
+                            fetch(`http://localhost:3009/get-zoom-link`, {
+                                method: "POST"
+                            })
+                            .then(r => r.json())
+                            .then(r => {
+                                window.open(r, '_blank')
+                            })
+                        })
+                    }
+            }
+            
+
+
+
+
+        // startInterval();
+
         }
+
         })
 function addEventListenerStamped(el, eventName, handler) {
 if (el.addEventListener) { el.addEventListener(eventName, handler); }
@@ -4932,6 +5148,73 @@ else { el.attachEvent('on' + eventName, function () { handler.call(el); }); }
         setTimeout(function() {
         $('.reamazeicon .open').css('opacity', '1')
         }, 1200);
-        
+        // function formatTime(seconds) {
+        //     var minutes = Math.floor(seconds / 60);
+        //     var remainingSeconds = seconds % 60;
+        //     const data = [minutes, remainingSeconds]
+        //     return data;
+        // }
+        // function decreaseTimer() {
+        //     var timer = sessionStorage.getItem("zoomTimer");
+        //     if (timer) {
+        //         if (timer > 0) {
+        //             timer = parseInt(timer);
+        //         timer -= 1;
+        //         sessionStorage.setItem("zoomTimer", timer);
+        //         console.log(sessionStorage.getItem("zoomTimer"));
+        //         var formattedTime = formatTime(timer);
+        //         $('#zoomMinute').html(timer[0]);
+        //         $('#zoomSecond').html(timer[1]);
+        //         console.log(formattedTime);
+        //         } else {
+        //             clearInterval(test)
+        //         }
+
+        //     }
+        // }
+        // const test =setInterval(decreaseTimer, 1000);
     });    
+    window.addEventListener('DOMContentLoaded', function() {
+        function formatTime(seconds) {
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+            const data = [minutes, remainingSeconds]
+            return data;
+        }
+
+        function decreaseTimer() {
+            var timer = sessionStorage.getItem("zoomTimer");
+            console.log(timer);
+            if (timer) {
+                if (Number(timer) > 0) {
+                    timer = parseInt(timer);
+                timer -= 1;
+                sessionStorage.setItem("zoomTimer", timer);
+                var formattedTime = formatTime(timer);
+                $('#zoomMinute').html(formattedTime[0]);
+                $('#zoomSecond').html(formattedTime[1].toString().length == 1 ? `0`+ `${formattedTime[1]}` : formattedTime[1]);
+                $('.videoTextBottom .zoomLoad').addClass('non-active');
+                $('#zoomTimer').addClass('active');
+                } else {
+                    clearInterval(sessionStorage.getItem('intervalId'));
+                    sessionStorage.setItem('startZoomTimer', false)
+
+                }
+            }
+        }   
+        function startInterval() {
+            console.log(isRunning)
+            let startZoomTimer = sessionStorage.getItem('startZoomTimer');
+            
+        if (!startZoomTimer) {
+            // intervalId = setInterval(decreaseTimer, 1000);
+            sessionStorage.setItem('intervalId', setInterval(decreaseTimer,1000))
+            sessionStorage.setItem('startZoomTimer', true)
+            console.log("Interval started");
+        } else {
+            console.log("Interval is already running");
+        }
+        }
+        startInterval();
+    })
 </script>
