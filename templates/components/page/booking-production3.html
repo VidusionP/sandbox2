@@ -1803,7 +1803,8 @@
             });
     }
     function getAppointments(id, email) {
-
+        console.log(id)
+        console.log(email)
         fetch(`https://shp-webserver.glitch.me/customerCustomAttributes`, {
             method: "POST",
             headers: {
@@ -1816,7 +1817,7 @@
         })
             .then((r) => r.json())
             .then((r) => {
-                retrieveBookings(r.customAttributes[0].value, email);
+                retrieveBookings(["gd0fz3bp5cabj2"], email);
             });
     }
     function serviceName(id) {
@@ -1842,6 +1843,7 @@
             })
     }
     async function retrieveBookings(id, email) {
+        console.log(id)
         // console.log(id.split(','))
         // console.log(id)
         // console.log(email)
@@ -1851,7 +1853,7 @@
             $(".appointmentList .pastList .apptBlock").remove();
 
             await Promise.all(
-                id.split(",").map(async (item) => {
+                id.map(async (item) => {
                     setTimeout(function () {
                         fetch(`https://shp-webserver.glitch.me/retrieveBooking`, {
                             method: "POST",
@@ -1865,6 +1867,7 @@
                         })
                             .then((r) => r.json())
                             .then((r) => {
+                                <!-- console.log(r) -->
                                 let timeStart = r.booking.startAt;
                                 // console.log(r)
                                 let currentTime = new Date();
@@ -1909,15 +1912,16 @@
           `);
 
                                         r.booking.appointmentSegments.map((item) => {
+                                            console.log(item)
                                             const vidu = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
                                             const vidu1 = item1.items.filter((item2) => item2.itemData.variations[0].id == item.serviceVariationId);
-                                            $(`#${r.booking.id}.apptBlock .sellerFirst`).empty().append(vidu[0].display_name[0]);
+                                            
                                             // const vidu1 = currentStylers.filter((item3) => item3.team_member_id == item.teamMemberId);
                                             let timeStart2 = durationMins.setMinutes(durationMins.getMinutes() + item.durationMinutes);
                                             let time2 = new Date(timeStart2).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
 
                                             $(`#${r.booking.id}.apptBlock .dateTime .timeFrame`).empty().append(`${weekday[day]}, ${months[month]} ${date}, ${year} </br> ${time} - ${time2} EST`);
-                                            $(`#${r.booking.id}.apptBlock .stylistName`).empty().append(vidu[0].display_name);
+                                            
                                             $(`#${r.booking.id}.apptBlock .serviceDetails`).append(`
     <div>
       ${vidu1[0].itemData.name.split("(")[0]} (${vidu1[0].itemData.variations[0].itemVariationData.serviceDuration / 60000}mins) ${
