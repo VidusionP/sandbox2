@@ -510,45 +510,7 @@ margin-bottom: 20px;
     position: absolute;
     left: -1.4em;
 }
-.page-button {
-    width: 100%;
-    padding: .9375rem 3.125rem .9375rem 1.75rem ;
-    /* padding: 1rem 0; */
-    text-align: start;
-    position: relative;
-    font-size: 15px;
-    font-weight: 600;
-    /* border-bottom: 1px solid #D5D5D5; */
-    margin-left: 1.2em;
-      /* text-indent: -1.2em; */
-}
-.page-button h3 {
-    margin: unset;
-    font-size: 1rem;
-    font-weight: 500;
-    /* color: black; */
-    color: rgb(51, 51, 51);
-}
-.page-button h3::before {
-    content: attr(step);
-    display: block;
-    position: absolute;
-    left: 0;
-}
-.page-button::after {
-        content: "✕";
-        display: block;
-        position: absolute;
-        font-size: 0.75rem;
-        right: 0px;
-        text-align: center;
-        top: 50%;
-        transform: rotate(45deg);
-        width: 1.25rem;
-        transition: transform 0.3s ease 0s;
-        margin: -0.525rem 1.25rem 0px;
-        text-indent: initial;
-    }
+
     .page-test {
     overflow: hidden;
     transition: max-height .5s ease-in-out;
@@ -558,11 +520,7 @@ margin-bottom: 20px;
     /* padding-bottom: 1rem; */
     
 }
-.page-button1::after {
-        content: "―";
-        transform: rotate(0deg);
 
-}
 .profacc-faq .section {
     display: flex;
     flex-direction: column;
@@ -1398,14 +1356,14 @@ gap: 25px;
             <h3>Easy-to-use inventory system</h3>
             <p style="font-size: 16px; font-weight: 500; margin-bottom: 10px !important;">Hairpieces Inventory List</p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 80%;">
-              <a href="/inventory/?loads=Mens" alt="Men's Inventory Search">
+              <a target="_blank" href="/inventory/?loads=Mens" alt="Men's Inventory Search">
                   <div style="background-color: white; border-radius: 50%; padding: 4px;">
                     <div class="inventoryImg">
                       <img  src="/product_images/uploaded_images/list-inventory-men-c128-w200.png">
                     </div>
                   </div>
               </a>
-              <a href="/inventory/?loads=Womens" alt="Women's Inventory Search">
+              <a target="_blank" href="/inventory/?loads=Womens" alt="Women's Inventory Search">
                 <div style="background-color: white; border-radius: 50%; padding: 4px;">
                   <div class="inventoryImg inventoryImg2">
                     <img src="/product_images/uploaded_images/list-inventory-women-c128-w200.png">
@@ -1521,7 +1479,7 @@ gap: 25px;
 
   </div>
   <div id="stamped-reviews-widget" data-widget-type="visual-gallery" data-review-ids="73257629,66959143,65668319,65510962,65510605,62944481,46918077,45005617,44860856,44223416,37040137,33606933"data-with-photos="true"></div>
-  </div>
+  
 
 </section>
 
@@ -1533,22 +1491,7 @@ gap: 25px;
 
 <script src="/content/js/slick.min.js" defer></script>
 <script>
-          function openFAQ(x) {
-            let setheight = x.nextElementSibling.children[0].offsetHeight
-            let checkClass = x.nextElementSibling.classList
-            // console.log(x.children[0].classList)
-            if (checkClass.contains('brand-add')) {
-                checkClass.remove('brand-add')
-                x.children[0].classList.remove('page-button1')
-                x.classList.remove('page-tab-highlight')
-                x.nextElementSibling.style.maxHeight = '0'
-            } else {
-                checkClass.add('brand-add')
-                x.children[0].classList.add('page-button1')
-                x.classList.add('page-tab-highlight')
-                x.nextElementSibling.style.maxHeight = setheight + 'px'
-            }
-        }
+
         $('.button1').click(function() {
 
           let checkClass = $('.profacc-app')[0].classList
@@ -1656,14 +1599,14 @@ gap: 25px;
                 })
                 .then(r=>r.json())
                 .then(r=>{
-                    $(".form-shipping button[type=submit]").html(`Submitted`);
+                    // console.log(r);
+                    $(".form-prof button[type=submit]").html(`Submitted`);
                 })
                 .catch(e=>{
                     console.log(e);
-                    $(".form-shipping button[type=submit]").html(`Error`);
+                    $(".form-prof button[type=submit]").html(`Error`);
                 });
             }
             })
       })
 </script>
-

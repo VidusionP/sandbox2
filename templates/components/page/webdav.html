@@ -1,0 +1,120 @@
+<style>
+  .required:after {
+    content:" *";
+    color: red;
+  }
+  .uploadForm .selectBlog {
+    margin: 20px 0;
+  }
+  .uploadForm .submitButton {
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    width: 150px;
+    padding: 5px;
+  }
+  .fileSuccess {
+    color: #24af24;
+    font-weight: 500;
+  }
+  .fileFail {
+    color: red;
+    font-weight: 500;
+  }
+  .non-active {
+    display: none;
+  }
+  .imageUploadSection {
+    margin-top: 10px;
+  }
+  .imageUploadSection .filePath {
+    margin-top: 20px;
+  }
+  .imageUploadSection .copyByton {
+    background-color: rgb(44, 113, 202);
+    color: #fff;
+  }
+</style>
+<section>
+  <h1>File Upload</h1>
+  <form class="uploadForm" id="uploadForm" enctype="multipart/form-data">
+      <div class="selectWebsite">
+          <div class="required">Select website for upload</div>
+          <input type="radio" id="genc" value="genc" name="website" required="required">
+          <label for="genc">GenC</label><br>
+          <input type="radio" id="france" value="france" name="website" required="required">
+          <label for="france">.FR</label><br>
+          <input type="radio" id="germany" value="germany" name="website" required="required">
+          <label for="germany">.DE</label><br>
+      </div>
+      <div class="selectBlog">
+        <label class="required">Blog Name</label><br>
+        <input style="width:100%" type="text" name="blogName" id="blogName" required="required">
+      </div>
+      <input type="file" name="file" id="fileInput">
+      <button class="submitButton" type="submit">Upload</button>
+    </form>
+    <div class="imageUploadSection">
+      <div class="fileSuccess non-active">File Uploaded Successfully</div>
+      <div class="fileFail non-active">File Uploaded Unsuccessfully. Retry again.</div>
+      <div class="filePath">
+
+      </div>
+    </div>
+</section>
+
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+      const selected = $('#uploadForm input[name=website]:checked').val();
+      const blogName = $('#uploadForm input[name=blogName]').val();
+      if (!file) {
+        alert('Please select a file to upload.');
+        return;
+      }
+
+      const formData = new FormData();
+      const newName = blogName.replaceAll(' ', '-').replaceAll("'", '-')
+      formData.append('file', file);
+      formData.append('website', selected);
+      formData.append('blogName', newName);
+      // const urlEncode = new URLSearchParams(formData).toString();
+      // console.log(urlEncode)
+      // console.log(formData)
+      // console.log([...formData.entries()][0][1])
+      $(".uploadForm button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="25px" height="25px"/>`)
+
+      try {
+
+        const response = await fetch('http://localhost:3009/upload', {
+          method: 'POST',
+          // headers: {'Content-Type': 'multipart/form-data; boundary=MyBoundary'},
+          body: formData
+        });
+        console.log('Uploading')
+        if (response.ok) {
+          const data = await response.json()
+          console.log(data.filePath);
+          $(".uploadForm button[type=submit]").html(`Uploaded`)
+          $('.fileSuccess').removeClass('non-active');
+          $('.filePath').append(`
+            <div>File Path:</div>
+            <div class='copyButton'>Copy</div>
+            <textarea rows="4" cols="40">${data.filePath}</textarea>
+            `)
+          // alert('File uploaded successfully.');
+        } else {
+          alert('Error uploading file.');
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        alert('Error uploading file.');
+      }
+    });
+  </script>

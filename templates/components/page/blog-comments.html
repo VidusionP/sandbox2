@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="/content/css/slick.css">
+<style>
+    .breadcrumbs {
+    display: none;
+}
+.body.page h1 {
+    display: none;
+}
+.css-1hcx8jb {
+    display: none !important;
+    font-size: 12px;
+}
+.page-heading {
+    padding-top: 4vh;
+}
+@media (min-width: 801px) and (max-width:1149px) {
+    .body.page {
+        margin-top: 2.5rem !important;
+    }
+}
+.body.page {
+  padding: 0 !important;
+}
+p {
+  margin: 0 !important;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  overflow-x: mensden;
+}
+.body.page .container {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+.page {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  max-width: 100% !important;
+}
+.page-content.page-content--centered {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.blogBlock {
+  border:  1px solid black;
+  margin: 10px;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  gap: 5px;
+}
+.blogComment {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+</style>
+<!-- <img src="/content/images/marketing/prof-acc/thumbnail.jpg" alt="thumbnail" style="width:0px;height:0px;opacity:0; position: absolute;"/> -->
+<section>
+  <div>
+    <!-- <div>All Blog Comments</div> -->
+    <div class="blogComment">
+      <img class="loading" src="/content/images/common/loading.svg">
+    </div>
+  </div>
+</section>
+<script>
+    const checkBlockId = async (id) => {
+      const response = await fetch(`https://shp-webserver.glitch.me/get-blogs-by-id`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json'
+            },
+            body: JSON.stringify ({
+                storehash: `cavofu`,
+                id: id
+            })
+        })
+        const data = await response.json();
+        return data;
+    }
+    async function checkBlogId(id) {
+
+      fetch(`https://shp-webserver.glitch.me/get-blogs-by-id`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json'
+            },
+            body: JSON.stringify ({
+                storehash: `cavofu`,
+                id: id
+            })
+        })
+        .then(r =>r.json())
+        .then(r => {
+          console.log(r)
+          return r;
+          // console.log(r)
+        })
+    }
+    // const getAllComments1 = async() => {
+    //   const response = await fetch(`https://shp-webserver.glitch.me/get-teamdesk`, {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             accept: 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             table: "t_1135069",
+    //             options: `?column=*&filter= [BC Storehash]="gmosz3ja"`
+    //         })
+    //     })
+    //   const data = 
+    // }
+    async function getAllComments() {
+      fetch(`https://shp-webserver.glitch.me/get-teamdesk`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json'
+            },
+            body: JSON.stringify({
+                table: "t_1135069",
+                options: `?column=*&filter= [BC Storehash]="cavofu"`
+            })
+        })
+        .then(r =>r.json())
+        .then(r => {
+          $('.blogComment .loading').remove();
+          for (const blog of r) {
+
+            // console.log(blog);
+            // checkBlogId(blog['Blog ID']).then(console.log(r))
+            // console.log(checkBlogId(blog['Blog ID']))
+            const test = async() => {
+              const res = await checkBlockId(blog['Blog ID']);
+              console.log(res);
+              // $('.blogComment').append(`
+              // <a href=${res.url}>
+              //   <div class='blogBlock'>
+              //     <div>${blog['Author Email']}</div>
+              //     <div>${blog['Author Name']}</div>
+              //     <div>${blog['Comment']}</div>
+              //  </div>
+              // </a>
+              // `)
+              $('.blogComment').append(`
+                <a class='blogBlock' href=${res.url}>
+                  <div style='display:flex; align-items: center;'>
+                    <img src='${res.thumbnail_path}'>  
+                  </div>
+                  <div style=' display:flex; flex-direction:column; justify-content:center;'>
+                    <div>Email: `+ (blog['Author Email']? blog['Author Email'] : 'N/A') + `</div>
+                    <div>Name: ${blog['Author Name']}</div>
+                    <div>Comment: ${blog['Comment']}</div>
+                  </div>
+                </a>
+              `)
+              // return res;
+            }
+            let item = test();
+            // console.log(link)
+            // console.log(test())
+            // console.log(checkBlogId(blog['Blog ID']))
+
+            // let results = checkBlogId(blog['Blog ID'])
+            // let results = checkBlogId(blog['Blog ID']);
+            // console.log(checkBlogId(blog['Blog ID']))
+            // console.log(results)
+            // const test2 = async() => {
+            //   let item = await test();
+            // }
+
+          }
+        })
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      getAllComments();
+    })
+</script>
