@@ -6,8 +6,16 @@
   .uploadForm .selectBlog {
     margin: 20px 0;
   }
-  .uploadForm .submitButton {
+  .uploadForm .submitSectionFile {
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .submitSectionFile .fileUploadAnother {
+    color: rgba(0, 120, 255, .90);
+  }
+  .uploadForm .submitButton {
     border-radius: 5px;
     border: 1px solid black;
     color: white;
@@ -32,16 +40,26 @@
   .imageUploadSection .filePath {
     margin-top: 20px;
   }
-  .imageUploadSection .copyByton {
+
+  .imageUploadSection .copyButton {
     background-color: rgb(44, 113, 202);
     color: #fff;
+    border-radius: 4px;
+    padding:3px ;
+    width: 75px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .fileUploadName {
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 </style>
 <section>
   <h1>File Upload</h1>
   <form class="uploadForm" id="uploadForm" enctype="multipart/form-data">
       <div class="selectWebsite">
-          <div class="required">Select website for upload</div>
+          <div class="required fileUploadName">Select website for upload</div>
           <input type="radio" id="genc" value="genc" name="website" required="required">
           <label for="genc">GenC</label><br>
           <input type="radio" id="france" value="france" name="website" required="required">
@@ -50,11 +68,14 @@
           <label for="germany">.DE</label><br>
       </div>
       <div class="selectBlog">
-        <label class="required">Blog Name</label><br>
+        <label class="required fileUploadName">Blog Name</label><br>
         <input style="width:100%" type="text" name="blogName" id="blogName" required="required">
       </div>
       <input type="file" name="file" id="fileInput">
-      <button class="submitButton" type="submit">Upload</button>
+      <div class="submitSectionFile">
+        <button class="submitButton" type="submit">Upload</button>
+        <div class="fileUploadAnother non-active">Upload Another</div>
+      </div>
     </form>
     <div class="imageUploadSection">
       <div class="fileSuccess non-active">File Uploaded Successfully</div>
@@ -67,6 +88,13 @@
 
 
   <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      $('.fileUploadAnother').on('click', function() {
+        console.log('hello')
+        document.getElementById('uploadForm').reset();
+      })
+
+    })
     document.getElementById('uploadForm').addEventListener('submit', async (event) => {
       event.preventDefault();
 
@@ -103,8 +131,9 @@
           console.log(data.filePath);
           $(".uploadForm button[type=submit]").html(`Uploaded`)
           $('.fileSuccess').removeClass('non-active');
+          $('.fileUploadAnother').removeClass('non-active');
           $('.filePath').append(`
-            <div>File Path:</div>
+            <div class='fileUploadName'>File Path:</div>
             <div class='copyButton'>Copy</div>
             <textarea rows="4" cols="40">${data.filePath}</textarea>
             `)
