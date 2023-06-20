@@ -140,13 +140,8 @@
       const formData = new FormData();
       const newName = blogName.replaceAll(' ', '-').replaceAll("'", '-');
       formData.append('file', file);
-      console.log(file)
       formData.append('website', selected);
       formData.append('blogName', newName);
-      // const urlEncode = new URLSearchParams(formData).toString();
-      // console.log(urlEncode)
-      // console.log(formData)
-      // console.log([...formData.entries()][0][1])
       $(".uploadForm button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="25px" height="25px"/>`)
 
       try {
@@ -154,13 +149,9 @@
           method: 'POST',
           body: formData
         }
-        // const response = await fetch('http://localhost:3009/upload', options);
-        const response = await fetch('http://localhost:3000/webdav/upload', options);
-        console.log(response)
-        console.log('Uploading')
+        const response = await fetch('https://ec2-3-131-40-120.us-east-2.compute.amazonaws.com/webdav/upload', options);
         if (response.ok) {
           const data = await response.json()
-          console.log(data.filePath);
           $(".uploadForm button[type=submit]").html(`Uploaded`)
           $('.fileSuccess').removeClass('non-active');
           $('.fileUploadAnother').removeClass('non-active');
@@ -168,7 +159,6 @@
             <div class='fileUploadName'>File Path:</div>
             <textarea rows="4" cols="40">${data.filePath}</textarea>
             `)
-          // alert('File uploaded successfully.');
           $('#uploadForm').unbind('submit');
         } else {
           alert('Error uploading file.');
@@ -178,6 +168,5 @@
         alert('Error uploading file.');
       }
     }
-    // document.getElementById('uploadForm').addEventListener('submit', uploadFile)
 
   </script>
