@@ -1,0 +1,83 @@
+<style>
+  * {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+}
+.container h1 {
+    text-align: center;
+    color: white;
+}
+form {
+    background-color: white;
+    padding: 30px;
+}
+form .input-group {
+    margin-bottom: 15px;
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+form input {
+    padding: 12px 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.submit-btn {
+    width: 100%;
+    border: none;
+    background: rgb(37, 83, 3);
+    font-size: 18px;
+    color: white;
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+<div class="container">
+  <h1>File Upload</h1>
+  <form id='form'>
+      <div class="input-group">
+          <label for='name'>Your name</label>
+          <input name='name' id='name' placeholder="Enter your name" />
+      </div>
+      <div class="input-group">
+          <label for='files'>Select files</label>
+          <input id='files' type="file" multiple>
+      </div>
+      <button class="submit-btn" type='submit'>Upload</button>
+  </form>
+</div>
+<script>
+  const form = document.getElementById("form");
+
+form.addEventListener("submit", submitForm);
+
+async function submitForm(e) {
+    e.preventDefault();
+    const name = document.getElementById("name");
+    const files = document.getElementById("files");
+    const formData = new FormData();
+    formData.append("name", name.value);
+    for(let i =0; i < files.files.length; i++) {
+            formData.append("files", files.files[i]);
+    }
+    const options = {
+      method: 'POST',
+      body: formData,
+    }
+    const response = await fetch(`http://localhost:3009/upload_files`, options)
+    // fetch("http://localhost:3009/upload_files", {
+    //     method: 'POST',
+    //     body: formData,
+    //     headers: {
+    //       "Content-Type": "multipart/form-data; boundary=------WebKitFormBoundaryg7okV37G7Gfll2hf--"
+    //     }
+    // })
+    //     .then((res) => console.log(res))
+    //     .catch((err) => ("Error occured", err));
+}
+</script>

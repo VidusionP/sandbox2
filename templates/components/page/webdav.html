@@ -14,6 +14,7 @@
   }
   .submitSectionFile .fileUploadAnother {
     color: rgba(0, 120, 255, .90);
+    cursor: pointer;
   }
   .uploadForm .submitButton {
     border-radius: 5px;
@@ -41,23 +42,17 @@
     margin-top: 20px;
   }
 
-  .imageUploadSection .copyButton {
-    background-color: rgb(44, 113, 202);
-    color: #fff;
-    border-radius: 4px;
-    padding:3px ;
-    width: 75px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
   .fileUploadName {
     font-size: 1.1rem;
     font-weight: 500;
   }
+  .fileUploadPage {
+    min-height: 200px;
+  }
 </style>
-<section>
+<section class="fileUploadPage">
   <h1>File Upload</h1>
-  <form class="uploadForm" id="uploadForm" enctype="multipart/form-data">
+  <form class="uploadForm non-active" id="uploadForm" enctype="multipart/form-data">
       <div class="selectWebsite">
           <div class="required fileUploadName">Select website for upload</div>
           <input type="radio" id="genc" value="genc" name="website" required="required">
@@ -84,18 +79,53 @@
 
       </div>
     </div>
-</section>
+    <div id="g_id_onload"
+     data-client_id="869450368995-ok438o0ng2fhg5uf8ga2u5vtmp9m1b41.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callBack="handleCredentialResponse"
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
 
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+</section>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <script>
+    let email1 = ''
+    function handleCredentialResponse(response) {
+      fetch('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=' + response.credential)
+        .then(response => response.json())
+        .then(profile => {
+          const email = profile.email;
+          email1 = profile.email;
+        ["james@superhairpieces.com", "nha@superhairpieces.com", "vidusion@superhairpieces.com"].includes(email) ? 
+        ($('.g_id_signin').hide(), $('.uploadForm').removeClass('non-active'), $('#uploadForm').on('submit', uploadFile)): $('.fileUploadPage').append('<div>You have no permission to upload</div>')
+        })
+    }
+
     window.addEventListener('DOMContentLoaded', function() {
       $('.fileUploadAnother').on('click', function() {
-        console.log('hello')
         document.getElementById('uploadForm').reset();
+        $('.submitSectionFile .submitButton').html('Upload');
+        $('.fileUploadAnother').addClass('non-active');
+        $('.fileSuccess').addClass('non-active');
+        $('.filePath').empty();
+        ["james@superhairpieces.com", "nha@superhairpieces.com", "vidusion@superhairpieces.com"].includes(email1)?
+        ($('#uploadForm').on('submit', uploadFile)): $('.fileUploadPage').append('<div>You have no permission to upload</div>')
       })
 
     })
-    document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+
+    async function uploadFile(event) {
       event.preventDefault();
 
       const fileInput = document.getElementById('fileInput');
@@ -108,8 +138,9 @@
       }
 
       const formData = new FormData();
-      const newName = blogName.replaceAll(' ', '-').replaceAll("'", '-')
+      const newName = blogName.replaceAll(' ', '-').replaceAll("'", '-');
       formData.append('file', file);
+      console.log(file)
       formData.append('website', selected);
       formData.append('blogName', newName);
       // const urlEncode = new URLSearchParams(formData).toString();
@@ -119,12 +150,13 @@
       $(".uploadForm button[type=submit]").html(`<img src="/content/images/common/loading.svg" width="25px" height="25px"/>`)
 
       try {
-
-        const response = await fetch('http://localhost:3009/upload', {
+        const options = {
           method: 'POST',
-          // headers: {'Content-Type': 'multipart/form-data; boundary=MyBoundary'},
           body: formData
-        });
+        }
+        // const response = await fetch('http://localhost:3009/upload', options);
+        const response = await fetch('http://localhost:3000/webdav/upload', options);
+        console.log(response)
         console.log('Uploading')
         if (response.ok) {
           const data = await response.json()
@@ -134,10 +166,10 @@
           $('.fileUploadAnother').removeClass('non-active');
           $('.filePath').append(`
             <div class='fileUploadName'>File Path:</div>
-            <div class='copyButton'>Copy</div>
             <textarea rows="4" cols="40">${data.filePath}</textarea>
             `)
           // alert('File uploaded successfully.');
+          $('#uploadForm').unbind('submit');
         } else {
           alert('Error uploading file.');
         }
@@ -145,5 +177,7 @@
         console.error('Error uploading file:', error);
         alert('Error uploading file.');
       }
-    });
+    }
+    // document.getElementById('uploadForm').addEventListener('submit', uploadFile)
+
   </script>
